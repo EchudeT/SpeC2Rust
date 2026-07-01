@@ -1,0 +1,30 @@
+{
+  "project": "which-rust",
+  "path": "/data1/jfeng/tcode_win/output/res3/which/which-rust",
+  "timestamp": "2026-06-19T21:36:51+08:00",
+  "summary": {
+    "total_issues": 23,
+    "clippy_warnings": 19,
+    "clippy_errors": 1,
+    "rustfmt_files_needing_format": 3,
+    "tool_errors": 0
+  },
+  "commands": {
+    "clippy": "cargo clippy --workspace --all-targets --message-format short",
+    "rustfmt": "cargo fmt --all -- --check"
+  },
+  "status": {
+    "clippy_exit_code": 101,
+    "rustfmt_exit_code": 1,
+    "clippy_failed": 1,
+    "rustfmt_failed": 0
+  },
+  "artifacts": {
+    "clippy_log": "/data1/jfeng/tcode_win/output/res3/which/which-rust/clippy_output.log",
+    "rustfmt_log": "/data1/jfeng/tcode_win/output/res3/which/which-rust/rustfmt_output.log"
+  },
+  "clippy_by_category": {"unused":12,"other":6,"style":1},
+  "clippy_details": [{"file":"src/bash.rs","line":259,"lint":"","message":"associated function `sh_get_env_value` is never used"},{"file":"src/getopt.rs","line":2,"lint":"","message":"struct `Getopt` is never constructed"},{"file":"src/getopt.rs","line":16,"lint":"","message":"enum `Ordering` is never used"},{"file":"src/getopt.rs","line":29,"lint":"","message":"multiple associated items are never used"},{"file":"src/getopt1.rs","line":4,"lint":"","message":"struct `Getopt1` is never constructed"},{"file":"src/getopt1.rs","line":9,"lint":"","message":"methods `getopt_long`, `getopt_long_only`, and `main` are never used"},{"file":"src/shell.rs","line":1,"lint":"","message":"struct `Shell` is never constructed"},{"file":"src/shell.rs","line":4,"lint":"","message":"associated function `get_home_dir` is never used"},{"file":"src/tilde.rs","line":1,"lint":"","message":"struct `Tilde` is never constructed"},{"file":"src/tilde.rs","line":4,"lint":"","message":"associated functions `find_prefix`, `find_suffix`, and `memory_error_and_abort` are never used"},{"file":"src/which.rs","line":10,"lint":"","message":"field `len` is never read"},{"file":"src/which.rs","line":69,"lint":"","message":"associated functions `alloc_buffer`, `resize_buffer`, `symlink_metadata`, and `var_os` are never used"},{"file":"src/bash.rs","line":69,"lint":"","message":"unneeded `return` statement"},{"file":"src/bash.rs","line":165,"lint":"","message":"unneeded `return` statement"},{"file":"src/getopt.rs","line":22,"lint":"","message":"this `impl` can be derived"},{"file":"src/getopt.rs","line":65,"lint":"","message":"the following explicit lifetimes could be elided: 'a"},{"file":"","line":0,"lint":"","message":"`which-rust` (bin \"which-rust\" test) generated 16 warnings (16 duplicates)"},{"file":"","line":0,"lint":"","message":"build failed, waiting for other jobs to finish..."},{"file":"","line":0,"lint":"","message":"`which-rust` (bin \"which-rust\") generated 16 warnings"}],
+  "clippy_error_details": [{"file":"src/which.rs","line":696,"code":"","message":"this boolean expression contains a logic bug: help: it would look like the following: `!found_something && !self.path_search(false, arg, &path_list)`"}],
+  "rustfmt_details": [{"file":"src/bash.rs","line":188},{"file":"src/bash.rs","line":220},{"file":"src/getopt.rs","line":150},{"file":"src/getopt.rs","line":232},{"file":"src/which.rs","line":1},{"file":"src/which.rs","line":85},{"file":"src/which.rs","line":131},{"file":"src/which.rs","line":152},{"file":"src/which.rs","line":249},{"file":"src/which.rs","line":358},{"file":"src/which.rs","line":426},{"file":"src/which.rs","line":574},{"file":"src/which.rs","line":690}]
+}

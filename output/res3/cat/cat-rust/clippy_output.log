@@ -1,0 +1,146 @@
+warning: `/home/jfeng/.cargo/config` is deprecated in favor of `config.toml`
+  |
+  = help: if you need to support cargo 1.38 or earlier, you can symlink `config` to `config.toml`
+warning: `/home/jfeng/.cargo/config` is deprecated in favor of `config.toml`
+  |
+  = help: if you need to support cargo 1.38 or earlier, you can symlink `config` to `config.toml`
+    Checking cat-rust v0.1.0 (/data1/jfeng/tcode_win/output/res3/cat/cat-rust)
+src/cat.rs:2:25: warning: unused import: `FileTypeExt`
+src/cat.rs:6:27: warning: unused import: `Seek`
+src/cat.rs:145:5: warning: type `cat::LineNumberState` is more private than the item `cat::Cat::cat`: associated function `cat::Cat::cat` is reachable at visibility `pub(crate)`
+src/cat.rs:267:5: warning: type `cat::LineNumberState` is more private than the item `cat::Cat::copy_cat`: associated function `cat::Cat::copy_cat` is reachable at visibility `pub(crate)`
+src/c_ctype.rs:1:12: warning: struct `CCtype` is never constructed
+src/c_ctype.rs:5:12: warning: multiple associated functions are never used
+src/alignalloc.rs:1:12: warning: struct `Alignalloc` is never constructed
+src/alignalloc.rs:4:12: warning: associated functions `align_down`, `address_of_pointer_to_malloced`, `allocate_aligned`, and `free_aligned` are never used
+src/binary_io.rs:3:12: warning: struct `BinaryIo` is never constructed
+src/binary_io.rs:6:15: warning: associated items `TEXT_MODE`, `BINARY_MODE`, `set_mode`, `ensure_mode`, `normalize_mode`, and `fail_to_set_mode` are never used
+src/c32isprint.rs:1:12: warning: struct `C32Isprint` is never constructed
+src/c32isprint.rs:4:12: warning: associated function `is_print` is never used
+src/c_strcasecmp.rs:9:12: warning: struct `CStrcasecmp` is never constructed
+src/c_strcasecmp.rs:21:12: warning: associated functions `compare` and `eq_ignore_case` are never used
+src/cat.rs:107:12: warning: associated function `next_line_num` is never used
+src/close_stream.rs:3:12: warning: struct `CloseStream` is never constructed
+src/close_stream.rs:6:12: warning: associated function `close` is never used
+src/closeout.rs:6:8: warning: struct `CloseoutState` is never constructed
+src/closeout.rs:15:4: warning: function `should_ignore_error` is never used
+src/closeout.rs:19:4: warning: function `report_write_error` is never used
+src/closeout.rs:26:12: warning: struct `Closeout` is never constructed
+src/closeout.rs:29:12: warning: associated functions `close_stdout_set_file_name`, `close_stdout_set_ignore_epipe`, and `close_stdout` are never used
+src/copy_file_range.rs:4:12: warning: struct `CopyFileRange` is never constructed
+src/copy_file_range.rs:7:12: warning: associated function `copy_file_range` is never used
+src/exitfail.rs:3:8: warning: static `EXIT_FAILURE` is never used
+src/exitfail.rs:5:12: warning: struct `Exitfail` is never constructed
+src/exitfail.rs:8:12: warning: associated functions `get` and `set` are never used
+src/exitfail.rs:17:8: warning: function `exit_failure` is never used
+src/exitfail.rs:21:8: warning: function `set_exit_failure` is never used
+src/fadvise.rs:4:12: warning: struct `Fadvise` is never constructed
+src/fadvise.rs:7:12: warning: associated functions `advise_fd` and `advise_file` are never used
+src/fclose.rs:4:12: warning: struct `Fclose` is never constructed
+src/fclose.rs:7:12: warning: associated functions `nothrow` and `rpl_fclose` are never used
+src/fcntl.rs:4:11: warning: constant `F_DUPFD` is never used
+src/fcntl.rs:6:11: warning: constant `F_GETFD` is never used
+src/fcntl.rs:8:11: warning: constant `F_SETFD` is never used
+src/fcntl.rs:12:11: warning: constant `F_SETFL` is never used
+src/fcntl.rs:14:11: warning: constant `FD_CLOEXEC` is never used
+src/fcntl.rs:18:11: warning: constant `SEEK_SET` is never used
+src/fcntl.rs:22:11: warning: constant `SEEK_END` is never used
+src/fcntl.rs:24:12: warning: struct `Fcntl` is never constructed
+src/fcntl.rs:84:12: warning: associated functions `dupfd`, `getfd`, `setfd`, `getfl`, `setfl`, and `set_cloexec` are never used
+src/fflush.rs:3:12: warning: struct `Fflush` is never constructed
+src/fflush.rs:6:12: warning: struct `SeekOptimizationState` is never constructed
+src/fflush.rs:12:12: warning: struct `FlushState` is never constructed
+src/fflush.rs:20:12: warning: multiple associated functions are never used
+src/fpurge.rs:3:12: warning: struct `Fpurge` is never constructed
+src/fpurge.rs:6:12: warning: associated function `fpurge` is never used
+src/fseeko.rs:5:12: warning: struct `Fseeko` is never constructed
+src/fseeko.rs:8:12: warning: associated functions `seek`, `seek_from_start`, `seek_from_current`, and `seek_from_end` are never used
+src/full_write.rs:3:12: warning: struct `FullWrite` is never constructed
+src/full_write.rs:6:12: warning: associated function `write_all_or_count` is never used
+src/hard_locale.rs:1:12: warning: struct `HardLocale` is never constructed
+src/hard_locale.rs:4:12: warning: associated function `is_hard` is never used
+src/hard_locale.rs:42:4: warning: function `category_name` is never used
+src/ialloc.rs:1:12: warning: struct `Ialloc` is never constructed
+src/ialloc.rs:4:12: warning: associated functions `fits_size`, `byte_len`, `allocate_bytes`, `resize_bytes`, `duplicate_bytes`, and `duplicate_with_nul` are never used
+src/localcharset.rs:3:12: warning: struct `Localcharset` is never constructed
+src/localcharset.rs:6:12: warning: struct `TableEntry` is never constructed
+src/localcharset.rs:11:7: warning: constant `ALIAS_TABLE` is never used
+src/localcharset.rs:46:7: warning: constant `LOCALE_TABLE` is never used
+src/localcharset.rs:58:12: warning: multiple associated functions are never used
+src/mbrtoc32.rs:2:12: warning: struct `Mbrtoc32` is never constructed
+src/mbrtoc32.rs:5:8: warning: struct `DecodeState` is never constructed
+src/mbrtoc32.rs:20:10: warning: enum `Mbrtoc32Result` is never used
+src/mbrtoc32.rs:28:12: warning: associated functions `mbrtoc_32`, `decode_state_from_bytes`, `store_state`, `decode_one_utf8`, and `is_continuation` are never used
+src/mbrtoc32.rs:272:6: warning: enum `Utf8Decode` is never used
+src/mbszero.rs:1:12: warning: struct `Mbszero` is never constructed
+src/mbszero.rs:4:12: warning: associated functions `reset`, `take_reset`, and `initial_state` are never used
+src/progname.rs:4:8: warning: static `PROGRAM_NAME` is never used
+src/progname.rs:6:12: warning: struct `Progname` is never constructed
+src/progname.rs:9:12: warning: associated function `set_program_name` is never used
+src/propername_lite.rs:4:12: warning: struct `PropernameLite` is never constructed
+src/propername_lite.rs:7:12: warning: associated function `proper_name` is never used
+src/quotearg.rs:8:7: warning: constant `INT_BITS` is never used
+src/quotearg.rs:9:7: warning: constant `QUOTE_BITMAP_WORDS` is never used
+src/quotearg.rs:11:7: warning: constant `FLAG_ELIDE_NULL_BYTES` is never used
+src/quotearg.rs:12:7: warning: constant `FLAG_ELIDE_OUTER_QUOTES` is never used
+src/quotearg.rs:13:7: warning: constant `FLAG_SPLIT_TRIGRAPHS` is never used
+src/quotearg.rs:16:10: warning: enum `QuotingStyle` is never used
+src/quotearg.rs:31:12: warning: struct `QuotingOptions` is never constructed
+src/quotearg.rs:52:8: warning: struct `Slot` is never constructed
+src/quotearg.rs:57:8: warning: struct `SharedState` is never constructed
+src/quotearg.rs:75:4: warning: function `nth_bit` is never used
+src/quotearg.rs:80:4: warning: function `bitmap_get` is never used
+src/quotearg.rs:85:4: warning: function `bitmap_set` is never used
+src/quotearg.rs:94:4: warning: function `options_or_default` is never used
+src/quotearg.rs:100:4: warning: function `bytes_up_to_nul` is never used
+src/quotearg.rs:107:4: warning: function `display_string` is never used
+src/quotearg.rs:111:12: warning: struct `Quotearg` is never constructed
+src/quotearg.rs:117:12: warning: multiple associated items are never used
+src/safe_read.rs:4:12: warning: struct `SafeRead` is never constructed
+src/safe_read.rs:7:12: warning: associated function `read_some` is never used
+src/safe_write.rs:3:12: warning: struct `SafeWrite` is never constructed
+src/safe_write.rs:6:12: warning: associated function `write_some` is never used
+src/setlocale_null.rs:3:12: warning: struct `SetlocaleNull` is never constructed
+src/setlocale_null.rs:6:12: warning: associated functions `r_with_lock`, `r`, and `setlocale_null` are never used
+src/setlocale_null.rs:29:4: warning: function `current_locale_for_category` is never used
+src/setlocale_null.rs:55:4: warning: function `locale_env_var_name` is never used
+src/setlocale_null_unlocked.rs:1:12: warning: struct `SetlocaleNullUnlocked` is never constructed
+src/setlocale_null_unlocked.rs:4:12: warning: associated function `query` is never used
+src/setlocale_null_unlocked.rs:24:4: warning: function `read_nonempty_env` is never used
+src/setlocale_null_unlocked.rs:28:4: warning: function `category_env_var` is never used
+src/stdbit.rs:1:12: warning: struct `Stdbit` is never constructed
+src/stdbit.rs:5:12: warning: multiple associated functions are never used
+src/stdc_leading_zeros.rs:1:12: warning: struct `StdcLeadingZeros` is never constructed
+src/stdc_leading_zeros.rs:5:12: warning: associated functions `u8`, `u16`, `u32`, `u64`, `u128`, and `usize` are never used
+src/version.rs:1:12: warning: struct `Version` is never constructed
+src/version.rs:4:15: warning: associated items `VALUE` and `as_str` are never used
+src/version_etc.rs:5:12: warning: struct `VersionEtc` is never constructed
+src/version_etc.rs:8:15: warning: multiple associated items are never used
+src/version_etc_fsf.rs:6:12: warning: struct `VersionEtcFsf` is never constructed
+src/version_etc_fsf.rs:9:12: warning: associated functions `write`, `write_with_version`, `write_current_version`, and `emit_bug_reporting_address` are never used
+src/xalignalloc.rs:4:12: warning: struct `Xalignalloc` is never constructed
+src/xalignalloc.rs:7:12: warning: associated function `allocate` is never used
+src/xalloc_die.rs:1:12: warning: struct `XallocDie` is never constructed
+src/xalloc_die.rs:4:12: warning: associated functions `fail` and `xalloc_die` are never used
+src/xbinary_io.rs:3:12: warning: struct `XbinaryIo` is never constructed
+src/xbinary_io.rs:6:12: warning: associated functions `set_mode_or_fail` and `fail_to_set_mode` are never used
+src/xmalloc.rs:3:12: warning: struct `Xmalloc` is never constructed
+src/xmalloc.rs:6:12: warning: multiple associated functions are never used
+src/cat.rs:389:21: warning: using `clone` on type `CatOptions` which implements the `Copy` trait: help: try removing the `clone` call: `options`
+src/cat.rs:429:29: warning: using `clone` on type `CatOptions` which implements the `Copy` trait: help: try removing the `clone` call: `options`
+src/cat.rs:488:9: warning: match can be simplified with `.unwrap_or_default()`: help: replace it with: `Self::fd_would_exhaust_input(0).unwrap_or_default()`
+src/cat.rs:496:9: warning: match can be simplified with `.unwrap_or_default()`: help: replace it with: `Self::fd_would_exhaust_input(input.as_raw_fd()).unwrap_or_default()`
+src/fflush.rs:76:21: warning: this can be `std::io::Error::other(_)`
+src/mbrtoc32.rs:10:1: warning: this `impl` can be derived
+src/quotearg.rs:66:9: warning: field assignment outside of initializer for an instance created with Default::default()
+src/quotearg.rs:528:21: warning: this `if` statement can be collapsed
+src/quotearg.rs:728:9: warning: redundant redefinition of a binding `flags`
+src/quotearg.rs:936:24: error: this `min`/`max` combination leads to constant result
+src/version_etc.rs:26:9: warning: using `write!()` with a format string that ends in a single newline
+src/xmalloc.rs:140:21: warning: `usize::MAX` is never smaller than `isize::MAX as usize` and has therefore no effect: help: try: `isize::MAX as usize`
+src/xmalloc.rs:145:21: warning: `usize::MAX` is never smaller than `isize::MAX as usize` and has therefore no effect: help: try: `isize::MAX as usize`
+warning: `cat-rust` (bin "cat-rust") generated 133 warnings (124 duplicates)
+error: could not compile `cat-rust` (bin "cat-rust") due to 1 previous error; 133 warnings emitted
+warning: build failed, waiting for other jobs to finish...
+warning: `cat-rust` (bin "cat-rust" test) generated 133 warnings (9 duplicates)
+error: could not compile `cat-rust` (bin "cat-rust" test) due to 1 previous error; 133 warnings emitted

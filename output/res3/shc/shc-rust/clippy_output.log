@@ -1,0 +1,21 @@
+warning: `/home/jfeng/.cargo/config` is deprecated in favor of `config.toml`
+  |
+  = help: if you need to support cargo 1.38 or earlier, you can symlink `config` to `config.toml`
+warning: `/home/jfeng/.cargo/config` is deprecated in favor of `config.toml`
+  |
+  = help: if you need to support cargo 1.38 or earlier, you can symlink `config` to `config.toml`
+src/shc.rs:992:9: warning: unreachable statement: unreachable statement
+src/shc.rs:229:5: warning: type `shc::ParsedArg` is more private than the item `shc::Shc::parse_an_arg`: method `shc::Shc::parse_an_arg` is reachable at visibility `pub(crate)`
+src/shc.rs:64:5: warning: field `rtc` is never read
+src/shc.rs:758:12: warning: method `dump_array` is never used
+src/shc.rs:1091:4: warning: function `split_shell_like` is never used
+src/shc.rs:745:9: warning: using `write!()` with a format string that ends in a single newline
+src/shc.rs:747:9: warning: using `write!()` with a format string that ends in a single newline
+src/shc.rs:860:9: warning: using `write!()` with a format string that ends in a single newline
+src/shc.rs:861:9: warning: using `write!()` with a format string that ends in a single newline
+src/shc.rs:912:9: warning: using `write!()` with a format string that ends in a single newline
+src/shc.rs:913:9: warning: using `write!()` with a format string that ends in a single newline
+src/shc.rs:913:44: warning: literal with an empty format string
+warning: `shc-rust` (bin "shc-rust" test) generated 12 warnings (run `cargo clippy --fix --bin "shc-rust" -p shc-rust --tests -- ` to apply 7 suggestions)
+warning: `shc-rust` (bin "shc-rust") generated 12 warnings (12 duplicates)
+    Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.02s

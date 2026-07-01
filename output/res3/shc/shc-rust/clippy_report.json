@@ -1,0 +1,30 @@
+{
+  "project": "shc-rust",
+  "path": "/data1/jfeng/tcode_win/output/res3/shc/shc-rust",
+  "timestamp": "2026-06-19T21:36:50+08:00",
+  "summary": {
+    "total_issues": 15,
+    "clippy_warnings": 14,
+    "clippy_errors": 0,
+    "rustfmt_files_needing_format": 1,
+    "tool_errors": 0
+  },
+  "commands": {
+    "clippy": "cargo clippy --workspace --all-targets --message-format short",
+    "rustfmt": "cargo fmt --all -- --check"
+  },
+  "status": {
+    "clippy_exit_code": 0,
+    "rustfmt_exit_code": 1,
+    "clippy_failed": 0,
+    "rustfmt_failed": 0
+  },
+  "artifacts": {
+    "clippy_log": "/data1/jfeng/tcode_win/output/res3/shc/shc-rust/clippy_output.log",
+    "rustfmt_log": "/data1/jfeng/tcode_win/output/res3/shc/shc-rust/rustfmt_output.log"
+  },
+  "clippy_by_category": {"other":11,"unused":3},
+  "clippy_details": [{"file":"src/shc.rs","line":992,"lint":"","message":"unreachable statement: unreachable statement"},{"file":"src/shc.rs","line":229,"lint":"","message":"type `shc::ParsedArg` is more private than the item `shc::Shc::parse_an_arg`: method `shc::Shc::parse_an_arg` is reachable at visibility `pub(crate)`"},{"file":"src/shc.rs","line":64,"lint":"","message":"field `rtc` is never read"},{"file":"src/shc.rs","line":758,"lint":"","message":"method `dump_array` is never used"},{"file":"src/shc.rs","line":1091,"lint":"","message":"function `split_shell_like` is never used"},{"file":"src/shc.rs","line":745,"lint":"","message":"using `write!()` with a format string that ends in a single newline"},{"file":"src/shc.rs","line":747,"lint":"","message":"using `write!()` with a format string that ends in a single newline"},{"file":"src/shc.rs","line":860,"lint":"","message":"using `write!()` with a format string that ends in a single newline"},{"file":"src/shc.rs","line":861,"lint":"","message":"using `write!()` with a format string that ends in a single newline"},{"file":"src/shc.rs","line":912,"lint":"","message":"using `write!()` with a format string that ends in a single newline"},{"file":"src/shc.rs","line":913,"lint":"","message":"using `write!()` with a format string that ends in a single newline"},{"file":"src/shc.rs","line":913,"lint":"","message":"literal with an empty format string"},{"file":"","line":0,"lint":"","message":"`shc-rust` (bin \"shc-rust\" test) generated 12 warnings (run `cargo clippy --fix --bin \"shc-rust\" -p shc-rust --tests -- ` to apply 7 suggestions)"},{"file":"","line":0,"lint":"","message":"`shc-rust` (bin \"shc-rust\") generated 12 warnings (12 duplicates)"}],
+  "clippy_error_details": [],
+  "rustfmt_details": [{"file":"src/shc.rs","line":245},{"file":"src/shc.rs","line":255},{"file":"src/shc.rs","line":259},{"file":"src/shc.rs","line":482},{"file":"src/shc.rs","line":554},{"file":"src/shc.rs","line":607},{"file":"src/shc.rs","line":673},{"file":"src/shc.rs","line":858},{"file":"src/shc.rs","line":911},{"file":"src/shc.rs","line":919},{"file":"src/shc.rs","line":944},{"file":"src/shc.rs","line":968},{"file":"src/shc.rs","line":975}]
+}

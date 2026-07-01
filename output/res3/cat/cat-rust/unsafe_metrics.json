@@ -1,0 +1,20 @@
+{
+    "project": "/data1/jfeng/tcode_win/output/cat/cat-rust/",
+    "json_path": "/data1/jfeng/tcode_win/output/cat/cat-rust/unsafe_metrics.json",
+    "rust": {
+        "path": "/data1/jfeng/tcode_win/output/cat/cat-rust",
+        "unsafe_lines": 2,
+        "all_lines": 4162,
+        "unsafe_blocks": 2,
+        "unsafe_functions": 0,
+        "unsafe_rate": 0.0004805382027871216
+    },
+    "rust_WIP": {
+        "path": "/data1/jfeng/tcode_win/output/cat/cat-rust",
+        "unsafe_lines": 2,
+        "all_lines": 4162,
+        "unsafe_blocks": 2,
+        "unsafe_functions": 0,
+        "unsafe_rate": 0.0004805382027871216
+    }
+}

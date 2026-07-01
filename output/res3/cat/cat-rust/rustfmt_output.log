@@ -1,0 +1,373 @@
+warning: `/home/jfeng/.cargo/config` is deprecated in favor of `config.toml`
+  |
+  = help: if you need to support cargo 1.38 or earlier, you can symlink `config` to `config.toml`
+Diff in /data1/jfeng/tcode_win/output/res3/cat/cat-rust/src/c_strcasecmp.rs:19:
+     /// Comparison is performed on the UTF-8 bytes of the Rust strings, matching
+     /// the original byte-oriented C behavior rather than Unicode case folding.
+     pub fn compare(left: &str, right: &str) -> Ordering {
+[31m-
+(B[m         let mut left_bytes = left.as_bytes().iter().copied();
+         let mut right_bytes = right.as_bytes().iter().copied();
+ 
+Diff in /data1/jfeng/tcode_win/output/res3/cat/cat-rust/src/cat.rs:1:
+[32m+use std::fs::File;
+(B[m[32m+use std::io::{self, Read, Seek, Write};
+(B[m #[cfg(unix)]
+ use std::os::unix::fs::{FileTypeExt, MetadataExt};
+ #[cfg(unix)]
+Diff in /data1/jfeng/tcode_win/output/res3/cat/cat-rust/src/cat.rs:4:
+ use std::os::unix::io::AsRawFd;
+[31m-use std::fs::File;
+(B[m[31m-use std::io::{self, Read, Seek, Write};
+(B[m use std::path::{Path, PathBuf};
+ 
+ pub struct Cat;
+Diff in /data1/jfeng/tcode_win/output/res3/cat/cat-rust/src/cat.rs:79:
+             let _ = writeln!(out, "Concatenate FILE(s) to standard output.");
+             let _ = writeln!(out);
+             let _ = writeln!(out, "  -A, --show-all           equivalent to -vET");
+[31m-            let _ = writeln!(out, "  -b, --number-nonblank    number nonempty output lines, overrides -n");
+(B[m[32m+            let _ = writeln!(
+(B[m[32m+                out,
+(B[m[32m+                "  -b, --number-nonblank    number nonempty output lines, overrides -n"
+(B[m[32m+            );
+(B[m             let _ = writeln!(out, "  -e                       equivalent to -vE");
+[31m-            let _ = writeln!(out, "  -E, --show-ends          display $ at end of each line");
+(B[m[32m+            let _ = writeln!(
+(B[m[32m+                out,
+(B[m[32m+                "  -E, --show-ends          display $ at end of each line"
+(B[m[32m+            );
+(B[m             let _ = writeln!(out, "  -n, --number             number all output lines");
+[31m-            let _ = writeln!(out, "  -s, --squeeze-blank      suppress repeated empty output lines");
+(B[m[32m+            let _ = writeln!(
+(B[m[32m+                out,
+(B[m[32m+                "  -s, --squeeze-blank      suppress repeated empty output lines"
+(B[m[32m+            );
+(B[m             let _ = writeln!(out, "  -t                       equivalent to -vT");
+[31m-            let _ = writeln!(out, "  -T, --show-tabs          display TAB characters as ^I");
+(B[m[32m+            let _ = writeln!(
+(B[m[32m+                out,
+(B[m[32m+                "  -T, --show-tabs          display TAB characters as ^I"
+(B[m[32m+            );
+(B[m             let _ = writeln!(out, "  -u                       (ignored)");
+[31m-            let _ = writeln!(out, "  -v, --show-nonprinting   use ^ and M- notation, except for LFD and TAB");
+(B[m[32m+            let _ = writeln!(
+(B[m[32m+                out,
+(B[m[32m+                "  -v, --show-nonprinting   use ^ and M- notation, except for LFD and TAB"
+(B[m[32m+            );
+(B[m             let _ = writeln!(out, "      --help     display this help and exit");
+             let _ = writeln!(out, "      --version  output version information and exit");
+             let _ = writeln!(out);
+Diff in /data1/jfeng/tcode_win/output/res3/cat/cat-rust/src/cat.rs:280:
+             || options.show_nonprinting
+             || options.show_tabs
+         {
+[31m-            Self::cat(input, output, options, line_state, line_start, blank_run, pending_cr)
+(B[m[32m+            Self::cat(
+(B[m[32m+                input, output, options, line_state, line_start, blank_run, pending_cr,
+(B[m[32m+            )
+(B[m         } else {
+             Self::simple_cat(input, output, 128 * 1024)
+         }
+Diff in /data1/jfeng/tcode_win/output/res3/cat/cat-rust/src/cat.rs:407:
+                         let same_as_stdout = match Self::same_file_as_stdout(&path) {
+                             Ok(v) => v,
+                             Err(err) => {
+[31m-                                let _ = writeln!(io::stderr().lock(), "cat: {}: {err}", path.display());
+(B[m[32m+                                let _ =
+(B[m[32m+                                    writeln!(io::stderr().lock(), "cat: {}: {err}", path.display());
+(B[m                                 ok = false;
+                                 continue;
+                             }
+Diff in /data1/jfeng/tcode_win/output/res3/cat/cat-rust/src/cat.rs:436:
+                                 ok &= result;
+                             }
+                             Err(err) => {
+[31m-                                let _ = writeln!(io::stderr().lock(), "cat: {}: {err}", path.display());
+(B[m[32m+                                let _ =
+(B[m[32m+                                    writeln!(io::stderr().lock(), "cat: {}: {err}", path.display());
+(B[m                                 ok = false;
+                             }
+                         }
+Diff in /data1/jfeng/tcode_win/output/res3/cat/cat-rust/src/cat.rs:457:
+             ok = false;
+         }
+ 
+[31m-        if ok { 0 } else { 1 }
+(B[m[32m+        if ok {
+(B[m[32m+            0
+(B[m[32m+        } else {
+(B[m[32m+            1
+(B[m[32m+        }
+(B[m     }
+ 
+     pub fn proper_name() -> &'static str {
+Diff in /data1/jfeng/tcode_win/output/res3/cat/cat-rust/src/fflush.rs:49:
+         saved
+     }
+ 
+[31m-    pub fn restore_seek_optimization(
+(B[m[31m-        state: &mut FlushState,
+(B[m[31m-        saved_flags: SeekOptimizationState,
+(B[m[31m-    ) {
+(B[m[32m+    pub fn restore_seek_optimization(state: &mut FlushState, saved_flags: SeekOptimizationState) {
+(B[m         state.seek_optimization = saved_flags;
+     }
+ 
+Diff in /data1/jfeng/tcode_win/output/res3/cat/cat-rust/src/fseeko.rs:81:
+         Self::seek(stream, state, offset, SeekFrom::Current(0))
+     }
+ 
+[31m-    pub fn seek_from_end<S>(
+(B[m[31m-        stream: &mut S,
+(B[m[31m-        state: &mut FlushState,
+(B[m[31m-        offset: i64,
+(B[m[31m-    ) -> io::Result<u64>
+(B[m[32m+    pub fn seek_from_end<S>(stream: &mut S, state: &mut FlushState, offset: i64) -> io::Result<u64>
+(B[m     where
+         S: Seek,
+     {
+Diff in /data1/jfeng/tcode_win/output/res3/cat/cat-rust/src/hard_locale.rs:6:
+             .ok()
+             .filter(|value| !value.is_empty())
+             .or_else(|| {
+[31m-                category_name(category).and_then(|name| {
+(B[m[31m-                    std::env::var(name)
+(B[m[31m-                        .ok()
+(B[m[31m-                        .filter(|value| !value.is_empty())
+(B[m[31m-                })
+(B[m[32m+                category_name(category)
+(B[m[32m+                    .and_then(|name| std::env::var(name).ok().filter(|value| !value.is_empty()))
+(B[m             })
+[31m-            .or_else(|| {
+(B[m[31m-                std::env::var("LANG")
+(B[m[31m-                    .ok()
+(B[m[31m-                    .filter(|value| !value.is_empty())
+(B[m[31m-            })
+(B[m[32m+            .or_else(|| std::env::var("LANG").ok().filter(|value| !value.is_empty()))
+(B[m             .unwrap_or_else(|| "C".to_string());
+ 
+         if locale != "C" && locale != "POSIX" {
+Diff in /data1/jfeng/tcode_win/output/res3/cat/cat-rust/src/main.rs:1:
+[31m-mod c_ctype;
+(B[m mod alignalloc;
+ mod binary_io;
+ mod c32isprint;
+Diff in /data1/jfeng/tcode_win/output/res3/cat/cat-rust/src/main.rs:5:
+[32m+mod c_ctype;
+(B[m mod c_strcasecmp;
+ mod cat;
+ mod close_stream;
+Diff in /data1/jfeng/tcode_win/output/res3/cat/cat-rust/src/quotearg.rs:2:
+ use crate::c_ctype::CCtype;
+ use crate::c_strcasecmp::CStrcasecmp;
+ use crate::localcharset::Localcharset;
+[31m-use std::cmp;
+(B[m use std::cell::RefCell;
+[32m+use std::cmp;
+(B[m 
+ const INT_BITS: usize = u32::BITS as usize;
+ const QUOTE_BITMAP_WORDS: usize = 256 / INT_BITS;
+Diff in /data1/jfeng/tcode_win/output/res3/cat/cat-rust/src/quotearg.rs:92:
+ }
+ 
+ fn options_or_default(options: Option<&QuotingOptions>) -> QuotingOptions {
+[31m-    options.cloned().unwrap_or_else(|| {
+(B[m[31m-        QUOTEARG_STATE.with(|state| state.borrow().default_options.clone())
+(B[m[31m-    })
+(B[m[32m+    options
+(B[m[32m+        .cloned()
+(B[m[32m+        .unwrap_or_else(|| QUOTEARG_STATE.with(|state| state.borrow().default_options.clone()))
+(B[m }
+ 
+ fn bytes_up_to_nul(input: &[u8]) -> &[u8] {
+Diff in /data1/jfeng/tcode_win/output/res3/cat/cat-rust/src/quotearg.rs:139:
+             bitmap_set(&mut options.quote_these_too, ch, enabled)
+         } else {
+             QUOTEARG_STATE.with(|state| {
+[31m-                bitmap_set(&mut state.borrow_mut().default_options.quote_these_too, ch, enabled)
+(B[m[32m+                bitmap_set(
+(B[m[32m+                    &mut state.borrow_mut().default_options.quote_these_too,
+(B[m[32m+                    ch,
+(B[m[32m+                    enabled,
+(B[m[32m+                )
+(B[m             })
+         }
+     }
+Diff in /data1/jfeng/tcode_win/output/res3/cat/cat-rust/src/quotearg.rs:229:
+             out.push(byte);
+         }
+ 
+[31m-        fn push_bytes(out: &mut Vec<u8>, bytes: &[u8], destination: &mut [u8], written: &mut usize) {
+(B[m[32m+        fn push_bytes(
+(B[m[32m+            out: &mut Vec<u8>,
+(B[m[32m+            bytes: &[u8],
+(B[m[32m+            destination: &mut [u8],
+(B[m[32m+            written: &mut usize,
+(B[m[32m+        ) {
+(B[m             for &b in bytes {
+                 push_byte(out, b, destination, written);
+             }
+Diff in /data1/jfeng/tcode_win/output/res3/cat/cat-rust/src/quotearg.rs:327:
+         }
+ 
+         let effective_input = arg;
+[31m-        let mut rendered = Vec::with_capacity(effective_input.len() + prefix.len() + quote_string.len() + 8);
+(B[m[32m+        let mut rendered =
+(B[m[32m+            Vec::with_capacity(effective_input.len() + prefix.len() + quote_string.len() + 8);
+(B[m         let mut written = 0usize;
+         push_bytes(&mut rendered, &prefix, destination, &mut written);
+ 
+Diff in /data1/jfeng/tcode_win/output/res3/cat/cat-rust/src/quotearg.rs:600:
+                         handled = true;
+                     }
+                 }
+[31m-                b'%' | b'+' | b',' | b'-' | b'.' | b'/' | b'0'..=b'9' | b':' | b'A'..=b'Z'
+(B[m[31m-                | b']' | b'_' | b'a'..=b'z' => {
+(B[m[32m+                b'%'
+(B[m[32m+                | b'+'
+(B[m[32m+                | b','
+(B[m[32m+                | b'-'
+(B[m[32m+                | b'.'
+(B[m[32m+                | b'/'
+(B[m[32m+                | b'0'..=b'9'
+(B[m[32m+                | b':'
+(B[m[32m+                | b'A'..=b'Z'
+(B[m[32m+                | b']'
+(B[m[32m+                | b'_'
+(B[m[32m+                | b'a'..=b'z' => {
+(B[m                     c_and_shell_quote_compat = true;
+                 }
+                 _ => {
+Diff in /data1/jfeng/tcode_win/output/res3/cat/cat-rust/src/quotearg.rs:608:
+                     if CCtype::is_print(c) {
+                         c_and_shell_quote_compat = true;
+                     } else if backslash_escapes {
+[31m-                        emit = vec![b'\\', b'0' + (c >> 6), b'0' + ((c >> 3) & 7), b'0' + (c & 7)];
+(B[m[32m+                        emit = vec![
+(B[m[32m+                            b'\\',
+(B[m[32m+                            b'0' + (c >> 6),
+(B[m[32m+                            b'0' + ((c >> 3) & 7),
+(B[m[32m+                            b'0' + (c & 7),
+(B[m[32m+                        ];
+(B[m                         escaping = true;
+                         handled = true;
+                     } else if !C32Isprint::is_print(c as u32) {
+Diff in /data1/jfeng/tcode_win/output/res3/cat/cat-rust/src/quotearg.rs:618:
+             }
+ 
+             let quoted_too = quote_map.is_some_and(|m| {
+[31m-                ((backslash_escapes && working_style != QuotingStyle::ShellAlways) || elide_outer_quotes)
+(B[m[32m+                ((backslash_escapes && working_style != QuotingStyle::ShellAlways)
+(B[m[32m+                    || elide_outer_quotes)
+(B[m                     && bitmap_get(m, c)
+             });
+ 
+Diff in /data1/jfeng/tcode_win/output/res3/cat/cat-rust/src/quotearg.rs:855:
+         Self::n_custom_mem(n, left_quote, right_quote, bytes_up_to_nul(arg))
+     }
+ 
+[31m-    pub fn n_custom_mem(
+(B[m[31m-        n: usize,
+(B[m[31m-        left_quote: &[u8],
+(B[m[31m-        right_quote: &[u8],
+(B[m[31m-        arg: &[u8],
+(B[m[31m-    ) -> String {
+(B[m[32m+    pub fn n_custom_mem(n: usize, left_quote: &[u8], right_quote: &[u8], arg: &[u8]) -> String {
+(B[m         let mut options = QUOTEARG_STATE.with(|state| state.borrow().default_options.clone());
+         Self::set_custom_quoting(
+             Some(&mut options),
+Diff in /data1/jfeng/tcode_win/output/res3/cat/cat-rust/src/safe_read.rs:11:
+             match reader.read(&mut buffer[..requested]) {
+                 Ok(count) => return Ok(count),
+                 Err(error) if error.kind() == io::ErrorKind::Interrupted => continue,
+[31m-                Err(error) if error.kind() == io::ErrorKind::InvalidInput && requested > i32::MAX as usize => {
+(B[m[32m+                Err(error)
+(B[m[32m+                    if error.kind() == io::ErrorKind::InvalidInput
+(B[m[32m+                        && requested > i32::MAX as usize =>
+(B[m[32m+                {
+(B[m                     requested = min(requested, i32::MAX as usize);
+                 }
+                 Err(error) => return Err(error),
+Diff in /data1/jfeng/tcode_win/output/res3/cat/cat-rust/src/version_etc.rs:46:
+             3 => writeln!(
+                 stream,
+                 "Written by {}, {}, and {}.",
+[31m-                authors[0],
+(B[m[31m-                authors[1],
+(B[m[31m-                authors[2]
+(B[m[32m+                authors[0], authors[1], authors[2]
+(B[m             )?,
+             4 => writeln!(
+                 stream,
+Diff in /data1/jfeng/tcode_win/output/res3/cat/cat-rust/src/version_etc.rs:55:
+                 "Written by {}, {}, {},\nand {}.",
+[31m-                authors[0],
+(B[m[31m-                authors[1],
+(B[m[31m-                authors[2],
+(B[m[31m-                authors[3]
+(B[m[32m+                authors[0], authors[1], authors[2], authors[3]
+(B[m             )?,
+             5 => writeln!(
+                 stream,
+Diff in /data1/jfeng/tcode_win/output/res3/cat/cat-rust/src/version_etc.rs:63:
+                 "Written by {}, {}, {},\n{}, and {}.",
+[31m-                authors[0],
+(B[m[31m-                authors[1],
+(B[m[31m-                authors[2],
+(B[m[31m-                authors[3],
+(B[m[31m-                authors[4]
+(B[m[32m+                authors[0], authors[1], authors[2], authors[3], authors[4]
+(B[m             )?,
+             6 => writeln!(
+                 stream,
+Diff in /data1/jfeng/tcode_win/output/res3/cat/cat-rust/src/version_etc.rs:72:
+                 "Written by {}, {}, {},\n{}, {}, and {}.",
+[31m-                authors[0],
+(B[m[31m-                authors[1],
+(B[m[31m-                authors[2],
+(B[m[31m-                authors[3],
+(B[m[31m-                authors[4],
+(B[m[31m-                authors[5]
+(B[m[32m+                authors[0], authors[1], authors[2], authors[3], authors[4], authors[5]
+(B[m             )?,
+             7 => writeln!(
+                 stream,
+Diff in /data1/jfeng/tcode_win/output/res3/cat/cat-rust/src/version_etc.rs:82:
+                 "Written by {}, {}, {},\n{}, {}, {}, and {}.",
+[31m-                authors[0],
+(B[m[31m-                authors[1],
+(B[m[31m-                authors[2],
+(B[m[31m-                authors[3],
+(B[m[31m-                authors[4],
+(B[m[31m-                authors[5],
+(B[m[31m-                authors[6]
+(B[m[32m+                authors[0], authors[1], authors[2], authors[3], authors[4], authors[5], authors[6]
+(B[m             )?,
+             8 => writeln!(
+                 stream,
+Diff in /data1/jfeng/tcode_win/output/res3/cat/cat-rust/src/version_etc_fsf.rs:34:
+         VersionEtc::write(stream, command_name, package, Version::as_str(), authors)
+     }
+ 
+[31m-    pub fn emit_bug_reporting_address<W: Write>(stream: &mut W, package_name: &str) -> io::Result<()> {
+(B[m[32m+    pub fn emit_bug_reporting_address<W: Write>(
+(B[m[32m+        stream: &mut W,
+(B[m[32m+        package_name: &str,
+(B[m[32m+    ) -> io::Result<()> {
+(B[m         VersionEtc::emit_bug_reporting_address(
+             stream,
+             package_name,
+Diff in /data1/jfeng/tcode_win/output/res3/cat/cat-rust/src/xmalloc.rs:55:
+         Self::realloc(buffer, total)
+     }
+ 
+[31m-    pub fn irealloc_array(
+(B[m[31m-        buffer: Option<Vec<u8>>,
+(B[m[31m-        count: isize,
+(B[m[31m-        element_size: isize,
+(B[m[31m-    ) -> Vec<u8> {
+(B[m[32m+    pub fn irealloc_array(buffer: Option<Vec<u8>>, count: isize, element_size: isize) -> Vec<u8> {
+(B[m         let count = Self::idx_to_usize(count);
+         let element_size = Self::idx_to_usize(element_size);
+         Self::realloc_array(buffer, count, element_size)

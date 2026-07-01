@@ -1,0 +1,29 @@
+warning: `/home/jfeng/.cargo/config` is deprecated in favor of `config.toml`
+  |
+  = help: if you need to support cargo 1.38 or earlier, you can symlink `config` to `config.toml`
+warning: `/home/jfeng/.cargo/config` is deprecated in favor of `config.toml`
+  |
+  = help: if you need to support cargo 1.38 or earlier, you can symlink `config` to `config.toml`
+    Checking which-rust v0.1.0 (/data1/jfeng/tcode_win/output/res3/which/which-rust)
+src/bash.rs:259:12: warning: associated function `sh_get_env_value` is never used
+src/getopt.rs:2:12: warning: struct `Getopt` is never constructed
+src/getopt.rs:16:6: warning: enum `Ordering` is never used
+src/getopt.rs:29:12: warning: multiple associated items are never used
+src/getopt1.rs:4:12: warning: struct `Getopt1` is never constructed
+src/getopt1.rs:9:12: warning: methods `getopt_long`, `getopt_long_only`, and `main` are never used
+src/shell.rs:1:12: warning: struct `Shell` is never constructed
+src/shell.rs:4:12: warning: associated function `get_home_dir` is never used
+src/tilde.rs:1:12: warning: struct `Tilde` is never constructed
+src/tilde.rs:4:12: warning: associated functions `find_prefix`, `find_suffix`, and `memory_error_and_abort` are never used
+src/which.rs:10:9: warning: field `len` is never read
+src/which.rs:69:12: warning: associated functions `alloc_buffer`, `resize_buffer`, `symlink_metadata`, and `var_os` are never used
+src/bash.rs:69:13: warning: unneeded `return` statement
+src/bash.rs:165:13: warning: unneeded `return` statement
+src/getopt.rs:22:1: warning: this `impl` can be derived
+src/getopt.rs:65:25: warning: the following explicit lifetimes could be elided: 'a
+src/which.rs:696:16: error: this boolean expression contains a logic bug: help: it would look like the following: `!found_something && !self.path_search(false, arg, &path_list)`
+warning: `which-rust` (bin "which-rust" test) generated 16 warnings (16 duplicates)
+error: could not compile `which-rust` (bin "which-rust" test) due to 1 previous error; 16 warnings emitted
+warning: build failed, waiting for other jobs to finish...
+warning: `which-rust` (bin "which-rust") generated 16 warnings
+error: could not compile `which-rust` (bin "which-rust") due to 1 previous error; 16 warnings emitted

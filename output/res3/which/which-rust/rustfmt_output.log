@@ -1,0 +1,213 @@
+warning: `/home/jfeng/.cargo/config` is deprecated in favor of `config.toml`
+  |
+  = help: if you need to support cargo 1.38 or earlier, you can symlink `config` to `config.toml`
+Diff in /data1/jfeng/tcode_win/output/res3/which/which-rust/src/bash.rs:188:
+         if start >= end || start >= string.len() {
+             return String::new();
+         }
+[31m-        string.get(start..end.min(string.len())).unwrap_or("").to_owned()
+(B[m[32m+        string
+(B[m[32m+            .get(start..end.min(string.len()))
+(B[m[32m+            .unwrap_or("")
+(B[m[32m+            .to_owned()
+(B[m     }
+ 
+     pub fn extract_colon_unit(string: &str, p_index: &mut usize) -> Option<String> {
+Diff in /data1/jfeng/tcode_win/output/res3/which/which-rust/src/bash.rs:220:
+         }
+     }
+ 
+[31m-    pub fn get_next_path_element(path_list: &str, path_index_pointer: &mut usize) -> Option<String> {
+(B[m[32m+    pub fn get_next_path_element(
+(B[m[32m+        path_list: &str,
+(B[m[32m+        path_index_pointer: &mut usize,
+(B[m[32m+    ) -> Option<String> {
+(B[m         let path = Self::extract_colon_unit(path_list, path_index_pointer)?;
+         if path.is_empty() {
+             Some(".".to_string())
+Diff in /data1/jfeng/tcode_win/output/res3/which/which-rust/src/getopt.rs:150:
+                     }
+                 }
+ 
+[31m-                let skip = if argv[self.optind].starts_with("--") { 2 } else { 1 };
+(B[m[32m+                let skip = if argv[self.optind].starts_with("--") {
+(B[m[32m+                    2
+(B[m[32m+                } else {
+(B[m[32m+                    1
+(B[m[32m+                };
+(B[m                 self.nextchar = skip;
+             }
+ 
+Diff in /data1/jfeng/tcode_win/output/res3/which/which-rust/src/getopt.rs:232:
+         }
+     }
+ 
+[31m-    pub fn getopt(
+(B[m[31m-        &mut self,
+(B[m[31m-        argv: &mut [String],
+(B[m[31m-        optstring: &str,
+(B[m[31m-    ) -> Option<Result<char, char>> {
+(B[m[32m+    pub fn getopt(&mut self, argv: &mut [String], optstring: &str) -> Option<Result<char, char>> {
+(B[m         self.internal(argv, optstring, false)
+     }
+ 
+Diff in /data1/jfeng/tcode_win/output/res3/which/which-rust/src/which.rs:1:
+[31m-use crate::bash::{absolute_program, get_next_path_element, make_full_pathname, sh_get_home_dir, Bash, FileStatus};
+(B[m[32m+use crate::bash::{
+(B[m[32m+    absolute_program, get_next_path_element, make_full_pathname, sh_get_home_dir, Bash, FileStatus,
+(B[m[32m+};
+(B[m use std::env;
+ use std::fs::Metadata;
+ use std::io::{self, BufRead, Write};
+Diff in /data1/jfeng/tcode_win/output/res3/which/which-rust/src/which.rs:85:
+ 
+     pub fn print_usage(&self, out: &mut dyn Write) -> io::Result<()> {
+         writeln!(out, "Usage: {} [options] [--] COMMAND [...]", self.progname)?;
+[31m-        writeln!(out, "Write the full path of COMMAND(s) to standard output.\n")?;
+(B[m[31m-        writeln!(out, "  --version, -[vV] Print version and exit successfully.")?;
+(B[m[31m-        writeln!(out, "  --help,          Print this help and exit successfully.")?;
+(B[m[31m-        writeln!(out, "  --skip-dot       Skip directories in PATH that start with a dot.")?;
+(B[m[31m-        writeln!(out, "  --skip-tilde     Skip directories in PATH that start with a tilde.")?;
+(B[m[31m-        writeln!(out, "  --show-dot       Don't expand a dot to current directory in output.")?;
+(B[m[31m-        writeln!(out, "  --show-tilde     Output a tilde for HOME directory for non-root.")?;
+(B[m[31m-        writeln!(out, "  --tty-only       Stop processing options on the right if not on tty.")?;
+(B[m[31m-        writeln!(out, "  --all, -a        Print all matches in PATH, not just the first")?;
+(B[m[32m+        writeln!(
+(B[m[32m+            out,
+(B[m[32m+            "Write the full path of COMMAND(s) to standard output.\n"
+(B[m[32m+        )?;
+(B[m[32m+        writeln!(
+(B[m[32m+            out,
+(B[m[32m+            "  --version, -[vV] Print version and exit successfully."
+(B[m[32m+        )?;
+(B[m[32m+        writeln!(
+(B[m[32m+            out,
+(B[m[32m+            "  --help,          Print this help and exit successfully."
+(B[m[32m+        )?;
+(B[m[32m+        writeln!(
+(B[m[32m+            out,
+(B[m[32m+            "  --skip-dot       Skip directories in PATH that start with a dot."
+(B[m[32m+        )?;
+(B[m[32m+        writeln!(
+(B[m[32m+            out,
+(B[m[32m+            "  --skip-tilde     Skip directories in PATH that start with a tilde."
+(B[m[32m+        )?;
+(B[m[32m+        writeln!(
+(B[m[32m+            out,
+(B[m[32m+            "  --show-dot       Don't expand a dot to current directory in output."
+(B[m[32m+        )?;
+(B[m[32m+        writeln!(
+(B[m[32m+            out,
+(B[m[32m+            "  --show-tilde     Output a tilde for HOME directory for non-root."
+(B[m[32m+        )?;
+(B[m[32m+        writeln!(
+(B[m[32m+            out,
+(B[m[32m+            "  --tty-only       Stop processing options on the right if not on tty."
+(B[m[32m+        )?;
+(B[m[32m+        writeln!(
+(B[m[32m+            out,
+(B[m[32m+            "  --all, -a        Print all matches in PATH, not just the first"
+(B[m[32m+        )?;
+(B[m         writeln!(out, "  --read-alias, -i Read list of aliases from stdin.")?;
+[31m-        writeln!(out, "  --skip-alias     Ignore option --read-alias; don't read stdin.")?;
+(B[m[32m+        writeln!(
+(B[m[32m+            out,
+(B[m[32m+            "  --skip-alias     Ignore option --read-alias; don't read stdin."
+(B[m[32m+        )?;
+(B[m         writeln!(out, "  --read-functions Read shell functions from stdin.")?;
+[31m-        writeln!(out, "  --skip-functions Ignore option --read-functions; don't read stdin.\n")?;
+(B[m         writeln!(
+             out,
+[32m+            "  --skip-functions Ignore option --read-functions; don't read stdin.\n"
+(B[m[32m+        )?;
+(B[m[32m+        writeln!(
+(B[m[32m+            out,
+(B[m             "Recommended use is to write the output of (alias; declare -f) to standard"
+         )?;
+         writeln!(
+Diff in /data1/jfeng/tcode_win/output/res3/which/which-rust/src/which.rs:131:
+             out,
+             "This program is free software; your freedom to use, change"
+         )?;
+[31m-        writeln!(
+(B[m[31m-            out,
+(B[m[31m-            "and distribute this program is protected by the GPL."
+(B[m[31m-        )?;
+(B[m[32m+        writeln!(out, "and distribute this program is protected by the GPL.")?;
+(B[m         Ok(())
+     }
+ 
+Diff in /data1/jfeng/tcode_win/output/res3/which/which-rust/src/which.rs:152:
+             .ok()
+             .and_then(|p| p.into_os_string().into_string().ok())
+             .or_else(|| env::var("PWD").ok())
+[31m-            .ok_or_else(|| io::Error::new(io::ErrorKind::NotFound, "Can't get current working directory"))?;
+(B[m[32m+            .ok_or_else(|| {
+(B[m[32m+                io::Error::new(
+(B[m[32m+                    io::ErrorKind::NotFound,
+(B[m[32m+                    "Can't get current working directory",
+(B[m[32m+                )
+(B[m[32m+            })?;
+(B[m 
+         if !cwd.starts_with('/') {
+             return Err(io::Error::new(
+Diff in /data1/jfeng/tcode_win/output/res3/which/which-rust/src/which.rs:249:
+             self.abs_path = None;
+         } else {
+             self.absolute_path_given = true;
+[31m-            let abs_path = if !name.starts_with('.') && !name.starts_with('/') && !name.starts_with('~') {
+(B[m[31m-                format!("./{name}")
+(B[m[31m-            } else {
+(B[m[31m-                name.to_string()
+(B[m[31m-            };
+(B[m[32m+            let abs_path =
+(B[m[32m+                if !name.starts_with('.') && !name.starts_with('/') && !name.starts_with('~') {
+(B[m[32m+                    format!("./{name}")
+(B[m[32m+                } else {
+(B[m[32m+                    name.to_string()
+(B[m[32m+                };
+(B[m 
+             if let Some((dir, file)) = abs_path.rsplit_once('/') {
+                 self.abs_path = Some(dir.to_string());
+Diff in /data1/jfeng/tcode_win/output/res3/which/which-rust/src/which.rs:358:
+                     let _ = write!(out, "\t");
+                 }
+ 
+[31m-                if !(self.skip_tilde && in_home)
+(B[m[31m-                    && self.show_dot
+(B[m[31m-                    && self.found_path_starts_with_dot
+(B[m[32m+                if !(self.skip_tilde && in_home) && self.show_dot && self.found_path_starts_with_dot
+(B[m                 {
+                     if let Ok(cwd) = self.get_current_working_directory() {
+                         if cleaned.starts_with(&cwd) {
+Diff in /data1/jfeng/tcode_win/output/res3/which/which-rust/src/which.rs:426:
+         }
+         let alias_name = &p[..name_len];
+ 
+[31m-        let matching_index = argv.iter().position(|arg| arg.as_deref() == Some(alias_name));
+(B[m[32m+        let matching_index = argv
+(B[m[32m+            .iter()
+(B[m[32m+            .position(|arg| arg.as_deref() == Some(alias_name));
+(B[m         let Some(index) = matching_index else {
+             return;
+         };
+Diff in /data1/jfeng/tcode_win/output/res3/which/which-rust/src/which.rs:574:
+                         }
+                         _ => {
+                             let mut err = io::stderr().lock();
+[31m-                            let _ = writeln!(err, "{}: unrecognized option '-{}'", self.progname, ch);
+(B[m[32m+                            let _ =
+(B[m[32m+                                writeln!(err, "{}: unrecognized option '-{}'", self.progname, ch);
+(B[m                             let _ = self.print_usage(&mut err);
+                             return 1;
+                         }
+Diff in /data1/jfeng/tcode_win/output/res3/which/which-rust/src/which.rs:690:
+             let mut found_something = false;
+ 
+             if self.read_functions && !arg.contains('/') {
+[31m-                found_something = self.func_search(false, arg, &self.functions, function_start_type);
+(B[m[32m+                found_something =
+(B[m[32m+                    self.func_search(false, arg, &self.functions, function_start_type);
+(B[m             }
+ 
+             if (self.show_all || !found_something)

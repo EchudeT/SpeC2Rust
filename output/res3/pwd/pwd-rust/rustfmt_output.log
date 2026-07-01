@@ -1,0 +1,298 @@
+warning: `/home/jfeng/.cargo/config` is deprecated in favor of `config.toml`
+  |
+  = help: if you need to support cargo 1.38 or earlier, you can symlink `config` to `config.toml`
+Diff in /data1/jfeng/tcode_win/output/res3/pwd/pwd-rust/src/c_strcasecmp.rs:25:
+     /// This is useful when callers need C-string-like byte semantics without
+     /// requiring UTF-8 input.
+     pub fn compare_bytes(left: &[u8], right: &[u8]) -> i32 {
+[31m-
+(B[m         let mut i = 0usize;
+ 
+         loop {
+Diff in /data1/jfeng/tcode_win/output/res3/pwd/pwd-rust/src/hard_locale.rs:52:
+     }
+ 
+     fn normalize_locale_name(locale: &str) -> String {
+[31m-        locale.split_once('@').map_or(locale, |(base, _)| base).to_string()
+(B[m[32m+        locale
+(B[m[32m+            .split_once('@')
+(B[m[32m+            .map_or(locale, |(base, _)| base)
+(B[m[32m+            .to_string()
+(B[m     }
+ 
+     #[cfg(target_os = "android")]
+Diff in /data1/jfeng/tcode_win/output/res3/pwd/pwd-rust/src/main.rs:1:
+[31m-mod c_ctype;
+(B[m[31m-mod same_inode;
+(B[m mod c32isprint;
+[32m+mod c_ctype;
+(B[m mod c_strcasecmp;
+ mod close_stream;
+ mod closeout;
+Diff in /data1/jfeng/tcode_win/output/res3/pwd/pwd-rust/src/main.rs:18:
+ mod pwd;
+ mod quotearg;
+ mod root_dev_ino;
+[32m+mod same_inode;
+(B[m mod setlocale_null;
+ mod setlocale_null_unlocked;
+ mod version;
+Diff in /data1/jfeng/tcode_win/output/res3/pwd/pwd-rust/src/pwd.rs:6:
+ use std::ffi::OsString;
+ use std::fs;
+ use std::io::{self, Write};
+[31m-use std::path::{Path, PathBuf};
+(B[m #[cfg(unix)]
+ use std::os::unix::fs::MetadataExt;
+[32m+use std::path::{Path, PathBuf};
+(B[m 
+ pub struct Pwd;
+ 
+Diff in /data1/jfeng/tcode_win/output/res3/pwd/pwd-rust/src/pwd.rs:24:
+ }
+ 
+ impl Pwd {
+[31m-
+(B[m     pub fn print_usage(success: bool) {
+         let program = env::args()
+             .next()
+Diff in /data1/jfeng/tcode_win/output/res3/pwd/pwd-rust/src/pwd.rs:39:
+         if success {
+             let mut out = io::stdout().lock();
+             let _ = writeln!(out, "Usage: {} [OPTION]...", program);
+[31m-            let _ = writeln!(out, "Print the full filename of the current working directory.");
+(B[m[32m+            let _ = writeln!(
+(B[m[32m+                out,
+(B[m[32m+                "Print the full filename of the current working directory."
+(B[m[32m+            );
+(B[m             let _ = writeln!(out);
+             let _ = writeln!(
+                 out,
+Diff in /data1/jfeng/tcode_win/output/res3/pwd/pwd-rust/src/pwd.rs:56:
+         }
+     }
+ 
+[31m-
+(B[m     pub fn file_name_prepend(file_name: &mut FileName, segment: &str) {
+         if segment.is_empty() {
+             if file_name.value.is_empty() {
+Diff in /data1/jfeng/tcode_win/output/res3/pwd/pwd-rust/src/pwd.rs:112:
+         let entries = fs::read_dir(&parent).map_err(|e| {
+             io::Error::new(
+                 e.kind(),
+[31m-                format!("reading directory {}: {}", Self::nth_parent(parent_height), e),
+(B[m[32m+                format!(
+(B[m[32m+                    "reading directory {}: {}",
+(B[m[32m+                    Self::nth_parent(parent_height),
+(B[m[32m+                    e
+(B[m[32m+                ),
+(B[m             )
+         })?;
+ 
+Diff in /data1/jfeng/tcode_win/output/res3/pwd/pwd-rust/src/pwd.rs:235:
+     }
+ 
+     pub fn main(args: &[String]) -> io::Result<String> {
+[31m-        let argv0 = args
+(B[m[31m-            .first()
+(B[m[31m-            .cloned()
+(B[m[31m-            .unwrap_or_else(|| "pwd".to_string());
+(B[m[32m+        let argv0 = args.first().cloned().unwrap_or_else(|| "pwd".to_string());
+(B[m         Progname::set_program_name(&argv0);
+         Closeout::close_stdout_set_ignore_epipe(true);
+ 
+Diff in /data1/jfeng/tcode_win/output/res3/pwd/pwd-rust/src/quotearg.rs:145:
+     out
+ }
+ 
+[31m-fn shell_escape_style(bytes: &[u8], always_outer: bool, quote_bits: &[u32; QUOTE_BITMAP_WORDS]) -> String {
+(B[m[32m+fn shell_escape_style(
+(B[m[32m+    bytes: &[u8],
+(B[m[32m+    always_outer: bool,
+(B[m[32m+    quote_bits: &[u32; QUOTE_BITMAP_WORDS],
+(B[m[32m+) -> String {
+(B[m     let needs_outer = always_outer || shell_needs_quotes(bytes, quote_bits);
+     if !needs_outer {
+         let mut out = String::with_capacity(bytes.len());
+Diff in /data1/jfeng/tcode_win/output/res3/pwd/pwd-rust/src/quotearg.rs:238:
+             }
+             out
+         }
+[31m-        QuotingStyle::C | QuotingStyle::CMaybe | QuotingStyle::Locale | QuotingStyle::Clocale | QuotingStyle::Custom => {
+(B[m[31m-            let (left, right) = quote_pair_for_style(options.style, options).expect("quoted style requires delimiters");
+(B[m[32m+        QuotingStyle::C
+(B[m[32m+        | QuotingStyle::CMaybe
+(B[m[32m+        | QuotingStyle::Locale
+(B[m[32m+        | QuotingStyle::Clocale
+(B[m[32m+        | QuotingStyle::Custom => {
+(B[m[32m+            let (left, right) = quote_pair_for_style(options.style, options)
+(B[m[32m+                .expect("quoted style requires delimiters");
+(B[m             let mut out = String::new();
+             let elide_outer = options.flags & QA_ELIDE_OUTER_QUOTES != 0;
+             if !elide_outer {
+Diff in /data1/jfeng/tcode_win/output/res3/pwd/pwd-rust/src/quotearg.rs:259:
+                 }
+ 
+                 match b {
+[31m-                    b if b.is_ascii() && ascii_printable(b) && b != b'\\' => out.push(char::from(b)),
+(B[m[32m+                    b if b.is_ascii() && ascii_printable(b) && b != b'\\' => {
+(B[m[32m+                        out.push(char::from(b))
+(B[m[32m+                    }
+(B[m                     b => escape_c(b, &mut out),
+                 }
+             }
+Diff in /data1/jfeng/tcode_win/output/res3/pwd/pwd-rust/src/quotearg.rs:281:
+         }
+         QuotingStyle::ShellAlways => shell_single_quote(&filtered),
+         QuotingStyle::ShellEscape => shell_escape_style(&filtered, false, &options.quote_these_too),
+[31m-        QuotingStyle::ShellEscapeAlways => shell_escape_style(&filtered, true, &options.quote_these_too),
+(B[m[32m+        QuotingStyle::ShellEscapeAlways => {
+(B[m[32m+            shell_escape_style(&filtered, true, &options.quote_these_too)
+(B[m[32m+        }
+(B[m     }
+ }
+ 
+Diff in /data1/jfeng/tcode_win/output/res3/pwd/pwd-rust/src/quotearg.rs:319:
+ 
+     pub fn set_char_quoting(options: Option<&mut QuotingOptions>, c: char, enabled: bool) -> bool {
+         let byte = c as u32;
+[31m-        let byte = u8::try_from(byte).expect("set_char_quoting only supports byte-sized characters");
+(B[m[32m+        let byte =
+(B[m[32m+            u8::try_from(byte).expect("set_char_quoting only supports byte-sized characters");
+(B[m         match options {
+             Some(o) => set_quote_bit(&mut o.quote_these_too, byte, enabled),
+[31m-            None => {
+(B[m[31m-                DEFAULT_OPTIONS.with(|o| {
+(B[m[31m-                    let mut guard = o.borrow_mut();
+(B[m[31m-                    set_quote_bit(&mut guard.quote_these_too, byte, enabled)
+(B[m[31m-                })
+(B[m[31m-            }
+(B[m[32m+            None => DEFAULT_OPTIONS.with(|o| {
+(B[m[32m+                let mut guard = o.borrow_mut();
+(B[m[32m+                set_quote_bit(&mut guard.quote_these_too, byte, enabled)
+(B[m[32m+            }),
+(B[m         }
+     }
+ 
+Diff in /data1/jfeng/tcode_win/output/res3/pwd/pwd-rust/src/quotearg.rs:338:
+                 o.flags = flags;
+                 old
+             }
+[31m-            None => {
+(B[m[31m-                DEFAULT_OPTIONS.with(|o| {
+(B[m[31m-                    let mut guard = o.borrow_mut();
+(B[m[31m-                    let old = guard.flags;
+(B[m[31m-                    guard.flags = flags;
+(B[m[31m-                    old
+(B[m[31m-                })
+(B[m[31m-            }
+(B[m[32m+            None => DEFAULT_OPTIONS.with(|o| {
+(B[m[32m+                let mut guard = o.borrow_mut();
+(B[m[32m+                let old = guard.flags;
+(B[m[32m+                guard.flags = flags;
+(B[m[32m+                old
+(B[m[32m+            }),
+(B[m         }
+     }
+ 
+Diff in /data1/jfeng/tcode_win/output/res3/pwd/pwd-rust/src/quotearg.rs:378:
+     }
+ 
+     pub fn quoting_options_from_style(style: QuotingStyle) -> QuotingOptions {
+[31m-        assert!(style != QuotingStyle::Custom, "custom style requires explicit delimiters");
+(B[m[32m+        assert!(
+(B[m[32m+            style != QuotingStyle::Custom,
+(B[m[32m+            "custom style requires explicit delimiters"
+(B[m[32m+        );
+(B[m         QuotingOptions {
+             style,
+             ..QuotingOptions::default()
+Diff in /data1/jfeng/tcode_win/output/res3/pwd/pwd-rust/src/quotearg.rs:388:
+     pub fn gettext_quote(msgid: &str, style: QuotingStyle) -> &'static str {
+         let charset = Localcharset::locale_charset();
+         if charset.eq_ignore_ascii_case("UTF-8") {
+[31m-            return if msgid.starts_with('`') { "\u{2018}" } else { "\u{2019}" };
+(B[m[32m+            return if msgid.starts_with('`') {
+(B[m[32m+                "\u{2018}"
+(B[m[32m+            } else {
+(B[m[32m+                "\u{2019}"
+(B[m[32m+            };
+(B[m         }
+         if charset.eq_ignore_ascii_case("GB18030") {
+[31m-            return if msgid.starts_with('`') { "\u{00A1}\u{00AE}" } else { "\u{00A1}\u{00AF}" };
+(B[m[32m+            return if msgid.starts_with('`') {
+(B[m[32m+                "\u{00A1}\u{00AE}"
+(B[m[32m+            } else {
+(B[m[32m+                "\u{00A1}\u{00AF}"
+(B[m[32m+            };
+(B[m         }
+         if style == QuotingStyle::Clocale {
+             "\""
+Diff in /data1/jfeng/tcode_win/output/res3/pwd/pwd-rust/src/quotearg.rs:446:
+         )
+     }
+ 
+[31m-    pub fn alloc_mem(arg: &[u8], size: Option<&mut usize>, options: Option<&QuotingOptions>) -> String {
+(B[m[32m+    pub fn alloc_mem(
+(B[m[32m+        arg: &[u8],
+(B[m[32m+        size: Option<&mut usize>,
+(B[m[32m+        options: Option<&QuotingOptions>,
+(B[m[32m+    ) -> String {
+(B[m         let owned_default;
+         let opts = match options {
+             Some(o) => o,
+Diff in /data1/jfeng/tcode_win/output/res3/pwd/pwd-rust/src/quotearg.rs:455:
+                 &owned_default
+             }
+         };
+[31m-        let rendered = quote_bytes(arg, opts, size.is_none() || (opts.flags & QA_ELIDE_NULL_BYTES != 0));
+(B[m[32m+        let rendered = quote_bytes(
+(B[m[32m+            arg,
+(B[m[32m+            opts,
+(B[m[32m+            size.is_none() || (opts.flags & QA_ELIDE_NULL_BYTES != 0),
+(B[m[32m+        );
+(B[m         if let Some(out_size) = size {
+             *out_size = rendered.len();
+         }
+Diff in /data1/jfeng/tcode_win/output/res3/pwd/pwd-rust/src/quotearg.rs:534:
+         Self::n_options(n, arg.as_bytes(), &options)
+     }
+ 
+[31m-    pub fn n_custom(
+(B[m[31m-        &self,
+(B[m[31m-        n: usize,
+(B[m[31m-        left_quote: &str,
+(B[m[31m-        right_quote: &str,
+(B[m[31m-        arg: &str,
+(B[m[31m-    ) -> String {
+(B[m[32m+    pub fn n_custom(&self, n: usize, left_quote: &str, right_quote: &str, arg: &str) -> String {
+(B[m         self.n_custom_mem(n, left_quote, right_quote, arg.as_bytes())
+     }
+ 
+Diff in /data1/jfeng/tcode_win/output/res3/pwd/pwd-rust/src/version_etc.rs:10:
+         version: &str,
+         authors: &[&str],
+     ) -> io::Result<()> {
+[31m-        Self::emit_with_count(stream, command_name, package, version, authors, authors.len())
+(B[m[32m+        Self::emit_with_count(
+(B[m[32m+            stream,
+(B[m[32m+            command_name,
+(B[m[32m+            package,
+(B[m[32m+            version,
+(B[m[32m+            authors,
+(B[m[32m+            authors.len(),
+(B[m[32m+        )
+(B[m     }
+ 
+     pub fn emit_from_array<W: Write>(
+Diff in /data1/jfeng/tcode_win/output/res3/pwd/pwd-rust/src/xmalloc.rs:144:
+             }
+         }
+ 
+[31m-        let final_nbytes = n.checked_mul(element_size).unwrap_or_else(|| XallocDie::fail());
+(B[m[32m+        let final_nbytes = n
+(B[m[32m+            .checked_mul(element_size)
+(B[m[32m+            .unwrap_or_else(|| XallocDie::fail());
+(B[m         let result = Self::realloc(buffer, final_nbytes);
+         *count = n;
+         result

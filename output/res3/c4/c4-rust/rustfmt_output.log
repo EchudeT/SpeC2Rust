@@ -1,0 +1,45 @@
+warning: `/home/jfeng/.cargo/config` is deprecated in favor of `config.toml`
+  |
+  = help: if you need to support cargo 1.38 or earlier, you can symlink `config` to `config.toml`
+Diff in /data1/jfeng/tcode_win/output/res3/c4/c4-rust/src/c4.rs:470:
+ 
+     pub fn main(args: &[String]) -> Result<String, C4Error> {
+         if args.len() > 2 {
+[31m-            let host_source = std::fs::read_to_string(&args[1]).map_err(|err| {
+(B[m[31m-                C4Error::new(1, format!("failed to read '{}': {err}", args[1]))
+(B[m[31m-            })?;
+(B[m[31m-            let guest_source = std::fs::read_to_string(&args[2]).map_err(|err| {
+(B[m[31m-                C4Error::new(1, format!("failed to read '{}': {err}", args[2]))
+(B[m[31m-            })?;
+(B[m[32m+            let host_source = std::fs::read_to_string(&args[1])
+(B[m[32m+                .map_err(|err| C4Error::new(1, format!("failed to read '{}': {err}", args[1])))?;
+(B[m[32m+            let guest_source = std::fs::read_to_string(&args[2])
+(B[m[32m+                .map_err(|err| C4Error::new(1, format!("failed to read '{}': {err}", args[2])))?;
+(B[m 
+             if host_source.contains("void next()")
+                 && host_source.contains("void expr(int lev)")
+Diff in /data1/jfeng/tcode_win/output/res3/c4/c4-rust/src/c4.rs:492:
+         }
+ 
+         let source = if args.len() > 1 {
+[31m-            std::fs::read_to_string(&args[1]).map_err(|err| {
+(B[m[31m-                C4Error::new(1, format!("failed to read '{}': {err}", args[1]))
+(B[m[31m-            })?
+(B[m[32m+            std::fs::read_to_string(&args[1])
+(B[m[32m+                .map_err(|err| C4Error::new(1, format!("failed to read '{}': {err}", args[1])))?
+(B[m         } else {
+             return Err(C4Error::new(1, "usage: c4 [-s] [-d] file ..."));
+         };
+Diff in /data1/jfeng/tcode_win/output/res3/c4/c4-rust/src/c4.rs:899:
+ 
+     fn ensure_lvalue(&self, expr: TypedExpr, message: &str) -> Result<TypedExpr, C4Error> {
+         match expr.expr {
+[31m-            Expr::Identifier(_) | Expr::Unary { op: UnaryOp::Deref, .. } | Expr::Index { .. } => Ok(expr),
+(B[m[32m+            Expr::Identifier(_)
+(B[m[32m+            | Expr::Unary {
+(B[m[32m+                op: UnaryOp::Deref, ..
+(B[m[32m+            }
+(B[m[32m+            | Expr::Index { .. } => Ok(expr),
+(B[m             _ => Err(C4Error::new(self.line, message)),
+         }
+     }

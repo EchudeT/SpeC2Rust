@@ -1,0 +1,26 @@
+warning: `/home/jfeng/.cargo/config` is deprecated in favor of `config.toml`
+  |
+  = help: if you need to support cargo 1.38 or earlier, you can symlink `config` to `config.toml`
+Diff in /data1/jfeng/tcode_win/output/res3/sds/sds-rust/src/sds.rs:708:
+             &mut failed,
+             "sdscatfmt() seems working in the base case",
+             x.len == 60
+[31m-                && &x.buf[..60]
+(B[m[31m-                    == b"--Hello Hi! World -9223372036854775808,9223372036854775807--",
+(B[m[32m+                && &x.buf[..60] == b"--Hello Hi! World -9223372036854775808,9223372036854775807--",
+(B[m         );
+ 
+         x = Sds::new("--");
+Diff in /data1/jfeng/tcode_win/output/res3/sds/sds-rust/src/sds.rs:868:
+         );
+ 
+         Self::test_report(testnum - failed, failed);
+[31m-        if failed == 0 { 0 } else { 1 }
+(B[m[32m+        if failed == 0 {
+(B[m[32m+            0
+(B[m[32m+        } else {
+(B[m[32m+            1
+(B[m[32m+        }
+(B[m     }
+ 
+     pub fn main() -> i32 {

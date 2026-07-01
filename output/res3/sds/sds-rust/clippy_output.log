@@ -1,0 +1,13 @@
+warning: `/home/jfeng/.cargo/config` is deprecated in favor of `config.toml`
+  |
+  = help: if you need to support cargo 1.38 or earlier, you can symlink `config` to `config.toml`
+warning: `/home/jfeng/.cargo/config` is deprecated in favor of `config.toml`
+  |
+  = help: if you need to support cargo 1.38 or earlier, you can symlink `config` to `config.toml`
+src/sds.rs:2:22: warning: unused import: `Write`
+src/sds.rs:11:7: warning: constant `SDS_LLSTR_SIZE` is never used
+src/sds.rs:23:8: warning: method `code` is never used
+src/sds.rs:127:12: warning: multiple associated items are never used
+warning: `sds-rust` (bin "sds-rust" test) generated 4 warnings
+warning: `sds-rust` (bin "sds-rust") generated 4 warnings (4 duplicates)
+    Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.02s

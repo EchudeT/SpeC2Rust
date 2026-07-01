@@ -1,0 +1,191 @@
+warning: `/home/jfeng/.cargo/config` is deprecated in favor of `config.toml`
+  |
+  = help: if you need to support cargo 1.38 or earlier, you can symlink `config` to `config.toml`
+Diff in /data1/jfeng/tcode_win/output/res3/shc/shc-rust/src/shc.rs:245:
+             return Err("unknown option".to_string());
+         }
+ 
+[31m-        let need_value = |i: usize, name: &str, args: &[String], me: &Shc| -> Result<String, String> {
+(B[m[31m-            args.get(i + 1)
+(B[m[31m-                .cloned()
+(B[m[31m-                .ok_or_else(|| {
+(B[m[32m+        let need_value =
+(B[m[32m+            |i: usize, name: &str, args: &[String], me: &Shc| -> Result<String, String> {
+(B[m[32m+                args.get(i + 1).cloned().ok_or_else(|| {
+(B[m                     eprintln!("{} parse: Missing parameter", me.my_name);
+                     format!("missing parameter for {}", name)
+                 })
+Diff in /data1/jfeng/tcode_win/output/res3/shc/shc-rust/src/shc.rs:255:
+[31m-        };
+(B[m[32m+            };
+(B[m 
+         match arg.as_str() {
+             "-e" => {
+Diff in /data1/jfeng/tcode_win/output/res3/shc/shc-rust/src/shc.rs:259:
+                 let optarg = need_value(index, "-e", args, self)?;
+                 let exp = Self::parse_expiration(&optarg).ok_or_else(|| {
+[31m-                    eprintln!(
+(B[m[31m-                        "{} parse(-e {}): Not a valid value",
+(B[m[31m-                        self.my_name, optarg
+(B[m[31m-                    );
+(B[m[32m+                    eprintln!("{} parse(-e {}): Not a valid value", self.my_name, optarg);
+(B[m                     "invalid expiration".to_string()
+                 })?;
+                 self.date = exp.to_string();
+Diff in /data1/jfeng/tcode_win/output/res3/shc/shc-rust/src/shc.rs:482:
+                 let idx = self.arc4.indx as usize;
+                 let tmp = self.arc4.stte[idx];
+                 self.arc4.kndx = self.arc4.kndx.wrapping_add(tmp);
+[31m-                self.arc4.kndx = self
+(B[m[31m-                    .arc4
+(B[m[31m-                    .kndx
+(B[m[31m-                    .wrapping_add(data[base + (idx % len)]);
+(B[m[32m+                self.arc4.kndx = self.arc4.kndx.wrapping_add(data[base + (idx % len)]);
+(B[m                 let k = self.arc4.kndx as usize;
+                 self.arc4.stte[idx] = self.arc4.stte[k];
+                 self.arc4.stte[k] = tmp;
+Diff in /data1/jfeng/tcode_win/output/res3/shc/shc-rust/src/shc.rs:554:
+         let first = text.lines().next().unwrap_or(text);
+         let line = first.to_string();
+ 
+[31m-        let rest = line
+(B[m[31m-            .trim_start()
+(B[m[31m-            .strip_prefix("#!")
+(B[m[31m-            .ok_or_else(|| {
+(B[m[31m-                eprintln!("{}: invalid first line in script: {}", self.my_name, line);
+(B[m[31m-                "invalid first line".to_string()
+(B[m[31m-            })?;
+(B[m[32m+        let rest = line.trim_start().strip_prefix("#!").ok_or_else(|| {
+(B[m[32m+            eprintln!("{}: invalid first line in script: {}", self.my_name, line);
+(B[m[32m+            "invalid first line".to_string()
+(B[m[32m+        })?;
+(B[m 
+         let mut parts = rest.split_whitespace();
+         let shll = parts.next().ok_or_else(|| {
+Diff in /data1/jfeng/tcode_win/output/res3/shc/shc-rust/src/shc.rs:607:
+         }
+ 
+         if self.verbose > 0 {
+[31m-            eprintln!("{} [-i]={}", self.my_name, self.inlo.as_deref().unwrap_or(""));
+(B[m[31m-            eprintln!("{} [-x]={}", self.my_name, self.xecc.as_deref().unwrap_or(""));
+(B[m[31m-            eprintln!("{} [-l]={}", self.my_name, self.lsto.as_deref().unwrap_or(""));
+(B[m[32m+            eprintln!(
+(B[m[32m+                "{} [-i]={}",
+(B[m[32m+                self.my_name,
+(B[m[32m+                self.inlo.as_deref().unwrap_or("")
+(B[m[32m+            );
+(B[m[32m+            eprintln!(
+(B[m[32m+                "{} [-x]={}",
+(B[m[32m+                self.my_name,
+(B[m[32m+                self.xecc.as_deref().unwrap_or("")
+(B[m[32m+            );
+(B[m[32m+            eprintln!(
+(B[m[32m+                "{} [-l]={}",
+(B[m[32m+                self.my_name,
+(B[m[32m+                self.lsto.as_deref().unwrap_or("")
+(B[m[32m+            );
+(B[m         }
+ 
+         self.opts = opt;
+Diff in /data1/jfeng/tcode_win/output/res3/shc/shc-rust/src/shc.rs:673:
+         char::from_u32(self.rand_mod(1 << 8) as u32).unwrap_or('\0')
+     }
+ 
+[31m-    pub fn noise(&mut self, ptr: &mut Vec<u8>, min: usize, xtra: usize, string_only: bool) -> usize {
+(B[m[32m+    pub fn noise(
+(B[m[32m+        &mut self,
+(B[m[32m+        ptr: &mut Vec<u8>,
+(B[m[32m+        min: usize,
+(B[m[32m+        xtra: usize,
+(B[m[32m+        string_only: bool,
+(B[m[32m+    ) -> usize {
+(B[m         let mut total = min;
+         if xtra != 0 {
+             total += self.rand_mod(xtra);
+Diff in /data1/jfeng/tcode_win/output/res3/shc/shc-rust/src/shc.rs:858:
+         })?;
+ 
+         write!(o, "#if 0\n").map_err(|e| e.to_string())?;
+[31m-        write!(o, "\t{} {}, {}\n", self.my_name, self.version, self.subject).map_err(|e| e.to_string())?;
+(B[m[32m+        write!(o, "\t{} {}, {}\n", self.my_name, self.version, self.subject)
+(B[m[32m+            .map_err(|e| e.to_string())?;
+(B[m         write!(
+             o,
+             "\t{} {} {} {}\n\n\t",
+Diff in /data1/jfeng/tcode_win/output/res3/shc/shc-rust/src/shc.rs:911:
+ 
+         write!(o, "/* End of data[] */;\n").map_err(|e| e.to_string())?;
+         write!(o, "#define      {}\t{}\n", "hide", 1 << 12).map_err(|e| e.to_string())?;
+[31m-        write!(o, "{}", self.setuid_line.replacen("%d", &self.setuid_flag.to_string(), 1))
+(B[m[31m-            .map_err(|e| e.to_string())?;
+(B[m         write!(
+             o,
+             "{}",
+Diff in /data1/jfeng/tcode_win/output/res3/shc/shc-rust/src/shc.rs:919:
+[32m+            self.setuid_line
+(B[m[32m+                .replacen("%d", &self.setuid_flag.to_string(), 1)
+(B[m[32m+        )
+(B[m[32m+        .map_err(|e| e.to_string())?;
+(B[m[32m+        write!(
+(B[m[32m+            o,
+(B[m[32m+            "{}",
+(B[m             self.debugexec_line
+                 .replacen("%d", &self.debugexec_flag.to_string(), 1)
+         )
+Diff in /data1/jfeng/tcode_win/output/res3/shc/shc-rust/src/shc.rs:944:
+         write!(
+             o,
+             "{}",
+[31m-            self.mmap2_line.replacen("%d", &self.mmap2_flag.to_string(), 1)
+(B[m[32m+            self.mmap2_line
+(B[m[32m+                .replacen("%d", &self.mmap2_flag.to_string(), 1)
+(B[m         )
+         .map_err(|e| e.to_string())?;
+ 
+Diff in /data1/jfeng/tcode_win/output/res3/shc/shc-rust/src/shc.rs:968:
+         writeln!(o, "    pid_t pid;").map_err(|e| e.to_string())?;
+         writeln!(o, "    int status = 0;").map_err(|e| e.to_string())?;
+         writeln!(o, "    fd = mkstemp(tmpl);").map_err(|e| e.to_string())?;
+[31m-        writeln!(o, "    if (fd < 0) {{ perror(\"mkstemp\"); return 1; }}").map_err(|e| e.to_string())?;
+(B[m[32m+        writeln!(o, "    if (fd < 0) {{ perror(\"mkstemp\"); return 1; }}")
+(B[m[32m+            .map_err(|e| e.to_string())?;
+(B[m         writeln!(o, "    len = strlen(embedded_script);").map_err(|e| e.to_string())?;
+         writeln!(o, "    if (write(fd, embedded_script, len) != (ssize_t)len) {{ perror(\"write\"); close(fd); unlink(tmpl); return 1; }}").map_err(|e| e.to_string())?;
+         writeln!(o, "    close(fd);").map_err(|e| e.to_string())?;
+Diff in /data1/jfeng/tcode_win/output/res3/shc/shc-rust/src/shc.rs:975:
+         writeln!(o, "    chmod(tmpl, 0700);").map_err(|e| e.to_string())?;
+[31m-        writeln!(o, "    nargv = calloc((size_t)argc + 2, sizeof(char*));").map_err(|e| e.to_string())?;
+(B[m[31m-        writeln!(o, "    if (!nargv) {{ perror(\"calloc\"); unlink(tmpl); return 1; }}").map_err(|e| e.to_string())?;
+(B[m[32m+        writeln!(o, "    nargv = calloc((size_t)argc + 2, sizeof(char*));")
+(B[m[32m+            .map_err(|e| e.to_string())?;
+(B[m[32m+        writeln!(
+(B[m[32m+            o,
+(B[m[32m+            "    if (!nargv) {{ perror(\"calloc\"); unlink(tmpl); return 1; }}"
+(B[m[32m+        )
+(B[m[32m+        .map_err(|e| e.to_string())?;
+(B[m         writeln!(o, "    nargv[0] = (char*)shell_path;").map_err(|e| e.to_string())?;
+         writeln!(o, "    nargv[1] = tmpl;").map_err(|e| e.to_string())?;
+[31m-        writeln!(o, "    for (i = 1; i < argc; ++i) nargv[i + 1] = argv[i];").map_err(|e| e.to_string())?;
+(B[m[32m+        writeln!(o, "    for (i = 1; i < argc; ++i) nargv[i + 1] = argv[i];")
+(B[m[32m+            .map_err(|e| e.to_string())?;
+(B[m         writeln!(o, "    pid = fork();").map_err(|e| e.to_string())?;
+[31m-        writeln!(o, "    if (pid < 0) {{ perror(\"fork\"); unlink(tmpl); return 1; }}").map_err(|e| e.to_string())?;
+(B[m[31m-        writeln!(o, "    if (pid == 0) {{ execv(shell_path, nargv); perror(shell_path); _exit(127); }}").map_err(|e| e.to_string())?;
+(B[m[32m+        writeln!(
+(B[m[32m+            o,
+(B[m[32m+            "    if (pid < 0) {{ perror(\"fork\"); unlink(tmpl); return 1; }}"
+(B[m[32m+        )
+(B[m[32m+        .map_err(|e| e.to_string())?;
+(B[m[32m+        writeln!(
+(B[m[32m+            o,
+(B[m[32m+            "    if (pid == 0) {{ execv(shell_path, nargv); perror(shell_path); _exit(127); }}"
+(B[m[32m+        )
+(B[m[32m+        .map_err(|e| e.to_string())?;
+(B[m         writeln!(o, "    if (waitpid(pid, &status, 0) < 0) {{ perror(\"waitpid\"); unlink(tmpl); return 1; }}").map_err(|e| e.to_string())?;
+         writeln!(o, "    unlink(tmpl);").map_err(|e| e.to_string())?;
+[31m-        writeln!(o, "    if (WIFEXITED(status)) return WEXITSTATUS(status);").map_err(|e| e.to_string())?;
+(B[m[32m+        writeln!(o, "    if (WIFEXITED(status)) return WEXITSTATUS(status);")
+(B[m[32m+            .map_err(|e| e.to_string())?;
+(B[m         writeln!(o, "    return 1;").map_err(|e| e.to_string())?;
+         writeln!(o, "}}").map_err(|e| e.to_string())?;
+ 

@@ -1,0 +1,863 @@
+{
+  "schema_version": 1,
+  "project": {
+    "name": "sds",
+    "kind": "library",
+    "build_system": "Makefile"
+  },
+  "files": [
+    {
+      "path": ".gitignore",
+      "role": "support"
+    },
+    {
+      "path": "Changelog",
+      "role": "support"
+    },
+    {
+      "path": "LICENSE",
+      "role": "support"
+    },
+    {
+      "path": "Makefile",
+      "role": "support"
+    },
+    {
+      "path": "README.md",
+      "role": "support"
+    },
+    {
+      "path": "base_test.sh",
+      "role": "test"
+    },
+    {
+      "path": "c_build.sh",
+      "role": "support"
+    },
+    {
+      "path": "compile_commands.json",
+      "role": "support"
+    },
+    {
+      "path": "run_test.sh",
+      "role": "test"
+    },
+    {
+      "path": "sds",
+      "role": "support"
+    },
+    {
+      "path": "sds-test",
+      "role": "test"
+    },
+    {
+      "path": "sds.c",
+      "role": "source"
+    },
+    {
+      "path": "sds.h",
+      "role": "header"
+    },
+    {
+      "path": "sdsalloc.h",
+      "role": "header"
+    },
+    {
+      "path": "targets.txt",
+      "role": "support"
+    },
+    {
+      "path": "test/_lib.bash",
+      "role": "test"
+    },
+    {
+      "path": "test/sds-01-create-and-length.sh",
+      "role": "test"
+    },
+    {
+      "path": "test/sds-02-create-with-specified-length.sh",
+      "role": "test"
+    },
+    {
+      "path": "test/sds-03-string-concatenation.sh",
+      "role": "test"
+    },
+    {
+      "path": "test/sds-04-sdscpy-against-longer.sh",
+      "role": "test"
+    },
+    {
+      "path": "test/sds-05-sdscpy-against-shorter.sh",
+      "role": "test"
+    },
+    {
+      "path": "test/sds-06-sdscatprintf-base.sh",
+      "role": "test"
+    },
+    {
+      "path": "test/sds-07-sdscatprintf-null-char.sh",
+      "role": "test"
+    },
+    {
+      "path": "test/sds-08-sdscatprintf-large.sh",
+      "role": "test"
+    },
+    {
+      "path": "test/sds-09-sdscatfmt-base.sh",
+      "role": "test"
+    },
+    {
+      "path": "test/sds-10-sdscatfmt-unsigned.sh",
+      "role": "test"
+    },
+    {
+      "path": "test/sds-11-sdstrim-all-match.sh",
+      "role": "test"
+    },
+    {
+      "path": "test/sds-12-sdstrim-single-remains.sh",
+      "role": "test"
+    },
+    {
+      "path": "test/sds-13-sdstrim-trims.sh",
+      "role": "test"
+    },
+    {
+      "path": "test/sds-14-sdsrange-1-1.sh",
+      "role": "test"
+    },
+    {
+      "path": "test/sds-15-sdsrange-1-neg1.sh",
+      "role": "test"
+    },
+    {
+      "path": "test/sds-16-sdsrange-neg2-neg1.sh",
+      "role": "test"
+    },
+    {
+      "path": "test/sds-17-sdsrange-2-1.sh",
+      "role": "test"
+    },
+    {
+      "path": "test/sds-18-sdsrange-1-100.sh",
+      "role": "test"
+    },
+    {
+      "path": "test/sds-19-sdsrange-100-100.sh",
+      "role": "test"
+    },
+    {
+      "path": "test/sds-20-sdscmp-greater.sh",
+      "role": "test"
+    },
+    {
+      "path": "test/sds-21-sdscmp-equal.sh",
+      "role": "test"
+    },
+    {
+      "path": "test/sds-22-sdscmp-less.sh",
+      "role": "test"
+    },
+    {
+      "path": "test/sds-23-sdscatrepr.sh",
+      "role": "test"
+    },
+    {
+      "path": "test/sds-24-sdsmakeroomfor.sh",
+      "role": "test"
+    },
+    {
+      "path": "testhelp.h",
+      "role": "header"
+    }
+  ],
+  "module_units": [
+    {
+      "name": "main_root",
+      "category": "main",
+      "files": [
+        "sds.c"
+      ]
+    }
+  ],
+  "generation_boundary": {
+    "allowed_rust_files": [
+      "Cargo.toml",
+      "src/lib.rs",
+      "src/sds.rs",
+      "README.md"
+    ],
+    "allow_tests": false,
+    "allow_examples": false,
+    "allow_benches": false,
+    "allow_ffi": false,
+    "dependency_policy": "std_only_by_default",
+    "allowed_dependencies": []
+  },
+  "forbidden_without_evidence": [
+    "serde",
+    "criterion",
+    "proptest",
+    "thread_safe_api",
+    "recovery_mechanism",
+    "crates_io_release",
+    "ffi",
+    "range_query",
+    "batch_operation"
+  ],
+  "types": [],
+  "functions": [
+    {
+      "id": "FN-sdsHdrSize",
+      "name": "sdsHdrSize",
+      "role": "internal_helper",
+      "file": "",
+      "source": "[unknown]",
+      "signature": "static inline int sdsHdrSize(char type);",
+      "declared_in": "",
+      "line_count": 15
+    },
+    {
+      "id": "FN-sdsReqType",
+      "name": "sdsReqType",
+      "role": "internal_helper",
+      "file": "",
+      "source": "[unknown]",
+      "signature": "static inline char sdsReqType(size_t string_size);",
+      "declared_in": "",
+      "line_count": 15
+    },
+    {
+      "id": "FN-sdsnewlen",
+      "name": "sdsnewlen",
+      "role": "internal_helper",
+      "file": "",
+      "source": "[unknown]",
+      "signature": "sds sdsnewlen(const void *init, size_t initlen);",
+      "declared_in": "sds.h",
+      "line_count": 57
+    },
+    {
+      "id": "FN-sdsempty",
+      "name": "sdsempty",
+      "role": "internal_helper",
+      "file": "",
+      "source": "[unknown]",
+      "signature": "sds sdsempty(void);",
+      "declared_in": "sds.h",
+      "line_count": 3
+    },
+    {
+      "id": "FN-sdsnew",
+      "name": "sdsnew",
+      "role": "internal_helper",
+      "file": "",
+      "source": "[unknown]",
+      "signature": "sds sdsnew(const char *init);",
+      "declared_in": "sds.h",
+      "line_count": 4
+    },
+    {
+      "id": "FN-sdsdup",
+      "name": "sdsdup",
+      "role": "internal_helper",
+      "file": "",
+      "source": "[unknown]",
+      "signature": "sds sdsdup(const sds s);",
+      "declared_in": "sds.h",
+      "line_count": 3
+    },
+    {
+      "id": "FN-sdsfree",
+      "name": "sdsfree",
+      "role": "internal_helper",
+      "file": "",
+      "source": "[unknown]",
+      "signature": "void sdsfree(sds s);",
+      "declared_in": "sds.h",
+      "line_count": 4
+    },
+    {
+      "id": "FN-sdsupdatelen",
+      "name": "sdsupdatelen",
+      "role": "internal_helper",
+      "file": "",
+      "source": "[unknown]",
+      "signature": "void sdsupdatelen(sds s);",
+      "declared_in": "sds.h",
+      "line_count": 4
+    },
+    {
+      "id": "FN-sdsclear",
+      "name": "sdsclear",
+      "role": "internal_helper",
+      "file": "",
+      "source": "[unknown]",
+      "signature": "void sdsclear(sds s);",
+      "declared_in": "sds.h",
+      "line_count": 4
+    },
+    {
+      "id": "FN-sdsMakeRoomFor",
+      "name": "sdsMakeRoomFor",
+      "role": "internal_helper",
+      "file": "",
+      "source": "[unknown]",
+      "signature": "sds sdsMakeRoomFor(sds s, size_t addlen);",
+      "declared_in": "sds.h",
+      "line_count": 45
+    },
+    {
+      "id": "FN-sdsRemoveFreeSpace",
+      "name": "sdsRemoveFreeSpace",
+      "role": "internal_helper",
+      "file": "",
+      "source": "[unknown]",
+      "signature": "sds sdsRemoveFreeSpace(sds s);",
+      "declared_in": "sds.h",
+      "line_count": 36
+    },
+    {
+      "id": "FN-sdsAllocSize",
+      "name": "sdsAllocSize",
+      "role": "internal_helper",
+      "file": "",
+      "source": "[unknown]",
+      "signature": "size_t sdsAllocSize(sds s);",
+      "declared_in": "sds.h",
+      "line_count": 4
+    },
+    {
+      "id": "FN-sdsAllocPtr",
+      "name": "sdsAllocPtr",
+      "role": "internal_helper",
+      "file": "",
+      "source": "[unknown]",
+      "signature": "void *sdsAllocPtr(sds s);",
+      "declared_in": "",
+      "line_count": 3
+    },
+    {
+      "id": "FN-sdsIncrLen",
+      "name": "sdsIncrLen",
+      "role": "internal_helper",
+      "file": "",
+      "source": "[unknown]",
+      "signature": "void sdsIncrLen(sds s, ssize_t incr);",
+      "declared_in": "sds.h",
+      "line_count": 40
+    },
+    {
+      "id": "FN-sdsgrowzero",
+      "name": "sdsgrowzero",
+      "role": "internal_helper",
+      "file": "",
+      "source": "[unknown]",
+      "signature": "sds sdsgrowzero(sds s, size_t len);",
+      "declared_in": "sds.h",
+      "line_count": 12
+    },
+    {
+      "id": "FN-sdscatlen",
+      "name": "sdscatlen",
+      "role": "internal_helper",
+      "file": "",
+      "source": "[unknown]",
+      "signature": "sds sdscatlen(sds s, const void *t, size_t len);",
+      "declared_in": "sds.h",
+      "line_count": 10
+    },
+    {
+      "id": "FN-sdscat",
+      "name": "sdscat",
+      "role": "internal_helper",
+      "file": "",
+      "source": "[unknown]",
+      "signature": "sds sdscat(sds s, const char *t);",
+      "declared_in": "sds.h",
+      "line_count": 3
+    },
+    {
+      "id": "FN-sdscatsds",
+      "name": "sdscatsds",
+      "role": "internal_helper",
+      "file": "",
+      "source": "[unknown]",
+      "signature": "sds sdscatsds(sds s, const sds t);",
+      "declared_in": "sds.h",
+      "line_count": 3
+    },
+    {
+      "id": "FN-sdscpylen",
+      "name": "sdscpylen",
+      "role": "internal_helper",
+      "file": "",
+      "source": "[unknown]",
+      "signature": "sds sdscpylen(sds s, const char *t, size_t len);",
+      "declared_in": "sds.h",
+      "line_count": 10
+    },
+    {
+      "id": "FN-sdscpy",
+      "name": "sdscpy",
+      "role": "internal_helper",
+      "file": "",
+      "source": "[unknown]",
+      "signature": "sds sdscpy(sds s, const char *t);",
+      "declared_in": "sds.h",
+      "line_count": 3
+    },
+    {
+      "id": "FN-sdsll2str",
+      "name": "sdsll2str",
+      "role": "internal_helper",
+      "file": "",
+      "source": "[unknown]",
+      "signature": "int sdsll2str(char *s, long long value);",
+      "declared_in": "",
+      "line_count": 41
+    },
+    {
+      "id": "FN-sdsull2str",
+      "name": "sdsull2str",
+      "role": "internal_helper",
+      "file": "",
+      "source": "[unknown]",
+      "signature": "int sdsull2str(char *s, unsigned long long v);",
+      "declared_in": "",
+      "line_count": 27
+    },
+    {
+      "id": "FN-sdsfromlonglong",
+      "name": "sdsfromlonglong",
+      "role": "internal_helper",
+      "file": "",
+      "source": "[unknown]",
+      "signature": "sds sdsfromlonglong(long long value);",
+      "declared_in": "sds.h",
+      "line_count": 6
+    },
+    {
+      "id": "FN-sdscatvprintf",
+      "name": "sdscatvprintf",
+      "role": "internal_helper",
+      "file": "",
+      "source": "[unknown]",
+      "signature": "sds sdscatvprintf(sds s, const char *fmt, va_list ap);",
+      "declared_in": "sds.h",
+      "line_count": 40
+    },
+    {
+      "id": "FN-sdscatprintf",
+      "name": "sdscatprintf",
+      "role": "internal_helper",
+      "file": "",
+      "source": "[unknown]",
+      "signature": "sds sdscatprintf(sds s, const char *fmt, ...) __attribute__((format(printf, 2, 3)));",
+      "declared_in": "sds.h",
+      "line_count": 8
+    },
+    {
+      "id": "FN-sdscatfmt",
+      "name": "sdscatfmt",
+      "role": "internal_helper",
+      "file": "",
+      "source": "[unknown]",
+      "signature": "sds sdscatfmt(sds s, char const *fmt, ...);",
+      "declared_in": "sds.h",
+      "line_count": 94
+    },
+    {
+      "id": "FN-sdstrim",
+      "name": "sdstrim",
+      "role": "internal_helper",
+      "file": "",
+      "source": "[unknown]",
+      "signature": "sds sdstrim(sds s, const char *cset);",
+      "declared_in": "sds.h",
+      "line_count": 14
+    },
+    {
+      "id": "FN-sdsrange",
+      "name": "sdsrange",
+      "role": "internal_helper",
+      "file": "",
+      "source": "[unknown]",
+      "signature": "void sdsrange(sds s, ssize_t start, ssize_t end);",
+      "declared_in": "sds.h",
+      "line_count": 25
+    },
+    {
+      "id": "FN-sdstolower",
+      "name": "sdstolower",
+      "role": "internal_helper",
+      "file": "",
+      "source": "[unknown]",
+      "signature": "void sdstolower(sds s);",
+      "declared_in": "sds.h",
+      "line_count": 5
+    },
+    {
+      "id": "FN-sdstoupper",
+      "name": "sdstoupper",
+      "role": "internal_helper",
+      "file": "",
+      "source": "[unknown]",
+      "signature": "void sdstoupper(sds s);",
+      "declared_in": "sds.h",
+      "line_count": 5
+    },
+    {
+      "id": "FN-sdscmp",
+      "name": "sdscmp",
+      "role": "internal_helper",
+      "file": "",
+      "source": "[unknown]",
+      "signature": "int sdscmp(const sds s1, const sds s2);",
+      "declared_in": "sds.h",
+      "line_count": 11
+    },
+    {
+      "id": "FN-sdssplitlen",
+      "name": "sdssplitlen",
+      "role": "internal_helper",
+      "file": "",
+      "source": "[unknown]",
+      "signature": "sds *sdssplitlen(const char *s, ssize_t len, const char *sep, int seplen, int *count);",
+      "declared_in": "",
+      "line_count": 48
+    },
+    {
+      "id": "FN-sdsfreesplitres",
+      "name": "sdsfreesplitres",
+      "role": "internal_helper",
+      "file": "",
+      "source": "[unknown]",
+      "signature": "void sdsfreesplitres(sds *tokens, int count);",
+      "declared_in": "sds.h",
+      "line_count": 6
+    },
+    {
+      "id": "FN-sdscatrepr",
+      "name": "sdscatrepr",
+      "role": "internal_helper",
+      "file": "",
+      "source": "[unknown]",
+      "signature": "sds sdscatrepr(sds s, const char *p, size_t len);",
+      "declared_in": "sds.h",
+      "line_count": 24
+    },
+    {
+      "id": "FN-is_hex_digit",
+      "name": "is_hex_digit",
+      "role": "internal_helper",
+      "file": "",
+      "source": "[unknown]",
+      "signature": "int is_hex_digit(char c);",
+      "declared_in": "",
+      "line_count": 4
+    },
+    {
+      "id": "FN-hex_digit_to_int",
+      "name": "hex_digit_to_int",
+      "role": "internal_helper",
+      "file": "",
+      "source": "[unknown]",
+      "signature": "int hex_digit_to_int(char c);",
+      "declared_in": "",
+      "line_count": 21
+    },
+    {
+      "id": "FN-sdssplitargs",
+      "name": "sdssplitargs",
+      "role": "internal_helper",
+      "file": "",
+      "source": "[unknown]",
+      "signature": "sds *sdssplitargs(const char *line, int *argc);",
+      "declared_in": "",
+      "line_count": 109
+    },
+    {
+      "id": "FN-sdsmapchars",
+      "name": "sdsmapchars",
+      "role": "internal_helper",
+      "file": "",
+      "source": "[unknown]",
+      "signature": "sds sdsmapchars(sds s, const char *from, const char *to, size_t setlen);",
+      "declared_in": "sds.h",
+      "line_count": 13
+    },
+    {
+      "id": "FN-sdsjoin",
+      "name": "sdsjoin",
+      "role": "internal_helper",
+      "file": "",
+      "source": "[unknown]",
+      "signature": "sds sdsjoin(char **argv, int argc, char *sep);",
+      "declared_in": "sds.h",
+      "line_count": 10
+    },
+    {
+      "id": "FN-sdsjoinsds",
+      "name": "sdsjoinsds",
+      "role": "internal_helper",
+      "file": "",
+      "source": "[unknown]",
+      "signature": "sds sdsjoinsds(sds *argv, int argc, const char *sep, size_t seplen);",
+      "declared_in": "sds.h",
+      "line_count": 10
+    },
+    {
+      "id": "FN-sds_malloc",
+      "name": "sds_malloc",
+      "role": "internal_helper",
+      "file": "",
+      "source": "[unknown]",
+      "signature": "void *sds_malloc(size_t size);",
+      "declared_in": "",
+      "line_count": 1
+    },
+    {
+      "id": "FN-sds_realloc",
+      "name": "sds_realloc",
+      "role": "internal_helper",
+      "file": "",
+      "source": "[unknown]",
+      "signature": "void *sds_realloc(void *ptr, size_t size);",
+      "declared_in": "",
+      "line_count": 1
+    },
+    {
+      "id": "FN-sds_free",
+      "name": "sds_free",
+      "role": "internal_helper",
+      "file": "",
+      "source": "[unknown]",
+      "signature": "void sds_free(void *ptr);",
+      "declared_in": "sds.h",
+      "line_count": 1
+    },
+    {
+      "id": "FN-sdsTest",
+      "name": "sdsTest",
+      "role": "internal_helper",
+      "file": "",
+      "source": "[unknown]",
+      "signature": "int sdsTest(int argc, char *argv[]);",
+      "declared_in": "sds.h",
+      "line_count": 176
+    },
+    {
+      "id": "FN-main",
+      "name": "main",
+      "role": "internal_helper",
+      "file": "",
+      "source": "[unknown]",
+      "signature": "int main(void);",
+      "declared_in": "",
+      "line_count": 3
+    },
+    {
+      "id": "FN-sdslen",
+      "name": "sdslen",
+      "role": "internal_helper",
+      "file": "",
+      "source": "[unknown]",
+      "signature": "static inline size_t sdslen(const sds s);",
+      "declared_in": "",
+      "line_count": 16
+    },
+    {
+      "id": "FN-sdsavail",
+      "name": "sdsavail",
+      "role": "internal_helper",
+      "file": "",
+      "source": "[unknown]",
+      "signature": "static inline size_t sdsavail(const sds s);",
+      "declared_in": "",
+      "line_count": 25
+    },
+    {
+      "id": "FN-sdssetlen",
+      "name": "sdssetlen",
+      "role": "internal_helper",
+      "file": "",
+      "source": "[unknown]",
+      "signature": "static inline void sdssetlen(sds s, size_t newlen);",
+      "declared_in": "",
+      "line_count": 23
+    },
+    {
+      "id": "FN-sdsinclen",
+      "name": "sdsinclen",
+      "role": "internal_helper",
+      "file": "",
+      "source": "[unknown]",
+      "signature": "static inline void sdsinclen(sds s, size_t inc);",
+      "declared_in": "",
+      "line_count": 24
+    },
+    {
+      "id": "FN-sdsalloc",
+      "name": "sdsalloc",
+      "role": "internal_helper",
+      "file": "",
+      "source": "[unknown]",
+      "signature": "static inline size_t sdsalloc(const sds s);",
+      "declared_in": "",
+      "line_count": 16
+    },
+    {
+      "id": "FN-sdssetalloc",
+      "name": "sdssetalloc",
+      "role": "internal_helper",
+      "file": "",
+      "source": "[unknown]",
+      "signature": "static inline void sdssetalloc(sds s, size_t newlen);",
+      "declared_in": "",
+      "line_count": 20
+    }
+  ],
+  "macros": [
+    {
+      "id": "MACRO-SDS_LLSTR_SIZE",
+      "name": "SDS_LLSTR_SIZE",
+      "file": "sds.c",
+      "source": "[sds.c:450]",
+      "definition": "#define SDS_LLSTR_SIZE 21"
+    },
+    {
+      "id": "MACRO-UNUSED",
+      "name": "UNUSED",
+      "file": "sds.c",
+      "source": "[sds.c:1145]",
+      "definition": "#define UNUSED(x) (void)(x)"
+    },
+    {
+      "id": "MACRO-__TESTHELP_H",
+      "name": "__TESTHELP_H",
+      "file": "testhelp.h",
+      "source": "[testhelp.h:40]",
+      "definition": "#define __TESTHELP_H"
+    },
+    {
+      "id": "MACRO-test_cond",
+      "name": "test_cond",
+      "file": "testhelp.h",
+      "source": "[testhelp.h:44-47]",
+      "definition": "#define test_cond(descr,_c) do { \\ __test_num++; printf(\"%d - %s: \", __test_num, descr); \\ if(_c) printf(\"PASSED\\n\"); else {printf(\"FAILED\\n\"); __failed_tests++;} \\ } while(0);"
+    },
+    {
+      "id": "MACRO-test_report",
+      "name": "test_report",
+      "file": "testhelp.h",
+      "source": "[testhelp.h:48-55]",
+      "definition": "#define test_report() do { \\ printf(\"%d tests, %d passed, %d failed\\n\", __test_num, \\ __test_num-__failed_tests, __failed_tests); \\ if (__failed_tests) { \\ printf(\"=== WARNING === We have failed tests here...\\n\"); \\ exit(1); \\ } \\ } whil..."
+    },
+    {
+      "id": "MACRO-__SDS_H",
+      "name": "__SDS_H",
+      "file": "sds.h",
+      "source": "[sds.h:34]",
+      "definition": "#define __SDS_H"
+    },
+    {
+      "id": "MACRO-SDS_MAX_PREALLOC",
+      "name": "SDS_MAX_PREALLOC",
+      "file": "sds.h",
+      "source": "[sds.h:36]",
+      "definition": "#define SDS_MAX_PREALLOC (1024*1024)"
+    },
+    {
+      "id": "MACRO-SDS_TYPE_5",
+      "name": "SDS_TYPE_5",
+      "file": "sds.h",
+      "source": "[sds.h:76]",
+      "definition": "#define SDS_TYPE_5 0"
+    },
+    {
+      "id": "MACRO-SDS_TYPE_8",
+      "name": "SDS_TYPE_8",
+      "file": "sds.h",
+      "source": "[sds.h:77]",
+      "definition": "#define SDS_TYPE_8 1"
+    },
+    {
+      "id": "MACRO-SDS_TYPE_16",
+      "name": "SDS_TYPE_16",
+      "file": "sds.h",
+      "source": "[sds.h:78]",
+      "definition": "#define SDS_TYPE_16 2"
+    },
+    {
+      "id": "MACRO-SDS_TYPE_32",
+      "name": "SDS_TYPE_32",
+      "file": "sds.h",
+      "source": "[sds.h:79]",
+      "definition": "#define SDS_TYPE_32 3"
+    },
+    {
+      "id": "MACRO-SDS_TYPE_64",
+      "name": "SDS_TYPE_64",
+      "file": "sds.h",
+      "source": "[sds.h:80]",
+      "definition": "#define SDS_TYPE_64 4"
+    },
+    {
+      "id": "MACRO-SDS_TYPE_MASK",
+      "name": "SDS_TYPE_MASK",
+      "file": "sds.h",
+      "source": "[sds.h:81]",
+      "definition": "#define SDS_TYPE_MASK 7"
+    },
+    {
+      "id": "MACRO-SDS_TYPE_BITS",
+      "name": "SDS_TYPE_BITS",
+      "file": "sds.h",
+      "source": "[sds.h:82]",
+      "definition": "#define SDS_TYPE_BITS 3"
+    },
+    {
+      "id": "MACRO-SDS_HDR_VAR",
+      "name": "SDS_HDR_VAR",
+      "file": "sds.h",
+      "source": "[sds.h:83]",
+      "definition": "#define SDS_HDR_VAR(T,s) struct sdshdr##T *sh = (void*)((s)-(sizeof(struct sdshdr##T)));"
+    },
+    {
+      "id": "MACRO-SDS_HDR",
+      "name": "SDS_HDR",
+      "file": "sds.h",
+      "source": "[sds.h:84]",
+      "definition": "#define SDS_HDR(T,s) ((struct sdshdr##T *)((s)-(sizeof(struct sdshdr##T))))"
+    },
+    {
+      "id": "MACRO-SDS_TYPE_5_LEN",
+      "name": "SDS_TYPE_5_LEN",
+      "file": "sds.h",
+      "source": "[sds.h:85]",
+      "definition": "#define SDS_TYPE_5_LEN(f) ((f)>>SDS_TYPE_BITS)"
+    },
+    {
+      "id": "MACRO-s_malloc",
+      "name": "s_malloc",
+      "file": "sdsalloc.h",
+      "source": "[sdsalloc.h:40]",
+      "definition": "#define s_malloc malloc"
+    },
+    {
+      "id": "MACRO-s_realloc",
+      "name": "s_realloc",
+      "file": "sdsalloc.h",
+      "source": "[sdsalloc.h:41]",
+      "definition": "#define s_realloc realloc"
+    },
+    {
+      "id": "MACRO-s_free",
+      "name": "s_free",
+      "file": "sdsalloc.h",
+      "source": "[sdsalloc.h:42]",
+      "definition": "#define s_free free"
+    }
+  ]
+}

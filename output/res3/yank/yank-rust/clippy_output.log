@@ -1,0 +1,23 @@
+warning: `/home/jfeng/.cargo/config` is deprecated in favor of `config.toml`
+  |
+  = help: if you need to support cargo 1.38 or earlier, you can symlink `config` to `config.toml`
+warning: `/home/jfeng/.cargo/config` is deprecated in favor of `config.toml`
+  |
+  = help: if you need to support cargo 1.38 or earlier, you can symlink `config` to `config.toml`
+src/yank.rs:4:32: warning: unused import: `IsTerminal`
+src/yank.rs:88:5: warning: type `yank::Field` is more private than the item `yank::Yank::field_cmp`: associated function `yank::Yank::field_cmp` is reachable at visibility `pub(crate)`
+src/yank.rs:134:5: warning: type `yank::TerminalState` is more private than the item `yank::Yank::terminal_write`: associated function `yank::Yank::terminal_write` is reachable at visibility `pub(crate)`
+src/yank.rs:138:5: warning: type `yank::TerminalState` is more private than the item `yank::Yank::terminal_puts`: associated function `yank::Yank::terminal_puts` is reachable at visibility `pub(crate)`
+src/yank.rs:142:5: warning: type `yank::InputBuffer` is more private than the item `yank::Yank::terminal_setup`: associated function `yank::Yank::terminal_setup` is reachable at visibility `pub(crate)`
+src/yank.rs:142:5: warning: type `yank::TerminalState` is more private than the item `yank::Yank::terminal_setup`: associated function `yank::Yank::terminal_setup` is reachable at visibility `pub(crate)`
+src/yank.rs:142:5: warning: type `yank::Field` is more private than the item `yank::Yank::terminal_setup`: associated function `yank::Yank::terminal_setup` is reachable at visibility `pub(crate)`
+src/yank.rs:225:5: warning: type `yank::TerminalState` is more private than the item `yank::Yank::terminal_end`: associated function `yank::Yank::terminal_end` is reachable at visibility `pub(crate)`
+src/yank.rs:240:5: warning: type `yank::TerminalState` is more private than the item `yank::Yank::terminal_getc`: associated function `yank::Yank::terminal_getc` is reachable at visibility `pub(crate)`
+src/yank.rs:240:5: warning: type `yank::Key` is more private than the item `yank::Yank::terminal_getc`: associated function `yank::Yank::terminal_getc` is reachable at visibility `pub(crate)`
+src/yank.rs:273:5: warning: type `yank::TerminalState` is more private than the item `yank::Yank::terminal_main`: associated function `yank::Yank::terminal_main` is reachable at visibility `pub(crate)`
+src/yank.rs:273:5: warning: type `yank::InputBuffer` is more private than the item `yank::Yank::terminal_main`: associated function `yank::Yank::terminal_main` is reachable at visibility `pub(crate)`
+src/yank.rs:273:5: warning: type `yank::Field` is more private than the item `yank::Yank::terminal_main`: associated function `yank::Yank::terminal_main` is reachable at visibility `pub(crate)`
+src/yank.rs:547:8: warning: associated function `terminal_getc_key_kind` is never used
+warning: `yank-rust` (bin "yank-rust" test) generated 14 warnings (run `cargo clippy --fix --bin "yank-rust" -p yank-rust --tests -- ` to apply 1 suggestion)
+warning: `yank-rust` (bin "yank-rust") generated 14 warnings (14 duplicates)
+    Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.02s

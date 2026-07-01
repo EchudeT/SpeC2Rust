@@ -1,0 +1,30 @@
+{
+  "project": "c4-rust",
+  "path": "/data1/jfeng/tcode_win/output/res3/c4/c4-rust",
+  "timestamp": "2026-06-19T21:36:42+08:00",
+  "summary": {
+    "total_issues": 24,
+    "clippy_warnings": 23,
+    "clippy_errors": 0,
+    "rustfmt_files_needing_format": 1,
+    "tool_errors": 0
+  },
+  "commands": {
+    "clippy": "cargo clippy --workspace --all-targets --message-format short",
+    "rustfmt": "cargo fmt --all -- --check"
+  },
+  "status": {
+    "clippy_exit_code": 0,
+    "rustfmt_exit_code": 1,
+    "clippy_failed": 0,
+    "rustfmt_failed": 0
+  },
+  "artifacts": {
+    "clippy_log": "/data1/jfeng/tcode_win/output/res3/c4/c4-rust/clippy_output.log",
+    "rustfmt_log": "/data1/jfeng/tcode_win/output/res3/c4/c4-rust/rustfmt_output.log"
+  },
+  "clippy_by_category": {"unused":21,"other":2},
+  "clippy_details": [{"file":"src/c4.rs","line":91,"lint":"","message":"method `slot_size` is never used"},{"file":"src/c4.rs","line":105,"lint":"","message":"field `0` is never read"},{"file":"src/c4.rs","line":106,"lint":"","message":"field `0` is never read"},{"file":"src/c4.rs","line":107,"lint":"","message":"field `0` is never read"},{"file":"src/c4.rs","line":108,"lint":"","message":"field `0` is never read"},{"file":"src/c4.rs","line":110,"lint":"","message":"fields `ty` and `expr` are never read"},{"file":"src/c4.rs","line":115,"lint":"","message":"field `expr` is never read"},{"file":"src/c4.rs","line":118,"lint":"","message":"fields `op`, `left`, and `right` are never read"},{"file":"src/c4.rs","line":123,"lint":"","message":"fields `condition`, `then_expr`, and `else_expr` are never read"},{"file":"src/c4.rs","line":128,"lint":"","message":"fields `callee` and `args` are never read"},{"file":"src/c4.rs","line":132,"lint":"","message":"fields `base` and `index` are never read"},{"file":"src/c4.rs","line":136,"lint":"","message":"fields `op` and `expr` are never read"},{"file":"src/c4.rs","line":191,"lint":"","message":"fields `condition`, `then_branch`, and `else_branch` are never read"},{"file":"src/c4.rs","line":196,"lint":"","message":"fields `condition` and `body` are never read"},{"file":"src/c4.rs","line":199,"lint":"","message":"field `0` is never read"},{"file":"src/c4.rs","line":200,"lint":"","message":"field `0` is never read"},{"file":"src/c4.rs","line":201,"lint":"","message":"field `0` is never read"},{"file":"src/c4.rs","line":460,"lint":"","message":"methods `expr` and `stmt` are never used"},{"file":"src/c4.rs","line":1062,"lint":"","message":"function `level_to_precedence` is never used"},{"file":"src/hello.rs","line":1,"lint":"","message":"struct `Hello` is never constructed"},{"file":"src/hello.rs","line":4,"lint":"","message":"associated function `main` is never used"},{"file":"","line":0,"lint":"","message":"`c4-rust` (bin \"c4-rust\") generated 21 warnings"},{"file":"","line":0,"lint":"","message":"`c4-rust` (bin \"c4-rust\" test) generated 21 warnings (21 duplicates)"}],
+  "clippy_error_details": [],
+  "rustfmt_details": [{"file":"src/c4.rs","line":470},{"file":"src/c4.rs","line":492},{"file":"src/c4.rs","line":899}]
+}

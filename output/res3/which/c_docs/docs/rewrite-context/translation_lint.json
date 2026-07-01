@@ -1,0 +1,159 @@
+{
+  "findings": [
+    {
+      "path": "specs/002-module_tilde-rust-port/tasks.md",
+      "kind": "out_of_scope_file",
+      "message": "发现 contract 外文件路径: src/tilde/mod.rs"
+    },
+    {
+      "path": "specs/002-module_tilde-rust-port/tasks.md",
+      "kind": "out_of_scope_file",
+      "message": "发现 contract 外文件路径: src/tilde/mod.rs"
+    },
+    {
+      "path": "specs/002-module_tilde-rust-port/tasks.md",
+      "kind": "out_of_scope_file",
+      "message": "发现 contract 外文件路径: src/tilde/mod.rs"
+    },
+    {
+      "path": "specs/002-module_tilde-rust-port/tasks.md",
+      "kind": "out_of_scope_file",
+      "message": "发现 contract 外文件路径: src/tilde/mod.rs"
+    },
+    {
+      "path": "specs/002-module_tilde-rust-port/tasks.md",
+      "kind": "out_of_scope_file",
+      "message": "发现 contract 外文件路径: src/tilde/shell.rs"
+    },
+    {
+      "path": "specs/002-module_tilde-rust-port/tasks.md",
+      "kind": "out_of_scope_file",
+      "message": "发现 contract 外文件路径: src/tilde/mod.rs"
+    },
+    {
+      "path": "specs/002-module_tilde-rust-port/tasks.md",
+      "kind": "out_of_scope_file",
+      "message": "发现 contract 外文件路径: src/tilde/shell.rs"
+    },
+    {
+      "path": "specs/002-module_tilde-rust-port/tasks.md",
+      "kind": "out_of_scope_file",
+      "message": "发现 contract 外文件路径: src/tilde/tilde.rs"
+    },
+    {
+      "path": "specs/002-module_tilde-rust-port/tasks.md",
+      "kind": "out_of_scope_file",
+      "message": "发现 contract 外文件路径: src/tilde/mod.rs"
+    },
+    {
+      "path": "specs/002-module_tilde-rust-port/tasks.md",
+      "kind": "out_of_scope_file",
+      "message": "发现 contract 外文件路径: src/tilde/mod.rs"
+    },
+    {
+      "path": "specs/002-module_tilde-rust-port/tasks.md",
+      "kind": "out_of_scope_file",
+      "message": "发现 contract 外文件路径: src/tilde/mod.rs"
+    },
+    {
+      "path": "specs/002-module_tilde-rust-port/tasks.md",
+      "kind": "out_of_scope_file",
+      "message": "发现 contract 外文件路径: src/tilde/shell.rs"
+    },
+    {
+      "path": "specs/002-module_tilde-rust-port/tasks.md",
+      "kind": "out_of_scope_file",
+      "message": "发现 contract 外文件路径: src/tilde/tilde.rs"
+    },
+    {
+      "path": "specs/002-module_tilde-rust-port/tasks.md",
+      "kind": "out_of_scope_file",
+      "message": "发现 contract 外文件路径: src/tilde/mod.rs"
+    },
+    {
+      "path": "specs/002-module_tilde-rust-port/tasks.md",
+      "kind": "out_of_scope_file",
+      "message": "发现 contract 外文件路径: src/tilde/shell.rs"
+    },
+    {
+      "path": "specs/002-module_tilde-rust-port/tasks.md",
+      "kind": "out_of_scope_file",
+      "message": "发现 contract 外文件路径: src/tilde/tilde.rs"
+    },
+    {
+      "path": "specs/002-module_tilde-rust-port/plan.md",
+      "kind": "out_of_scope_file",
+      "message": "发现 contract 外文件路径: src/module_tilde.rs"
+    },
+    {
+      "path": "specs/002-module_tilde-rust-port/plan.md",
+      "kind": "out_of_scope_file",
+      "message": "发现 contract 外文件路径: src/module_tilde.rs"
+    },
+    {
+      "path": "specs/002-module_tilde-rust-port/plan.md",
+      "kind": "out_of_scope_file",
+      "message": "发现 contract 外文件路径: src/module_tilde/shell.rs"
+    },
+    {
+      "path": "specs/002-module_tilde-rust-port/plan.md",
+      "kind": "out_of_scope_file",
+      "message": "发现 contract 外文件路径: src/module_tilde/tilde.rs"
+    },
+    {
+      "path": "specs/002-module_tilde-rust-port/plan.md",
+      "kind": "out_of_scope_file",
+      "message": "发现 contract 外文件路径: src/module_tilde/mod.rs"
+    },
+    {
+      "path": "specs/002-module_tilde-rust-port/plan.md",
+      "kind": "out_of_scope_file",
+      "message": "发现 contract 外文件路径: src/module_tilde.rs"
+    },
+    {
+      "path": "specs/001-main_root-rust-port/tasks.md",
+      "kind": "out_of_scope_file",
+      "message": "发现 contract 外文件路径: src/main.rs"
+    },
+    {
+      "path": "specs/001-main_root-rust-port/tasks.md",
+      "kind": "out_of_scope_file",
+      "message": "发现 contract 外文件路径: src/main.rs"
+    },
+    {
+      "path": "specs/001-main_root-rust-port/tasks.md",
+      "kind": "out_of_scope_file",
+      "message": "发现 contract 外文件路径: src/main.rs"
+    },
+    {
+      "path": "specs/001-main_root-rust-port/tasks.md",
+      "kind": "out_of_scope_file",
+      "message": "发现 contract 外文件路径: src/main.rs"
+    },
+    {
+      "path": "specs/001-main_root-rust-port/plan.md",
+      "kind": "out_of_scope_file",
+      "message": "发现 contract 外文件路径: src/main.rs"
+    },
+    {
+      "path": "specs/001-main_root-rust-port/plan.md",
+      "kind": "out_of_scope_file",
+      "message": "发现 contract 外文件路径: src/env.rs"
+    },
+    {
+      "path": "specs/001-main_root-rust-port/plan.md",
+      "kind": "out_of_scope_file",
+      "message": "发现 contract 外文件路径: src/main.rs"
+    },
+    {
+      "path": "specs/001-main_root-rust-port/plan.md",
+      "kind": "out_of_scope_file",
+      "message": "发现 contract 外文件路径: src/main.rs"
+    },
+    {
+      "path": "specs/001-main_root-rust-port/plan.md",
+      "kind": "out_of_scope_file",
+      "message": "发现 contract 外文件路径: src/env.rs"
+    }
+  ]
+}

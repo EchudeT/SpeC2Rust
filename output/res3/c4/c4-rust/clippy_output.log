@@ -1,0 +1,30 @@
+warning: `/home/jfeng/.cargo/config` is deprecated in favor of `config.toml`
+  |
+  = help: if you need to support cargo 1.38 or earlier, you can symlink `config` to `config.toml`
+warning: `/home/jfeng/.cargo/config` is deprecated in favor of `config.toml`
+  |
+  = help: if you need to support cargo 1.38 or earlier, you can symlink `config` to `config.toml`
+src/c4.rs:91:8: warning: method `slot_size` is never used
+src/c4.rs:105:12: warning: field `0` is never read
+src/c4.rs:106:19: warning: field `0` is never read
+src/c4.rs:107:16: warning: field `0` is never read
+src/c4.rs:108:12: warning: field `0` is never read
+src/c4.rs:110:9: warning: fields `ty` and `expr` are never read
+src/c4.rs:115:9: warning: field `expr` is never read
+src/c4.rs:118:9: warning: fields `op`, `left`, and `right` are never read
+src/c4.rs:123:9: warning: fields `condition`, `then_expr`, and `else_expr` are never read
+src/c4.rs:128:9: warning: fields `callee` and `args` are never read
+src/c4.rs:132:9: warning: fields `base` and `index` are never read
+src/c4.rs:136:9: warning: fields `op` and `expr` are never read
+src/c4.rs:191:9: warning: fields `condition`, `then_branch`, and `else_branch` are never read
+src/c4.rs:196:9: warning: fields `condition` and `body` are never read
+src/c4.rs:199:12: warning: field `0` is never read
+src/c4.rs:200:11: warning: field `0` is never read
+src/c4.rs:201:10: warning: field `0` is never read
+src/c4.rs:460:12: warning: methods `expr` and `stmt` are never used
+src/c4.rs:1062:4: warning: function `level_to_precedence` is never used
+src/hello.rs:1:12: warning: struct `Hello` is never constructed
+src/hello.rs:4:12: warning: associated function `main` is never used
+warning: `c4-rust` (bin "c4-rust") generated 21 warnings
+warning: `c4-rust` (bin "c4-rust" test) generated 21 warnings (21 duplicates)
+    Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.02s

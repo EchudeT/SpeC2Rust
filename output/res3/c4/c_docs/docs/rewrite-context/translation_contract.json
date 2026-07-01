@@ -1,0 +1,233 @@
+{
+  "schema_version": 1,
+  "project": {
+    "name": "c4",
+    "kind": "library",
+    "build_system": "Makefile"
+  },
+  "files": [
+    {
+      "path": "LICENSE",
+      "role": "support"
+    },
+    {
+      "path": "Makefile",
+      "role": "support"
+    },
+    {
+      "path": "README.md",
+      "role": "support"
+    },
+    {
+      "path": "base_test.sh",
+      "role": "test"
+    },
+    {
+      "path": "c4",
+      "role": "support"
+    },
+    {
+      "path": "c4.c",
+      "role": "source"
+    },
+    {
+      "path": "c_build.sh",
+      "role": "support"
+    },
+    {
+      "path": "compile_commands.json",
+      "role": "support"
+    },
+    {
+      "path": "hello.c",
+      "role": "source"
+    },
+    {
+      "path": "run_test.sh",
+      "role": "test"
+    },
+    {
+      "path": "targets.txt",
+      "role": "support"
+    },
+    {
+      "path": "test/c4-hello.sh",
+      "role": "test"
+    },
+    {
+      "path": "test/c4-self-host.sh",
+      "role": "test"
+    },
+    {
+      "path": "test/c4.c",
+      "role": "test"
+    },
+    {
+      "path": "test/hello.c",
+      "role": "test"
+    }
+  ],
+  "module_units": [
+    {
+      "name": "main_root",
+      "category": "main",
+      "files": [
+        "c4.c",
+        "hello.c"
+      ]
+    },
+    {
+      "name": "module_test",
+      "category": "module",
+      "files": [
+        "test/c4.c",
+        "test/hello.c"
+      ]
+    }
+  ],
+  "generation_boundary": {
+    "allowed_rust_files": [
+      "Cargo.toml",
+      "src/lib.rs",
+      "src/c4.rs",
+      "src/hello.rs",
+      "README.md"
+    ],
+    "allow_tests": false,
+    "allow_examples": false,
+    "allow_benches": false,
+    "allow_ffi": false,
+    "dependency_policy": "std_only_by_default",
+    "allowed_dependencies": []
+  },
+  "forbidden_without_evidence": [
+    "serde",
+    "criterion",
+    "proptest",
+    "thread_safe_api",
+    "recovery_mechanism",
+    "crates_io_release",
+    "ffi",
+    "range_query",
+    "batch_operation"
+  ],
+  "types": [],
+  "functions": [
+    {
+      "id": "FN-next",
+      "name": "next",
+      "role": "internal_helper",
+      "file": "",
+      "source": "[unknown]",
+      "signature": "void next();",
+      "declared_in": "",
+      "line_count": 85
+    },
+    {
+      "id": "FN-expr",
+      "name": "expr",
+      "role": "internal_helper",
+      "file": "",
+      "source": "[unknown]",
+      "signature": "void expr(int lev);",
+      "declared_in": "",
+      "line_count": 149
+    },
+    {
+      "id": "FN-stmt",
+      "name": "stmt",
+      "role": "internal_helper",
+      "file": "",
+      "source": "[unknown]",
+      "signature": "void stmt();",
+      "declared_in": "",
+      "line_count": 48
+    },
+    {
+      "id": "FN-main",
+      "name": "main",
+      "role": "internal_helper",
+      "file": "",
+      "source": "[unknown]",
+      "signature": "int main(int argc, char **argv);",
+      "declared_in": "",
+      "line_count": 196
+    },
+    {
+      "id": "FN-main",
+      "name": "main",
+      "role": "internal_helper",
+      "file": "",
+      "source": "[unknown]",
+      "signature": "int main();",
+      "declared_in": "",
+      "line_count": 5
+    },
+    {
+      "id": "FN-next",
+      "name": "next",
+      "role": "internal_helper",
+      "file": "",
+      "source": "[unknown]",
+      "signature": "void next();",
+      "declared_in": "",
+      "line_count": 85
+    },
+    {
+      "id": "FN-expr",
+      "name": "expr",
+      "role": "internal_helper",
+      "file": "",
+      "source": "[unknown]",
+      "signature": "void expr(int lev);",
+      "declared_in": "",
+      "line_count": 149
+    },
+    {
+      "id": "FN-stmt",
+      "name": "stmt",
+      "role": "internal_helper",
+      "file": "",
+      "source": "[unknown]",
+      "signature": "void stmt();",
+      "declared_in": "",
+      "line_count": 48
+    },
+    {
+      "id": "FN-main",
+      "name": "main",
+      "role": "internal_helper",
+      "file": "",
+      "source": "[unknown]",
+      "signature": "int main(int argc, char **argv);",
+      "declared_in": "",
+      "line_count": 196
+    },
+    {
+      "id": "FN-main",
+      "name": "main",
+      "role": "internal_helper",
+      "file": "",
+      "source": "[unknown]",
+      "signature": "int main();",
+      "declared_in": "",
+      "line_count": 5
+    }
+  ],
+  "macros": [
+    {
+      "id": "MACRO-int",
+      "name": "int",
+      "file": "c4.c",
+      "source": "[c4.c:14]",
+      "definition": "#define int long long"
+    },
+    {
+      "id": "MACRO-int",
+      "name": "int",
+      "file": "test/c4.c",
+      "source": "[test/c4.c:14]",
+      "definition": "#define int long long"
+    }
+  ]
+}

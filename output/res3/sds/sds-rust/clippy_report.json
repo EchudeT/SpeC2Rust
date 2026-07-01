@@ -1,0 +1,30 @@
+{
+  "project": "sds-rust",
+  "path": "/data1/jfeng/tcode_win/output/res3/sds/sds-rust",
+  "timestamp": "2026-06-19T21:36:49+08:00",
+  "summary": {
+    "total_issues": 7,
+    "clippy_warnings": 6,
+    "clippy_errors": 0,
+    "rustfmt_files_needing_format": 1,
+    "tool_errors": 0
+  },
+  "commands": {
+    "clippy": "cargo clippy --workspace --all-targets --message-format short",
+    "rustfmt": "cargo fmt --all -- --check"
+  },
+  "status": {
+    "clippy_exit_code": 0,
+    "rustfmt_exit_code": 1,
+    "clippy_failed": 0,
+    "rustfmt_failed": 0
+  },
+  "artifacts": {
+    "clippy_log": "/data1/jfeng/tcode_win/output/res3/sds/sds-rust/clippy_output.log",
+    "rustfmt_log": "/data1/jfeng/tcode_win/output/res3/sds/sds-rust/rustfmt_output.log"
+  },
+  "clippy_by_category": {"unused":4,"other":2},
+  "clippy_details": [{"file":"src/sds.rs","line":2,"lint":"","message":"unused import: `Write`"},{"file":"src/sds.rs","line":11,"lint":"","message":"constant `SDS_LLSTR_SIZE` is never used"},{"file":"src/sds.rs","line":23,"lint":"","message":"method `code` is never used"},{"file":"src/sds.rs","line":127,"lint":"","message":"multiple associated items are never used"},{"file":"","line":0,"lint":"","message":"`sds-rust` (bin \"sds-rust\" test) generated 4 warnings"},{"file":"","line":0,"lint":"","message":"`sds-rust` (bin \"sds-rust\") generated 4 warnings (4 duplicates)"}],
+  "clippy_error_details": [],
+  "rustfmt_details": [{"file":"src/sds.rs","line":708},{"file":"src/sds.rs","line":868}]
+}

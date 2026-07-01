@@ -1,0 +1,146 @@
+warning: `/home/jfeng/.cargo/config` is deprecated in favor of `config.toml`
+  |
+  = help: if you need to support cargo 1.38 or earlier, you can symlink `config` to `config.toml`
+warning: `/home/jfeng/.cargo/config` is deprecated in favor of `config.toml`
+  |
+  = help: if you need to support cargo 1.38 or earlier, you can symlink `config` to `config.toml`
+src/parser.rs:78:12: warning: type `module_src_save_stack_14` should have an upper camel case name: help: convert the identifier to upper camel case: `ModuleSrcSaveStack14`
+src/parser.rs:85:12: warning: type `module_src_balance_state_08` should have an upper camel case name: help: convert the identifier to upper camel case: `ModuleSrcBalanceState08`
+src/parser.rs:91:12: warning: type `balance_state` should have an upper camel case name: help: convert the identifier to upper camel case: `BalanceState`
+src/posix.rs:3:21: warning: unused import: `SimpleSymbolKind`
+src/parser.rs:1222:21: warning: variable does not need to be mutable
+src/parser.rs:1445:13: warning: unused variable: `storage_class`: help: if this is intentional, prefix it with an underscore: `_storage_class`
+src/wordsplit.rs:796:21: warning: value assigned to `n` is never read
+src/output.rs:110:5: warning: type `output::OutputSymbolView` is more private than the item `output::OutputDriver::symbol`: method `output::OutputDriver::symbol` is reachable at visibility `pub(crate)`
+src/output.rs:166:5: warning: type `output::OutputSymbolView` is more private than the item `<posix::Posix as output::OutputDriver>::symbol`: method `<posix::Posix as output::OutputDriver>::symbol` is reachable at visibility `pub(crate)`
+src/output.rs:296:5: warning: type `output::OutputSymbolView` is more private than the item `<gnu::Gnu as output::OutputDriver>::symbol`: method `<gnu::Gnu as output::OutputDriver>::symbol` is reachable at visibility `pub(crate)`
+src/output.rs:341:5: warning: type `output::OutputSymbolView` is more private than the item `<dot::Dot as output::OutputDriver>::symbol`: method `<dot::Dot as output::OutputDriver>::symbol` is reachable at visibility `pub(crate)`
+src/output.rs:511:5: warning: type `output::OutputNode` is more private than the item `output::Output::print_symbol`: method `output::Output::print_symbol` is reachable at visibility `pub(crate)`
+src/output.rs:638:5: warning: type `output::OutputNode` is more private than the item `output::Output::is_printable`: method `output::Output::is_printable` is reachable at visibility `pub(crate)`
+src/output.rs:645:5: warning: type `output::OutputNode` is more private than the item `output::Output::is_last`: method `output::Output::is_last` is reachable at visibility `pub(crate)`
+src/output.rs:656:5: warning: type `output::OutputNode` is more private than the item `output::Output::direct_tree`: method `output::Output::direct_tree` is reachable at visibility `pub(crate)`
+src/output.rs:699:5: warning: type `output::OutputNode` is more private than the item `output::Output::inverted_tree`: method `output::Output::inverted_tree` is reachable at visibility `pub(crate)`
+src/parser.rs:203:5: warning: type `parser::SymbolData` is more private than the item `parser::Parser::symbols`: field `parser::Parser::symbols` is reachable at visibility `pub(crate)`
+src/main.rs:60:5: warning: field `output_visible` is never read
+src/c.rs:7:9: warning: multiple fields are never read
+src/c.rs:23:9: warning: fields `verify` and `advance` are never read
+src/c.rs:32:9: warning: multiple fields are never read
+src/c.rs:46:9: warning: multiple fields are never read
+src/c.rs:62:9: warning: field `current_output` is never read
+src/c.rs:68:9: warning: fields `top` and `max` are never read
+src/c.rs:74:9: warning: field `scanned_buffers` is never read
+src/c.rs:78:12: warning: struct `YyBufferState` is never constructed
+src/c.rs:86:5: warning: variants `Normal` and `EofPending` are never constructed
+src/c.rs:91:9: warning: multiple fields are never read
+src/c.rs:133:12: warning: multiple associated items are never used
+src/c.rs:744:8: warning: method `position_at_end_of_buffer` is never used
+src/dot.rs:4:12: warning: struct `Dot` is never constructed
+src/dot.rs:21:12: warning: methods `begin`, `declare_node`, `print_symbol`, and `output_handler` are never used
+src/dot.rs:130:10: warning: enum `DotCommand` is never used
+src/error.rs:26:12: warning: associated functions `gl_attribute_format_printf_standard` and `at_line` are never used
+src/gnu.rs:3:12: warning: struct `Gnu` is never constructed
+src/gnu.rs:6:12: warning: struct `OutputSymbol` is never constructed
+src/gnu.rs:14:12: warning: struct `SymbolView` is never constructed
+src/gnu.rs:28:10: warning: enum `GnuCommand` is never used
+src/gnu.rs:42:12: warning: associated items `print_function_name`, `print_symbol`, `output_handler`, and `print_level` are never used
+src/output.rs:9:5: warning: multiple fields are never read
+src/output.rs:25:5: warning: field `name` is never read
+src/output.rs:30:8: warning: struct `OutputNode` is never constructed
+src/output.rs:48:8: warning: struct `Reference` is never constructed
+src/output.rs:54:6: warning: enum `SymbolKind` is never used
+src/output.rs:61:6: warning: enum `StorageClass` is never used
+src/output.rs:68:8: warning: struct `OutputSymbolView` is never constructed
+src/output.rs:86:8: warning: methods `init`, `separator`, `newline`, `text`, and `symbol` are never used
+src/output.rs:121:8: warning: method `has_subtree` is never used
+src/output.rs:442:12: warning: multiple methods are never used
+src/parser.rs:7:7: warning: constant `WORD` is never used
+src/parser.rs:8:7: warning: constant `LBRACE0` is never used
+src/parser.rs:9:7: warning: constant `RBRACE0` is never used
+src/parser.rs:10:7: warning: constant `IDENTIFIER` is never used
+src/parser.rs:11:7: warning: constant `EXTERN` is never used
+src/parser.rs:12:7: warning: constant `STATIC` is never used
+src/parser.rs:13:7: warning: constant `TYPEDEF` is never used
+src/parser.rs:14:7: warning: constant `STRUCT` is never used
+src/parser.rs:15:7: warning: constant `MODIFIER` is never used
+src/parser.rs:16:7: warning: constant `OP` is never used
+src/parser.rs:17:7: warning: constant `UNION` is never used
+src/parser.rs:18:7: warning: constant `ENUM` is never used
+src/parser.rs:19:7: warning: constant `LBRACE` is never used
+src/parser.rs:20:7: warning: constant `RBRACE` is never used
+src/parser.rs:21:7: warning: constant `MEMBER_OF` is never used
+src/parser.rs:22:7: warning: constant `TYPE` is never used
+src/parser.rs:23:7: warning: constant `STRING` is never used
+src/parser.rs:24:7: warning: constant `PARM_WRAPPER` is never used
+src/parser.rs:25:7: warning: constant `QUALIFIER` is never used
+src/parser.rs:26:7: warning: constant `DECLARATION` is never used
+src/parser.rs:85:12: warning: struct `module_src_balance_state_08` is never constructed
+src/parser.rs:91:12: warning: struct `balance_state` is never constructed
+src/parser.rs:97:12: warning: struct `Ident` is never constructed
+src/parser.rs:120:5: warning: variants `Auto`, `Static`, `Extern`, and `ExplicitExtern` are never constructed
+src/parser.rs:134:5: warning: variants `None`, `Start`, `Target`, `Parm`, and `Local` are never constructed
+src/parser.rs:143:5: warning: variants `Undefined`, `Identifier`, and `Token` are never constructed
+src/parser.rs:150:5: warning: multiple fields are never read
+src/parser.rs:166:8: warning: associated function `new` is never used
+src/parser.rs:186:9: warning: multiple fields are never read
+src/parser.rs:244:8: warning: multiple associated items are never used
+src/posix.rs:5:12: warning: struct `Posix` is never constructed
+src/posix.rs:11:10: warning: enum `PosixCommand` is never used
+src/posix.rs:27:12: warning: struct `PosixSymbol` is never constructed
+src/posix.rs:47:12: warning: associated items `print_symbol_type`, `print_symbol`, and `output_handler` are never used
+src/wordwrap.rs:27:9: warning: fields `fd`, `word_start`, `words`, and `closed` are never read
+src/wordwrap.rs:83:12: warning: multiple associated items are never used
+src/wordsplit.rs:7:7: warning: constant `WRDSF_ALLOC_DIE` is never used
+src/wordsplit.rs:8:7: warning: constant `WRDSF_ERROR` is never used
+src/wordsplit.rs:10:7: warning: constant `WRDSF_ENV` is never used
+src/wordsplit.rs:11:7: warning: constant `WRDSF_ENV_KV` is never used
+src/wordsplit.rs:12:7: warning: constant `WRDSF_GETVAR` is never used
+src/wordsplit.rs:14:7: warning: constant `WRDSF_CLOSURE` is never used
+src/wordsplit.rs:15:7: warning: constant `WRDSF_DEBUG` is never used
+src/wordsplit.rs:16:7: warning: constant `WRDSF_SHOWDBG` is never used
+src/wordsplit.rs:23:7: warning: constant `WRDSF_QUOTE` is never used
+src/wordsplit.rs:24:7: warning: constant `WRDSF_SQUOTE` is never used
+src/wordsplit.rs:25:7: warning: constant `WRDSF_DQUOTE` is never used
+src/wordsplit.rs:31:7: warning: constant `WRDSF_WS` is never used
+src/wordsplit.rs:32:7: warning: constant `WRDSF_UNDEF` is never used
+src/wordsplit.rs:33:7: warning: constant `WRDSF_WARNUNDEF` is never used
+src/wordsplit.rs:34:7: warning: constant `WRDSF_KEEPUNDEF` is never used
+src/wordsplit.rs:38:7: warning: constant `WRDSO_PARAM_NEGIDX` is never used
+src/wordsplit.rs:39:7: warning: constant `WRDSO_GETVARPREF` is never used
+src/wordsplit.rs:40:7: warning: constant `WRDSO_NOVARSPLIT` is never used
+src/wordsplit.rs:41:7: warning: constant `WRDSO_NOCMDSPLIT` is never used
+src/wordsplit.rs:48:7: warning: constant `WRDSO_BSKEEP_QUOTE` is never used
+src/wordsplit.rs:49:7: warning: constant `WRDSO_BSKEEP_WORD` is never used
+src/wordsplit.rs:50:7: warning: constant `WRDSO_DOTGLOB` is never used
+src/wordsplit.rs:62:7: warning: constant `WSNF_SEXP` is never used
+src/wordsplit.rs:64:7: warning: constant `WSNF_CONST` is never used
+src/wordsplit.rs:80:7: warning: constant `WRDS_OK` is never used
+src/wordsplit.rs:81:7: warning: constant `WRDS_ERR` is never used
+src/wordsplit.rs:82:7: warning: constant `WRDS_EOF` is never used
+src/wordsplit.rs:86:7: warning: constant `WORDSPLIT_ENV_INIT` is never used
+src/wordsplit.rs:88:7: warning: constant `EXPOPT_COALESCE` is never used
+src/wordsplit.rs:89:7: warning: constant `EXPOPT_NEG` is never used
+src/wordsplit.rs:90:7: warning: constant `EXPOPT_ALLOF` is never used
+src/wordsplit.rs:142:5: warning: field `ws_closure` is never read
+src/wordsplit.rs:193:12: warning: multiple associated items are never used
+src/dot.rs:10:1: warning: this `impl` can be derived
+src/dot.rs:53:5: warning: this function has too many arguments (11/7)
+src/dot.rs:77:23: warning: this `if` has identical blocks
+src/output.rs:902:30: warning: the loop variable `j` is only used to index `reach`
+src/parser.rs:126:1: warning: this `impl` can be derived
+src/parser.rs:633:21: warning: this `if` can be collapsed into the outer `match`
+src/parser.rs:902:21: warning: this `if` can be collapsed into the outer `match`
+src/parser.rs:933:21: warning: in an `if` condition, avoid complex blocks or closures with blocks; instead, move the block or closure higher and bind it with a `let`
+src/parser.rs:941:25: warning: this `if` statement can be collapsed
+src/parser.rs:1161:9: warning: this `if` statement can be collapsed
+src/posix.rs:36:1: warning: this `impl` can be derived
+src/wordwrap.rs:485:26: warning: this can be `std::io::Error::other(_)`
+src/wordsplit.rs:346:16: warning: methods called `new` usually take no `self`
+src/wordsplit.rs:346:5: warning: methods called `new` usually return `Self`
+src/wordsplit.rs:1699:26: warning: called `unwrap` on `exp.expansion` after checking its variant with `is_some`
+src/main.rs:98:5: warning: you should consider adding a `Default` implementation for `Main`
+src/main.rs:173:20: warning: needlessly taken reference of both operands
+src/main.rs:685:9: warning: this `if` statement can be collapsed
+src/main.rs:718:5: warning: this returns a `Result<_, ()>`
+warning: `cflow-new-rust` (bin "cflow-new-rust" test) generated 137 warnings (run `cargo clippy --fix --bin "cflow-new-rust" -p cflow-new-rust --tests -- ` to apply 15 suggestions)
+warning: `cflow-new-rust` (bin "cflow-new-rust") generated 137 warnings (137 duplicates)
+    Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.02s

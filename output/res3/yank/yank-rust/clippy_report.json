@@ -1,0 +1,30 @@
+{
+  "project": "yank-rust",
+  "path": "/data1/jfeng/tcode_win/output/res3/yank/yank-rust",
+  "timestamp": "2026-06-19T21:36:51+08:00",
+  "summary": {
+    "total_issues": 17,
+    "clippy_warnings": 16,
+    "clippy_errors": 0,
+    "rustfmt_files_needing_format": 1,
+    "tool_errors": 0
+  },
+  "commands": {
+    "clippy": "cargo clippy --workspace --all-targets --message-format short",
+    "rustfmt": "cargo fmt --all -- --check"
+  },
+  "status": {
+    "clippy_exit_code": 0,
+    "rustfmt_exit_code": 1,
+    "clippy_failed": 0,
+    "rustfmt_failed": 0
+  },
+  "artifacts": {
+    "clippy_log": "/data1/jfeng/tcode_win/output/res3/yank/yank-rust/clippy_output.log",
+    "rustfmt_log": "/data1/jfeng/tcode_win/output/res3/yank/yank-rust/rustfmt_output.log"
+  },
+  "clippy_by_category": {"unused":2,"other":14},
+  "clippy_details": [{"file":"src/yank.rs","line":4,"lint":"","message":"unused import: `IsTerminal`"},{"file":"src/yank.rs","line":88,"lint":"","message":"type `yank::Field` is more private than the item `yank::Yank::field_cmp`: associated function `yank::Yank::field_cmp` is reachable at visibility `pub(crate)`"},{"file":"src/yank.rs","line":134,"lint":"","message":"type `yank::TerminalState` is more private than the item `yank::Yank::terminal_write`: associated function `yank::Yank::terminal_write` is reachable at visibility `pub(crate)`"},{"file":"src/yank.rs","line":138,"lint":"","message":"type `yank::TerminalState` is more private than the item `yank::Yank::terminal_puts`: associated function `yank::Yank::terminal_puts` is reachable at visibility `pub(crate)`"},{"file":"src/yank.rs","line":142,"lint":"","message":"type `yank::InputBuffer` is more private than the item `yank::Yank::terminal_setup`: associated function `yank::Yank::terminal_setup` is reachable at visibility `pub(crate)`"},{"file":"src/yank.rs","line":142,"lint":"","message":"type `yank::TerminalState` is more private than the item `yank::Yank::terminal_setup`: associated function `yank::Yank::terminal_setup` is reachable at visibility `pub(crate)`"},{"file":"src/yank.rs","line":142,"lint":"","message":"type `yank::Field` is more private than the item `yank::Yank::terminal_setup`: associated function `yank::Yank::terminal_setup` is reachable at visibility `pub(crate)`"},{"file":"src/yank.rs","line":225,"lint":"","message":"type `yank::TerminalState` is more private than the item `yank::Yank::terminal_end`: associated function `yank::Yank::terminal_end` is reachable at visibility `pub(crate)`"},{"file":"src/yank.rs","line":240,"lint":"","message":"type `yank::TerminalState` is more private than the item `yank::Yank::terminal_getc`: associated function `yank::Yank::terminal_getc` is reachable at visibility `pub(crate)`"},{"file":"src/yank.rs","line":240,"lint":"","message":"type `yank::Key` is more private than the item `yank::Yank::terminal_getc`: associated function `yank::Yank::terminal_getc` is reachable at visibility `pub(crate)`"},{"file":"src/yank.rs","line":273,"lint":"","message":"type `yank::TerminalState` is more private than the item `yank::Yank::terminal_main`: associated function `yank::Yank::terminal_main` is reachable at visibility `pub(crate)`"},{"file":"src/yank.rs","line":273,"lint":"","message":"type `yank::InputBuffer` is more private than the item `yank::Yank::terminal_main`: associated function `yank::Yank::terminal_main` is reachable at visibility `pub(crate)`"},{"file":"src/yank.rs","line":273,"lint":"","message":"type `yank::Field` is more private than the item `yank::Yank::terminal_main`: associated function `yank::Yank::terminal_main` is reachable at visibility `pub(crate)`"},{"file":"src/yank.rs","line":547,"lint":"","message":"associated function `terminal_getc_key_kind` is never used"},{"file":"","line":0,"lint":"","message":"`yank-rust` (bin \"yank-rust\" test) generated 14 warnings (run `cargo clippy --fix --bin \"yank-rust\" -p yank-rust --tests -- ` to apply 1 suggestion)"},{"file":"","line":0,"lint":"","message":"`yank-rust` (bin \"yank-rust\") generated 14 warnings (14 duplicates)"}],
+  "clippy_error_details": [],
+  "rustfmt_details": [{"file":"src/yank.rs","line":408}]
+}
