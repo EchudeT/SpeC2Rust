@@ -1,0 +1,109 @@
+{
+  "findings": [
+    {
+      "path": "specs/001-main_root-rust-port/spec.md",
+      "kind": "scope_expansion",
+      "message": "发现未授权 FFI 内容: FFI"
+    },
+    {
+      "path": "specs/001-main_root-rust-port/tasks.md",
+      "kind": "out_of_scope_file",
+      "message": "发现 contract 外文件路径: src/main.rs"
+    },
+    {
+      "path": "specs/001-main_root-rust-port/tasks.md",
+      "kind": "out_of_scope_file",
+      "message": "发现 contract 外文件路径: src/main.rs"
+    },
+    {
+      "path": "specs/001-main_root-rust-port/tasks.md",
+      "kind": "out_of_scope_file",
+      "message": "发现 contract 外文件路径: src/main.rs"
+    },
+    {
+      "path": "specs/001-main_root-rust-port/tasks.md",
+      "kind": "out_of_scope_file",
+      "message": "发现 contract 外文件路径: src/main.rs"
+    },
+    {
+      "path": "specs/001-main_root-rust-port/tasks.md",
+      "kind": "out_of_scope_file",
+      "message": "发现 contract 外文件路径: src/main.rs"
+    },
+    {
+      "path": "specs/001-main_root-rust-port/tasks.md",
+      "kind": "out_of_scope_file",
+      "message": "发现 contract 外文件路径: src/main.rs"
+    },
+    {
+      "path": "specs/001-main_root-rust-port/plan.md",
+      "kind": "out_of_scope_file",
+      "message": "发现 contract 外文件路径: src/main.rs"
+    },
+    {
+      "path": "specs/001-main_root-rust-port/plan.md",
+      "kind": "out_of_scope_file",
+      "message": "发现 contract 外文件路径: src/main.rs"
+    },
+    {
+      "path": "specs/001-main_root-rust-port/plan.md",
+      "kind": "out_of_scope_file",
+      "message": "发现 contract 外文件路径: src/main.rs"
+    },
+    {
+      "path": "specs/001-main_root-rust-port/plan.md",
+      "kind": "out_of_scope_file",
+      "message": "发现 contract 外文件路径: src/main.rs"
+    },
+    {
+      "path": "specs/001-main_root-rust-port/plan.md",
+      "kind": "out_of_scope_file",
+      "message": "发现 contract 外文件路径: src/main.rs"
+    },
+    {
+      "path": "specs/002-module_test-rust-port/spec.md",
+      "kind": "scope_expansion",
+      "message": "发现未授权 FFI 内容: FFI"
+    },
+    {
+      "path": "specs/002-module_test-rust-port/plan.md",
+      "kind": "out_of_scope_file",
+      "message": "发现 contract 外文件路径: src/module_test/c4.rs"
+    },
+    {
+      "path": "specs/002-module_test-rust-port/plan.md",
+      "kind": "out_of_scope_file",
+      "message": "发现 contract 外文件路径: src/module_test/hello.rs"
+    },
+    {
+      "path": "specs/002-module_test-rust-port/plan.md",
+      "kind": "out_of_scope_file",
+      "message": "发现 contract 外文件路径: src/module_test/mod.rs"
+    },
+    {
+      "path": "specs/002-module_test-rust-port/plan.md",
+      "kind": "out_of_scope_file",
+      "message": "发现 contract 外文件路径: src/module_test/c4.rs"
+    },
+    {
+      "path": "specs/002-module_test-rust-port/plan.md",
+      "kind": "out_of_scope_file",
+      "message": "发现 contract 外文件路径: src/module_test/hello.rs"
+    },
+    {
+      "path": "specs/002-module_test-rust-port/plan.md",
+      "kind": "out_of_scope_file",
+      "message": "发现 contract 外文件路径: src/module_test/mod.rs"
+    },
+    {
+      "path": "specs/002-module_test-rust-port/plan.md",
+      "kind": "out_of_scope_file",
+      "message": "发现 contract 外文件路径: src/module_test/c4.rs"
+    },
+    {
+      "path": "specs/002-module_test-rust-port/plan.md",
+      "kind": "out_of_scope_file",
+      "message": "发现 contract 外文件路径: src/module_test/hello.rs"
+    }
+  ]
+}

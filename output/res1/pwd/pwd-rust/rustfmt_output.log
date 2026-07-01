@@ -1,0 +1,37 @@
+warning: `/home/jfeng/.cargo/config` is deprecated in favor of `config.toml`
+  |
+  = help: if you need to support cargo 1.38 or earlier, you can symlink `config` to `config.toml`
+Diff in /data1/jfeng/tcode_win/output/res1/pwd/pwd-rust/src/main.rs:1:
+[31m-mod pwd;
+(B[m mod progname;
+[32m+mod pwd;
+(B[m mod same_inode;
+[31m-mod xgetcwd;
+(B[m mod xalloc_die;
+[32m+mod xgetcwd;
+(B[m use crate::pwd::Pwd;
+ use std::env;
+ use std::process::ExitCode;
+Diff in /data1/jfeng/tcode_win/output/res1/pwd/pwd-rust/src/progname.rs:28:
+ 
+ impl Progname {
+     pub fn set_program_name(argv0: Option<&str>) {
+[31m-        let argv0 =
+(B[m[31m-            argv0.unwrap_or_else(|| panic!("A NULL argv[0] was passed through an exec system call."));
+(B[m[32m+        let argv0 = argv0
+(B[m[32m+            .unwrap_or_else(|| panic!("A NULL argv[0] was passed through an exec system call."));
+(B[m 
+         let normalized = normalize_program_name(argv0);
+         let _ = program_name_cell().set(normalized);
+Diff in /data1/jfeng/tcode_win/output/res1/pwd/pwd-rust/src/pwd.rs:38:
+ 
+             let mut out = io::stdout().lock();
+             let _ = writeln!(out, "Usage: {} [OPTION]...", program);
+[31m-            let _ = writeln!(out, "Print the full filename of the current working directory.");
+(B[m[32m+            let _ = writeln!(
+(B[m[32m+                out,
+(B[m[32m+                "Print the full filename of the current working directory."
+(B[m[32m+            );
+(B[m             let _ = writeln!(out);
+             let _ = writeln!(
+                 out,

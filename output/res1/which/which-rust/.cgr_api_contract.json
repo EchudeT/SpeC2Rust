@@ -1,0 +1,3363 @@
+{
+  "project_name": "which-rust",
+  "files": {
+    "src/bash.rs": {
+      "updated_at": "2026-06-06T13:14:10",
+      "contract": {
+        "public_structs": [
+          {
+            "name": "UserInfo",
+            "fields": [
+              {
+                "name": "uid",
+                "public": true,
+                "type": "u32"
+              },
+              {
+                "name": "gid",
+                "public": true,
+                "type": "u32"
+              },
+              {
+                "name": "euid",
+                "public": true,
+                "type": "u32"
+              },
+              {
+                "name": "egid",
+                "public": true,
+                "type": "u32"
+              },
+              {
+                "name": "user_name",
+                "public": true,
+                "type": "Option<String>"
+              },
+              {
+                "name": "shell",
+                "public": true,
+                "type": "Option<String>"
+              },
+              {
+                "name": "home_dir",
+                "public": true,
+                "type": "Option<String>"
+              }
+            ]
+          },
+          {
+            "name": "FileStatus",
+            "fields": [
+              {
+                "name": "exists",
+                "public": true,
+                "type": "bool"
+              },
+              {
+                "name": "is_directory",
+                "public": true,
+                "type": "bool"
+              },
+              {
+                "name": "executable",
+                "public": true,
+                "type": "bool"
+              },
+              {
+                "name": "readable",
+                "public": true,
+                "type": "bool"
+              }
+            ]
+          },
+          {
+            "name": "Bash",
+            "fields": [
+              {
+                "name": "current_user",
+                "public": false,
+                "type": "UserInfo"
+              },
+              {
+                "name": "group_array",
+                "public": false,
+                "type": "Vec<u32>"
+              },
+              {
+                "name": "maxgroups_cache",
+                "public": false,
+                "type": "Option<usize>"
+              }
+            ]
+          }
+        ],
+        "public_enums": [],
+        "public_traits": [],
+        "public_functions": [
+          "absolute_program",
+          "extract_colon_unit",
+          "file_status",
+          "get_current_user_info",
+          "get_next_path_element",
+          "getmaxgroups",
+          "group_member",
+          "initialize_group_array",
+          "make_full_pathname",
+          "new",
+          "sh_get_env_value",
+          "sh_get_home_dir",
+          "substring",
+          "uidget",
+          "user_info"
+        ],
+        "constructors": [
+          "Bash::new"
+        ],
+        "accessors": [
+          "Bash::get_current_user_info",
+          "Bash::get_next_path_element"
+        ],
+        "impl_methods": {
+          "Bash": [
+            "absolute_program",
+            "extract_colon_unit",
+            "file_status",
+            "get_current_user_info",
+            "get_next_path_element",
+            "getmaxgroups",
+            "group_member",
+            "initialize_group_array",
+            "make_full_pathname",
+            "new",
+            "sh_get_env_value",
+            "sh_get_home_dir",
+            "substring",
+            "uidget",
+            "user_info"
+          ]
+        },
+        "references": [
+          {
+            "path": "src/bash.rs",
+            "kind": "type",
+            "name": "UserInfo",
+            "visibility": "public",
+            "public": true,
+            "owner_type": "",
+            "params": [],
+            "return_type": "",
+            "signature": "struct UserInfo"
+          },
+          {
+            "path": "src/bash.rs",
+            "kind": "type",
+            "name": "FileStatus",
+            "visibility": "public",
+            "public": true,
+            "owner_type": "",
+            "params": [],
+            "return_type": "",
+            "signature": "struct FileStatus"
+          },
+          {
+            "path": "src/bash.rs",
+            "kind": "type",
+            "name": "Bash",
+            "visibility": "public",
+            "public": true,
+            "owner_type": "",
+            "params": [],
+            "return_type": "",
+            "signature": "struct Bash"
+          },
+          {
+            "path": "src/bash.rs",
+            "kind": "field",
+            "name": "uid",
+            "visibility": "public",
+            "public": true,
+            "owner_type": "UserInfo",
+            "params": [],
+            "return_type": "u32",
+            "signature": "UserInfo::uid: u32"
+          },
+          {
+            "path": "src/bash.rs",
+            "kind": "field",
+            "name": "gid",
+            "visibility": "public",
+            "public": true,
+            "owner_type": "UserInfo",
+            "params": [],
+            "return_type": "u32",
+            "signature": "UserInfo::gid: u32"
+          },
+          {
+            "path": "src/bash.rs",
+            "kind": "field",
+            "name": "euid",
+            "visibility": "public",
+            "public": true,
+            "owner_type": "UserInfo",
+            "params": [],
+            "return_type": "u32",
+            "signature": "UserInfo::euid: u32"
+          },
+          {
+            "path": "src/bash.rs",
+            "kind": "field",
+            "name": "egid",
+            "visibility": "public",
+            "public": true,
+            "owner_type": "UserInfo",
+            "params": [],
+            "return_type": "u32",
+            "signature": "UserInfo::egid: u32"
+          },
+          {
+            "path": "src/bash.rs",
+            "kind": "field",
+            "name": "user_name",
+            "visibility": "public",
+            "public": true,
+            "owner_type": "UserInfo",
+            "params": [],
+            "return_type": "Option<String>",
+            "signature": "UserInfo::user_name: Option<String>"
+          },
+          {
+            "path": "src/bash.rs",
+            "kind": "field",
+            "name": "shell",
+            "visibility": "public",
+            "public": true,
+            "owner_type": "UserInfo",
+            "params": [],
+            "return_type": "Option<String>",
+            "signature": "UserInfo::shell: Option<String>"
+          },
+          {
+            "path": "src/bash.rs",
+            "kind": "field",
+            "name": "home_dir",
+            "visibility": "public",
+            "public": true,
+            "owner_type": "UserInfo",
+            "params": [],
+            "return_type": "Option<String>",
+            "signature": "UserInfo::home_dir: Option<String>"
+          },
+          {
+            "path": "src/bash.rs",
+            "kind": "field",
+            "name": "exists",
+            "visibility": "public",
+            "public": true,
+            "owner_type": "FileStatus",
+            "params": [],
+            "return_type": "bool",
+            "signature": "FileStatus::exists: bool"
+          },
+          {
+            "path": "src/bash.rs",
+            "kind": "field",
+            "name": "is_directory",
+            "visibility": "public",
+            "public": true,
+            "owner_type": "FileStatus",
+            "params": [],
+            "return_type": "bool",
+            "signature": "FileStatus::is_directory: bool"
+          },
+          {
+            "path": "src/bash.rs",
+            "kind": "field",
+            "name": "executable",
+            "visibility": "public",
+            "public": true,
+            "owner_type": "FileStatus",
+            "params": [],
+            "return_type": "bool",
+            "signature": "FileStatus::executable: bool"
+          },
+          {
+            "path": "src/bash.rs",
+            "kind": "field",
+            "name": "readable",
+            "visibility": "public",
+            "public": true,
+            "owner_type": "FileStatus",
+            "params": [],
+            "return_type": "bool",
+            "signature": "FileStatus::readable: bool"
+          },
+          {
+            "path": "src/bash.rs",
+            "kind": "field",
+            "name": "current_user",
+            "visibility": "private",
+            "public": false,
+            "owner_type": "Bash",
+            "params": [],
+            "return_type": "UserInfo",
+            "signature": "Bash::current_user: UserInfo"
+          },
+          {
+            "path": "src/bash.rs",
+            "kind": "field",
+            "name": "group_array",
+            "visibility": "private",
+            "public": false,
+            "owner_type": "Bash",
+            "params": [],
+            "return_type": "Vec<u32>",
+            "signature": "Bash::group_array: Vec<u32>"
+          },
+          {
+            "path": "src/bash.rs",
+            "kind": "field",
+            "name": "maxgroups_cache",
+            "visibility": "private",
+            "public": false,
+            "owner_type": "Bash",
+            "params": [],
+            "return_type": "Option<usize>",
+            "signature": "Bash::maxgroups_cache: Option<usize>"
+          },
+          {
+            "path": "src/bash.rs",
+            "kind": "function",
+            "name": "read_id_from_proc_status",
+            "visibility": "private",
+            "public": false,
+            "owner_type": "",
+            "params": [
+              "field: &str",
+              "index: usize"
+            ],
+            "return_type": "Option<u32>",
+            "signature": "read_id_from_proc_status(field: &str, index: usize) -> Option<u32>"
+          },
+          {
+            "path": "src/bash.rs",
+            "kind": "function",
+            "name": "read_supplementary_groups_from_proc_status",
+            "visibility": "private",
+            "public": false,
+            "owner_type": "",
+            "params": [],
+            "return_type": "Option<Vec<u32>>",
+            "signature": "read_supplementary_groups_from_proc_status() -> Option<Vec<u32>>"
+          },
+          {
+            "path": "src/bash.rs",
+            "kind": "function",
+            "name": "_normalize_join",
+            "visibility": "private",
+            "public": false,
+            "owner_type": "",
+            "params": [
+              "path: &str",
+              "name: &str"
+            ],
+            "return_type": "PathBuf",
+            "signature": "_normalize_join(path: &str, name: &str) -> PathBuf"
+          },
+          {
+            "path": "src/bash.rs",
+            "kind": "method",
+            "name": "default",
+            "visibility": "private",
+            "public": false,
+            "owner_type": "UserInfo",
+            "params": [],
+            "return_type": "Self",
+            "signature": "default() -> Self"
+          },
+          {
+            "path": "src/bash.rs",
+            "kind": "method",
+            "name": "missing",
+            "visibility": "private",
+            "public": false,
+            "owner_type": "FileStatus",
+            "params": [],
+            "return_type": "Self",
+            "signature": "missing() -> Self"
+          },
+          {
+            "path": "src/bash.rs",
+            "kind": "method",
+            "name": "new",
+            "visibility": "public",
+            "public": true,
+            "owner_type": "Bash",
+            "params": [],
+            "return_type": "Self",
+            "signature": "new() -> Self"
+          },
+          {
+            "path": "src/bash.rs",
+            "kind": "method",
+            "name": "user_info",
+            "visibility": "public",
+            "public": true,
+            "owner_type": "Bash",
+            "params": [
+              "&self"
+            ],
+            "return_type": "&UserInfo",
+            "signature": "user_info(&self) -> &UserInfo"
+          },
+          {
+            "path": "src/bash.rs",
+            "kind": "method",
+            "name": "uidget",
+            "visibility": "public",
+            "public": true,
+            "owner_type": "Bash",
+            "params": [
+              "&mut self"
+            ],
+            "return_type": "bool",
+            "signature": "uidget(&mut self) -> bool"
+          },
+          {
+            "path": "src/bash.rs",
+            "kind": "method",
+            "name": "getmaxgroups",
+            "visibility": "public",
+            "public": true,
+            "owner_type": "Bash",
+            "params": [
+              "&mut self"
+            ],
+            "return_type": "usize",
+            "signature": "getmaxgroups(&mut self) -> usize"
+          },
+          {
+            "path": "src/bash.rs",
+            "kind": "method",
+            "name": "initialize_group_array",
+            "visibility": "public",
+            "public": true,
+            "owner_type": "Bash",
+            "params": [
+              "&mut self"
+            ],
+            "return_type": "",
+            "signature": "initialize_group_array(&mut self)"
+          },
+          {
+            "path": "src/bash.rs",
+            "kind": "method",
+            "name": "group_member",
+            "visibility": "public",
+            "public": true,
+            "owner_type": "Bash",
+            "params": [
+              "&mut self",
+              "gid: u32"
+            ],
+            "return_type": "bool",
+            "signature": "group_member(&mut self, gid: u32) -> bool"
+          },
+          {
+            "path": "src/bash.rs",
+            "kind": "method",
+            "name": "file_status",
+            "visibility": "public",
+            "public": true,
+            "owner_type": "Bash",
+            "params": [
+              "&mut self",
+              "name: &str"
+            ],
+            "return_type": "FileStatus",
+            "signature": "file_status(&mut self, name: &str) -> FileStatus"
+          },
+          {
+            "path": "src/bash.rs",
+            "kind": "method",
+            "name": "absolute_program",
+            "visibility": "public",
+            "public": true,
+            "owner_type": "Bash",
+            "params": [
+              "&self",
+              "string: &str"
+            ],
+            "return_type": "bool",
+            "signature": "absolute_program(&self, string: &str) -> bool"
+          },
+          {
+            "path": "src/bash.rs",
+            "kind": "method",
+            "name": "substring",
+            "visibility": "public",
+            "public": true,
+            "owner_type": "Bash",
+            "params": [
+              "&self",
+              "string: &str",
+              "start: usize",
+              "end: usize"
+            ],
+            "return_type": "String",
+            "signature": "substring(&self, string: &str, start: usize, end: usize) -> String"
+          },
+          {
+            "path": "src/bash.rs",
+            "kind": "method",
+            "name": "extract_colon_unit",
+            "visibility": "public",
+            "public": true,
+            "owner_type": "Bash",
+            "params": [
+              "&self",
+              "string: Option<&str>",
+              "p_index: &mut usize"
+            ],
+            "return_type": "Option<String>",
+            "signature": "extract_colon_unit(&self, string: Option<&str>, p_index: &mut usize) -> Option<String>"
+          },
+          {
+            "path": "src/bash.rs",
+            "kind": "method",
+            "name": "get_next_path_element",
+            "visibility": "public",
+            "public": true,
+            "owner_type": "Bash",
+            "params": [
+              "&self",
+              "path_list: Option<&str>",
+              "path_index_pointer: &mut usize"
+            ],
+            "return_type": "Option<String>",
+            "signature": "get_next_path_element(&self, path_list: Option<&str>, path_index_pointer: &mut usize) -> Option<String>"
+          },
+          {
+            "path": "src/bash.rs",
+            "kind": "method",
+            "name": "make_full_pathname",
+            "visibility": "public",
+            "public": true,
+            "owner_type": "Bash",
+            "params": [
+              "&self",
+              "path: &str",
+              "name: &str",
+              "_name_len: usize"
+            ],
+            "return_type": "String",
+            "signature": "make_full_pathname(&self, path: &str, name: &str, _name_len: usize) -> String"
+          },
+          {
+            "path": "src/bash.rs",
+            "kind": "method",
+            "name": "get_current_user_info",
+            "visibility": "public",
+            "public": true,
+            "owner_type": "Bash",
+            "params": [
+              "&mut self"
+            ],
+            "return_type": "",
+            "signature": "get_current_user_info(&mut self)"
+          },
+          {
+            "path": "src/bash.rs",
+            "kind": "method",
+            "name": "sh_get_env_value",
+            "visibility": "public",
+            "public": true,
+            "owner_type": "Bash",
+            "params": [
+              "&self",
+              "v: &str"
+            ],
+            "return_type": "Option<String>",
+            "signature": "sh_get_env_value(&self, v: &str) -> Option<String>"
+          },
+          {
+            "path": "src/bash.rs",
+            "kind": "method",
+            "name": "sh_get_home_dir",
+            "visibility": "public",
+            "public": true,
+            "owner_type": "Bash",
+            "params": [
+              "&mut self"
+            ],
+            "return_type": "Option<String>",
+            "signature": "sh_get_home_dir(&mut self) -> Option<String>"
+          }
+        ]
+      },
+      "references": [
+        {
+          "path": "src/bash.rs",
+          "kind": "type",
+          "name": "UserInfo",
+          "visibility": "public",
+          "public": true,
+          "owner_type": "",
+          "params": [],
+          "return_type": "",
+          "signature": "struct UserInfo"
+        },
+        {
+          "path": "src/bash.rs",
+          "kind": "type",
+          "name": "FileStatus",
+          "visibility": "public",
+          "public": true,
+          "owner_type": "",
+          "params": [],
+          "return_type": "",
+          "signature": "struct FileStatus"
+        },
+        {
+          "path": "src/bash.rs",
+          "kind": "type",
+          "name": "Bash",
+          "visibility": "public",
+          "public": true,
+          "owner_type": "",
+          "params": [],
+          "return_type": "",
+          "signature": "struct Bash"
+        },
+        {
+          "path": "src/bash.rs",
+          "kind": "field",
+          "name": "uid",
+          "visibility": "public",
+          "public": true,
+          "owner_type": "UserInfo",
+          "params": [],
+          "return_type": "u32",
+          "signature": "UserInfo::uid: u32"
+        },
+        {
+          "path": "src/bash.rs",
+          "kind": "field",
+          "name": "gid",
+          "visibility": "public",
+          "public": true,
+          "owner_type": "UserInfo",
+          "params": [],
+          "return_type": "u32",
+          "signature": "UserInfo::gid: u32"
+        },
+        {
+          "path": "src/bash.rs",
+          "kind": "field",
+          "name": "euid",
+          "visibility": "public",
+          "public": true,
+          "owner_type": "UserInfo",
+          "params": [],
+          "return_type": "u32",
+          "signature": "UserInfo::euid: u32"
+        },
+        {
+          "path": "src/bash.rs",
+          "kind": "field",
+          "name": "egid",
+          "visibility": "public",
+          "public": true,
+          "owner_type": "UserInfo",
+          "params": [],
+          "return_type": "u32",
+          "signature": "UserInfo::egid: u32"
+        },
+        {
+          "path": "src/bash.rs",
+          "kind": "field",
+          "name": "user_name",
+          "visibility": "public",
+          "public": true,
+          "owner_type": "UserInfo",
+          "params": [],
+          "return_type": "Option<String>",
+          "signature": "UserInfo::user_name: Option<String>"
+        },
+        {
+          "path": "src/bash.rs",
+          "kind": "field",
+          "name": "shell",
+          "visibility": "public",
+          "public": true,
+          "owner_type": "UserInfo",
+          "params": [],
+          "return_type": "Option<String>",
+          "signature": "UserInfo::shell: Option<String>"
+        },
+        {
+          "path": "src/bash.rs",
+          "kind": "field",
+          "name": "home_dir",
+          "visibility": "public",
+          "public": true,
+          "owner_type": "UserInfo",
+          "params": [],
+          "return_type": "Option<String>",
+          "signature": "UserInfo::home_dir: Option<String>"
+        },
+        {
+          "path": "src/bash.rs",
+          "kind": "field",
+          "name": "exists",
+          "visibility": "public",
+          "public": true,
+          "owner_type": "FileStatus",
+          "params": [],
+          "return_type": "bool",
+          "signature": "FileStatus::exists: bool"
+        },
+        {
+          "path": "src/bash.rs",
+          "kind": "field",
+          "name": "is_directory",
+          "visibility": "public",
+          "public": true,
+          "owner_type": "FileStatus",
+          "params": [],
+          "return_type": "bool",
+          "signature": "FileStatus::is_directory: bool"
+        },
+        {
+          "path": "src/bash.rs",
+          "kind": "field",
+          "name": "executable",
+          "visibility": "public",
+          "public": true,
+          "owner_type": "FileStatus",
+          "params": [],
+          "return_type": "bool",
+          "signature": "FileStatus::executable: bool"
+        },
+        {
+          "path": "src/bash.rs",
+          "kind": "field",
+          "name": "readable",
+          "visibility": "public",
+          "public": true,
+          "owner_type": "FileStatus",
+          "params": [],
+          "return_type": "bool",
+          "signature": "FileStatus::readable: bool"
+        },
+        {
+          "path": "src/bash.rs",
+          "kind": "field",
+          "name": "current_user",
+          "visibility": "private",
+          "public": false,
+          "owner_type": "Bash",
+          "params": [],
+          "return_type": "UserInfo",
+          "signature": "Bash::current_user: UserInfo"
+        },
+        {
+          "path": "src/bash.rs",
+          "kind": "field",
+          "name": "group_array",
+          "visibility": "private",
+          "public": false,
+          "owner_type": "Bash",
+          "params": [],
+          "return_type": "Vec<u32>",
+          "signature": "Bash::group_array: Vec<u32>"
+        },
+        {
+          "path": "src/bash.rs",
+          "kind": "field",
+          "name": "maxgroups_cache",
+          "visibility": "private",
+          "public": false,
+          "owner_type": "Bash",
+          "params": [],
+          "return_type": "Option<usize>",
+          "signature": "Bash::maxgroups_cache: Option<usize>"
+        },
+        {
+          "path": "src/bash.rs",
+          "kind": "function",
+          "name": "read_id_from_proc_status",
+          "visibility": "private",
+          "public": false,
+          "owner_type": "",
+          "params": [
+            "field: &str",
+            "index: usize"
+          ],
+          "return_type": "Option<u32>",
+          "signature": "read_id_from_proc_status(field: &str, index: usize) -> Option<u32>"
+        },
+        {
+          "path": "src/bash.rs",
+          "kind": "function",
+          "name": "read_supplementary_groups_from_proc_status",
+          "visibility": "private",
+          "public": false,
+          "owner_type": "",
+          "params": [],
+          "return_type": "Option<Vec<u32>>",
+          "signature": "read_supplementary_groups_from_proc_status() -> Option<Vec<u32>>"
+        },
+        {
+          "path": "src/bash.rs",
+          "kind": "function",
+          "name": "_normalize_join",
+          "visibility": "private",
+          "public": false,
+          "owner_type": "",
+          "params": [
+            "path: &str",
+            "name: &str"
+          ],
+          "return_type": "PathBuf",
+          "signature": "_normalize_join(path: &str, name: &str) -> PathBuf"
+        },
+        {
+          "path": "src/bash.rs",
+          "kind": "method",
+          "name": "default",
+          "visibility": "private",
+          "public": false,
+          "owner_type": "UserInfo",
+          "params": [],
+          "return_type": "Self",
+          "signature": "default() -> Self"
+        },
+        {
+          "path": "src/bash.rs",
+          "kind": "method",
+          "name": "missing",
+          "visibility": "private",
+          "public": false,
+          "owner_type": "FileStatus",
+          "params": [],
+          "return_type": "Self",
+          "signature": "missing() -> Self"
+        },
+        {
+          "path": "src/bash.rs",
+          "kind": "method",
+          "name": "new",
+          "visibility": "public",
+          "public": true,
+          "owner_type": "Bash",
+          "params": [],
+          "return_type": "Self",
+          "signature": "new() -> Self"
+        },
+        {
+          "path": "src/bash.rs",
+          "kind": "method",
+          "name": "user_info",
+          "visibility": "public",
+          "public": true,
+          "owner_type": "Bash",
+          "params": [
+            "&self"
+          ],
+          "return_type": "&UserInfo",
+          "signature": "user_info(&self) -> &UserInfo"
+        },
+        {
+          "path": "src/bash.rs",
+          "kind": "method",
+          "name": "uidget",
+          "visibility": "public",
+          "public": true,
+          "owner_type": "Bash",
+          "params": [
+            "&mut self"
+          ],
+          "return_type": "bool",
+          "signature": "uidget(&mut self) -> bool"
+        },
+        {
+          "path": "src/bash.rs",
+          "kind": "method",
+          "name": "getmaxgroups",
+          "visibility": "public",
+          "public": true,
+          "owner_type": "Bash",
+          "params": [
+            "&mut self"
+          ],
+          "return_type": "usize",
+          "signature": "getmaxgroups(&mut self) -> usize"
+        },
+        {
+          "path": "src/bash.rs",
+          "kind": "method",
+          "name": "initialize_group_array",
+          "visibility": "public",
+          "public": true,
+          "owner_type": "Bash",
+          "params": [
+            "&mut self"
+          ],
+          "return_type": "",
+          "signature": "initialize_group_array(&mut self)"
+        },
+        {
+          "path": "src/bash.rs",
+          "kind": "method",
+          "name": "group_member",
+          "visibility": "public",
+          "public": true,
+          "owner_type": "Bash",
+          "params": [
+            "&mut self",
+            "gid: u32"
+          ],
+          "return_type": "bool",
+          "signature": "group_member(&mut self, gid: u32) -> bool"
+        },
+        {
+          "path": "src/bash.rs",
+          "kind": "method",
+          "name": "file_status",
+          "visibility": "public",
+          "public": true,
+          "owner_type": "Bash",
+          "params": [
+            "&mut self",
+            "name: &str"
+          ],
+          "return_type": "FileStatus",
+          "signature": "file_status(&mut self, name: &str) -> FileStatus"
+        },
+        {
+          "path": "src/bash.rs",
+          "kind": "method",
+          "name": "absolute_program",
+          "visibility": "public",
+          "public": true,
+          "owner_type": "Bash",
+          "params": [
+            "&self",
+            "string: &str"
+          ],
+          "return_type": "bool",
+          "signature": "absolute_program(&self, string: &str) -> bool"
+        },
+        {
+          "path": "src/bash.rs",
+          "kind": "method",
+          "name": "substring",
+          "visibility": "public",
+          "public": true,
+          "owner_type": "Bash",
+          "params": [
+            "&self",
+            "string: &str",
+            "start: usize",
+            "end: usize"
+          ],
+          "return_type": "String",
+          "signature": "substring(&self, string: &str, start: usize, end: usize) -> String"
+        },
+        {
+          "path": "src/bash.rs",
+          "kind": "method",
+          "name": "extract_colon_unit",
+          "visibility": "public",
+          "public": true,
+          "owner_type": "Bash",
+          "params": [
+            "&self",
+            "string: Option<&str>",
+            "p_index: &mut usize"
+          ],
+          "return_type": "Option<String>",
+          "signature": "extract_colon_unit(&self, string: Option<&str>, p_index: &mut usize) -> Option<String>"
+        },
+        {
+          "path": "src/bash.rs",
+          "kind": "method",
+          "name": "get_next_path_element",
+          "visibility": "public",
+          "public": true,
+          "owner_type": "Bash",
+          "params": [
+            "&self",
+            "path_list: Option<&str>",
+            "path_index_pointer: &mut usize"
+          ],
+          "return_type": "Option<String>",
+          "signature": "get_next_path_element(&self, path_list: Option<&str>, path_index_pointer: &mut usize) -> Option<String>"
+        },
+        {
+          "path": "src/bash.rs",
+          "kind": "method",
+          "name": "make_full_pathname",
+          "visibility": "public",
+          "public": true,
+          "owner_type": "Bash",
+          "params": [
+            "&self",
+            "path: &str",
+            "name: &str",
+            "_name_len: usize"
+          ],
+          "return_type": "String",
+          "signature": "make_full_pathname(&self, path: &str, name: &str, _name_len: usize) -> String"
+        },
+        {
+          "path": "src/bash.rs",
+          "kind": "method",
+          "name": "get_current_user_info",
+          "visibility": "public",
+          "public": true,
+          "owner_type": "Bash",
+          "params": [
+            "&mut self"
+          ],
+          "return_type": "",
+          "signature": "get_current_user_info(&mut self)"
+        },
+        {
+          "path": "src/bash.rs",
+          "kind": "method",
+          "name": "sh_get_env_value",
+          "visibility": "public",
+          "public": true,
+          "owner_type": "Bash",
+          "params": [
+            "&self",
+            "v: &str"
+          ],
+          "return_type": "Option<String>",
+          "signature": "sh_get_env_value(&self, v: &str) -> Option<String>"
+        },
+        {
+          "path": "src/bash.rs",
+          "kind": "method",
+          "name": "sh_get_home_dir",
+          "visibility": "public",
+          "public": true,
+          "owner_type": "Bash",
+          "params": [
+            "&mut self"
+          ],
+          "return_type": "Option<String>",
+          "signature": "sh_get_home_dir(&mut self) -> Option<String>"
+        }
+      ]
+    },
+    "src/getopt.rs": {
+      "updated_at": "2026-06-06T13:14:44",
+      "contract": {
+        "public_structs": [
+          {
+            "name": "Getopt",
+            "fields": [
+              {
+                "name": "optind",
+                "public": true,
+                "type": "usize"
+              },
+              {
+                "name": "opterr",
+                "public": true,
+                "type": "bool"
+              },
+              {
+                "name": "optopt",
+                "public": true,
+                "type": "Option<char>"
+              },
+              {
+                "name": "optarg",
+                "public": true,
+                "type": "Option<String>"
+              },
+              {
+                "name": "original_argc",
+                "public": false,
+                "type": "usize"
+              },
+              {
+                "name": "original_argv",
+                "public": false,
+                "type": "Vec<String>"
+              },
+              {
+                "name": "first_nonopt",
+                "public": false,
+                "type": "usize"
+              },
+              {
+                "name": "last_nonopt",
+                "public": false,
+                "type": "usize"
+              },
+              {
+                "name": "nextchar",
+                "public": false,
+                "type": "usize"
+              },
+              {
+                "name": "initialized",
+                "public": false,
+                "type": "bool"
+              }
+            ]
+          }
+        ],
+        "public_enums": [],
+        "public_traits": [],
+        "public_functions": [
+          "attribute",
+          "exchange",
+          "getopt",
+          "internal",
+          "main",
+          "store_args_and_env"
+        ],
+        "constructors": [],
+        "accessors": [],
+        "impl_methods": {
+          "Getopt": [
+            "attribute",
+            "exchange",
+            "getopt",
+            "internal",
+            "main",
+            "store_args_and_env"
+          ]
+        },
+        "references": [
+          {
+            "path": "src/getopt.rs",
+            "kind": "type",
+            "name": "Getopt",
+            "visibility": "public",
+            "public": true,
+            "owner_type": "",
+            "params": [],
+            "return_type": "",
+            "signature": "struct Getopt"
+          },
+          {
+            "path": "src/getopt.rs",
+            "kind": "field",
+            "name": "optind",
+            "visibility": "public",
+            "public": true,
+            "owner_type": "Getopt",
+            "params": [],
+            "return_type": "usize",
+            "signature": "Getopt::optind: usize"
+          },
+          {
+            "path": "src/getopt.rs",
+            "kind": "field",
+            "name": "opterr",
+            "visibility": "public",
+            "public": true,
+            "owner_type": "Getopt",
+            "params": [],
+            "return_type": "bool",
+            "signature": "Getopt::opterr: bool"
+          },
+          {
+            "path": "src/getopt.rs",
+            "kind": "field",
+            "name": "optopt",
+            "visibility": "public",
+            "public": true,
+            "owner_type": "Getopt",
+            "params": [],
+            "return_type": "Option<char>",
+            "signature": "Getopt::optopt: Option<char>"
+          },
+          {
+            "path": "src/getopt.rs",
+            "kind": "field",
+            "name": "optarg",
+            "visibility": "public",
+            "public": true,
+            "owner_type": "Getopt",
+            "params": [],
+            "return_type": "Option<String>",
+            "signature": "Getopt::optarg: Option<String>"
+          },
+          {
+            "path": "src/getopt.rs",
+            "kind": "field",
+            "name": "original_argc",
+            "visibility": "private",
+            "public": false,
+            "owner_type": "Getopt",
+            "params": [],
+            "return_type": "usize",
+            "signature": "Getopt::original_argc: usize"
+          },
+          {
+            "path": "src/getopt.rs",
+            "kind": "field",
+            "name": "original_argv",
+            "visibility": "private",
+            "public": false,
+            "owner_type": "Getopt",
+            "params": [],
+            "return_type": "Vec<String>",
+            "signature": "Getopt::original_argv: Vec<String>"
+          },
+          {
+            "path": "src/getopt.rs",
+            "kind": "field",
+            "name": "first_nonopt",
+            "visibility": "private",
+            "public": false,
+            "owner_type": "Getopt",
+            "params": [],
+            "return_type": "usize",
+            "signature": "Getopt::first_nonopt: usize"
+          },
+          {
+            "path": "src/getopt.rs",
+            "kind": "field",
+            "name": "last_nonopt",
+            "visibility": "private",
+            "public": false,
+            "owner_type": "Getopt",
+            "params": [],
+            "return_type": "usize",
+            "signature": "Getopt::last_nonopt: usize"
+          },
+          {
+            "path": "src/getopt.rs",
+            "kind": "field",
+            "name": "nextchar",
+            "visibility": "private",
+            "public": false,
+            "owner_type": "Getopt",
+            "params": [],
+            "return_type": "usize",
+            "signature": "Getopt::nextchar: usize"
+          },
+          {
+            "path": "src/getopt.rs",
+            "kind": "field",
+            "name": "initialized",
+            "visibility": "private",
+            "public": false,
+            "owner_type": "Getopt",
+            "params": [],
+            "return_type": "bool",
+            "signature": "Getopt::initialized: bool"
+          },
+          {
+            "path": "src/getopt.rs",
+            "kind": "method",
+            "name": "store_args_and_env",
+            "visibility": "public",
+            "public": true,
+            "owner_type": "Getopt",
+            "params": [
+              "&mut self",
+              "argc: usize",
+              "argv: &[String]"
+            ],
+            "return_type": "",
+            "signature": "store_args_and_env(&mut self, argc: usize, argv: &[String])"
+          },
+          {
+            "path": "src/getopt.rs",
+            "kind": "method",
+            "name": "exchange",
+            "visibility": "public",
+            "public": true,
+            "owner_type": "Getopt",
+            "params": [
+              "&mut self",
+              "argv: &mut [String]"
+            ],
+            "return_type": "",
+            "signature": "exchange(&mut self, argv: &mut [String])"
+          },
+          {
+            "path": "src/getopt.rs",
+            "kind": "method",
+            "name": "internal",
+            "visibility": "public",
+            "public": true,
+            "owner_type": "Getopt",
+            "params": [
+              "&mut self",
+              "argv: &mut [String]",
+              "optstring: &str",
+              "_long_only: bool"
+            ],
+            "return_type": "Option<char>",
+            "signature": "internal(&mut self, argv: &mut [String], optstring: &str, _long_only: bool) -> Option<char>"
+          },
+          {
+            "path": "src/getopt.rs",
+            "kind": "method",
+            "name": "getopt",
+            "visibility": "public",
+            "public": true,
+            "owner_type": "Getopt",
+            "params": [
+              "&mut self",
+              "argv: &mut [String]",
+              "optstring: &str"
+            ],
+            "return_type": "Option<char>",
+            "signature": "getopt(&mut self, argv: &mut [String], optstring: &str) -> Option<char>"
+          },
+          {
+            "path": "src/getopt.rs",
+            "kind": "method",
+            "name": "main",
+            "visibility": "public",
+            "public": true,
+            "owner_type": "Getopt",
+            "params": [
+              "&mut self"
+            ],
+            "return_type": "i32",
+            "signature": "main(&mut self) -> i32"
+          },
+          {
+            "path": "src/getopt.rs",
+            "kind": "method",
+            "name": "attribute",
+            "visibility": "public",
+            "public": true,
+            "owner_type": "Getopt",
+            "params": [
+              "&self"
+            ],
+            "return_type": "bool",
+            "signature": "attribute(&self) -> bool"
+          }
+        ]
+      },
+      "references": [
+        {
+          "path": "src/getopt.rs",
+          "kind": "type",
+          "name": "Getopt",
+          "visibility": "public",
+          "public": true,
+          "owner_type": "",
+          "params": [],
+          "return_type": "",
+          "signature": "struct Getopt"
+        },
+        {
+          "path": "src/getopt.rs",
+          "kind": "field",
+          "name": "optind",
+          "visibility": "public",
+          "public": true,
+          "owner_type": "Getopt",
+          "params": [],
+          "return_type": "usize",
+          "signature": "Getopt::optind: usize"
+        },
+        {
+          "path": "src/getopt.rs",
+          "kind": "field",
+          "name": "opterr",
+          "visibility": "public",
+          "public": true,
+          "owner_type": "Getopt",
+          "params": [],
+          "return_type": "bool",
+          "signature": "Getopt::opterr: bool"
+        },
+        {
+          "path": "src/getopt.rs",
+          "kind": "field",
+          "name": "optopt",
+          "visibility": "public",
+          "public": true,
+          "owner_type": "Getopt",
+          "params": [],
+          "return_type": "Option<char>",
+          "signature": "Getopt::optopt: Option<char>"
+        },
+        {
+          "path": "src/getopt.rs",
+          "kind": "field",
+          "name": "optarg",
+          "visibility": "public",
+          "public": true,
+          "owner_type": "Getopt",
+          "params": [],
+          "return_type": "Option<String>",
+          "signature": "Getopt::optarg: Option<String>"
+        },
+        {
+          "path": "src/getopt.rs",
+          "kind": "field",
+          "name": "original_argc",
+          "visibility": "private",
+          "public": false,
+          "owner_type": "Getopt",
+          "params": [],
+          "return_type": "usize",
+          "signature": "Getopt::original_argc: usize"
+        },
+        {
+          "path": "src/getopt.rs",
+          "kind": "field",
+          "name": "original_argv",
+          "visibility": "private",
+          "public": false,
+          "owner_type": "Getopt",
+          "params": [],
+          "return_type": "Vec<String>",
+          "signature": "Getopt::original_argv: Vec<String>"
+        },
+        {
+          "path": "src/getopt.rs",
+          "kind": "field",
+          "name": "first_nonopt",
+          "visibility": "private",
+          "public": false,
+          "owner_type": "Getopt",
+          "params": [],
+          "return_type": "usize",
+          "signature": "Getopt::first_nonopt: usize"
+        },
+        {
+          "path": "src/getopt.rs",
+          "kind": "field",
+          "name": "last_nonopt",
+          "visibility": "private",
+          "public": false,
+          "owner_type": "Getopt",
+          "params": [],
+          "return_type": "usize",
+          "signature": "Getopt::last_nonopt: usize"
+        },
+        {
+          "path": "src/getopt.rs",
+          "kind": "field",
+          "name": "nextchar",
+          "visibility": "private",
+          "public": false,
+          "owner_type": "Getopt",
+          "params": [],
+          "return_type": "usize",
+          "signature": "Getopt::nextchar: usize"
+        },
+        {
+          "path": "src/getopt.rs",
+          "kind": "field",
+          "name": "initialized",
+          "visibility": "private",
+          "public": false,
+          "owner_type": "Getopt",
+          "params": [],
+          "return_type": "bool",
+          "signature": "Getopt::initialized: bool"
+        },
+        {
+          "path": "src/getopt.rs",
+          "kind": "method",
+          "name": "store_args_and_env",
+          "visibility": "public",
+          "public": true,
+          "owner_type": "Getopt",
+          "params": [
+            "&mut self",
+            "argc: usize",
+            "argv: &[String]"
+          ],
+          "return_type": "",
+          "signature": "store_args_and_env(&mut self, argc: usize, argv: &[String])"
+        },
+        {
+          "path": "src/getopt.rs",
+          "kind": "method",
+          "name": "exchange",
+          "visibility": "public",
+          "public": true,
+          "owner_type": "Getopt",
+          "params": [
+            "&mut self",
+            "argv: &mut [String]"
+          ],
+          "return_type": "",
+          "signature": "exchange(&mut self, argv: &mut [String])"
+        },
+        {
+          "path": "src/getopt.rs",
+          "kind": "method",
+          "name": "internal",
+          "visibility": "public",
+          "public": true,
+          "owner_type": "Getopt",
+          "params": [
+            "&mut self",
+            "argv: &mut [String]",
+            "optstring: &str",
+            "_long_only: bool"
+          ],
+          "return_type": "Option<char>",
+          "signature": "internal(&mut self, argv: &mut [String], optstring: &str, _long_only: bool) -> Option<char>"
+        },
+        {
+          "path": "src/getopt.rs",
+          "kind": "method",
+          "name": "getopt",
+          "visibility": "public",
+          "public": true,
+          "owner_type": "Getopt",
+          "params": [
+            "&mut self",
+            "argv: &mut [String]",
+            "optstring: &str"
+          ],
+          "return_type": "Option<char>",
+          "signature": "getopt(&mut self, argv: &mut [String], optstring: &str) -> Option<char>"
+        },
+        {
+          "path": "src/getopt.rs",
+          "kind": "method",
+          "name": "main",
+          "visibility": "public",
+          "public": true,
+          "owner_type": "Getopt",
+          "params": [
+            "&mut self"
+          ],
+          "return_type": "i32",
+          "signature": "main(&mut self) -> i32"
+        },
+        {
+          "path": "src/getopt.rs",
+          "kind": "method",
+          "name": "attribute",
+          "visibility": "public",
+          "public": true,
+          "owner_type": "Getopt",
+          "params": [
+            "&self"
+          ],
+          "return_type": "bool",
+          "signature": "attribute(&self) -> bool"
+        }
+      ]
+    },
+    "src/getopt1.rs": {
+      "updated_at": "2026-06-06T13:15:03",
+      "contract": {
+        "public_structs": [
+          {
+            "name": "Getopt1",
+            "fields": [
+              {
+                "name": "parser",
+                "public": false,
+                "type": "Getopt"
+              }
+            ]
+          }
+        ],
+        "public_enums": [],
+        "public_traits": [],
+        "public_functions": [
+          "getopt_long",
+          "getopt_long_only",
+          "main"
+        ],
+        "constructors": [],
+        "accessors": [],
+        "impl_methods": {
+          "Getopt1": [
+            "getopt_long",
+            "getopt_long_only",
+            "main"
+          ]
+        },
+        "references": [
+          {
+            "path": "src/getopt1.rs",
+            "kind": "type",
+            "name": "Getopt1",
+            "visibility": "public",
+            "public": true,
+            "owner_type": "",
+            "params": [],
+            "return_type": "",
+            "signature": "struct Getopt1"
+          },
+          {
+            "path": "src/getopt1.rs",
+            "kind": "field",
+            "name": "parser",
+            "visibility": "private",
+            "public": false,
+            "owner_type": "Getopt1",
+            "params": [],
+            "return_type": "Getopt",
+            "signature": "Getopt1::parser: Getopt"
+          },
+          {
+            "path": "src/getopt1.rs",
+            "kind": "method",
+            "name": "getopt_long",
+            "visibility": "public",
+            "public": true,
+            "owner_type": "Getopt1",
+            "params": [
+              "&mut self",
+              "argv: &mut [String]",
+              "optstring: &str",
+              "_long_options: &[&str]",
+              "_opt_index: Option<&mut usize>"
+            ],
+            "return_type": "Option<char>",
+            "signature": "getopt_long(&mut self, argv: &mut [String], optstring: &str, _long_options: &[&str], _opt_index: Option<&mut usize>) -> Option<char>"
+          },
+          {
+            "path": "src/getopt1.rs",
+            "kind": "method",
+            "name": "getopt_long_only",
+            "visibility": "public",
+            "public": true,
+            "owner_type": "Getopt1",
+            "params": [
+              "&mut self",
+              "argv: &mut [String]",
+              "optstring: &str",
+              "_long_options: &[&str]",
+              "_opt_index: Option<&mut usize>"
+            ],
+            "return_type": "Option<char>",
+            "signature": "getopt_long_only(&mut self, argv: &mut [String], optstring: &str, _long_options: &[&str], _opt_index: Option<&mut usize>) -> Option<char>"
+          },
+          {
+            "path": "src/getopt1.rs",
+            "kind": "method",
+            "name": "main",
+            "visibility": "public",
+            "public": true,
+            "owner_type": "Getopt1",
+            "params": [
+              "&mut self"
+            ],
+            "return_type": "i32",
+            "signature": "main(&mut self) -> i32"
+          }
+        ]
+      },
+      "references": [
+        {
+          "path": "src/getopt1.rs",
+          "kind": "type",
+          "name": "Getopt1",
+          "visibility": "public",
+          "public": true,
+          "owner_type": "",
+          "params": [],
+          "return_type": "",
+          "signature": "struct Getopt1"
+        },
+        {
+          "path": "src/getopt1.rs",
+          "kind": "field",
+          "name": "parser",
+          "visibility": "private",
+          "public": false,
+          "owner_type": "Getopt1",
+          "params": [],
+          "return_type": "Getopt",
+          "signature": "Getopt1::parser: Getopt"
+        },
+        {
+          "path": "src/getopt1.rs",
+          "kind": "method",
+          "name": "getopt_long",
+          "visibility": "public",
+          "public": true,
+          "owner_type": "Getopt1",
+          "params": [
+            "&mut self",
+            "argv: &mut [String]",
+            "optstring: &str",
+            "_long_options: &[&str]",
+            "_opt_index: Option<&mut usize>"
+          ],
+          "return_type": "Option<char>",
+          "signature": "getopt_long(&mut self, argv: &mut [String], optstring: &str, _long_options: &[&str], _opt_index: Option<&mut usize>) -> Option<char>"
+        },
+        {
+          "path": "src/getopt1.rs",
+          "kind": "method",
+          "name": "getopt_long_only",
+          "visibility": "public",
+          "public": true,
+          "owner_type": "Getopt1",
+          "params": [
+            "&mut self",
+            "argv: &mut [String]",
+            "optstring: &str",
+            "_long_options: &[&str]",
+            "_opt_index: Option<&mut usize>"
+          ],
+          "return_type": "Option<char>",
+          "signature": "getopt_long_only(&mut self, argv: &mut [String], optstring: &str, _long_options: &[&str], _opt_index: Option<&mut usize>) -> Option<char>"
+        },
+        {
+          "path": "src/getopt1.rs",
+          "kind": "method",
+          "name": "main",
+          "visibility": "public",
+          "public": true,
+          "owner_type": "Getopt1",
+          "params": [
+            "&mut self"
+          ],
+          "return_type": "i32",
+          "signature": "main(&mut self) -> i32"
+        }
+      ]
+    },
+    "src/shell.rs": {
+      "updated_at": "2026-06-06T13:15:14",
+      "contract": {
+        "public_structs": [],
+        "public_enums": [],
+        "public_traits": [],
+        "public_functions": [
+          "get_home_dir",
+          "module_tilde"
+        ],
+        "constructors": [],
+        "accessors": [
+          "Shell::get_home_dir"
+        ],
+        "impl_methods": {
+          "Shell": [
+            "get_home_dir",
+            "module_tilde"
+          ]
+        },
+        "references": [
+          {
+            "path": "src/shell.rs",
+            "kind": "type",
+            "name": "Shell",
+            "visibility": "public",
+            "public": true,
+            "owner_type": "",
+            "params": [],
+            "return_type": "",
+            "signature": "struct Shell"
+          },
+          {
+            "path": "src/shell.rs",
+            "kind": "method",
+            "name": "get_home_dir",
+            "visibility": "public",
+            "public": true,
+            "owner_type": "Shell",
+            "params": [
+              "&self"
+            ],
+            "return_type": "Option<String>",
+            "signature": "get_home_dir(&self) -> Option<String>"
+          },
+          {
+            "path": "src/shell.rs",
+            "kind": "method",
+            "name": "module_tilde",
+            "visibility": "public",
+            "public": true,
+            "owner_type": "Shell",
+            "params": [
+              "&self",
+              "input: &str"
+            ],
+            "return_type": "Option<String>",
+            "signature": "module_tilde(&self, input: &str) -> Option<String>"
+          }
+        ]
+      },
+      "references": [
+        {
+          "path": "src/shell.rs",
+          "kind": "type",
+          "name": "Shell",
+          "visibility": "public",
+          "public": true,
+          "owner_type": "",
+          "params": [],
+          "return_type": "",
+          "signature": "struct Shell"
+        },
+        {
+          "path": "src/shell.rs",
+          "kind": "method",
+          "name": "get_home_dir",
+          "visibility": "public",
+          "public": true,
+          "owner_type": "Shell",
+          "params": [
+            "&self"
+          ],
+          "return_type": "Option<String>",
+          "signature": "get_home_dir(&self) -> Option<String>"
+        },
+        {
+          "path": "src/shell.rs",
+          "kind": "method",
+          "name": "module_tilde",
+          "visibility": "public",
+          "public": true,
+          "owner_type": "Shell",
+          "params": [
+            "&self",
+            "input: &str"
+          ],
+          "return_type": "Option<String>",
+          "signature": "module_tilde(&self, input: &str) -> Option<String>"
+        }
+      ]
+    },
+    "src/tilde.rs": {
+      "updated_at": "2026-06-06T13:15:23",
+      "contract": {
+        "public_structs": [
+          {
+            "name": "Tilde",
+            "fields": [
+              {
+                "name": "additional_prefixes",
+                "public": false,
+                "type": "Vec<String>"
+              },
+              {
+                "name": "additional_suffixes",
+                "public": false,
+                "type": "Vec<String>"
+              }
+            ]
+          }
+        ],
+        "public_enums": [],
+        "public_traits": [],
+        "public_functions": [
+          "find_prefix",
+          "find_suffix",
+          "memory_error_and_abort"
+        ],
+        "constructors": [],
+        "accessors": [],
+        "impl_methods": {
+          "Tilde": [
+            "find_prefix",
+            "find_suffix",
+            "memory_error_and_abort"
+          ]
+        },
+        "references": [
+          {
+            "path": "src/tilde.rs",
+            "kind": "type",
+            "name": "Tilde",
+            "visibility": "public",
+            "public": true,
+            "owner_type": "",
+            "params": [],
+            "return_type": "",
+            "signature": "struct Tilde"
+          },
+          {
+            "path": "src/tilde.rs",
+            "kind": "field",
+            "name": "additional_prefixes",
+            "visibility": "private",
+            "public": false,
+            "owner_type": "Tilde",
+            "params": [],
+            "return_type": "Vec<String>",
+            "signature": "Tilde::additional_prefixes: Vec<String>"
+          },
+          {
+            "path": "src/tilde.rs",
+            "kind": "field",
+            "name": "additional_suffixes",
+            "visibility": "private",
+            "public": false,
+            "owner_type": "Tilde",
+            "params": [],
+            "return_type": "Vec<String>",
+            "signature": "Tilde::additional_suffixes: Vec<String>"
+          },
+          {
+            "path": "src/tilde.rs",
+            "kind": "method",
+            "name": "default",
+            "visibility": "private",
+            "public": false,
+            "owner_type": "Tilde",
+            "params": [],
+            "return_type": "Self",
+            "signature": "default() -> Self"
+          },
+          {
+            "path": "src/tilde.rs",
+            "kind": "method",
+            "name": "find_prefix",
+            "visibility": "public",
+            "public": true,
+            "owner_type": "Tilde",
+            "params": [
+              "&self",
+              "input: &str"
+            ],
+            "return_type": "(usize, usize)",
+            "signature": "find_prefix(&self, input: &str) -> (usize, usize)"
+          },
+          {
+            "path": "src/tilde.rs",
+            "kind": "method",
+            "name": "find_suffix",
+            "visibility": "public",
+            "public": true,
+            "owner_type": "Tilde",
+            "params": [
+              "&self",
+              "input: &str"
+            ],
+            "return_type": "usize",
+            "signature": "find_suffix(&self, input: &str) -> usize"
+          },
+          {
+            "path": "src/tilde.rs",
+            "kind": "method",
+            "name": "memory_error_and_abort",
+            "visibility": "public",
+            "public": true,
+            "owner_type": "Tilde",
+            "params": [],
+            "return_type": "!",
+            "signature": "memory_error_and_abort() -> !"
+          }
+        ]
+      },
+      "references": [
+        {
+          "path": "src/tilde.rs",
+          "kind": "type",
+          "name": "Tilde",
+          "visibility": "public",
+          "public": true,
+          "owner_type": "",
+          "params": [],
+          "return_type": "",
+          "signature": "struct Tilde"
+        },
+        {
+          "path": "src/tilde.rs",
+          "kind": "field",
+          "name": "additional_prefixes",
+          "visibility": "private",
+          "public": false,
+          "owner_type": "Tilde",
+          "params": [],
+          "return_type": "Vec<String>",
+          "signature": "Tilde::additional_prefixes: Vec<String>"
+        },
+        {
+          "path": "src/tilde.rs",
+          "kind": "field",
+          "name": "additional_suffixes",
+          "visibility": "private",
+          "public": false,
+          "owner_type": "Tilde",
+          "params": [],
+          "return_type": "Vec<String>",
+          "signature": "Tilde::additional_suffixes: Vec<String>"
+        },
+        {
+          "path": "src/tilde.rs",
+          "kind": "method",
+          "name": "default",
+          "visibility": "private",
+          "public": false,
+          "owner_type": "Tilde",
+          "params": [],
+          "return_type": "Self",
+          "signature": "default() -> Self"
+        },
+        {
+          "path": "src/tilde.rs",
+          "kind": "method",
+          "name": "find_prefix",
+          "visibility": "public",
+          "public": true,
+          "owner_type": "Tilde",
+          "params": [
+            "&self",
+            "input: &str"
+          ],
+          "return_type": "(usize, usize)",
+          "signature": "find_prefix(&self, input: &str) -> (usize, usize)"
+        },
+        {
+          "path": "src/tilde.rs",
+          "kind": "method",
+          "name": "find_suffix",
+          "visibility": "public",
+          "public": true,
+          "owner_type": "Tilde",
+          "params": [
+            "&self",
+            "input: &str"
+          ],
+          "return_type": "usize",
+          "signature": "find_suffix(&self, input: &str) -> usize"
+        },
+        {
+          "path": "src/tilde.rs",
+          "kind": "method",
+          "name": "memory_error_and_abort",
+          "visibility": "public",
+          "public": true,
+          "owner_type": "Tilde",
+          "params": [],
+          "return_type": "!",
+          "signature": "memory_error_and_abort() -> !"
+        }
+      ]
+    },
+    "src/which.rs": {
+      "updated_at": "2026-06-06T13:16:30",
+      "contract": {
+        "public_structs": [
+          {
+            "name": "FunctionSt",
+            "fields": [
+              {
+                "name": "name",
+                "public": true,
+                "type": "String"
+              },
+              {
+                "name": "lines",
+                "public": true,
+                "type": "Vec<String>"
+              }
+            ]
+          },
+          {
+            "name": "Which",
+            "fields": [
+              {
+                "name": "bash",
+                "public": false,
+                "type": "Bash"
+              },
+              {
+                "name": "shell",
+                "public": false,
+                "type": "Shell"
+              },
+              {
+                "name": "program_name",
+                "public": false,
+                "type": "String"
+              },
+              {
+                "name": "show_all",
+                "public": false,
+                "type": "bool"
+              },
+              {
+                "name": "skip_dot",
+                "public": false,
+                "type": "bool"
+              },
+              {
+                "name": "skip_tilde",
+                "public": false,
+                "type": "bool"
+              },
+              {
+                "name": "show_dot",
+                "public": false,
+                "type": "bool"
+              },
+              {
+                "name": "show_tilde",
+                "public": false,
+                "type": "bool"
+              },
+              {
+                "name": "tty_only",
+                "public": false,
+                "type": "bool"
+              },
+              {
+                "name": "read_alias",
+                "public": false,
+                "type": "bool"
+              },
+              {
+                "name": "skip_alias",
+                "public": false,
+                "type": "bool"
+              },
+              {
+                "name": "read_functions",
+                "public": false,
+                "type": "bool"
+              },
+              {
+                "name": "skip_functions",
+                "public": false,
+                "type": "bool"
+              },
+              {
+                "name": "absolute_path_given",
+                "public": false,
+                "type": "bool"
+              },
+              {
+                "name": "abs_path",
+                "public": false,
+                "type": "Option<String>"
+              },
+              {
+                "name": "cwd",
+                "public": false,
+                "type": "Option<String>"
+              },
+              {
+                "name": "home",
+                "public": false,
+                "type": "Option<String>"
+              },
+              {
+                "name": "found_path_starts_with_dot",
+                "public": false,
+                "type": "bool"
+              },
+              {
+                "name": "functions",
+                "public": false,
+                "type": "Vec<FunctionSt>"
+              },
+              {
+                "name": "aliases",
+                "public": false,
+                "type": "Vec<String>"
+              }
+            ]
+          }
+        ],
+        "public_enums": [],
+        "public_traits": [],
+        "public_functions": [
+          "alloc_buffer",
+          "find_command_in_path",
+          "func_search",
+          "function_st",
+          "get_current_working_directory",
+          "path_clean_up",
+          "path_search",
+          "print_fail",
+          "print_usage",
+          "print_version",
+          "process_alias",
+          "resize_buffer",
+          "run"
+        ],
+        "constructors": [],
+        "accessors": [
+          "Which::get_current_working_directory"
+        ],
+        "impl_methods": {
+          "Which": [
+            "alloc_buffer",
+            "find_command_in_path",
+            "func_search",
+            "function_st",
+            "get_current_working_directory",
+            "path_clean_up",
+            "path_search",
+            "print_fail",
+            "print_usage",
+            "print_version",
+            "process_alias",
+            "resize_buffer",
+            "run"
+          ]
+        },
+        "references": [
+          {
+            "path": "src/which.rs",
+            "kind": "type",
+            "name": "FunctionSt",
+            "visibility": "public",
+            "public": true,
+            "owner_type": "",
+            "params": [],
+            "return_type": "",
+            "signature": "struct FunctionSt"
+          },
+          {
+            "path": "src/which.rs",
+            "kind": "type",
+            "name": "Which",
+            "visibility": "public",
+            "public": true,
+            "owner_type": "",
+            "params": [],
+            "return_type": "",
+            "signature": "struct Which"
+          },
+          {
+            "path": "src/which.rs",
+            "kind": "field",
+            "name": "name",
+            "visibility": "public",
+            "public": true,
+            "owner_type": "FunctionSt",
+            "params": [],
+            "return_type": "String",
+            "signature": "FunctionSt::name: String"
+          },
+          {
+            "path": "src/which.rs",
+            "kind": "field",
+            "name": "lines",
+            "visibility": "public",
+            "public": true,
+            "owner_type": "FunctionSt",
+            "params": [],
+            "return_type": "Vec<String>",
+            "signature": "FunctionSt::lines: Vec<String>"
+          },
+          {
+            "path": "src/which.rs",
+            "kind": "field",
+            "name": "bash",
+            "visibility": "private",
+            "public": false,
+            "owner_type": "Which",
+            "params": [],
+            "return_type": "Bash",
+            "signature": "Which::bash: Bash"
+          },
+          {
+            "path": "src/which.rs",
+            "kind": "field",
+            "name": "shell",
+            "visibility": "private",
+            "public": false,
+            "owner_type": "Which",
+            "params": [],
+            "return_type": "Shell",
+            "signature": "Which::shell: Shell"
+          },
+          {
+            "path": "src/which.rs",
+            "kind": "field",
+            "name": "program_name",
+            "visibility": "private",
+            "public": false,
+            "owner_type": "Which",
+            "params": [],
+            "return_type": "String",
+            "signature": "Which::program_name: String"
+          },
+          {
+            "path": "src/which.rs",
+            "kind": "field",
+            "name": "show_all",
+            "visibility": "private",
+            "public": false,
+            "owner_type": "Which",
+            "params": [],
+            "return_type": "bool",
+            "signature": "Which::show_all: bool"
+          },
+          {
+            "path": "src/which.rs",
+            "kind": "field",
+            "name": "skip_dot",
+            "visibility": "private",
+            "public": false,
+            "owner_type": "Which",
+            "params": [],
+            "return_type": "bool",
+            "signature": "Which::skip_dot: bool"
+          },
+          {
+            "path": "src/which.rs",
+            "kind": "field",
+            "name": "skip_tilde",
+            "visibility": "private",
+            "public": false,
+            "owner_type": "Which",
+            "params": [],
+            "return_type": "bool",
+            "signature": "Which::skip_tilde: bool"
+          },
+          {
+            "path": "src/which.rs",
+            "kind": "field",
+            "name": "show_dot",
+            "visibility": "private",
+            "public": false,
+            "owner_type": "Which",
+            "params": [],
+            "return_type": "bool",
+            "signature": "Which::show_dot: bool"
+          },
+          {
+            "path": "src/which.rs",
+            "kind": "field",
+            "name": "show_tilde",
+            "visibility": "private",
+            "public": false,
+            "owner_type": "Which",
+            "params": [],
+            "return_type": "bool",
+            "signature": "Which::show_tilde: bool"
+          },
+          {
+            "path": "src/which.rs",
+            "kind": "field",
+            "name": "tty_only",
+            "visibility": "private",
+            "public": false,
+            "owner_type": "Which",
+            "params": [],
+            "return_type": "bool",
+            "signature": "Which::tty_only: bool"
+          },
+          {
+            "path": "src/which.rs",
+            "kind": "field",
+            "name": "read_alias",
+            "visibility": "private",
+            "public": false,
+            "owner_type": "Which",
+            "params": [],
+            "return_type": "bool",
+            "signature": "Which::read_alias: bool"
+          },
+          {
+            "path": "src/which.rs",
+            "kind": "field",
+            "name": "skip_alias",
+            "visibility": "private",
+            "public": false,
+            "owner_type": "Which",
+            "params": [],
+            "return_type": "bool",
+            "signature": "Which::skip_alias: bool"
+          },
+          {
+            "path": "src/which.rs",
+            "kind": "field",
+            "name": "read_functions",
+            "visibility": "private",
+            "public": false,
+            "owner_type": "Which",
+            "params": [],
+            "return_type": "bool",
+            "signature": "Which::read_functions: bool"
+          },
+          {
+            "path": "src/which.rs",
+            "kind": "field",
+            "name": "skip_functions",
+            "visibility": "private",
+            "public": false,
+            "owner_type": "Which",
+            "params": [],
+            "return_type": "bool",
+            "signature": "Which::skip_functions: bool"
+          },
+          {
+            "path": "src/which.rs",
+            "kind": "field",
+            "name": "absolute_path_given",
+            "visibility": "private",
+            "public": false,
+            "owner_type": "Which",
+            "params": [],
+            "return_type": "bool",
+            "signature": "Which::absolute_path_given: bool"
+          },
+          {
+            "path": "src/which.rs",
+            "kind": "field",
+            "name": "abs_path",
+            "visibility": "private",
+            "public": false,
+            "owner_type": "Which",
+            "params": [],
+            "return_type": "Option<String>",
+            "signature": "Which::abs_path: Option<String>"
+          },
+          {
+            "path": "src/which.rs",
+            "kind": "field",
+            "name": "cwd",
+            "visibility": "private",
+            "public": false,
+            "owner_type": "Which",
+            "params": [],
+            "return_type": "Option<String>",
+            "signature": "Which::cwd: Option<String>"
+          },
+          {
+            "path": "src/which.rs",
+            "kind": "field",
+            "name": "home",
+            "visibility": "private",
+            "public": false,
+            "owner_type": "Which",
+            "params": [],
+            "return_type": "Option<String>",
+            "signature": "Which::home: Option<String>"
+          },
+          {
+            "path": "src/which.rs",
+            "kind": "field",
+            "name": "found_path_starts_with_dot",
+            "visibility": "private",
+            "public": false,
+            "owner_type": "Which",
+            "params": [],
+            "return_type": "bool",
+            "signature": "Which::found_path_starts_with_dot: bool"
+          },
+          {
+            "path": "src/which.rs",
+            "kind": "field",
+            "name": "functions",
+            "visibility": "private",
+            "public": false,
+            "owner_type": "Which",
+            "params": [],
+            "return_type": "Vec<FunctionSt>",
+            "signature": "Which::functions: Vec<FunctionSt>"
+          },
+          {
+            "path": "src/which.rs",
+            "kind": "field",
+            "name": "aliases",
+            "visibility": "private",
+            "public": false,
+            "owner_type": "Which",
+            "params": [],
+            "return_type": "Vec<String>",
+            "signature": "Which::aliases: Vec<String>"
+          },
+          {
+            "path": "src/which.rs",
+            "kind": "function",
+            "name": "function_st",
+            "visibility": "public",
+            "public": true,
+            "owner_type": "",
+            "params": [
+              "name: impl Into<String>",
+              "lines: Vec<String>"
+            ],
+            "return_type": "FunctionSt",
+            "signature": "function_st(name: impl Into<String>, lines: Vec<String>) -> FunctionSt"
+          },
+          {
+            "path": "src/which.rs",
+            "kind": "function",
+            "name": "alloc_buffer",
+            "visibility": "public",
+            "public": true,
+            "owner_type": "",
+            "params": [
+              "size: usize"
+            ],
+            "return_type": "Vec<u8>",
+            "signature": "alloc_buffer(size: usize) -> Vec<u8>"
+          },
+          {
+            "path": "src/which.rs",
+            "kind": "function",
+            "name": "resize_buffer",
+            "visibility": "public",
+            "public": true,
+            "owner_type": "",
+            "params": [
+              "mut buf: Vec<u8>",
+              "size: usize"
+            ],
+            "return_type": "Vec<u8>",
+            "signature": "resize_buffer(mut buf: Vec<u8>, size: usize) -> Vec<u8>"
+          },
+          {
+            "path": "src/which.rs",
+            "kind": "function",
+            "name": "print_usage",
+            "visibility": "public",
+            "public": true,
+            "owner_type": "",
+            "params": [
+              "&self",
+              "mut out: impl Write"
+            ],
+            "return_type": "",
+            "signature": "print_usage(&self, mut out: impl Write)"
+          },
+          {
+            "path": "src/which.rs",
+            "kind": "function",
+            "name": "print_version",
+            "visibility": "public",
+            "public": true,
+            "owner_type": "",
+            "params": [
+              "&self"
+            ],
+            "return_type": "",
+            "signature": "print_version(&self)"
+          },
+          {
+            "path": "src/which.rs",
+            "kind": "function",
+            "name": "print_fail",
+            "visibility": "public",
+            "public": true,
+            "owner_type": "",
+            "params": [
+              "&self",
+              "name: &str",
+              "path_list: &str"
+            ],
+            "return_type": "",
+            "signature": "print_fail(&self, name: &str, path_list: &str)"
+          },
+          {
+            "path": "src/which.rs",
+            "kind": "function",
+            "name": "get_current_working_directory",
+            "visibility": "public",
+            "public": true,
+            "owner_type": "",
+            "params": [
+              "&mut self"
+            ],
+            "return_type": "String",
+            "signature": "get_current_working_directory(&mut self) -> String"
+          },
+          {
+            "path": "src/which.rs",
+            "kind": "function",
+            "name": "path_clean_up",
+            "visibility": "public",
+            "public": true,
+            "owner_type": "",
+            "params": [
+              "&mut self",
+              "path: &str"
+            ],
+            "return_type": "String",
+            "signature": "path_clean_up(&mut self, path: &str) -> String"
+          },
+          {
+            "path": "src/which.rs",
+            "kind": "function",
+            "name": "find_command_in_path",
+            "visibility": "public",
+            "public": true,
+            "owner_type": "",
+            "params": [
+              "&mut self",
+              "name: &str",
+              "path_list: &str",
+              "path_index: &mut usize"
+            ],
+            "return_type": "Option<String>",
+            "signature": "find_command_in_path(&mut self, name: &str, path_list: &str, path_index: &mut usize) -> Option<String>"
+          },
+          {
+            "path": "src/which.rs",
+            "kind": "function",
+            "name": "func_search",
+            "visibility": "public",
+            "public": true,
+            "owner_type": "",
+            "params": [
+              "&self",
+              "indent: bool",
+              "cmd: &str",
+              "func_list: &[FunctionSt]",
+              "function_start_type: i32"
+            ],
+            "return_type": "bool",
+            "signature": "func_search(&self, indent: bool, cmd: &str, func_list: &[FunctionSt], function_start_type: i32) -> bool"
+          },
+          {
+            "path": "src/which.rs",
+            "kind": "function",
+            "name": "path_search",
+            "visibility": "public",
+            "public": true,
+            "owner_type": "",
+            "params": [
+              "&mut self",
+              "indent: bool",
+              "cmd: &str",
+              "path_list: &str"
+            ],
+            "return_type": "bool",
+            "signature": "path_search(&mut self, indent: bool, cmd: &str, path_list: &str) -> bool"
+          },
+          {
+            "path": "src/which.rs",
+            "kind": "function",
+            "name": "process_alias",
+            "visibility": "public",
+            "public": true,
+            "owner_type": "",
+            "params": [
+              "&mut self",
+              "input: &str",
+              "argv: &mut [Option<String>]",
+              "path_list: &str",
+              "function_start_type: i32"
+            ],
+            "return_type": "",
+            "signature": "process_alias(&mut self, input: &str, argv: &mut [Option<String>], path_list: &str, function_start_type: i32)"
+          },
+          {
+            "path": "src/which.rs",
+            "kind": "function",
+            "name": "run",
+            "visibility": "public",
+            "public": true,
+            "owner_type": "",
+            "params": [
+              "&mut self",
+              "args: &[String]"
+            ],
+            "return_type": "i32",
+            "signature": "run(&mut self, args: &[String]) -> i32"
+          },
+          {
+            "path": "src/which.rs",
+            "kind": "method",
+            "name": "default",
+            "visibility": "private",
+            "public": false,
+            "owner_type": "Which",
+            "params": [],
+            "return_type": "Self",
+            "signature": "default() -> Self"
+          }
+        ]
+      },
+      "references": [
+        {
+          "path": "src/which.rs",
+          "kind": "type",
+          "name": "FunctionSt",
+          "visibility": "public",
+          "public": true,
+          "owner_type": "",
+          "params": [],
+          "return_type": "",
+          "signature": "struct FunctionSt"
+        },
+        {
+          "path": "src/which.rs",
+          "kind": "type",
+          "name": "Which",
+          "visibility": "public",
+          "public": true,
+          "owner_type": "",
+          "params": [],
+          "return_type": "",
+          "signature": "struct Which"
+        },
+        {
+          "path": "src/which.rs",
+          "kind": "field",
+          "name": "name",
+          "visibility": "public",
+          "public": true,
+          "owner_type": "FunctionSt",
+          "params": [],
+          "return_type": "String",
+          "signature": "FunctionSt::name: String"
+        },
+        {
+          "path": "src/which.rs",
+          "kind": "field",
+          "name": "lines",
+          "visibility": "public",
+          "public": true,
+          "owner_type": "FunctionSt",
+          "params": [],
+          "return_type": "Vec<String>",
+          "signature": "FunctionSt::lines: Vec<String>"
+        },
+        {
+          "path": "src/which.rs",
+          "kind": "field",
+          "name": "bash",
+          "visibility": "private",
+          "public": false,
+          "owner_type": "Which",
+          "params": [],
+          "return_type": "Bash",
+          "signature": "Which::bash: Bash"
+        },
+        {
+          "path": "src/which.rs",
+          "kind": "field",
+          "name": "shell",
+          "visibility": "private",
+          "public": false,
+          "owner_type": "Which",
+          "params": [],
+          "return_type": "Shell",
+          "signature": "Which::shell: Shell"
+        },
+        {
+          "path": "src/which.rs",
+          "kind": "field",
+          "name": "program_name",
+          "visibility": "private",
+          "public": false,
+          "owner_type": "Which",
+          "params": [],
+          "return_type": "String",
+          "signature": "Which::program_name: String"
+        },
+        {
+          "path": "src/which.rs",
+          "kind": "field",
+          "name": "show_all",
+          "visibility": "private",
+          "public": false,
+          "owner_type": "Which",
+          "params": [],
+          "return_type": "bool",
+          "signature": "Which::show_all: bool"
+        },
+        {
+          "path": "src/which.rs",
+          "kind": "field",
+          "name": "skip_dot",
+          "visibility": "private",
+          "public": false,
+          "owner_type": "Which",
+          "params": [],
+          "return_type": "bool",
+          "signature": "Which::skip_dot: bool"
+        },
+        {
+          "path": "src/which.rs",
+          "kind": "field",
+          "name": "skip_tilde",
+          "visibility": "private",
+          "public": false,
+          "owner_type": "Which",
+          "params": [],
+          "return_type": "bool",
+          "signature": "Which::skip_tilde: bool"
+        },
+        {
+          "path": "src/which.rs",
+          "kind": "field",
+          "name": "show_dot",
+          "visibility": "private",
+          "public": false,
+          "owner_type": "Which",
+          "params": [],
+          "return_type": "bool",
+          "signature": "Which::show_dot: bool"
+        },
+        {
+          "path": "src/which.rs",
+          "kind": "field",
+          "name": "show_tilde",
+          "visibility": "private",
+          "public": false,
+          "owner_type": "Which",
+          "params": [],
+          "return_type": "bool",
+          "signature": "Which::show_tilde: bool"
+        },
+        {
+          "path": "src/which.rs",
+          "kind": "field",
+          "name": "tty_only",
+          "visibility": "private",
+          "public": false,
+          "owner_type": "Which",
+          "params": [],
+          "return_type": "bool",
+          "signature": "Which::tty_only: bool"
+        },
+        {
+          "path": "src/which.rs",
+          "kind": "field",
+          "name": "read_alias",
+          "visibility": "private",
+          "public": false,
+          "owner_type": "Which",
+          "params": [],
+          "return_type": "bool",
+          "signature": "Which::read_alias: bool"
+        },
+        {
+          "path": "src/which.rs",
+          "kind": "field",
+          "name": "skip_alias",
+          "visibility": "private",
+          "public": false,
+          "owner_type": "Which",
+          "params": [],
+          "return_type": "bool",
+          "signature": "Which::skip_alias: bool"
+        },
+        {
+          "path": "src/which.rs",
+          "kind": "field",
+          "name": "read_functions",
+          "visibility": "private",
+          "public": false,
+          "owner_type": "Which",
+          "params": [],
+          "return_type": "bool",
+          "signature": "Which::read_functions: bool"
+        },
+        {
+          "path": "src/which.rs",
+          "kind": "field",
+          "name": "skip_functions",
+          "visibility": "private",
+          "public": false,
+          "owner_type": "Which",
+          "params": [],
+          "return_type": "bool",
+          "signature": "Which::skip_functions: bool"
+        },
+        {
+          "path": "src/which.rs",
+          "kind": "field",
+          "name": "absolute_path_given",
+          "visibility": "private",
+          "public": false,
+          "owner_type": "Which",
+          "params": [],
+          "return_type": "bool",
+          "signature": "Which::absolute_path_given: bool"
+        },
+        {
+          "path": "src/which.rs",
+          "kind": "field",
+          "name": "abs_path",
+          "visibility": "private",
+          "public": false,
+          "owner_type": "Which",
+          "params": [],
+          "return_type": "Option<String>",
+          "signature": "Which::abs_path: Option<String>"
+        },
+        {
+          "path": "src/which.rs",
+          "kind": "field",
+          "name": "cwd",
+          "visibility": "private",
+          "public": false,
+          "owner_type": "Which",
+          "params": [],
+          "return_type": "Option<String>",
+          "signature": "Which::cwd: Option<String>"
+        },
+        {
+          "path": "src/which.rs",
+          "kind": "field",
+          "name": "home",
+          "visibility": "private",
+          "public": false,
+          "owner_type": "Which",
+          "params": [],
+          "return_type": "Option<String>",
+          "signature": "Which::home: Option<String>"
+        },
+        {
+          "path": "src/which.rs",
+          "kind": "field",
+          "name": "found_path_starts_with_dot",
+          "visibility": "private",
+          "public": false,
+          "owner_type": "Which",
+          "params": [],
+          "return_type": "bool",
+          "signature": "Which::found_path_starts_with_dot: bool"
+        },
+        {
+          "path": "src/which.rs",
+          "kind": "field",
+          "name": "functions",
+          "visibility": "private",
+          "public": false,
+          "owner_type": "Which",
+          "params": [],
+          "return_type": "Vec<FunctionSt>",
+          "signature": "Which::functions: Vec<FunctionSt>"
+        },
+        {
+          "path": "src/which.rs",
+          "kind": "field",
+          "name": "aliases",
+          "visibility": "private",
+          "public": false,
+          "owner_type": "Which",
+          "params": [],
+          "return_type": "Vec<String>",
+          "signature": "Which::aliases: Vec<String>"
+        },
+        {
+          "path": "src/which.rs",
+          "kind": "function",
+          "name": "function_st",
+          "visibility": "public",
+          "public": true,
+          "owner_type": "",
+          "params": [
+            "name: impl Into<String>",
+            "lines: Vec<String>"
+          ],
+          "return_type": "FunctionSt",
+          "signature": "function_st(name: impl Into<String>, lines: Vec<String>) -> FunctionSt"
+        },
+        {
+          "path": "src/which.rs",
+          "kind": "function",
+          "name": "alloc_buffer",
+          "visibility": "public",
+          "public": true,
+          "owner_type": "",
+          "params": [
+            "size: usize"
+          ],
+          "return_type": "Vec<u8>",
+          "signature": "alloc_buffer(size: usize) -> Vec<u8>"
+        },
+        {
+          "path": "src/which.rs",
+          "kind": "function",
+          "name": "resize_buffer",
+          "visibility": "public",
+          "public": true,
+          "owner_type": "",
+          "params": [
+            "mut buf: Vec<u8>",
+            "size: usize"
+          ],
+          "return_type": "Vec<u8>",
+          "signature": "resize_buffer(mut buf: Vec<u8>, size: usize) -> Vec<u8>"
+        },
+        {
+          "path": "src/which.rs",
+          "kind": "function",
+          "name": "print_usage",
+          "visibility": "public",
+          "public": true,
+          "owner_type": "",
+          "params": [
+            "&self",
+            "mut out: impl Write"
+          ],
+          "return_type": "",
+          "signature": "print_usage(&self, mut out: impl Write)"
+        },
+        {
+          "path": "src/which.rs",
+          "kind": "function",
+          "name": "print_version",
+          "visibility": "public",
+          "public": true,
+          "owner_type": "",
+          "params": [
+            "&self"
+          ],
+          "return_type": "",
+          "signature": "print_version(&self)"
+        },
+        {
+          "path": "src/which.rs",
+          "kind": "function",
+          "name": "print_fail",
+          "visibility": "public",
+          "public": true,
+          "owner_type": "",
+          "params": [
+            "&self",
+            "name: &str",
+            "path_list: &str"
+          ],
+          "return_type": "",
+          "signature": "print_fail(&self, name: &str, path_list: &str)"
+        },
+        {
+          "path": "src/which.rs",
+          "kind": "function",
+          "name": "get_current_working_directory",
+          "visibility": "public",
+          "public": true,
+          "owner_type": "",
+          "params": [
+            "&mut self"
+          ],
+          "return_type": "String",
+          "signature": "get_current_working_directory(&mut self) -> String"
+        },
+        {
+          "path": "src/which.rs",
+          "kind": "function",
+          "name": "path_clean_up",
+          "visibility": "public",
+          "public": true,
+          "owner_type": "",
+          "params": [
+            "&mut self",
+            "path: &str"
+          ],
+          "return_type": "String",
+          "signature": "path_clean_up(&mut self, path: &str) -> String"
+        },
+        {
+          "path": "src/which.rs",
+          "kind": "function",
+          "name": "find_command_in_path",
+          "visibility": "public",
+          "public": true,
+          "owner_type": "",
+          "params": [
+            "&mut self",
+            "name: &str",
+            "path_list: &str",
+            "path_index: &mut usize"
+          ],
+          "return_type": "Option<String>",
+          "signature": "find_command_in_path(&mut self, name: &str, path_list: &str, path_index: &mut usize) -> Option<String>"
+        },
+        {
+          "path": "src/which.rs",
+          "kind": "function",
+          "name": "func_search",
+          "visibility": "public",
+          "public": true,
+          "owner_type": "",
+          "params": [
+            "&self",
+            "indent: bool",
+            "cmd: &str",
+            "func_list: &[FunctionSt]",
+            "function_start_type: i32"
+          ],
+          "return_type": "bool",
+          "signature": "func_search(&self, indent: bool, cmd: &str, func_list: &[FunctionSt], function_start_type: i32) -> bool"
+        },
+        {
+          "path": "src/which.rs",
+          "kind": "function",
+          "name": "path_search",
+          "visibility": "public",
+          "public": true,
+          "owner_type": "",
+          "params": [
+            "&mut self",
+            "indent: bool",
+            "cmd: &str",
+            "path_list: &str"
+          ],
+          "return_type": "bool",
+          "signature": "path_search(&mut self, indent: bool, cmd: &str, path_list: &str) -> bool"
+        },
+        {
+          "path": "src/which.rs",
+          "kind": "function",
+          "name": "process_alias",
+          "visibility": "public",
+          "public": true,
+          "owner_type": "",
+          "params": [
+            "&mut self",
+            "input: &str",
+            "argv: &mut [Option<String>]",
+            "path_list: &str",
+            "function_start_type: i32"
+          ],
+          "return_type": "",
+          "signature": "process_alias(&mut self, input: &str, argv: &mut [Option<String>], path_list: &str, function_start_type: i32)"
+        },
+        {
+          "path": "src/which.rs",
+          "kind": "function",
+          "name": "run",
+          "visibility": "public",
+          "public": true,
+          "owner_type": "",
+          "params": [
+            "&mut self",
+            "args: &[String]"
+          ],
+          "return_type": "i32",
+          "signature": "run(&mut self, args: &[String]) -> i32"
+        },
+        {
+          "path": "src/which.rs",
+          "kind": "method",
+          "name": "default",
+          "visibility": "private",
+          "public": false,
+          "owner_type": "Which",
+          "params": [],
+          "return_type": "Self",
+          "signature": "default() -> Self"
+        }
+      ]
+    },
+    "src/main.rs": {
+      "updated_at": "2026-06-06T13:16:45",
+      "contract": {
+        "public_structs": [],
+        "public_enums": [],
+        "public_traits": [],
+        "public_functions": [
+          "run"
+        ],
+        "constructors": [],
+        "accessors": [],
+        "impl_methods": {
+          "Main": [
+            "run"
+          ]
+        },
+        "references": [
+          {
+            "path": "src/main.rs",
+            "kind": "module",
+            "name": "bash",
+            "visibility": "private",
+            "public": false,
+            "owner_type": "",
+            "params": [],
+            "return_type": "",
+            "signature": "bash"
+          },
+          {
+            "path": "src/main.rs",
+            "kind": "module",
+            "name": "getopt",
+            "visibility": "private",
+            "public": false,
+            "owner_type": "",
+            "params": [],
+            "return_type": "",
+            "signature": "getopt"
+          },
+          {
+            "path": "src/main.rs",
+            "kind": "module",
+            "name": "getopt1",
+            "visibility": "private",
+            "public": false,
+            "owner_type": "",
+            "params": [],
+            "return_type": "",
+            "signature": "getopt1"
+          },
+          {
+            "path": "src/main.rs",
+            "kind": "module",
+            "name": "shell",
+            "visibility": "private",
+            "public": false,
+            "owner_type": "",
+            "params": [],
+            "return_type": "",
+            "signature": "shell"
+          },
+          {
+            "path": "src/main.rs",
+            "kind": "module",
+            "name": "tilde",
+            "visibility": "private",
+            "public": false,
+            "owner_type": "",
+            "params": [],
+            "return_type": "",
+            "signature": "tilde"
+          },
+          {
+            "path": "src/main.rs",
+            "kind": "module",
+            "name": "which",
+            "visibility": "private",
+            "public": false,
+            "owner_type": "",
+            "params": [],
+            "return_type": "",
+            "signature": "which"
+          },
+          {
+            "path": "src/main.rs",
+            "kind": "type",
+            "name": "Main",
+            "visibility": "public",
+            "public": true,
+            "owner_type": "",
+            "params": [],
+            "return_type": "",
+            "signature": "struct Main"
+          },
+          {
+            "path": "src/main.rs",
+            "kind": "function",
+            "name": "main",
+            "visibility": "private",
+            "public": false,
+            "owner_type": "",
+            "params": [],
+            "return_type": "",
+            "signature": "main()"
+          },
+          {
+            "path": "src/main.rs",
+            "kind": "method",
+            "name": "run",
+            "visibility": "public",
+            "public": true,
+            "owner_type": "Main",
+            "params": [],
+            "return_type": "std::process::ExitCode",
+            "signature": "run() -> std::process::ExitCode"
+          }
+        ]
+      },
+      "references": [
+        {
+          "path": "src/main.rs",
+          "kind": "module",
+          "name": "bash",
+          "visibility": "private",
+          "public": false,
+          "owner_type": "",
+          "params": [],
+          "return_type": "",
+          "signature": "bash"
+        },
+        {
+          "path": "src/main.rs",
+          "kind": "module",
+          "name": "getopt",
+          "visibility": "private",
+          "public": false,
+          "owner_type": "",
+          "params": [],
+          "return_type": "",
+          "signature": "getopt"
+        },
+        {
+          "path": "src/main.rs",
+          "kind": "module",
+          "name": "getopt1",
+          "visibility": "private",
+          "public": false,
+          "owner_type": "",
+          "params": [],
+          "return_type": "",
+          "signature": "getopt1"
+        },
+        {
+          "path": "src/main.rs",
+          "kind": "module",
+          "name": "shell",
+          "visibility": "private",
+          "public": false,
+          "owner_type": "",
+          "params": [],
+          "return_type": "",
+          "signature": "shell"
+        },
+        {
+          "path": "src/main.rs",
+          "kind": "module",
+          "name": "tilde",
+          "visibility": "private",
+          "public": false,
+          "owner_type": "",
+          "params": [],
+          "return_type": "",
+          "signature": "tilde"
+        },
+        {
+          "path": "src/main.rs",
+          "kind": "module",
+          "name": "which",
+          "visibility": "private",
+          "public": false,
+          "owner_type": "",
+          "params": [],
+          "return_type": "",
+          "signature": "which"
+        },
+        {
+          "path": "src/main.rs",
+          "kind": "type",
+          "name": "Main",
+          "visibility": "public",
+          "public": true,
+          "owner_type": "",
+          "params": [],
+          "return_type": "",
+          "signature": "struct Main"
+        },
+        {
+          "path": "src/main.rs",
+          "kind": "function",
+          "name": "main",
+          "visibility": "private",
+          "public": false,
+          "owner_type": "",
+          "params": [],
+          "return_type": "",
+          "signature": "main()"
+        },
+        {
+          "path": "src/main.rs",
+          "kind": "method",
+          "name": "run",
+          "visibility": "public",
+          "public": true,
+          "owner_type": "Main",
+          "params": [],
+          "return_type": "std::process::ExitCode",
+          "signature": "run() -> std::process::ExitCode"
+        }
+      ]
+    }
+  },
+  "updated_at": "2026-06-06T13:16:45"
+}

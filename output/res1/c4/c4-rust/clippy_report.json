@@ -1,0 +1,30 @@
+{
+  "project": "c4-rust",
+  "path": "/data1/jfeng/tcode_win/output/res1/c4/c4-rust",
+  "timestamp": "2026-06-19T21:11:49+08:00",
+  "summary": {
+    "total_issues": 9,
+    "clippy_warnings": 8,
+    "clippy_errors": 0,
+    "rustfmt_files_needing_format": 1,
+    "tool_errors": 0
+  },
+  "commands": {
+    "clippy": "cargo clippy --workspace --all-targets --message-format short",
+    "rustfmt": "cargo fmt --all -- --check"
+  },
+  "status": {
+    "clippy_exit_code": 0,
+    "rustfmt_exit_code": 1,
+    "clippy_failed": 0,
+    "rustfmt_failed": 0
+  },
+  "artifacts": {
+    "clippy_log": "/data1/jfeng/tcode_win/output/res1/c4/c4-rust/clippy_output.log",
+    "rustfmt_log": "/data1/jfeng/tcode_win/output/res1/c4/c4-rust/rustfmt_output.log"
+  },
+  "clippy_by_category": {"unused":6,"other":2},
+  "clippy_details": [{"file":"src/c4.rs","line":2,"lint":"","message":"unused import: `std::fs`"},{"file":"src/c4.rs","line":66,"lint":"","message":"multiple variants are never constructed"},{"file":"src/c4.rs","line":146,"lint":"","message":"associated items `run_hello`, `expr`, `stmt`, and `precedence` are never used"},{"file":"","line":0,"lint":"","message":"`c4-rust` (bin \"c4-rust\" test) generated 3 warnings (run `cargo clippy --fix --bin \"c4-rust\" -p c4-rust --tests -- ` to apply 1 suggestion)"},{"file":"","line":0,"lint":"","message":"unused import: `std::fs`"},{"file":"","line":0,"lint":"","message":"multiple variants are never constructed"},{"file":"","line":0,"lint":"","message":"associated items `run_hello`, `expr`, `stmt`, and `precedence` are never used"},{"file":"","line":0,"lint":"","message":"`c4-rust` (bin \"c4-rust\") generated 3 warnings (run `cargo clippy --fix --bin \"c4-rust\" -p c4-rust -- ` to apply 1 suggestion)"}],
+  "clippy_error_details": [],
+  "rustfmt_details": [{"file":"src/c4.rs","line":134},{"file":"src/c4.rs","line":522},{"file":"src/c4.rs","line":657},{"file":"src/c4.rs","line":665}]
+}

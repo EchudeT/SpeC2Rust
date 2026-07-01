@@ -1,0 +1,30 @@
+{
+  "project": "which-rust",
+  "path": "/data1/jfeng/tcode_win/output/res1/which/which-rust",
+  "timestamp": "2026-06-19T21:11:55+08:00",
+  "summary": {
+    "total_issues": 17,
+    "clippy_warnings": 14,
+    "clippy_errors": 1,
+    "rustfmt_files_needing_format": 2,
+    "tool_errors": 0
+  },
+  "commands": {
+    "clippy": "cargo clippy --workspace --all-targets --message-format short",
+    "rustfmt": "cargo fmt --all -- --check"
+  },
+  "status": {
+    "clippy_exit_code": 101,
+    "rustfmt_exit_code": 1,
+    "clippy_failed": 1,
+    "rustfmt_failed": 0
+  },
+  "artifacts": {
+    "clippy_log": "/data1/jfeng/tcode_win/output/res1/which/which-rust/clippy_output.log",
+    "rustfmt_log": "/data1/jfeng/tcode_win/output/res1/which/which-rust/rustfmt_output.log"
+  },
+  "clippy_by_category": {"unused":9,"other":5},
+  "clippy_details": [{"file":"src/which.rs","line":375,"lint":"","message":"value assigned to `next` is never read"},{"file":"src/bash.rs","line":63,"lint":"","message":"method `user_info` is never used"},{"file":"src/getopt.rs","line":4,"lint":"","message":"struct `Getopt` is never constructed"},{"file":"src/getopt.rs","line":18,"lint":"","message":"methods `store_args_and_env`, `exchange`, `internal`, `getopt`, `main`, and `attribute` are never used"},{"file":"src/getopt1.rs","line":5,"lint":"","message":"struct `Getopt1` is never constructed"},{"file":"src/getopt1.rs","line":10,"lint":"","message":"methods `getopt_long`, `getopt_long_only`, and `main` are never used"},{"file":"src/tilde.rs","line":1,"lint":"","message":"struct `Tilde` is never constructed"},{"file":"src/tilde.rs","line":16,"lint":"","message":"associated items `find_prefix`, `find_suffix`, and `memory_error_and_abort` are never used"},{"file":"src/which.rs","line":66,"lint":"","message":"associated functions `function_st`, `alloc_buffer`, and `resize_buffer` are never used"},{"file":"src/bash.rs","line":16,"lint":"","message":"this `impl` can be derived"},{"file":"src/tilde.rs","line":6,"lint":"","message":"this `impl` can be derived"},{"file":"","line":0,"lint":"","message":"`which-rust` (bin \"which-rust\") generated 11 warnings"},{"file":"","line":0,"lint":"","message":"build failed, waiting for other jobs to finish..."},{"file":"","line":0,"lint":"","message":"`which-rust` (bin \"which-rust\" test) generated 11 warnings (11 duplicates)"}],
+  "clippy_error_details": [{"file":"src/which.rs","line":603,"code":"","message":"this boolean expression contains a logic bug: help: it would look like the following: `!found_something && !self.path_search(false, &cmd, &path_list)`"}],
+  "rustfmt_details": [{"file":"src/bash.rs","line":81},{"file":"src/bash.rs","line":240},{"file":"src/bash.rs","line":263},{"file":"src/which.rs","line":85},{"file":"src/which.rs","line":243},{"file":"src/which.rs","line":261},{"file":"src/which.rs","line":280},{"file":"src/which.rs","line":296},{"file":"src/which.rs","line":451},{"file":"src/which.rs","line":573},{"file":"src/which.rs","line":581}]
+}

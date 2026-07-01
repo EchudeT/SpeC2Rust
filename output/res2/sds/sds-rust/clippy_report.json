@@ -1,0 +1,30 @@
+{
+  "project": "sds-rust",
+  "path": "/data1/jfeng/tcode_win/output/res2/sds/sds-rust",
+  "timestamp": "2026-06-19T21:21:30+08:00",
+  "summary": {
+    "total_issues": 13,
+    "clippy_warnings": 12,
+    "clippy_errors": 0,
+    "rustfmt_files_needing_format": 1,
+    "tool_errors": 0
+  },
+  "commands": {
+    "clippy": "cargo clippy --workspace --all-targets --message-format short",
+    "rustfmt": "cargo fmt --all -- --check"
+  },
+  "status": {
+    "clippy_exit_code": 0,
+    "rustfmt_exit_code": 1,
+    "clippy_failed": 0,
+    "rustfmt_failed": 0
+  },
+  "artifacts": {
+    "clippy_log": "/data1/jfeng/tcode_win/output/res2/sds/sds-rust/clippy_output.log",
+    "rustfmt_log": "/data1/jfeng/tcode_win/output/res2/sds/sds-rust/rustfmt_output.log"
+  },
+  "clippy_by_category": {"unused":7,"other":5},
+  "clippy_details": [{"file":"src/sds.rs","line":5,"lint":"","message":"constant `SDS_TYPE_5` is never used"},{"file":"src/sds.rs","line":6,"lint":"","message":"constant `SDS_TYPE_8` is never used"},{"file":"src/sds.rs","line":7,"lint":"","message":"constant `SDS_TYPE_16` is never used"},{"file":"src/sds.rs","line":8,"lint":"","message":"constant `SDS_TYPE_32` is never used"},{"file":"src/sds.rs","line":9,"lint":"","message":"constant `SDS_TYPE_64` is never used"},{"file":"src/sds.rs","line":17,"lint":"","message":"multiple associated items are never used"},{"file":"src/sds.rs","line":791,"lint":"","message":"variants `Sds` and `Int` are never constructed"},{"file":"src/sds.rs","line":247,"lint":"","message":"the borrowed expression implements the required traits: help: change this to: `[bytes[i + 1]]`"},{"file":"src/sds.rs","line":383,"lint":"","message":"the borrowed expression implements the required traits: help: change this to: `[ch]`"},{"file":"src/sds.rs","line":401,"lint":"","message":"the borrowed expression implements the required traits: help: change this to: `[c]`"},{"file":"","line":0,"lint":"","message":"`sds-rust` (bin \"sds-rust\") generated 10 warnings (5 duplicates) (run `cargo clippy --fix --bin \"sds-rust\" -p sds-rust -- ` to apply 3 suggestions)"},{"file":"","line":0,"lint":"","message":"`sds-rust` (bin \"sds-rust\" test) generated 10 warnings (5 duplicates)"}],
+  "clippy_error_details": [],
+  "rustfmt_details": [{"file":"src/sds.rs","line":334},{"file":"src/sds.rs","line":605},{"file":"src/sds.rs","line":656},{"file":"src/sds.rs","line":664},{"file":"src/sds.rs","line":752},{"file":"src/sds.rs","line":774}]
+}

@@ -1,0 +1,2016 @@
+processor	: D
+vendor_id	: GenuineIntel
+cpu family	: D
+model		: D
+model name	: Intel(R) Xeon(R) Gold DC CPU @ D.DGHz
+stepping	: D
+microcode	: DxD
+cpu MHz		: D.D
+cache size	: D KB
+physical id	: D
+siblings	: D
+core id		: D
+cpu cores	: D
+apicid		: D
+initial apicid	: D
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: D
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cxD apic sep mtrr pge mca cmov pat pseD clflush dts acpi mmx fxsr sse sseD ss ht tm pbe syscall nx pdpeDgb rdtscp lm constant_tsc art arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc cpuid aperfmperf pni pclmulqdq dtesD monitor ds_cpl vmx smx est tmD ssseD sdbg fma cxD xtpr pdcm pcid dca sseD_D sseD_D xDapic movbe popcnt tsc_deadline_timer aes xsave avx fDc rdrand lahf_lm abm Ddnowprefetch cpuid_fault epb cat_lD cdp_lD invpcid_single intel_ppin ssbd mba ibrs ibpb stibp tpr_shadow vnmi flexpriority ept vpid ept_ad fsgsbase tsc_adjust bmiD hle avxD smep bmiD erms invpcid rtm cqm mpx rdt_a avxDf avxDdq rdseed adx smap clflushopt clwb intel_pt avxDcd avxDbw avxDvl xsaveopt xsavec xgetbvD xsaves cqm_llc cqm_occup_llc cqm_mbm_total cqm_mbm_local dtherm ida arat pln pts hwp hwp_act_window hwp_epp hwp_pkg_req pku ospke md_clear flush_lDd arch_capabilities
+vmx flags	: vnmi preemption_timer posted_intr invvpid ept_x_only ept_ad ept_Dgb flexpriority apicv tsc_offset vtpr mtf vapic ept vpid unrestricted_guest vapic_reg vid ple shadow_vmcs pml ept_mode_based_exec tsc_scaling
+bugs		: spectre_vD spectre_vD spec_store_bypass mds swapgs taa itlb_multihit mmio_stale_data retbleed gds
+bogomips	: D.D
+clflush size	: D
+cache_alignment	: D
+address sizes	: D bits physical, D bits virtual
+power management:
+
+processor	: D
+vendor_id	: GenuineIntel
+cpu family	: D
+model		: D
+model name	: Intel(R) Xeon(R) Gold DC CPU @ D.DGHz
+stepping	: D
+microcode	: DxD
+cpu MHz		: D.D
+cache size	: D KB
+physical id	: D
+siblings	: D
+core id		: D
+cpu cores	: D
+apicid		: D
+initial apicid	: D
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: D
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cxD apic sep mtrr pge mca cmov pat pseD clflush dts acpi mmx fxsr sse sseD ss ht tm pbe syscall nx pdpeDgb rdtscp lm constant_tsc art arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc cpuid aperfmperf pni pclmulqdq dtesD monitor ds_cpl vmx smx est tmD ssseD sdbg fma cxD xtpr pdcm pcid dca sseD_D sseD_D xDapic movbe popcnt tsc_deadline_timer aes xsave avx fDc rdrand lahf_lm abm Ddnowprefetch cpuid_fault epb cat_lD cdp_lD invpcid_single intel_ppin ssbd mba ibrs ibpb stibp tpr_shadow vnmi flexpriority ept vpid ept_ad fsgsbase tsc_adjust bmiD hle avxD smep bmiD erms invpcid rtm cqm mpx rdt_a avxDf avxDdq rdseed adx smap clflushopt clwb intel_pt avxDcd avxDbw avxDvl xsaveopt xsavec xgetbvD xsaves cqm_llc cqm_occup_llc cqm_mbm_total cqm_mbm_local dtherm ida arat pln pts hwp hwp_act_window hwp_epp hwp_pkg_req pku ospke md_clear flush_lDd arch_capabilities
+vmx flags	: vnmi preemption_timer posted_intr invvpid ept_x_only ept_ad ept_Dgb flexpriority apicv tsc_offset vtpr mtf vapic ept vpid unrestricted_guest vapic_reg vid ple shadow_vmcs pml ept_mode_based_exec tsc_scaling
+bugs		: spectre_vD spectre_vD spec_store_bypass mds swapgs taa itlb_multihit mmio_stale_data retbleed gds
+bogomips	: D.D
+clflush size	: D
+cache_alignment	: D
+address sizes	: D bits physical, D bits virtual
+power management:
+
+processor	: D
+vendor_id	: GenuineIntel
+cpu family	: D
+model		: D
+model name	: Intel(R) Xeon(R) Gold DC CPU @ D.DGHz
+stepping	: D
+microcode	: DxD
+cpu MHz		: D.D
+cache size	: D KB
+physical id	: D
+siblings	: D
+core id		: D
+cpu cores	: D
+apicid		: D
+initial apicid	: D
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: D
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cxD apic sep mtrr pge mca cmov pat pseD clflush dts acpi mmx fxsr sse sseD ss ht tm pbe syscall nx pdpeDgb rdtscp lm constant_tsc art arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc cpuid aperfmperf pni pclmulqdq dtesD monitor ds_cpl vmx smx est tmD ssseD sdbg fma cxD xtpr pdcm pcid dca sseD_D sseD_D xDapic movbe popcnt tsc_deadline_timer aes xsave avx fDc rdrand lahf_lm abm Ddnowprefetch cpuid_fault epb cat_lD cdp_lD invpcid_single intel_ppin ssbd mba ibrs ibpb stibp tpr_shadow vnmi flexpriority ept vpid ept_ad fsgsbase tsc_adjust bmiD hle avxD smep bmiD erms invpcid rtm cqm mpx rdt_a avxDf avxDdq rdseed adx smap clflushopt clwb intel_pt avxDcd avxDbw avxDvl xsaveopt xsavec xgetbvD xsaves cqm_llc cqm_occup_llc cqm_mbm_total cqm_mbm_local dtherm ida arat pln pts hwp hwp_act_window hwp_epp hwp_pkg_req pku ospke md_clear flush_lDd arch_capabilities
+vmx flags	: vnmi preemption_timer posted_intr invvpid ept_x_only ept_ad ept_Dgb flexpriority apicv tsc_offset vtpr mtf vapic ept vpid unrestricted_guest vapic_reg vid ple shadow_vmcs pml ept_mode_based_exec tsc_scaling
+bugs		: spectre_vD spectre_vD spec_store_bypass mds swapgs taa itlb_multihit mmio_stale_data retbleed gds
+bogomips	: D.D
+clflush size	: D
+cache_alignment	: D
+address sizes	: D bits physical, D bits virtual
+power management:
+
+processor	: D
+vendor_id	: GenuineIntel
+cpu family	: D
+model		: D
+model name	: Intel(R) Xeon(R) Gold DC CPU @ D.DGHz
+stepping	: D
+microcode	: DxD
+cpu MHz		: D.D
+cache size	: D KB
+physical id	: D
+siblings	: D
+core id		: D
+cpu cores	: D
+apicid		: D
+initial apicid	: D
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: D
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cxD apic sep mtrr pge mca cmov pat pseD clflush dts acpi mmx fxsr sse sseD ss ht tm pbe syscall nx pdpeDgb rdtscp lm constant_tsc art arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc cpuid aperfmperf pni pclmulqdq dtesD monitor ds_cpl vmx smx est tmD ssseD sdbg fma cxD xtpr pdcm pcid dca sseD_D sseD_D xDapic movbe popcnt tsc_deadline_timer aes xsave avx fDc rdrand lahf_lm abm Ddnowprefetch cpuid_fault epb cat_lD cdp_lD invpcid_single intel_ppin ssbd mba ibrs ibpb stibp tpr_shadow vnmi flexpriority ept vpid ept_ad fsgsbase tsc_adjust bmiD hle avxD smep bmiD erms invpcid rtm cqm mpx rdt_a avxDf avxDdq rdseed adx smap clflushopt clwb intel_pt avxDcd avxDbw avxDvl xsaveopt xsavec xgetbvD xsaves cqm_llc cqm_occup_llc cqm_mbm_total cqm_mbm_local dtherm ida arat pln pts hwp hwp_act_window hwp_epp hwp_pkg_req pku ospke md_clear flush_lDd arch_capabilities
+vmx flags	: vnmi preemption_timer posted_intr invvpid ept_x_only ept_ad ept_Dgb flexpriority apicv tsc_offset vtpr mtf vapic ept vpid unrestricted_guest vapic_reg vid ple shadow_vmcs pml ept_mode_based_exec tsc_scaling
+bugs		: spectre_vD spectre_vD spec_store_bypass mds swapgs taa itlb_multihit mmio_stale_data retbleed gds
+bogomips	: D.D
+clflush size	: D
+cache_alignment	: D
+address sizes	: D bits physical, D bits virtual
+power management:
+
+processor	: D
+vendor_id	: GenuineIntel
+cpu family	: D
+model		: D
+model name	: Intel(R) Xeon(R) Gold DC CPU @ D.DGHz
+stepping	: D
+microcode	: DxD
+cpu MHz		: D.D
+cache size	: D KB
+physical id	: D
+siblings	: D
+core id		: D
+cpu cores	: D
+apicid		: D
+initial apicid	: D
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: D
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cxD apic sep mtrr pge mca cmov pat pseD clflush dts acpi mmx fxsr sse sseD ss ht tm pbe syscall nx pdpeDgb rdtscp lm constant_tsc art arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc cpuid aperfmperf pni pclmulqdq dtesD monitor ds_cpl vmx smx est tmD ssseD sdbg fma cxD xtpr pdcm pcid dca sseD_D sseD_D xDapic movbe popcnt tsc_deadline_timer aes xsave avx fDc rdrand lahf_lm abm Ddnowprefetch cpuid_fault epb cat_lD cdp_lD invpcid_single intel_ppin ssbd mba ibrs ibpb stibp tpr_shadow vnmi flexpriority ept vpid ept_ad fsgsbase tsc_adjust bmiD hle avxD smep bmiD erms invpcid rtm cqm mpx rdt_a avxDf avxDdq rdseed adx smap clflushopt clwb intel_pt avxDcd avxDbw avxDvl xsaveopt xsavec xgetbvD xsaves cqm_llc cqm_occup_llc cqm_mbm_total cqm_mbm_local dtherm ida arat pln pts hwp hwp_act_window hwp_epp hwp_pkg_req pku ospke md_clear flush_lDd arch_capabilities
+vmx flags	: vnmi preemption_timer posted_intr invvpid ept_x_only ept_ad ept_Dgb flexpriority apicv tsc_offset vtpr mtf vapic ept vpid unrestricted_guest vapic_reg vid ple shadow_vmcs pml ept_mode_based_exec tsc_scaling
+bugs		: spectre_vD spectre_vD spec_store_bypass mds swapgs taa itlb_multihit mmio_stale_data retbleed gds
+bogomips	: D.D
+clflush size	: D
+cache_alignment	: D
+address sizes	: D bits physical, D bits virtual
+power management:
+
+processor	: D
+vendor_id	: GenuineIntel
+cpu family	: D
+model		: D
+model name	: Intel(R) Xeon(R) Gold DC CPU @ D.DGHz
+stepping	: D
+microcode	: DxD
+cpu MHz		: D.D
+cache size	: D KB
+physical id	: D
+siblings	: D
+core id		: D
+cpu cores	: D
+apicid		: D
+initial apicid	: D
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: D
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cxD apic sep mtrr pge mca cmov pat pseD clflush dts acpi mmx fxsr sse sseD ss ht tm pbe syscall nx pdpeDgb rdtscp lm constant_tsc art arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc cpuid aperfmperf pni pclmulqdq dtesD monitor ds_cpl vmx smx est tmD ssseD sdbg fma cxD xtpr pdcm pcid dca sseD_D sseD_D xDapic movbe popcnt tsc_deadline_timer aes xsave avx fDc rdrand lahf_lm abm Ddnowprefetch cpuid_fault epb cat_lD cdp_lD invpcid_single intel_ppin ssbd mba ibrs ibpb stibp tpr_shadow vnmi flexpriority ept vpid ept_ad fsgsbase tsc_adjust bmiD hle avxD smep bmiD erms invpcid rtm cqm mpx rdt_a avxDf avxDdq rdseed adx smap clflushopt clwb intel_pt avxDcd avxDbw avxDvl xsaveopt xsavec xgetbvD xsaves cqm_llc cqm_occup_llc cqm_mbm_total cqm_mbm_local dtherm ida arat pln pts hwp hwp_act_window hwp_epp hwp_pkg_req pku ospke md_clear flush_lDd arch_capabilities
+vmx flags	: vnmi preemption_timer posted_intr invvpid ept_x_only ept_ad ept_Dgb flexpriority apicv tsc_offset vtpr mtf vapic ept vpid unrestricted_guest vapic_reg vid ple shadow_vmcs pml ept_mode_based_exec tsc_scaling
+bugs		: spectre_vD spectre_vD spec_store_bypass mds swapgs taa itlb_multihit mmio_stale_data retbleed gds
+bogomips	: D.D
+clflush size	: D
+cache_alignment	: D
+address sizes	: D bits physical, D bits virtual
+power management:
+
+processor	: D
+vendor_id	: GenuineIntel
+cpu family	: D
+model		: D
+model name	: Intel(R) Xeon(R) Gold DC CPU @ D.DGHz
+stepping	: D
+microcode	: DxD
+cpu MHz		: D.D
+cache size	: D KB
+physical id	: D
+siblings	: D
+core id		: D
+cpu cores	: D
+apicid		: D
+initial apicid	: D
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: D
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cxD apic sep mtrr pge mca cmov pat pseD clflush dts acpi mmx fxsr sse sseD ss ht tm pbe syscall nx pdpeDgb rdtscp lm constant_tsc art arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc cpuid aperfmperf pni pclmulqdq dtesD monitor ds_cpl vmx smx est tmD ssseD sdbg fma cxD xtpr pdcm pcid dca sseD_D sseD_D xDapic movbe popcnt tsc_deadline_timer aes xsave avx fDc rdrand lahf_lm abm Ddnowprefetch cpuid_fault epb cat_lD cdp_lD invpcid_single intel_ppin ssbd mba ibrs ibpb stibp tpr_shadow vnmi flexpriority ept vpid ept_ad fsgsbase tsc_adjust bmiD hle avxD smep bmiD erms invpcid rtm cqm mpx rdt_a avxDf avxDdq rdseed adx smap clflushopt clwb intel_pt avxDcd avxDbw avxDvl xsaveopt xsavec xgetbvD xsaves cqm_llc cqm_occup_llc cqm_mbm_total cqm_mbm_local dtherm ida arat pln pts hwp hwp_act_window hwp_epp hwp_pkg_req pku ospke md_clear flush_lDd arch_capabilities
+vmx flags	: vnmi preemption_timer posted_intr invvpid ept_x_only ept_ad ept_Dgb flexpriority apicv tsc_offset vtpr mtf vapic ept vpid unrestricted_guest vapic_reg vid ple shadow_vmcs pml ept_mode_based_exec tsc_scaling
+bugs		: spectre_vD spectre_vD spec_store_bypass mds swapgs taa itlb_multihit mmio_stale_data retbleed gds
+bogomips	: D.D
+clflush size	: D
+cache_alignment	: D
+address sizes	: D bits physical, D bits virtual
+power management:
+
+processor	: D
+vendor_id	: GenuineIntel
+cpu family	: D
+model		: D
+model name	: Intel(R) Xeon(R) Gold DC CPU @ D.DGHz
+stepping	: D
+microcode	: DxD
+cpu MHz		: D.D
+cache size	: D KB
+physical id	: D
+siblings	: D
+core id		: D
+cpu cores	: D
+apicid		: D
+initial apicid	: D
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: D
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cxD apic sep mtrr pge mca cmov pat pseD clflush dts acpi mmx fxsr sse sseD ss ht tm pbe syscall nx pdpeDgb rdtscp lm constant_tsc art arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc cpuid aperfmperf pni pclmulqdq dtesD monitor ds_cpl vmx smx est tmD ssseD sdbg fma cxD xtpr pdcm pcid dca sseD_D sseD_D xDapic movbe popcnt tsc_deadline_timer aes xsave avx fDc rdrand lahf_lm abm Ddnowprefetch cpuid_fault epb cat_lD cdp_lD invpcid_single intel_ppin ssbd mba ibrs ibpb stibp tpr_shadow vnmi flexpriority ept vpid ept_ad fsgsbase tsc_adjust bmiD hle avxD smep bmiD erms invpcid rtm cqm mpx rdt_a avxDf avxDdq rdseed adx smap clflushopt clwb intel_pt avxDcd avxDbw avxDvl xsaveopt xsavec xgetbvD xsaves cqm_llc cqm_occup_llc cqm_mbm_total cqm_mbm_local dtherm ida arat pln pts hwp hwp_act_window hwp_epp hwp_pkg_req pku ospke md_clear flush_lDd arch_capabilities
+vmx flags	: vnmi preemption_timer posted_intr invvpid ept_x_only ept_ad ept_Dgb flexpriority apicv tsc_offset vtpr mtf vapic ept vpid unrestricted_guest vapic_reg vid ple shadow_vmcs pml ept_mode_based_exec tsc_scaling
+bugs		: spectre_vD spectre_vD spec_store_bypass mds swapgs taa itlb_multihit mmio_stale_data retbleed gds
+bogomips	: D.D
+clflush size	: D
+cache_alignment	: D
+address sizes	: D bits physical, D bits virtual
+power management:
+
+processor	: D
+vendor_id	: GenuineIntel
+cpu family	: D
+model		: D
+model name	: Intel(R) Xeon(R) Gold DC CPU @ D.DGHz
+stepping	: D
+microcode	: DxD
+cpu MHz		: D.D
+cache size	: D KB
+physical id	: D
+siblings	: D
+core id		: D
+cpu cores	: D
+apicid		: D
+initial apicid	: D
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: D
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cxD apic sep mtrr pge mca cmov pat pseD clflush dts acpi mmx fxsr sse sseD ss ht tm pbe syscall nx pdpeDgb rdtscp lm constant_tsc art arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc cpuid aperfmperf pni pclmulqdq dtesD monitor ds_cpl vmx smx est tmD ssseD sdbg fma cxD xtpr pdcm pcid dca sseD_D sseD_D xDapic movbe popcnt tsc_deadline_timer aes xsave avx fDc rdrand lahf_lm abm Ddnowprefetch cpuid_fault epb cat_lD cdp_lD invpcid_single intel_ppin ssbd mba ibrs ibpb stibp tpr_shadow vnmi flexpriority ept vpid ept_ad fsgsbase tsc_adjust bmiD hle avxD smep bmiD erms invpcid rtm cqm mpx rdt_a avxDf avxDdq rdseed adx smap clflushopt clwb intel_pt avxDcd avxDbw avxDvl xsaveopt xsavec xgetbvD xsaves cqm_llc cqm_occup_llc cqm_mbm_total cqm_mbm_local dtherm ida arat pln pts hwp hwp_act_window hwp_epp hwp_pkg_req pku ospke md_clear flush_lDd arch_capabilities
+vmx flags	: vnmi preemption_timer posted_intr invvpid ept_x_only ept_ad ept_Dgb flexpriority apicv tsc_offset vtpr mtf vapic ept vpid unrestricted_guest vapic_reg vid ple shadow_vmcs pml ept_mode_based_exec tsc_scaling
+bugs		: spectre_vD spectre_vD spec_store_bypass mds swapgs taa itlb_multihit mmio_stale_data retbleed gds
+bogomips	: D.D
+clflush size	: D
+cache_alignment	: D
+address sizes	: D bits physical, D bits virtual
+power management:
+
+processor	: D
+vendor_id	: GenuineIntel
+cpu family	: D
+model		: D
+model name	: Intel(R) Xeon(R) Gold DC CPU @ D.DGHz
+stepping	: D
+microcode	: DxD
+cpu MHz		: D.D
+cache size	: D KB
+physical id	: D
+siblings	: D
+core id		: D
+cpu cores	: D
+apicid		: D
+initial apicid	: D
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: D
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cxD apic sep mtrr pge mca cmov pat pseD clflush dts acpi mmx fxsr sse sseD ss ht tm pbe syscall nx pdpeDgb rdtscp lm constant_tsc art arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc cpuid aperfmperf pni pclmulqdq dtesD monitor ds_cpl vmx smx est tmD ssseD sdbg fma cxD xtpr pdcm pcid dca sseD_D sseD_D xDapic movbe popcnt tsc_deadline_timer aes xsave avx fDc rdrand lahf_lm abm Ddnowprefetch cpuid_fault epb cat_lD cdp_lD invpcid_single intel_ppin ssbd mba ibrs ibpb stibp tpr_shadow vnmi flexpriority ept vpid ept_ad fsgsbase tsc_adjust bmiD hle avxD smep bmiD erms invpcid rtm cqm mpx rdt_a avxDf avxDdq rdseed adx smap clflushopt clwb intel_pt avxDcd avxDbw avxDvl xsaveopt xsavec xgetbvD xsaves cqm_llc cqm_occup_llc cqm_mbm_total cqm_mbm_local dtherm ida arat pln pts hwp hwp_act_window hwp_epp hwp_pkg_req pku ospke md_clear flush_lDd arch_capabilities
+vmx flags	: vnmi preemption_timer posted_intr invvpid ept_x_only ept_ad ept_Dgb flexpriority apicv tsc_offset vtpr mtf vapic ept vpid unrestricted_guest vapic_reg vid ple shadow_vmcs pml ept_mode_based_exec tsc_scaling
+bugs		: spectre_vD spectre_vD spec_store_bypass mds swapgs taa itlb_multihit mmio_stale_data retbleed gds
+bogomips	: D.D
+clflush size	: D
+cache_alignment	: D
+address sizes	: D bits physical, D bits virtual
+power management:
+
+processor	: D
+vendor_id	: GenuineIntel
+cpu family	: D
+model		: D
+model name	: Intel(R) Xeon(R) Gold DC CPU @ D.DGHz
+stepping	: D
+microcode	: DxD
+cpu MHz		: D.D
+cache size	: D KB
+physical id	: D
+siblings	: D
+core id		: D
+cpu cores	: D
+apicid		: D
+initial apicid	: D
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: D
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cxD apic sep mtrr pge mca cmov pat pseD clflush dts acpi mmx fxsr sse sseD ss ht tm pbe syscall nx pdpeDgb rdtscp lm constant_tsc art arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc cpuid aperfmperf pni pclmulqdq dtesD monitor ds_cpl vmx smx est tmD ssseD sdbg fma cxD xtpr pdcm pcid dca sseD_D sseD_D xDapic movbe popcnt tsc_deadline_timer aes xsave avx fDc rdrand lahf_lm abm Ddnowprefetch cpuid_fault epb cat_lD cdp_lD invpcid_single intel_ppin ssbd mba ibrs ibpb stibp tpr_shadow vnmi flexpriority ept vpid ept_ad fsgsbase tsc_adjust bmiD hle avxD smep bmiD erms invpcid rtm cqm mpx rdt_a avxDf avxDdq rdseed adx smap clflushopt clwb intel_pt avxDcd avxDbw avxDvl xsaveopt xsavec xgetbvD xsaves cqm_llc cqm_occup_llc cqm_mbm_total cqm_mbm_local dtherm ida arat pln pts hwp hwp_act_window hwp_epp hwp_pkg_req pku ospke md_clear flush_lDd arch_capabilities
+vmx flags	: vnmi preemption_timer posted_intr invvpid ept_x_only ept_ad ept_Dgb flexpriority apicv tsc_offset vtpr mtf vapic ept vpid unrestricted_guest vapic_reg vid ple shadow_vmcs pml ept_mode_based_exec tsc_scaling
+bugs		: spectre_vD spectre_vD spec_store_bypass mds swapgs taa itlb_multihit mmio_stale_data retbleed gds
+bogomips	: D.D
+clflush size	: D
+cache_alignment	: D
+address sizes	: D bits physical, D bits virtual
+power management:
+
+processor	: D
+vendor_id	: GenuineIntel
+cpu family	: D
+model		: D
+model name	: Intel(R) Xeon(R) Gold DC CPU @ D.DGHz
+stepping	: D
+microcode	: DxD
+cpu MHz		: D.D
+cache size	: D KB
+physical id	: D
+siblings	: D
+core id		: D
+cpu cores	: D
+apicid		: D
+initial apicid	: D
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: D
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cxD apic sep mtrr pge mca cmov pat pseD clflush dts acpi mmx fxsr sse sseD ss ht tm pbe syscall nx pdpeDgb rdtscp lm constant_tsc art arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc cpuid aperfmperf pni pclmulqdq dtesD monitor ds_cpl vmx smx est tmD ssseD sdbg fma cxD xtpr pdcm pcid dca sseD_D sseD_D xDapic movbe popcnt tsc_deadline_timer aes xsave avx fDc rdrand lahf_lm abm Ddnowprefetch cpuid_fault epb cat_lD cdp_lD invpcid_single intel_ppin ssbd mba ibrs ibpb stibp tpr_shadow vnmi flexpriority ept vpid ept_ad fsgsbase tsc_adjust bmiD hle avxD smep bmiD erms invpcid rtm cqm mpx rdt_a avxDf avxDdq rdseed adx smap clflushopt clwb intel_pt avxDcd avxDbw avxDvl xsaveopt xsavec xgetbvD xsaves cqm_llc cqm_occup_llc cqm_mbm_total cqm_mbm_local dtherm ida arat pln pts hwp hwp_act_window hwp_epp hwp_pkg_req pku ospke md_clear flush_lDd arch_capabilities
+vmx flags	: vnmi preemption_timer posted_intr invvpid ept_x_only ept_ad ept_Dgb flexpriority apicv tsc_offset vtpr mtf vapic ept vpid unrestricted_guest vapic_reg vid ple shadow_vmcs pml ept_mode_based_exec tsc_scaling
+bugs		: spectre_vD spectre_vD spec_store_bypass mds swapgs taa itlb_multihit mmio_stale_data retbleed gds
+bogomips	: D.D
+clflush size	: D
+cache_alignment	: D
+address sizes	: D bits physical, D bits virtual
+power management:
+
+processor	: D
+vendor_id	: GenuineIntel
+cpu family	: D
+model		: D
+model name	: Intel(R) Xeon(R) Gold DC CPU @ D.DGHz
+stepping	: D
+microcode	: DxD
+cpu MHz		: D.D
+cache size	: D KB
+physical id	: D
+siblings	: D
+core id		: D
+cpu cores	: D
+apicid		: D
+initial apicid	: D
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: D
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cxD apic sep mtrr pge mca cmov pat pseD clflush dts acpi mmx fxsr sse sseD ss ht tm pbe syscall nx pdpeDgb rdtscp lm constant_tsc art arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc cpuid aperfmperf pni pclmulqdq dtesD monitor ds_cpl vmx smx est tmD ssseD sdbg fma cxD xtpr pdcm pcid dca sseD_D sseD_D xDapic movbe popcnt tsc_deadline_timer aes xsave avx fDc rdrand lahf_lm abm Ddnowprefetch cpuid_fault epb cat_lD cdp_lD invpcid_single intel_ppin ssbd mba ibrs ibpb stibp tpr_shadow vnmi flexpriority ept vpid ept_ad fsgsbase tsc_adjust bmiD hle avxD smep bmiD erms invpcid rtm cqm mpx rdt_a avxDf avxDdq rdseed adx smap clflushopt clwb intel_pt avxDcd avxDbw avxDvl xsaveopt xsavec xgetbvD xsaves cqm_llc cqm_occup_llc cqm_mbm_total cqm_mbm_local dtherm ida arat pln pts hwp hwp_act_window hwp_epp hwp_pkg_req pku ospke md_clear flush_lDd arch_capabilities
+vmx flags	: vnmi preemption_timer posted_intr invvpid ept_x_only ept_ad ept_Dgb flexpriority apicv tsc_offset vtpr mtf vapic ept vpid unrestricted_guest vapic_reg vid ple shadow_vmcs pml ept_mode_based_exec tsc_scaling
+bugs		: spectre_vD spectre_vD spec_store_bypass mds swapgs taa itlb_multihit mmio_stale_data retbleed gds
+bogomips	: D.D
+clflush size	: D
+cache_alignment	: D
+address sizes	: D bits physical, D bits virtual
+power management:
+
+processor	: D
+vendor_id	: GenuineIntel
+cpu family	: D
+model		: D
+model name	: Intel(R) Xeon(R) Gold DC CPU @ D.DGHz
+stepping	: D
+microcode	: DxD
+cpu MHz		: D.D
+cache size	: D KB
+physical id	: D
+siblings	: D
+core id		: D
+cpu cores	: D
+apicid		: D
+initial apicid	: D
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: D
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cxD apic sep mtrr pge mca cmov pat pseD clflush dts acpi mmx fxsr sse sseD ss ht tm pbe syscall nx pdpeDgb rdtscp lm constant_tsc art arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc cpuid aperfmperf pni pclmulqdq dtesD monitor ds_cpl vmx smx est tmD ssseD sdbg fma cxD xtpr pdcm pcid dca sseD_D sseD_D xDapic movbe popcnt tsc_deadline_timer aes xsave avx fDc rdrand lahf_lm abm Ddnowprefetch cpuid_fault epb cat_lD cdp_lD invpcid_single intel_ppin ssbd mba ibrs ibpb stibp tpr_shadow vnmi flexpriority ept vpid ept_ad fsgsbase tsc_adjust bmiD hle avxD smep bmiD erms invpcid rtm cqm mpx rdt_a avxDf avxDdq rdseed adx smap clflushopt clwb intel_pt avxDcd avxDbw avxDvl xsaveopt xsavec xgetbvD xsaves cqm_llc cqm_occup_llc cqm_mbm_total cqm_mbm_local dtherm ida arat pln pts hwp hwp_act_window hwp_epp hwp_pkg_req pku ospke md_clear flush_lDd arch_capabilities
+vmx flags	: vnmi preemption_timer posted_intr invvpid ept_x_only ept_ad ept_Dgb flexpriority apicv tsc_offset vtpr mtf vapic ept vpid unrestricted_guest vapic_reg vid ple shadow_vmcs pml ept_mode_based_exec tsc_scaling
+bugs		: spectre_vD spectre_vD spec_store_bypass mds swapgs taa itlb_multihit mmio_stale_data retbleed gds
+bogomips	: D.D
+clflush size	: D
+cache_alignment	: D
+address sizes	: D bits physical, D bits virtual
+power management:
+
+processor	: D
+vendor_id	: GenuineIntel
+cpu family	: D
+model		: D
+model name	: Intel(R) Xeon(R) Gold DC CPU @ D.DGHz
+stepping	: D
+microcode	: DxD
+cpu MHz		: D.D
+cache size	: D KB
+physical id	: D
+siblings	: D
+core id		: D
+cpu cores	: D
+apicid		: D
+initial apicid	: D
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: D
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cxD apic sep mtrr pge mca cmov pat pseD clflush dts acpi mmx fxsr sse sseD ss ht tm pbe syscall nx pdpeDgb rdtscp lm constant_tsc art arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc cpuid aperfmperf pni pclmulqdq dtesD monitor ds_cpl vmx smx est tmD ssseD sdbg fma cxD xtpr pdcm pcid dca sseD_D sseD_D xDapic movbe popcnt tsc_deadline_timer aes xsave avx fDc rdrand lahf_lm abm Ddnowprefetch cpuid_fault epb cat_lD cdp_lD invpcid_single intel_ppin ssbd mba ibrs ibpb stibp tpr_shadow vnmi flexpriority ept vpid ept_ad fsgsbase tsc_adjust bmiD hle avxD smep bmiD erms invpcid rtm cqm mpx rdt_a avxDf avxDdq rdseed adx smap clflushopt clwb intel_pt avxDcd avxDbw avxDvl xsaveopt xsavec xgetbvD xsaves cqm_llc cqm_occup_llc cqm_mbm_total cqm_mbm_local dtherm ida arat pln pts hwp hwp_act_window hwp_epp hwp_pkg_req pku ospke md_clear flush_lDd arch_capabilities
+vmx flags	: vnmi preemption_timer posted_intr invvpid ept_x_only ept_ad ept_Dgb flexpriority apicv tsc_offset vtpr mtf vapic ept vpid unrestricted_guest vapic_reg vid ple shadow_vmcs pml ept_mode_based_exec tsc_scaling
+bugs		: spectre_vD spectre_vD spec_store_bypass mds swapgs taa itlb_multihit mmio_stale_data retbleed gds
+bogomips	: D.D
+clflush size	: D
+cache_alignment	: D
+address sizes	: D bits physical, D bits virtual
+power management:
+
+processor	: D
+vendor_id	: GenuineIntel
+cpu family	: D
+model		: D
+model name	: Intel(R) Xeon(R) Gold DC CPU @ D.DGHz
+stepping	: D
+microcode	: DxD
+cpu MHz		: D.D
+cache size	: D KB
+physical id	: D
+siblings	: D
+core id		: D
+cpu cores	: D
+apicid		: D
+initial apicid	: D
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: D
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cxD apic sep mtrr pge mca cmov pat pseD clflush dts acpi mmx fxsr sse sseD ss ht tm pbe syscall nx pdpeDgb rdtscp lm constant_tsc art arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc cpuid aperfmperf pni pclmulqdq dtesD monitor ds_cpl vmx smx est tmD ssseD sdbg fma cxD xtpr pdcm pcid dca sseD_D sseD_D xDapic movbe popcnt tsc_deadline_timer aes xsave avx fDc rdrand lahf_lm abm Ddnowprefetch cpuid_fault epb cat_lD cdp_lD invpcid_single intel_ppin ssbd mba ibrs ibpb stibp tpr_shadow vnmi flexpriority ept vpid ept_ad fsgsbase tsc_adjust bmiD hle avxD smep bmiD erms invpcid rtm cqm mpx rdt_a avxDf avxDdq rdseed adx smap clflushopt clwb intel_pt avxDcd avxDbw avxDvl xsaveopt xsavec xgetbvD xsaves cqm_llc cqm_occup_llc cqm_mbm_total cqm_mbm_local dtherm ida arat pln pts hwp hwp_act_window hwp_epp hwp_pkg_req pku ospke md_clear flush_lDd arch_capabilities
+vmx flags	: vnmi preemption_timer posted_intr invvpid ept_x_only ept_ad ept_Dgb flexpriority apicv tsc_offset vtpr mtf vapic ept vpid unrestricted_guest vapic_reg vid ple shadow_vmcs pml ept_mode_based_exec tsc_scaling
+bugs		: spectre_vD spectre_vD spec_store_bypass mds swapgs taa itlb_multihit mmio_stale_data retbleed gds
+bogomips	: D.D
+clflush size	: D
+cache_alignment	: D
+address sizes	: D bits physical, D bits virtual
+power management:
+
+processor	: D
+vendor_id	: GenuineIntel
+cpu family	: D
+model		: D
+model name	: Intel(R) Xeon(R) Gold DC CPU @ D.DGHz
+stepping	: D
+microcode	: DxD
+cpu MHz		: D.D
+cache size	: D KB
+physical id	: D
+siblings	: D
+core id		: D
+cpu cores	: D
+apicid		: D
+initial apicid	: D
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: D
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cxD apic sep mtrr pge mca cmov pat pseD clflush dts acpi mmx fxsr sse sseD ss ht tm pbe syscall nx pdpeDgb rdtscp lm constant_tsc art arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc cpuid aperfmperf pni pclmulqdq dtesD monitor ds_cpl vmx smx est tmD ssseD sdbg fma cxD xtpr pdcm pcid dca sseD_D sseD_D xDapic movbe popcnt tsc_deadline_timer aes xsave avx fDc rdrand lahf_lm abm Ddnowprefetch cpuid_fault epb cat_lD cdp_lD invpcid_single intel_ppin ssbd mba ibrs ibpb stibp tpr_shadow vnmi flexpriority ept vpid ept_ad fsgsbase tsc_adjust bmiD hle avxD smep bmiD erms invpcid rtm cqm mpx rdt_a avxDf avxDdq rdseed adx smap clflushopt clwb intel_pt avxDcd avxDbw avxDvl xsaveopt xsavec xgetbvD xsaves cqm_llc cqm_occup_llc cqm_mbm_total cqm_mbm_local dtherm ida arat pln pts hwp hwp_act_window hwp_epp hwp_pkg_req pku ospke md_clear flush_lDd arch_capabilities
+vmx flags	: vnmi preemption_timer posted_intr invvpid ept_x_only ept_ad ept_Dgb flexpriority apicv tsc_offset vtpr mtf vapic ept vpid unrestricted_guest vapic_reg vid ple shadow_vmcs pml ept_mode_based_exec tsc_scaling
+bugs		: spectre_vD spectre_vD spec_store_bypass mds swapgs taa itlb_multihit mmio_stale_data retbleed gds
+bogomips	: D.D
+clflush size	: D
+cache_alignment	: D
+address sizes	: D bits physical, D bits virtual
+power management:
+
+processor	: D
+vendor_id	: GenuineIntel
+cpu family	: D
+model		: D
+model name	: Intel(R) Xeon(R) Gold DC CPU @ D.DGHz
+stepping	: D
+microcode	: DxD
+cpu MHz		: D.D
+cache size	: D KB
+physical id	: D
+siblings	: D
+core id		: D
+cpu cores	: D
+apicid		: D
+initial apicid	: D
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: D
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cxD apic sep mtrr pge mca cmov pat pseD clflush dts acpi mmx fxsr sse sseD ss ht tm pbe syscall nx pdpeDgb rdtscp lm constant_tsc art arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc cpuid aperfmperf pni pclmulqdq dtesD monitor ds_cpl vmx smx est tmD ssseD sdbg fma cxD xtpr pdcm pcid dca sseD_D sseD_D xDapic movbe popcnt tsc_deadline_timer aes xsave avx fDc rdrand lahf_lm abm Ddnowprefetch cpuid_fault epb cat_lD cdp_lD invpcid_single intel_ppin ssbd mba ibrs ibpb stibp tpr_shadow vnmi flexpriority ept vpid ept_ad fsgsbase tsc_adjust bmiD hle avxD smep bmiD erms invpcid rtm cqm mpx rdt_a avxDf avxDdq rdseed adx smap clflushopt clwb intel_pt avxDcd avxDbw avxDvl xsaveopt xsavec xgetbvD xsaves cqm_llc cqm_occup_llc cqm_mbm_total cqm_mbm_local dtherm ida arat pln pts hwp hwp_act_window hwp_epp hwp_pkg_req pku ospke md_clear flush_lDd arch_capabilities
+vmx flags	: vnmi preemption_timer posted_intr invvpid ept_x_only ept_ad ept_Dgb flexpriority apicv tsc_offset vtpr mtf vapic ept vpid unrestricted_guest vapic_reg vid ple shadow_vmcs pml ept_mode_based_exec tsc_scaling
+bugs		: spectre_vD spectre_vD spec_store_bypass mds swapgs taa itlb_multihit mmio_stale_data retbleed gds
+bogomips	: D.D
+clflush size	: D
+cache_alignment	: D
+address sizes	: D bits physical, D bits virtual
+power management:
+
+processor	: D
+vendor_id	: GenuineIntel
+cpu family	: D
+model		: D
+model name	: Intel(R) Xeon(R) Gold DC CPU @ D.DGHz
+stepping	: D
+microcode	: DxD
+cpu MHz		: D.D
+cache size	: D KB
+physical id	: D
+siblings	: D
+core id		: D
+cpu cores	: D
+apicid		: D
+initial apicid	: D
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: D
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cxD apic sep mtrr pge mca cmov pat pseD clflush dts acpi mmx fxsr sse sseD ss ht tm pbe syscall nx pdpeDgb rdtscp lm constant_tsc art arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc cpuid aperfmperf pni pclmulqdq dtesD monitor ds_cpl vmx smx est tmD ssseD sdbg fma cxD xtpr pdcm pcid dca sseD_D sseD_D xDapic movbe popcnt tsc_deadline_timer aes xsave avx fDc rdrand lahf_lm abm Ddnowprefetch cpuid_fault epb cat_lD cdp_lD invpcid_single intel_ppin ssbd mba ibrs ibpb stibp tpr_shadow vnmi flexpriority ept vpid ept_ad fsgsbase tsc_adjust bmiD hle avxD smep bmiD erms invpcid rtm cqm mpx rdt_a avxDf avxDdq rdseed adx smap clflushopt clwb intel_pt avxDcd avxDbw avxDvl xsaveopt xsavec xgetbvD xsaves cqm_llc cqm_occup_llc cqm_mbm_total cqm_mbm_local dtherm ida arat pln pts hwp hwp_act_window hwp_epp hwp_pkg_req pku ospke md_clear flush_lDd arch_capabilities
+vmx flags	: vnmi preemption_timer posted_intr invvpid ept_x_only ept_ad ept_Dgb flexpriority apicv tsc_offset vtpr mtf vapic ept vpid unrestricted_guest vapic_reg vid ple shadow_vmcs pml ept_mode_based_exec tsc_scaling
+bugs		: spectre_vD spectre_vD spec_store_bypass mds swapgs taa itlb_multihit mmio_stale_data retbleed gds
+bogomips	: D.D
+clflush size	: D
+cache_alignment	: D
+address sizes	: D bits physical, D bits virtual
+power management:
+
+processor	: D
+vendor_id	: GenuineIntel
+cpu family	: D
+model		: D
+model name	: Intel(R) Xeon(R) Gold DC CPU @ D.DGHz
+stepping	: D
+microcode	: DxD
+cpu MHz		: D.D
+cache size	: D KB
+physical id	: D
+siblings	: D
+core id		: D
+cpu cores	: D
+apicid		: D
+initial apicid	: D
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: D
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cxD apic sep mtrr pge mca cmov pat pseD clflush dts acpi mmx fxsr sse sseD ss ht tm pbe syscall nx pdpeDgb rdtscp lm constant_tsc art arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc cpuid aperfmperf pni pclmulqdq dtesD monitor ds_cpl vmx smx est tmD ssseD sdbg fma cxD xtpr pdcm pcid dca sseD_D sseD_D xDapic movbe popcnt tsc_deadline_timer aes xsave avx fDc rdrand lahf_lm abm Ddnowprefetch cpuid_fault epb cat_lD cdp_lD invpcid_single intel_ppin ssbd mba ibrs ibpb stibp tpr_shadow vnmi flexpriority ept vpid ept_ad fsgsbase tsc_adjust bmiD hle avxD smep bmiD erms invpcid rtm cqm mpx rdt_a avxDf avxDdq rdseed adx smap clflushopt clwb intel_pt avxDcd avxDbw avxDvl xsaveopt xsavec xgetbvD xsaves cqm_llc cqm_occup_llc cqm_mbm_total cqm_mbm_local dtherm ida arat pln pts hwp hwp_act_window hwp_epp hwp_pkg_req pku ospke md_clear flush_lDd arch_capabilities
+vmx flags	: vnmi preemption_timer posted_intr invvpid ept_x_only ept_ad ept_Dgb flexpriority apicv tsc_offset vtpr mtf vapic ept vpid unrestricted_guest vapic_reg vid ple shadow_vmcs pml ept_mode_based_exec tsc_scaling
+bugs		: spectre_vD spectre_vD spec_store_bypass mds swapgs taa itlb_multihit mmio_stale_data retbleed gds
+bogomips	: D.D
+clflush size	: D
+cache_alignment	: D
+address sizes	: D bits physical, D bits virtual
+power management:
+
+processor	: D
+vendor_id	: GenuineIntel
+cpu family	: D
+model		: D
+model name	: Intel(R) Xeon(R) Gold DC CPU @ D.DGHz
+stepping	: D
+microcode	: DxD
+cpu MHz		: D.D
+cache size	: D KB
+physical id	: D
+siblings	: D
+core id		: D
+cpu cores	: D
+apicid		: D
+initial apicid	: D
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: D
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cxD apic sep mtrr pge mca cmov pat pseD clflush dts acpi mmx fxsr sse sseD ss ht tm pbe syscall nx pdpeDgb rdtscp lm constant_tsc art arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc cpuid aperfmperf pni pclmulqdq dtesD monitor ds_cpl vmx smx est tmD ssseD sdbg fma cxD xtpr pdcm pcid dca sseD_D sseD_D xDapic movbe popcnt tsc_deadline_timer aes xsave avx fDc rdrand lahf_lm abm Ddnowprefetch cpuid_fault epb cat_lD cdp_lD invpcid_single intel_ppin ssbd mba ibrs ibpb stibp tpr_shadow vnmi flexpriority ept vpid ept_ad fsgsbase tsc_adjust bmiD hle avxD smep bmiD erms invpcid rtm cqm mpx rdt_a avxDf avxDdq rdseed adx smap clflushopt clwb intel_pt avxDcd avxDbw avxDvl xsaveopt xsavec xgetbvD xsaves cqm_llc cqm_occup_llc cqm_mbm_total cqm_mbm_local dtherm ida arat pln pts hwp hwp_act_window hwp_epp hwp_pkg_req pku ospke md_clear flush_lDd arch_capabilities
+vmx flags	: vnmi preemption_timer posted_intr invvpid ept_x_only ept_ad ept_Dgb flexpriority apicv tsc_offset vtpr mtf vapic ept vpid unrestricted_guest vapic_reg vid ple shadow_vmcs pml ept_mode_based_exec tsc_scaling
+bugs		: spectre_vD spectre_vD spec_store_bypass mds swapgs taa itlb_multihit mmio_stale_data retbleed gds
+bogomips	: D.D
+clflush size	: D
+cache_alignment	: D
+address sizes	: D bits physical, D bits virtual
+power management:
+
+processor	: D
+vendor_id	: GenuineIntel
+cpu family	: D
+model		: D
+model name	: Intel(R) Xeon(R) Gold DC CPU @ D.DGHz
+stepping	: D
+microcode	: DxD
+cpu MHz		: D.D
+cache size	: D KB
+physical id	: D
+siblings	: D
+core id		: D
+cpu cores	: D
+apicid		: D
+initial apicid	: D
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: D
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cxD apic sep mtrr pge mca cmov pat pseD clflush dts acpi mmx fxsr sse sseD ss ht tm pbe syscall nx pdpeDgb rdtscp lm constant_tsc art arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc cpuid aperfmperf pni pclmulqdq dtesD monitor ds_cpl vmx smx est tmD ssseD sdbg fma cxD xtpr pdcm pcid dca sseD_D sseD_D xDapic movbe popcnt tsc_deadline_timer aes xsave avx fDc rdrand lahf_lm abm Ddnowprefetch cpuid_fault epb cat_lD cdp_lD invpcid_single intel_ppin ssbd mba ibrs ibpb stibp tpr_shadow vnmi flexpriority ept vpid ept_ad fsgsbase tsc_adjust bmiD hle avxD smep bmiD erms invpcid rtm cqm mpx rdt_a avxDf avxDdq rdseed adx smap clflushopt clwb intel_pt avxDcd avxDbw avxDvl xsaveopt xsavec xgetbvD xsaves cqm_llc cqm_occup_llc cqm_mbm_total cqm_mbm_local dtherm ida arat pln pts hwp hwp_act_window hwp_epp hwp_pkg_req pku ospke md_clear flush_lDd arch_capabilities
+vmx flags	: vnmi preemption_timer posted_intr invvpid ept_x_only ept_ad ept_Dgb flexpriority apicv tsc_offset vtpr mtf vapic ept vpid unrestricted_guest vapic_reg vid ple shadow_vmcs pml ept_mode_based_exec tsc_scaling
+bugs		: spectre_vD spectre_vD spec_store_bypass mds swapgs taa itlb_multihit mmio_stale_data retbleed gds
+bogomips	: D.D
+clflush size	: D
+cache_alignment	: D
+address sizes	: D bits physical, D bits virtual
+power management:
+
+processor	: D
+vendor_id	: GenuineIntel
+cpu family	: D
+model		: D
+model name	: Intel(R) Xeon(R) Gold DC CPU @ D.DGHz
+stepping	: D
+microcode	: DxD
+cpu MHz		: D.D
+cache size	: D KB
+physical id	: D
+siblings	: D
+core id		: D
+cpu cores	: D
+apicid		: D
+initial apicid	: D
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: D
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cxD apic sep mtrr pge mca cmov pat pseD clflush dts acpi mmx fxsr sse sseD ss ht tm pbe syscall nx pdpeDgb rdtscp lm constant_tsc art arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc cpuid aperfmperf pni pclmulqdq dtesD monitor ds_cpl vmx smx est tmD ssseD sdbg fma cxD xtpr pdcm pcid dca sseD_D sseD_D xDapic movbe popcnt tsc_deadline_timer aes xsave avx fDc rdrand lahf_lm abm Ddnowprefetch cpuid_fault epb cat_lD cdp_lD invpcid_single intel_ppin ssbd mba ibrs ibpb stibp tpr_shadow vnmi flexpriority ept vpid ept_ad fsgsbase tsc_adjust bmiD hle avxD smep bmiD erms invpcid rtm cqm mpx rdt_a avxDf avxDdq rdseed adx smap clflushopt clwb intel_pt avxDcd avxDbw avxDvl xsaveopt xsavec xgetbvD xsaves cqm_llc cqm_occup_llc cqm_mbm_total cqm_mbm_local dtherm ida arat pln pts hwp hwp_act_window hwp_epp hwp_pkg_req pku ospke md_clear flush_lDd arch_capabilities
+vmx flags	: vnmi preemption_timer posted_intr invvpid ept_x_only ept_ad ept_Dgb flexpriority apicv tsc_offset vtpr mtf vapic ept vpid unrestricted_guest vapic_reg vid ple shadow_vmcs pml ept_mode_based_exec tsc_scaling
+bugs		: spectre_vD spectre_vD spec_store_bypass mds swapgs taa itlb_multihit mmio_stale_data retbleed gds
+bogomips	: D.D
+clflush size	: D
+cache_alignment	: D
+address sizes	: D bits physical, D bits virtual
+power management:
+
+processor	: D
+vendor_id	: GenuineIntel
+cpu family	: D
+model		: D
+model name	: Intel(R) Xeon(R) Gold DC CPU @ D.DGHz
+stepping	: D
+microcode	: DxD
+cpu MHz		: D.D
+cache size	: D KB
+physical id	: D
+siblings	: D
+core id		: D
+cpu cores	: D
+apicid		: D
+initial apicid	: D
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: D
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cxD apic sep mtrr pge mca cmov pat pseD clflush dts acpi mmx fxsr sse sseD ss ht tm pbe syscall nx pdpeDgb rdtscp lm constant_tsc art arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc cpuid aperfmperf pni pclmulqdq dtesD monitor ds_cpl vmx smx est tmD ssseD sdbg fma cxD xtpr pdcm pcid dca sseD_D sseD_D xDapic movbe popcnt tsc_deadline_timer aes xsave avx fDc rdrand lahf_lm abm Ddnowprefetch cpuid_fault epb cat_lD cdp_lD invpcid_single intel_ppin ssbd mba ibrs ibpb stibp tpr_shadow vnmi flexpriority ept vpid ept_ad fsgsbase tsc_adjust bmiD hle avxD smep bmiD erms invpcid rtm cqm mpx rdt_a avxDf avxDdq rdseed adx smap clflushopt clwb intel_pt avxDcd avxDbw avxDvl xsaveopt xsavec xgetbvD xsaves cqm_llc cqm_occup_llc cqm_mbm_total cqm_mbm_local dtherm ida arat pln pts hwp hwp_act_window hwp_epp hwp_pkg_req pku ospke md_clear flush_lDd arch_capabilities
+vmx flags	: vnmi preemption_timer posted_intr invvpid ept_x_only ept_ad ept_Dgb flexpriority apicv tsc_offset vtpr mtf vapic ept vpid unrestricted_guest vapic_reg vid ple shadow_vmcs pml ept_mode_based_exec tsc_scaling
+bugs		: spectre_vD spectre_vD spec_store_bypass mds swapgs taa itlb_multihit mmio_stale_data retbleed gds
+bogomips	: D.D
+clflush size	: D
+cache_alignment	: D
+address sizes	: D bits physical, D bits virtual
+power management:
+
+processor	: D
+vendor_id	: GenuineIntel
+cpu family	: D
+model		: D
+model name	: Intel(R) Xeon(R) Gold DC CPU @ D.DGHz
+stepping	: D
+microcode	: DxD
+cpu MHz		: D.D
+cache size	: D KB
+physical id	: D
+siblings	: D
+core id		: D
+cpu cores	: D
+apicid		: D
+initial apicid	: D
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: D
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cxD apic sep mtrr pge mca cmov pat pseD clflush dts acpi mmx fxsr sse sseD ss ht tm pbe syscall nx pdpeDgb rdtscp lm constant_tsc art arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc cpuid aperfmperf pni pclmulqdq dtesD monitor ds_cpl vmx smx est tmD ssseD sdbg fma cxD xtpr pdcm pcid dca sseD_D sseD_D xDapic movbe popcnt tsc_deadline_timer aes xsave avx fDc rdrand lahf_lm abm Ddnowprefetch cpuid_fault epb cat_lD cdp_lD invpcid_single intel_ppin ssbd mba ibrs ibpb stibp tpr_shadow vnmi flexpriority ept vpid ept_ad fsgsbase tsc_adjust bmiD hle avxD smep bmiD erms invpcid rtm cqm mpx rdt_a avxDf avxDdq rdseed adx smap clflushopt clwb intel_pt avxDcd avxDbw avxDvl xsaveopt xsavec xgetbvD xsaves cqm_llc cqm_occup_llc cqm_mbm_total cqm_mbm_local dtherm ida arat pln pts hwp hwp_act_window hwp_epp hwp_pkg_req pku ospke md_clear flush_lDd arch_capabilities
+vmx flags	: vnmi preemption_timer posted_intr invvpid ept_x_only ept_ad ept_Dgb flexpriority apicv tsc_offset vtpr mtf vapic ept vpid unrestricted_guest vapic_reg vid ple shadow_vmcs pml ept_mode_based_exec tsc_scaling
+bugs		: spectre_vD spectre_vD spec_store_bypass mds swapgs taa itlb_multihit mmio_stale_data retbleed gds
+bogomips	: D.D
+clflush size	: D
+cache_alignment	: D
+address sizes	: D bits physical, D bits virtual
+power management:
+
+processor	: D
+vendor_id	: GenuineIntel
+cpu family	: D
+model		: D
+model name	: Intel(R) Xeon(R) Gold DC CPU @ D.DGHz
+stepping	: D
+microcode	: DxD
+cpu MHz		: D.D
+cache size	: D KB
+physical id	: D
+siblings	: D
+core id		: D
+cpu cores	: D
+apicid		: D
+initial apicid	: D
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: D
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cxD apic sep mtrr pge mca cmov pat pseD clflush dts acpi mmx fxsr sse sseD ss ht tm pbe syscall nx pdpeDgb rdtscp lm constant_tsc art arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc cpuid aperfmperf pni pclmulqdq dtesD monitor ds_cpl vmx smx est tmD ssseD sdbg fma cxD xtpr pdcm pcid dca sseD_D sseD_D xDapic movbe popcnt tsc_deadline_timer aes xsave avx fDc rdrand lahf_lm abm Ddnowprefetch cpuid_fault epb cat_lD cdp_lD invpcid_single intel_ppin ssbd mba ibrs ibpb stibp tpr_shadow vnmi flexpriority ept vpid ept_ad fsgsbase tsc_adjust bmiD hle avxD smep bmiD erms invpcid rtm cqm mpx rdt_a avxDf avxDdq rdseed adx smap clflushopt clwb intel_pt avxDcd avxDbw avxDvl xsaveopt xsavec xgetbvD xsaves cqm_llc cqm_occup_llc cqm_mbm_total cqm_mbm_local dtherm ida arat pln pts hwp hwp_act_window hwp_epp hwp_pkg_req pku ospke md_clear flush_lDd arch_capabilities
+vmx flags	: vnmi preemption_timer posted_intr invvpid ept_x_only ept_ad ept_Dgb flexpriority apicv tsc_offset vtpr mtf vapic ept vpid unrestricted_guest vapic_reg vid ple shadow_vmcs pml ept_mode_based_exec tsc_scaling
+bugs		: spectre_vD spectre_vD spec_store_bypass mds swapgs taa itlb_multihit mmio_stale_data retbleed gds
+bogomips	: D.D
+clflush size	: D
+cache_alignment	: D
+address sizes	: D bits physical, D bits virtual
+power management:
+
+processor	: D
+vendor_id	: GenuineIntel
+cpu family	: D
+model		: D
+model name	: Intel(R) Xeon(R) Gold DC CPU @ D.DGHz
+stepping	: D
+microcode	: DxD
+cpu MHz		: D.D
+cache size	: D KB
+physical id	: D
+siblings	: D
+core id		: D
+cpu cores	: D
+apicid		: D
+initial apicid	: D
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: D
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cxD apic sep mtrr pge mca cmov pat pseD clflush dts acpi mmx fxsr sse sseD ss ht tm pbe syscall nx pdpeDgb rdtscp lm constant_tsc art arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc cpuid aperfmperf pni pclmulqdq dtesD monitor ds_cpl vmx smx est tmD ssseD sdbg fma cxD xtpr pdcm pcid dca sseD_D sseD_D xDapic movbe popcnt tsc_deadline_timer aes xsave avx fDc rdrand lahf_lm abm Ddnowprefetch cpuid_fault epb cat_lD cdp_lD invpcid_single intel_ppin ssbd mba ibrs ibpb stibp tpr_shadow vnmi flexpriority ept vpid ept_ad fsgsbase tsc_adjust bmiD hle avxD smep bmiD erms invpcid rtm cqm mpx rdt_a avxDf avxDdq rdseed adx smap clflushopt clwb intel_pt avxDcd avxDbw avxDvl xsaveopt xsavec xgetbvD xsaves cqm_llc cqm_occup_llc cqm_mbm_total cqm_mbm_local dtherm ida arat pln pts hwp hwp_act_window hwp_epp hwp_pkg_req pku ospke md_clear flush_lDd arch_capabilities
+vmx flags	: vnmi preemption_timer posted_intr invvpid ept_x_only ept_ad ept_Dgb flexpriority apicv tsc_offset vtpr mtf vapic ept vpid unrestricted_guest vapic_reg vid ple shadow_vmcs pml ept_mode_based_exec tsc_scaling
+bugs		: spectre_vD spectre_vD spec_store_bypass mds swapgs taa itlb_multihit mmio_stale_data retbleed gds
+bogomips	: D.D
+clflush size	: D
+cache_alignment	: D
+address sizes	: D bits physical, D bits virtual
+power management:
+
+processor	: D
+vendor_id	: GenuineIntel
+cpu family	: D
+model		: D
+model name	: Intel(R) Xeon(R) Gold DC CPU @ D.DGHz
+stepping	: D
+microcode	: DxD
+cpu MHz		: D.D
+cache size	: D KB
+physical id	: D
+siblings	: D
+core id		: D
+cpu cores	: D
+apicid		: D
+initial apicid	: D
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: D
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cxD apic sep mtrr pge mca cmov pat pseD clflush dts acpi mmx fxsr sse sseD ss ht tm pbe syscall nx pdpeDgb rdtscp lm constant_tsc art arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc cpuid aperfmperf pni pclmulqdq dtesD monitor ds_cpl vmx smx est tmD ssseD sdbg fma cxD xtpr pdcm pcid dca sseD_D sseD_D xDapic movbe popcnt tsc_deadline_timer aes xsave avx fDc rdrand lahf_lm abm Ddnowprefetch cpuid_fault epb cat_lD cdp_lD invpcid_single intel_ppin ssbd mba ibrs ibpb stibp tpr_shadow vnmi flexpriority ept vpid ept_ad fsgsbase tsc_adjust bmiD hle avxD smep bmiD erms invpcid rtm cqm mpx rdt_a avxDf avxDdq rdseed adx smap clflushopt clwb intel_pt avxDcd avxDbw avxDvl xsaveopt xsavec xgetbvD xsaves cqm_llc cqm_occup_llc cqm_mbm_total cqm_mbm_local dtherm ida arat pln pts hwp hwp_act_window hwp_epp hwp_pkg_req pku ospke md_clear flush_lDd arch_capabilities
+vmx flags	: vnmi preemption_timer posted_intr invvpid ept_x_only ept_ad ept_Dgb flexpriority apicv tsc_offset vtpr mtf vapic ept vpid unrestricted_guest vapic_reg vid ple shadow_vmcs pml ept_mode_based_exec tsc_scaling
+bugs		: spectre_vD spectre_vD spec_store_bypass mds swapgs taa itlb_multihit mmio_stale_data retbleed gds
+bogomips	: D.D
+clflush size	: D
+cache_alignment	: D
+address sizes	: D bits physical, D bits virtual
+power management:
+
+processor	: D
+vendor_id	: GenuineIntel
+cpu family	: D
+model		: D
+model name	: Intel(R) Xeon(R) Gold DC CPU @ D.DGHz
+stepping	: D
+microcode	: DxD
+cpu MHz		: D.D
+cache size	: D KB
+physical id	: D
+siblings	: D
+core id		: D
+cpu cores	: D
+apicid		: D
+initial apicid	: D
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: D
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cxD apic sep mtrr pge mca cmov pat pseD clflush dts acpi mmx fxsr sse sseD ss ht tm pbe syscall nx pdpeDgb rdtscp lm constant_tsc art arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc cpuid aperfmperf pni pclmulqdq dtesD monitor ds_cpl vmx smx est tmD ssseD sdbg fma cxD xtpr pdcm pcid dca sseD_D sseD_D xDapic movbe popcnt tsc_deadline_timer aes xsave avx fDc rdrand lahf_lm abm Ddnowprefetch cpuid_fault epb cat_lD cdp_lD invpcid_single intel_ppin ssbd mba ibrs ibpb stibp tpr_shadow vnmi flexpriority ept vpid ept_ad fsgsbase tsc_adjust bmiD hle avxD smep bmiD erms invpcid rtm cqm mpx rdt_a avxDf avxDdq rdseed adx smap clflushopt clwb intel_pt avxDcd avxDbw avxDvl xsaveopt xsavec xgetbvD xsaves cqm_llc cqm_occup_llc cqm_mbm_total cqm_mbm_local dtherm ida arat pln pts hwp hwp_act_window hwp_epp hwp_pkg_req pku ospke md_clear flush_lDd arch_capabilities
+vmx flags	: vnmi preemption_timer posted_intr invvpid ept_x_only ept_ad ept_Dgb flexpriority apicv tsc_offset vtpr mtf vapic ept vpid unrestricted_guest vapic_reg vid ple shadow_vmcs pml ept_mode_based_exec tsc_scaling
+bugs		: spectre_vD spectre_vD spec_store_bypass mds swapgs taa itlb_multihit mmio_stale_data retbleed gds
+bogomips	: D.D
+clflush size	: D
+cache_alignment	: D
+address sizes	: D bits physical, D bits virtual
+power management:
+
+processor	: D
+vendor_id	: GenuineIntel
+cpu family	: D
+model		: D
+model name	: Intel(R) Xeon(R) Gold DC CPU @ D.DGHz
+stepping	: D
+microcode	: DxD
+cpu MHz		: D.D
+cache size	: D KB
+physical id	: D
+siblings	: D
+core id		: D
+cpu cores	: D
+apicid		: D
+initial apicid	: D
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: D
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cxD apic sep mtrr pge mca cmov pat pseD clflush dts acpi mmx fxsr sse sseD ss ht tm pbe syscall nx pdpeDgb rdtscp lm constant_tsc art arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc cpuid aperfmperf pni pclmulqdq dtesD monitor ds_cpl vmx smx est tmD ssseD sdbg fma cxD xtpr pdcm pcid dca sseD_D sseD_D xDapic movbe popcnt tsc_deadline_timer aes xsave avx fDc rdrand lahf_lm abm Ddnowprefetch cpuid_fault epb cat_lD cdp_lD invpcid_single intel_ppin ssbd mba ibrs ibpb stibp tpr_shadow vnmi flexpriority ept vpid ept_ad fsgsbase tsc_adjust bmiD hle avxD smep bmiD erms invpcid rtm cqm mpx rdt_a avxDf avxDdq rdseed adx smap clflushopt clwb intel_pt avxDcd avxDbw avxDvl xsaveopt xsavec xgetbvD xsaves cqm_llc cqm_occup_llc cqm_mbm_total cqm_mbm_local dtherm ida arat pln pts hwp hwp_act_window hwp_epp hwp_pkg_req pku ospke md_clear flush_lDd arch_capabilities
+vmx flags	: vnmi preemption_timer posted_intr invvpid ept_x_only ept_ad ept_Dgb flexpriority apicv tsc_offset vtpr mtf vapic ept vpid unrestricted_guest vapic_reg vid ple shadow_vmcs pml ept_mode_based_exec tsc_scaling
+bugs		: spectre_vD spectre_vD spec_store_bypass mds swapgs taa itlb_multihit mmio_stale_data retbleed gds
+bogomips	: D.D
+clflush size	: D
+cache_alignment	: D
+address sizes	: D bits physical, D bits virtual
+power management:
+
+processor	: D
+vendor_id	: GenuineIntel
+cpu family	: D
+model		: D
+model name	: Intel(R) Xeon(R) Gold DC CPU @ D.DGHz
+stepping	: D
+microcode	: DxD
+cpu MHz		: D.D
+cache size	: D KB
+physical id	: D
+siblings	: D
+core id		: D
+cpu cores	: D
+apicid		: D
+initial apicid	: D
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: D
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cxD apic sep mtrr pge mca cmov pat pseD clflush dts acpi mmx fxsr sse sseD ss ht tm pbe syscall nx pdpeDgb rdtscp lm constant_tsc art arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc cpuid aperfmperf pni pclmulqdq dtesD monitor ds_cpl vmx smx est tmD ssseD sdbg fma cxD xtpr pdcm pcid dca sseD_D sseD_D xDapic movbe popcnt tsc_deadline_timer aes xsave avx fDc rdrand lahf_lm abm Ddnowprefetch cpuid_fault epb cat_lD cdp_lD invpcid_single intel_ppin ssbd mba ibrs ibpb stibp tpr_shadow vnmi flexpriority ept vpid ept_ad fsgsbase tsc_adjust bmiD hle avxD smep bmiD erms invpcid rtm cqm mpx rdt_a avxDf avxDdq rdseed adx smap clflushopt clwb intel_pt avxDcd avxDbw avxDvl xsaveopt xsavec xgetbvD xsaves cqm_llc cqm_occup_llc cqm_mbm_total cqm_mbm_local dtherm ida arat pln pts hwp hwp_act_window hwp_epp hwp_pkg_req pku ospke md_clear flush_lDd arch_capabilities
+vmx flags	: vnmi preemption_timer posted_intr invvpid ept_x_only ept_ad ept_Dgb flexpriority apicv tsc_offset vtpr mtf vapic ept vpid unrestricted_guest vapic_reg vid ple shadow_vmcs pml ept_mode_based_exec tsc_scaling
+bugs		: spectre_vD spectre_vD spec_store_bypass mds swapgs taa itlb_multihit mmio_stale_data retbleed gds
+bogomips	: D.D
+clflush size	: D
+cache_alignment	: D
+address sizes	: D bits physical, D bits virtual
+power management:
+
+processor	: D
+vendor_id	: GenuineIntel
+cpu family	: D
+model		: D
+model name	: Intel(R) Xeon(R) Gold DC CPU @ D.DGHz
+stepping	: D
+microcode	: DxD
+cpu MHz		: D.D
+cache size	: D KB
+physical id	: D
+siblings	: D
+core id		: D
+cpu cores	: D
+apicid		: D
+initial apicid	: D
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: D
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cxD apic sep mtrr pge mca cmov pat pseD clflush dts acpi mmx fxsr sse sseD ss ht tm pbe syscall nx pdpeDgb rdtscp lm constant_tsc art arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc cpuid aperfmperf pni pclmulqdq dtesD monitor ds_cpl vmx smx est tmD ssseD sdbg fma cxD xtpr pdcm pcid dca sseD_D sseD_D xDapic movbe popcnt tsc_deadline_timer aes xsave avx fDc rdrand lahf_lm abm Ddnowprefetch cpuid_fault epb cat_lD cdp_lD invpcid_single intel_ppin ssbd mba ibrs ibpb stibp tpr_shadow vnmi flexpriority ept vpid ept_ad fsgsbase tsc_adjust bmiD hle avxD smep bmiD erms invpcid rtm cqm mpx rdt_a avxDf avxDdq rdseed adx smap clflushopt clwb intel_pt avxDcd avxDbw avxDvl xsaveopt xsavec xgetbvD xsaves cqm_llc cqm_occup_llc cqm_mbm_total cqm_mbm_local dtherm ida arat pln pts hwp hwp_act_window hwp_epp hwp_pkg_req pku ospke md_clear flush_lDd arch_capabilities
+vmx flags	: vnmi preemption_timer posted_intr invvpid ept_x_only ept_ad ept_Dgb flexpriority apicv tsc_offset vtpr mtf vapic ept vpid unrestricted_guest vapic_reg vid ple shadow_vmcs pml ept_mode_based_exec tsc_scaling
+bugs		: spectre_vD spectre_vD spec_store_bypass mds swapgs taa itlb_multihit mmio_stale_data retbleed gds
+bogomips	: D.D
+clflush size	: D
+cache_alignment	: D
+address sizes	: D bits physical, D bits virtual
+power management:
+
+processor	: D
+vendor_id	: GenuineIntel
+cpu family	: D
+model		: D
+model name	: Intel(R) Xeon(R) Gold DC CPU @ D.DGHz
+stepping	: D
+microcode	: DxD
+cpu MHz		: D.D
+cache size	: D KB
+physical id	: D
+siblings	: D
+core id		: D
+cpu cores	: D
+apicid		: D
+initial apicid	: D
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: D
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cxD apic sep mtrr pge mca cmov pat pseD clflush dts acpi mmx fxsr sse sseD ss ht tm pbe syscall nx pdpeDgb rdtscp lm constant_tsc art arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc cpuid aperfmperf pni pclmulqdq dtesD monitor ds_cpl vmx smx est tmD ssseD sdbg fma cxD xtpr pdcm pcid dca sseD_D sseD_D xDapic movbe popcnt tsc_deadline_timer aes xsave avx fDc rdrand lahf_lm abm Ddnowprefetch cpuid_fault epb cat_lD cdp_lD invpcid_single intel_ppin ssbd mba ibrs ibpb stibp tpr_shadow vnmi flexpriority ept vpid ept_ad fsgsbase tsc_adjust bmiD hle avxD smep bmiD erms invpcid rtm cqm mpx rdt_a avxDf avxDdq rdseed adx smap clflushopt clwb intel_pt avxDcd avxDbw avxDvl xsaveopt xsavec xgetbvD xsaves cqm_llc cqm_occup_llc cqm_mbm_total cqm_mbm_local dtherm ida arat pln pts hwp hwp_act_window hwp_epp hwp_pkg_req pku ospke md_clear flush_lDd arch_capabilities
+vmx flags	: vnmi preemption_timer posted_intr invvpid ept_x_only ept_ad ept_Dgb flexpriority apicv tsc_offset vtpr mtf vapic ept vpid unrestricted_guest vapic_reg vid ple shadow_vmcs pml ept_mode_based_exec tsc_scaling
+bugs		: spectre_vD spectre_vD spec_store_bypass mds swapgs taa itlb_multihit mmio_stale_data retbleed gds
+bogomips	: D.D
+clflush size	: D
+cache_alignment	: D
+address sizes	: D bits physical, D bits virtual
+power management:
+
+processor	: D
+vendor_id	: GenuineIntel
+cpu family	: D
+model		: D
+model name	: Intel(R) Xeon(R) Gold DC CPU @ D.DGHz
+stepping	: D
+microcode	: DxD
+cpu MHz		: D.D
+cache size	: D KB
+physical id	: D
+siblings	: D
+core id		: D
+cpu cores	: D
+apicid		: D
+initial apicid	: D
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: D
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cxD apic sep mtrr pge mca cmov pat pseD clflush dts acpi mmx fxsr sse sseD ss ht tm pbe syscall nx pdpeDgb rdtscp lm constant_tsc art arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc cpuid aperfmperf pni pclmulqdq dtesD monitor ds_cpl vmx smx est tmD ssseD sdbg fma cxD xtpr pdcm pcid dca sseD_D sseD_D xDapic movbe popcnt tsc_deadline_timer aes xsave avx fDc rdrand lahf_lm abm Ddnowprefetch cpuid_fault epb cat_lD cdp_lD invpcid_single intel_ppin ssbd mba ibrs ibpb stibp tpr_shadow vnmi flexpriority ept vpid ept_ad fsgsbase tsc_adjust bmiD hle avxD smep bmiD erms invpcid rtm cqm mpx rdt_a avxDf avxDdq rdseed adx smap clflushopt clwb intel_pt avxDcd avxDbw avxDvl xsaveopt xsavec xgetbvD xsaves cqm_llc cqm_occup_llc cqm_mbm_total cqm_mbm_local dtherm ida arat pln pts hwp hwp_act_window hwp_epp hwp_pkg_req pku ospke md_clear flush_lDd arch_capabilities
+vmx flags	: vnmi preemption_timer posted_intr invvpid ept_x_only ept_ad ept_Dgb flexpriority apicv tsc_offset vtpr mtf vapic ept vpid unrestricted_guest vapic_reg vid ple shadow_vmcs pml ept_mode_based_exec tsc_scaling
+bugs		: spectre_vD spectre_vD spec_store_bypass mds swapgs taa itlb_multihit mmio_stale_data retbleed gds
+bogomips	: D.D
+clflush size	: D
+cache_alignment	: D
+address sizes	: D bits physical, D bits virtual
+power management:
+
+processor	: D
+vendor_id	: GenuineIntel
+cpu family	: D
+model		: D
+model name	: Intel(R) Xeon(R) Gold DC CPU @ D.DGHz
+stepping	: D
+microcode	: DxD
+cpu MHz		: D.D
+cache size	: D KB
+physical id	: D
+siblings	: D
+core id		: D
+cpu cores	: D
+apicid		: D
+initial apicid	: D
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: D
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cxD apic sep mtrr pge mca cmov pat pseD clflush dts acpi mmx fxsr sse sseD ss ht tm pbe syscall nx pdpeDgb rdtscp lm constant_tsc art arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc cpuid aperfmperf pni pclmulqdq dtesD monitor ds_cpl vmx smx est tmD ssseD sdbg fma cxD xtpr pdcm pcid dca sseD_D sseD_D xDapic movbe popcnt tsc_deadline_timer aes xsave avx fDc rdrand lahf_lm abm Ddnowprefetch cpuid_fault epb cat_lD cdp_lD invpcid_single intel_ppin ssbd mba ibrs ibpb stibp tpr_shadow vnmi flexpriority ept vpid ept_ad fsgsbase tsc_adjust bmiD hle avxD smep bmiD erms invpcid rtm cqm mpx rdt_a avxDf avxDdq rdseed adx smap clflushopt clwb intel_pt avxDcd avxDbw avxDvl xsaveopt xsavec xgetbvD xsaves cqm_llc cqm_occup_llc cqm_mbm_total cqm_mbm_local dtherm ida arat pln pts hwp hwp_act_window hwp_epp hwp_pkg_req pku ospke md_clear flush_lDd arch_capabilities
+vmx flags	: vnmi preemption_timer posted_intr invvpid ept_x_only ept_ad ept_Dgb flexpriority apicv tsc_offset vtpr mtf vapic ept vpid unrestricted_guest vapic_reg vid ple shadow_vmcs pml ept_mode_based_exec tsc_scaling
+bugs		: spectre_vD spectre_vD spec_store_bypass mds swapgs taa itlb_multihit mmio_stale_data retbleed gds
+bogomips	: D.D
+clflush size	: D
+cache_alignment	: D
+address sizes	: D bits physical, D bits virtual
+power management:
+
+processor	: D
+vendor_id	: GenuineIntel
+cpu family	: D
+model		: D
+model name	: Intel(R) Xeon(R) Gold DC CPU @ D.DGHz
+stepping	: D
+microcode	: DxD
+cpu MHz		: D.D
+cache size	: D KB
+physical id	: D
+siblings	: D
+core id		: D
+cpu cores	: D
+apicid		: D
+initial apicid	: D
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: D
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cxD apic sep mtrr pge mca cmov pat pseD clflush dts acpi mmx fxsr sse sseD ss ht tm pbe syscall nx pdpeDgb rdtscp lm constant_tsc art arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc cpuid aperfmperf pni pclmulqdq dtesD monitor ds_cpl vmx smx est tmD ssseD sdbg fma cxD xtpr pdcm pcid dca sseD_D sseD_D xDapic movbe popcnt tsc_deadline_timer aes xsave avx fDc rdrand lahf_lm abm Ddnowprefetch cpuid_fault epb cat_lD cdp_lD invpcid_single intel_ppin ssbd mba ibrs ibpb stibp tpr_shadow vnmi flexpriority ept vpid ept_ad fsgsbase tsc_adjust bmiD hle avxD smep bmiD erms invpcid rtm cqm mpx rdt_a avxDf avxDdq rdseed adx smap clflushopt clwb intel_pt avxDcd avxDbw avxDvl xsaveopt xsavec xgetbvD xsaves cqm_llc cqm_occup_llc cqm_mbm_total cqm_mbm_local dtherm ida arat pln pts hwp hwp_act_window hwp_epp hwp_pkg_req pku ospke md_clear flush_lDd arch_capabilities
+vmx flags	: vnmi preemption_timer posted_intr invvpid ept_x_only ept_ad ept_Dgb flexpriority apicv tsc_offset vtpr mtf vapic ept vpid unrestricted_guest vapic_reg vid ple shadow_vmcs pml ept_mode_based_exec tsc_scaling
+bugs		: spectre_vD spectre_vD spec_store_bypass mds swapgs taa itlb_multihit mmio_stale_data retbleed gds
+bogomips	: D.D
+clflush size	: D
+cache_alignment	: D
+address sizes	: D bits physical, D bits virtual
+power management:
+
+processor	: D
+vendor_id	: GenuineIntel
+cpu family	: D
+model		: D
+model name	: Intel(R) Xeon(R) Gold DC CPU @ D.DGHz
+stepping	: D
+microcode	: DxD
+cpu MHz		: D.D
+cache size	: D KB
+physical id	: D
+siblings	: D
+core id		: D
+cpu cores	: D
+apicid		: D
+initial apicid	: D
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: D
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cxD apic sep mtrr pge mca cmov pat pseD clflush dts acpi mmx fxsr sse sseD ss ht tm pbe syscall nx pdpeDgb rdtscp lm constant_tsc art arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc cpuid aperfmperf pni pclmulqdq dtesD monitor ds_cpl vmx smx est tmD ssseD sdbg fma cxD xtpr pdcm pcid dca sseD_D sseD_D xDapic movbe popcnt tsc_deadline_timer aes xsave avx fDc rdrand lahf_lm abm Ddnowprefetch cpuid_fault epb cat_lD cdp_lD invpcid_single intel_ppin ssbd mba ibrs ibpb stibp tpr_shadow vnmi flexpriority ept vpid ept_ad fsgsbase tsc_adjust bmiD hle avxD smep bmiD erms invpcid rtm cqm mpx rdt_a avxDf avxDdq rdseed adx smap clflushopt clwb intel_pt avxDcd avxDbw avxDvl xsaveopt xsavec xgetbvD xsaves cqm_llc cqm_occup_llc cqm_mbm_total cqm_mbm_local dtherm ida arat pln pts hwp hwp_act_window hwp_epp hwp_pkg_req pku ospke md_clear flush_lDd arch_capabilities
+vmx flags	: vnmi preemption_timer posted_intr invvpid ept_x_only ept_ad ept_Dgb flexpriority apicv tsc_offset vtpr mtf vapic ept vpid unrestricted_guest vapic_reg vid ple shadow_vmcs pml ept_mode_based_exec tsc_scaling
+bugs		: spectre_vD spectre_vD spec_store_bypass mds swapgs taa itlb_multihit mmio_stale_data retbleed gds
+bogomips	: D.D
+clflush size	: D
+cache_alignment	: D
+address sizes	: D bits physical, D bits virtual
+power management:
+
+processor	: D
+vendor_id	: GenuineIntel
+cpu family	: D
+model		: D
+model name	: Intel(R) Xeon(R) Gold DC CPU @ D.DGHz
+stepping	: D
+microcode	: DxD
+cpu MHz		: D.D
+cache size	: D KB
+physical id	: D
+siblings	: D
+core id		: D
+cpu cores	: D
+apicid		: D
+initial apicid	: D
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: D
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cxD apic sep mtrr pge mca cmov pat pseD clflush dts acpi mmx fxsr sse sseD ss ht tm pbe syscall nx pdpeDgb rdtscp lm constant_tsc art arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc cpuid aperfmperf pni pclmulqdq dtesD monitor ds_cpl vmx smx est tmD ssseD sdbg fma cxD xtpr pdcm pcid dca sseD_D sseD_D xDapic movbe popcnt tsc_deadline_timer aes xsave avx fDc rdrand lahf_lm abm Ddnowprefetch cpuid_fault epb cat_lD cdp_lD invpcid_single intel_ppin ssbd mba ibrs ibpb stibp tpr_shadow vnmi flexpriority ept vpid ept_ad fsgsbase tsc_adjust bmiD hle avxD smep bmiD erms invpcid rtm cqm mpx rdt_a avxDf avxDdq rdseed adx smap clflushopt clwb intel_pt avxDcd avxDbw avxDvl xsaveopt xsavec xgetbvD xsaves cqm_llc cqm_occup_llc cqm_mbm_total cqm_mbm_local dtherm ida arat pln pts hwp hwp_act_window hwp_epp hwp_pkg_req pku ospke md_clear flush_lDd arch_capabilities
+vmx flags	: vnmi preemption_timer posted_intr invvpid ept_x_only ept_ad ept_Dgb flexpriority apicv tsc_offset vtpr mtf vapic ept vpid unrestricted_guest vapic_reg vid ple shadow_vmcs pml ept_mode_based_exec tsc_scaling
+bugs		: spectre_vD spectre_vD spec_store_bypass mds swapgs taa itlb_multihit mmio_stale_data retbleed gds
+bogomips	: D.D
+clflush size	: D
+cache_alignment	: D
+address sizes	: D bits physical, D bits virtual
+power management:
+
+processor	: D
+vendor_id	: GenuineIntel
+cpu family	: D
+model		: D
+model name	: Intel(R) Xeon(R) Gold DC CPU @ D.DGHz
+stepping	: D
+microcode	: DxD
+cpu MHz		: D.D
+cache size	: D KB
+physical id	: D
+siblings	: D
+core id		: D
+cpu cores	: D
+apicid		: D
+initial apicid	: D
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: D
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cxD apic sep mtrr pge mca cmov pat pseD clflush dts acpi mmx fxsr sse sseD ss ht tm pbe syscall nx pdpeDgb rdtscp lm constant_tsc art arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc cpuid aperfmperf pni pclmulqdq dtesD monitor ds_cpl vmx smx est tmD ssseD sdbg fma cxD xtpr pdcm pcid dca sseD_D sseD_D xDapic movbe popcnt tsc_deadline_timer aes xsave avx fDc rdrand lahf_lm abm Ddnowprefetch cpuid_fault epb cat_lD cdp_lD invpcid_single intel_ppin ssbd mba ibrs ibpb stibp tpr_shadow vnmi flexpriority ept vpid ept_ad fsgsbase tsc_adjust bmiD hle avxD smep bmiD erms invpcid rtm cqm mpx rdt_a avxDf avxDdq rdseed adx smap clflushopt clwb intel_pt avxDcd avxDbw avxDvl xsaveopt xsavec xgetbvD xsaves cqm_llc cqm_occup_llc cqm_mbm_total cqm_mbm_local dtherm ida arat pln pts hwp hwp_act_window hwp_epp hwp_pkg_req pku ospke md_clear flush_lDd arch_capabilities
+vmx flags	: vnmi preemption_timer posted_intr invvpid ept_x_only ept_ad ept_Dgb flexpriority apicv tsc_offset vtpr mtf vapic ept vpid unrestricted_guest vapic_reg vid ple shadow_vmcs pml ept_mode_based_exec tsc_scaling
+bugs		: spectre_vD spectre_vD spec_store_bypass mds swapgs taa itlb_multihit mmio_stale_data retbleed gds
+bogomips	: D.D
+clflush size	: D
+cache_alignment	: D
+address sizes	: D bits physical, D bits virtual
+power management:
+
+processor	: D
+vendor_id	: GenuineIntel
+cpu family	: D
+model		: D
+model name	: Intel(R) Xeon(R) Gold DC CPU @ D.DGHz
+stepping	: D
+microcode	: DxD
+cpu MHz		: D.D
+cache size	: D KB
+physical id	: D
+siblings	: D
+core id		: D
+cpu cores	: D
+apicid		: D
+initial apicid	: D
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: D
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cxD apic sep mtrr pge mca cmov pat pseD clflush dts acpi mmx fxsr sse sseD ss ht tm pbe syscall nx pdpeDgb rdtscp lm constant_tsc art arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc cpuid aperfmperf pni pclmulqdq dtesD monitor ds_cpl vmx smx est tmD ssseD sdbg fma cxD xtpr pdcm pcid dca sseD_D sseD_D xDapic movbe popcnt tsc_deadline_timer aes xsave avx fDc rdrand lahf_lm abm Ddnowprefetch cpuid_fault epb cat_lD cdp_lD invpcid_single intel_ppin ssbd mba ibrs ibpb stibp tpr_shadow vnmi flexpriority ept vpid ept_ad fsgsbase tsc_adjust bmiD hle avxD smep bmiD erms invpcid rtm cqm mpx rdt_a avxDf avxDdq rdseed adx smap clflushopt clwb intel_pt avxDcd avxDbw avxDvl xsaveopt xsavec xgetbvD xsaves cqm_llc cqm_occup_llc cqm_mbm_total cqm_mbm_local dtherm ida arat pln pts hwp hwp_act_window hwp_epp hwp_pkg_req pku ospke md_clear flush_lDd arch_capabilities
+vmx flags	: vnmi preemption_timer posted_intr invvpid ept_x_only ept_ad ept_Dgb flexpriority apicv tsc_offset vtpr mtf vapic ept vpid unrestricted_guest vapic_reg vid ple shadow_vmcs pml ept_mode_based_exec tsc_scaling
+bugs		: spectre_vD spectre_vD spec_store_bypass mds swapgs taa itlb_multihit mmio_stale_data retbleed gds
+bogomips	: D.D
+clflush size	: D
+cache_alignment	: D
+address sizes	: D bits physical, D bits virtual
+power management:
+
+processor	: D
+vendor_id	: GenuineIntel
+cpu family	: D
+model		: D
+model name	: Intel(R) Xeon(R) Gold DC CPU @ D.DGHz
+stepping	: D
+microcode	: DxD
+cpu MHz		: D.D
+cache size	: D KB
+physical id	: D
+siblings	: D
+core id		: D
+cpu cores	: D
+apicid		: D
+initial apicid	: D
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: D
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cxD apic sep mtrr pge mca cmov pat pseD clflush dts acpi mmx fxsr sse sseD ss ht tm pbe syscall nx pdpeDgb rdtscp lm constant_tsc art arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc cpuid aperfmperf pni pclmulqdq dtesD monitor ds_cpl vmx smx est tmD ssseD sdbg fma cxD xtpr pdcm pcid dca sseD_D sseD_D xDapic movbe popcnt tsc_deadline_timer aes xsave avx fDc rdrand lahf_lm abm Ddnowprefetch cpuid_fault epb cat_lD cdp_lD invpcid_single intel_ppin ssbd mba ibrs ibpb stibp tpr_shadow vnmi flexpriority ept vpid ept_ad fsgsbase tsc_adjust bmiD hle avxD smep bmiD erms invpcid rtm cqm mpx rdt_a avxDf avxDdq rdseed adx smap clflushopt clwb intel_pt avxDcd avxDbw avxDvl xsaveopt xsavec xgetbvD xsaves cqm_llc cqm_occup_llc cqm_mbm_total cqm_mbm_local dtherm ida arat pln pts hwp hwp_act_window hwp_epp hwp_pkg_req pku ospke md_clear flush_lDd arch_capabilities
+vmx flags	: vnmi preemption_timer posted_intr invvpid ept_x_only ept_ad ept_Dgb flexpriority apicv tsc_offset vtpr mtf vapic ept vpid unrestricted_guest vapic_reg vid ple shadow_vmcs pml ept_mode_based_exec tsc_scaling
+bugs		: spectre_vD spectre_vD spec_store_bypass mds swapgs taa itlb_multihit mmio_stale_data retbleed gds
+bogomips	: D.D
+clflush size	: D
+cache_alignment	: D
+address sizes	: D bits physical, D bits virtual
+power management:
+
+processor	: D
+vendor_id	: GenuineIntel
+cpu family	: D
+model		: D
+model name	: Intel(R) Xeon(R) Gold DC CPU @ D.DGHz
+stepping	: D
+microcode	: DxD
+cpu MHz		: D.D
+cache size	: D KB
+physical id	: D
+siblings	: D
+core id		: D
+cpu cores	: D
+apicid		: D
+initial apicid	: D
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: D
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cxD apic sep mtrr pge mca cmov pat pseD clflush dts acpi mmx fxsr sse sseD ss ht tm pbe syscall nx pdpeDgb rdtscp lm constant_tsc art arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc cpuid aperfmperf pni pclmulqdq dtesD monitor ds_cpl vmx smx est tmD ssseD sdbg fma cxD xtpr pdcm pcid dca sseD_D sseD_D xDapic movbe popcnt tsc_deadline_timer aes xsave avx fDc rdrand lahf_lm abm Ddnowprefetch cpuid_fault epb cat_lD cdp_lD invpcid_single intel_ppin ssbd mba ibrs ibpb stibp tpr_shadow vnmi flexpriority ept vpid ept_ad fsgsbase tsc_adjust bmiD hle avxD smep bmiD erms invpcid rtm cqm mpx rdt_a avxDf avxDdq rdseed adx smap clflushopt clwb intel_pt avxDcd avxDbw avxDvl xsaveopt xsavec xgetbvD xsaves cqm_llc cqm_occup_llc cqm_mbm_total cqm_mbm_local dtherm ida arat pln pts hwp hwp_act_window hwp_epp hwp_pkg_req pku ospke md_clear flush_lDd arch_capabilities
+vmx flags	: vnmi preemption_timer posted_intr invvpid ept_x_only ept_ad ept_Dgb flexpriority apicv tsc_offset vtpr mtf vapic ept vpid unrestricted_guest vapic_reg vid ple shadow_vmcs pml ept_mode_based_exec tsc_scaling
+bugs		: spectre_vD spectre_vD spec_store_bypass mds swapgs taa itlb_multihit mmio_stale_data retbleed gds
+bogomips	: D.D
+clflush size	: D
+cache_alignment	: D
+address sizes	: D bits physical, D bits virtual
+power management:
+
+processor	: D
+vendor_id	: GenuineIntel
+cpu family	: D
+model		: D
+model name	: Intel(R) Xeon(R) Gold DC CPU @ D.DGHz
+stepping	: D
+microcode	: DxD
+cpu MHz		: D.D
+cache size	: D KB
+physical id	: D
+siblings	: D
+core id		: D
+cpu cores	: D
+apicid		: D
+initial apicid	: D
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: D
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cxD apic sep mtrr pge mca cmov pat pseD clflush dts acpi mmx fxsr sse sseD ss ht tm pbe syscall nx pdpeDgb rdtscp lm constant_tsc art arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc cpuid aperfmperf pni pclmulqdq dtesD monitor ds_cpl vmx smx est tmD ssseD sdbg fma cxD xtpr pdcm pcid dca sseD_D sseD_D xDapic movbe popcnt tsc_deadline_timer aes xsave avx fDc rdrand lahf_lm abm Ddnowprefetch cpuid_fault epb cat_lD cdp_lD invpcid_single intel_ppin ssbd mba ibrs ibpb stibp tpr_shadow vnmi flexpriority ept vpid ept_ad fsgsbase tsc_adjust bmiD hle avxD smep bmiD erms invpcid rtm cqm mpx rdt_a avxDf avxDdq rdseed adx smap clflushopt clwb intel_pt avxDcd avxDbw avxDvl xsaveopt xsavec xgetbvD xsaves cqm_llc cqm_occup_llc cqm_mbm_total cqm_mbm_local dtherm ida arat pln pts hwp hwp_act_window hwp_epp hwp_pkg_req pku ospke md_clear flush_lDd arch_capabilities
+vmx flags	: vnmi preemption_timer posted_intr invvpid ept_x_only ept_ad ept_Dgb flexpriority apicv tsc_offset vtpr mtf vapic ept vpid unrestricted_guest vapic_reg vid ple shadow_vmcs pml ept_mode_based_exec tsc_scaling
+bugs		: spectre_vD spectre_vD spec_store_bypass mds swapgs taa itlb_multihit mmio_stale_data retbleed gds
+bogomips	: D.D
+clflush size	: D
+cache_alignment	: D
+address sizes	: D bits physical, D bits virtual
+power management:
+
+processor	: D
+vendor_id	: GenuineIntel
+cpu family	: D
+model		: D
+model name	: Intel(R) Xeon(R) Gold DC CPU @ D.DGHz
+stepping	: D
+microcode	: DxD
+cpu MHz		: D.D
+cache size	: D KB
+physical id	: D
+siblings	: D
+core id		: D
+cpu cores	: D
+apicid		: D
+initial apicid	: D
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: D
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cxD apic sep mtrr pge mca cmov pat pseD clflush dts acpi mmx fxsr sse sseD ss ht tm pbe syscall nx pdpeDgb rdtscp lm constant_tsc art arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc cpuid aperfmperf pni pclmulqdq dtesD monitor ds_cpl vmx smx est tmD ssseD sdbg fma cxD xtpr pdcm pcid dca sseD_D sseD_D xDapic movbe popcnt tsc_deadline_timer aes xsave avx fDc rdrand lahf_lm abm Ddnowprefetch cpuid_fault epb cat_lD cdp_lD invpcid_single intel_ppin ssbd mba ibrs ibpb stibp tpr_shadow vnmi flexpriority ept vpid ept_ad fsgsbase tsc_adjust bmiD hle avxD smep bmiD erms invpcid rtm cqm mpx rdt_a avxDf avxDdq rdseed adx smap clflushopt clwb intel_pt avxDcd avxDbw avxDvl xsaveopt xsavec xgetbvD xsaves cqm_llc cqm_occup_llc cqm_mbm_total cqm_mbm_local dtherm ida arat pln pts hwp hwp_act_window hwp_epp hwp_pkg_req pku ospke md_clear flush_lDd arch_capabilities
+vmx flags	: vnmi preemption_timer posted_intr invvpid ept_x_only ept_ad ept_Dgb flexpriority apicv tsc_offset vtpr mtf vapic ept vpid unrestricted_guest vapic_reg vid ple shadow_vmcs pml ept_mode_based_exec tsc_scaling
+bugs		: spectre_vD spectre_vD spec_store_bypass mds swapgs taa itlb_multihit mmio_stale_data retbleed gds
+bogomips	: D.D
+clflush size	: D
+cache_alignment	: D
+address sizes	: D bits physical, D bits virtual
+power management:
+
+processor	: D
+vendor_id	: GenuineIntel
+cpu family	: D
+model		: D
+model name	: Intel(R) Xeon(R) Gold DC CPU @ D.DGHz
+stepping	: D
+microcode	: DxD
+cpu MHz		: D.D
+cache size	: D KB
+physical id	: D
+siblings	: D
+core id		: D
+cpu cores	: D
+apicid		: D
+initial apicid	: D
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: D
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cxD apic sep mtrr pge mca cmov pat pseD clflush dts acpi mmx fxsr sse sseD ss ht tm pbe syscall nx pdpeDgb rdtscp lm constant_tsc art arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc cpuid aperfmperf pni pclmulqdq dtesD monitor ds_cpl vmx smx est tmD ssseD sdbg fma cxD xtpr pdcm pcid dca sseD_D sseD_D xDapic movbe popcnt tsc_deadline_timer aes xsave avx fDc rdrand lahf_lm abm Ddnowprefetch cpuid_fault epb cat_lD cdp_lD invpcid_single intel_ppin ssbd mba ibrs ibpb stibp tpr_shadow vnmi flexpriority ept vpid ept_ad fsgsbase tsc_adjust bmiD hle avxD smep bmiD erms invpcid rtm cqm mpx rdt_a avxDf avxDdq rdseed adx smap clflushopt clwb intel_pt avxDcd avxDbw avxDvl xsaveopt xsavec xgetbvD xsaves cqm_llc cqm_occup_llc cqm_mbm_total cqm_mbm_local dtherm ida arat pln pts hwp hwp_act_window hwp_epp hwp_pkg_req pku ospke md_clear flush_lDd arch_capabilities
+vmx flags	: vnmi preemption_timer posted_intr invvpid ept_x_only ept_ad ept_Dgb flexpriority apicv tsc_offset vtpr mtf vapic ept vpid unrestricted_guest vapic_reg vid ple shadow_vmcs pml ept_mode_based_exec tsc_scaling
+bugs		: spectre_vD spectre_vD spec_store_bypass mds swapgs taa itlb_multihit mmio_stale_data retbleed gds
+bogomips	: D.D
+clflush size	: D
+cache_alignment	: D
+address sizes	: D bits physical, D bits virtual
+power management:
+
+processor	: D
+vendor_id	: GenuineIntel
+cpu family	: D
+model		: D
+model name	: Intel(R) Xeon(R) Gold DC CPU @ D.DGHz
+stepping	: D
+microcode	: DxD
+cpu MHz		: D.D
+cache size	: D KB
+physical id	: D
+siblings	: D
+core id		: D
+cpu cores	: D
+apicid		: D
+initial apicid	: D
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: D
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cxD apic sep mtrr pge mca cmov pat pseD clflush dts acpi mmx fxsr sse sseD ss ht tm pbe syscall nx pdpeDgb rdtscp lm constant_tsc art arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc cpuid aperfmperf pni pclmulqdq dtesD monitor ds_cpl vmx smx est tmD ssseD sdbg fma cxD xtpr pdcm pcid dca sseD_D sseD_D xDapic movbe popcnt tsc_deadline_timer aes xsave avx fDc rdrand lahf_lm abm Ddnowprefetch cpuid_fault epb cat_lD cdp_lD invpcid_single intel_ppin ssbd mba ibrs ibpb stibp tpr_shadow vnmi flexpriority ept vpid ept_ad fsgsbase tsc_adjust bmiD hle avxD smep bmiD erms invpcid rtm cqm mpx rdt_a avxDf avxDdq rdseed adx smap clflushopt clwb intel_pt avxDcd avxDbw avxDvl xsaveopt xsavec xgetbvD xsaves cqm_llc cqm_occup_llc cqm_mbm_total cqm_mbm_local dtherm ida arat pln pts hwp hwp_act_window hwp_epp hwp_pkg_req pku ospke md_clear flush_lDd arch_capabilities
+vmx flags	: vnmi preemption_timer posted_intr invvpid ept_x_only ept_ad ept_Dgb flexpriority apicv tsc_offset vtpr mtf vapic ept vpid unrestricted_guest vapic_reg vid ple shadow_vmcs pml ept_mode_based_exec tsc_scaling
+bugs		: spectre_vD spectre_vD spec_store_bypass mds swapgs taa itlb_multihit mmio_stale_data retbleed gds
+bogomips	: D.D
+clflush size	: D
+cache_alignment	: D
+address sizes	: D bits physical, D bits virtual
+power management:
+
+processor	: D
+vendor_id	: GenuineIntel
+cpu family	: D
+model		: D
+model name	: Intel(R) Xeon(R) Gold DC CPU @ D.DGHz
+stepping	: D
+microcode	: DxD
+cpu MHz		: D.D
+cache size	: D KB
+physical id	: D
+siblings	: D
+core id		: D
+cpu cores	: D
+apicid		: D
+initial apicid	: D
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: D
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cxD apic sep mtrr pge mca cmov pat pseD clflush dts acpi mmx fxsr sse sseD ss ht tm pbe syscall nx pdpeDgb rdtscp lm constant_tsc art arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc cpuid aperfmperf pni pclmulqdq dtesD monitor ds_cpl vmx smx est tmD ssseD sdbg fma cxD xtpr pdcm pcid dca sseD_D sseD_D xDapic movbe popcnt tsc_deadline_timer aes xsave avx fDc rdrand lahf_lm abm Ddnowprefetch cpuid_fault epb cat_lD cdp_lD invpcid_single intel_ppin ssbd mba ibrs ibpb stibp tpr_shadow vnmi flexpriority ept vpid ept_ad fsgsbase tsc_adjust bmiD hle avxD smep bmiD erms invpcid rtm cqm mpx rdt_a avxDf avxDdq rdseed adx smap clflushopt clwb intel_pt avxDcd avxDbw avxDvl xsaveopt xsavec xgetbvD xsaves cqm_llc cqm_occup_llc cqm_mbm_total cqm_mbm_local dtherm ida arat pln pts hwp hwp_act_window hwp_epp hwp_pkg_req pku ospke md_clear flush_lDd arch_capabilities
+vmx flags	: vnmi preemption_timer posted_intr invvpid ept_x_only ept_ad ept_Dgb flexpriority apicv tsc_offset vtpr mtf vapic ept vpid unrestricted_guest vapic_reg vid ple shadow_vmcs pml ept_mode_based_exec tsc_scaling
+bugs		: spectre_vD spectre_vD spec_store_bypass mds swapgs taa itlb_multihit mmio_stale_data retbleed gds
+bogomips	: D.D
+clflush size	: D
+cache_alignment	: D
+address sizes	: D bits physical, D bits virtual
+power management:
+
+processor	: D
+vendor_id	: GenuineIntel
+cpu family	: D
+model		: D
+model name	: Intel(R) Xeon(R) Gold DC CPU @ D.DGHz
+stepping	: D
+microcode	: DxD
+cpu MHz		: D.D
+cache size	: D KB
+physical id	: D
+siblings	: D
+core id		: D
+cpu cores	: D
+apicid		: D
+initial apicid	: D
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: D
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cxD apic sep mtrr pge mca cmov pat pseD clflush dts acpi mmx fxsr sse sseD ss ht tm pbe syscall nx pdpeDgb rdtscp lm constant_tsc art arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc cpuid aperfmperf pni pclmulqdq dtesD monitor ds_cpl vmx smx est tmD ssseD sdbg fma cxD xtpr pdcm pcid dca sseD_D sseD_D xDapic movbe popcnt tsc_deadline_timer aes xsave avx fDc rdrand lahf_lm abm Ddnowprefetch cpuid_fault epb cat_lD cdp_lD invpcid_single intel_ppin ssbd mba ibrs ibpb stibp tpr_shadow vnmi flexpriority ept vpid ept_ad fsgsbase tsc_adjust bmiD hle avxD smep bmiD erms invpcid rtm cqm mpx rdt_a avxDf avxDdq rdseed adx smap clflushopt clwb intel_pt avxDcd avxDbw avxDvl xsaveopt xsavec xgetbvD xsaves cqm_llc cqm_occup_llc cqm_mbm_total cqm_mbm_local dtherm ida arat pln pts hwp hwp_act_window hwp_epp hwp_pkg_req pku ospke md_clear flush_lDd arch_capabilities
+vmx flags	: vnmi preemption_timer posted_intr invvpid ept_x_only ept_ad ept_Dgb flexpriority apicv tsc_offset vtpr mtf vapic ept vpid unrestricted_guest vapic_reg vid ple shadow_vmcs pml ept_mode_based_exec tsc_scaling
+bugs		: spectre_vD spectre_vD spec_store_bypass mds swapgs taa itlb_multihit mmio_stale_data retbleed gds
+bogomips	: D.D
+clflush size	: D
+cache_alignment	: D
+address sizes	: D bits physical, D bits virtual
+power management:
+
+processor	: D
+vendor_id	: GenuineIntel
+cpu family	: D
+model		: D
+model name	: Intel(R) Xeon(R) Gold DC CPU @ D.DGHz
+stepping	: D
+microcode	: DxD
+cpu MHz		: D.D
+cache size	: D KB
+physical id	: D
+siblings	: D
+core id		: D
+cpu cores	: D
+apicid		: D
+initial apicid	: D
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: D
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cxD apic sep mtrr pge mca cmov pat pseD clflush dts acpi mmx fxsr sse sseD ss ht tm pbe syscall nx pdpeDgb rdtscp lm constant_tsc art arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc cpuid aperfmperf pni pclmulqdq dtesD monitor ds_cpl vmx smx est tmD ssseD sdbg fma cxD xtpr pdcm pcid dca sseD_D sseD_D xDapic movbe popcnt tsc_deadline_timer aes xsave avx fDc rdrand lahf_lm abm Ddnowprefetch cpuid_fault epb cat_lD cdp_lD invpcid_single intel_ppin ssbd mba ibrs ibpb stibp tpr_shadow vnmi flexpriority ept vpid ept_ad fsgsbase tsc_adjust bmiD hle avxD smep bmiD erms invpcid rtm cqm mpx rdt_a avxDf avxDdq rdseed adx smap clflushopt clwb intel_pt avxDcd avxDbw avxDvl xsaveopt xsavec xgetbvD xsaves cqm_llc cqm_occup_llc cqm_mbm_total cqm_mbm_local dtherm ida arat pln pts hwp hwp_act_window hwp_epp hwp_pkg_req pku ospke md_clear flush_lDd arch_capabilities
+vmx flags	: vnmi preemption_timer posted_intr invvpid ept_x_only ept_ad ept_Dgb flexpriority apicv tsc_offset vtpr mtf vapic ept vpid unrestricted_guest vapic_reg vid ple shadow_vmcs pml ept_mode_based_exec tsc_scaling
+bugs		: spectre_vD spectre_vD spec_store_bypass mds swapgs taa itlb_multihit mmio_stale_data retbleed gds
+bogomips	: D.D
+clflush size	: D
+cache_alignment	: D
+address sizes	: D bits physical, D bits virtual
+power management:
+
+processor	: D
+vendor_id	: GenuineIntel
+cpu family	: D
+model		: D
+model name	: Intel(R) Xeon(R) Gold DC CPU @ D.DGHz
+stepping	: D
+microcode	: DxD
+cpu MHz		: D.D
+cache size	: D KB
+physical id	: D
+siblings	: D
+core id		: D
+cpu cores	: D
+apicid		: D
+initial apicid	: D
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: D
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cxD apic sep mtrr pge mca cmov pat pseD clflush dts acpi mmx fxsr sse sseD ss ht tm pbe syscall nx pdpeDgb rdtscp lm constant_tsc art arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc cpuid aperfmperf pni pclmulqdq dtesD monitor ds_cpl vmx smx est tmD ssseD sdbg fma cxD xtpr pdcm pcid dca sseD_D sseD_D xDapic movbe popcnt tsc_deadline_timer aes xsave avx fDc rdrand lahf_lm abm Ddnowprefetch cpuid_fault epb cat_lD cdp_lD invpcid_single intel_ppin ssbd mba ibrs ibpb stibp tpr_shadow vnmi flexpriority ept vpid ept_ad fsgsbase tsc_adjust bmiD hle avxD smep bmiD erms invpcid rtm cqm mpx rdt_a avxDf avxDdq rdseed adx smap clflushopt clwb intel_pt avxDcd avxDbw avxDvl xsaveopt xsavec xgetbvD xsaves cqm_llc cqm_occup_llc cqm_mbm_total cqm_mbm_local dtherm ida arat pln pts hwp hwp_act_window hwp_epp hwp_pkg_req pku ospke md_clear flush_lDd arch_capabilities
+vmx flags	: vnmi preemption_timer posted_intr invvpid ept_x_only ept_ad ept_Dgb flexpriority apicv tsc_offset vtpr mtf vapic ept vpid unrestricted_guest vapic_reg vid ple shadow_vmcs pml ept_mode_based_exec tsc_scaling
+bugs		: spectre_vD spectre_vD spec_store_bypass mds swapgs taa itlb_multihit mmio_stale_data retbleed gds
+bogomips	: D.D
+clflush size	: D
+cache_alignment	: D
+address sizes	: D bits physical, D bits virtual
+power management:
+
+processor	: D
+vendor_id	: GenuineIntel
+cpu family	: D
+model		: D
+model name	: Intel(R) Xeon(R) Gold DC CPU @ D.DGHz
+stepping	: D
+microcode	: DxD
+cpu MHz		: D.D
+cache size	: D KB
+physical id	: D
+siblings	: D
+core id		: D
+cpu cores	: D
+apicid		: D
+initial apicid	: D
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: D
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cxD apic sep mtrr pge mca cmov pat pseD clflush dts acpi mmx fxsr sse sseD ss ht tm pbe syscall nx pdpeDgb rdtscp lm constant_tsc art arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc cpuid aperfmperf pni pclmulqdq dtesD monitor ds_cpl vmx smx est tmD ssseD sdbg fma cxD xtpr pdcm pcid dca sseD_D sseD_D xDapic movbe popcnt tsc_deadline_timer aes xsave avx fDc rdrand lahf_lm abm Ddnowprefetch cpuid_fault epb cat_lD cdp_lD invpcid_single intel_ppin ssbd mba ibrs ibpb stibp tpr_shadow vnmi flexpriority ept vpid ept_ad fsgsbase tsc_adjust bmiD hle avxD smep bmiD erms invpcid rtm cqm mpx rdt_a avxDf avxDdq rdseed adx smap clflushopt clwb intel_pt avxDcd avxDbw avxDvl xsaveopt xsavec xgetbvD xsaves cqm_llc cqm_occup_llc cqm_mbm_total cqm_mbm_local dtherm ida arat pln pts hwp hwp_act_window hwp_epp hwp_pkg_req pku ospke md_clear flush_lDd arch_capabilities
+vmx flags	: vnmi preemption_timer posted_intr invvpid ept_x_only ept_ad ept_Dgb flexpriority apicv tsc_offset vtpr mtf vapic ept vpid unrestricted_guest vapic_reg vid ple shadow_vmcs pml ept_mode_based_exec tsc_scaling
+bugs		: spectre_vD spectre_vD spec_store_bypass mds swapgs taa itlb_multihit mmio_stale_data retbleed gds
+bogomips	: D.D
+clflush size	: D
+cache_alignment	: D
+address sizes	: D bits physical, D bits virtual
+power management:
+
+processor	: D
+vendor_id	: GenuineIntel
+cpu family	: D
+model		: D
+model name	: Intel(R) Xeon(R) Gold DC CPU @ D.DGHz
+stepping	: D
+microcode	: DxD
+cpu MHz		: D.D
+cache size	: D KB
+physical id	: D
+siblings	: D
+core id		: D
+cpu cores	: D
+apicid		: D
+initial apicid	: D
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: D
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cxD apic sep mtrr pge mca cmov pat pseD clflush dts acpi mmx fxsr sse sseD ss ht tm pbe syscall nx pdpeDgb rdtscp lm constant_tsc art arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc cpuid aperfmperf pni pclmulqdq dtesD monitor ds_cpl vmx smx est tmD ssseD sdbg fma cxD xtpr pdcm pcid dca sseD_D sseD_D xDapic movbe popcnt tsc_deadline_timer aes xsave avx fDc rdrand lahf_lm abm Ddnowprefetch cpuid_fault epb cat_lD cdp_lD invpcid_single intel_ppin ssbd mba ibrs ibpb stibp tpr_shadow vnmi flexpriority ept vpid ept_ad fsgsbase tsc_adjust bmiD hle avxD smep bmiD erms invpcid rtm cqm mpx rdt_a avxDf avxDdq rdseed adx smap clflushopt clwb intel_pt avxDcd avxDbw avxDvl xsaveopt xsavec xgetbvD xsaves cqm_llc cqm_occup_llc cqm_mbm_total cqm_mbm_local dtherm ida arat pln pts hwp hwp_act_window hwp_epp hwp_pkg_req pku ospke md_clear flush_lDd arch_capabilities
+vmx flags	: vnmi preemption_timer posted_intr invvpid ept_x_only ept_ad ept_Dgb flexpriority apicv tsc_offset vtpr mtf vapic ept vpid unrestricted_guest vapic_reg vid ple shadow_vmcs pml ept_mode_based_exec tsc_scaling
+bugs		: spectre_vD spectre_vD spec_store_bypass mds swapgs taa itlb_multihit mmio_stale_data retbleed gds
+bogomips	: D.D
+clflush size	: D
+cache_alignment	: D
+address sizes	: D bits physical, D bits virtual
+power management:
+
+processor	: D
+vendor_id	: GenuineIntel
+cpu family	: D
+model		: D
+model name	: Intel(R) Xeon(R) Gold DC CPU @ D.DGHz
+stepping	: D
+microcode	: DxD
+cpu MHz		: D.D
+cache size	: D KB
+physical id	: D
+siblings	: D
+core id		: D
+cpu cores	: D
+apicid		: D
+initial apicid	: D
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: D
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cxD apic sep mtrr pge mca cmov pat pseD clflush dts acpi mmx fxsr sse sseD ss ht tm pbe syscall nx pdpeDgb rdtscp lm constant_tsc art arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc cpuid aperfmperf pni pclmulqdq dtesD monitor ds_cpl vmx smx est tmD ssseD sdbg fma cxD xtpr pdcm pcid dca sseD_D sseD_D xDapic movbe popcnt tsc_deadline_timer aes xsave avx fDc rdrand lahf_lm abm Ddnowprefetch cpuid_fault epb cat_lD cdp_lD invpcid_single intel_ppin ssbd mba ibrs ibpb stibp tpr_shadow vnmi flexpriority ept vpid ept_ad fsgsbase tsc_adjust bmiD hle avxD smep bmiD erms invpcid rtm cqm mpx rdt_a avxDf avxDdq rdseed adx smap clflushopt clwb intel_pt avxDcd avxDbw avxDvl xsaveopt xsavec xgetbvD xsaves cqm_llc cqm_occup_llc cqm_mbm_total cqm_mbm_local dtherm ida arat pln pts hwp hwp_act_window hwp_epp hwp_pkg_req pku ospke md_clear flush_lDd arch_capabilities
+vmx flags	: vnmi preemption_timer posted_intr invvpid ept_x_only ept_ad ept_Dgb flexpriority apicv tsc_offset vtpr mtf vapic ept vpid unrestricted_guest vapic_reg vid ple shadow_vmcs pml ept_mode_based_exec tsc_scaling
+bugs		: spectre_vD spectre_vD spec_store_bypass mds swapgs taa itlb_multihit mmio_stale_data retbleed gds
+bogomips	: D.D
+clflush size	: D
+cache_alignment	: D
+address sizes	: D bits physical, D bits virtual
+power management:
+
+processor	: D
+vendor_id	: GenuineIntel
+cpu family	: D
+model		: D
+model name	: Intel(R) Xeon(R) Gold DC CPU @ D.DGHz
+stepping	: D
+microcode	: DxD
+cpu MHz		: D.D
+cache size	: D KB
+physical id	: D
+siblings	: D
+core id		: D
+cpu cores	: D
+apicid		: D
+initial apicid	: D
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: D
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cxD apic sep mtrr pge mca cmov pat pseD clflush dts acpi mmx fxsr sse sseD ss ht tm pbe syscall nx pdpeDgb rdtscp lm constant_tsc art arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc cpuid aperfmperf pni pclmulqdq dtesD monitor ds_cpl vmx smx est tmD ssseD sdbg fma cxD xtpr pdcm pcid dca sseD_D sseD_D xDapic movbe popcnt tsc_deadline_timer aes xsave avx fDc rdrand lahf_lm abm Ddnowprefetch cpuid_fault epb cat_lD cdp_lD invpcid_single intel_ppin ssbd mba ibrs ibpb stibp tpr_shadow vnmi flexpriority ept vpid ept_ad fsgsbase tsc_adjust bmiD hle avxD smep bmiD erms invpcid rtm cqm mpx rdt_a avxDf avxDdq rdseed adx smap clflushopt clwb intel_pt avxDcd avxDbw avxDvl xsaveopt xsavec xgetbvD xsaves cqm_llc cqm_occup_llc cqm_mbm_total cqm_mbm_local dtherm ida arat pln pts hwp hwp_act_window hwp_epp hwp_pkg_req pku ospke md_clear flush_lDd arch_capabilities
+vmx flags	: vnmi preemption_timer posted_intr invvpid ept_x_only ept_ad ept_Dgb flexpriority apicv tsc_offset vtpr mtf vapic ept vpid unrestricted_guest vapic_reg vid ple shadow_vmcs pml ept_mode_based_exec tsc_scaling
+bugs		: spectre_vD spectre_vD spec_store_bypass mds swapgs taa itlb_multihit mmio_stale_data retbleed gds
+bogomips	: D.D
+clflush size	: D
+cache_alignment	: D
+address sizes	: D bits physical, D bits virtual
+power management:
+
+processor	: D
+vendor_id	: GenuineIntel
+cpu family	: D
+model		: D
+model name	: Intel(R) Xeon(R) Gold DC CPU @ D.DGHz
+stepping	: D
+microcode	: DxD
+cpu MHz		: D.D
+cache size	: D KB
+physical id	: D
+siblings	: D
+core id		: D
+cpu cores	: D
+apicid		: D
+initial apicid	: D
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: D
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cxD apic sep mtrr pge mca cmov pat pseD clflush dts acpi mmx fxsr sse sseD ss ht tm pbe syscall nx pdpeDgb rdtscp lm constant_tsc art arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc cpuid aperfmperf pni pclmulqdq dtesD monitor ds_cpl vmx smx est tmD ssseD sdbg fma cxD xtpr pdcm pcid dca sseD_D sseD_D xDapic movbe popcnt tsc_deadline_timer aes xsave avx fDc rdrand lahf_lm abm Ddnowprefetch cpuid_fault epb cat_lD cdp_lD invpcid_single intel_ppin ssbd mba ibrs ibpb stibp tpr_shadow vnmi flexpriority ept vpid ept_ad fsgsbase tsc_adjust bmiD hle avxD smep bmiD erms invpcid rtm cqm mpx rdt_a avxDf avxDdq rdseed adx smap clflushopt clwb intel_pt avxDcd avxDbw avxDvl xsaveopt xsavec xgetbvD xsaves cqm_llc cqm_occup_llc cqm_mbm_total cqm_mbm_local dtherm ida arat pln pts hwp hwp_act_window hwp_epp hwp_pkg_req pku ospke md_clear flush_lDd arch_capabilities
+vmx flags	: vnmi preemption_timer posted_intr invvpid ept_x_only ept_ad ept_Dgb flexpriority apicv tsc_offset vtpr mtf vapic ept vpid unrestricted_guest vapic_reg vid ple shadow_vmcs pml ept_mode_based_exec tsc_scaling
+bugs		: spectre_vD spectre_vD spec_store_bypass mds swapgs taa itlb_multihit mmio_stale_data retbleed gds
+bogomips	: D.D
+clflush size	: D
+cache_alignment	: D
+address sizes	: D bits physical, D bits virtual
+power management:
+
+processor	: D
+vendor_id	: GenuineIntel
+cpu family	: D
+model		: D
+model name	: Intel(R) Xeon(R) Gold DC CPU @ D.DGHz
+stepping	: D
+microcode	: DxD
+cpu MHz		: D.D
+cache size	: D KB
+physical id	: D
+siblings	: D
+core id		: D
+cpu cores	: D
+apicid		: D
+initial apicid	: D
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: D
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cxD apic sep mtrr pge mca cmov pat pseD clflush dts acpi mmx fxsr sse sseD ss ht tm pbe syscall nx pdpeDgb rdtscp lm constant_tsc art arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc cpuid aperfmperf pni pclmulqdq dtesD monitor ds_cpl vmx smx est tmD ssseD sdbg fma cxD xtpr pdcm pcid dca sseD_D sseD_D xDapic movbe popcnt tsc_deadline_timer aes xsave avx fDc rdrand lahf_lm abm Ddnowprefetch cpuid_fault epb cat_lD cdp_lD invpcid_single intel_ppin ssbd mba ibrs ibpb stibp tpr_shadow vnmi flexpriority ept vpid ept_ad fsgsbase tsc_adjust bmiD hle avxD smep bmiD erms invpcid rtm cqm mpx rdt_a avxDf avxDdq rdseed adx smap clflushopt clwb intel_pt avxDcd avxDbw avxDvl xsaveopt xsavec xgetbvD xsaves cqm_llc cqm_occup_llc cqm_mbm_total cqm_mbm_local dtherm ida arat pln pts hwp hwp_act_window hwp_epp hwp_pkg_req pku ospke md_clear flush_lDd arch_capabilities
+vmx flags	: vnmi preemption_timer posted_intr invvpid ept_x_only ept_ad ept_Dgb flexpriority apicv tsc_offset vtpr mtf vapic ept vpid unrestricted_guest vapic_reg vid ple shadow_vmcs pml ept_mode_based_exec tsc_scaling
+bugs		: spectre_vD spectre_vD spec_store_bypass mds swapgs taa itlb_multihit mmio_stale_data retbleed gds
+bogomips	: D.D
+clflush size	: D
+cache_alignment	: D
+address sizes	: D bits physical, D bits virtual
+power management:
+
+processor	: D
+vendor_id	: GenuineIntel
+cpu family	: D
+model		: D
+model name	: Intel(R) Xeon(R) Gold DC CPU @ D.DGHz
+stepping	: D
+microcode	: DxD
+cpu MHz		: D.D
+cache size	: D KB
+physical id	: D
+siblings	: D
+core id		: D
+cpu cores	: D
+apicid		: D
+initial apicid	: D
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: D
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cxD apic sep mtrr pge mca cmov pat pseD clflush dts acpi mmx fxsr sse sseD ss ht tm pbe syscall nx pdpeDgb rdtscp lm constant_tsc art arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc cpuid aperfmperf pni pclmulqdq dtesD monitor ds_cpl vmx smx est tmD ssseD sdbg fma cxD xtpr pdcm pcid dca sseD_D sseD_D xDapic movbe popcnt tsc_deadline_timer aes xsave avx fDc rdrand lahf_lm abm Ddnowprefetch cpuid_fault epb cat_lD cdp_lD invpcid_single intel_ppin ssbd mba ibrs ibpb stibp tpr_shadow vnmi flexpriority ept vpid ept_ad fsgsbase tsc_adjust bmiD hle avxD smep bmiD erms invpcid rtm cqm mpx rdt_a avxDf avxDdq rdseed adx smap clflushopt clwb intel_pt avxDcd avxDbw avxDvl xsaveopt xsavec xgetbvD xsaves cqm_llc cqm_occup_llc cqm_mbm_total cqm_mbm_local dtherm ida arat pln pts hwp hwp_act_window hwp_epp hwp_pkg_req pku ospke md_clear flush_lDd arch_capabilities
+vmx flags	: vnmi preemption_timer posted_intr invvpid ept_x_only ept_ad ept_Dgb flexpriority apicv tsc_offset vtpr mtf vapic ept vpid unrestricted_guest vapic_reg vid ple shadow_vmcs pml ept_mode_based_exec tsc_scaling
+bugs		: spectre_vD spectre_vD spec_store_bypass mds swapgs taa itlb_multihit mmio_stale_data retbleed gds
+bogomips	: D.D
+clflush size	: D
+cache_alignment	: D
+address sizes	: D bits physical, D bits virtual
+power management:
+
+processor	: D
+vendor_id	: GenuineIntel
+cpu family	: D
+model		: D
+model name	: Intel(R) Xeon(R) Gold DC CPU @ D.DGHz
+stepping	: D
+microcode	: DxD
+cpu MHz		: D.D
+cache size	: D KB
+physical id	: D
+siblings	: D
+core id		: D
+cpu cores	: D
+apicid		: D
+initial apicid	: D
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: D
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cxD apic sep mtrr pge mca cmov pat pseD clflush dts acpi mmx fxsr sse sseD ss ht tm pbe syscall nx pdpeDgb rdtscp lm constant_tsc art arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc cpuid aperfmperf pni pclmulqdq dtesD monitor ds_cpl vmx smx est tmD ssseD sdbg fma cxD xtpr pdcm pcid dca sseD_D sseD_D xDapic movbe popcnt tsc_deadline_timer aes xsave avx fDc rdrand lahf_lm abm Ddnowprefetch cpuid_fault epb cat_lD cdp_lD invpcid_single intel_ppin ssbd mba ibrs ibpb stibp tpr_shadow vnmi flexpriority ept vpid ept_ad fsgsbase tsc_adjust bmiD hle avxD smep bmiD erms invpcid rtm cqm mpx rdt_a avxDf avxDdq rdseed adx smap clflushopt clwb intel_pt avxDcd avxDbw avxDvl xsaveopt xsavec xgetbvD xsaves cqm_llc cqm_occup_llc cqm_mbm_total cqm_mbm_local dtherm ida arat pln pts hwp hwp_act_window hwp_epp hwp_pkg_req pku ospke md_clear flush_lDd arch_capabilities
+vmx flags	: vnmi preemption_timer posted_intr invvpid ept_x_only ept_ad ept_Dgb flexpriority apicv tsc_offset vtpr mtf vapic ept vpid unrestricted_guest vapic_reg vid ple shadow_vmcs pml ept_mode_based_exec tsc_scaling
+bugs		: spectre_vD spectre_vD spec_store_bypass mds swapgs taa itlb_multihit mmio_stale_data retbleed gds
+bogomips	: D.D
+clflush size	: D
+cache_alignment	: D
+address sizes	: D bits physical, D bits virtual
+power management:
+
+processor	: D
+vendor_id	: GenuineIntel
+cpu family	: D
+model		: D
+model name	: Intel(R) Xeon(R) Gold DC CPU @ D.DGHz
+stepping	: D
+microcode	: DxD
+cpu MHz		: D.D
+cache size	: D KB
+physical id	: D
+siblings	: D
+core id		: D
+cpu cores	: D
+apicid		: D
+initial apicid	: D
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: D
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cxD apic sep mtrr pge mca cmov pat pseD clflush dts acpi mmx fxsr sse sseD ss ht tm pbe syscall nx pdpeDgb rdtscp lm constant_tsc art arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc cpuid aperfmperf pni pclmulqdq dtesD monitor ds_cpl vmx smx est tmD ssseD sdbg fma cxD xtpr pdcm pcid dca sseD_D sseD_D xDapic movbe popcnt tsc_deadline_timer aes xsave avx fDc rdrand lahf_lm abm Ddnowprefetch cpuid_fault epb cat_lD cdp_lD invpcid_single intel_ppin ssbd mba ibrs ibpb stibp tpr_shadow vnmi flexpriority ept vpid ept_ad fsgsbase tsc_adjust bmiD hle avxD smep bmiD erms invpcid rtm cqm mpx rdt_a avxDf avxDdq rdseed adx smap clflushopt clwb intel_pt avxDcd avxDbw avxDvl xsaveopt xsavec xgetbvD xsaves cqm_llc cqm_occup_llc cqm_mbm_total cqm_mbm_local dtherm ida arat pln pts hwp hwp_act_window hwp_epp hwp_pkg_req pku ospke md_clear flush_lDd arch_capabilities
+vmx flags	: vnmi preemption_timer posted_intr invvpid ept_x_only ept_ad ept_Dgb flexpriority apicv tsc_offset vtpr mtf vapic ept vpid unrestricted_guest vapic_reg vid ple shadow_vmcs pml ept_mode_based_exec tsc_scaling
+bugs		: spectre_vD spectre_vD spec_store_bypass mds swapgs taa itlb_multihit mmio_stale_data retbleed gds
+bogomips	: D.D
+clflush size	: D
+cache_alignment	: D
+address sizes	: D bits physical, D bits virtual
+power management:
+
+processor	: D
+vendor_id	: GenuineIntel
+cpu family	: D
+model		: D
+model name	: Intel(R) Xeon(R) Gold DC CPU @ D.DGHz
+stepping	: D
+microcode	: DxD
+cpu MHz		: D.D
+cache size	: D KB
+physical id	: D
+siblings	: D
+core id		: D
+cpu cores	: D
+apicid		: D
+initial apicid	: D
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: D
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cxD apic sep mtrr pge mca cmov pat pseD clflush dts acpi mmx fxsr sse sseD ss ht tm pbe syscall nx pdpeDgb rdtscp lm constant_tsc art arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc cpuid aperfmperf pni pclmulqdq dtesD monitor ds_cpl vmx smx est tmD ssseD sdbg fma cxD xtpr pdcm pcid dca sseD_D sseD_D xDapic movbe popcnt tsc_deadline_timer aes xsave avx fDc rdrand lahf_lm abm Ddnowprefetch cpuid_fault epb cat_lD cdp_lD invpcid_single intel_ppin ssbd mba ibrs ibpb stibp tpr_shadow vnmi flexpriority ept vpid ept_ad fsgsbase tsc_adjust bmiD hle avxD smep bmiD erms invpcid rtm cqm mpx rdt_a avxDf avxDdq rdseed adx smap clflushopt clwb intel_pt avxDcd avxDbw avxDvl xsaveopt xsavec xgetbvD xsaves cqm_llc cqm_occup_llc cqm_mbm_total cqm_mbm_local dtherm ida arat pln pts hwp hwp_act_window hwp_epp hwp_pkg_req pku ospke md_clear flush_lDd arch_capabilities
+vmx flags	: vnmi preemption_timer posted_intr invvpid ept_x_only ept_ad ept_Dgb flexpriority apicv tsc_offset vtpr mtf vapic ept vpid unrestricted_guest vapic_reg vid ple shadow_vmcs pml ept_mode_based_exec tsc_scaling
+bugs		: spectre_vD spectre_vD spec_store_bypass mds swapgs taa itlb_multihit mmio_stale_data retbleed gds
+bogomips	: D.D
+clflush size	: D
+cache_alignment	: D
+address sizes	: D bits physical, D bits virtual
+power management:
+
+processor	: D
+vendor_id	: GenuineIntel
+cpu family	: D
+model		: D
+model name	: Intel(R) Xeon(R) Gold DC CPU @ D.DGHz
+stepping	: D
+microcode	: DxD
+cpu MHz		: D.D
+cache size	: D KB
+physical id	: D
+siblings	: D
+core id		: D
+cpu cores	: D
+apicid		: D
+initial apicid	: D
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: D
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cxD apic sep mtrr pge mca cmov pat pseD clflush dts acpi mmx fxsr sse sseD ss ht tm pbe syscall nx pdpeDgb rdtscp lm constant_tsc art arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc cpuid aperfmperf pni pclmulqdq dtesD monitor ds_cpl vmx smx est tmD ssseD sdbg fma cxD xtpr pdcm pcid dca sseD_D sseD_D xDapic movbe popcnt tsc_deadline_timer aes xsave avx fDc rdrand lahf_lm abm Ddnowprefetch cpuid_fault epb cat_lD cdp_lD invpcid_single intel_ppin ssbd mba ibrs ibpb stibp tpr_shadow vnmi flexpriority ept vpid ept_ad fsgsbase tsc_adjust bmiD hle avxD smep bmiD erms invpcid rtm cqm mpx rdt_a avxDf avxDdq rdseed adx smap clflushopt clwb intel_pt avxDcd avxDbw avxDvl xsaveopt xsavec xgetbvD xsaves cqm_llc cqm_occup_llc cqm_mbm_total cqm_mbm_local dtherm ida arat pln pts hwp hwp_act_window hwp_epp hwp_pkg_req pku ospke md_clear flush_lDd arch_capabilities
+vmx flags	: vnmi preemption_timer posted_intr invvpid ept_x_only ept_ad ept_Dgb flexpriority apicv tsc_offset vtpr mtf vapic ept vpid unrestricted_guest vapic_reg vid ple shadow_vmcs pml ept_mode_based_exec tsc_scaling
+bugs		: spectre_vD spectre_vD spec_store_bypass mds swapgs taa itlb_multihit mmio_stale_data retbleed gds
+bogomips	: D.D
+clflush size	: D
+cache_alignment	: D
+address sizes	: D bits physical, D bits virtual
+power management:
+
+processor	: D
+vendor_id	: GenuineIntel
+cpu family	: D
+model		: D
+model name	: Intel(R) Xeon(R) Gold DC CPU @ D.DGHz
+stepping	: D
+microcode	: DxD
+cpu MHz		: D.D
+cache size	: D KB
+physical id	: D
+siblings	: D
+core id		: D
+cpu cores	: D
+apicid		: D
+initial apicid	: D
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: D
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cxD apic sep mtrr pge mca cmov pat pseD clflush dts acpi mmx fxsr sse sseD ss ht tm pbe syscall nx pdpeDgb rdtscp lm constant_tsc art arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc cpuid aperfmperf pni pclmulqdq dtesD monitor ds_cpl vmx smx est tmD ssseD sdbg fma cxD xtpr pdcm pcid dca sseD_D sseD_D xDapic movbe popcnt tsc_deadline_timer aes xsave avx fDc rdrand lahf_lm abm Ddnowprefetch cpuid_fault epb cat_lD cdp_lD invpcid_single intel_ppin ssbd mba ibrs ibpb stibp tpr_shadow vnmi flexpriority ept vpid ept_ad fsgsbase tsc_adjust bmiD hle avxD smep bmiD erms invpcid rtm cqm mpx rdt_a avxDf avxDdq rdseed adx smap clflushopt clwb intel_pt avxDcd avxDbw avxDvl xsaveopt xsavec xgetbvD xsaves cqm_llc cqm_occup_llc cqm_mbm_total cqm_mbm_local dtherm ida arat pln pts hwp hwp_act_window hwp_epp hwp_pkg_req pku ospke md_clear flush_lDd arch_capabilities
+vmx flags	: vnmi preemption_timer posted_intr invvpid ept_x_only ept_ad ept_Dgb flexpriority apicv tsc_offset vtpr mtf vapic ept vpid unrestricted_guest vapic_reg vid ple shadow_vmcs pml ept_mode_based_exec tsc_scaling
+bugs		: spectre_vD spectre_vD spec_store_bypass mds swapgs taa itlb_multihit mmio_stale_data retbleed gds
+bogomips	: D.D
+clflush size	: D
+cache_alignment	: D
+address sizes	: D bits physical, D bits virtual
+power management:
+
+processor	: D
+vendor_id	: GenuineIntel
+cpu family	: D
+model		: D
+model name	: Intel(R) Xeon(R) Gold DC CPU @ D.DGHz
+stepping	: D
+microcode	: DxD
+cpu MHz		: D.D
+cache size	: D KB
+physical id	: D
+siblings	: D
+core id		: D
+cpu cores	: D
+apicid		: D
+initial apicid	: D
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: D
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cxD apic sep mtrr pge mca cmov pat pseD clflush dts acpi mmx fxsr sse sseD ss ht tm pbe syscall nx pdpeDgb rdtscp lm constant_tsc art arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc cpuid aperfmperf pni pclmulqdq dtesD monitor ds_cpl vmx smx est tmD ssseD sdbg fma cxD xtpr pdcm pcid dca sseD_D sseD_D xDapic movbe popcnt tsc_deadline_timer aes xsave avx fDc rdrand lahf_lm abm Ddnowprefetch cpuid_fault epb cat_lD cdp_lD invpcid_single intel_ppin ssbd mba ibrs ibpb stibp tpr_shadow vnmi flexpriority ept vpid ept_ad fsgsbase tsc_adjust bmiD hle avxD smep bmiD erms invpcid rtm cqm mpx rdt_a avxDf avxDdq rdseed adx smap clflushopt clwb intel_pt avxDcd avxDbw avxDvl xsaveopt xsavec xgetbvD xsaves cqm_llc cqm_occup_llc cqm_mbm_total cqm_mbm_local dtherm ida arat pln pts hwp hwp_act_window hwp_epp hwp_pkg_req pku ospke md_clear flush_lDd arch_capabilities
+vmx flags	: vnmi preemption_timer posted_intr invvpid ept_x_only ept_ad ept_Dgb flexpriority apicv tsc_offset vtpr mtf vapic ept vpid unrestricted_guest vapic_reg vid ple shadow_vmcs pml ept_mode_based_exec tsc_scaling
+bugs		: spectre_vD spectre_vD spec_store_bypass mds swapgs taa itlb_multihit mmio_stale_data retbleed gds
+bogomips	: D.D
+clflush size	: D
+cache_alignment	: D
+address sizes	: D bits physical, D bits virtual
+power management:
+
+processor	: D
+vendor_id	: GenuineIntel
+cpu family	: D
+model		: D
+model name	: Intel(R) Xeon(R) Gold DC CPU @ D.DGHz
+stepping	: D
+microcode	: DxD
+cpu MHz		: D.D
+cache size	: D KB
+physical id	: D
+siblings	: D
+core id		: D
+cpu cores	: D
+apicid		: D
+initial apicid	: D
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: D
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cxD apic sep mtrr pge mca cmov pat pseD clflush dts acpi mmx fxsr sse sseD ss ht tm pbe syscall nx pdpeDgb rdtscp lm constant_tsc art arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc cpuid aperfmperf pni pclmulqdq dtesD monitor ds_cpl vmx smx est tmD ssseD sdbg fma cxD xtpr pdcm pcid dca sseD_D sseD_D xDapic movbe popcnt tsc_deadline_timer aes xsave avx fDc rdrand lahf_lm abm Ddnowprefetch cpuid_fault epb cat_lD cdp_lD invpcid_single intel_ppin ssbd mba ibrs ibpb stibp tpr_shadow vnmi flexpriority ept vpid ept_ad fsgsbase tsc_adjust bmiD hle avxD smep bmiD erms invpcid rtm cqm mpx rdt_a avxDf avxDdq rdseed adx smap clflushopt clwb intel_pt avxDcd avxDbw avxDvl xsaveopt xsavec xgetbvD xsaves cqm_llc cqm_occup_llc cqm_mbm_total cqm_mbm_local dtherm ida arat pln pts hwp hwp_act_window hwp_epp hwp_pkg_req pku ospke md_clear flush_lDd arch_capabilities
+vmx flags	: vnmi preemption_timer posted_intr invvpid ept_x_only ept_ad ept_Dgb flexpriority apicv tsc_offset vtpr mtf vapic ept vpid unrestricted_guest vapic_reg vid ple shadow_vmcs pml ept_mode_based_exec tsc_scaling
+bugs		: spectre_vD spectre_vD spec_store_bypass mds swapgs taa itlb_multihit mmio_stale_data retbleed gds
+bogomips	: D.D
+clflush size	: D
+cache_alignment	: D
+address sizes	: D bits physical, D bits virtual
+power management:
+
+processor	: D
+vendor_id	: GenuineIntel
+cpu family	: D
+model		: D
+model name	: Intel(R) Xeon(R) Gold DC CPU @ D.DGHz
+stepping	: D
+microcode	: DxD
+cpu MHz		: D.D
+cache size	: D KB
+physical id	: D
+siblings	: D
+core id		: D
+cpu cores	: D
+apicid		: D
+initial apicid	: D
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: D
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cxD apic sep mtrr pge mca cmov pat pseD clflush dts acpi mmx fxsr sse sseD ss ht tm pbe syscall nx pdpeDgb rdtscp lm constant_tsc art arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc cpuid aperfmperf pni pclmulqdq dtesD monitor ds_cpl vmx smx est tmD ssseD sdbg fma cxD xtpr pdcm pcid dca sseD_D sseD_D xDapic movbe popcnt tsc_deadline_timer aes xsave avx fDc rdrand lahf_lm abm Ddnowprefetch cpuid_fault epb cat_lD cdp_lD invpcid_single intel_ppin ssbd mba ibrs ibpb stibp tpr_shadow vnmi flexpriority ept vpid ept_ad fsgsbase tsc_adjust bmiD hle avxD smep bmiD erms invpcid rtm cqm mpx rdt_a avxDf avxDdq rdseed adx smap clflushopt clwb intel_pt avxDcd avxDbw avxDvl xsaveopt xsavec xgetbvD xsaves cqm_llc cqm_occup_llc cqm_mbm_total cqm_mbm_local dtherm ida arat pln pts hwp hwp_act_window hwp_epp hwp_pkg_req pku ospke md_clear flush_lDd arch_capabilities
+vmx flags	: vnmi preemption_timer posted_intr invvpid ept_x_only ept_ad ept_Dgb flexpriority apicv tsc_offset vtpr mtf vapic ept vpid unrestricted_guest vapic_reg vid ple shadow_vmcs pml ept_mode_based_exec tsc_scaling
+bugs		: spectre_vD spectre_vD spec_store_bypass mds swapgs taa itlb_multihit mmio_stale_data retbleed gds
+bogomips	: D.D
+clflush size	: D
+cache_alignment	: D
+address sizes	: D bits physical, D bits virtual
+power management:
+
+processor	: D
+vendor_id	: GenuineIntel
+cpu family	: D
+model		: D
+model name	: Intel(R) Xeon(R) Gold DC CPU @ D.DGHz
+stepping	: D
+microcode	: DxD
+cpu MHz		: D.D
+cache size	: D KB
+physical id	: D
+siblings	: D
+core id		: D
+cpu cores	: D
+apicid		: D
+initial apicid	: D
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: D
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cxD apic sep mtrr pge mca cmov pat pseD clflush dts acpi mmx fxsr sse sseD ss ht tm pbe syscall nx pdpeDgb rdtscp lm constant_tsc art arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc cpuid aperfmperf pni pclmulqdq dtesD monitor ds_cpl vmx smx est tmD ssseD sdbg fma cxD xtpr pdcm pcid dca sseD_D sseD_D xDapic movbe popcnt tsc_deadline_timer aes xsave avx fDc rdrand lahf_lm abm Ddnowprefetch cpuid_fault epb cat_lD cdp_lD invpcid_single intel_ppin ssbd mba ibrs ibpb stibp tpr_shadow vnmi flexpriority ept vpid ept_ad fsgsbase tsc_adjust bmiD hle avxD smep bmiD erms invpcid rtm cqm mpx rdt_a avxDf avxDdq rdseed adx smap clflushopt clwb intel_pt avxDcd avxDbw avxDvl xsaveopt xsavec xgetbvD xsaves cqm_llc cqm_occup_llc cqm_mbm_total cqm_mbm_local dtherm ida arat pln pts hwp hwp_act_window hwp_epp hwp_pkg_req pku ospke md_clear flush_lDd arch_capabilities
+vmx flags	: vnmi preemption_timer posted_intr invvpid ept_x_only ept_ad ept_Dgb flexpriority apicv tsc_offset vtpr mtf vapic ept vpid unrestricted_guest vapic_reg vid ple shadow_vmcs pml ept_mode_based_exec tsc_scaling
+bugs		: spectre_vD spectre_vD spec_store_bypass mds swapgs taa itlb_multihit mmio_stale_data retbleed gds
+bogomips	: D.D
+clflush size	: D
+cache_alignment	: D
+address sizes	: D bits physical, D bits virtual
+power management:
+
+processor	: D
+vendor_id	: GenuineIntel
+cpu family	: D
+model		: D
+model name	: Intel(R) Xeon(R) Gold DC CPU @ D.DGHz
+stepping	: D
+microcode	: DxD
+cpu MHz		: D.D
+cache size	: D KB
+physical id	: D
+siblings	: D
+core id		: D
+cpu cores	: D
+apicid		: D
+initial apicid	: D
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: D
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cxD apic sep mtrr pge mca cmov pat pseD clflush dts acpi mmx fxsr sse sseD ss ht tm pbe syscall nx pdpeDgb rdtscp lm constant_tsc art arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc cpuid aperfmperf pni pclmulqdq dtesD monitor ds_cpl vmx smx est tmD ssseD sdbg fma cxD xtpr pdcm pcid dca sseD_D sseD_D xDapic movbe popcnt tsc_deadline_timer aes xsave avx fDc rdrand lahf_lm abm Ddnowprefetch cpuid_fault epb cat_lD cdp_lD invpcid_single intel_ppin ssbd mba ibrs ibpb stibp tpr_shadow vnmi flexpriority ept vpid ept_ad fsgsbase tsc_adjust bmiD hle avxD smep bmiD erms invpcid rtm cqm mpx rdt_a avxDf avxDdq rdseed adx smap clflushopt clwb intel_pt avxDcd avxDbw avxDvl xsaveopt xsavec xgetbvD xsaves cqm_llc cqm_occup_llc cqm_mbm_total cqm_mbm_local dtherm ida arat pln pts hwp hwp_act_window hwp_epp hwp_pkg_req pku ospke md_clear flush_lDd arch_capabilities
+vmx flags	: vnmi preemption_timer posted_intr invvpid ept_x_only ept_ad ept_Dgb flexpriority apicv tsc_offset vtpr mtf vapic ept vpid unrestricted_guest vapic_reg vid ple shadow_vmcs pml ept_mode_based_exec tsc_scaling
+bugs		: spectre_vD spectre_vD spec_store_bypass mds swapgs taa itlb_multihit mmio_stale_data retbleed gds
+bogomips	: D.D
+clflush size	: D
+cache_alignment	: D
+address sizes	: D bits physical, D bits virtual
+power management:
+
+processor	: D
+vendor_id	: GenuineIntel
+cpu family	: D
+model		: D
+model name	: Intel(R) Xeon(R) Gold DC CPU @ D.DGHz
+stepping	: D
+microcode	: DxD
+cpu MHz		: D.D
+cache size	: D KB
+physical id	: D
+siblings	: D
+core id		: D
+cpu cores	: D
+apicid		: D
+initial apicid	: D
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: D
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cxD apic sep mtrr pge mca cmov pat pseD clflush dts acpi mmx fxsr sse sseD ss ht tm pbe syscall nx pdpeDgb rdtscp lm constant_tsc art arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc cpuid aperfmperf pni pclmulqdq dtesD monitor ds_cpl vmx smx est tmD ssseD sdbg fma cxD xtpr pdcm pcid dca sseD_D sseD_D xDapic movbe popcnt tsc_deadline_timer aes xsave avx fDc rdrand lahf_lm abm Ddnowprefetch cpuid_fault epb cat_lD cdp_lD invpcid_single intel_ppin ssbd mba ibrs ibpb stibp tpr_shadow vnmi flexpriority ept vpid ept_ad fsgsbase tsc_adjust bmiD hle avxD smep bmiD erms invpcid rtm cqm mpx rdt_a avxDf avxDdq rdseed adx smap clflushopt clwb intel_pt avxDcd avxDbw avxDvl xsaveopt xsavec xgetbvD xsaves cqm_llc cqm_occup_llc cqm_mbm_total cqm_mbm_local dtherm ida arat pln pts hwp hwp_act_window hwp_epp hwp_pkg_req pku ospke md_clear flush_lDd arch_capabilities
+vmx flags	: vnmi preemption_timer posted_intr invvpid ept_x_only ept_ad ept_Dgb flexpriority apicv tsc_offset vtpr mtf vapic ept vpid unrestricted_guest vapic_reg vid ple shadow_vmcs pml ept_mode_based_exec tsc_scaling
+bugs		: spectre_vD spectre_vD spec_store_bypass mds swapgs taa itlb_multihit mmio_stale_data retbleed gds
+bogomips	: D.D
+clflush size	: D
+cache_alignment	: D
+address sizes	: D bits physical, D bits virtual
+power management:
+
+processor	: D
+vendor_id	: GenuineIntel
+cpu family	: D
+model		: D
+model name	: Intel(R) Xeon(R) Gold DC CPU @ D.DGHz
+stepping	: D
+microcode	: DxD
+cpu MHz		: D.D
+cache size	: D KB
+physical id	: D
+siblings	: D
+core id		: D
+cpu cores	: D
+apicid		: D
+initial apicid	: D
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: D
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cxD apic sep mtrr pge mca cmov pat pseD clflush dts acpi mmx fxsr sse sseD ss ht tm pbe syscall nx pdpeDgb rdtscp lm constant_tsc art arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc cpuid aperfmperf pni pclmulqdq dtesD monitor ds_cpl vmx smx est tmD ssseD sdbg fma cxD xtpr pdcm pcid dca sseD_D sseD_D xDapic movbe popcnt tsc_deadline_timer aes xsave avx fDc rdrand lahf_lm abm Ddnowprefetch cpuid_fault epb cat_lD cdp_lD invpcid_single intel_ppin ssbd mba ibrs ibpb stibp tpr_shadow vnmi flexpriority ept vpid ept_ad fsgsbase tsc_adjust bmiD hle avxD smep bmiD erms invpcid rtm cqm mpx rdt_a avxDf avxDdq rdseed adx smap clflushopt clwb intel_pt avxDcd avxDbw avxDvl xsaveopt xsavec xgetbvD xsaves cqm_llc cqm_occup_llc cqm_mbm_total cqm_mbm_local dtherm ida arat pln pts hwp hwp_act_window hwp_epp hwp_pkg_req pku ospke md_clear flush_lDd arch_capabilities
+vmx flags	: vnmi preemption_timer posted_intr invvpid ept_x_only ept_ad ept_Dgb flexpriority apicv tsc_offset vtpr mtf vapic ept vpid unrestricted_guest vapic_reg vid ple shadow_vmcs pml ept_mode_based_exec tsc_scaling
+bugs		: spectre_vD spectre_vD spec_store_bypass mds swapgs taa itlb_multihit mmio_stale_data retbleed gds
+bogomips	: D.D
+clflush size	: D
+cache_alignment	: D
+address sizes	: D bits physical, D bits virtual
+power management:
+
+processor	: D
+vendor_id	: GenuineIntel
+cpu family	: D
+model		: D
+model name	: Intel(R) Xeon(R) Gold DC CPU @ D.DGHz
+stepping	: D
+microcode	: DxD
+cpu MHz		: D.D
+cache size	: D KB
+physical id	: D
+siblings	: D
+core id		: D
+cpu cores	: D
+apicid		: D
+initial apicid	: D
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: D
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cxD apic sep mtrr pge mca cmov pat pseD clflush dts acpi mmx fxsr sse sseD ss ht tm pbe syscall nx pdpeDgb rdtscp lm constant_tsc art arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc cpuid aperfmperf pni pclmulqdq dtesD monitor ds_cpl vmx smx est tmD ssseD sdbg fma cxD xtpr pdcm pcid dca sseD_D sseD_D xDapic movbe popcnt tsc_deadline_timer aes xsave avx fDc rdrand lahf_lm abm Ddnowprefetch cpuid_fault epb cat_lD cdp_lD invpcid_single intel_ppin ssbd mba ibrs ibpb stibp tpr_shadow vnmi flexpriority ept vpid ept_ad fsgsbase tsc_adjust bmiD hle avxD smep bmiD erms invpcid rtm cqm mpx rdt_a avxDf avxDdq rdseed adx smap clflushopt clwb intel_pt avxDcd avxDbw avxDvl xsaveopt xsavec xgetbvD xsaves cqm_llc cqm_occup_llc cqm_mbm_total cqm_mbm_local dtherm ida arat pln pts hwp hwp_act_window hwp_epp hwp_pkg_req pku ospke md_clear flush_lDd arch_capabilities
+vmx flags	: vnmi preemption_timer posted_intr invvpid ept_x_only ept_ad ept_Dgb flexpriority apicv tsc_offset vtpr mtf vapic ept vpid unrestricted_guest vapic_reg vid ple shadow_vmcs pml ept_mode_based_exec tsc_scaling
+bugs		: spectre_vD spectre_vD spec_store_bypass mds swapgs taa itlb_multihit mmio_stale_data retbleed gds
+bogomips	: D.D
+clflush size	: D
+cache_alignment	: D
+address sizes	: D bits physical, D bits virtual
+power management:
+
+processor	: D
+vendor_id	: GenuineIntel
+cpu family	: D
+model		: D
+model name	: Intel(R) Xeon(R) Gold DC CPU @ D.DGHz
+stepping	: D
+microcode	: DxD
+cpu MHz		: D.D
+cache size	: D KB
+physical id	: D
+siblings	: D
+core id		: D
+cpu cores	: D
+apicid		: D
+initial apicid	: D
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: D
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cxD apic sep mtrr pge mca cmov pat pseD clflush dts acpi mmx fxsr sse sseD ss ht tm pbe syscall nx pdpeDgb rdtscp lm constant_tsc art arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc cpuid aperfmperf pni pclmulqdq dtesD monitor ds_cpl vmx smx est tmD ssseD sdbg fma cxD xtpr pdcm pcid dca sseD_D sseD_D xDapic movbe popcnt tsc_deadline_timer aes xsave avx fDc rdrand lahf_lm abm Ddnowprefetch cpuid_fault epb cat_lD cdp_lD invpcid_single intel_ppin ssbd mba ibrs ibpb stibp tpr_shadow vnmi flexpriority ept vpid ept_ad fsgsbase tsc_adjust bmiD hle avxD smep bmiD erms invpcid rtm cqm mpx rdt_a avxDf avxDdq rdseed adx smap clflushopt clwb intel_pt avxDcd avxDbw avxDvl xsaveopt xsavec xgetbvD xsaves cqm_llc cqm_occup_llc cqm_mbm_total cqm_mbm_local dtherm ida arat pln pts hwp hwp_act_window hwp_epp hwp_pkg_req pku ospke md_clear flush_lDd arch_capabilities
+vmx flags	: vnmi preemption_timer posted_intr invvpid ept_x_only ept_ad ept_Dgb flexpriority apicv tsc_offset vtpr mtf vapic ept vpid unrestricted_guest vapic_reg vid ple shadow_vmcs pml ept_mode_based_exec tsc_scaling
+bugs		: spectre_vD spectre_vD spec_store_bypass mds swapgs taa itlb_multihit mmio_stale_data retbleed gds
+bogomips	: D.D
+clflush size	: D
+cache_alignment	: D
+address sizes	: D bits physical, D bits virtual
+power management:
+
+processor	: D
+vendor_id	: GenuineIntel
+cpu family	: D
+model		: D
+model name	: Intel(R) Xeon(R) Gold DC CPU @ D.DGHz
+stepping	: D
+microcode	: DxD
+cpu MHz		: D.D
+cache size	: D KB
+physical id	: D
+siblings	: D
+core id		: D
+cpu cores	: D
+apicid		: D
+initial apicid	: D
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: D
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cxD apic sep mtrr pge mca cmov pat pseD clflush dts acpi mmx fxsr sse sseD ss ht tm pbe syscall nx pdpeDgb rdtscp lm constant_tsc art arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc cpuid aperfmperf pni pclmulqdq dtesD monitor ds_cpl vmx smx est tmD ssseD sdbg fma cxD xtpr pdcm pcid dca sseD_D sseD_D xDapic movbe popcnt tsc_deadline_timer aes xsave avx fDc rdrand lahf_lm abm Ddnowprefetch cpuid_fault epb cat_lD cdp_lD invpcid_single intel_ppin ssbd mba ibrs ibpb stibp tpr_shadow vnmi flexpriority ept vpid ept_ad fsgsbase tsc_adjust bmiD hle avxD smep bmiD erms invpcid rtm cqm mpx rdt_a avxDf avxDdq rdseed adx smap clflushopt clwb intel_pt avxDcd avxDbw avxDvl xsaveopt xsavec xgetbvD xsaves cqm_llc cqm_occup_llc cqm_mbm_total cqm_mbm_local dtherm ida arat pln pts hwp hwp_act_window hwp_epp hwp_pkg_req pku ospke md_clear flush_lDd arch_capabilities
+vmx flags	: vnmi preemption_timer posted_intr invvpid ept_x_only ept_ad ept_Dgb flexpriority apicv tsc_offset vtpr mtf vapic ept vpid unrestricted_guest vapic_reg vid ple shadow_vmcs pml ept_mode_based_exec tsc_scaling
+bugs		: spectre_vD spectre_vD spec_store_bypass mds swapgs taa itlb_multihit mmio_stale_data retbleed gds
+bogomips	: D.D
+clflush size	: D
+cache_alignment	: D
+address sizes	: D bits physical, D bits virtual
+power management:
+

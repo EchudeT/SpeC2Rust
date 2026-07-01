@@ -1,0 +1,105 @@
+warning: `/home/jfeng/.cargo/config` is deprecated in favor of `config.toml`
+  |
+  = help: if you need to support cargo 1.38 or earlier, you can symlink `config` to `config.toml`
+warning: `/home/jfeng/.cargo/config` is deprecated in favor of `config.toml`
+  |
+  = help: if you need to support cargo 1.38 or earlier, you can symlink `config` to `config.toml`
+src/c4.rs:2:5: warning: unused import: `std::fs`
+src/c4.rs:66:5: warning: multiple variants are never constructed
+src/c4.rs:146:12: warning: associated items `run_hello`, `expr`, `stmt`, and `precedence` are never used
+warning: `c4-rust` (bin "c4-rust" test) generated 3 warnings (run `cargo clippy --fix --bin "c4-rust" -p c4-rust --tests -- ` to apply 1 suggestion)
+warning: unused import: `std::fs`
+ --> src/c4.rs:2:5
+  |
+2 | use std::fs;
+  |     ^^^^^^^
+  |
+  = note: `#[warn(unused_imports)]` (part of `#[warn(unused)]`) on by default
+
+warning: multiple variants are never constructed
+  --> src/c4.rs:66:5
+   |
+65 | enum Instruction {
+   |      ----------- variants in this enum
+66 |     Imm(i64),
+   |     ^^^
+67 |     BranchIfZero(usize),
+   |     ^^^^^^^^^^^^
+68 |     BranchIfNonZero(usize),
+   |     ^^^^^^^^^^^^^^^
+69 |     Jump(usize),
+   |     ^^^^
+70 |     Push,
+   |     ^^^^
+71 |     Or,
+   |     ^^
+72 |     Xor,
+   |     ^^^
+73 |     And,
+   |     ^^^
+74 |     Eq,
+   |     ^^
+75 |     Ne,
+   |     ^^
+76 |     Lt,
+   |     ^^
+77 |     Gt,
+   |     ^^
+78 |     Le,
+   |     ^^
+79 |     Ge,
+   |     ^^
+80 |     Shl,
+   |     ^^^
+81 |     Shr,
+   |     ^^^
+82 |     Add,
+   |     ^^^
+83 |     Sub,
+   |     ^^^
+84 |     Mul,
+   |     ^^^
+85 |     Div,
+   |     ^^^
+86 |     Mod,
+   |     ^^^
+87 |     Leave,
+   |     ^^^^^
+88 |     LoadChar,
+   |     ^^^^^^^^
+89 |     LoadInt,
+   |     ^^^^^^^
+90 |     StoreChar,
+   |     ^^^^^^^^^
+91 |     StoreInt,
+   |     ^^^^^^^^
+92 |     Address(i64),
+   |     ^^^^^^^
+93 |     Call(String),
+   |     ^^^^
+94 |     Adjust(usize),
+   |     ^^^^^^
+   |
+   = note: `Instruction` has derived impls for the traits `Debug` and `Clone`, but these are intentionally ignored during dead code analysis
+   = note: `#[warn(dead_code)]` (part of `#[warn(unused)]`) on by default
+
+warning: associated items `run_hello`, `expr`, `stmt`, and `precedence` are never used
+   --> src/c4.rs:146:12
+    |
+120 | impl C4 {
+    | ------- associated items in this implementation
+...
+146 |     pub fn run_hello() -> String {
+    |            ^^^^^^^^^
+...
+399 |     pub fn expr(&mut self, lev: i32) -> Result<(), C4Error> {
+    |            ^^^^
+...
+690 |     pub fn stmt(&mut self) -> Result<(), C4Error> {
+    |            ^^^^
+...
+784 |     fn precedence(token: Token) -> i32 {
+    |        ^^^^^^^^^^
+
+warning: `c4-rust` (bin "c4-rust") generated 3 warnings (run `cargo clippy --fix --bin "c4-rust" -p c4-rust -- ` to apply 1 suggestion)
+    Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.03s

@@ -1,0 +1,103 @@
+warning: `/home/jfeng/.cargo/config` is deprecated in favor of `config.toml`
+  |
+  = help: if you need to support cargo 1.38 or earlier, you can symlink `config` to `config.toml`
+warning: `/home/jfeng/.cargo/config` is deprecated in favor of `config.toml`
+  |
+  = help: if you need to support cargo 1.38 or earlier, you can symlink `config` to `config.toml`
+    Checking cflow-new-rust v0.1.0 (/data1/jfeng/tcode_win/output/res1/cflow-new/cflow-new-rust)
+src/c.rs:1:5: warning: unused import: `std::fs::File`
+src/output.rs:1:5: warning: unused import: `crate::depmap::Depmap`
+src/main.rs:22:19: warning: unused imports: `Context` and `Help`
+src/main.rs:23:29: warning: unused import: `SymbolFlag`
+src/c.rs:2:21: warning: unused import: `Read`
+src/help.rs:206:17: warning: value assigned to `end` is never read
+src/output.rs:538:14: warning: unused variable: `name`: help: if this is intentional, prefix it with an underscore: `_name`
+src/parseopt.rs:377:43: warning: value assigned to `ret_arg` is never read
+src/parseopt.rs:474:21: warning: value assigned to `ret_arg` is never read
+src/parseopt.rs:616:21: warning: unused variable: `opt_flags`: help: if this is intentional, prefix it with an underscore: `_opt_flags`
+src/parser.rs:158:5: warning: type `parser::TokenEntry` is more private than the item `parser::Parser::print_token`: method `parser::Parser::print_token` is reachable at visibility `pub`
+src/parser.rs:218:5: warning: type `parser::TokenEntry` is more private than the item `parser::Parser::dbgtok`: method `parser::Parser::dbgtok` is reachable at visibility `pub`
+src/parser.rs:235:5: warning: type `parser::TokenEntry` is more private than the item `parser::Parser::debugtoken`: method `parser::Parser::debugtoken` is reachable at visibility `pub`
+src/parser.rs:261:5: warning: type `parser::TokenEntry` is more private than the item `parser::Parser::file_error`: method `parser::Parser::file_error` is reachable at visibility `pub`
+src/parser.rs:393:5: warning: type `parser::TokenEntry` is more private than the item `parser::Parser::save_token`: method `parser::Parser::save_token` is reachable at visibility `pub`
+src/parser.rs:654:5: warning: type `parser::Ident` is more private than the item `parser::Parser::parse_declaration`: method `parser::Parser::parse_declaration` is reachable at visibility `pub`
+src/parser.rs:749:5: warning: type `parser::Ident` is more private than the item `parser::Parser::parse_function_declaration`: method `parser::Parser::parse_function_declaration` is reachable at visibility `pub`
+src/parser.rs:785:5: warning: type `parser::Ident` is more private than the item `parser::Parser::fake_struct`: method `parser::Parser::fake_struct` is reachable at visibility `pub`
+src/parser.rs:818:5: warning: type `parser::Ident` is more private than the item `parser::Parser::parse_variable_declaration`: method `parser::Parser::parse_variable_declaration` is reachable at visibility `pub`
+src/parser.rs:929:5: warning: type `parser::Ident` is more private than the item `parser::Parser::parse_knr_dcl`: method `parser::Parser::parse_knr_dcl` is reachable at visibility `pub`
+src/parser.rs:976:5: warning: type `parser::Ident` is more private than the item `parser::Parser::parse_dcl`: method `parser::Parser::parse_dcl` is reachable at visibility `pub`
+src/parser.rs:989:5: warning: type `parser::Ident` is more private than the item `parser::Parser::dcl`: method `parser::Parser::dcl` is reachable at visibility `pub`
+src/parser.rs:1028:5: warning: type `parser::Ident` is more private than the item `parser::Parser::getident`: method `parser::Parser::getident` is reachable at visibility `pub`
+src/parser.rs:1075:5: warning: type `parser::Ident` is more private than the item `parser::Parser::dirdcl`: method `parser::Parser::dirdcl` is reachable at visibility `pub`
+src/parser.rs:1136:5: warning: type `parser::Ident` is more private than the item `parser::Parser::parmdcl`: method `parser::Parser::parmdcl` is reachable at visibility `pub`
+src/parser.rs:1255:5: warning: type `parser::Ident` is more private than the item `parser::Parser::get_knr_args`: method `parser::Parser::get_knr_args` is reachable at visibility `pub`
+src/parser.rs:1262:5: warning: type `parser::Ident` is more private than the item `parser::Parser::declare`: method `parser::Parser::declare` is reachable at visibility `pub`
+src/parser.rs:1296:5: warning: type `parser::Ident` is more private than the item `parser::Parser::declare_type`: method `parser::Parser::declare_type` is reachable at visibility `pub`
+src/parser.rs:1308:5: warning: type `parser::SymbolRecord` is more private than the item `parser::Parser::get_symbol`: method `parser::Parser::get_symbol` is reachable at visibility `pub`
+src/parser.rs:1319:5: warning: type `parser::SymbolRecord` is more private than the item `parser::Parser::add_reference`: method `parser::Parser::add_reference` is reachable at visibility `pub`
+src/dot.rs:60:12: warning: associated function `output_handler` is never used
+src/depmap.rs:1:12: warning: struct `Depmap` is never constructed
+src/depmap.rs:8:12: warning: multiple associated items are never used
+src/error.rs:34:12: warning: associated functions `gl_attribute_format_printf_standard`, `at_line`, and `tail` are never used
+src/help.rs:6:12: warning: struct `Help` is never constructed
+src/help.rs:9:12: warning: struct `UsageVarDef` is never constructed
+src/help.rs:17:12: warning: struct `Format` is never constructed
+src/help.rs:36:12: warning: struct `Context05` is never constructed
+src/help.rs:42:12: warning: struct `Context` is never constructed
+src/help.rs:56:12: warning: struct `SortBy` is never constructed
+src/help.rs:62:12: warning: struct `Optsort` is never constructed
+src/help.rs:69:12: warning: struct `OptionGroup` is never constructed
+src/help.rs:75:12: warning: struct `HelpOption` is never constructed
+src/help.rs:91:12: warning: struct `HelpFd` is never constructed
+src/help.rs:96:12: warning: method `into_string` is never used
+src/help.rs:113:12: warning: multiple associated functions are never used
+src/output.rs:23:10: warning: enum `StorageKind` is never used
+src/parseopt.rs:33:9: warning: fields `help`, `usage`, `group`, `aliases`, and `takes_non_option` are never read
+src/parseopt.rs:125:12: warning: multiple methods are never used
+src/parser.rs:121:5: warning: fields `use_indentation` and `parm_level` are never read
+src/symbol.rs:27:12: warning: struct `CollectData` is never constructed
+src/wordsplit.rs:6:7: warning: constant `WRDSF_ENOMEMABRT` is never used
+src/wordsplit.rs:11:7: warning: constant `WRDSF_ENV` is never used
+src/wordsplit.rs:12:7: warning: constant `WRDSF_ENV_KV` is never used
+src/wordsplit.rs:13:7: warning: constant `WRDSF_GETVAR` is never used
+src/wordsplit.rs:16:7: warning: constant `WRDSF_ALLOC_DIE` is never used
+src/wordsplit.rs:17:7: warning: constant `WRDSF_ERROR` is never used
+src/wordsplit.rs:25:7: warning: constant `WRDSF_RETURN_DELIMS` is never used
+src/wordsplit.rs:27:7: warning: constant `WRDSO_MAXWORDS` is never used
+src/wordsplit.rs:46:7: warning: constant `ALLOC_INIT` is never used
+src/wordsplit.rs:47:7: warning: constant `ALLOC_INCR` is never used
+src/wordsplit.rs:49:7: warning: constant `WSNF_WORD` is never used
+src/wordsplit.rs:50:7: warning: constant `WSNF_NULL` is never used
+src/wordsplit.rs:51:7: warning: constant `WSNF_QUOTE` is never used
+src/wordsplit.rs:52:7: warning: constant `WSNF_NOEXPAND` is never used
+src/wordsplit.rs:53:7: warning: constant `WSNF_JOIN` is never used
+src/wordsplit.rs:54:7: warning: constant `WSNF_SEXP` is never used
+src/wordsplit.rs:55:7: warning: constant `WSNF_DELIM` is never used
+src/wordsplit.rs:64:9: warning: fields `flags`, `text`, and `range` are never read
+src/wordsplit.rs:98:5: warning: fields `ws_lvl`, `ws_debug_enabled`, and `env_map` are never read
+src/wordsplit.rs:107:12: warning: multiple associated items are never used
+src/xalloc_die.rs:7:12: warning: associated function `die` is never used
+src/gnu.rs:78:5: warning: this function has too many arguments (9/7)
+src/help.rs:169:19: warning: this manual char comparison can be written more succinctly: help: consider using an array of `char`: `[',', '=']`
+src/output.rs:538:32: warning: you seem to want to iterate on a map's keys
+src/parseopt.rs:86:13: warning: very complex type used. Consider factoring parts into `type` definitions
+src/parseopt.rs:87:16: warning: very complex type used. Consider factoring parts into `type` definitions
+src/parseopt.rs:447:63: warning: this `if` has identical blocks
+src/parseopt.rs:555:9: warning: this loop could be written as a `while let` loop: help: try: `while let Some(opt) = self.options.get(idx) { .. }`
+src/parseopt.rs:614:22: warning: the loop variable `i` is only used to index `group`
+src/parser.rs:489:21: warning: this `if` can be collapsed into the outer `match`
+src/parser.rs:498:21: warning: this `if` can be collapsed into the outer `match`
+src/parser.rs:503:21: warning: this `if` can be collapsed into the outer `match`
+src/parser.rs:689:21: warning: this `if` can be collapsed into the outer `match`
+src/parser.rs:720:21: warning: in an `if` condition, avoid complex blocks or closures with blocks; instead, move the block or closure higher and bind it with a `let`
+src/parser.rs:728:25: warning: this `if` statement can be collapsed
+src/parser.rs:941:9: warning: this `if` statement can be collapsed
+src/symbol.rs:277:30: warning: using `clone` on type `SymbolKind` which implements the `Copy` trait: help: try removing the `clone` call: `s.kind`
+src/symbol.rs:392:30: warning: this boolean expression can be simplified: help: try: `(sym.callees.is_empty() || !store.reverse_tree) && sym.ref_line.is_empty()`
+src/symbol.rs:392:57: warning: this boolean expression can be simplified: help: try: `!store.reverse_tree || sym.callees.is_empty()`
+src/main.rs:131:5: warning: you should consider adding a `Default` implementation for `Main`
+src/main.rs:852:17: warning: this `if` can be collapsed into the outer `match`
+src/main.rs:394:23: warning: useless use of `vec!`: help: you can use an array directly: `[b' '; MAX_LEVEL_INDENT]`
+warning: `cflow-new-rust` (bin "cflow-new-rust") generated 93 warnings (run `cargo clippy --fix --bin "cflow-new-rust" -p cflow-new-rust -- ` to apply 19 suggestions)
+warning: `cflow-new-rust` (bin "cflow-new-rust" test) generated 93 warnings (93 duplicates)
+    Finished `dev` profile [unoptimized + debuginfo] target(s) in 1.02s

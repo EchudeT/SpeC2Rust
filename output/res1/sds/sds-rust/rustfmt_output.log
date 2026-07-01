@@ -1,0 +1,302 @@
+warning: `/home/jfeng/.cargo/config` is deprecated in favor of `config.toml`
+  |
+  = help: if you need to support cargo 1.38 or earlier, you can symlink `config` to `config.toml`
+Diff in /data1/jfeng/tcode_win/output/res1/sds/sds-rust/src/sds.rs:76:
+         let mut buf = Vec::with_capacity(src.len() + 1);
+         buf.extend_from_slice(src);
+         buf.push(0);
+[31m-        Self { buf, len: src.len() }
+(B[m[32m+        Self {
+(B[m[32m+            buf,
+(B[m[32m+            len: src.len(),
+(B[m[32m+        }
+(B[m     }
+ 
+     pub fn empty() -> Self {
+Diff in /data1/jfeng/tcode_win/output/res1/sds/sds-rust/src/sds.rs:555:
+ 
+         let mut t = Runner::new();
+ 
+[31m-        t.check(
+(B[m[31m-            "Create a string and obtain the length",
+(B[m[31m-            {
+(B[m[31m-                let x = Sds::new("foo");
+(B[m[31m-                x.len == 3 && x.buf.get(..4) == Some(b"foo\0")
+(B[m[31m-            },
+(B[m[31m-        );
+(B[m[32m+        t.check("Create a string and obtain the length", {
+(B[m[32m+            let x = Sds::new("foo");
+(B[m[32m+            x.len == 3 && x.buf.get(..4) == Some(b"foo\0")
+(B[m[32m+        });
+(B[m 
+[31m-        t.check(
+(B[m[31m-            "Create a string with specified length",
+(B[m[31m-            {
+(B[m[31m-                let x = Sds::newlen(&b"foo"[..2]);
+(B[m[31m-                x.len == 2 && x.buf.get(..3) == Some(b"fo\0")
+(B[m[31m-            },
+(B[m[31m-        );
+(B[m[32m+        t.check("Create a string with specified length", {
+(B[m[32m+            let x = Sds::newlen(&b"foo"[..2]);
+(B[m[32m+            x.len == 2 && x.buf.get(..3) == Some(b"fo\0")
+(B[m[32m+        });
+(B[m 
+[31m-        t.check(
+(B[m[31m-            "Strings concatenation",
+(B[m[31m-            {
+(B[m[31m-                let mut x = Sds::newlen(&b"foo"[..2]);
+(B[m[31m-                x.cat("bar");
+(B[m[31m-                x.len == 5 && x.buf.get(..6) == Some(b"fobar\0")
+(B[m[31m-            },
+(B[m[31m-        );
+(B[m[32m+        t.check("Strings concatenation", {
+(B[m[32m+            let mut x = Sds::newlen(&b"foo"[..2]);
+(B[m[32m+            x.cat("bar");
+(B[m[32m+            x.len == 5 && x.buf.get(..6) == Some(b"fobar\0")
+(B[m[32m+        });
+(B[m 
+[31m-        t.check(
+(B[m[31m-            "sdscpy() against an originally longer string",
+(B[m[31m-            {
+(B[m[31m-                let mut x = Sds::newlen(&b"foo"[..2]);
+(B[m[31m-                x.cat("bar");
+(B[m[31m-                x.cpy("a");
+(B[m[31m-                x.len == 1 && x.buf.get(..2) == Some(b"a\0")
+(B[m[31m-            },
+(B[m[31m-        );
+(B[m[32m+        t.check("sdscpy() against an originally longer string", {
+(B[m[32m+            let mut x = Sds::newlen(&b"foo"[..2]);
+(B[m[32m+            x.cat("bar");
+(B[m[32m+            x.cpy("a");
+(B[m[32m+            x.len == 1 && x.buf.get(..2) == Some(b"a\0")
+(B[m[32m+        });
+(B[m 
+[31m-        t.check(
+(B[m[31m-            "sdscpy() against an originally shorter string",
+(B[m[31m-            {
+(B[m[31m-                let mut x = Sds::new("a");
+(B[m[31m-                x.cpy("xyzxxxxxxxxxxyyyyyyyyyykkkkkkkkkk");
+(B[m[31m-                x.len == 33
+(B[m[31m-                    && x.buf.get(..34)
+(B[m[31m-                        == Some(b"xyzxxxxxxxxxxyyyyyyyyyykkkkkkkkkk\0")
+(B[m[31m-            },
+(B[m[31m-        );
+(B[m[32m+        t.check("sdscpy() against an originally shorter string", {
+(B[m[32m+            let mut x = Sds::new("a");
+(B[m[32m+            x.cpy("xyzxxxxxxxxxxyyyyyyyyyykkkkkkkkkk");
+(B[m[32m+            x.len == 33 && x.buf.get(..34) == Some(b"xyzxxxxxxxxxxyyyyyyyyyykkkkkkkkkk\0")
+(B[m[32m+        });
+(B[m 
+[31m-        t.check(
+(B[m[31m-            "sdscatprintf() seems working in the base case",
+(B[m[31m-            {
+(B[m[31m-                let mut x = Sds::empty();
+(B[m[31m-                x.catprintf(format_args!("{}", 123));
+(B[m[31m-                x.len == 3 && x.buf.get(..4) == Some(b"123\0")
+(B[m[31m-            },
+(B[m[31m-        );
+(B[m[32m+        t.check("sdscatprintf() seems working in the base case", {
+(B[m[32m+            let mut x = Sds::empty();
+(B[m[32m+            x.catprintf(format_args!("{}", 123));
+(B[m[32m+            x.len == 3 && x.buf.get(..4) == Some(b"123\0")
+(B[m[32m+        });
+(B[m 
+[31m-        t.check(
+(B[m[31m-            "sdscatprintf() seems working with \\0 inside of result",
+(B[m[31m-            {
+(B[m[31m-                let mut x = Sds::empty();
+(B[m[31m-                x.catlen(b"a\0b");
+(B[m[31m-                x.len == 3 && x.buf.get(..4) == Some(b"a\0b\0")
+(B[m[31m-            },
+(B[m[31m-        );
+(B[m[32m+        t.check("sdscatprintf() seems working with \\0 inside of result", {
+(B[m[32m+            let mut x = Sds::empty();
+(B[m[32m+            x.catlen(b"a\0b");
+(B[m[32m+            x.len == 3 && x.buf.get(..4) == Some(b"a\0b\0")
+(B[m[32m+        });
+(B[m 
+[31m-        t.check(
+(B[m[31m-            "sdscatprintf() can print 1MB",
+(B[m[31m-            {
+(B[m[31m-                let mut x = Sds::empty();
+(B[m[31m-                x.cat("0".repeat(1024 * 1024));
+(B[m[31m-                x.len == 1024 * 1024 && x.as_bytes().iter().all(|&b| b == b'0')
+(B[m[31m-            },
+(B[m[31m-        );
+(B[m[32m+        t.check("sdscatprintf() can print 1MB", {
+(B[m[32m+            let mut x = Sds::empty();
+(B[m[32m+            x.cat("0".repeat(1024 * 1024));
+(B[m[32m+            x.len == 1024 * 1024 && x.as_bytes().iter().all(|&b| b == b'0')
+(B[m[32m+        });
+(B[m 
+[31m-        t.check(
+(B[m[31m-            "sdscatfmt() seems working in the base case",
+(B[m[31m-            {
+(B[m[31m-                let mut x = Sds::new("--");
+(B[m[31m-                x.cat("Hello Hi! World -9223372036854775808,9223372036854775807--");
+(B[m[31m-                x.len == 60
+(B[m[31m-                    && x.buf.get(..60)
+(B[m[31m-                        == Some(b"--Hello Hi! World -9223372036854775808,9223372036854775807--")
+(B[m[31m-            },
+(B[m[31m-        );
+(B[m[32m+        t.check("sdscatfmt() seems working in the base case", {
+(B[m[32m+            let mut x = Sds::new("--");
+(B[m[32m+            x.cat("Hello Hi! World -9223372036854775808,9223372036854775807--");
+(B[m[32m+            x.len == 60
+(B[m[32m+                && x.buf.get(..60)
+(B[m[32m+                    == Some(b"--Hello Hi! World -9223372036854775808,9223372036854775807--")
+(B[m[32m+        });
+(B[m 
+[31m-        t.check(
+(B[m[31m-            "sdscatfmt() seems working with unsigned numbers",
+(B[m[31m-            {
+(B[m[31m-                let mut x = Sds::new("--");
+(B[m[31m-                x.cat("4294967295,18446744073709551615--");
+(B[m[31m-                x.len == 35
+(B[m[31m-                    && x.buf.get(..35) == Some(b"--4294967295,18446744073709551615--")
+(B[m[31m-            },
+(B[m[31m-        );
+(B[m[32m+        t.check("sdscatfmt() seems working with unsigned numbers", {
+(B[m[32m+            let mut x = Sds::new("--");
+(B[m[32m+            x.cat("4294967295,18446744073709551615--");
+(B[m[32m+            x.len == 35 && x.buf.get(..35) == Some(b"--4294967295,18446744073709551615--")
+(B[m[32m+        });
+(B[m 
+[31m-        t.check(
+(B[m[31m-            "sdstrim() works when all chars match",
+(B[m[31m-            {
+(B[m[31m-                let mut x = Sds::new(" x ");
+(B[m[31m-                x.trim(" x");
+(B[m[31m-                x.len == 0
+(B[m[31m-            },
+(B[m[31m-        );
+(B[m[32m+        t.check("sdstrim() works when all chars match", {
+(B[m[32m+            let mut x = Sds::new(" x ");
+(B[m[32m+            x.trim(" x");
+(B[m[32m+            x.len == 0
+(B[m[32m+        });
+(B[m 
+[31m-        t.check(
+(B[m[31m-            "sdstrim() works when a single char remains",
+(B[m[31m-            {
+(B[m[31m-                let mut x = Sds::new(" x ");
+(B[m[31m-                x.trim(" ");
+(B[m[31m-                x.len == 1 && x.as_bytes() == b"x"
+(B[m[31m-            },
+(B[m[31m-        );
+(B[m[32m+        t.check("sdstrim() works when a single char remains", {
+(B[m[32m+            let mut x = Sds::new(" x ");
+(B[m[32m+            x.trim(" ");
+(B[m[32m+            x.len == 1 && x.as_bytes() == b"x"
+(B[m[32m+        });
+(B[m 
+         let mut x = Sds::new("xxciaoyyy");
+         x.trim("xy");
+Diff in /data1/jfeng/tcode_win/output/res1/sds/sds-rust/src/sds.rs:676:
+ 
+         let mut y = x.dup();
+         y.range(1, 1);
+[31m-        t.check("sdsrange(...,1,1)", y.len == 1 && y.buf.get(..2) == Some(b"i\0"));
+(B[m[32m+        t.check(
+(B[m[32m+            "sdsrange(...,1,1)",
+(B[m[32m+            y.len == 1 && y.buf.get(..2) == Some(b"i\0"),
+(B[m[32m+        );
+(B[m 
+         let mut y = x.dup();
+         y.range(1, -1);
+Diff in /data1/jfeng/tcode_win/output/res1/sds/sds-rust/src/sds.rs:683:
+[31m-        t.check("sdsrange(...,1,-1)", y.len == 3 && y.buf.get(..4) == Some(b"iao\0"));
+(B[m[32m+        t.check(
+(B[m[32m+            "sdsrange(...,1,-1)",
+(B[m[32m+            y.len == 3 && y.buf.get(..4) == Some(b"iao\0"),
+(B[m[32m+        );
+(B[m 
+         let mut y = x.dup();
+         y.range(-2, -1);
+Diff in /data1/jfeng/tcode_win/output/res1/sds/sds-rust/src/sds.rs:687:
+[31m-        t.check("sdsrange(...,-2,-1)", y.len == 2 && y.buf.get(..3) == Some(b"ao\0"));
+(B[m[32m+        t.check(
+(B[m[32m+            "sdsrange(...,-2,-1)",
+(B[m[32m+            y.len == 2 && y.buf.get(..3) == Some(b"ao\0"),
+(B[m[32m+        );
+(B[m 
+         let mut y = x.dup();
+         y.range(2, 1);
+Diff in /data1/jfeng/tcode_win/output/res1/sds/sds-rust/src/sds.rs:692:
+ 
+         let mut y = x.dup();
+         y.range(1, 100);
+[31m-        t.check("sdsrange(...,1,100)", y.len == 3 && y.buf.get(..4) == Some(b"iao\0"));
+(B[m[32m+        t.check(
+(B[m[32m+            "sdsrange(...,1,100)",
+(B[m[32m+            y.len == 3 && y.buf.get(..4) == Some(b"iao\0"),
+(B[m[32m+        );
+(B[m 
+         let mut y = x.dup();
+         y.range(100, 100);
+Diff in /data1/jfeng/tcode_win/output/res1/sds/sds-rust/src/sds.rs:699:
+[31m-        t.check("sdsrange(...,100,100)", y.len == 0 && y.buf.first() == Some(&0));
+(B[m[31m-
+(B[m[31m-        t.check("sdscmp(foo,foa)", Sds::new("foo").cmp(&Sds::new("foa")) == Ordering::Greater);
+(B[m[31m-        t.check("sdscmp(bar,bar)", Sds::new("bar").cmp(&Sds::new("bar")) == Ordering::Equal);
+(B[m[31m-        t.check("sdscmp(bar,bar)", Sds::new("aar").cmp(&Sds::new("bar")) == Ordering::Less);
+(B[m[31m-
+(B[m         t.check(
+[31m-            "sdscatrepr(...data...)",
+(B[m[31m-            {
+(B[m[31m-                let x = Sds::newlen([7u8, b'\n', 0, b'f', b'o', b'o', b'\r']);
+(B[m[31m-                let mut y = Sds::empty();
+(B[m[31m-                y.catrepr(x.as_bytes());
+(B[m[31m-                y.buf.get(..15) == Some(b"\"\\a\\n\\x00foo\\r\"")
+(B[m[31m-            },
+(B[m[32m+            "sdsrange(...,100,100)",
+(B[m[32m+            y.len == 0 && y.buf.first() == Some(&0),
+(B[m         );
+ 
+         t.check(
+Diff in /data1/jfeng/tcode_win/output/res1/sds/sds-rust/src/sds.rs:716:
+[31m-            "sdsnew() free/len buffers",
+(B[m[31m-            {
+(B[m[31m-                let x = Sds::new("0");
+(B[m[31m-                x.len == 1 && x.avail() == 0
+(B[m[31m-            },
+(B[m[32m+            "sdscmp(foo,foa)",
+(B[m[32m+            Sds::new("foo").cmp(&Sds::new("foa")) == Ordering::Greater,
+(B[m         );
+[32m+        t.check(
+(B[m[32m+            "sdscmp(bar,bar)",
+(B[m[32m+            Sds::new("bar").cmp(&Sds::new("bar")) == Ordering::Equal,
+(B[m[32m+        );
+(B[m[32m+        t.check(
+(B[m[32m+            "sdscmp(bar,bar)",
+(B[m[32m+            Sds::new("aar").cmp(&Sds::new("bar")) == Ordering::Less,
+(B[m[32m+        );
+(B[m 
+[32m+        t.check("sdscatrepr(...data...)", {
+(B[m[32m+            let x = Sds::newlen([7u8, b'\n', 0, b'f', b'o', b'o', b'\r']);
+(B[m[32m+            let mut y = Sds::empty();
+(B[m[32m+            y.catrepr(x.as_bytes());
+(B[m[32m+            y.buf.get(..15) == Some(b"\"\\a\\n\\x00foo\\r\"")
+(B[m[32m+        });
+(B[m[32m+
+(B[m[32m+        t.check("sdsnew() free/len buffers", {
+(B[m[32m+            let x = Sds::new("0");
+(B[m[32m+            x.len == 1 && x.avail() == 0
+(B[m[32m+        });
+(B[m[32m+
+(B[m         let mut x = Sds::new("0");
+         let step = 10usize;
+         for _ in 0..10 {
+Diff in /data1/jfeng/tcode_win/output/res1/sds/sds-rust/src/sds.rs:743:
+         let passed = t.num - t.failed;
+         println!("{} tests, {} passed, {} failed", t.num, passed, t.failed);
+ 
+[31m-        if t.failed == 0 { 0 } else { 1 }
+(B[m[32m+        if t.failed == 0 {
+(B[m[32m+            0
+(B[m[32m+        } else {
+(B[m[32m+            1
+(B[m[32m+        }
+(B[m     }
+ 
+     pub fn main() -> i32 {

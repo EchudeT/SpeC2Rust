@@ -1,0 +1,13 @@
+warning: `/home/jfeng/.cargo/config` is deprecated in favor of `config.toml`
+  |
+  = help: if you need to support cargo 1.38 or earlier, you can symlink `config` to `config.toml`
+warning: `/home/jfeng/.cargo/config` is deprecated in favor of `config.toml`
+  |
+  = help: if you need to support cargo 1.38 or earlier, you can symlink `config` to `config.toml`
+    Checking pwd-rust v0.1.0 (/data1/jfeng/tcode_win/output/res1/pwd/pwd-rust)
+src/pwd.rs:22:12: warning: struct `DevIno` is never constructed
+src/pwd.rs:260:12: warning: associated functions `file_name`, `dev_ino`, and `main_root_file_name_03` are never used
+src/pwd.rs:128:53: warning: this `if` has identical blocks
+warning: `pwd-rust` (bin "pwd-rust" test) generated 3 warnings
+warning: `pwd-rust` (bin "pwd-rust") generated 3 warnings (3 duplicates)
+    Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.13s

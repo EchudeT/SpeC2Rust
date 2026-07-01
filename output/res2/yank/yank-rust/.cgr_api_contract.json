@@ -1,0 +1,1388 @@
+{
+  "project_name": "yank-rust",
+  "files": {
+    "src/yank.rs": {
+      "updated_at": "2026-06-07T12:37:44",
+      "contract": {
+        "public_structs": [
+          {
+            "name": "Yank",
+            "fields": [
+              {
+                "name": "input_data",
+                "public": false,
+                "type": "Vec<u8>"
+              },
+              {
+                "name": "fields",
+                "public": false,
+                "type": "Vec<Field>"
+              },
+              {
+                "name": "output_limit",
+                "public": false,
+                "type": "usize"
+              },
+              {
+                "name": "terminal",
+                "public": false,
+                "type": "Option<TerminalState>"
+              },
+              {
+                "name": "yank_argv",
+                "public": false,
+                "type": "Vec<String>"
+              },
+              {
+                "name": "one",
+                "public": false,
+                "type": "bool"
+              },
+              {
+                "name": "ignore_case",
+                "public": false,
+                "type": "bool"
+              },
+              {
+                "name": "use_alt_screen",
+                "public": false,
+                "type": "bool"
+              },
+              {
+                "name": "regex_newline",
+                "public": false,
+                "type": "bool"
+              },
+              {
+                "name": "pattern",
+                "public": false,
+                "type": "String"
+              }
+            ]
+          }
+        ],
+        "public_enums": [],
+        "public_traits": [],
+        "public_functions": [
+          "field_cmp",
+          "input",
+          "main",
+          "main_root",
+          "string_to_pattern",
+          "tend",
+          "tgetc",
+          "tmain",
+          "tputs",
+          "tsetup",
+          "twrite",
+          "usage_text",
+          "yank"
+        ],
+        "constructors": [],
+        "accessors": [],
+        "impl_methods": {
+          "Yank": [
+            "field_cmp",
+            "input",
+            "main",
+            "main_root",
+            "string_to_pattern",
+            "tend",
+            "tgetc",
+            "tmain",
+            "tputs",
+            "tsetup",
+            "twrite",
+            "usage_text",
+            "yank"
+          ]
+        },
+        "references": [
+          {
+            "path": "src/yank.rs",
+            "kind": "type",
+            "name": "Field",
+            "visibility": "private",
+            "public": false,
+            "owner_type": "",
+            "params": [],
+            "return_type": "",
+            "signature": "struct Field"
+          },
+          {
+            "path": "src/yank.rs",
+            "kind": "type",
+            "name": "TerminalState",
+            "visibility": "private",
+            "public": false,
+            "owner_type": "",
+            "params": [],
+            "return_type": "",
+            "signature": "struct TerminalState"
+          },
+          {
+            "path": "src/yank.rs",
+            "kind": "type",
+            "name": "Key",
+            "visibility": "private",
+            "public": false,
+            "owner_type": "",
+            "params": [],
+            "return_type": "",
+            "signature": "enum Key"
+          },
+          {
+            "path": "src/yank.rs",
+            "kind": "type",
+            "name": "Yank",
+            "visibility": "public",
+            "public": true,
+            "owner_type": "",
+            "params": [],
+            "return_type": "",
+            "signature": "struct Yank"
+          },
+          {
+            "path": "src/yank.rs",
+            "kind": "field",
+            "name": "lo",
+            "visibility": "private",
+            "public": false,
+            "owner_type": "Field",
+            "params": [],
+            "return_type": "usize",
+            "signature": "Field::lo: usize"
+          },
+          {
+            "path": "src/yank.rs",
+            "kind": "field",
+            "name": "so",
+            "visibility": "private",
+            "public": false,
+            "owner_type": "Field",
+            "params": [],
+            "return_type": "usize",
+            "signature": "Field::so: usize"
+          },
+          {
+            "path": "src/yank.rs",
+            "kind": "field",
+            "name": "eo",
+            "visibility": "private",
+            "public": false,
+            "owner_type": "Field",
+            "params": [],
+            "return_type": "usize",
+            "signature": "Field::eo: usize"
+          },
+          {
+            "path": "src/yank.rs",
+            "kind": "field",
+            "name": "alt_screen",
+            "visibility": "private",
+            "public": false,
+            "owner_type": "TerminalState",
+            "params": [],
+            "return_type": "bool",
+            "signature": "TerminalState::alt_screen: bool"
+          },
+          {
+            "path": "src/yank.rs",
+            "kind": "field",
+            "name": "rows",
+            "visibility": "private",
+            "public": false,
+            "owner_type": "TerminalState",
+            "params": [],
+            "return_type": "usize",
+            "signature": "TerminalState::rows: usize"
+          },
+          {
+            "path": "src/yank.rs",
+            "kind": "field",
+            "name": "cols",
+            "visibility": "private",
+            "public": false,
+            "owner_type": "TerminalState",
+            "params": [],
+            "return_type": "usize",
+            "signature": "TerminalState::cols: usize"
+          },
+          {
+            "path": "src/yank.rs",
+            "kind": "field",
+            "name": "tty_in",
+            "visibility": "private",
+            "public": false,
+            "owner_type": "TerminalState",
+            "params": [],
+            "return_type": "std::fs::File",
+            "signature": "TerminalState::tty_in: std::fs::File"
+          },
+          {
+            "path": "src/yank.rs",
+            "kind": "field",
+            "name": "tty_out",
+            "visibility": "private",
+            "public": false,
+            "owner_type": "TerminalState",
+            "params": [],
+            "return_type": "std::fs::File",
+            "signature": "TerminalState::tty_out: std::fs::File"
+          },
+          {
+            "path": "src/yank.rs",
+            "kind": "field",
+            "name": "input_data",
+            "visibility": "private",
+            "public": false,
+            "owner_type": "Yank",
+            "params": [],
+            "return_type": "Vec<u8>",
+            "signature": "Yank::input_data: Vec<u8>"
+          },
+          {
+            "path": "src/yank.rs",
+            "kind": "field",
+            "name": "fields",
+            "visibility": "private",
+            "public": false,
+            "owner_type": "Yank",
+            "params": [],
+            "return_type": "Vec<Field>",
+            "signature": "Yank::fields: Vec<Field>"
+          },
+          {
+            "path": "src/yank.rs",
+            "kind": "field",
+            "name": "output_limit",
+            "visibility": "private",
+            "public": false,
+            "owner_type": "Yank",
+            "params": [],
+            "return_type": "usize",
+            "signature": "Yank::output_limit: usize"
+          },
+          {
+            "path": "src/yank.rs",
+            "kind": "field",
+            "name": "terminal",
+            "visibility": "private",
+            "public": false,
+            "owner_type": "Yank",
+            "params": [],
+            "return_type": "Option<TerminalState>",
+            "signature": "Yank::terminal: Option<TerminalState>"
+          },
+          {
+            "path": "src/yank.rs",
+            "kind": "field",
+            "name": "yank_argv",
+            "visibility": "private",
+            "public": false,
+            "owner_type": "Yank",
+            "params": [],
+            "return_type": "Vec<String>",
+            "signature": "Yank::yank_argv: Vec<String>"
+          },
+          {
+            "path": "src/yank.rs",
+            "kind": "field",
+            "name": "one",
+            "visibility": "private",
+            "public": false,
+            "owner_type": "Yank",
+            "params": [],
+            "return_type": "bool",
+            "signature": "Yank::one: bool"
+          },
+          {
+            "path": "src/yank.rs",
+            "kind": "field",
+            "name": "ignore_case",
+            "visibility": "private",
+            "public": false,
+            "owner_type": "Yank",
+            "params": [],
+            "return_type": "bool",
+            "signature": "Yank::ignore_case: bool"
+          },
+          {
+            "path": "src/yank.rs",
+            "kind": "field",
+            "name": "use_alt_screen",
+            "visibility": "private",
+            "public": false,
+            "owner_type": "Yank",
+            "params": [],
+            "return_type": "bool",
+            "signature": "Yank::use_alt_screen: bool"
+          },
+          {
+            "path": "src/yank.rs",
+            "kind": "field",
+            "name": "regex_newline",
+            "visibility": "private",
+            "public": false,
+            "owner_type": "Yank",
+            "params": [],
+            "return_type": "bool",
+            "signature": "Yank::regex_newline: bool"
+          },
+          {
+            "path": "src/yank.rs",
+            "kind": "field",
+            "name": "pattern",
+            "visibility": "private",
+            "public": false,
+            "owner_type": "Yank",
+            "params": [],
+            "return_type": "String",
+            "signature": "Yank::pattern: String"
+          },
+          {
+            "path": "src/yank.rs",
+            "kind": "constant",
+            "name": "VERSION",
+            "visibility": "private",
+            "public": false,
+            "owner_type": "",
+            "params": [],
+            "return_type": "&str",
+            "signature": "VERSION: &str"
+          },
+          {
+            "path": "src/yank.rs",
+            "kind": "constant",
+            "name": "DEFAULT_YANK_COMMAND",
+            "visibility": "private",
+            "public": false,
+            "owner_type": "",
+            "params": [],
+            "return_type": "&str",
+            "signature": "DEFAULT_YANK_COMMAND: &str"
+          },
+          {
+            "path": "src/yank.rs",
+            "kind": "constant",
+            "name": "T_ENTER_CA_MODE",
+            "visibility": "private",
+            "public": false,
+            "owner_type": "",
+            "params": [],
+            "return_type": "&str",
+            "signature": "T_ENTER_CA_MODE: &str"
+          },
+          {
+            "path": "src/yank.rs",
+            "kind": "constant",
+            "name": "T_EXIT_CA_MODE",
+            "visibility": "private",
+            "public": false,
+            "owner_type": "",
+            "params": [],
+            "return_type": "&str",
+            "signature": "T_EXIT_CA_MODE: &str"
+          },
+          {
+            "path": "src/yank.rs",
+            "kind": "constant",
+            "name": "T_SAVE_CURSOR",
+            "visibility": "private",
+            "public": false,
+            "owner_type": "",
+            "params": [],
+            "return_type": "&str",
+            "signature": "T_SAVE_CURSOR: &str"
+          },
+          {
+            "path": "src/yank.rs",
+            "kind": "constant",
+            "name": "T_RESTORE_CURSOR",
+            "visibility": "private",
+            "public": false,
+            "owner_type": "",
+            "params": [],
+            "return_type": "&str",
+            "signature": "T_RESTORE_CURSOR: &str"
+          },
+          {
+            "path": "src/yank.rs",
+            "kind": "constant",
+            "name": "T_CURSOR_VISIBLE",
+            "visibility": "private",
+            "public": false,
+            "owner_type": "",
+            "params": [],
+            "return_type": "&str",
+            "signature": "T_CURSOR_VISIBLE: &str"
+          },
+          {
+            "path": "src/yank.rs",
+            "kind": "constant",
+            "name": "T_CURSOR_INVISIBLE",
+            "visibility": "private",
+            "public": false,
+            "owner_type": "",
+            "params": [],
+            "return_type": "&str",
+            "signature": "T_CURSOR_INVISIBLE: &str"
+          },
+          {
+            "path": "src/yank.rs",
+            "kind": "constant",
+            "name": "T_ENTER_STANDOUT_MODE",
+            "visibility": "private",
+            "public": false,
+            "owner_type": "",
+            "params": [],
+            "return_type": "&str",
+            "signature": "T_ENTER_STANDOUT_MODE: &str"
+          },
+          {
+            "path": "src/yank.rs",
+            "kind": "constant",
+            "name": "T_EXIT_STANDOUT_MODE",
+            "visibility": "private",
+            "public": false,
+            "owner_type": "",
+            "params": [],
+            "return_type": "&str",
+            "signature": "T_EXIT_STANDOUT_MODE: &str"
+          },
+          {
+            "path": "src/yank.rs",
+            "kind": "constant",
+            "name": "T_CLR_EOS",
+            "visibility": "private",
+            "public": false,
+            "owner_type": "",
+            "params": [],
+            "return_type": "&str",
+            "signature": "T_CLR_EOS: &str"
+          },
+          {
+            "path": "src/yank.rs",
+            "kind": "method",
+            "name": "default",
+            "visibility": "private",
+            "public": false,
+            "owner_type": "Yank",
+            "params": [],
+            "return_type": "Self",
+            "signature": "default() -> Self"
+          },
+          {
+            "path": "src/yank.rs",
+            "kind": "method",
+            "name": "input",
+            "visibility": "public",
+            "public": true,
+            "owner_type": "Yank",
+            "params": [
+              "&mut self"
+            ],
+            "return_type": "io::Result<()>",
+            "signature": "input(&mut self) -> io::Result<()>"
+          },
+          {
+            "path": "src/yank.rs",
+            "kind": "method",
+            "name": "string_to_pattern",
+            "visibility": "public",
+            "public": true,
+            "owner_type": "Yank",
+            "params": [
+              "s: &str"
+            ],
+            "return_type": "String",
+            "signature": "string_to_pattern(s: &str) -> String"
+          },
+          {
+            "path": "src/yank.rs",
+            "kind": "method",
+            "name": "field_cmp",
+            "visibility": "public",
+            "public": true,
+            "owner_type": "Yank",
+            "params": [
+              "f1: &Field",
+              "f2: &Field"
+            ],
+            "return_type": "i32",
+            "signature": "field_cmp(f1: &Field, f2: &Field) -> i32"
+          },
+          {
+            "path": "src/yank.rs",
+            "kind": "method",
+            "name": "xwrite",
+            "visibility": "public",
+            "public": true,
+            "owner_type": "Yank",
+            "params": [
+              "writer: &mut W",
+              "bytes: &[u8]"
+            ],
+            "return_type": "io::Result<usize>",
+            "signature": "xwrite(writer: &mut W, bytes: &[u8]) -> io::Result<usize>"
+          },
+          {
+            "path": "src/yank.rs",
+            "kind": "method",
+            "name": "yank",
+            "visibility": "public",
+            "public": true,
+            "owner_type": "Yank",
+            "params": [
+              "&self",
+              "bytes: &[u8]"
+            ],
+            "return_type": "io::Result<()>",
+            "signature": "yank(&self, bytes: &[u8]) -> io::Result<()>"
+          },
+          {
+            "path": "src/yank.rs",
+            "kind": "method",
+            "name": "twrite",
+            "visibility": "public",
+            "public": true,
+            "owner_type": "Yank",
+            "params": [
+              "&mut self",
+              "bytes: &[u8]"
+            ],
+            "return_type": "io::Result<()>",
+            "signature": "twrite(&mut self, bytes: &[u8]) -> io::Result<()>"
+          },
+          {
+            "path": "src/yank.rs",
+            "kind": "method",
+            "name": "tputs",
+            "visibility": "public",
+            "public": true,
+            "owner_type": "Yank",
+            "params": [
+              "&mut self",
+              "s: &str"
+            ],
+            "return_type": "io::Result<()>",
+            "signature": "tputs(&mut self, s: &str) -> io::Result<()>"
+          },
+          {
+            "path": "src/yank.rs",
+            "kind": "method",
+            "name": "tsetup",
+            "visibility": "public",
+            "public": true,
+            "owner_type": "Yank",
+            "params": [
+              "&mut self"
+            ],
+            "return_type": "io::Result<()>",
+            "signature": "tsetup(&mut self) -> io::Result<()>"
+          },
+          {
+            "path": "src/yank.rs",
+            "kind": "method",
+            "name": "tend",
+            "visibility": "public",
+            "public": true,
+            "owner_type": "Yank",
+            "params": [
+              "&mut self"
+            ],
+            "return_type": "io::Result<()>",
+            "signature": "tend(&mut self) -> io::Result<()>"
+          },
+          {
+            "path": "src/yank.rs",
+            "kind": "method",
+            "name": "tgetc",
+            "visibility": "public",
+            "public": true,
+            "owner_type": "Yank",
+            "params": [
+              "&mut self"
+            ],
+            "return_type": "io::Result<Key>",
+            "signature": "tgetc(&mut self) -> io::Result<Key>"
+          },
+          {
+            "path": "src/yank.rs",
+            "kind": "method",
+            "name": "tmain",
+            "visibility": "public",
+            "public": true,
+            "owner_type": "Yank",
+            "params": [
+              "&mut self"
+            ],
+            "return_type": "io::Result<Option<usize>>",
+            "signature": "tmain(&mut self) -> io::Result<Option<usize>>"
+          },
+          {
+            "path": "src/yank.rs",
+            "kind": "method",
+            "name": "tgetc_key_is_down_last",
+            "visibility": "private",
+            "public": false,
+            "owner_type": "Yank",
+            "params": [
+              "&self"
+            ],
+            "return_type": "bool",
+            "signature": "tgetc_key_is_down_last(&self) -> bool"
+          },
+          {
+            "path": "src/yank.rs",
+            "kind": "method",
+            "name": "usage_text",
+            "visibility": "public",
+            "public": true,
+            "owner_type": "Yank",
+            "params": [],
+            "return_type": "String",
+            "signature": "usage_text() -> String"
+          },
+          {
+            "path": "src/yank.rs",
+            "kind": "method",
+            "name": "main",
+            "visibility": "public",
+            "public": true,
+            "owner_type": "Yank",
+            "params": [
+              "&mut self",
+              "args: &[String]"
+            ],
+            "return_type": "i32",
+            "signature": "main(&mut self, args: &[String]) -> i32"
+          },
+          {
+            "path": "src/yank.rs",
+            "kind": "method",
+            "name": "main_root",
+            "visibility": "public",
+            "public": true,
+            "owner_type": "Yank",
+            "params": [
+              "&mut self",
+              "args: &[String]"
+            ],
+            "return_type": "io::Result<i32>",
+            "signature": "main_root(&mut self, args: &[String]) -> io::Result<i32>"
+          },
+          {
+            "path": "src/yank.rs",
+            "kind": "method",
+            "name": "stdout_is_tty",
+            "visibility": "private",
+            "public": false,
+            "owner_type": "Yank",
+            "params": [],
+            "return_type": "bool",
+            "signature": "stdout_is_tty() -> bool"
+          }
+        ]
+      },
+      "references": [
+        {
+          "path": "src/yank.rs",
+          "kind": "type",
+          "name": "Field",
+          "visibility": "private",
+          "public": false,
+          "owner_type": "",
+          "params": [],
+          "return_type": "",
+          "signature": "struct Field"
+        },
+        {
+          "path": "src/yank.rs",
+          "kind": "type",
+          "name": "TerminalState",
+          "visibility": "private",
+          "public": false,
+          "owner_type": "",
+          "params": [],
+          "return_type": "",
+          "signature": "struct TerminalState"
+        },
+        {
+          "path": "src/yank.rs",
+          "kind": "type",
+          "name": "Key",
+          "visibility": "private",
+          "public": false,
+          "owner_type": "",
+          "params": [],
+          "return_type": "",
+          "signature": "enum Key"
+        },
+        {
+          "path": "src/yank.rs",
+          "kind": "type",
+          "name": "Yank",
+          "visibility": "public",
+          "public": true,
+          "owner_type": "",
+          "params": [],
+          "return_type": "",
+          "signature": "struct Yank"
+        },
+        {
+          "path": "src/yank.rs",
+          "kind": "field",
+          "name": "lo",
+          "visibility": "private",
+          "public": false,
+          "owner_type": "Field",
+          "params": [],
+          "return_type": "usize",
+          "signature": "Field::lo: usize"
+        },
+        {
+          "path": "src/yank.rs",
+          "kind": "field",
+          "name": "so",
+          "visibility": "private",
+          "public": false,
+          "owner_type": "Field",
+          "params": [],
+          "return_type": "usize",
+          "signature": "Field::so: usize"
+        },
+        {
+          "path": "src/yank.rs",
+          "kind": "field",
+          "name": "eo",
+          "visibility": "private",
+          "public": false,
+          "owner_type": "Field",
+          "params": [],
+          "return_type": "usize",
+          "signature": "Field::eo: usize"
+        },
+        {
+          "path": "src/yank.rs",
+          "kind": "field",
+          "name": "alt_screen",
+          "visibility": "private",
+          "public": false,
+          "owner_type": "TerminalState",
+          "params": [],
+          "return_type": "bool",
+          "signature": "TerminalState::alt_screen: bool"
+        },
+        {
+          "path": "src/yank.rs",
+          "kind": "field",
+          "name": "rows",
+          "visibility": "private",
+          "public": false,
+          "owner_type": "TerminalState",
+          "params": [],
+          "return_type": "usize",
+          "signature": "TerminalState::rows: usize"
+        },
+        {
+          "path": "src/yank.rs",
+          "kind": "field",
+          "name": "cols",
+          "visibility": "private",
+          "public": false,
+          "owner_type": "TerminalState",
+          "params": [],
+          "return_type": "usize",
+          "signature": "TerminalState::cols: usize"
+        },
+        {
+          "path": "src/yank.rs",
+          "kind": "field",
+          "name": "tty_in",
+          "visibility": "private",
+          "public": false,
+          "owner_type": "TerminalState",
+          "params": [],
+          "return_type": "std::fs::File",
+          "signature": "TerminalState::tty_in: std::fs::File"
+        },
+        {
+          "path": "src/yank.rs",
+          "kind": "field",
+          "name": "tty_out",
+          "visibility": "private",
+          "public": false,
+          "owner_type": "TerminalState",
+          "params": [],
+          "return_type": "std::fs::File",
+          "signature": "TerminalState::tty_out: std::fs::File"
+        },
+        {
+          "path": "src/yank.rs",
+          "kind": "field",
+          "name": "input_data",
+          "visibility": "private",
+          "public": false,
+          "owner_type": "Yank",
+          "params": [],
+          "return_type": "Vec<u8>",
+          "signature": "Yank::input_data: Vec<u8>"
+        },
+        {
+          "path": "src/yank.rs",
+          "kind": "field",
+          "name": "fields",
+          "visibility": "private",
+          "public": false,
+          "owner_type": "Yank",
+          "params": [],
+          "return_type": "Vec<Field>",
+          "signature": "Yank::fields: Vec<Field>"
+        },
+        {
+          "path": "src/yank.rs",
+          "kind": "field",
+          "name": "output_limit",
+          "visibility": "private",
+          "public": false,
+          "owner_type": "Yank",
+          "params": [],
+          "return_type": "usize",
+          "signature": "Yank::output_limit: usize"
+        },
+        {
+          "path": "src/yank.rs",
+          "kind": "field",
+          "name": "terminal",
+          "visibility": "private",
+          "public": false,
+          "owner_type": "Yank",
+          "params": [],
+          "return_type": "Option<TerminalState>",
+          "signature": "Yank::terminal: Option<TerminalState>"
+        },
+        {
+          "path": "src/yank.rs",
+          "kind": "field",
+          "name": "yank_argv",
+          "visibility": "private",
+          "public": false,
+          "owner_type": "Yank",
+          "params": [],
+          "return_type": "Vec<String>",
+          "signature": "Yank::yank_argv: Vec<String>"
+        },
+        {
+          "path": "src/yank.rs",
+          "kind": "field",
+          "name": "one",
+          "visibility": "private",
+          "public": false,
+          "owner_type": "Yank",
+          "params": [],
+          "return_type": "bool",
+          "signature": "Yank::one: bool"
+        },
+        {
+          "path": "src/yank.rs",
+          "kind": "field",
+          "name": "ignore_case",
+          "visibility": "private",
+          "public": false,
+          "owner_type": "Yank",
+          "params": [],
+          "return_type": "bool",
+          "signature": "Yank::ignore_case: bool"
+        },
+        {
+          "path": "src/yank.rs",
+          "kind": "field",
+          "name": "use_alt_screen",
+          "visibility": "private",
+          "public": false,
+          "owner_type": "Yank",
+          "params": [],
+          "return_type": "bool",
+          "signature": "Yank::use_alt_screen: bool"
+        },
+        {
+          "path": "src/yank.rs",
+          "kind": "field",
+          "name": "regex_newline",
+          "visibility": "private",
+          "public": false,
+          "owner_type": "Yank",
+          "params": [],
+          "return_type": "bool",
+          "signature": "Yank::regex_newline: bool"
+        },
+        {
+          "path": "src/yank.rs",
+          "kind": "field",
+          "name": "pattern",
+          "visibility": "private",
+          "public": false,
+          "owner_type": "Yank",
+          "params": [],
+          "return_type": "String",
+          "signature": "Yank::pattern: String"
+        },
+        {
+          "path": "src/yank.rs",
+          "kind": "constant",
+          "name": "VERSION",
+          "visibility": "private",
+          "public": false,
+          "owner_type": "",
+          "params": [],
+          "return_type": "&str",
+          "signature": "VERSION: &str"
+        },
+        {
+          "path": "src/yank.rs",
+          "kind": "constant",
+          "name": "DEFAULT_YANK_COMMAND",
+          "visibility": "private",
+          "public": false,
+          "owner_type": "",
+          "params": [],
+          "return_type": "&str",
+          "signature": "DEFAULT_YANK_COMMAND: &str"
+        },
+        {
+          "path": "src/yank.rs",
+          "kind": "constant",
+          "name": "T_ENTER_CA_MODE",
+          "visibility": "private",
+          "public": false,
+          "owner_type": "",
+          "params": [],
+          "return_type": "&str",
+          "signature": "T_ENTER_CA_MODE: &str"
+        },
+        {
+          "path": "src/yank.rs",
+          "kind": "constant",
+          "name": "T_EXIT_CA_MODE",
+          "visibility": "private",
+          "public": false,
+          "owner_type": "",
+          "params": [],
+          "return_type": "&str",
+          "signature": "T_EXIT_CA_MODE: &str"
+        },
+        {
+          "path": "src/yank.rs",
+          "kind": "constant",
+          "name": "T_SAVE_CURSOR",
+          "visibility": "private",
+          "public": false,
+          "owner_type": "",
+          "params": [],
+          "return_type": "&str",
+          "signature": "T_SAVE_CURSOR: &str"
+        },
+        {
+          "path": "src/yank.rs",
+          "kind": "constant",
+          "name": "T_RESTORE_CURSOR",
+          "visibility": "private",
+          "public": false,
+          "owner_type": "",
+          "params": [],
+          "return_type": "&str",
+          "signature": "T_RESTORE_CURSOR: &str"
+        },
+        {
+          "path": "src/yank.rs",
+          "kind": "constant",
+          "name": "T_CURSOR_VISIBLE",
+          "visibility": "private",
+          "public": false,
+          "owner_type": "",
+          "params": [],
+          "return_type": "&str",
+          "signature": "T_CURSOR_VISIBLE: &str"
+        },
+        {
+          "path": "src/yank.rs",
+          "kind": "constant",
+          "name": "T_CURSOR_INVISIBLE",
+          "visibility": "private",
+          "public": false,
+          "owner_type": "",
+          "params": [],
+          "return_type": "&str",
+          "signature": "T_CURSOR_INVISIBLE: &str"
+        },
+        {
+          "path": "src/yank.rs",
+          "kind": "constant",
+          "name": "T_ENTER_STANDOUT_MODE",
+          "visibility": "private",
+          "public": false,
+          "owner_type": "",
+          "params": [],
+          "return_type": "&str",
+          "signature": "T_ENTER_STANDOUT_MODE: &str"
+        },
+        {
+          "path": "src/yank.rs",
+          "kind": "constant",
+          "name": "T_EXIT_STANDOUT_MODE",
+          "visibility": "private",
+          "public": false,
+          "owner_type": "",
+          "params": [],
+          "return_type": "&str",
+          "signature": "T_EXIT_STANDOUT_MODE: &str"
+        },
+        {
+          "path": "src/yank.rs",
+          "kind": "constant",
+          "name": "T_CLR_EOS",
+          "visibility": "private",
+          "public": false,
+          "owner_type": "",
+          "params": [],
+          "return_type": "&str",
+          "signature": "T_CLR_EOS: &str"
+        },
+        {
+          "path": "src/yank.rs",
+          "kind": "method",
+          "name": "default",
+          "visibility": "private",
+          "public": false,
+          "owner_type": "Yank",
+          "params": [],
+          "return_type": "Self",
+          "signature": "default() -> Self"
+        },
+        {
+          "path": "src/yank.rs",
+          "kind": "method",
+          "name": "input",
+          "visibility": "public",
+          "public": true,
+          "owner_type": "Yank",
+          "params": [
+            "&mut self"
+          ],
+          "return_type": "io::Result<()>",
+          "signature": "input(&mut self) -> io::Result<()>"
+        },
+        {
+          "path": "src/yank.rs",
+          "kind": "method",
+          "name": "string_to_pattern",
+          "visibility": "public",
+          "public": true,
+          "owner_type": "Yank",
+          "params": [
+            "s: &str"
+          ],
+          "return_type": "String",
+          "signature": "string_to_pattern(s: &str) -> String"
+        },
+        {
+          "path": "src/yank.rs",
+          "kind": "method",
+          "name": "field_cmp",
+          "visibility": "public",
+          "public": true,
+          "owner_type": "Yank",
+          "params": [
+            "f1: &Field",
+            "f2: &Field"
+          ],
+          "return_type": "i32",
+          "signature": "field_cmp(f1: &Field, f2: &Field) -> i32"
+        },
+        {
+          "path": "src/yank.rs",
+          "kind": "method",
+          "name": "xwrite",
+          "visibility": "public",
+          "public": true,
+          "owner_type": "Yank",
+          "params": [
+            "writer: &mut W",
+            "bytes: &[u8]"
+          ],
+          "return_type": "io::Result<usize>",
+          "signature": "xwrite(writer: &mut W, bytes: &[u8]) -> io::Result<usize>"
+        },
+        {
+          "path": "src/yank.rs",
+          "kind": "method",
+          "name": "yank",
+          "visibility": "public",
+          "public": true,
+          "owner_type": "Yank",
+          "params": [
+            "&self",
+            "bytes: &[u8]"
+          ],
+          "return_type": "io::Result<()>",
+          "signature": "yank(&self, bytes: &[u8]) -> io::Result<()>"
+        },
+        {
+          "path": "src/yank.rs",
+          "kind": "method",
+          "name": "twrite",
+          "visibility": "public",
+          "public": true,
+          "owner_type": "Yank",
+          "params": [
+            "&mut self",
+            "bytes: &[u8]"
+          ],
+          "return_type": "io::Result<()>",
+          "signature": "twrite(&mut self, bytes: &[u8]) -> io::Result<()>"
+        },
+        {
+          "path": "src/yank.rs",
+          "kind": "method",
+          "name": "tputs",
+          "visibility": "public",
+          "public": true,
+          "owner_type": "Yank",
+          "params": [
+            "&mut self",
+            "s: &str"
+          ],
+          "return_type": "io::Result<()>",
+          "signature": "tputs(&mut self, s: &str) -> io::Result<()>"
+        },
+        {
+          "path": "src/yank.rs",
+          "kind": "method",
+          "name": "tsetup",
+          "visibility": "public",
+          "public": true,
+          "owner_type": "Yank",
+          "params": [
+            "&mut self"
+          ],
+          "return_type": "io::Result<()>",
+          "signature": "tsetup(&mut self) -> io::Result<()>"
+        },
+        {
+          "path": "src/yank.rs",
+          "kind": "method",
+          "name": "tend",
+          "visibility": "public",
+          "public": true,
+          "owner_type": "Yank",
+          "params": [
+            "&mut self"
+          ],
+          "return_type": "io::Result<()>",
+          "signature": "tend(&mut self) -> io::Result<()>"
+        },
+        {
+          "path": "src/yank.rs",
+          "kind": "method",
+          "name": "tgetc",
+          "visibility": "public",
+          "public": true,
+          "owner_type": "Yank",
+          "params": [
+            "&mut self"
+          ],
+          "return_type": "io::Result<Key>",
+          "signature": "tgetc(&mut self) -> io::Result<Key>"
+        },
+        {
+          "path": "src/yank.rs",
+          "kind": "method",
+          "name": "tmain",
+          "visibility": "public",
+          "public": true,
+          "owner_type": "Yank",
+          "params": [
+            "&mut self"
+          ],
+          "return_type": "io::Result<Option<usize>>",
+          "signature": "tmain(&mut self) -> io::Result<Option<usize>>"
+        },
+        {
+          "path": "src/yank.rs",
+          "kind": "method",
+          "name": "tgetc_key_is_down_last",
+          "visibility": "private",
+          "public": false,
+          "owner_type": "Yank",
+          "params": [
+            "&self"
+          ],
+          "return_type": "bool",
+          "signature": "tgetc_key_is_down_last(&self) -> bool"
+        },
+        {
+          "path": "src/yank.rs",
+          "kind": "method",
+          "name": "usage_text",
+          "visibility": "public",
+          "public": true,
+          "owner_type": "Yank",
+          "params": [],
+          "return_type": "String",
+          "signature": "usage_text() -> String"
+        },
+        {
+          "path": "src/yank.rs",
+          "kind": "method",
+          "name": "main",
+          "visibility": "public",
+          "public": true,
+          "owner_type": "Yank",
+          "params": [
+            "&mut self",
+            "args: &[String]"
+          ],
+          "return_type": "i32",
+          "signature": "main(&mut self, args: &[String]) -> i32"
+        },
+        {
+          "path": "src/yank.rs",
+          "kind": "method",
+          "name": "main_root",
+          "visibility": "public",
+          "public": true,
+          "owner_type": "Yank",
+          "params": [
+            "&mut self",
+            "args: &[String]"
+          ],
+          "return_type": "io::Result<i32>",
+          "signature": "main_root(&mut self, args: &[String]) -> io::Result<i32>"
+        },
+        {
+          "path": "src/yank.rs",
+          "kind": "method",
+          "name": "stdout_is_tty",
+          "visibility": "private",
+          "public": false,
+          "owner_type": "Yank",
+          "params": [],
+          "return_type": "bool",
+          "signature": "stdout_is_tty() -> bool"
+        }
+      ]
+    },
+    "src/main.rs": {
+      "updated_at": "2026-06-07T12:37:53",
+      "contract": {
+        "public_structs": [],
+        "public_enums": [],
+        "public_traits": [],
+        "public_functions": [
+          "run"
+        ],
+        "constructors": [],
+        "accessors": [],
+        "impl_methods": {
+          "Main": [
+            "run"
+          ]
+        },
+        "references": [
+          {
+            "path": "src/main.rs",
+            "kind": "module",
+            "name": "yank",
+            "visibility": "private",
+            "public": false,
+            "owner_type": "",
+            "params": [],
+            "return_type": "",
+            "signature": "yank"
+          },
+          {
+            "path": "src/main.rs",
+            "kind": "type",
+            "name": "Main",
+            "visibility": "public",
+            "public": true,
+            "owner_type": "",
+            "params": [],
+            "return_type": "",
+            "signature": "struct Main"
+          },
+          {
+            "path": "src/main.rs",
+            "kind": "function",
+            "name": "main",
+            "visibility": "private",
+            "public": false,
+            "owner_type": "",
+            "params": [],
+            "return_type": "",
+            "signature": "main()"
+          },
+          {
+            "path": "src/main.rs",
+            "kind": "method",
+            "name": "run",
+            "visibility": "public",
+            "public": true,
+            "owner_type": "Main",
+            "params": [],
+            "return_type": "i32",
+            "signature": "run() -> i32"
+          }
+        ]
+      },
+      "references": [
+        {
+          "path": "src/main.rs",
+          "kind": "module",
+          "name": "yank",
+          "visibility": "private",
+          "public": false,
+          "owner_type": "",
+          "params": [],
+          "return_type": "",
+          "signature": "yank"
+        },
+        {
+          "path": "src/main.rs",
+          "kind": "type",
+          "name": "Main",
+          "visibility": "public",
+          "public": true,
+          "owner_type": "",
+          "params": [],
+          "return_type": "",
+          "signature": "struct Main"
+        },
+        {
+          "path": "src/main.rs",
+          "kind": "function",
+          "name": "main",
+          "visibility": "private",
+          "public": false,
+          "owner_type": "",
+          "params": [],
+          "return_type": "",
+          "signature": "main()"
+        },
+        {
+          "path": "src/main.rs",
+          "kind": "method",
+          "name": "run",
+          "visibility": "public",
+          "public": true,
+          "owner_type": "Main",
+          "params": [],
+          "return_type": "i32",
+          "signature": "run() -> i32"
+        }
+      ]
+    }
+  },
+  "updated_at": "2026-06-07T12:37:53"
+}

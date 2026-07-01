@@ -1,0 +1,15 @@
+warning: `/home/jfeng/.cargo/config` is deprecated in favor of `config.toml`
+  |
+  = help: if you need to support cargo 1.38 or earlier, you can symlink `config` to `config.toml`
+warning: `/home/jfeng/.cargo/config` is deprecated in favor of `config.toml`
+  |
+  = help: if you need to support cargo 1.38 or earlier, you can symlink `config` to `config.toml`
+    Checking shc-rust v0.1.0 (/data1/jfeng/tcode_win/output/res1/shc/shc-rust)
+src/shc.rs:636:5: warning: type `shc::ShcError` is more private than the item `shc::Shc::write_c`: method `shc::Shc::write_c` is reachable at visibility `pub(crate)`
+src/shc.rs:767:5: warning: type `shc::ShcError` is more private than the item `shc::Shc::make`: method `shc::Shc::make` is reachable at visibility `pub(crate)`
+src/shc.rs:804:5: warning: type `shc::ShcError` is more private than the item `shc::Shc::do_all`: method `shc::Shc::do_all` is reachable at visibility `pub(crate)`
+src/shc.rs:430:12: warning: methods `arc_4` and `dump_array` are never used
+src/shc.rs:530:64: warning: this `if` has identical blocks
+warning: `shc-rust` (bin "shc-rust") generated 5 warnings (1 duplicate)
+warning: `shc-rust` (bin "shc-rust" test) generated 5 warnings (4 duplicates)
+    Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.30s

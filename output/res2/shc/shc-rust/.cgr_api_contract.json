@@ -1,0 +1,1595 @@
+{
+  "project_name": "shc-rust",
+  "files": {
+    "src/shc.rs": {
+      "updated_at": "2026-06-16T13:09:22",
+      "contract": {
+        "public_structs": [
+          {
+            "name": "Shc",
+            "fields": [
+              {
+                "name": "stte",
+                "public": false,
+                "type": "[u8; 256]"
+              },
+              {
+                "name": "indx",
+                "public": false,
+                "type": "u8"
+              },
+              {
+                "name": "jndx",
+                "public": false,
+                "type": "u8"
+              },
+              {
+                "name": "kndx",
+                "public": false,
+                "type": "u8"
+              },
+              {
+                "name": "offset",
+                "public": false,
+                "type": "usize"
+              },
+              {
+                "name": "rng",
+                "public": false,
+                "type": "u64"
+              },
+              {
+                "name": "config",
+                "public": false,
+                "type": "Config"
+              }
+            ]
+          }
+        ],
+        "public_enums": [],
+        "public_traits": [],
+        "public_functions": [
+          "arc_4",
+          "do_all",
+          "dump_array",
+          "eval_shell",
+          "key",
+          "key_with_file",
+          "main",
+          "make",
+          "module_src",
+          "noise",
+          "parse_an_arg",
+          "parse_args",
+          "prnt_array",
+          "prnt_bytes",
+          "rand_chr",
+          "rand_mod",
+          "read_script",
+          "stte_0",
+          "write_c"
+        ],
+        "constructors": [],
+        "accessors": [],
+        "impl_methods": {
+          "Shc": [
+            "arc_4",
+            "do_all",
+            "dump_array",
+            "eval_shell",
+            "key",
+            "key_with_file",
+            "main",
+            "make",
+            "module_src",
+            "noise",
+            "parse_an_arg",
+            "parse_args",
+            "prnt_array",
+            "prnt_bytes",
+            "rand_chr",
+            "rand_mod",
+            "read_script",
+            "stte_0",
+            "write_c"
+          ]
+        },
+        "references": [
+          {
+            "path": "src/shc.rs",
+            "kind": "type",
+            "name": "Shc",
+            "visibility": "public",
+            "public": true,
+            "owner_type": "",
+            "params": [],
+            "return_type": "",
+            "signature": "struct Shc"
+          },
+          {
+            "path": "src/shc.rs",
+            "kind": "type",
+            "name": "Config",
+            "visibility": "private",
+            "public": false,
+            "owner_type": "",
+            "params": [],
+            "return_type": "",
+            "signature": "struct Config"
+          },
+          {
+            "path": "src/shc.rs",
+            "kind": "type",
+            "name": "ShcError",
+            "visibility": "private",
+            "public": false,
+            "owner_type": "",
+            "params": [],
+            "return_type": "",
+            "signature": "enum ShcError"
+          },
+          {
+            "path": "src/shc.rs",
+            "kind": "type",
+            "name": "ParseFlow",
+            "visibility": "private",
+            "public": false,
+            "owner_type": "",
+            "params": [],
+            "return_type": "",
+            "signature": "enum ParseFlow"
+          },
+          {
+            "path": "src/shc.rs",
+            "kind": "field",
+            "name": "stte",
+            "visibility": "private",
+            "public": false,
+            "owner_type": "Shc",
+            "params": [],
+            "return_type": "[u8; 256]",
+            "signature": "Shc::stte: [u8; 256]"
+          },
+          {
+            "path": "src/shc.rs",
+            "kind": "field",
+            "name": "indx",
+            "visibility": "private",
+            "public": false,
+            "owner_type": "Shc",
+            "params": [],
+            "return_type": "u8",
+            "signature": "Shc::indx: u8"
+          },
+          {
+            "path": "src/shc.rs",
+            "kind": "field",
+            "name": "jndx",
+            "visibility": "private",
+            "public": false,
+            "owner_type": "Shc",
+            "params": [],
+            "return_type": "u8",
+            "signature": "Shc::jndx: u8"
+          },
+          {
+            "path": "src/shc.rs",
+            "kind": "field",
+            "name": "kndx",
+            "visibility": "private",
+            "public": false,
+            "owner_type": "Shc",
+            "params": [],
+            "return_type": "u8",
+            "signature": "Shc::kndx: u8"
+          },
+          {
+            "path": "src/shc.rs",
+            "kind": "field",
+            "name": "offset",
+            "visibility": "private",
+            "public": false,
+            "owner_type": "Shc",
+            "params": [],
+            "return_type": "usize",
+            "signature": "Shc::offset: usize"
+          },
+          {
+            "path": "src/shc.rs",
+            "kind": "field",
+            "name": "rng",
+            "visibility": "private",
+            "public": false,
+            "owner_type": "Shc",
+            "params": [],
+            "return_type": "u64",
+            "signature": "Shc::rng: u64"
+          },
+          {
+            "path": "src/shc.rs",
+            "kind": "field",
+            "name": "config",
+            "visibility": "private",
+            "public": false,
+            "owner_type": "Shc",
+            "params": [],
+            "return_type": "Config",
+            "signature": "Shc::config: Config"
+          },
+          {
+            "path": "src/shc.rs",
+            "kind": "field",
+            "name": "my_name",
+            "visibility": "private",
+            "public": false,
+            "owner_type": "Config",
+            "params": [],
+            "return_type": "String",
+            "signature": "Config::my_name: String"
+          },
+          {
+            "path": "src/shc.rs",
+            "kind": "field",
+            "name": "file",
+            "visibility": "private",
+            "public": false,
+            "owner_type": "Config",
+            "params": [],
+            "return_type": "Option<PathBuf>",
+            "signature": "Config::file: Option<PathBuf>"
+          },
+          {
+            "path": "src/shc.rs",
+            "kind": "field",
+            "name": "file2",
+            "visibility": "private",
+            "public": false,
+            "owner_type": "Config",
+            "params": [],
+            "return_type": "Option<PathBuf>",
+            "signature": "Config::file2: Option<PathBuf>"
+          },
+          {
+            "path": "src/shc.rs",
+            "kind": "field",
+            "name": "expiration",
+            "visibility": "private",
+            "public": false,
+            "owner_type": "Config",
+            "params": [],
+            "return_type": "String",
+            "signature": "Config::expiration: String"
+          },
+          {
+            "path": "src/shc.rs",
+            "kind": "field",
+            "name": "mail",
+            "visibility": "private",
+            "public": false,
+            "owner_type": "Config",
+            "params": [],
+            "return_type": "String",
+            "signature": "Config::mail: String"
+          },
+          {
+            "path": "src/shc.rs",
+            "kind": "field",
+            "name": "inlo",
+            "visibility": "private",
+            "public": false,
+            "owner_type": "Config",
+            "params": [],
+            "return_type": "Option<String>",
+            "signature": "Config::inlo: Option<String>"
+          },
+          {
+            "path": "src/shc.rs",
+            "kind": "field",
+            "name": "xecc",
+            "visibility": "private",
+            "public": false,
+            "owner_type": "Config",
+            "params": [],
+            "return_type": "Option<String>",
+            "signature": "Config::xecc: Option<String>"
+          },
+          {
+            "path": "src/shc.rs",
+            "kind": "field",
+            "name": "lsto",
+            "visibility": "private",
+            "public": false,
+            "owner_type": "Config",
+            "params": [],
+            "return_type": "Option<String>",
+            "signature": "Config::lsto: Option<String>"
+          },
+          {
+            "path": "src/shc.rs",
+            "kind": "field",
+            "name": "rlax",
+            "visibility": "private",
+            "public": false,
+            "owner_type": "Config",
+            "params": [],
+            "return_type": "Vec<u8>",
+            "signature": "Config::rlax: Vec<u8>"
+          },
+          {
+            "path": "src/shc.rs",
+            "kind": "field",
+            "name": "verbose",
+            "visibility": "private",
+            "public": false,
+            "owner_type": "Config",
+            "params": [],
+            "return_type": "bool",
+            "signature": "Config::verbose: bool"
+          },
+          {
+            "path": "src/shc.rs",
+            "kind": "field",
+            "name": "setuid_flag",
+            "visibility": "private",
+            "public": false,
+            "owner_type": "Config",
+            "params": [],
+            "return_type": "bool",
+            "signature": "Config::setuid_flag: bool"
+          },
+          {
+            "path": "src/shc.rs",
+            "kind": "field",
+            "name": "debugexec_flag",
+            "visibility": "private",
+            "public": false,
+            "owner_type": "Config",
+            "params": [],
+            "return_type": "bool",
+            "signature": "Config::debugexec_flag: bool"
+          },
+          {
+            "path": "src/shc.rs",
+            "kind": "field",
+            "name": "traceable_flag",
+            "visibility": "private",
+            "public": false,
+            "owner_type": "Config",
+            "params": [],
+            "return_type": "bool",
+            "signature": "Config::traceable_flag: bool"
+          },
+          {
+            "path": "src/shc.rs",
+            "kind": "field",
+            "name": "hardening_flag",
+            "visibility": "private",
+            "public": false,
+            "owner_type": "Config",
+            "params": [],
+            "return_type": "bool",
+            "signature": "Config::hardening_flag: bool"
+          },
+          {
+            "path": "src/shc.rs",
+            "kind": "field",
+            "name": "busyboxon_flag",
+            "visibility": "private",
+            "public": false,
+            "owner_type": "Config",
+            "params": [],
+            "return_type": "bool",
+            "signature": "Config::busyboxon_flag: bool"
+          },
+          {
+            "path": "src/shc.rs",
+            "kind": "field",
+            "name": "mmap2_flag",
+            "visibility": "private",
+            "public": false,
+            "owner_type": "Config",
+            "params": [],
+            "return_type": "bool",
+            "signature": "Config::mmap2_flag: bool"
+          },
+          {
+            "path": "src/shc.rs",
+            "kind": "field",
+            "name": "shll",
+            "visibility": "private",
+            "public": false,
+            "owner_type": "Config",
+            "params": [],
+            "return_type": "Option<String>",
+            "signature": "Config::shll: Option<String>"
+          },
+          {
+            "path": "src/shc.rs",
+            "kind": "field",
+            "name": "opts",
+            "visibility": "private",
+            "public": false,
+            "owner_type": "Config",
+            "params": [],
+            "return_type": "String",
+            "signature": "Config::opts: String"
+          },
+          {
+            "path": "src/shc.rs",
+            "kind": "field",
+            "name": "text",
+            "visibility": "private",
+            "public": false,
+            "owner_type": "Config",
+            "params": [],
+            "return_type": "Option<Vec<u8>>",
+            "signature": "Config::text: Option<Vec<u8>>"
+          },
+          {
+            "path": "src/shc.rs",
+            "kind": "method",
+            "name": "from",
+            "visibility": "private",
+            "public": false,
+            "owner_type": "ShcError",
+            "params": [
+              "value: io::Error"
+            ],
+            "return_type": "Self",
+            "signature": "from(value: io::Error) -> Self"
+          },
+          {
+            "path": "src/shc.rs",
+            "kind": "method",
+            "name": "fmt",
+            "visibility": "private",
+            "public": false,
+            "owner_type": "ShcError",
+            "params": [
+              "&self",
+              "f: &mut std::fmt::Formatter<'_>"
+            ],
+            "return_type": "std::fmt::Result",
+            "signature": "fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result"
+          },
+          {
+            "path": "src/shc.rs",
+            "kind": "method",
+            "name": "default",
+            "visibility": "private",
+            "public": false,
+            "owner_type": "Shc",
+            "params": [],
+            "return_type": "Self",
+            "signature": "default() -> Self"
+          },
+          {
+            "path": "src/shc.rs",
+            "kind": "method",
+            "name": "parse_an_arg",
+            "visibility": "public",
+            "public": true,
+            "owner_type": "Shc",
+            "params": [
+              "&mut self",
+              "args: &[String]",
+              "index: &mut usize"
+            ],
+            "return_type": "Result<bool, String>",
+            "signature": "parse_an_arg(&mut self, args: &[String], index: &mut usize) -> Result<bool, String>"
+          },
+          {
+            "path": "src/shc.rs",
+            "kind": "method",
+            "name": "parse_args",
+            "visibility": "public",
+            "public": true,
+            "owner_type": "Shc",
+            "params": [
+              "&mut self",
+              "args: &[String]"
+            ],
+            "return_type": "Result<(), String>",
+            "signature": "parse_args(&mut self, args: &[String]) -> Result<(), String>"
+          },
+          {
+            "path": "src/shc.rs",
+            "kind": "method",
+            "name": "stte_0",
+            "visibility": "public",
+            "public": true,
+            "owner_type": "Shc",
+            "params": [
+              "&mut self"
+            ],
+            "return_type": "",
+            "signature": "stte_0(&mut self)"
+          },
+          {
+            "path": "src/shc.rs",
+            "kind": "method",
+            "name": "key",
+            "visibility": "public",
+            "public": true,
+            "owner_type": "Shc",
+            "params": [
+              "&mut self",
+              "data: &[u8]"
+            ],
+            "return_type": "",
+            "signature": "key(&mut self, data: &[u8])"
+          },
+          {
+            "path": "src/shc.rs",
+            "kind": "method",
+            "name": "arc_4",
+            "visibility": "public",
+            "public": true,
+            "owner_type": "Shc",
+            "params": [
+              "&mut self",
+              "data: &mut [u8]"
+            ],
+            "return_type": "",
+            "signature": "arc_4(&mut self, data: &mut [u8])"
+          },
+          {
+            "path": "src/shc.rs",
+            "kind": "method",
+            "name": "key_with_file",
+            "visibility": "public",
+            "public": true,
+            "owner_type": "Shc",
+            "params": [
+              "&mut self",
+              "path: &Path"
+            ],
+            "return_type": "Result<(), String>",
+            "signature": "key_with_file(&mut self, path: &Path) -> Result<(), String>"
+          },
+          {
+            "path": "src/shc.rs",
+            "kind": "method",
+            "name": "eval_shell",
+            "visibility": "public",
+            "public": true,
+            "owner_type": "Shc",
+            "params": [
+              "&mut self",
+              "text: &[u8]"
+            ],
+            "return_type": "Result<(), String>",
+            "signature": "eval_shell(&mut self, text: &[u8]) -> Result<(), String>"
+          },
+          {
+            "path": "src/shc.rs",
+            "kind": "method",
+            "name": "read_script",
+            "visibility": "public",
+            "public": true,
+            "owner_type": "Shc",
+            "params": [
+              "&self",
+              "path: &Path"
+            ],
+            "return_type": "Result<Vec<u8>, String>",
+            "signature": "read_script(&self, path: &Path) -> Result<Vec<u8>, String>"
+          },
+          {
+            "path": "src/shc.rs",
+            "kind": "method",
+            "name": "rand_mod",
+            "visibility": "public",
+            "public": true,
+            "owner_type": "Shc",
+            "params": [
+              "&mut self",
+              "modulus: usize"
+            ],
+            "return_type": "usize",
+            "signature": "rand_mod(&mut self, modulus: usize) -> usize"
+          },
+          {
+            "path": "src/shc.rs",
+            "kind": "method",
+            "name": "rand_chr",
+            "visibility": "public",
+            "public": true,
+            "owner_type": "Shc",
+            "params": [
+              "&mut self"
+            ],
+            "return_type": "char",
+            "signature": "rand_chr(&mut self) -> char"
+          },
+          {
+            "path": "src/shc.rs",
+            "kind": "method",
+            "name": "noise",
+            "visibility": "public",
+            "public": true,
+            "owner_type": "Shc",
+            "params": [
+              "&mut self",
+              "min: usize",
+              "xtra: usize",
+              "str_mode: bool"
+            ],
+            "return_type": "Vec<u8>",
+            "signature": "noise(&mut self, min: usize, xtra: usize, str_mode: bool) -> Vec<u8>"
+          },
+          {
+            "path": "src/shc.rs",
+            "kind": "method",
+            "name": "prnt_bytes",
+            "visibility": "public",
+            "public": true,
+            "owner_type": "Shc",
+            "params": [
+              "&mut self",
+              "ptr: &[u8]",
+              "m: usize",
+              "l: usize",
+              "n: usize"
+            ],
+            "return_type": "String",
+            "signature": "prnt_bytes(&mut self, ptr: &[u8], m: usize, l: usize, n: usize) -> String"
+          },
+          {
+            "path": "src/shc.rs",
+            "kind": "method",
+            "name": "prnt_array",
+            "visibility": "public",
+            "public": true,
+            "owner_type": "Shc",
+            "params": [
+              "&mut self",
+              "ptr: &[u8]",
+              "name: &str",
+              "l: usize",
+              "cast: Option<&str>"
+            ],
+            "return_type": "String",
+            "signature": "prnt_array(&mut self, ptr: &[u8], name: &str, l: usize, cast: Option<&str>) -> String"
+          },
+          {
+            "path": "src/shc.rs",
+            "kind": "method",
+            "name": "dump_array",
+            "visibility": "public",
+            "public": true,
+            "owner_type": "Shc",
+            "params": [
+              "&mut self",
+              "ptr: &[u8]",
+              "name: &str",
+              "l: usize",
+              "cast: Option<&str>"
+            ],
+            "return_type": "String",
+            "signature": "dump_array(&mut self, ptr: &[u8], name: &str, l: usize, cast: Option<&str>) -> String"
+          },
+          {
+            "path": "src/shc.rs",
+            "kind": "method",
+            "name": "write_c",
+            "visibility": "public",
+            "public": true,
+            "owner_type": "Shc",
+            "params": [
+              "&mut self",
+              "file: &Path",
+              "argv: &[String]"
+            ],
+            "return_type": "Result<PathBuf, String>",
+            "signature": "write_c(&mut self, file: &Path, argv: &[String]) -> Result<PathBuf, String>"
+          },
+          {
+            "path": "src/shc.rs",
+            "kind": "method",
+            "name": "make",
+            "visibility": "public",
+            "public": true,
+            "owner_type": "Shc",
+            "params": [
+              "&mut self"
+            ],
+            "return_type": "Result<(), String>",
+            "signature": "make(&mut self) -> Result<(), String>"
+          },
+          {
+            "path": "src/shc.rs",
+            "kind": "method",
+            "name": "do_all",
+            "visibility": "public",
+            "public": true,
+            "owner_type": "Shc",
+            "params": [
+              "&mut self",
+              "args: &[String]"
+            ],
+            "return_type": "Result<(), String>",
+            "signature": "do_all(&mut self, args: &[String]) -> Result<(), String>"
+          },
+          {
+            "path": "src/shc.rs",
+            "kind": "method",
+            "name": "main",
+            "visibility": "public",
+            "public": true,
+            "owner_type": "Shc",
+            "params": [],
+            "return_type": "i32",
+            "signature": "main() -> i32"
+          },
+          {
+            "path": "src/shc.rs",
+            "kind": "method",
+            "name": "module_src",
+            "visibility": "public",
+            "public": true,
+            "owner_type": "Shc",
+            "params": [],
+            "return_type": "Self",
+            "signature": "module_src() -> Self"
+          },
+          {
+            "path": "src/shc.rs",
+            "kind": "method",
+            "name": "parse_date",
+            "visibility": "private",
+            "public": false,
+            "owner_type": "Shc",
+            "params": [
+              "value: &str"
+            ],
+            "return_type": "Option<i64>",
+            "signature": "parse_date(value: &str) -> Option<i64>"
+          },
+          {
+            "path": "src/shc.rs",
+            "kind": "method",
+            "name": "usage_line",
+            "visibility": "private",
+            "public": false,
+            "owner_type": "Shc",
+            "params": [
+              "&self"
+            ],
+            "return_type": "&'static str",
+            "signature": "usage_line(&self) -> &'static str"
+          },
+          {
+            "path": "src/shc.rs",
+            "kind": "method",
+            "name": "usage_text",
+            "visibility": "private",
+            "public": false,
+            "owner_type": "Shc",
+            "params": [
+              "&self"
+            ],
+            "return_type": "String",
+            "signature": "usage_text(&self) -> String"
+          },
+          {
+            "path": "src/shc.rs",
+            "kind": "method",
+            "name": "shell_defaults",
+            "visibility": "private",
+            "public": false,
+            "owner_type": "Shc",
+            "params": [
+              "shell: &str"
+            ],
+            "return_type": "Option<(&'static str, &'static str, &'static str)>",
+            "signature": "shell_defaults(shell: &str) -> Option<(&'static str, &'static str, &'static str)>"
+          }
+        ]
+      },
+      "references": [
+        {
+          "path": "src/shc.rs",
+          "kind": "type",
+          "name": "Shc",
+          "visibility": "public",
+          "public": true,
+          "owner_type": "",
+          "params": [],
+          "return_type": "",
+          "signature": "struct Shc"
+        },
+        {
+          "path": "src/shc.rs",
+          "kind": "type",
+          "name": "Config",
+          "visibility": "private",
+          "public": false,
+          "owner_type": "",
+          "params": [],
+          "return_type": "",
+          "signature": "struct Config"
+        },
+        {
+          "path": "src/shc.rs",
+          "kind": "type",
+          "name": "ShcError",
+          "visibility": "private",
+          "public": false,
+          "owner_type": "",
+          "params": [],
+          "return_type": "",
+          "signature": "enum ShcError"
+        },
+        {
+          "path": "src/shc.rs",
+          "kind": "type",
+          "name": "ParseFlow",
+          "visibility": "private",
+          "public": false,
+          "owner_type": "",
+          "params": [],
+          "return_type": "",
+          "signature": "enum ParseFlow"
+        },
+        {
+          "path": "src/shc.rs",
+          "kind": "field",
+          "name": "stte",
+          "visibility": "private",
+          "public": false,
+          "owner_type": "Shc",
+          "params": [],
+          "return_type": "[u8; 256]",
+          "signature": "Shc::stte: [u8; 256]"
+        },
+        {
+          "path": "src/shc.rs",
+          "kind": "field",
+          "name": "indx",
+          "visibility": "private",
+          "public": false,
+          "owner_type": "Shc",
+          "params": [],
+          "return_type": "u8",
+          "signature": "Shc::indx: u8"
+        },
+        {
+          "path": "src/shc.rs",
+          "kind": "field",
+          "name": "jndx",
+          "visibility": "private",
+          "public": false,
+          "owner_type": "Shc",
+          "params": [],
+          "return_type": "u8",
+          "signature": "Shc::jndx: u8"
+        },
+        {
+          "path": "src/shc.rs",
+          "kind": "field",
+          "name": "kndx",
+          "visibility": "private",
+          "public": false,
+          "owner_type": "Shc",
+          "params": [],
+          "return_type": "u8",
+          "signature": "Shc::kndx: u8"
+        },
+        {
+          "path": "src/shc.rs",
+          "kind": "field",
+          "name": "offset",
+          "visibility": "private",
+          "public": false,
+          "owner_type": "Shc",
+          "params": [],
+          "return_type": "usize",
+          "signature": "Shc::offset: usize"
+        },
+        {
+          "path": "src/shc.rs",
+          "kind": "field",
+          "name": "rng",
+          "visibility": "private",
+          "public": false,
+          "owner_type": "Shc",
+          "params": [],
+          "return_type": "u64",
+          "signature": "Shc::rng: u64"
+        },
+        {
+          "path": "src/shc.rs",
+          "kind": "field",
+          "name": "config",
+          "visibility": "private",
+          "public": false,
+          "owner_type": "Shc",
+          "params": [],
+          "return_type": "Config",
+          "signature": "Shc::config: Config"
+        },
+        {
+          "path": "src/shc.rs",
+          "kind": "field",
+          "name": "my_name",
+          "visibility": "private",
+          "public": false,
+          "owner_type": "Config",
+          "params": [],
+          "return_type": "String",
+          "signature": "Config::my_name: String"
+        },
+        {
+          "path": "src/shc.rs",
+          "kind": "field",
+          "name": "file",
+          "visibility": "private",
+          "public": false,
+          "owner_type": "Config",
+          "params": [],
+          "return_type": "Option<PathBuf>",
+          "signature": "Config::file: Option<PathBuf>"
+        },
+        {
+          "path": "src/shc.rs",
+          "kind": "field",
+          "name": "file2",
+          "visibility": "private",
+          "public": false,
+          "owner_type": "Config",
+          "params": [],
+          "return_type": "Option<PathBuf>",
+          "signature": "Config::file2: Option<PathBuf>"
+        },
+        {
+          "path": "src/shc.rs",
+          "kind": "field",
+          "name": "expiration",
+          "visibility": "private",
+          "public": false,
+          "owner_type": "Config",
+          "params": [],
+          "return_type": "String",
+          "signature": "Config::expiration: String"
+        },
+        {
+          "path": "src/shc.rs",
+          "kind": "field",
+          "name": "mail",
+          "visibility": "private",
+          "public": false,
+          "owner_type": "Config",
+          "params": [],
+          "return_type": "String",
+          "signature": "Config::mail: String"
+        },
+        {
+          "path": "src/shc.rs",
+          "kind": "field",
+          "name": "inlo",
+          "visibility": "private",
+          "public": false,
+          "owner_type": "Config",
+          "params": [],
+          "return_type": "Option<String>",
+          "signature": "Config::inlo: Option<String>"
+        },
+        {
+          "path": "src/shc.rs",
+          "kind": "field",
+          "name": "xecc",
+          "visibility": "private",
+          "public": false,
+          "owner_type": "Config",
+          "params": [],
+          "return_type": "Option<String>",
+          "signature": "Config::xecc: Option<String>"
+        },
+        {
+          "path": "src/shc.rs",
+          "kind": "field",
+          "name": "lsto",
+          "visibility": "private",
+          "public": false,
+          "owner_type": "Config",
+          "params": [],
+          "return_type": "Option<String>",
+          "signature": "Config::lsto: Option<String>"
+        },
+        {
+          "path": "src/shc.rs",
+          "kind": "field",
+          "name": "rlax",
+          "visibility": "private",
+          "public": false,
+          "owner_type": "Config",
+          "params": [],
+          "return_type": "Vec<u8>",
+          "signature": "Config::rlax: Vec<u8>"
+        },
+        {
+          "path": "src/shc.rs",
+          "kind": "field",
+          "name": "verbose",
+          "visibility": "private",
+          "public": false,
+          "owner_type": "Config",
+          "params": [],
+          "return_type": "bool",
+          "signature": "Config::verbose: bool"
+        },
+        {
+          "path": "src/shc.rs",
+          "kind": "field",
+          "name": "setuid_flag",
+          "visibility": "private",
+          "public": false,
+          "owner_type": "Config",
+          "params": [],
+          "return_type": "bool",
+          "signature": "Config::setuid_flag: bool"
+        },
+        {
+          "path": "src/shc.rs",
+          "kind": "field",
+          "name": "debugexec_flag",
+          "visibility": "private",
+          "public": false,
+          "owner_type": "Config",
+          "params": [],
+          "return_type": "bool",
+          "signature": "Config::debugexec_flag: bool"
+        },
+        {
+          "path": "src/shc.rs",
+          "kind": "field",
+          "name": "traceable_flag",
+          "visibility": "private",
+          "public": false,
+          "owner_type": "Config",
+          "params": [],
+          "return_type": "bool",
+          "signature": "Config::traceable_flag: bool"
+        },
+        {
+          "path": "src/shc.rs",
+          "kind": "field",
+          "name": "hardening_flag",
+          "visibility": "private",
+          "public": false,
+          "owner_type": "Config",
+          "params": [],
+          "return_type": "bool",
+          "signature": "Config::hardening_flag: bool"
+        },
+        {
+          "path": "src/shc.rs",
+          "kind": "field",
+          "name": "busyboxon_flag",
+          "visibility": "private",
+          "public": false,
+          "owner_type": "Config",
+          "params": [],
+          "return_type": "bool",
+          "signature": "Config::busyboxon_flag: bool"
+        },
+        {
+          "path": "src/shc.rs",
+          "kind": "field",
+          "name": "mmap2_flag",
+          "visibility": "private",
+          "public": false,
+          "owner_type": "Config",
+          "params": [],
+          "return_type": "bool",
+          "signature": "Config::mmap2_flag: bool"
+        },
+        {
+          "path": "src/shc.rs",
+          "kind": "field",
+          "name": "shll",
+          "visibility": "private",
+          "public": false,
+          "owner_type": "Config",
+          "params": [],
+          "return_type": "Option<String>",
+          "signature": "Config::shll: Option<String>"
+        },
+        {
+          "path": "src/shc.rs",
+          "kind": "field",
+          "name": "opts",
+          "visibility": "private",
+          "public": false,
+          "owner_type": "Config",
+          "params": [],
+          "return_type": "String",
+          "signature": "Config::opts: String"
+        },
+        {
+          "path": "src/shc.rs",
+          "kind": "field",
+          "name": "text",
+          "visibility": "private",
+          "public": false,
+          "owner_type": "Config",
+          "params": [],
+          "return_type": "Option<Vec<u8>>",
+          "signature": "Config::text: Option<Vec<u8>>"
+        },
+        {
+          "path": "src/shc.rs",
+          "kind": "method",
+          "name": "from",
+          "visibility": "private",
+          "public": false,
+          "owner_type": "ShcError",
+          "params": [
+            "value: io::Error"
+          ],
+          "return_type": "Self",
+          "signature": "from(value: io::Error) -> Self"
+        },
+        {
+          "path": "src/shc.rs",
+          "kind": "method",
+          "name": "fmt",
+          "visibility": "private",
+          "public": false,
+          "owner_type": "ShcError",
+          "params": [
+            "&self",
+            "f: &mut std::fmt::Formatter<'_>"
+          ],
+          "return_type": "std::fmt::Result",
+          "signature": "fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result"
+        },
+        {
+          "path": "src/shc.rs",
+          "kind": "method",
+          "name": "default",
+          "visibility": "private",
+          "public": false,
+          "owner_type": "Shc",
+          "params": [],
+          "return_type": "Self",
+          "signature": "default() -> Self"
+        },
+        {
+          "path": "src/shc.rs",
+          "kind": "method",
+          "name": "parse_an_arg",
+          "visibility": "public",
+          "public": true,
+          "owner_type": "Shc",
+          "params": [
+            "&mut self",
+            "args: &[String]",
+            "index: &mut usize"
+          ],
+          "return_type": "Result<bool, String>",
+          "signature": "parse_an_arg(&mut self, args: &[String], index: &mut usize) -> Result<bool, String>"
+        },
+        {
+          "path": "src/shc.rs",
+          "kind": "method",
+          "name": "parse_args",
+          "visibility": "public",
+          "public": true,
+          "owner_type": "Shc",
+          "params": [
+            "&mut self",
+            "args: &[String]"
+          ],
+          "return_type": "Result<(), String>",
+          "signature": "parse_args(&mut self, args: &[String]) -> Result<(), String>"
+        },
+        {
+          "path": "src/shc.rs",
+          "kind": "method",
+          "name": "stte_0",
+          "visibility": "public",
+          "public": true,
+          "owner_type": "Shc",
+          "params": [
+            "&mut self"
+          ],
+          "return_type": "",
+          "signature": "stte_0(&mut self)"
+        },
+        {
+          "path": "src/shc.rs",
+          "kind": "method",
+          "name": "key",
+          "visibility": "public",
+          "public": true,
+          "owner_type": "Shc",
+          "params": [
+            "&mut self",
+            "data: &[u8]"
+          ],
+          "return_type": "",
+          "signature": "key(&mut self, data: &[u8])"
+        },
+        {
+          "path": "src/shc.rs",
+          "kind": "method",
+          "name": "arc_4",
+          "visibility": "public",
+          "public": true,
+          "owner_type": "Shc",
+          "params": [
+            "&mut self",
+            "data: &mut [u8]"
+          ],
+          "return_type": "",
+          "signature": "arc_4(&mut self, data: &mut [u8])"
+        },
+        {
+          "path": "src/shc.rs",
+          "kind": "method",
+          "name": "key_with_file",
+          "visibility": "public",
+          "public": true,
+          "owner_type": "Shc",
+          "params": [
+            "&mut self",
+            "path: &Path"
+          ],
+          "return_type": "Result<(), String>",
+          "signature": "key_with_file(&mut self, path: &Path) -> Result<(), String>"
+        },
+        {
+          "path": "src/shc.rs",
+          "kind": "method",
+          "name": "eval_shell",
+          "visibility": "public",
+          "public": true,
+          "owner_type": "Shc",
+          "params": [
+            "&mut self",
+            "text: &[u8]"
+          ],
+          "return_type": "Result<(), String>",
+          "signature": "eval_shell(&mut self, text: &[u8]) -> Result<(), String>"
+        },
+        {
+          "path": "src/shc.rs",
+          "kind": "method",
+          "name": "read_script",
+          "visibility": "public",
+          "public": true,
+          "owner_type": "Shc",
+          "params": [
+            "&self",
+            "path: &Path"
+          ],
+          "return_type": "Result<Vec<u8>, String>",
+          "signature": "read_script(&self, path: &Path) -> Result<Vec<u8>, String>"
+        },
+        {
+          "path": "src/shc.rs",
+          "kind": "method",
+          "name": "rand_mod",
+          "visibility": "public",
+          "public": true,
+          "owner_type": "Shc",
+          "params": [
+            "&mut self",
+            "modulus: usize"
+          ],
+          "return_type": "usize",
+          "signature": "rand_mod(&mut self, modulus: usize) -> usize"
+        },
+        {
+          "path": "src/shc.rs",
+          "kind": "method",
+          "name": "rand_chr",
+          "visibility": "public",
+          "public": true,
+          "owner_type": "Shc",
+          "params": [
+            "&mut self"
+          ],
+          "return_type": "char",
+          "signature": "rand_chr(&mut self) -> char"
+        },
+        {
+          "path": "src/shc.rs",
+          "kind": "method",
+          "name": "noise",
+          "visibility": "public",
+          "public": true,
+          "owner_type": "Shc",
+          "params": [
+            "&mut self",
+            "min: usize",
+            "xtra: usize",
+            "str_mode: bool"
+          ],
+          "return_type": "Vec<u8>",
+          "signature": "noise(&mut self, min: usize, xtra: usize, str_mode: bool) -> Vec<u8>"
+        },
+        {
+          "path": "src/shc.rs",
+          "kind": "method",
+          "name": "prnt_bytes",
+          "visibility": "public",
+          "public": true,
+          "owner_type": "Shc",
+          "params": [
+            "&mut self",
+            "ptr: &[u8]",
+            "m: usize",
+            "l: usize",
+            "n: usize"
+          ],
+          "return_type": "String",
+          "signature": "prnt_bytes(&mut self, ptr: &[u8], m: usize, l: usize, n: usize) -> String"
+        },
+        {
+          "path": "src/shc.rs",
+          "kind": "method",
+          "name": "prnt_array",
+          "visibility": "public",
+          "public": true,
+          "owner_type": "Shc",
+          "params": [
+            "&mut self",
+            "ptr: &[u8]",
+            "name: &str",
+            "l: usize",
+            "cast: Option<&str>"
+          ],
+          "return_type": "String",
+          "signature": "prnt_array(&mut self, ptr: &[u8], name: &str, l: usize, cast: Option<&str>) -> String"
+        },
+        {
+          "path": "src/shc.rs",
+          "kind": "method",
+          "name": "dump_array",
+          "visibility": "public",
+          "public": true,
+          "owner_type": "Shc",
+          "params": [
+            "&mut self",
+            "ptr: &[u8]",
+            "name: &str",
+            "l: usize",
+            "cast: Option<&str>"
+          ],
+          "return_type": "String",
+          "signature": "dump_array(&mut self, ptr: &[u8], name: &str, l: usize, cast: Option<&str>) -> String"
+        },
+        {
+          "path": "src/shc.rs",
+          "kind": "method",
+          "name": "write_c",
+          "visibility": "public",
+          "public": true,
+          "owner_type": "Shc",
+          "params": [
+            "&mut self",
+            "file: &Path",
+            "argv: &[String]"
+          ],
+          "return_type": "Result<PathBuf, String>",
+          "signature": "write_c(&mut self, file: &Path, argv: &[String]) -> Result<PathBuf, String>"
+        },
+        {
+          "path": "src/shc.rs",
+          "kind": "method",
+          "name": "make",
+          "visibility": "public",
+          "public": true,
+          "owner_type": "Shc",
+          "params": [
+            "&mut self"
+          ],
+          "return_type": "Result<(), String>",
+          "signature": "make(&mut self) -> Result<(), String>"
+        },
+        {
+          "path": "src/shc.rs",
+          "kind": "method",
+          "name": "do_all",
+          "visibility": "public",
+          "public": true,
+          "owner_type": "Shc",
+          "params": [
+            "&mut self",
+            "args: &[String]"
+          ],
+          "return_type": "Result<(), String>",
+          "signature": "do_all(&mut self, args: &[String]) -> Result<(), String>"
+        },
+        {
+          "path": "src/shc.rs",
+          "kind": "method",
+          "name": "main",
+          "visibility": "public",
+          "public": true,
+          "owner_type": "Shc",
+          "params": [],
+          "return_type": "i32",
+          "signature": "main() -> i32"
+        },
+        {
+          "path": "src/shc.rs",
+          "kind": "method",
+          "name": "module_src",
+          "visibility": "public",
+          "public": true,
+          "owner_type": "Shc",
+          "params": [],
+          "return_type": "Self",
+          "signature": "module_src() -> Self"
+        },
+        {
+          "path": "src/shc.rs",
+          "kind": "method",
+          "name": "parse_date",
+          "visibility": "private",
+          "public": false,
+          "owner_type": "Shc",
+          "params": [
+            "value: &str"
+          ],
+          "return_type": "Option<i64>",
+          "signature": "parse_date(value: &str) -> Option<i64>"
+        },
+        {
+          "path": "src/shc.rs",
+          "kind": "method",
+          "name": "usage_line",
+          "visibility": "private",
+          "public": false,
+          "owner_type": "Shc",
+          "params": [
+            "&self"
+          ],
+          "return_type": "&'static str",
+          "signature": "usage_line(&self) -> &'static str"
+        },
+        {
+          "path": "src/shc.rs",
+          "kind": "method",
+          "name": "usage_text",
+          "visibility": "private",
+          "public": false,
+          "owner_type": "Shc",
+          "params": [
+            "&self"
+          ],
+          "return_type": "String",
+          "signature": "usage_text(&self) -> String"
+        },
+        {
+          "path": "src/shc.rs",
+          "kind": "method",
+          "name": "shell_defaults",
+          "visibility": "private",
+          "public": false,
+          "owner_type": "Shc",
+          "params": [
+            "shell: &str"
+          ],
+          "return_type": "Option<(&'static str, &'static str, &'static str)>",
+          "signature": "shell_defaults(shell: &str) -> Option<(&'static str, &'static str, &'static str)>"
+        }
+      ]
+    },
+    "src/main.rs": {
+      "updated_at": "2026-06-16T13:09:24",
+      "contract": {
+        "public_structs": [],
+        "public_enums": [],
+        "public_traits": [],
+        "public_functions": [
+          "run"
+        ],
+        "constructors": [],
+        "accessors": [],
+        "impl_methods": {
+          "Main": [
+            "run"
+          ]
+        },
+        "references": [
+          {
+            "path": "src/main.rs",
+            "kind": "module",
+            "name": "shc",
+            "visibility": "private",
+            "public": false,
+            "owner_type": "",
+            "params": [],
+            "return_type": "",
+            "signature": "shc"
+          },
+          {
+            "path": "src/main.rs",
+            "kind": "type",
+            "name": "Main",
+            "visibility": "public",
+            "public": true,
+            "owner_type": "",
+            "params": [],
+            "return_type": "",
+            "signature": "struct Main"
+          },
+          {
+            "path": "src/main.rs",
+            "kind": "function",
+            "name": "main",
+            "visibility": "private",
+            "public": false,
+            "owner_type": "",
+            "params": [],
+            "return_type": "",
+            "signature": "main()"
+          },
+          {
+            "path": "src/main.rs",
+            "kind": "method",
+            "name": "run",
+            "visibility": "public",
+            "public": true,
+            "owner_type": "Main",
+            "params": [],
+            "return_type": "i32",
+            "signature": "run() -> i32"
+          }
+        ]
+      },
+      "references": [
+        {
+          "path": "src/main.rs",
+          "kind": "module",
+          "name": "shc",
+          "visibility": "private",
+          "public": false,
+          "owner_type": "",
+          "params": [],
+          "return_type": "",
+          "signature": "shc"
+        },
+        {
+          "path": "src/main.rs",
+          "kind": "type",
+          "name": "Main",
+          "visibility": "public",
+          "public": true,
+          "owner_type": "",
+          "params": [],
+          "return_type": "",
+          "signature": "struct Main"
+        },
+        {
+          "path": "src/main.rs",
+          "kind": "function",
+          "name": "main",
+          "visibility": "private",
+          "public": false,
+          "owner_type": "",
+          "params": [],
+          "return_type": "",
+          "signature": "main()"
+        },
+        {
+          "path": "src/main.rs",
+          "kind": "method",
+          "name": "run",
+          "visibility": "public",
+          "public": true,
+          "owner_type": "Main",
+          "params": [],
+          "return_type": "i32",
+          "signature": "run() -> i32"
+        }
+      ]
+    }
+  },
+  "updated_at": "2026-06-16T13:09:24"
+}

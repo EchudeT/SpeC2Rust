@@ -1,0 +1,545 @@
+{
+  "project_name": "cflow-new-rust",
+  "project_path": "output/cflow-new/cflow-new-rust",
+  "project_structure": "Below is a native Rust project structure for **cflow-new-rust** that stays within the migration contract, preserves the executable/tool shape, and keeps module boundaries close to the original C source layout without unnecessary abstraction.\n\n## 1. Project directory layout\n\n<project_file>\ncflow-new-rust/\n├── Cargo.toml\n├── README.md\n└── src\n    ├── main.rs\n    ├── ack.rs\n    ├── asnprintf.rs\n    ├── basename_lgpl.rs\n    ├── bitrotate.rs\n    ├── c.rs\n    ├── calloc.rs\n    ├── cloexec.rs\n    ├── close.rs\n    ├── d.rs\n    ├── depmap.rs\n    ├── dot.rs\n    ├── dup2.rs\n    ├── error.rs\n    ├── exitfail.rs\n    ├── fcntl.rs\n    ├── fd_hook.rs\n    ├── float.rs\n    ├── foo.rs\n    ├── free.rs\n    ├── fstat.rs\n    ├── getdtablesize.rs\n    ├── getprogname.rs\n    ├── gnu.rs\n    ├── hash.rs\n    ├── help.rs\n    ├── ialloc.rs\n    ├── itold.rs\n    ├── linked_list.rs\n    ├── malloc.rs\n    ├── malloca.rs\n    ├── mbszero.rs\n    ├── memchr.rs\n    ├── msvc_inval.rs\n    ├── msvc_nothrow.rs\n    ├── obstack.rs\n    ├── open.rs\n    ├── optset.rs\n    ├── output.rs\n    ├── parseopt.rs\n    ├── parser.rs\n    ├── posix.rs\n    ├── printf_args.rs\n    ├── printf_parse.rs\n    ├── progname.rs\n    ├── realloc.rs\n    ├── reallocarray.rs\n    ├── snprintf.rs\n    ├── stat.rs\n    ├── stat_time.rs\n    ├── stat_w32.rs\n    ├── stdio_read.rs\n    ├── stdio_write.rs\n    ├── strerror.rs\n    ├── strerror_override.rs\n    ├── symbol.rs\n    ├── unistd.rs\n    ├── vasnprintf.rs\n    ├── wc.rs\n    ├── whoami.rs\n    ├── wordwrap.rs\n    ├── wordsplit.rs\n    ├── xalloc_die.rs\n    ├── xmalloc.rs\n    └── xsize.rs\n</project_file>\n\n## 2. Main module split and responsibilities\n\nBecause the contract ultimately says to preserve the **CLI/executable** shape and to use `src/main.rs` as the entry point, the crate should be organized as a binary crate with internal modules declared from `main.rs`.\n\n### Entry and orchestration\n\n- **main.rs**\n  - Crate entry point.\n  - Declares all modules with `mod ...;`\n  - Implements top-level CLI flow migrated from `src/main.c`.\n  - Owns:\n    - process startup/init\n    - command-line parsing integration\n    - config/profile/from-file loading integration\n    - output driver selection\n    - parser + lexer + symbol pipeline wiring\n    - final exit code\n\nThis file should not become a thin wrapper over a fabricated library. It is the true program root.\n\n---\n\n### Front-end analysis pipeline\n\n- **c.rs**\n  - C lexical scanner/preprocessor-facing scanner state migrated from `src/c.c`\n  - Encapsulates:\n    - token scanning state\n    - buffer stack behavior\n    - source location updates\n    - preprocessor command setup/open/close/finalize\n  - This is effectively the lexer subsystem.\n\n- **parser.rs**\n  - Syntax/parser layer migrated from `src/parser.c`\n  - Owns:\n    - token stack / save stack\n    - declaration parsing\n    - function/variable/typedef recognition\n    - reference/call collection\n    - parser balancing helpers\n\n- **symbol.rs**\n  - Symbol table and symbol lifecycle migrated from `src/symbol.c`\n  - Owns:\n    - symbol lookup/install\n    - storage-class/state changes\n    - starter/target filtering\n    - collecting symbols/functions\n    - delete/move/unlink operations now expressed through ownership and collection mutation\n\n- **depmap.rs**\n  - Dependency matrix/transitive closure support from `src/depmap.c`\n  - Used when computing transitive relationships between symbols.\n\n- **linked_list.rs**\n  - Minimal list abstraction only where original code truly depends on linked-list-like behavior.\n  - Should not overtake the whole codebase; many callers can use `Vec<T>` instead.\n  - Keep this module narrow for places where list-entry semantics matter.\n\n---\n\n### Output subsystem\n\n- **output.rs**\n  - Central output driver registry/selection and tree/xref rendering orchestration\n  - Owns:\n    - output driver selection\n    - level indentation/markers\n    - common output traversal logic\n    - xref/direct tree/inverted tree paths\n\n- **posix.rs**\n  - POSIX-style formatter/output handler\n\n- **gnu.rs**\n  - GNU-style formatter/output handler\n\n- **dot.rs**\n  - DOT graph output handler and node declaration support\n\nThis split is strongly supported by the C file boundaries and should remain direct.\n\n---\n\n### Option parsing and help formatting\n\n- **parseopt.rs**\n  - Core option parser from `src/parseopt/parseopt.c`\n  - Owns parser state, option definitions, argument cursor movement, getopt-like iteration.\n\n- **optset.rs**\n  - Option value setters/converters from `src/parseopt/optset.c`\n  - Narrow helper layer for coercing parsed values into config settings.\n\n- **help.rs**\n  - Usage/help/version text generation from `src/parseopt/help.c`\n\n- **wordwrap.rs**\n  - Internal formatted text wrapping support for help/usage output\n\nThis is a coherent subsystem and should stay separate from main.\n\n---\n\n### Word splitting / config-file-style parsing\n\n- **wordsplit.rs**\n  - Complex shell-like word splitting subsystem from `src/wordsplit/wordsplit.c`\n  - Owns:\n    - tokenization into words\n    - variable expansion\n    - quoting/unquoting\n    - command/parameter expansion hooks\n    - internal node list management\n\nThis should remain one file module per contract, even though internally it will hold many helper structs and enums.\n\n---\n\n### GNU support/runtime compatibility modules\n\nThese should stay mostly utility-focused, with narrow responsibilities based on the original source:\n\n- **error.rs** — error reporting behavior\n- **strerror.rs** / **strerror_override.rs** — error string lookup\n- **progname.rs** / **getprogname.rs** / **exitfail.rs** — program name and exit-failure support\n- **xalloc_die.rs**, **xmalloc.rs**, **xsize.rs**, **malloc.rs**, **calloc.rs**, **realloc.rs**, **reallocarray.rs**, **free.rs**, **ialloc.rs**, **malloca.rs** — allocation helpers\n- **hash.rs** — hash table implementation used by symbol or other tables\n- **obstack.rs** — obstack-like growing chunk allocator semantics where still needed\n- **printf_args.rs**, **printf_parse.rs**, **snprintf.rs**, **vasnprintf.rs**, **asnprintf.rs** — formatting support\n- **basename_lgpl.rs**, **bitrotate.rs**, **memchr.rs**, **mbszero.rs**, **float.rs**, **itold.rs** — isolated portability/math/string helpers\n- **open.rs**, **close.rs**, **dup2.rs**, **fcntl.rs**, **cloexec.rs**, **fd_hook.rs**, **fstat.rs**, **stat.rs**, **stat_time.rs**, **stat_w32.rs**, **unistd.rs**, **stdio_read.rs**, **stdio_write.rs**, **getdtablesize.rs**, **msvc_inval.rs**, **msvc_nothrow.rs** — file/FD/platform compatibility helpers\n\nThese should not be forced into a giant “platform” supermodule because the contract explicitly allows the current file set and does not require a larger redesign.\n\n---\n\n### Documentation/demo ports retained as executable-internal modules\n\n- **ack.rs**\n- **d.rs**\n- **foo.rs**\n- **wc.rs**\n- **whoami.rs**\n\nThese appear to be sample/documentation programs from the original tree. Since only one binary entry file is permitted, these should be exposed as internal callable routines rather than separate binaries. Keep them isolated and non-invasive.\n\n## 3. Core data structures and trait design\n\nPer the contract: avoid inventing abstractions without evidence. So the design should use **plain structs and enums**, and traits only where the original C project clearly had pluggable behavior.\n\n## 3.1 Program-wide configuration/state\n\nIn `main.rs`, define a central runtime configuration struct rather than scattering globals:\n\n```rust\npub struct App {\n    pub program_name: String,\n    pub options: parseopt::ParseOptions,\n    pub symbols: symbol::SymbolTable,\n    pub output: output::OutputEngine,\n    pub lexer: c::Lexer,\n    pub parser: parser::Parser,\n}\n```\n\nNotes:\n- This replaces many implicit C globals.\n- It is justified because the CLI wiring must pass shared mutable state around.\n- Keep it concrete; no trait-heavy “service container”.\n\nA smaller alternative is also reasonable:\n\n```rust\npub struct RunContext {\n    pub options: parseopt::ParseOptions,\n    pub symbols: symbol::SymbolTable,\n}\n```\n\nUse whichever best matches actual data flow once source details are read.\n\n---\n\n## 3.2 Symbol model\n\nIn `symbol.rs`:\n\n```rust\n#[derive(Debug, Clone, PartialEq, Eq)]\npub enum StorageClass {\n    Auto,\n    Extern,\n    Static,\n    Typedef,\n    Parameter,\n    Function,\n    Unknown,\n}\n```\n\n```rust\n#[derive(Debug, Clone)]\npub struct Reference {\n    pub line: usize,\n    pub source: String,\n}\n```\n\n```rust\n#[derive(Debug, Clone)]\npub struct Symbol {\n    pub name: String,\n    pub storage: StorageClass,\n    pub flags: u32,\n    pub references: Vec<Reference>,\n    pub owner: Option<String>,\n    pub active: bool,\n}\n```\n\n```rust\npub struct SymbolTable {\n    entries: hash::HashTable<String, Symbol>,\n    starters: Vec<String>,\n    targets: Vec<String>,\n}\n```\n\nWhy this shape:\n- `owner` becomes `Option<String>` rather than pointer links.\n- list relationships become owned names or indices instead of raw references.\n- `references` naturally becomes `Vec<Reference>`.\n\nAvoid building intrusive linked structures unless direct behavior requires them.\n\n---\n\n## 3.3 Lexer/token model\n\nIn `c.rs` and `parser.rs`:\n\n```rust\n#[derive(Debug, Clone, PartialEq, Eq)]\npub enum TokenKind {\n    Identifier,\n    Number,\n    StringLiteral,\n    CharLiteral,\n    Keyword,\n    Punctuator,\n    EndOfFile,\n    Unknown,\n}\n```\n\n```rust\n#[derive(Debug, Clone)]\npub struct Token {\n    pub kind: TokenKind,\n    pub lexeme: String,\n    pub line: usize,\n    pub column: usize,\n}\n```\n\n```rust\npub struct SourceLocation {\n    pub file: String,\n    pub line: usize,\n    pub column: usize,\n}\n```\n\n```rust\npub struct Lexer {\n    input_name: String,\n    input: String,\n    position: usize,\n    line: usize,\n    column: usize,\n    preprocessor: Option<String>,\n    debug: bool,\n}\n```\n\n```rust\npub struct Parser {\n    tokens: Vec<Token>,\n    putback_stack: Vec<Token>,\n    save_stack: Vec<Token>,\n    balance_stack: Vec<BalanceState>,\n}\n```\n\n```rust\n#[derive(Debug, Clone)]\npub struct BalanceState {\n    pub opener: char,\n    pub expected_closer: char,\n}\n```\n\nThis preserves the behavioral roles without copying flex/yacc internals literally into Rust API.\n\n---\n\n## 3.4 Output driver design\n\nHere a trait is justified because the C code has distinct output handlers (`posix`, `gnu`, `dot`) selected by name/registration.\n\nIn `output.rs`:\n\n```rust\npub trait OutputDriver {\n    fn begin(&mut self, out: &mut dyn std::io::Write) -> std::io::Result<()>;\n    fn end(&mut self, out: &mut dyn std::io::Write) -> std::io::Result<()>;\n    fn print_symbol(\n        &mut self,\n        out: &mut dyn std::io::Write,\n        symbol: &symbol::Symbol,\n        level: usize,\n        is_last: bool,\n    ) -> std::io::Result<()>;\n}\n```\n\nAnd the engine:\n\n```rust\npub enum OutputFormat {\n    Posix,\n    Gnu,\n    Dot,\n}\n```\n\n```rust\npub struct OutputEngine {\n    format: OutputFormat,\n    level_mark: String,\n}\n```\n\nPrefer enum-dispatch internally rather than boxed trait objects if simpler:\n\n```rust\npub enum Driver {\n    Posix(posix::PosixDriver),\n    Gnu(gnu::GnuDriver),\n    Dot(dot::DotDriver),\n}\n```\n\nThis may be better than dynamic trait objects because:\n- std-only\n- known fixed set of drivers\n- no need to invent plugin architecture\n\nSo: trait is optional; enum dispatch is probably the best fit.\n\n---\n\n## 3.5 Parseopt model\n\nIn `parseopt.rs`:\n\n```rust\n#[derive(Debug, Clone)]\npub struct OptDef {\n    pub short: Option<char>,\n    pub long: Option<String>,\n    pub takes_value: bool,\n    pub help: Option<String>,\n    pub hidden: bool,\n}\n```\n\n```rust\n#[derive(Debug, Clone)]\npub enum ParsedItem {\n    Option { name: String, value: Option<String> },\n    Argument(String),\n}\n```\n\n```rust\npub struct ParseOptions {\n    program_name: String,\n    args: Vec<String>,\n    index: usize,\n    definitions: Vec<OptDef>,\n    seen: Vec<String>,\n}\n```\n\nThis should remain concrete. Do not build a generalized clap-like framework.\n\n---\n\n## 3.6 Hash table\n\nIn `hash.rs`, because the original C project has its own hash API, implement a native wrapper rather than immediately delegating everything to `std::collections::HashMap` if statistics/iteration semantics matter.\n\nRecommended shape:\n\n```rust\npub struct HashTable<K, V> {\n    buckets: Vec<Vec<(K, V)>>,\n    entries: usize,\n}\n```\n\nPossible tuning struct:\n\n```rust\n#[derive(Debug, Clone)]\npub struct HashTuning {\n    pub growth_threshold: f64,\n    pub growth_factor: f64,\n    pub shrink_threshold: f64,\n    pub shrink_factor: f64,\n    pub is_n_buckets: bool,\n}\n```\n\nWhy not just `HashMap`?\n- The original exposes bucket counts/statistics/rehash behavior.\n- Those behaviors are evidence-backed.\n- A custom simple bucketed table is justified here.\n\nStill keep it simple: no custom allocator traits, no unsafe.\n\n---\n\n## 3.7 Linked list\n\nIn `linked_list.rs`, keep a narrow owned-list abstraction only if some modules rely on append/prepend/unlink semantics in an order-preserving way.\n\n```rust\npub struct LinkedList<T> {\n    items: Vec<T>,\n}\n```\n\nand simple operations:\n- append\n- prepend\n- unlink by predicate or index\n- iterate\n- contains\n- len\n\nDo **not** implement a pointer-based node structure unless exact behavior requires entry handles. The migration contract explicitly prefers safe owned structures.\n\n---\n\n## 3.8 Wordsplit model\n\nIn `wordsplit.rs`:\n\n```rust\n#[derive(Debug, Clone, PartialEq, Eq)]\npub enum WordSplitErrorKind {\n    NoMemory,\n    Syntax,\n    Expansion,\n    CommandSubstitution,\n    InvalidEscape,\n    Unknown,\n}\n```\n\n```rust\n#[derive(Debug, Clone)]\npub struct WordSplitError {\n    pub kind: WordSplitErrorKind,\n    pub message: String,\n    pub context: Option<String>,\n}\n```\n\n```rust\n#[derive(Debug, Clone)]\nstruct WsNode {\n    text: String,\n    quoted: bool,\n}\n```\n\n```rust\npub struct Wordsplit {\n    input: String,\n    words: Vec<String>,\n    nodes: Vec<WsNode>,\n    error: Option<WordSplitError>,\n}\n```\n\nKeep environment/parameter expansion as methods on `Wordsplit`; do not invent a separate expansion trait unless source evidence shows independent strategy objects.\n\n## 4. Key function and method signatures\n\nThese are the intended Rust-facing APIs, not C ABI mirrors.\n\n## 4.1 main.rs\n\n```rust\nfn main();\n```\n\n```rust\nstruct MainApp { /* fields */ }\n\nimpl MainApp {\n    fn new(args: Vec<String>) -> Self;\n    fn run(&mut self) -> Result<i32, error::AppError>;\n    fn parse_options(&mut self) -> Result<(), error::AppError>;\n    fn parse_rc(&mut self) -> Result<(), error::AppError>;\n    fn process_input_files(&mut self) -> Result<(), error::AppError>;\n    fn emit_output(&mut self) -> Result<(), error::AppError>;\n}\n```\n\nTop-level `main()` should:\n- collect args\n- call `MainApp::new`\n- call `run`\n- print fatal errors to stderr\n- exit with the appropriate code\n\n---\n\n## 4.2 c.rs\n\n```rust\npub struct Lexer { /* ... */ }\n\nimpl Lexer {\n    pub fn new() -> Self;\n    pub fn with_source(name: impl Into<String>, input: impl Into<String>) -> Self;\n    pub fn restart(&mut self, name: impl Into<String>, input: impl Into<String>);\n    pub fn set_preprocessor(&mut self, command: Option<String>);\n    pub fn preprocessor_option(&mut self, option: String);\n    pub fn open_preprocessor(&mut self, path: &str) -> Result<(), crate::error::AppError>;\n    pub fn close_preprocessor(&mut self) -> Result<(), crate::error::AppError>;\n    pub fn finalize_preprocessor(&mut self) -> Result<(), crate::error::AppError>;\n    pub fn next_token(&mut self) -> Result<Token, crate::error::AppError>;\n    pub fn source_name(&self) -> &str;\n    pub fn line(&self) -> usize;\n    pub fn text(&self) -> &str;\n    pub fn set_debug(&mut self, enabled: bool);\n    pub fn debug(&self) -> bool;\n}\n```\n\nInternal helpers can include:\n```rust\nimpl Lexer {\n    fn ident(&mut self) -> Token;\n    fn getnum(&mut self) -> Token;\n    fn backslash(&mut self) -> Option<char>;\n    fn update_location(&mut self, ch: char);\n}\n```\n\nDo not expose the flex `yy*` names publicly. Those become private methods or implementation details.\n\n---\n\n## 4.3 parser.rs\n\n```rust\npub struct Parser { /* ... */ }\n\nimpl Parser {\n    pub fn new() -> Self;\n    pub fn init(&mut self);\n    pub fn parse(&mut self, lexer: &mut crate::c::Lexer, symbols: &mut crate::symbol::SymbolTable)\n        -> Result<(), crate::error::AppError>;\n}\n```\n\nLikely public-ish internal methods:\n```rust\nimpl Parser {\n    pub fn next_token(&mut self, lexer: &mut crate::c::Lexer) -> Result<Token, crate::error::AppError>;\n    pub fn put_back(&mut self, token: Token);\n    pub fn skip_to(&mut self, lexer: &mut crate::c::Lexer, target: TokenKind) -> Result<(), crate::error::AppError>;\n    pub fn is_function_declaration(&mut self, lexer: &mut crate::c::Lexer) -> Result<bool, crate::error::AppError>;\n    pub fn parse_declaration(\n        &mut self,\n        lexer: &mut crate::c::Lexer,\n        symbols: &mut crate::symbol::SymbolTable,\n    ) -> Result<(), crate::error::AppError>;\n}\n```\n\nMost parser helpers should stay non-public unless another module truly calls them.\n\n---\n\n## 4.4 symbol.rs\n\n```rust\npub struct SymbolTable { /* ... */ }\n\nimpl SymbolTable {\n    pub fn new() -> Self;\n    pub fn lookup(&self, name: &str) -> Option<&Symbol>;\n    pub fn lookup_mut(&mut self, name: &str) -> Option<&mut Symbol>;\n    pub fn install(&mut self, name: impl Into<String>, flags: u32) -> &mut Symbol;\n    pub fn install_ident(&mut self, name: impl Into<String>, storage: StorageClass) -> &mut Symbol;\n    pub fn change_storage(&mut self, name: &str, storage: StorageClass) -> bool;\n    pub fn add_reference(&mut self, name: &str, line: usize, source: impl Into<String>);\n    pub fn mark_callers(&mut self);\n    pub fn eliminate_non_targets(&mut self);\n    pub fn collect_symbols(&self) -> Vec<&Symbol>;\n    pub fn collect_functions(&self) -> Vec<&Symbol>;\n    pub fn install_starter(&mut self, name: impl Into<String>);\n    pub fn clear_starters(&mut self);\n    pub fn install_target(&mut self, name: impl Into<String>);\n}\n```\n\nPrivate/internal:\n- unlink helpers\n- delete autos/statics/params by level\n- move params\n- append symbol to lists\n\nThese can be implemented with vector/table mutation rather than exposed frees/deletes.\n\n---\n\n## 4.5 depmap.rs\n\n```rust\npub struct DepMap {\n    size: usize,\n    rows: Vec<Vec<bool>>,\n}\n```\n\n```rust\nimpl DepMap {\n    pub fn new(size: usize) -> Self;\n    pub fn row(&self, index: usize) -> Option<&[bool]>;\n    pub fn set(&mut self, from: usize, to: usize, value: bool);\n    pub fn is_set(&self, from: usize, to: usize) -> bool;\n    pub fn transitive_closure(&mut self);\n}\n```\n\nIf the original bit-level packing matters, it can later become `Vec<u64>` internally without API change.\n\n---\n\n## 4.6 output.rs / format drivers\n\n```rust\npub enum OutputFormat {\n    Posix,\n    Gnu,\n    Dot,\n}\n```\n\n```rust\npub struct OutputSymbol<'a> {\n    pub direct: bool,\n    pub level: usize,\n    pub last: bool,\n    pub symbol: &'a crate::symbol::Symbol,\n}\n```\n\n```rust\npub struct OutputEngine {\n    format: OutputFormat,\n    level_mark: String,\n}\n```\n\n```rust\nimpl OutputEngine {\n    pub fn new(format: OutputFormat) -> Self;\n    pub fn set_level_mark(&mut self, mark: impl Into<String>);\n    pub fn begin(&mut self, out: &mut dyn std::io::Write) -> std::io::Result<()>;\n    pub fn end(&mut self, out: &mut dyn std::io::Write) -> std::io::Result<()>;\n    pub fn print_symbol(\n        &mut self,\n        out: &mut dyn std::io::Write,\n        item: OutputSymbol<'_>,\n    ) -> std::io::Result<()>;\n    pub fn output(\n        &mut self,\n        out: &mut dyn std::io::Write,\n        symbols: &[crate::symbol::Symbol],\n    ) -> Result<(), crate::error::AppError>;\n}\n```\n\nDriver-specific modules:\n\n```rust\npub struct PosixDriver;\npub struct GnuDriver;\npub struct DotDriver;\n```\n\nwith methods like:\n```rust\nimpl PosixDriver {\n    pub fn print_symbol(\n        &mut self,\n        out: &mut dyn std::io::Write,\n        item: crate::output::OutputSymbol<'_>,\n    ) -> std::io::Result<()>;\n}\n```\n\n---\n\n## 4.7 parseopt.rs\n\n```rust\npub struct ParseOptions { /* ... */ }\n\nimpl ParseOptions {\n    pub fn new(program_name: impl Into<String>) -> Self;\n    pub fn with_args(program_name: impl Into<String>, args: Vec<String>) -> Self;\n    pub fn add_option(&mut self, def: OptDef);\n    pub fn parse_next(&mut self) -> Result<Option<ParsedItem>, crate::error::AppError>;\n    pub fn parse_all(&mut self) -> Result<Vec<ParsedItem>, crate::error::AppError>;\n    pub fn argv(&self) -> &[String];\n    pub fn is_set(&self, name: &str) -> bool;\n    pub fn option_by_code(&self, short: char) -> Option<&OptDef>;\n    pub fn option_by_name(&self, long: &str) -> Option<&OptDef>;\n    pub fn set_help(&mut self, text: impl Into<String>);\n    pub fn set_usage(&mut self, text: impl Into<String>);\n    pub fn set_version(&mut self, text: impl Into<String>);\n}\n```\n\n---\n\n## 4.8 help.rs\n\n```rust\npub struct HelpFormat {\n    pub short_opt_col: usize,\n    pub long_opt_col: usize,\n    pub doc_opt_col: usize,\n    pub header_col: usize,\n    pub opt_doc_col: usize,\n    pub sublist_col: usize,\n    pub sublist_doc_col: usize,\n    pub usage_indent: usize,\n    pub right_margin: usize,\n}\n```\n\n```rust\npub struct HelpRenderer {\n    format: HelpFormat,\n}\n```\n\n```rust\nimpl HelpRenderer {\n    pub fn new() -> Self;\n    pub fn print_usage(\n        &self,\n        out: &mut dyn std::io::Write,\n        parser: &crate::parseopt::ParseOptions,\n    ) -> std::io::Result<()>;\n    pub fn print_help(\n        &self,\n        out: &mut dyn std::io::Write,\n        parser: &crate::parseopt::ParseOptions,\n    ) -> std::io::Result<()>;\n    pub fn print_version(\n        &self,\n        out: &mut dyn std::io::Write,\n        version: &str,\n    ) -> std::io::Result<()>;\n}\n```\n\n---\n\n## 4.9 wordsplit.rs\n\n```rust\npub struct Wordsplit {\n    input: String,\n    words: Vec<String>,\n    error: Option<WordSplitError>,\n}\n```\n\n```rust\nimpl Wordsplit {\n    pub fn new(input: impl Into<String>) -> Self;\n    pub fn run(&mut self) -> Result<(), WordSplitError>;\n    pub fn words(&self) -> &[String];\n    pub fn into_words(self) -> Vec<String>;\n    pub fn clear_error(&mut self);\n    pub fn error(&self) -> Option<&WordSplitError>;\n    pub fn perror(&self, program_name: &str);\n}\n```\n\nKeep many helpers private:\n- variable expansion\n- quoting\n- delimiter scanning\n- node management\n\n---\n\n## 4.10 hash.rs\n\n```rust\npub struct HashTable<K, V> { /* ... */ }\n```\n\n```rust\nimpl<K: Eq + Clone, V> HashTable<K, V> {\n    pub fn new() -> Self;\n    pub fn with_capacity(bucket_count: usize) -> Self;\n    pub fn len(&self) -> usize;\n    pub fn bucket_count(&self) -> usize;\n    pub fn buckets_used(&self) -> usize;\n    pub fn max_bucket_length(&self) -> usize;\n    pub fn table_ok(&self) -> bool;\n    pub fn clear(&mut self);\n}\n```\n\nAnd with hashing support:\n```rust\nimpl<K: Eq + Clone + std::hash::Hash, V> HashTable<K, V> {\n    pub fn lookup(&self, key: &K) -> Option<&V>;\n    pub fn lookup_mut(&mut self, key: &K) -> Option<&mut V>;\n    pub fn insert(&mut self, key: K, value: V) -> Option<V>;\n    pub fn insert_if_absent(&mut self, key: K, value: V) -> bool;\n    pub fn remove(&mut self, key: &K) -> Option<V>;\n    pub fn rehash(&mut self, bucket_count: usize);\n}\n```\n\nThis uses `std::hash::Hash`, which is std-only and acceptable.\n\n---\n\n## 4.11 error.rs\n\n```rust\n#[derive(Debug)]\npub enum AppError {\n    Io(std::io::Error),\n    Parse(String),\n    Option(String),\n    Wordsplit(crate::wordsplit::WordSplitError),\n    Message(String),\n}\n```\n\n```rust\npub struct ErrorReporter {\n    pub program_name: String,\n    pub suppress_line_duplicates: bool,\n}\n```\n\n```rust\nimpl ErrorReporter {\n    pub fn new(program_name: impl Into<String>) -> Self;\n    pub fn flush_stdout(&self) -> std::io::Result<()>;\n    pub fn print_errno_message(&self, message: &str, err: &std::io::Error);\n    pub fn error(&self, status: Option<i32>, err: Option<&std::io::Error>, message: &str);\n    pub fn at_line(\n        &self,\n        status: Option<i32>,\n        err: Option<&std::io::Error>,\n        file: &str,\n        line: usize,\n        message: &str,\n    );\n}\n```\n\nThis reflects GNU `error.c` behavior while remaining Rust-native.\n\n## 5. Error handling strategy\n\nUse a two-layer strategy.\n\n### 5.1 Internal computation\nUse:\n- `Result<T, AppError>` for fallible operations\n- `Option<T>` for absent values\n- `bool` for simple predicates\n\nExamples:\n- token fetch: `Result<Token, AppError>`\n- symbol lookup: `Option<&Symbol>`\n- parser recognition: `Result<bool, AppError>`\n\nDo not return raw `i32` status codes internally.\n\n### 5.2 CLI boundary\nAt the outermost boundary in `main()`:\n- convert `Result<i32, AppError>` into stderr output and process exit code\n- preserve original stdout/stderr responsibilities\n- preserve nonzero exit on fatal parse/io/config errors\n\n### 5.3 Error taxonomy\nOne crate-local error enum is enough:\n\n```rust\npub enum AppError {\n    Io(std::io::Error),\n    Parse(String),\n    Lex(String),\n    Option(String),\n    Symbol(String),\n    Wordsplit(WordSplitError),\n    Message(String),\n}\n```\n\nThis is sufficient and avoids speculative deep hierarchies.\n\n### 5.4 Reporting vs propagation\nKeep GNU-style reporting code in `error.rs`, but do not force every function to print immediately.\n- lower-level modules should usually return `AppError`\n- `error.rs` is used where source behavior clearly emits diagnostic text directly\n- `main.rs` should own final fatal error display and exit selection\n\nThis preserves behavior while staying idiomatic.\n\n## 6. Cargo manifest shape\n\nGiven the hard constraints, `Cargo.toml` should be minimal and std-only:\n\n```toml\n[package]\nname = \"cflow-new-rust\"\nversion = \"0.1.0\"\nedition = \"2021\"\n\n[[bin]]\nname = \"cflow-new-rust\"\npath = \"src/main.rs\"\n```\n\nNo extra dependencies should be introduced at this stage.\n\n## 7. Module declaration strategy in `main.rs`\n\nBecause `src/lib.rs` is disallowed by the user entry strategy, `main.rs` should declare modules directly:\n\n```rust\nmod ack;\nmod asnprintf;\nmod basename_lgpl;\nmod bitrotate;\nmod c;\nmod calloc;\nmod cloexec;\nmod close;\nmod d;\nmod depmap;\nmod dot;\nmod dup2;\nmod error;\nmod exitfail;\nmod fcntl;\nmod fd_hook;\nmod float;\nmod foo;\nmod free;\nmod fstat;\nmod getdtablesize;\nmod getprogname;\nmod gnu;\nmod hash;\nmod help;\nmod ialloc;\nmod itold;\nmod linked_list;\nmod malloc;\nmod malloca;\nmod mbszero;\nmod memchr;\nmod msvc_inval;\nmod msvc_nothrow;\nmod obstack;\nmod open;\nmod optset;\nmod output;\nmod parseopt;\nmod parser;\nmod posix;\nmod printf_args;\nmod printf_parse;\nmod progname;\nmod realloc;\nmod reallocarray;\nmod snprintf;\nmod stat;\nmod stat_time;\nmod stat_w32;\nmod stdio_read;\nmod stdio_write;\nmod strerror;\nmod strerror_override;\nmod symbol;\nmod unistd;\nmod vasnprintf;\nmod wc;\nmod whoami;\nmod wordwrap;\nmod wordsplit;\nmod xalloc_die;\nmod xmalloc;\nmod xsize;\n```\n\n## 8. Important design choices kept intentionally conservative\n\n### No `src/lib.rs`\nEven though part of the contract text says “project type: library”, the later entry strategy explicitly overrides that and says:\n- generate executable project\n- use `src/main.rs`\n- do not plan or depend on `src/lib.rs`\n\nSo the design follows the executable strategy.\n\n### No unsafe / FFI\nEven for modules that were portability shims in C:\n- no `extern \"C\"`\n- no raw pointers\n- no libc crate\n- prefer portable std behavior or stubs where behavior cannot be faithfully recovered without more source evidence\n\n### No extra abstraction layers\nNo:\n- plugin registry framework\n- async pipeline\n- thread-safe wrappers\n- serializer formats\n- builder-heavy APIs\n\nOnly one notable abstraction is justified:\n- output-driver dispatch\n\n### Internal helpers remain internal\nMany C functions listed are implementation helpers. In Rust they should often become:\n- private methods\n- private free functions inside the module\n- small helper structs/enums\n\nThe public API should be thinner than the raw C function list.\n\n## 9. Recommended implementation order\n\nTo reach a compilable and structurally correct codebase with minimal churn:\n\n1. **Cargo.toml**\n2. **main.rs**\n   - declare all modules\n   - minimal `main()`\n3. **error.rs**\n4. **parseopt.rs**, **optset.rs**, **help.rs**, **wordwrap.rs**\n5. **symbol.rs**, **hash.rs**, **linked_list.rs**\n6. **c.rs**\n7. **parser.rs**\n8. **output.rs**, **posix.rs**, **gnu.rs**, **dot.rs**\n9. **depmap.rs**\n10. **wordsplit.rs**\n11. remaining GNU compatibility/support modules\n12. doc/demo modules (`ack`, `d`, `foo`, `wc`, `whoami`)\n\nThis order reflects the core program path first.\n\n## 10. One conflict to call out explicitly\n\nYour prompt includes both:\n- a generated file plan with `src/lib.rs` absent and `src/main.rs` present\n- a migration contract section saying “project type: library”\n- and a later explicit override saying executable project, `src/main.rs`, and **do not** use `src/lib.rs`\n\nI recommend treating the later **Rust crate entry strategy** as authoritative for crate shape. So the project should be a **binary crate**.\n\n## 11. When to request more source detail\n\nI can design the structure from the contract alone, but for accurate method signatures in the trickiest modules, more behavior evidence would materially improve fidelity.\n\nThe highest-value additional reads would be:\n\n<CGR_READ>\ndocs/rewrite-context/03_behaviors/src/main.c\ndocs/rewrite-context/03_behaviors/src/c.c\ndocs/rewrite-context/03_behaviors/src/parser.c\ndocs/rewrite-context/03_behaviors/src/symbol.c\ndocs/rewrite-context/03_behaviors/src/output.c\ndocs/rewrite-context/03_behaviors/src/parseopt/parseopt.c\ndocs/rewrite-context/03_behaviors/src/wordsplit/wordsplit.c\nspecs/main/spec.md\nspecs/parser/spec.md\nspecs/symbol/spec.md\nspecs/output/spec.md\nspecs/parseopt/spec.md\nspecs/wordsplit/spec.md\n</CGR_READ>\n\nThose documents would let me refine:\n- exact `MainApp` field structure\n- token model\n- symbol ownership relationships\n- output traversal signatures\n- parseopt item model\n- wordsplit error and expansion interfaces\n\nIf you want, I can next turn this architecture into a **concrete per-file Rust skeleton plan** with module declarations, public structs/enums, and stub signatures for every allowed file.",
+  "implementation_plan": "## 1. Dependency analysis\n\nThis project is best implemented as a **binary crate with internal modules declared from `src/main.rs`**, and built **bottom-up** from shared utility types toward the CLI orchestration path.\n\n### 1.1 Primary dependency layers\n\n#### Layer A: foundational utilities and compatibility helpers\nThese modules should have little or no dependency on the rest of the crate.\n\n- `error.rs`\n- `strerror.rs`, `strerror_override.rs`\n- `exitfail.rs`\n- `progname.rs`, `getprogname.rs`\n- `xsize.rs`\n- allocation wrappers:\n  - `malloc.rs`, `calloc.rs`, `realloc.rs`, `reallocarray.rs`, `free.rs`\n  - `ialloc.rs`, `malloca.rs`\n  - `xalloc_die.rs`, `xmalloc.rs`\n- isolated helpers:\n  - `basename_lgpl.rs`, `bitrotate.rs`, `float.rs`, `itold.rs`, `mbszero.rs`, `memchr.rs`\n- low-level/platform wrappers:\n  - `fd_hook.rs`, `msvc_inval.rs`, `msvc_nothrow.rs`\n  - `close.rs`, `dup2.rs`, `fcntl.rs`, `cloexec.rs`, `open.rs`\n  - `fstat.rs`, `stat.rs`, `stat_time.rs`, `stat_w32.rs`\n  - `stdio_read.rs`, `stdio_write.rs`\n  - `unistd.rs`, `getdtablesize.rs`\n- formatting support:\n  - `printf_args.rs`, `printf_parse.rs`, `snprintf.rs`, `vasnprintf.rs`, `asnprintf.rs`\n- storage utilities:\n  - `linked_list.rs`, `hash.rs`, `obstack.rs`\n\nThese should compile independently or with only standard library dependencies plus `crate::error::AppError` where needed.\n\n---\n\n#### Layer B: option/help/config parsing support\nThese depend on foundational utilities but not on parser/output/symbol logic.\n\n- `wordwrap.rs`\n- `help.rs`\n- `optset.rs`\n- `parseopt.rs`\n- `wordsplit.rs`\n\nRelationships:\n- `help.rs` depends on `parseopt.rs` and `wordwrap.rs`\n- `optset.rs` may depend on `error.rs`\n- `parseopt.rs` depends on `error.rs`\n- `wordsplit.rs` depends on `error.rs` only indirectly if converted into `AppError`\n\n---\n\n#### Layer C: core analysis data model\nThese are central shared modules for program semantics.\n\n- `hash.rs`\n- `linked_list.rs`\n- `symbol.rs`\n- `depmap.rs`\n\nRelationships:\n- `symbol.rs` depends on `hash.rs`\n- `depmap.rs` may optionally use `obstack.rs` behaviorally for growth semantics, but in Rust should preferably be self-contained with `Vec`\n- `symbol.rs` should not depend on parser or lexer\n\n---\n\n#### Layer D: front-end scanning and parsing\nThese consume foundational and core-analysis modules.\n\n- `c.rs`\n- `parser.rs`\n\nRelationships:\n- `c.rs` depends on `error.rs`\n- `parser.rs` depends on:\n  - `c.rs`\n  - `symbol.rs`\n  - `error.rs`\n\nThis layer should be implemented after symbol modeling is stable.\n\n---\n\n#### Layer E: output subsystem\nThese consume symbol data and common output orchestration.\n\n- `output.rs`\n- `posix.rs`\n- `gnu.rs`\n- `dot.rs`\n\nRelationships:\n- `output.rs` depends on `symbol.rs`, possibly `depmap.rs`, and the concrete output drivers\n- `posix.rs`, `gnu.rs`, `dot.rs` depend on `symbol.rs` and shared output types from `output.rs`\n\nKeep dispatch simple with enum-based routing unless source evidence requires dynamic registration behavior.\n\n---\n\n#### Layer F: documentation/demo modules\nThese should stay isolated and should not influence core implementation.\n\n- `ack.rs`\n- `d.rs`\n- `foo.rs`\n- `wc.rs`\n- `whoami.rs`\n\nThey may depend on `error.rs` and std I/O/path APIs only.\n\n---\n\n#### Layer G: top-level orchestration\n- `main.rs`\n\nRelationships:\n- depends on almost everything actually used by the executable path:\n  - `error.rs`\n  - `parseopt.rs`, `optset.rs`, `help.rs`, `wordwrap.rs`\n  - `wordsplit.rs`\n  - `symbol.rs`, `depmap.rs`\n  - `c.rs`, `parser.rs`\n  - `output.rs`, `posix.rs`, `gnu.rs`, `dot.rs`\n  - `progname.rs`, `getprogname.rs`, `exitfail.rs`\n  - selected support modules for source-compatible behavior\n\n---\n\n### 1.2 High-risk dependency knots to control\n\n#### `main.rs` ↔ `parseopt.rs` ↔ `help.rs`\nAvoid circular design by keeping:\n- `parseopt.rs` responsible only for parsing definitions and args\n- `help.rs` responsible only for rendering parser metadata\n- `main.rs` responsible for deciding when to print help/version and exit\n\n#### `output.rs` ↔ driver modules\nAvoid making drivers depend on the full engine internals.\nUse:\n- shared lightweight structs in `output.rs` (`OutputFormat`, `OutputSymbol`)\n- driver methods that consume those values\n\n#### `parser.rs` ↔ `symbol.rs`\nParser should mutate `SymbolTable` only through explicit methods:\n- install symbol\n- change storage\n- add reference\n- mark call\n- collect final symbol sets\n\nDo not expose internal table layout.\n\n#### `wordsplit.rs` ↔ `main.rs`\n`wordsplit.rs` should return structured errors and split words only.\nProfile/rc/environment policy remains in `main.rs`.\n\n---\n\n## 2. Generation order\n\nA restrained 4-phase plan is the safest fit here.\n\n### Phase 1: crate skeleton and foundations\nGoal: make the crate compile with minimal module declarations and shared utility types.\n\nFiles:\n- `Cargo.toml`\n- `README.md`\n- `src/main.rs`\n- `src/error.rs`\n- `src/strerror.rs`\n- `src/strerror_override.rs`\n- `src/exitfail.rs`\n- `src/progname.rs`\n- `src/getprogname.rs`\n- `src/xsize.rs`\n- `src/malloc.rs`\n- `src/calloc.rs`\n- `src/realloc.rs`\n- `src/reallocarray.rs`\n- `src/free.rs`\n- `src/ialloc.rs`\n- `src/malloca.rs`\n- `src/xalloc_die.rs`\n- `src/xmalloc.rs`\n- `src/basename_lgpl.rs`\n- `src/bitrotate.rs`\n- `src/float.rs`\n- `src/itold.rs`\n- `src/mbszero.rs`\n- `src/memchr.rs`\n- `src/fd_hook.rs`\n- `src/msvc_inval.rs`\n- `src/msvc_nothrow.rs`\n- `src/close.rs`\n- `src/dup2.rs`\n- `src/fcntl.rs`\n- `src/cloexec.rs`\n- `src/open.rs`\n- `src/fstat.rs`\n- `src/stat.rs`\n- `src/stat_time.rs`\n- `src/stat_w32.rs`\n- `src/stdio_read.rs`\n- `src/stdio_write.rs`\n- `src/unistd.rs`\n- `src/getdtablesize.rs`\n- `src/printf_args.rs`\n- `src/printf_parse.rs`\n- `src/snprintf.rs`\n- `src/vasnprintf.rs`\n- `src/asnprintf.rs`\n- `src/linked_list.rs`\n- `src/hash.rs`\n- `src/obstack.rs`\n\n### Phase 2: option/help/config and core data structures\nGoal: establish parser-independent program state and user input handling.\n\nFiles:\n- `src/wordwrap.rs`\n- `src/help.rs`\n- `src/optset.rs`\n- `src/parseopt.rs`\n- `src/wordsplit.rs`\n- `src/symbol.rs`\n- `src/depmap.rs`\n\n### Phase 3: lexer, parser, and output pipeline\nGoal: implement the main analysis and rendering path.\n\nFiles:\n- `src/c.rs`\n- `src/parser.rs`\n- `src/output.rs`\n- `src/posix.rs`\n- `src/gnu.rs`\n- `src/dot.rs`\n\n### Phase 4: top-level orchestration and retained demo modules\nGoal: wire executable behavior and complete remaining isolated modules.\n\nFiles:\n- `src/ack.rs`\n- `src/d.rs`\n- `src/foo.rs`\n- `src/wc.rs`\n- `src/whoami.rs`\n- `src/main.rs` final pass\n\n### Required reordered file list\n\n<new_files_to_generate>\n- Cargo.toml\n- README.md\n- src/error.rs\n- src/strerror.rs\n- src/strerror_override.rs\n- src/exitfail.rs\n- src/progname.rs\n- src/getprogname.rs\n- src/xsize.rs\n- src/malloc.rs\n- src/calloc.rs\n- src/realloc.rs\n- src/reallocarray.rs\n- src/free.rs\n- src/ialloc.rs\n- src/malloca.rs\n- src/xalloc_die.rs\n- src/xmalloc.rs\n- src/basename_lgpl.rs\n- src/bitrotate.rs\n- src/float.rs\n- src/itold.rs\n- src/mbszero.rs\n- src/memchr.rs\n- src/fd_hook.rs\n- src/msvc_inval.rs\n- src/msvc_nothrow.rs\n- src/close.rs\n- src/dup2.rs\n- src/fcntl.rs\n- src/cloexec.rs\n- src/open.rs\n- src/fstat.rs\n- src/stat.rs\n- src/stat_time.rs\n- src/stat_w32.rs\n- src/stdio_read.rs\n- src/stdio_write.rs\n- src/unistd.rs\n- src/getdtablesize.rs\n- src/printf_args.rs\n- src/printf_parse.rs\n- src/snprintf.rs\n- src/vasnprintf.rs\n- src/asnprintf.rs\n- src/linked_list.rs\n- src/hash.rs\n- src/obstack.rs\n- src/wordwrap.rs\n- src/help.rs\n- src/optset.rs\n- src/parseopt.rs\n- src/wordsplit.rs\n- src/symbol.rs\n- src/depmap.rs\n- src/c.rs\n- src/parser.rs\n- src/output.rs\n- src/posix.rs\n- src/gnu.rs\n- src/dot.rs\n- src/ack.rs\n- src/d.rs\n- src/foo.rs\n- src/wc.rs\n- src/whoami.rs\n- src/main.rs\n</new_files_to_generate>\n\n---\n\n## 3. Implementation strategy by phase and file\n\n## Phase 1: crate skeleton and foundations\n\n### `Cargo.toml`\nImplement:\n- package metadata\n- binary target pointing to `src/main.rs`\n\nNotes:\n- std-only\n- no features or dependency expansion yet\n\n---\n\n### `README.md`\nImplement:\n- build instructions\n- executable purpose\n- note that migration is in progress\n- avoid claiming unsupported parity\n\n---\n\n### `src/main.rs` initial skeleton\nImplement first pass:\n- `mod` declarations for all files\n- minimal `main()` returning exit code behavior\n- placeholder `MainApp`/`RunContext` definition\n\nNotes:\n- first pass should compile before real orchestration exists\n- final implementation happens in Phase 4\n\n---\n\n### `src/error.rs`\nImplement first because almost all fallible modules depend on it.\n\nKey types:\n- `AppError`\n- `ErrorReporter`\n\nMethods:\n- `From<std::io::Error> for AppError`\n- formatting/display support\n- `ErrorReporter::error`\n- `ErrorReporter::at_line`\n- `flush_stdout`\n\nAlgorithmic notes:\n- lower layers should mostly propagate `AppError`\n- reporting methods write to `stderr`\n- duplicate-line suppression can be stored as simple last-file/last-line state if required by behavior evidence\n\n---\n\n### `src/strerror.rs`, `src/strerror_override.rs`\nImplement minimally:\n- map OS errors to strings using `std::io::Error`\n- override module can be a thin compatibility placeholder if no stronger evidence exists\n\nNotes:\n- do not recreate libc strerror tables without evidence\n\n---\n\n### `src/exitfail.rs`\nImplement:\n- single function/constant exposing default nonzero failure code\n\n---\n\n### `src/progname.rs`, `src/getprogname.rs`\nImplement:\n- program name storage and lookup\n- derive fallback from `std::env::args().next()`\n\nNotes:\n- prefer `std::sync::OnceLock<String>` if a global program name is necessary\n- keep API narrow and safe\n\n---\n\n### Allocation helpers\nFiles:\n- `malloc.rs`, `calloc.rs`, `realloc.rs`, `reallocarray.rs`, `free.rs`\n- `ialloc.rs`, `malloca.rs`\n- `xalloc_die.rs`, `xmalloc.rs`\n- `xsize.rs`\n\nStrategy:\n- express semantics through safe allocation helpers over `Vec`, `Box`, `String`\n- only expose checked-size helpers where original behavior matters\n\nKey responsibilities:\n- `xsize.rs`: checked multiplication/addition helpers\n- `xmalloc.rs`: fallible or panic-on-OOM style wrappers only if behavior evidence demands fatal allocation semantics\n- `reallocarray.rs`: overflow-checked resize computation\n- `malloca.rs`: model stack/heap distinction conservatively as heap-backed temporary allocation; do not fake stack allocation\n\nNotes:\n- Rust allocation failure generally aborts; do not invent recoverable allocator semantics beyond checked size calculations\n- avoid fake `free` APIs unless needed for ownership symmetry\n\n---\n\n### Isolated helper modules\nFiles:\n- `basename_lgpl.rs`\n- `bitrotate.rs`\n- `float.rs`\n- `itold.rs`\n- `mbszero.rs`\n- `memchr.rs`\n\nStrategy:\n- implement only evidence-backed helpers\n- use std equivalents where possible:\n  - basename: `Path::file_name`\n  - bitrotate: integer rotate methods\n  - memchr: byte slice scan\n  - mbszero: string/byte zero checks as needed\n\nNotes:\n- `float.rs` and `itold.rs` should remain minimal until a real caller needs exact semantics\n\n---\n\n### Platform/FD wrapper modules\nFiles:\n- `fd_hook.rs`\n- `msvc_inval.rs`\n- `msvc_nothrow.rs`\n- `close.rs`, `dup2.rs`, `fcntl.rs`, `cloexec.rs`, `open.rs`\n- `fstat.rs`, `stat.rs`, `stat_time.rs`, `stat_w32.rs`\n- `stdio_read.rs`, `stdio_write.rs`\n- `unistd.rs`, `getdtablesize.rs`\n\nStrategy:\n- implement only the subset actually needed by migrated code\n- wrap std file/path metadata APIs rather than recreating full POSIX APIs\n\nExamples:\n- `open.rs`: helper opening files via `std::fs::File` / `OpenOptions`\n- `stat.rs`, `fstat.rs`: file metadata wrappers returning `std::fs::Metadata`-based structs\n- `cloexec.rs`, `fcntl.rs`, `dup2.rs`: likely no-op/limited safe wrappers unless source behavior truly depends on descriptor duplication semantics in the executable path\n\nNotes:\n- do not use FFI or libc\n- modules can begin as conservative placeholders if not on the executable critical path\n\n---\n\n### Formatting support modules\nFiles:\n- `printf_args.rs`, `printf_parse.rs`, `snprintf.rs`, `vasnprintf.rs`, `asnprintf.rs`\n\nStrategy:\n- implement only enough formatting behavior required by in-crate callers\n- prefer:\n  - `format!`\n  - `write!`\n  - `String` building\n\nNotes:\n- these modules likely exist for gnulib parity; do not overbuild a printf engine unless source use requires it\n- `snprintf.rs` and `asnprintf.rs` can be thin Rust-style formatting helpers\n\n---\n\n### `src/linked_list.rs`\nImplement a narrow owned abstraction.\n\nKey type:\n- `LinkedList<T> { items: Vec<T> }`\n\nMethods:\n- `new`\n- `append`\n- `prepend`\n- `remove_at`\n- `remove_where`\n- `iter`\n- `iter_mut`\n- `len`\n- `is_empty`\n\nNotes:\n- preserve ordering semantics\n- no pointer-based intrusive list unless later evidence forces it\n\n---\n\n### `src/hash.rs`\nImplement a safe custom hash table because module-local semantics may matter.\n\nKey types:\n- `HashTuning`\n- `HashTable<K, V>`\n\nMethods:\n- `new`, `with_capacity`\n- `len`, `bucket_count`, `buckets_used`, `max_bucket_length`, `table_ok`\n- `lookup`, `lookup_mut`, `insert`, `insert_if_absent`, `remove`, `rehash`\n\nAlgorithmic notes:\n- separate chaining with `Vec<Vec<(K, V)>>`\n- use `DefaultHasher`\n- rehash on load threshold\n- preserve simple bucket statistics API\n\nNotes:\n- this avoids coupling semantics to `std::collections::HashMap`\n- keep iteration helper methods simple and explicit\n\n---\n\n### `src/obstack.rs`\nImplement only if needed by dependent modules.\n\nRecommended Rust shape:\n- growable chunk-backed byte/object buffer over `Vec<u8>` or `Vec<Vec<u8>>`\n\nMethods:\n- `new`\n- append/push helpers\n- `memory_used`\n\nNotes:\n- do not emulate raw-pointer obstack API\n- if no caller really needs chunk semantics, keep module intentionally small\n\n---\n\n## Phase 2: option/help/config and core data structures\n\n### `src/wordwrap.rs`\nImplement text wrapping used by help output.\n\nKey types:\n- `WordWrapper` or equivalent stateful struct\n- margin configuration fields\n\nMethods:\n- configure left/right margin\n- write text\n- paragraph break\n- flush\n\nAlgorithmic notes:\n- greedily wrap on whitespace\n- preserve indentation and explicit newlines\n- use character iteration conservatively; byte-based handling is fine unless behavior evidence requires multibyte-aware widths\n\n---\n\n### `src/help.rs`\nImplement rendering for usage/help/version.\n\nKey types:\n- `HelpFormat`\n- `HelpRenderer`\n\nMethods:\n- `print_usage`\n- `print_help`\n- `print_version`\n\nDependencies:\n- `parseopt::ParseOptions`\n- `wordwrap.rs`\n\nAlgorithmic notes:\n- sort/group options only if source evidence requires it\n- render short/long option names consistently\n- wrap help descriptions using `wordwrap`\n\n---\n\n### `src/optset.rs`\nImplement option coercion helpers.\n\nMethods:\n- signed/unsigned integer parsing\n- bool true/false setters\n- incrementers\n- string copy/store helpers\n\nNotes:\n- keep pure and small\n- return `Result<_, AppError>` on invalid values\n\n---\n\n### `src/parseopt.rs`\nImplement the core option parser.\n\nKey types:\n- `OptDef`\n- `ParsedItem`\n- `ParseOptions`\n\nMethods:\n- `new`, `with_args`\n- `add_option`\n- `parse_next`\n- `parse_all`\n- lookup helpers\n- help/usage/version text setters\n- `is_set`\n\nAlgorithmic notes:\n- support:\n  - short options: `-x`\n  - grouped short options if behavior evidence supports it\n  - long options: `--name`\n  - `--name=value`\n  - value-taking options\n  - positional argument termination with `--`\n- keep permutation/reordering conservative; only implement argv permutation if clearly required by behavior evidence\n- store seen options by canonical name\n\nNotes:\n- do not recreate full GNU getopt edge behavior without evidence\n- parser should be deterministic and explicit, not macro-driven\n\n---\n\n### `src/wordsplit.rs`\nImplement shell-like word splitting with restrained scope guided by source behavior.\n\nKey types:\n- `WordSplitErrorKind`\n- `WordSplitError`\n- internal `WsNode`\n- `Wordsplit`\n\nPublic methods:\n- `new`\n- `run`\n- `words`\n- `into_words`\n- `clear_error`\n- `error`\n- `perror`\n\nAlgorithmic notes:\nImplement in passes:\n1. scan input into segments honoring quotes and escapes\n2. perform quote removal\n3. optional variable expansion\n4. split fields where allowed\n5. finalize `Vec<String>`\n\nImportant restraint:\n- command substitution, globbing, sed-expression skipping, tilde expansion, and env assignment should be added only if clearly required by `main.c` or wordsplit behavior evidence\n- unsupported advanced paths should produce structured errors rather than speculative behavior\n\nNotes:\n- internal node list can just be `Vec<WsNode>`\n- avoid trying to replicate every C helper one-for-one\n\n---\n\n### `src/symbol.rs`\nImplement the symbol model and table.\n\nKey types:\n- `StorageClass`\n- `Reference`\n- `Symbol`\n- `SymbolTable`\n\nSuggested additional fields if needed:\n- declaration level / scope depth\n- callee/caller relationships as `Vec<String>` or stable indices\n- flags and active markers\n\nMethods:\n- `new`\n- `lookup`, `lookup_mut`\n- `install`\n- `install_ident`\n- `change_storage`\n- `add_reference`\n- `collect_symbols`\n- `collect_functions`\n- starter/target installation and clearing\n- `mark_callers`\n- `eliminate_non_targets`\n\nAlgorithmic notes:\n- store entries in `hash::HashTable<String, Symbol>`\n- preserve insertion/collection order if output depends on it; if so, maintain a side `Vec<String>` order list\n- replace unlink/delete C pointer operations with safe collection mutation\n- represent ownership relations via names or indices, not references\n\nNotes:\n- this module is central; implement carefully before parser/output\n- avoid intrusive list emulation\n\n---\n\n### `src/depmap.rs`\nImplement dependency map and closure.\n\nKey type:\n- `DepMap { size, rows }`\n\nMethods:\n- `new`\n- `row`\n- `set`\n- `is_set`\n- `transitive_closure`\n\nAlgorithmic notes:\n- start with `Vec<Vec<bool>>`\n- closure via Floyd–Warshall or repeated propagation\n- if performance matters later, change storage to bitsets internally without API change\n\n---\n\n## Phase 3: lexer, parser, and output pipeline\n\n### `src/c.rs`\nImplement the lexer/scanner based on behavioral facts from `src/c.c`, but with Rust-native design.\n\nKey types:\n- `TokenKind`\n- `Token`\n- `SourceLocation`\n- `Lexer`\n\nFields:\n- source name\n- input buffer\n- position\n- line/column\n- current token text\n- preprocessor configuration\n- debug flag\n\nMethods:\n- `new`\n- `with_source`\n- `restart`\n- `set_preprocessor`\n- `preprocessor_option`\n- `open_preprocessor`\n- `close_preprocessor`\n- `finalize_preprocessor`\n- `next_token`\n- inspection methods\n\nAlgorithmic notes:\n- implement manual token scanning instead of flex-state port\n- cover:\n  - identifiers/keywords\n  - numbers\n  - string literals\n  - char literals\n  - punctuators\n  - comments/whitespace skipping\n  - line/column updates\n- preprocessor integration should be conservative:\n  - either read transformed source from an external command only if clearly required and supportable with std process APIs\n  - or keep command state and return unsupported error if behavior cannot be safely reproduced yet\n\nNotes:\n- all `yy*` C functions become private implementation details or disappear entirely\n- public API should expose only Rust-facing scanner behavior\n\n---\n\n### `src/parser.rs`\nImplement syntax/declaration parsing and symbol/reference collection.\n\nKey types:\n- `Parser`\n- `BalanceState`\n\nFields:\n- putback stack\n- save stack\n- balance stack\n- parser flags/debug state as needed\n\nMethods:\n- `new`\n- `init`\n- `parse`\n- token helpers (`next_token`, `put_back`)\n- declaration recognizers\n- `skip_to`\n- `is_function_declaration`\n- `parse_declaration`\n\nAlgorithmic notes:\nBuild incrementally:\n1. token consumption and putback\n2. balanced delimiter skipping\n3. declaration classification\n4. function declaration/body recognition\n5. variable/typedef handling\n6. reference/call collection\n\nImportant restraint:\n- do not invent a full C parser beyond actual cflow needs\n- focus on the original behavioral purpose:\n  - identify functions\n  - capture declarations\n  - record call/reference relations\n\nNotes:\n- many original helper names map naturally to private methods\n- save-stack behavior should be implemented with cloned `Token`s, not borrowed token slices\n\n---\n\n### `src/output.rs`\nImplement orchestration and traversal.\n\nKey types:\n- `OutputFormat`\n- `OutputSymbol<'a>`\n- `OutputEngine`\n- internal enum driver dispatch\n\nMethods:\n- `new`\n- `set_level_mark`\n- `begin`\n- `end`\n- `print_symbol`\n- `output`\n\nAlgorithmic notes:\n- centralize traversal here\n- support modes suggested by source:\n  - xref output\n  - direct tree\n  - inverted tree\n- maintain active/visited tracking to prevent repeated traversal loops\n- produce ordered symbol lists from `SymbolTable`\n\nNotes:\n- keep driver-specific formatting out of this file\n- if registration exists in C, map it to fixed enum selection rather than open-ended runtime plugin architecture\n\n---\n\n### `src/posix.rs`, `src/gnu.rs`, `src/dot.rs`\nImplement concrete formatters.\n\nShared pattern:\n- lightweight driver struct\n- `begin` / `end` only where format needs framing\n- `print_symbol` formatting per style\n\n#### `posix.rs`\n- print symbol types/names in POSIX-like textual format\n- include type markers if behavior evidence requires it\n\n#### `gnu.rs`\n- GNU style symbol/function naming and references\n- pay attention to call graph textual conventions\n\n#### `dot.rs`\n- graph framing:\n  - start `digraph`\n  - declare nodes\n  - emit edges\n  - close graph\n- maintain node declaration deduplication using `HashSet<String>` or equivalent\n\nNotes:\n- avoid putting traversal in these modules\n- consume `output::OutputSymbol`\n\n---\n\n## Phase 4: top-level orchestration and demo modules\n\n### Demo/doc modules\nFiles:\n- `ack.rs`\n- `d.rs`\n- `foo.rs`\n- `wc.rs`\n- `whoami.rs`\n\nStrategy:\n- keep isolated callable routines\n- no separate binaries\n- implement only minimal Rust equivalents of the documented/sample behaviors\n- expose functions, not global side effects\n\nNotes:\n- these should not affect main cflow pipeline\n\n---\n\n### `src/main.rs` final implementation\nThis is the final integration point.\n\nKey type:\n- `MainApp` or `RunContext`\n\nSuggested fields:\n- `program_name: String`\n- parsed CLI/config state\n- `symbols: symbol::SymbolTable`\n- `lexer: c::Lexer`\n- `parser: parser::Parser`\n- `output: output::OutputEngine`\n- selected input files\n- rc/profile-related settings\n- preprocessor settings\n- target/starter filters\n\nMethods:\n- `new(args: Vec<String>) -> Self`\n- `run(&mut self) -> Result<i32, error::AppError>`\n- `parse_options`\n- `parse_rc`\n- `process_input_files`\n- `emit_output`\n\nAlgorithmic notes:\nImplement in this order:\n1. initialize program name and parser definitions\n2. parse environment/profile/rc if behavior evidence requires it\n3. parse CLI options\n4. configure output format and filters\n5. process each input source via lexer + parser\n6. post-process symbol graph / transitive closure if requested\n7. emit output\n8. choose exit code\n\nImportant restraint:\n- option/config/profile behavior should only be implemented where supported by `main.c` evidence\n- if `fromfile`/rc loading depends on `wordsplit`, use it there and nowhere else\n\n---\n\n## 4. Per-file implementation notes for remaining utility modules\n\nThese modules should be implemented narrowly, often as wrappers or placeholders until called by a dependent module.\n\n- `printf_args.rs`: argument-spec helper structs only if formatting modules need them\n- `printf_parse.rs`: parser for restricted printf directives if needed by `vasnprintf.rs`\n- `vasnprintf.rs`: only enough to support any in-crate caller; otherwise keep scoped\n- `asnprintf.rs`, `snprintf.rs`: String-building wrappers\n- `fd_hook.rs`: placeholder hook registration state only if a caller exists\n- `stat_time.rs`, `stat_w32.rs`, `msvc_inval.rs`, `msvc_nothrow.rs`, `stdio_read.rs`, `stdio_write.rs`, `unistd.rs`: compatibility surfaces with minimal std-based behavior\n- `float.rs`, `itold.rs`, `mbszero.rs`: implement only the exact helper operations required by actual callers\n\nThe rule for all of them:\n- if no executable-path caller exists yet, generate a compilable minimal module with conservative API and comments aligned to source ownership\n- expand only when a dependent module requires concrete behavior\n\n---\n\n## 5. Cross-file interface conventions\n\n### 5.1 Shared type conventions\n\nUse a small set of crate-wide conventions:\n\n- `String` for owned textual data\n- `&str` for borrowed input\n- `Vec<T>` for ordered collections\n- `Option<T>` for absent values\n- `Result<T, error::AppError>` for fallible operations\n- `usize` for indices/counts/line numbers unless source semantics require signed values\n- enums for mode/state values:\n  - `StorageClass`\n  - `TokenKind`\n  - `OutputFormat`\n  - `WordSplitErrorKind`\n\nAvoid:\n- raw pointers\n- exposed lifetimes unless they simplify an API materially\n- trait-heavy abstractions except where output driver dispatch benefits clearly\n\n---\n\n### 5.2 Error propagation approach\n\nInternal convention:\n- return `Result<T, AppError>` from any operation that can fail due to I/O, parse errors, invalid options, or unsupported behavior\n\nRecommended `AppError` variants:\n- `Io(std::io::Error)`\n- `Parse(String)`\n- `Lex(String)`\n- `Option(String)`\n- `Symbol(String)`\n- `Wordsplit(crate::wordsplit::WordSplitError)`\n- `Message(String)`\n\nBoundary convention:\n- modules do not print fatal errors by default\n- `error.rs` provides explicit reporting helpers\n- `main()` converts final errors into diagnostics and exit code\n\nThis keeps core logic testable and avoids duplicated stderr output.\n\n---\n\n### 5.3 Naming conventions\n\n- public Rust methods should describe behavior, not preserve C prefixes\n- C source function names remain traceability evidence only\n- internal helpers can stay close to original semantics where useful, but use snake_case Rust naming\n\nExamples:\n- C `pp_open` → Rust `open_preprocessor`\n- C `parseopt_next` → Rust `parse_next`\n- C `hash_lookup` → Rust `lookup`\n\n---\n\n### 5.4 Ownership and mutation rules\n\n- `SymbolTable` owns `Symbol` values\n- parser mutates symbol state only through `&mut SymbolTable`\n- output consumes immutable symbol views\n- lexer owns its source buffer and token text\n- wordsplit owns its intermediate nodes and final words\n\nPrefer:\n- names/indices for graph links\n- `Vec<String>` / `Vec<usize>` instead of borrowed cross-struct references\n\n---\n\n### 5.5 Module visibility conventions\n\n- keep most helpers private\n- expose only the types and methods needed by another module or `main.rs`\n- do not mirror the full C surface as `pub`\n\nThis is especially important for:\n- `c.rs`\n- `parser.rs`\n- `wordsplit.rs`\n- `output.rs`\n\n---\n\n## 6. Recommended implementation checkpoints\n\nUse these checkpoints to keep the migration controlled.\n\n### Checkpoint 1\nAfter Phase 1:\n- crate compiles\n- `main.rs` runs and exits\n- `AppError` and foundational utilities exist\n\n### Checkpoint 2\nAfter Phase 2:\n- CLI parsing works\n- help/version output works\n- symbol table and dep map have unit-testable behavior\n- wordsplit basic parsing works\n\n### Checkpoint 3\nAfter Phase 3:\n- lexer tokenizes representative C input\n- parser records symbols/references\n- output drivers render a basic call tree/xref\n\n### Checkpoint 4\nAfter Phase 4:\n- executable integrates options + parsing + output\n- rc/profile/from-file support is added only to the degree source evidence confirms it\n- demo modules compile and remain isolated\n\n---\n\n## 7. Scope controls to keep the migration safe\n\n1. **Do not port flex/yacc internals literally**  \n   Recreate behavior with manual Rust code.\n\n2. **Do not over-implement gnulib compatibility files**  \n   Many can be thin wrappers until called.\n\n3. **Do not introduce `lib.rs`, plugin frameworks, async code, or FFI**  \n   None are supported by the contract.\n\n4. **Implement executable-path behavior first**  \n   Utility modules should expand only when a caller needs them.\n\n5. **Preserve C file responsibility boundaries**  \n   But compress private helper APIs inside each Rust module.\n\n---\n\n## 8. Practical bottom-up work sequence inside each phase\n\nFor actual coding, the most efficient sub-order is:\n\n### Phase 1 sub-order\n1. `Cargo.toml`, `README.md`\n2. `src/main.rs` skeleton with `mod` declarations\n3. `src/error.rs`\n4. progname/exit/error-string helpers\n5. size/allocation helpers\n6. linked storage helpers (`linked_list.rs`, `hash.rs`, `obstack.rs`)\n7. remaining portability wrappers as minimal compilable modules\n\n### Phase 2 sub-order\n1. `wordwrap.rs`\n2. `parseopt.rs`\n3. `help.rs`\n4. `optset.rs`\n5. `wordsplit.rs`\n6. `symbol.rs`\n7. `depmap.rs`\n\n### Phase 3 sub-order\n1. `c.rs`\n2. `parser.rs`\n3. `output.rs`\n4. `posix.rs`\n5. `gnu.rs`\n6. `dot.rs`\n\n### Phase 4 sub-order\n1. demo modules\n2. `main.rs` integration\n3. final consistency pass across option names, error messages, and output paths\n\n---\n\n## 9. Final recommendation\n\nThe safest implementation plan is to treat the project as having **three true core subsystems** plus support code:\n\n- **CLI/config**: `parseopt`, `help`, `wordwrap`, `wordsplit`, `main`\n- **analysis**: `c`, `parser`, `symbol`, `depmap`\n- **rendering**: `output`, `posix`, `gnu`, `dot`\n\nAll other files should be implemented **only as much as these subsystems require**. That keeps the migration aligned with the evidence boundary, limits speculative gnulib re-creation, and supports a compile-early, integrate-late workflow.",
+  "planned_files": [
+    "Cargo.toml",
+    "src/error.rs",
+    "src/strerror.rs",
+    "src/strerror_override.rs",
+    "src/ack.rs",
+    "src/asnprintf.rs",
+    "src/basename_lgpl.rs",
+    "src/bitrotate.rs",
+    "src/c.rs",
+    "src/calloc.rs",
+    "src/cloexec.rs",
+    "src/close.rs",
+    "src/d.rs",
+    "src/depmap.rs",
+    "src/dot.rs",
+    "src/dup2.rs",
+    "src/exitfail.rs",
+    "src/fcntl.rs",
+    "src/fd_hook.rs",
+    "src/float.rs",
+    "src/foo.rs",
+    "src/free.rs",
+    "src/fstat.rs",
+    "src/getdtablesize.rs",
+    "src/getprogname.rs",
+    "src/gnu.rs",
+    "src/hash.rs",
+    "src/help.rs",
+    "src/ialloc.rs",
+    "src/itold.rs",
+    "src/linked_list.rs",
+    "src/malloc.rs",
+    "src/malloca.rs",
+    "src/mbszero.rs",
+    "src/memchr.rs",
+    "src/msvc_inval.rs",
+    "src/msvc_nothrow.rs",
+    "src/obstack.rs",
+    "src/open.rs",
+    "src/optset.rs",
+    "src/output.rs",
+    "src/parseopt.rs",
+    "src/parser.rs",
+    "src/posix.rs",
+    "src/printf_args.rs",
+    "src/printf_parse.rs",
+    "src/progname.rs",
+    "src/realloc.rs",
+    "src/reallocarray.rs",
+    "src/snprintf.rs",
+    "src/stat.rs",
+    "src/stat_time.rs",
+    "src/stat_w32.rs",
+    "src/stdio_read.rs",
+    "src/stdio_write.rs",
+    "src/symbol.rs",
+    "src/unistd.rs",
+    "src/vasnprintf.rs",
+    "src/wc.rs",
+    "src/whoami.rs",
+    "src/wordsplit.rs",
+    "src/wordwrap.rs",
+    "src/xalloc_die.rs",
+    "src/xmalloc.rs",
+    "src/xsize.rs",
+    "src/main.rs",
+    "README.md"
+  ],
+  "updated_at": "2026-06-17T17:37:46",
+  "files": {
+    "Cargo.toml": {
+      "status": "completed",
+      "updated_at": "2026-06-17T17:13:43",
+      "note": "local_cargo_toml",
+      "size": 85,
+      "sha256": "2531ceee1eef254bd7e1b5629b55d818f464fdfb061393366c4d9b892304729a"
+    },
+    "src/error.rs": {
+      "status": "completed",
+      "updated_at": "2026-06-17T17:14:05",
+      "note": "contextual_generation",
+      "size": 3160,
+      "sha256": "67c6e8853ac3bcc627a38509a74b373b9022e13c0648e6f6efbbb931bbccdf62"
+    },
+    "src/strerror.rs": {
+      "status": "completed",
+      "updated_at": "2026-06-17T17:14:16",
+      "note": "contextual_generation",
+      "size": 702,
+      "sha256": "a07f36489aaa7663ea4987e95237bbfad6b5d73e454aee8eaad3640c40ca2448"
+    },
+    "src/strerror_override.rs": {
+      "status": "completed",
+      "updated_at": "2026-06-17T17:14:26",
+      "note": "contextual_generation",
+      "size": 1126,
+      "sha256": "78829ded21d41a16a285d39718cab464316db3c331cd929c13b8eab4a9a478f7"
+    },
+    "src/ack.rs": {
+      "status": "completed",
+      "updated_at": "2026-06-17T17:14:38",
+      "note": "contextual_generation",
+      "size": 321,
+      "sha256": "d370d3504269134766f512474e61f515b0bb090c04d4c8e6b1f2fa3e905fc5f0"
+    },
+    "src/asnprintf.rs": {
+      "status": "completed",
+      "updated_at": "2026-06-17T17:14:51",
+      "note": "contextual_generation",
+      "size": 377,
+      "sha256": "b656b7ac8be14d9fbd6c44aa45621f211eac4a0c8f0ded2ce07700984943b57b"
+    },
+    "src/basename_lgpl.rs": {
+      "status": "completed",
+      "updated_at": "2026-06-17T17:14:59",
+      "note": "contextual_generation",
+      "size": 955,
+      "sha256": "a820dcd84db8f3abe1d28ac804f128f31f8f8e2c6b5d997ec81e37e6a64c7afb"
+    },
+    "src/bitrotate.rs": {
+      "status": "completed",
+      "updated_at": "2026-06-17T17:15:16",
+      "note": "contextual_generation",
+      "size": 1349,
+      "sha256": "eb98d1ef200bc62607ca1781ff5f5c15f8b57a6c04dd2e82eae5009d946ffd71"
+    },
+    "src/c.rs": {
+      "status": "completed",
+      "updated_at": "2026-06-17T17:15:55",
+      "note": "contextual_generation",
+      "size": 16379,
+      "sha256": "316d699e5be8ba7459734c65dfc19985b2d835d4217eed707344197ef8a1ff95"
+    },
+    "src/calloc.rs": {
+      "status": "completed",
+      "updated_at": "2026-06-17T17:16:01",
+      "note": "contextual_generation",
+      "size": 244,
+      "sha256": "afa79c9fbe13ea020d74479bb92820d79e1007fc01c2d796ee90d042b3e42c93"
+    },
+    "src/cloexec.rs": {
+      "status": "completed",
+      "updated_at": "2026-06-17T17:16:09",
+      "note": "contextual_generation",
+      "size": 920,
+      "sha256": "86cdaa86ff2dc7bdc8db8bdee4a46b9adfa1f3a91242b6769f2c14182c948cf5"
+    },
+    "src/close.rs": {
+      "status": "completed",
+      "updated_at": "2026-06-17T17:16:18",
+      "note": "contextual_generation",
+      "size": 1436,
+      "sha256": "88142718c2dfc7e3a09d95dccb8f0779639af11cd61f396c9e363fd103802947"
+    },
+    "src/d.rs": {
+      "status": "completed",
+      "updated_at": "2026-06-17T17:16:39",
+      "note": "contextual_generation",
+      "size": 2899,
+      "sha256": "3f26e704e8f893a9be9def031a3de6a1837afeee977b077dd943bcd25c01f524"
+    },
+    "src/depmap.rs": {
+      "status": "completed",
+      "updated_at": "2026-06-17T17:16:48",
+      "note": "contextual_generation",
+      "size": 2786,
+      "sha256": "cd013fe2196c0965d5dfd5ad23d754aba6df5a620196b738ca4583e754b28685"
+    },
+    "src/dot.rs": {
+      "status": "completed",
+      "updated_at": "2026-06-17T17:17:06",
+      "note": "contextual_generation",
+      "size": 5370,
+      "sha256": "470b9ccc48698fdea6ac47fcf858af4906ebfde087eba7a843f9bb9f16b33c5e"
+    },
+    "src/dup2.rs": {
+      "status": "completed",
+      "updated_at": "2026-06-17T17:17:12",
+      "note": "contextual_generation",
+      "size": 2183,
+      "sha256": "59c73c0cb0a7d677983d5f103f982a4548db4dd236d3704cb68074bb5b5b247e"
+    },
+    "src/exitfail.rs": {
+      "status": "completed",
+      "updated_at": "2026-06-17T17:17:29",
+      "note": "contextual_generation",
+      "size": 413,
+      "sha256": "5d513598a22d4cedfbcdff814c92d3b27c0911ca4b3e2530d37e59468253c33b"
+    },
+    "src/fcntl.rs": {
+      "status": "completed",
+      "updated_at": "2026-06-17T17:17:54",
+      "note": "contextual_generation",
+      "size": 4111,
+      "sha256": "8f41b9b129b20894ddec0323627117275a0672295286120fb02f684b0b095e24"
+    },
+    "src/fd_hook.rs": {
+      "status": "completed",
+      "updated_at": "2026-06-17T17:18:10",
+      "note": "contextual_generation",
+      "size": 3864,
+      "sha256": "cf0207f1287111823823999cbda8b894c68b468b30c0cc6d04545dc28bef9e3c"
+    },
+    "src/float.rs": {
+      "status": "completed",
+      "updated_at": "2026-06-17T17:18:22",
+      "note": "contextual_generation",
+      "size": 954,
+      "sha256": "f54b80087b23c34f99512a3af22c3f24f487833d06513649261aee229834e990"
+    },
+    "src/foo.rs": {
+      "status": "completed",
+      "updated_at": "2026-06-17T17:18:41",
+      "note": "contextual_generation",
+      "size": 163,
+      "sha256": "af30d8b9d52d253cb8fa9564e5646c19702460139653d98b8c5d856902e11546"
+    },
+    "src/free.rs": {
+      "status": "completed",
+      "updated_at": "2026-06-17T17:18:47",
+      "note": "contextual_generation",
+      "size": 102,
+      "sha256": "7d2469522029e73a479cdf7d77b25e9290720666fac17814e918b2d48dc58f0a"
+    },
+    "src/fstat.rs": {
+      "status": "completed",
+      "updated_at": "2026-06-17T17:18:55",
+      "note": "contextual_generation",
+      "size": 434,
+      "sha256": "fc6671f43e37deb093b9e155959a43e9ddb218562cb796ec4ddac1b415c84dae"
+    },
+    "src/getdtablesize.rs": {
+      "status": "completed",
+      "updated_at": "2026-06-17T17:19:08",
+      "note": "contextual_generation",
+      "size": 2703,
+      "sha256": "b78c0e867b3a2bee03ae55627d093aeae91f4bf1450eb076ea819b96bb840082"
+    },
+    "src/getprogname.rs": {
+      "status": "completed",
+      "updated_at": "2026-06-17T17:19:28",
+      "note": "contextual_generation",
+      "size": 870,
+      "sha256": "b977d9df11ee5be8c633ba134e38ae02f7eb056f68d504a2bf715954b91c8bed"
+    },
+    "src/gnu.rs": {
+      "status": "completed",
+      "updated_at": "2026-06-17T17:19:39",
+      "note": "contextual_generation",
+      "size": 4241,
+      "sha256": "1730678d80bfca3205c3d10aee9f6106641198746cc32e9de8a3a9493d54b4b5"
+    },
+    "src/hash.rs": {
+      "status": "completed",
+      "updated_at": "2026-06-17T17:20:56",
+      "note": "contextual_generation",
+      "size": 18947,
+      "sha256": "bb7d39c5e6798d4622f2f10ca209cff6f265853f13e5d19e7d1861129fa5da84"
+    },
+    "src/help.rs": {
+      "status": "completed",
+      "updated_at": "2026-06-17T17:21:42",
+      "note": "contextual_generation",
+      "size": 20326,
+      "sha256": "2cee37b83d98cfd4745f3c0745a80529a898da04dab6e5579ee6e092060d665d"
+    },
+    "src/ialloc.rs": {
+      "status": "completed",
+      "updated_at": "2026-06-17T17:21:52",
+      "note": "contextual_generation",
+      "size": 164,
+      "sha256": "145ea1b36754f38653f498c669ccca8957fa8e7d85a54e4954e3521bd400fb7a"
+    },
+    "src/itold.rs": {
+      "status": "completed",
+      "updated_at": "2026-06-17T17:21:58",
+      "note": "contextual_generation",
+      "size": 128,
+      "sha256": "aaabfdce0354ae412346db4aa2ed233c0c300e6ff940942654f1217229c4a78e"
+    },
+    "src/linked_list.rs": {
+      "status": "completed",
+      "updated_at": "2026-06-17T17:22:19",
+      "note": "contextual_generation",
+      "size": 32,
+      "sha256": "33b5c032d65d578c0d3844c92c7494f0a675368cd9fd1605213048e66a13c8ed"
+    },
+    "src/malloc.rs": {
+      "status": "completed",
+      "updated_at": "2026-06-17T17:22:28",
+      "note": "contextual_generation",
+      "size": 327,
+      "sha256": "eab649aab499015bc083fc683db956dff99be3e5df0aff1e49a89b80095aea0a"
+    },
+    "src/malloca.rs": {
+      "status": "completed",
+      "updated_at": "2026-06-17T17:22:43",
+      "note": "contextual_generation",
+      "size": 394,
+      "sha256": "b7bee78b377ab0111f5af8140588d0835f3e9bc432352e19d46f944ef676fd89"
+    },
+    "src/mbszero.rs": {
+      "status": "completed",
+      "updated_at": "2026-06-17T17:23:03",
+      "note": "contextual_generation",
+      "size": 310,
+      "sha256": "d80939fea7cabad9409959be92a096c8399f4d510bc53b17eb40e9ec1fa09972"
+    },
+    "src/memchr.rs": {
+      "status": "completed",
+      "updated_at": "2026-06-17T17:23:18",
+      "note": "contextual_generation",
+      "size": 1790,
+      "sha256": "8394355f01fa821a5478618096596a12fffc665dbd54489ac0151d5dd6b04da0"
+    },
+    "src/msvc_inval.rs": {
+      "status": "completed",
+      "updated_at": "2026-06-17T17:23:33",
+      "note": "contextual_generation",
+      "size": 1747,
+      "sha256": "8c1d575e84705a117726cb240afc03c28ca1f309bf0aea87db4def9e3cabfd84"
+    },
+    "src/msvc_nothrow.rs": {
+      "status": "completed",
+      "updated_at": "2026-06-17T17:23:38",
+      "note": "contextual_generation",
+      "size": 199,
+      "sha256": "b8923190d0974239be0c08823c8f2738624a6e93d4bd1bd58c06bb3e0f3bb5d6"
+    },
+    "src/obstack.rs": {
+      "status": "completed",
+      "updated_at": "2026-06-17T17:23:54",
+      "note": "contextual_generation",
+      "size": 6985,
+      "sha256": "56d2b28022f4a777c7c98e3e4af344ce5a889be0c931bcf8064af473b738d12a"
+    },
+    "src/open.rs": {
+      "status": "completed",
+      "updated_at": "2026-06-17T17:24:13",
+      "note": "contextual_generation",
+      "size": 5183,
+      "sha256": "95a32f88ac8c9bc55de2890edf8efb405e4442006e031693c462a7656d476f6a"
+    },
+    "src/optset.rs": {
+      "status": "completed",
+      "updated_at": "2026-06-17T17:24:22",
+      "note": "contextual_generation",
+      "size": 1411,
+      "sha256": "d3503b55493d5d85d8bf9ab052112297d80707a1585e986a6618cc706a7523d7"
+    },
+    "src/output.rs": {
+      "status": "completed",
+      "updated_at": "2026-06-17T17:25:06",
+      "note": "contextual_generation",
+      "size": 16595,
+      "sha256": "57773d2d1337ea2c9f0552eec59a025c93c6b28b36d1a9961b7fdaa5a7fdca1b"
+    },
+    "src/parseopt.rs": {
+      "status": "completed",
+      "updated_at": "2026-06-17T17:26:02",
+      "note": "contextual_generation",
+      "size": 24486,
+      "sha256": "26a474a1aaddc5ac17f355aa55c2db1d27eeacaee6f61d4593a7e54c635d8334"
+    },
+    "src/parser.rs": {
+      "status": "completed",
+      "updated_at": "2026-06-17T17:27:52",
+      "note": "contextual_generation",
+      "size": 37216,
+      "sha256": "c8584c81c715b6acaf9a51f0b0fed308f8e399db7a6241e9b7678e2cea8f3f61"
+    },
+    "src/posix.rs": {
+      "status": "completed",
+      "updated_at": "2026-06-17T17:27:57",
+      "note": "contextual_generation",
+      "size": 1993,
+      "sha256": "0de2ece206da32d60352f5c998882201f873d5831c544e62a82db7add592396e"
+    },
+    "src/printf_args.rs": {
+      "status": "completed",
+      "updated_at": "2026-06-17T17:28:05",
+      "note": "contextual_generation",
+      "size": 1946,
+      "sha256": "33e6275a1bc602e7bfa5f90066edf6a7b844efb188fd0d25ea3137df8aa5ce38"
+    },
+    "src/printf_parse.rs": {
+      "status": "completed",
+      "updated_at": "2026-06-17T17:28:30",
+      "note": "contextual_generation",
+      "size": 9753,
+      "sha256": "354f7117dcbd36ce6fdc2d0a98eef3150705151806c3dd71bf2916a0d2c49ed3"
+    },
+    "src/progname.rs": {
+      "status": "completed",
+      "updated_at": "2026-06-17T17:28:40",
+      "note": "contextual_generation",
+      "size": 759,
+      "sha256": "e58b80b3567570a4791eda96b45c90f7b8091ecf540db338023175b8ba828fc3"
+    },
+    "src/realloc.rs": {
+      "status": "completed",
+      "updated_at": "2026-06-17T17:28:47",
+      "note": "contextual_generation",
+      "size": 526,
+      "sha256": "13acdcfc6b5f967c27906c0b161725f53ee4d50c80c3d92c92b823ab62ace958"
+    },
+    "src/reallocarray.rs": {
+      "status": "completed",
+      "updated_at": "2026-06-17T17:29:00",
+      "note": "contextual_generation",
+      "size": 572,
+      "sha256": "b5b6e08cbd61692baea23afc0a8d8de31bc0dad06a388f5b2d58c5ca54960993"
+    },
+    "src/snprintf.rs": {
+      "status": "completed",
+      "updated_at": "2026-06-17T17:29:14",
+      "note": "contextual_generation",
+      "size": 744,
+      "sha256": "8954f273d0a4bb3151d968fb2381d7be0982e742d106afdf1a9e0a90023d8563"
+    },
+    "src/stat.rs": {
+      "status": "completed",
+      "updated_at": "2026-06-17T17:29:23",
+      "note": "contextual_generation",
+      "size": 1017,
+      "sha256": "1d82801745b35b61808482ef54d9c4d0e16473f65470c5ad0ed09d5e26c49eb8"
+    },
+    "src/stat_time.rs": {
+      "status": "completed",
+      "updated_at": "2026-06-17T17:29:32",
+      "note": "contextual_generation",
+      "size": 2051,
+      "sha256": "3e705f64887784ee518278cc2f968ca29e2dbc5f65d453cc0c4a6e378e1e599d"
+    },
+    "src/stat_w32.rs": {
+      "status": "completed",
+      "updated_at": "2026-06-17T17:29:39",
+      "note": "contextual_generation",
+      "size": 1284,
+      "sha256": "e88794195c7a77cbfe4516fd53ad83aa33acad872baa3491eb814afc066bd977"
+    },
+    "src/stdio_read.rs": {
+      "status": "completed",
+      "updated_at": "2026-06-17T17:29:47",
+      "note": "contextual_generation",
+      "size": 2055,
+      "sha256": "01e609c96220ddd3ca1cfbb20b3dc67266f3b02918d1b01be5a61b94de7d3f06"
+    },
+    "src/stdio_write.rs": {
+      "status": "completed",
+      "updated_at": "2026-06-17T17:29:54",
+      "note": "contextual_generation",
+      "size": 1398,
+      "sha256": "b850aa4dcd6c2f5475e053b7ac00569810f05d822d3bbc46563ba039c56430b2"
+    },
+    "src/symbol.rs": {
+      "status": "completed",
+      "updated_at": "2026-06-17T17:30:58",
+      "note": "contextual_generation",
+      "size": 32156,
+      "sha256": "5722d6bf42606275f3a94fb7a2ea466e1b6d8e526cca2471b369c8e1ebd40f54"
+    },
+    "src/unistd.rs": {
+      "status": "completed",
+      "updated_at": "2026-06-17T17:31:16",
+      "note": "contextual_generation",
+      "size": 1495,
+      "sha256": "eee7df0cf1d18e31492bfd0f5ff9e9734d774b1d5f28b733ee8251e413491149"
+    },
+    "src/vasnprintf.rs": {
+      "status": "completed",
+      "updated_at": "2026-06-17T17:31:59",
+      "note": "contextual_generation",
+      "size": 11546,
+      "sha256": "2259090fa38bde422c5c71fa7292acd9aa62cd1fbbb9cbe3f8fb5810d285634b"
+    },
+    "src/wc.rs": {
+      "status": "completed",
+      "updated_at": "2026-06-17T17:32:23",
+      "note": "contextual_generation",
+      "size": 4203,
+      "sha256": "6215bade84a7a4c603f0293c2c30ee32e1c1d6ba56cb914f888d65daefab3ebd"
+    },
+    "src/whoami.rs": {
+      "status": "completed",
+      "updated_at": "2026-06-17T17:32:28",
+      "note": "contextual_generation",
+      "size": 454,
+      "sha256": "7d2b3ed24b1c947e31a96569441299df7f92655e564ffb06797ef7753b59d96e"
+    },
+    "src/wordsplit.rs": {
+      "status": "completed",
+      "updated_at": "2026-06-17T17:34:33",
+      "note": "contextual_generation",
+      "size": 62000,
+      "sha256": "e663c8de171f455d43890ab6fe4646632cd8a5051044dace5782c1c2494a6abf"
+    },
+    "src/wordwrap.rs": {
+      "status": "failed",
+      "updated_at": "2026-06-17T17:35:32",
+      "note": "contextual_boundary_violation"
+    },
+    "src/xalloc_die.rs": {
+      "status": "completed",
+      "updated_at": "2026-06-17T17:35:37",
+      "note": "contextual_generation",
+      "size": 731,
+      "sha256": "a7a510a6c5fc8c594e298678a93a35bd2fc6e5b7592972dc7fae8d3636fa31f3"
+    },
+    "src/xmalloc.rs": {
+      "status": "completed",
+      "updated_at": "2026-06-17T17:36:25",
+      "note": "contextual_generation",
+      "size": 5703,
+      "sha256": "6e02f7880036a6f7922b5875572dcab4baf1a3c40209b3a071757a82ec0d1530"
+    },
+    "src/xsize.rs": {
+      "status": "completed",
+      "updated_at": "2026-06-17T17:36:38",
+      "note": "contextual_generation",
+      "size": 1566,
+      "sha256": "2aa3cd1278c60192a895aec0c7dce0c92786f100257162dbe52cba7a84bd9b1b"
+    },
+    "src/main.rs": {
+      "status": "completed",
+      "updated_at": "2026-06-17T17:37:36",
+      "note": "contextual_generation",
+      "size": 30018,
+      "sha256": "ab27dbcce3c282226b5989b678012949aef34268cdf36fd5efdda69c43b6e1a3"
+    },
+    "README.md": {
+      "status": "completed",
+      "updated_at": "2026-06-17T17:37:46",
+      "note": "contextual_generation",
+      "size": 2054,
+      "sha256": "5baa1ccbf53650473a1748de72877047462f4169a3f3e346d9e4e909292b417d"
+    }
+  }
+}

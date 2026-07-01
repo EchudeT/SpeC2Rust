@@ -1,0 +1,584 @@
+{
+  "findings": [
+    {
+      "path": ".specify/memory/constitution.md",
+      "kind": "out_of_scope_file",
+      "message": "发现 contract 外文件路径: src/shc.c"
+    },
+    {
+      "path": "docs/rewrite-context/00_repo_manifest.md",
+      "kind": "scope_expansion",
+      "message": "发现发布相关内容: ChangeLog"
+    },
+    {
+      "path": "docs/rewrite-context/00_repo_manifest.md",
+      "kind": "scope_expansion",
+      "message": "发现发布相关内容: ChangeLog"
+    },
+    {
+      "path": "docs/rewrite-context/00_repo_manifest.md",
+      "kind": "out_of_scope_file",
+      "message": "发现 contract 外文件路径: src/Makefile"
+    },
+    {
+      "path": "docs/rewrite-context/00_repo_manifest.md",
+      "kind": "out_of_scope_file",
+      "message": "发现 contract 外文件路径: src/Makefile.am"
+    },
+    {
+      "path": "docs/rewrite-context/00_repo_manifest.md",
+      "kind": "out_of_scope_file",
+      "message": "发现 contract 外文件路径: src/Makefile.in"
+    },
+    {
+      "path": "docs/rewrite-context/00_repo_manifest.md",
+      "kind": "out_of_scope_file",
+      "message": "发现 contract 外文件路径: src/shc.c"
+    },
+    {
+      "path": "docs/rewrite-context/00_repo_manifest.md",
+      "kind": "out_of_scope_file",
+      "message": "发现 contract 外文件路径: src/shc.o"
+    },
+    {
+      "path": "docs/rewrite-context/00_repo_manifest.md",
+      "kind": "out_of_scope_file",
+      "message": "发现 contract 外文件路径: src/shc.c"
+    },
+    {
+      "path": "docs/rewrite-context/01_subsystems/module_src.md",
+      "kind": "out_of_scope_file",
+      "message": "发现 contract 外文件路径: src/shc.c"
+    },
+    {
+      "path": "docs/rewrite-context/01_subsystems/module_src.md",
+      "kind": "out_of_scope_file",
+      "message": "发现 contract 外文件路径: src/shc.c"
+    },
+    {
+      "path": "docs/rewrite-context/01_subsystems/module_src.md",
+      "kind": "out_of_scope_file",
+      "message": "发现 contract 外文件路径: src/shc.c"
+    },
+    {
+      "path": "docs/rewrite-context/01_subsystems/module_src.md",
+      "kind": "out_of_scope_file",
+      "message": "发现 contract 外文件路径: src/shc.c"
+    },
+    {
+      "path": "docs/rewrite-context/01_subsystems/module_src.md",
+      "kind": "out_of_scope_file",
+      "message": "发现 contract 外文件路径: src/shc.c"
+    },
+    {
+      "path": "docs/rewrite-context/01_subsystems/module_src.md",
+      "kind": "out_of_scope_file",
+      "message": "发现 contract 外文件路径: src/shc.c"
+    },
+    {
+      "path": "docs/rewrite-context/01_subsystems/module_src.md",
+      "kind": "out_of_scope_file",
+      "message": "发现 contract 外文件路径: src/shc.c"
+    },
+    {
+      "path": "docs/rewrite-context/01_subsystems/module_src.md",
+      "kind": "out_of_scope_file",
+      "message": "发现 contract 外文件路径: src/shc.c"
+    },
+    {
+      "path": "docs/rewrite-context/01_subsystems/module_src.md",
+      "kind": "out_of_scope_file",
+      "message": "发现 contract 外文件路径: src/shc.c"
+    },
+    {
+      "path": "docs/rewrite-context/01_subsystems/module_src.md",
+      "kind": "out_of_scope_file",
+      "message": "发现 contract 外文件路径: src/shc.c"
+    },
+    {
+      "path": "docs/rewrite-context/01_subsystems/module_src.md",
+      "kind": "out_of_scope_file",
+      "message": "发现 contract 外文件路径: src/shc.c"
+    },
+    {
+      "path": "docs/rewrite-context/01_subsystems/module_src.md",
+      "kind": "out_of_scope_file",
+      "message": "发现 contract 外文件路径: src/shc.c"
+    },
+    {
+      "path": "docs/rewrite-context/01_subsystems/module_src.md",
+      "kind": "out_of_scope_file",
+      "message": "发现 contract 外文件路径: src/shc.c"
+    },
+    {
+      "path": "docs/rewrite-context/01_subsystems/module_src.md",
+      "kind": "out_of_scope_file",
+      "message": "发现 contract 外文件路径: src/shc.c"
+    },
+    {
+      "path": "docs/rewrite-context/01_subsystems/module_src.md",
+      "kind": "out_of_scope_file",
+      "message": "发现 contract 外文件路径: src/shc.c"
+    },
+    {
+      "path": "docs/rewrite-context/01_subsystems/module_src.md",
+      "kind": "out_of_scope_file",
+      "message": "发现 contract 外文件路径: src/shc.c"
+    },
+    {
+      "path": "docs/rewrite-context/01_subsystems/module_src.md",
+      "kind": "out_of_scope_file",
+      "message": "发现 contract 外文件路径: src/shc.c"
+    },
+    {
+      "path": "docs/rewrite-context/01_subsystems/module_src.md",
+      "kind": "out_of_scope_file",
+      "message": "发现 contract 外文件路径: src/shc.c"
+    },
+    {
+      "path": "docs/rewrite-context/01_subsystems/module_src.md",
+      "kind": "out_of_scope_file",
+      "message": "发现 contract 外文件路径: src/shc.c"
+    },
+    {
+      "path": "docs/rewrite-context/02_interfaces/002_module_src.md",
+      "kind": "out_of_scope_file",
+      "message": "发现 contract 外文件路径: src/shc.c"
+    },
+    {
+      "path": "docs/rewrite-context/02_interfaces/002_module_src.md",
+      "kind": "out_of_scope_file",
+      "message": "发现 contract 外文件路径: src/shc.c"
+    },
+    {
+      "path": "docs/rewrite-context/02_interfaces/002_module_src.md",
+      "kind": "out_of_scope_file",
+      "message": "发现 contract 外文件路径: src/shc.c"
+    },
+    {
+      "path": "docs/rewrite-context/02_interfaces/002_module_src.md",
+      "kind": "out_of_scope_file",
+      "message": "发现 contract 外文件路径: src/shc.c"
+    },
+    {
+      "path": "docs/rewrite-context/02_interfaces/002_module_src.md",
+      "kind": "out_of_scope_file",
+      "message": "发现 contract 外文件路径: src/shc.c"
+    },
+    {
+      "path": "docs/rewrite-context/02_interfaces/002_module_src.md",
+      "kind": "out_of_scope_file",
+      "message": "发现 contract 外文件路径: src/shc.c"
+    },
+    {
+      "path": "docs/rewrite-context/02_interfaces/002_module_src.md",
+      "kind": "out_of_scope_file",
+      "message": "发现 contract 外文件路径: src/shc.c"
+    },
+    {
+      "path": "docs/rewrite-context/02_interfaces/002_module_src.md",
+      "kind": "out_of_scope_file",
+      "message": "发现 contract 外文件路径: src/shc.c"
+    },
+    {
+      "path": "docs/rewrite-context/02_interfaces/002_module_src.md",
+      "kind": "out_of_scope_file",
+      "message": "发现 contract 外文件路径: src/shc.c"
+    },
+    {
+      "path": "docs/rewrite-context/02_interfaces/002_module_src.md",
+      "kind": "out_of_scope_file",
+      "message": "发现 contract 外文件路径: src/shc.c"
+    },
+    {
+      "path": "docs/rewrite-context/02_interfaces/002_module_src.md",
+      "kind": "out_of_scope_file",
+      "message": "发现 contract 外文件路径: src/shc.c"
+    },
+    {
+      "path": "docs/rewrite-context/02_interfaces/002_module_src.md",
+      "kind": "out_of_scope_file",
+      "message": "发现 contract 外文件路径: src/shc.c"
+    },
+    {
+      "path": "docs/rewrite-context/02_interfaces/002_module_src.md",
+      "kind": "out_of_scope_file",
+      "message": "发现 contract 外文件路径: src/shc.c"
+    },
+    {
+      "path": "docs/rewrite-context/02_interfaces/002_module_src.md",
+      "kind": "out_of_scope_file",
+      "message": "发现 contract 外文件路径: src/shc.c"
+    },
+    {
+      "path": "docs/rewrite-context/02_interfaces/002_module_src.md",
+      "kind": "out_of_scope_file",
+      "message": "发现 contract 外文件路径: src/shc.c"
+    },
+    {
+      "path": "docs/rewrite-context/02_interfaces/002_module_src.md",
+      "kind": "out_of_scope_file",
+      "message": "发现 contract 外文件路径: src/shc.c"
+    },
+    {
+      "path": "docs/rewrite-context/02_interfaces/002_module_src.md",
+      "kind": "out_of_scope_file",
+      "message": "发现 contract 外文件路径: src/shc.c"
+    },
+    {
+      "path": "docs/rewrite-context/02_interfaces/002_module_src.md",
+      "kind": "out_of_scope_file",
+      "message": "发现 contract 外文件路径: src/shc.c"
+    },
+    {
+      "path": "docs/rewrite-context/02_interfaces/002_module_src.md",
+      "kind": "out_of_scope_file",
+      "message": "发现 contract 外文件路径: src/shc.c"
+    },
+    {
+      "path": "docs/rewrite-context/02_interfaces/002_module_src.md",
+      "kind": "out_of_scope_file",
+      "message": "发现 contract 外文件路径: src/shc.c"
+    },
+    {
+      "path": "docs/rewrite-context/02_interfaces/002_module_src.md",
+      "kind": "out_of_scope_file",
+      "message": "发现 contract 外文件路径: src/shc.c"
+    },
+    {
+      "path": "docs/rewrite-context/02_interfaces/002_module_src.md",
+      "kind": "out_of_scope_file",
+      "message": "发现 contract 外文件路径: src/shc.c"
+    },
+    {
+      "path": "docs/rewrite-context/02_interfaces/002_module_src.md",
+      "kind": "out_of_scope_file",
+      "message": "发现 contract 外文件路径: src/shc.c"
+    },
+    {
+      "path": "docs/rewrite-context/02_interfaces/002_module_src.md",
+      "kind": "out_of_scope_file",
+      "message": "发现 contract 外文件路径: src/shc.c"
+    },
+    {
+      "path": "docs/rewrite-context/02_interfaces/002_module_src.md",
+      "kind": "out_of_scope_file",
+      "message": "发现 contract 外文件路径: src/shc.c"
+    },
+    {
+      "path": "docs/rewrite-context/02_interfaces/002_module_src.md",
+      "kind": "out_of_scope_file",
+      "message": "发现 contract 外文件路径: src/shc.c"
+    },
+    {
+      "path": "docs/rewrite-context/02_interfaces/002_module_src.md",
+      "kind": "out_of_scope_file",
+      "message": "发现 contract 外文件路径: src/shc.c"
+    },
+    {
+      "path": "docs/rewrite-context/02_interfaces/002_module_src.md",
+      "kind": "out_of_scope_file",
+      "message": "发现 contract 外文件路径: src/shc.c"
+    },
+    {
+      "path": "docs/rewrite-context/02_interfaces/002_module_src.md",
+      "kind": "out_of_scope_file",
+      "message": "发现 contract 外文件路径: src/shc.c"
+    },
+    {
+      "path": "docs/rewrite-context/02_interfaces/002_module_src.md",
+      "kind": "out_of_scope_file",
+      "message": "发现 contract 外文件路径: src/shc.c"
+    },
+    {
+      "path": "docs/rewrite-context/02_interfaces/002_module_src.md",
+      "kind": "out_of_scope_file",
+      "message": "发现 contract 外文件路径: src/shc.c"
+    },
+    {
+      "path": "docs/rewrite-context/02_interfaces/002_module_src.md",
+      "kind": "out_of_scope_file",
+      "message": "发现 contract 外文件路径: src/shc.c"
+    },
+    {
+      "path": "docs/rewrite-context/02_interfaces/002_module_src.md",
+      "kind": "out_of_scope_file",
+      "message": "发现 contract 外文件路径: src/shc.c"
+    },
+    {
+      "path": "docs/rewrite-context/02_interfaces/002_module_src.md",
+      "kind": "out_of_scope_file",
+      "message": "发现 contract 外文件路径: src/shc.c"
+    },
+    {
+      "path": "docs/rewrite-context/02_interfaces/002_module_src.md",
+      "kind": "out_of_scope_file",
+      "message": "发现 contract 外文件路径: src/shc.c"
+    },
+    {
+      "path": "docs/rewrite-context/02_interfaces/002_module_src.md",
+      "kind": "out_of_scope_file",
+      "message": "发现 contract 外文件路径: src/shc.c"
+    },
+    {
+      "path": "docs/rewrite-context/02_interfaces/002_module_src.md",
+      "kind": "out_of_scope_file",
+      "message": "发现 contract 外文件路径: src/shc.c"
+    },
+    {
+      "path": "docs/rewrite-context/02_interfaces/002_module_src.md",
+      "kind": "out_of_scope_file",
+      "message": "发现 contract 外文件路径: src/shc.c"
+    },
+    {
+      "path": "docs/rewrite-context/02_interfaces/002_module_src.md",
+      "kind": "out_of_scope_file",
+      "message": "发现 contract 外文件路径: src/shc.c"
+    },
+    {
+      "path": "docs/rewrite-context/02_interfaces/002_module_src.md",
+      "kind": "out_of_scope_file",
+      "message": "发现 contract 外文件路径: src/shc.c"
+    },
+    {
+      "path": "docs/rewrite-context/02_interfaces/002_module_src.md",
+      "kind": "out_of_scope_file",
+      "message": "发现 contract 外文件路径: src/shc.c"
+    },
+    {
+      "path": "docs/rewrite-context/02_interfaces/002_module_src.md",
+      "kind": "out_of_scope_file",
+      "message": "发现 contract 外文件路径: src/shc.c"
+    },
+    {
+      "path": "docs/rewrite-context/02_interfaces/002_module_src.md",
+      "kind": "out_of_scope_file",
+      "message": "发现 contract 外文件路径: src/shc.c"
+    },
+    {
+      "path": "docs/rewrite-context/02_interfaces/002_module_src.md",
+      "kind": "out_of_scope_file",
+      "message": "发现 contract 外文件路径: src/shc.c"
+    },
+    {
+      "path": "docs/rewrite-context/02_interfaces/002_module_src.md",
+      "kind": "out_of_scope_file",
+      "message": "发现 contract 外文件路径: src/shc.c"
+    },
+    {
+      "path": "docs/rewrite-context/02_interfaces/002_module_src.md",
+      "kind": "out_of_scope_file",
+      "message": "发现 contract 外文件路径: src/shc.c"
+    },
+    {
+      "path": "docs/rewrite-context/02_interfaces/002_module_src.md",
+      "kind": "out_of_scope_file",
+      "message": "发现 contract 外文件路径: src/shc.c"
+    },
+    {
+      "path": "docs/rewrite-context/02_interfaces/002_module_src.md",
+      "kind": "out_of_scope_file",
+      "message": "发现 contract 外文件路径: src/shc.c"
+    },
+    {
+      "path": "docs/rewrite-context/03_behaviors/001_behavior_specification.md",
+      "kind": "out_of_scope_file",
+      "message": "发现 contract 外文件路径: src/shc.c"
+    },
+    {
+      "path": "specs/001-module_src-rust-port/plan.md",
+      "kind": "out_of_scope_file",
+      "message": "发现 contract 外文件路径: src/shc.c"
+    },
+    {
+      "path": "specs/001-module_src-rust-port/plan.md",
+      "kind": "out_of_scope_file",
+      "message": "发现 contract 外文件路径: src/shc.c"
+    },
+    {
+      "path": "specs/001-module_src-rust-port/plan.md",
+      "kind": "out_of_scope_file",
+      "message": "发现 contract 外文件路径: src/module_src.rs"
+    },
+    {
+      "path": "specs/001-module_src-rust-port/plan.md",
+      "kind": "out_of_scope_file",
+      "message": "发现 contract 外文件路径: src/shc.c"
+    },
+    {
+      "path": "specs/001-module_src-rust-port/plan.md",
+      "kind": "out_of_scope_file",
+      "message": "发现 contract 外文件路径: src/main.rs"
+    },
+    {
+      "path": "specs/001-module_src-rust-port/plan.md",
+      "kind": "out_of_scope_file",
+      "message": "发现 contract 外文件路径: src/shc.c"
+    },
+    {
+      "path": "specs/001-module_src-rust-port/plan.md",
+      "kind": "out_of_scope_file",
+      "message": "发现 contract 外文件路径: src/main.rs"
+    },
+    {
+      "path": "specs/001-module_src-rust-port/spec.md",
+      "kind": "out_of_scope_file",
+      "message": "发现 contract 外文件路径: src/shc.c"
+    },
+    {
+      "path": "specs/001-module_src-rust-port/spec.md",
+      "kind": "out_of_scope_file",
+      "message": "发现 contract 外文件路径: src/shc.c"
+    },
+    {
+      "path": "specs/001-module_src-rust-port/spec.md",
+      "kind": "out_of_scope_file",
+      "message": "发现 contract 外文件路径: src/shc.c"
+    },
+    {
+      "path": "specs/001-module_src-rust-port/spec.md",
+      "kind": "out_of_scope_file",
+      "message": "发现 contract 外文件路径: src/shc.c"
+    },
+    {
+      "path": "specs/001-module_src-rust-port/tasks.md",
+      "kind": "out_of_scope_file",
+      "message": "发现 contract 外文件路径: src/shc.c"
+    },
+    {
+      "path": "specs/001-module_src-rust-port/tasks.md",
+      "kind": "out_of_scope_file",
+      "message": "发现 contract 外文件路径: src/shc.c"
+    },
+    {
+      "path": "specs/001-module_src-rust-port/tasks.md",
+      "kind": "out_of_scope_file",
+      "message": "发现 contract 外文件路径: src/module_src.rs"
+    },
+    {
+      "path": "specs/001-module_src-rust-port/tasks.md",
+      "kind": "out_of_scope_file",
+      "message": "发现 contract 外文件路径: src/module_src.rs"
+    },
+    {
+      "path": "specs/001-module_src-rust-port/tasks.md",
+      "kind": "out_of_scope_file",
+      "message": "发现 contract 外文件路径: src/shc.c"
+    },
+    {
+      "path": "specs/001-module_src-rust-port/tasks.md",
+      "kind": "out_of_scope_file",
+      "message": "发现 contract 外文件路径: src/shc.c"
+    },
+    {
+      "path": "specs/001-module_src-rust-port/tasks.md",
+      "kind": "out_of_scope_file",
+      "message": "发现 contract 外文件路径: src/module_src.rs"
+    },
+    {
+      "path": "specs/001-module_src-rust-port/tasks.md",
+      "kind": "out_of_scope_file",
+      "message": "发现 contract 外文件路径: src/module_src.rs"
+    },
+    {
+      "path": "specs/001-module_src-rust-port/tasks.md",
+      "kind": "out_of_scope_file",
+      "message": "发现 contract 外文件路径: src/shc.c"
+    },
+    {
+      "path": "specs/001-module_src-rust-port/tasks.md",
+      "kind": "out_of_scope_file",
+      "message": "发现 contract 外文件路径: src/module_src.rs"
+    },
+    {
+      "path": "specs/001-module_src-rust-port/tasks.md",
+      "kind": "out_of_scope_file",
+      "message": "发现 contract 外文件路径: src/shc.c"
+    },
+    {
+      "path": "specs/001-module_src-rust-port/tasks.md",
+      "kind": "out_of_scope_file",
+      "message": "发现 contract 外文件路径: src/module_src.rs"
+    },
+    {
+      "path": "specs/001-module_src-rust-port/tasks.md",
+      "kind": "out_of_scope_file",
+      "message": "发现 contract 外文件路径: src/shc.c"
+    },
+    {
+      "path": "specs/001-module_src-rust-port/tasks.md",
+      "kind": "out_of_scope_file",
+      "message": "发现 contract 外文件路径: src/module_src.rs"
+    },
+    {
+      "path": "specs/001-module_src-rust-port/tasks.md",
+      "kind": "out_of_scope_file",
+      "message": "发现 contract 外文件路径: src/shc.c"
+    },
+    {
+      "path": "specs/001-module_src-rust-port/tasks.md",
+      "kind": "out_of_scope_file",
+      "message": "发现 contract 外文件路径: src/module_src.rs"
+    },
+    {
+      "path": "specs/001-module_src-rust-port/tasks.md",
+      "kind": "out_of_scope_file",
+      "message": "发现 contract 外文件路径: src/shc.c"
+    },
+    {
+      "path": "specs/001-module_src-rust-port/tasks.md",
+      "kind": "out_of_scope_file",
+      "message": "发现 contract 外文件路径: src/module_src.rs"
+    },
+    {
+      "path": "specs/001-module_src-rust-port/tasks.md",
+      "kind": "out_of_scope_file",
+      "message": "发现 contract 外文件路径: src/shc.c"
+    },
+    {
+      "path": "specs/001-module_src-rust-port/tasks.md",
+      "kind": "out_of_scope_file",
+      "message": "发现 contract 外文件路径: src/module_src.rs"
+    },
+    {
+      "path": "specs/001-module_src-rust-port/tasks.md",
+      "kind": "out_of_scope_file",
+      "message": "发现 contract 外文件路径: src/shc.c"
+    },
+    {
+      "path": "specs/001-module_src-rust-port/tasks.md",
+      "kind": "out_of_scope_file",
+      "message": "发现 contract 外文件路径: src/module_src.rs"
+    },
+    {
+      "path": "specs/001-module_src-rust-port/tasks.md",
+      "kind": "out_of_scope_file",
+      "message": "发现 contract 外文件路径: src/shc.c"
+    },
+    {
+      "path": "specs/001-module_src-rust-port/tasks.md",
+      "kind": "out_of_scope_file",
+      "message": "发现 contract 外文件路径: src/shc.c"
+    },
+    {
+      "path": "specs/001-module_src-rust-port/tasks.md",
+      "kind": "out_of_scope_file",
+      "message": "发现 contract 外文件路径: src/module_src.rs"
+    },
+    {
+      "path": "specs/001-module_src-rust-port/tasks.md",
+      "kind": "out_of_scope_file",
+      "message": "发现 contract 外文件路径: src/module_src.rs"
+    },
+    {
+      "path": "specs/001-module_src-rust-port/tasks.md",
+      "kind": "out_of_scope_file",
+      "message": "发现 contract 外文件路径: src/shc.c"
+    },
+    {
+      "path": "specs/001-module_src-rust-port/tasks.md",
+      "kind": "out_of_scope_file",
+      "message": "发现 contract 外文件路径: src/module_src.rs"
+    }
+  ]
+}

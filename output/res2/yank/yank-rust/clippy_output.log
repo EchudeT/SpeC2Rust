@@ -1,0 +1,16 @@
+warning: `/home/jfeng/.cargo/config` is deprecated in favor of `config.toml`
+  |
+  = help: if you need to support cargo 1.38 or earlier, you can symlink `config` to `config.toml`
+warning: `/home/jfeng/.cargo/config` is deprecated in favor of `config.toml`
+  |
+  = help: if you need to support cargo 1.38 or earlier, you can symlink `config` to `config.toml`
+    Checking yank-rust v0.1.0 (/data1/jfeng/tcode_win/output/res2/yank/yank-rust)
+src/yank.rs:89:5: warning: type `yank::Field` is more private than the item `yank::Yank::field_cmp`: associated function `yank::Yank::field_cmp` is reachable at visibility `pub(crate)`
+src/yank.rs:313:5: warning: type `yank::Key` is more private than the item `yank::Yank::tgetc`: method `yank::Yank::tgetc` is reachable at visibility `pub(crate)`
+src/yank.rs:29:5: warning: fields `rows` and `cols` are never read
+src/yank.rs:141:17: warning: this can be `std::io::Error::other(_)`
+src/yank.rs:152:28: warning: this can be `std::io::Error::other(_)`
+src/yank.rs:317:28: warning: this can be `std::io::Error::other(_)`
+warning: `yank-rust` (bin "yank-rust") generated 6 warnings (4 duplicates) (run `cargo clippy --fix --bin "yank-rust" -p yank-rust -- ` to apply 2 suggestions)
+warning: `yank-rust` (bin "yank-rust" test) generated 6 warnings (2 duplicates) (run `cargo clippy --fix --bin "yank-rust" -p yank-rust --tests -- ` to apply 1 suggestion)
+    Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.24s

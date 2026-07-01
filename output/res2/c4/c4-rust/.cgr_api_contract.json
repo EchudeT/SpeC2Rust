@@ -1,0 +1,2947 @@
+{
+  "project_name": "c4-rust",
+  "files": {
+    "src/c4.rs": {
+      "updated_at": "2026-06-07T12:04:56",
+      "contract": {
+        "public_structs": [
+          {
+            "name": "C4",
+            "fields": [
+              {
+                "name": "source",
+                "public": false,
+                "type": "Vec<u8>"
+              },
+              {
+                "name": "p",
+                "public": false,
+                "type": "usize"
+              },
+              {
+                "name": "line",
+                "public": false,
+                "type": "usize"
+              },
+              {
+                "name": "tk",
+                "public": false,
+                "type": "i32"
+              },
+              {
+                "name": "ival",
+                "public": false,
+                "type": "i32"
+              },
+              {
+                "name": "current_id",
+                "public": false,
+                "type": "Option<usize>"
+              },
+              {
+                "name": "symbols",
+                "public": false,
+                "type": "Vec<Symbol>"
+              },
+              {
+                "name": "text",
+                "public": false,
+                "type": "Vec<i32>"
+              },
+              {
+                "name": "data",
+                "public": false,
+                "type": "Vec<i32>"
+              },
+              {
+                "name": "ty",
+                "public": false,
+                "type": "i32"
+              },
+              {
+                "name": "loc",
+                "public": false,
+                "type": "i32"
+              }
+            ]
+          }
+        ],
+        "public_enums": [],
+        "public_traits": [],
+        "public_functions": [
+          "expr",
+          "main",
+          "next",
+          "run_c_4",
+          "run_hello",
+          "stmt"
+        ],
+        "constructors": [],
+        "accessors": [],
+        "impl_methods": {
+          "C4": [
+            "expr",
+            "main",
+            "next",
+            "run_c_4",
+            "run_hello",
+            "stmt"
+          ]
+        },
+        "references": [
+          {
+            "path": "src/c4.rs",
+            "kind": "type",
+            "name": "Symbol",
+            "visibility": "private",
+            "public": false,
+            "owner_type": "",
+            "params": [],
+            "return_type": "",
+            "signature": "struct Symbol"
+          },
+          {
+            "path": "src/c4.rs",
+            "kind": "type",
+            "name": "C4Error",
+            "visibility": "private",
+            "public": false,
+            "owner_type": "",
+            "params": [],
+            "return_type": "",
+            "signature": "struct C4Error"
+          },
+          {
+            "path": "src/c4.rs",
+            "kind": "type",
+            "name": "C4",
+            "visibility": "public",
+            "public": true,
+            "owner_type": "",
+            "params": [],
+            "return_type": "",
+            "signature": "struct C4"
+          },
+          {
+            "path": "src/c4.rs",
+            "kind": "field",
+            "name": "name",
+            "visibility": "private",
+            "public": false,
+            "owner_type": "Symbol",
+            "params": [],
+            "return_type": "String",
+            "signature": "Symbol::name: String"
+          },
+          {
+            "path": "src/c4.rs",
+            "kind": "field",
+            "name": "hash",
+            "visibility": "private",
+            "public": false,
+            "owner_type": "Symbol",
+            "params": [],
+            "return_type": "i32",
+            "signature": "Symbol::hash: i32"
+          },
+          {
+            "path": "src/c4.rs",
+            "kind": "field",
+            "name": "token",
+            "visibility": "private",
+            "public": false,
+            "owner_type": "Symbol",
+            "params": [],
+            "return_type": "i32",
+            "signature": "Symbol::token: i32"
+          },
+          {
+            "path": "src/c4.rs",
+            "kind": "field",
+            "name": "class",
+            "visibility": "private",
+            "public": false,
+            "owner_type": "Symbol",
+            "params": [],
+            "return_type": "i32",
+            "signature": "Symbol::class: i32"
+          },
+          {
+            "path": "src/c4.rs",
+            "kind": "field",
+            "name": "ty",
+            "visibility": "private",
+            "public": false,
+            "owner_type": "Symbol",
+            "params": [],
+            "return_type": "i32",
+            "signature": "Symbol::ty: i32"
+          },
+          {
+            "path": "src/c4.rs",
+            "kind": "field",
+            "name": "val",
+            "visibility": "private",
+            "public": false,
+            "owner_type": "Symbol",
+            "params": [],
+            "return_type": "i32",
+            "signature": "Symbol::val: i32"
+          },
+          {
+            "path": "src/c4.rs",
+            "kind": "field",
+            "name": "line",
+            "visibility": "private",
+            "public": false,
+            "owner_type": "C4Error",
+            "params": [],
+            "return_type": "usize",
+            "signature": "C4Error::line: usize"
+          },
+          {
+            "path": "src/c4.rs",
+            "kind": "field",
+            "name": "message",
+            "visibility": "private",
+            "public": false,
+            "owner_type": "C4Error",
+            "params": [],
+            "return_type": "String",
+            "signature": "C4Error::message: String"
+          },
+          {
+            "path": "src/c4.rs",
+            "kind": "field",
+            "name": "source",
+            "visibility": "private",
+            "public": false,
+            "owner_type": "C4",
+            "params": [],
+            "return_type": "Vec<u8>",
+            "signature": "C4::source: Vec<u8>"
+          },
+          {
+            "path": "src/c4.rs",
+            "kind": "field",
+            "name": "p",
+            "visibility": "private",
+            "public": false,
+            "owner_type": "C4",
+            "params": [],
+            "return_type": "usize",
+            "signature": "C4::p: usize"
+          },
+          {
+            "path": "src/c4.rs",
+            "kind": "field",
+            "name": "line",
+            "visibility": "private",
+            "public": false,
+            "owner_type": "C4",
+            "params": [],
+            "return_type": "usize",
+            "signature": "C4::line: usize"
+          },
+          {
+            "path": "src/c4.rs",
+            "kind": "field",
+            "name": "tk",
+            "visibility": "private",
+            "public": false,
+            "owner_type": "C4",
+            "params": [],
+            "return_type": "i32",
+            "signature": "C4::tk: i32"
+          },
+          {
+            "path": "src/c4.rs",
+            "kind": "field",
+            "name": "ival",
+            "visibility": "private",
+            "public": false,
+            "owner_type": "C4",
+            "params": [],
+            "return_type": "i32",
+            "signature": "C4::ival: i32"
+          },
+          {
+            "path": "src/c4.rs",
+            "kind": "field",
+            "name": "current_id",
+            "visibility": "private",
+            "public": false,
+            "owner_type": "C4",
+            "params": [],
+            "return_type": "Option<usize>",
+            "signature": "C4::current_id: Option<usize>"
+          },
+          {
+            "path": "src/c4.rs",
+            "kind": "field",
+            "name": "symbols",
+            "visibility": "private",
+            "public": false,
+            "owner_type": "C4",
+            "params": [],
+            "return_type": "Vec<Symbol>",
+            "signature": "C4::symbols: Vec<Symbol>"
+          },
+          {
+            "path": "src/c4.rs",
+            "kind": "field",
+            "name": "text",
+            "visibility": "private",
+            "public": false,
+            "owner_type": "C4",
+            "params": [],
+            "return_type": "Vec<i32>",
+            "signature": "C4::text: Vec<i32>"
+          },
+          {
+            "path": "src/c4.rs",
+            "kind": "field",
+            "name": "data",
+            "visibility": "private",
+            "public": false,
+            "owner_type": "C4",
+            "params": [],
+            "return_type": "Vec<i32>",
+            "signature": "C4::data: Vec<i32>"
+          },
+          {
+            "path": "src/c4.rs",
+            "kind": "field",
+            "name": "ty",
+            "visibility": "private",
+            "public": false,
+            "owner_type": "C4",
+            "params": [],
+            "return_type": "i32",
+            "signature": "C4::ty: i32"
+          },
+          {
+            "path": "src/c4.rs",
+            "kind": "field",
+            "name": "loc",
+            "visibility": "private",
+            "public": false,
+            "owner_type": "C4",
+            "params": [],
+            "return_type": "i32",
+            "signature": "C4::loc: i32"
+          },
+          {
+            "path": "src/c4.rs",
+            "kind": "constant",
+            "name": "TK_NUM",
+            "visibility": "private",
+            "public": false,
+            "owner_type": "",
+            "params": [],
+            "return_type": "i32",
+            "signature": "TK_NUM: i32"
+          },
+          {
+            "path": "src/c4.rs",
+            "kind": "constant",
+            "name": "TK_FUN",
+            "visibility": "private",
+            "public": false,
+            "owner_type": "",
+            "params": [],
+            "return_type": "i32",
+            "signature": "TK_FUN: i32"
+          },
+          {
+            "path": "src/c4.rs",
+            "kind": "constant",
+            "name": "TK_SYS",
+            "visibility": "private",
+            "public": false,
+            "owner_type": "",
+            "params": [],
+            "return_type": "i32",
+            "signature": "TK_SYS: i32"
+          },
+          {
+            "path": "src/c4.rs",
+            "kind": "constant",
+            "name": "TK_GLO",
+            "visibility": "private",
+            "public": false,
+            "owner_type": "",
+            "params": [],
+            "return_type": "i32",
+            "signature": "TK_GLO: i32"
+          },
+          {
+            "path": "src/c4.rs",
+            "kind": "constant",
+            "name": "TK_LOC",
+            "visibility": "private",
+            "public": false,
+            "owner_type": "",
+            "params": [],
+            "return_type": "i32",
+            "signature": "TK_LOC: i32"
+          },
+          {
+            "path": "src/c4.rs",
+            "kind": "constant",
+            "name": "TK_ID",
+            "visibility": "private",
+            "public": false,
+            "owner_type": "",
+            "params": [],
+            "return_type": "i32",
+            "signature": "TK_ID: i32"
+          },
+          {
+            "path": "src/c4.rs",
+            "kind": "constant",
+            "name": "TK_CHAR",
+            "visibility": "private",
+            "public": false,
+            "owner_type": "",
+            "params": [],
+            "return_type": "i32",
+            "signature": "TK_CHAR: i32"
+          },
+          {
+            "path": "src/c4.rs",
+            "kind": "constant",
+            "name": "TK_ELSE",
+            "visibility": "private",
+            "public": false,
+            "owner_type": "",
+            "params": [],
+            "return_type": "i32",
+            "signature": "TK_ELSE: i32"
+          },
+          {
+            "path": "src/c4.rs",
+            "kind": "constant",
+            "name": "TK_ENUM",
+            "visibility": "private",
+            "public": false,
+            "owner_type": "",
+            "params": [],
+            "return_type": "i32",
+            "signature": "TK_ENUM: i32"
+          },
+          {
+            "path": "src/c4.rs",
+            "kind": "constant",
+            "name": "TK_IF",
+            "visibility": "private",
+            "public": false,
+            "owner_type": "",
+            "params": [],
+            "return_type": "i32",
+            "signature": "TK_IF: i32"
+          },
+          {
+            "path": "src/c4.rs",
+            "kind": "constant",
+            "name": "TK_INT",
+            "visibility": "private",
+            "public": false,
+            "owner_type": "",
+            "params": [],
+            "return_type": "i32",
+            "signature": "TK_INT: i32"
+          },
+          {
+            "path": "src/c4.rs",
+            "kind": "constant",
+            "name": "TK_RETURN",
+            "visibility": "private",
+            "public": false,
+            "owner_type": "",
+            "params": [],
+            "return_type": "i32",
+            "signature": "TK_RETURN: i32"
+          },
+          {
+            "path": "src/c4.rs",
+            "kind": "constant",
+            "name": "TK_SIZEOF",
+            "visibility": "private",
+            "public": false,
+            "owner_type": "",
+            "params": [],
+            "return_type": "i32",
+            "signature": "TK_SIZEOF: i32"
+          },
+          {
+            "path": "src/c4.rs",
+            "kind": "constant",
+            "name": "TK_WHILE",
+            "visibility": "private",
+            "public": false,
+            "owner_type": "",
+            "params": [],
+            "return_type": "i32",
+            "signature": "TK_WHILE: i32"
+          },
+          {
+            "path": "src/c4.rs",
+            "kind": "constant",
+            "name": "TK_ASSIGN",
+            "visibility": "private",
+            "public": false,
+            "owner_type": "",
+            "params": [],
+            "return_type": "i32",
+            "signature": "TK_ASSIGN: i32"
+          },
+          {
+            "path": "src/c4.rs",
+            "kind": "constant",
+            "name": "TK_COND",
+            "visibility": "private",
+            "public": false,
+            "owner_type": "",
+            "params": [],
+            "return_type": "i32",
+            "signature": "TK_COND: i32"
+          },
+          {
+            "path": "src/c4.rs",
+            "kind": "constant",
+            "name": "TK_LOR",
+            "visibility": "private",
+            "public": false,
+            "owner_type": "",
+            "params": [],
+            "return_type": "i32",
+            "signature": "TK_LOR: i32"
+          },
+          {
+            "path": "src/c4.rs",
+            "kind": "constant",
+            "name": "TK_LAN",
+            "visibility": "private",
+            "public": false,
+            "owner_type": "",
+            "params": [],
+            "return_type": "i32",
+            "signature": "TK_LAN: i32"
+          },
+          {
+            "path": "src/c4.rs",
+            "kind": "constant",
+            "name": "TK_OR",
+            "visibility": "private",
+            "public": false,
+            "owner_type": "",
+            "params": [],
+            "return_type": "i32",
+            "signature": "TK_OR: i32"
+          },
+          {
+            "path": "src/c4.rs",
+            "kind": "constant",
+            "name": "TK_XOR",
+            "visibility": "private",
+            "public": false,
+            "owner_type": "",
+            "params": [],
+            "return_type": "i32",
+            "signature": "TK_XOR: i32"
+          },
+          {
+            "path": "src/c4.rs",
+            "kind": "constant",
+            "name": "TK_AND",
+            "visibility": "private",
+            "public": false,
+            "owner_type": "",
+            "params": [],
+            "return_type": "i32",
+            "signature": "TK_AND: i32"
+          },
+          {
+            "path": "src/c4.rs",
+            "kind": "constant",
+            "name": "TK_EQ",
+            "visibility": "private",
+            "public": false,
+            "owner_type": "",
+            "params": [],
+            "return_type": "i32",
+            "signature": "TK_EQ: i32"
+          },
+          {
+            "path": "src/c4.rs",
+            "kind": "constant",
+            "name": "TK_NE",
+            "visibility": "private",
+            "public": false,
+            "owner_type": "",
+            "params": [],
+            "return_type": "i32",
+            "signature": "TK_NE: i32"
+          },
+          {
+            "path": "src/c4.rs",
+            "kind": "constant",
+            "name": "TK_LT",
+            "visibility": "private",
+            "public": false,
+            "owner_type": "",
+            "params": [],
+            "return_type": "i32",
+            "signature": "TK_LT: i32"
+          },
+          {
+            "path": "src/c4.rs",
+            "kind": "constant",
+            "name": "TK_GT",
+            "visibility": "private",
+            "public": false,
+            "owner_type": "",
+            "params": [],
+            "return_type": "i32",
+            "signature": "TK_GT: i32"
+          },
+          {
+            "path": "src/c4.rs",
+            "kind": "constant",
+            "name": "TK_LE",
+            "visibility": "private",
+            "public": false,
+            "owner_type": "",
+            "params": [],
+            "return_type": "i32",
+            "signature": "TK_LE: i32"
+          },
+          {
+            "path": "src/c4.rs",
+            "kind": "constant",
+            "name": "TK_GE",
+            "visibility": "private",
+            "public": false,
+            "owner_type": "",
+            "params": [],
+            "return_type": "i32",
+            "signature": "TK_GE: i32"
+          },
+          {
+            "path": "src/c4.rs",
+            "kind": "constant",
+            "name": "TK_SHL",
+            "visibility": "private",
+            "public": false,
+            "owner_type": "",
+            "params": [],
+            "return_type": "i32",
+            "signature": "TK_SHL: i32"
+          },
+          {
+            "path": "src/c4.rs",
+            "kind": "constant",
+            "name": "TK_SHR",
+            "visibility": "private",
+            "public": false,
+            "owner_type": "",
+            "params": [],
+            "return_type": "i32",
+            "signature": "TK_SHR: i32"
+          },
+          {
+            "path": "src/c4.rs",
+            "kind": "constant",
+            "name": "TK_ADD",
+            "visibility": "private",
+            "public": false,
+            "owner_type": "",
+            "params": [],
+            "return_type": "i32",
+            "signature": "TK_ADD: i32"
+          },
+          {
+            "path": "src/c4.rs",
+            "kind": "constant",
+            "name": "TK_SUB",
+            "visibility": "private",
+            "public": false,
+            "owner_type": "",
+            "params": [],
+            "return_type": "i32",
+            "signature": "TK_SUB: i32"
+          },
+          {
+            "path": "src/c4.rs",
+            "kind": "constant",
+            "name": "TK_MUL",
+            "visibility": "private",
+            "public": false,
+            "owner_type": "",
+            "params": [],
+            "return_type": "i32",
+            "signature": "TK_MUL: i32"
+          },
+          {
+            "path": "src/c4.rs",
+            "kind": "constant",
+            "name": "TK_DIV",
+            "visibility": "private",
+            "public": false,
+            "owner_type": "",
+            "params": [],
+            "return_type": "i32",
+            "signature": "TK_DIV: i32"
+          },
+          {
+            "path": "src/c4.rs",
+            "kind": "constant",
+            "name": "TK_MOD",
+            "visibility": "private",
+            "public": false,
+            "owner_type": "",
+            "params": [],
+            "return_type": "i32",
+            "signature": "TK_MOD: i32"
+          },
+          {
+            "path": "src/c4.rs",
+            "kind": "constant",
+            "name": "TK_INC",
+            "visibility": "private",
+            "public": false,
+            "owner_type": "",
+            "params": [],
+            "return_type": "i32",
+            "signature": "TK_INC: i32"
+          },
+          {
+            "path": "src/c4.rs",
+            "kind": "constant",
+            "name": "TK_DEC",
+            "visibility": "private",
+            "public": false,
+            "owner_type": "",
+            "params": [],
+            "return_type": "i32",
+            "signature": "TK_DEC: i32"
+          },
+          {
+            "path": "src/c4.rs",
+            "kind": "constant",
+            "name": "TK_BRAK",
+            "visibility": "private",
+            "public": false,
+            "owner_type": "",
+            "params": [],
+            "return_type": "i32",
+            "signature": "TK_BRAK: i32"
+          },
+          {
+            "path": "src/c4.rs",
+            "kind": "constant",
+            "name": "CLASS_NUM",
+            "visibility": "private",
+            "public": false,
+            "owner_type": "",
+            "params": [],
+            "return_type": "i32",
+            "signature": "CLASS_NUM: i32"
+          },
+          {
+            "path": "src/c4.rs",
+            "kind": "constant",
+            "name": "CLASS_FUN",
+            "visibility": "private",
+            "public": false,
+            "owner_type": "",
+            "params": [],
+            "return_type": "i32",
+            "signature": "CLASS_FUN: i32"
+          },
+          {
+            "path": "src/c4.rs",
+            "kind": "constant",
+            "name": "CLASS_SYS",
+            "visibility": "private",
+            "public": false,
+            "owner_type": "",
+            "params": [],
+            "return_type": "i32",
+            "signature": "CLASS_SYS: i32"
+          },
+          {
+            "path": "src/c4.rs",
+            "kind": "constant",
+            "name": "CLASS_GLO",
+            "visibility": "private",
+            "public": false,
+            "owner_type": "",
+            "params": [],
+            "return_type": "i32",
+            "signature": "CLASS_GLO: i32"
+          },
+          {
+            "path": "src/c4.rs",
+            "kind": "constant",
+            "name": "CLASS_LOC",
+            "visibility": "private",
+            "public": false,
+            "owner_type": "",
+            "params": [],
+            "return_type": "i32",
+            "signature": "CLASS_LOC: i32"
+          },
+          {
+            "path": "src/c4.rs",
+            "kind": "constant",
+            "name": "TYPE_CHAR",
+            "visibility": "private",
+            "public": false,
+            "owner_type": "",
+            "params": [],
+            "return_type": "i32",
+            "signature": "TYPE_CHAR: i32"
+          },
+          {
+            "path": "src/c4.rs",
+            "kind": "constant",
+            "name": "TYPE_INT",
+            "visibility": "private",
+            "public": false,
+            "owner_type": "",
+            "params": [],
+            "return_type": "i32",
+            "signature": "TYPE_INT: i32"
+          },
+          {
+            "path": "src/c4.rs",
+            "kind": "constant",
+            "name": "TYPE_PTR",
+            "visibility": "private",
+            "public": false,
+            "owner_type": "",
+            "params": [],
+            "return_type": "i32",
+            "signature": "TYPE_PTR: i32"
+          },
+          {
+            "path": "src/c4.rs",
+            "kind": "constant",
+            "name": "OP_LEA",
+            "visibility": "private",
+            "public": false,
+            "owner_type": "",
+            "params": [],
+            "return_type": "i32",
+            "signature": "OP_LEA: i32"
+          },
+          {
+            "path": "src/c4.rs",
+            "kind": "constant",
+            "name": "OP_IMM",
+            "visibility": "private",
+            "public": false,
+            "owner_type": "",
+            "params": [],
+            "return_type": "i32",
+            "signature": "OP_IMM: i32"
+          },
+          {
+            "path": "src/c4.rs",
+            "kind": "constant",
+            "name": "OP_JMP",
+            "visibility": "private",
+            "public": false,
+            "owner_type": "",
+            "params": [],
+            "return_type": "i32",
+            "signature": "OP_JMP: i32"
+          },
+          {
+            "path": "src/c4.rs",
+            "kind": "constant",
+            "name": "OP_JSR",
+            "visibility": "private",
+            "public": false,
+            "owner_type": "",
+            "params": [],
+            "return_type": "i32",
+            "signature": "OP_JSR: i32"
+          },
+          {
+            "path": "src/c4.rs",
+            "kind": "constant",
+            "name": "OP_BZ",
+            "visibility": "private",
+            "public": false,
+            "owner_type": "",
+            "params": [],
+            "return_type": "i32",
+            "signature": "OP_BZ: i32"
+          },
+          {
+            "path": "src/c4.rs",
+            "kind": "constant",
+            "name": "OP_BNZ",
+            "visibility": "private",
+            "public": false,
+            "owner_type": "",
+            "params": [],
+            "return_type": "i32",
+            "signature": "OP_BNZ: i32"
+          },
+          {
+            "path": "src/c4.rs",
+            "kind": "constant",
+            "name": "OP_ENT",
+            "visibility": "private",
+            "public": false,
+            "owner_type": "",
+            "params": [],
+            "return_type": "i32",
+            "signature": "OP_ENT: i32"
+          },
+          {
+            "path": "src/c4.rs",
+            "kind": "constant",
+            "name": "OP_ADJ",
+            "visibility": "private",
+            "public": false,
+            "owner_type": "",
+            "params": [],
+            "return_type": "i32",
+            "signature": "OP_ADJ: i32"
+          },
+          {
+            "path": "src/c4.rs",
+            "kind": "constant",
+            "name": "OP_LEV",
+            "visibility": "private",
+            "public": false,
+            "owner_type": "",
+            "params": [],
+            "return_type": "i32",
+            "signature": "OP_LEV: i32"
+          },
+          {
+            "path": "src/c4.rs",
+            "kind": "constant",
+            "name": "OP_LI",
+            "visibility": "private",
+            "public": false,
+            "owner_type": "",
+            "params": [],
+            "return_type": "i32",
+            "signature": "OP_LI: i32"
+          },
+          {
+            "path": "src/c4.rs",
+            "kind": "constant",
+            "name": "OP_LC",
+            "visibility": "private",
+            "public": false,
+            "owner_type": "",
+            "params": [],
+            "return_type": "i32",
+            "signature": "OP_LC: i32"
+          },
+          {
+            "path": "src/c4.rs",
+            "kind": "constant",
+            "name": "OP_SI",
+            "visibility": "private",
+            "public": false,
+            "owner_type": "",
+            "params": [],
+            "return_type": "i32",
+            "signature": "OP_SI: i32"
+          },
+          {
+            "path": "src/c4.rs",
+            "kind": "constant",
+            "name": "OP_SC",
+            "visibility": "private",
+            "public": false,
+            "owner_type": "",
+            "params": [],
+            "return_type": "i32",
+            "signature": "OP_SC: i32"
+          },
+          {
+            "path": "src/c4.rs",
+            "kind": "constant",
+            "name": "OP_PSH",
+            "visibility": "private",
+            "public": false,
+            "owner_type": "",
+            "params": [],
+            "return_type": "i32",
+            "signature": "OP_PSH: i32"
+          },
+          {
+            "path": "src/c4.rs",
+            "kind": "constant",
+            "name": "OP_OR",
+            "visibility": "private",
+            "public": false,
+            "owner_type": "",
+            "params": [],
+            "return_type": "i32",
+            "signature": "OP_OR: i32"
+          },
+          {
+            "path": "src/c4.rs",
+            "kind": "constant",
+            "name": "OP_XOR",
+            "visibility": "private",
+            "public": false,
+            "owner_type": "",
+            "params": [],
+            "return_type": "i32",
+            "signature": "OP_XOR: i32"
+          },
+          {
+            "path": "src/c4.rs",
+            "kind": "constant",
+            "name": "OP_AND",
+            "visibility": "private",
+            "public": false,
+            "owner_type": "",
+            "params": [],
+            "return_type": "i32",
+            "signature": "OP_AND: i32"
+          },
+          {
+            "path": "src/c4.rs",
+            "kind": "constant",
+            "name": "OP_EQ",
+            "visibility": "private",
+            "public": false,
+            "owner_type": "",
+            "params": [],
+            "return_type": "i32",
+            "signature": "OP_EQ: i32"
+          },
+          {
+            "path": "src/c4.rs",
+            "kind": "constant",
+            "name": "OP_NE",
+            "visibility": "private",
+            "public": false,
+            "owner_type": "",
+            "params": [],
+            "return_type": "i32",
+            "signature": "OP_NE: i32"
+          },
+          {
+            "path": "src/c4.rs",
+            "kind": "constant",
+            "name": "OP_LT",
+            "visibility": "private",
+            "public": false,
+            "owner_type": "",
+            "params": [],
+            "return_type": "i32",
+            "signature": "OP_LT: i32"
+          },
+          {
+            "path": "src/c4.rs",
+            "kind": "constant",
+            "name": "OP_GT",
+            "visibility": "private",
+            "public": false,
+            "owner_type": "",
+            "params": [],
+            "return_type": "i32",
+            "signature": "OP_GT: i32"
+          },
+          {
+            "path": "src/c4.rs",
+            "kind": "constant",
+            "name": "OP_LE",
+            "visibility": "private",
+            "public": false,
+            "owner_type": "",
+            "params": [],
+            "return_type": "i32",
+            "signature": "OP_LE: i32"
+          },
+          {
+            "path": "src/c4.rs",
+            "kind": "constant",
+            "name": "OP_GE",
+            "visibility": "private",
+            "public": false,
+            "owner_type": "",
+            "params": [],
+            "return_type": "i32",
+            "signature": "OP_GE: i32"
+          },
+          {
+            "path": "src/c4.rs",
+            "kind": "constant",
+            "name": "OP_SHL",
+            "visibility": "private",
+            "public": false,
+            "owner_type": "",
+            "params": [],
+            "return_type": "i32",
+            "signature": "OP_SHL: i32"
+          },
+          {
+            "path": "src/c4.rs",
+            "kind": "constant",
+            "name": "OP_SHR",
+            "visibility": "private",
+            "public": false,
+            "owner_type": "",
+            "params": [],
+            "return_type": "i32",
+            "signature": "OP_SHR: i32"
+          },
+          {
+            "path": "src/c4.rs",
+            "kind": "constant",
+            "name": "OP_ADD",
+            "visibility": "private",
+            "public": false,
+            "owner_type": "",
+            "params": [],
+            "return_type": "i32",
+            "signature": "OP_ADD: i32"
+          },
+          {
+            "path": "src/c4.rs",
+            "kind": "constant",
+            "name": "OP_SUB",
+            "visibility": "private",
+            "public": false,
+            "owner_type": "",
+            "params": [],
+            "return_type": "i32",
+            "signature": "OP_SUB: i32"
+          },
+          {
+            "path": "src/c4.rs",
+            "kind": "constant",
+            "name": "OP_MUL",
+            "visibility": "private",
+            "public": false,
+            "owner_type": "",
+            "params": [],
+            "return_type": "i32",
+            "signature": "OP_MUL: i32"
+          },
+          {
+            "path": "src/c4.rs",
+            "kind": "constant",
+            "name": "OP_DIV",
+            "visibility": "private",
+            "public": false,
+            "owner_type": "",
+            "params": [],
+            "return_type": "i32",
+            "signature": "OP_DIV: i32"
+          },
+          {
+            "path": "src/c4.rs",
+            "kind": "constant",
+            "name": "OP_MOD",
+            "visibility": "private",
+            "public": false,
+            "owner_type": "",
+            "params": [],
+            "return_type": "i32",
+            "signature": "OP_MOD: i32"
+          },
+          {
+            "path": "src/c4.rs",
+            "kind": "method",
+            "name": "new",
+            "visibility": "private",
+            "public": false,
+            "owner_type": "C4Error",
+            "params": [
+              "line: usize",
+              "message: impl Into<String>"
+            ],
+            "return_type": "Self",
+            "signature": "new(line: usize, message: impl Into<String>) -> Self"
+          },
+          {
+            "path": "src/c4.rs",
+            "kind": "method",
+            "name": "fmt",
+            "visibility": "private",
+            "public": false,
+            "owner_type": "C4Error",
+            "params": [
+              "&self",
+              "f: &mut fmt::Formatter<'_>"
+            ],
+            "return_type": "fmt::Result",
+            "signature": "fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result"
+          },
+          {
+            "path": "src/c4.rs",
+            "kind": "method",
+            "name": "default",
+            "visibility": "private",
+            "public": false,
+            "owner_type": "C4",
+            "params": [],
+            "return_type": "Self",
+            "signature": "default() -> Self"
+          },
+          {
+            "path": "src/c4.rs",
+            "kind": "method",
+            "name": "install_keywords",
+            "visibility": "private",
+            "public": false,
+            "owner_type": "C4",
+            "params": [
+              "&mut self"
+            ],
+            "return_type": "",
+            "signature": "install_keywords(&mut self)"
+          },
+          {
+            "path": "src/c4.rs",
+            "kind": "method",
+            "name": "add_symbol",
+            "visibility": "private",
+            "public": false,
+            "owner_type": "C4",
+            "params": [
+              "&mut self",
+              "name: &str",
+              "token: i32",
+              "class: i32",
+              "ty: i32",
+              "val: i32"
+            ],
+            "return_type": "",
+            "signature": "add_symbol(&mut self, name: &str, token: i32, class: i32, ty: i32, val: i32)"
+          },
+          {
+            "path": "src/c4.rs",
+            "kind": "method",
+            "name": "hash_ident",
+            "visibility": "private",
+            "public": false,
+            "owner_type": "C4",
+            "params": [
+              "bytes: &[u8]"
+            ],
+            "return_type": "i32",
+            "signature": "hash_ident(bytes: &[u8]) -> i32"
+          },
+          {
+            "path": "src/c4.rs",
+            "kind": "method",
+            "name": "current_byte",
+            "visibility": "private",
+            "public": false,
+            "owner_type": "C4",
+            "params": [
+              "&self"
+            ],
+            "return_type": "u8",
+            "signature": "current_byte(&self) -> u8"
+          },
+          {
+            "path": "src/c4.rs",
+            "kind": "method",
+            "name": "push_op",
+            "visibility": "private",
+            "public": false,
+            "owner_type": "C4",
+            "params": [
+              "&mut self",
+              "op: i32"
+            ],
+            "return_type": "",
+            "signature": "push_op(&mut self, op: i32)"
+          },
+          {
+            "path": "src/c4.rs",
+            "kind": "method",
+            "name": "emit_placeholder",
+            "visibility": "private",
+            "public": false,
+            "owner_type": "C4",
+            "params": [
+              "&mut self"
+            ],
+            "return_type": "usize",
+            "signature": "emit_placeholder(&mut self) -> usize"
+          },
+          {
+            "path": "src/c4.rs",
+            "kind": "method",
+            "name": "require_token",
+            "visibility": "private",
+            "public": false,
+            "owner_type": "C4",
+            "params": [
+              "&mut self",
+              "token: i32",
+              "message: &str"
+            ],
+            "return_type": "Result<(), C4Error>",
+            "signature": "require_token(&mut self, token: i32, message: &str) -> Result<(), C4Error>"
+          },
+          {
+            "path": "src/c4.rs",
+            "kind": "method",
+            "name": "patch_to_current",
+            "visibility": "private",
+            "public": false,
+            "owner_type": "C4",
+            "params": [
+              "&mut self",
+              "at: usize",
+              "offset: usize"
+            ],
+            "return_type": "",
+            "signature": "patch_to_current(&mut self, at: usize, offset: usize)"
+          },
+          {
+            "path": "src/c4.rs",
+            "kind": "method",
+            "name": "lookup_or_insert_id",
+            "visibility": "private",
+            "public": false,
+            "owner_type": "C4",
+            "params": [
+              "&mut self",
+              "name: &[u8]",
+              "hash: i32"
+            ],
+            "return_type": "usize",
+            "signature": "lookup_or_insert_id(&mut self, name: &[u8], hash: i32) -> usize"
+          },
+          {
+            "path": "src/c4.rs",
+            "kind": "method",
+            "name": "next",
+            "visibility": "public",
+            "public": true,
+            "owner_type": "C4",
+            "params": [
+              "&mut self"
+            ],
+            "return_type": "Result<(), C4Error>",
+            "signature": "next(&mut self) -> Result<(), C4Error>"
+          },
+          {
+            "path": "src/c4.rs",
+            "kind": "method",
+            "name": "expr",
+            "visibility": "public",
+            "public": true,
+            "owner_type": "C4",
+            "params": [
+              "&mut self",
+              "lev: i32"
+            ],
+            "return_type": "Result<(), C4Error>",
+            "signature": "expr(&mut self, lev: i32) -> Result<(), C4Error>"
+          },
+          {
+            "path": "src/c4.rs",
+            "kind": "method",
+            "name": "stmt",
+            "visibility": "public",
+            "public": true,
+            "owner_type": "C4",
+            "params": [
+              "&mut self"
+            ],
+            "return_type": "Result<(), C4Error>",
+            "signature": "stmt(&mut self) -> Result<(), C4Error>"
+          },
+          {
+            "path": "src/c4.rs",
+            "kind": "method",
+            "name": "main",
+            "visibility": "public",
+            "public": true,
+            "owner_type": "C4",
+            "params": [
+              "&mut self",
+              "args: &[String]"
+            ],
+            "return_type": "Result<i32, String>",
+            "signature": "main(&mut self, args: &[String]) -> Result<i32, String>"
+          },
+          {
+            "path": "src/c4.rs",
+            "kind": "method",
+            "name": "run_c_4",
+            "visibility": "public",
+            "public": true,
+            "owner_type": "C4",
+            "params": [
+              "args: &[String]"
+            ],
+            "return_type": "Result<i32, String>",
+            "signature": "run_c_4(args: &[String]) -> Result<i32, String>"
+          },
+          {
+            "path": "src/c4.rs",
+            "kind": "method",
+            "name": "run_hello",
+            "visibility": "public",
+            "public": true,
+            "owner_type": "C4",
+            "params": [],
+            "return_type": "Result<i32, String>",
+            "signature": "run_hello() -> Result<i32, String>"
+          }
+        ]
+      },
+      "references": [
+        {
+          "path": "src/c4.rs",
+          "kind": "type",
+          "name": "Symbol",
+          "visibility": "private",
+          "public": false,
+          "owner_type": "",
+          "params": [],
+          "return_type": "",
+          "signature": "struct Symbol"
+        },
+        {
+          "path": "src/c4.rs",
+          "kind": "type",
+          "name": "C4Error",
+          "visibility": "private",
+          "public": false,
+          "owner_type": "",
+          "params": [],
+          "return_type": "",
+          "signature": "struct C4Error"
+        },
+        {
+          "path": "src/c4.rs",
+          "kind": "type",
+          "name": "C4",
+          "visibility": "public",
+          "public": true,
+          "owner_type": "",
+          "params": [],
+          "return_type": "",
+          "signature": "struct C4"
+        },
+        {
+          "path": "src/c4.rs",
+          "kind": "field",
+          "name": "name",
+          "visibility": "private",
+          "public": false,
+          "owner_type": "Symbol",
+          "params": [],
+          "return_type": "String",
+          "signature": "Symbol::name: String"
+        },
+        {
+          "path": "src/c4.rs",
+          "kind": "field",
+          "name": "hash",
+          "visibility": "private",
+          "public": false,
+          "owner_type": "Symbol",
+          "params": [],
+          "return_type": "i32",
+          "signature": "Symbol::hash: i32"
+        },
+        {
+          "path": "src/c4.rs",
+          "kind": "field",
+          "name": "token",
+          "visibility": "private",
+          "public": false,
+          "owner_type": "Symbol",
+          "params": [],
+          "return_type": "i32",
+          "signature": "Symbol::token: i32"
+        },
+        {
+          "path": "src/c4.rs",
+          "kind": "field",
+          "name": "class",
+          "visibility": "private",
+          "public": false,
+          "owner_type": "Symbol",
+          "params": [],
+          "return_type": "i32",
+          "signature": "Symbol::class: i32"
+        },
+        {
+          "path": "src/c4.rs",
+          "kind": "field",
+          "name": "ty",
+          "visibility": "private",
+          "public": false,
+          "owner_type": "Symbol",
+          "params": [],
+          "return_type": "i32",
+          "signature": "Symbol::ty: i32"
+        },
+        {
+          "path": "src/c4.rs",
+          "kind": "field",
+          "name": "val",
+          "visibility": "private",
+          "public": false,
+          "owner_type": "Symbol",
+          "params": [],
+          "return_type": "i32",
+          "signature": "Symbol::val: i32"
+        },
+        {
+          "path": "src/c4.rs",
+          "kind": "field",
+          "name": "line",
+          "visibility": "private",
+          "public": false,
+          "owner_type": "C4Error",
+          "params": [],
+          "return_type": "usize",
+          "signature": "C4Error::line: usize"
+        },
+        {
+          "path": "src/c4.rs",
+          "kind": "field",
+          "name": "message",
+          "visibility": "private",
+          "public": false,
+          "owner_type": "C4Error",
+          "params": [],
+          "return_type": "String",
+          "signature": "C4Error::message: String"
+        },
+        {
+          "path": "src/c4.rs",
+          "kind": "field",
+          "name": "source",
+          "visibility": "private",
+          "public": false,
+          "owner_type": "C4",
+          "params": [],
+          "return_type": "Vec<u8>",
+          "signature": "C4::source: Vec<u8>"
+        },
+        {
+          "path": "src/c4.rs",
+          "kind": "field",
+          "name": "p",
+          "visibility": "private",
+          "public": false,
+          "owner_type": "C4",
+          "params": [],
+          "return_type": "usize",
+          "signature": "C4::p: usize"
+        },
+        {
+          "path": "src/c4.rs",
+          "kind": "field",
+          "name": "line",
+          "visibility": "private",
+          "public": false,
+          "owner_type": "C4",
+          "params": [],
+          "return_type": "usize",
+          "signature": "C4::line: usize"
+        },
+        {
+          "path": "src/c4.rs",
+          "kind": "field",
+          "name": "tk",
+          "visibility": "private",
+          "public": false,
+          "owner_type": "C4",
+          "params": [],
+          "return_type": "i32",
+          "signature": "C4::tk: i32"
+        },
+        {
+          "path": "src/c4.rs",
+          "kind": "field",
+          "name": "ival",
+          "visibility": "private",
+          "public": false,
+          "owner_type": "C4",
+          "params": [],
+          "return_type": "i32",
+          "signature": "C4::ival: i32"
+        },
+        {
+          "path": "src/c4.rs",
+          "kind": "field",
+          "name": "current_id",
+          "visibility": "private",
+          "public": false,
+          "owner_type": "C4",
+          "params": [],
+          "return_type": "Option<usize>",
+          "signature": "C4::current_id: Option<usize>"
+        },
+        {
+          "path": "src/c4.rs",
+          "kind": "field",
+          "name": "symbols",
+          "visibility": "private",
+          "public": false,
+          "owner_type": "C4",
+          "params": [],
+          "return_type": "Vec<Symbol>",
+          "signature": "C4::symbols: Vec<Symbol>"
+        },
+        {
+          "path": "src/c4.rs",
+          "kind": "field",
+          "name": "text",
+          "visibility": "private",
+          "public": false,
+          "owner_type": "C4",
+          "params": [],
+          "return_type": "Vec<i32>",
+          "signature": "C4::text: Vec<i32>"
+        },
+        {
+          "path": "src/c4.rs",
+          "kind": "field",
+          "name": "data",
+          "visibility": "private",
+          "public": false,
+          "owner_type": "C4",
+          "params": [],
+          "return_type": "Vec<i32>",
+          "signature": "C4::data: Vec<i32>"
+        },
+        {
+          "path": "src/c4.rs",
+          "kind": "field",
+          "name": "ty",
+          "visibility": "private",
+          "public": false,
+          "owner_type": "C4",
+          "params": [],
+          "return_type": "i32",
+          "signature": "C4::ty: i32"
+        },
+        {
+          "path": "src/c4.rs",
+          "kind": "field",
+          "name": "loc",
+          "visibility": "private",
+          "public": false,
+          "owner_type": "C4",
+          "params": [],
+          "return_type": "i32",
+          "signature": "C4::loc: i32"
+        },
+        {
+          "path": "src/c4.rs",
+          "kind": "constant",
+          "name": "TK_NUM",
+          "visibility": "private",
+          "public": false,
+          "owner_type": "",
+          "params": [],
+          "return_type": "i32",
+          "signature": "TK_NUM: i32"
+        },
+        {
+          "path": "src/c4.rs",
+          "kind": "constant",
+          "name": "TK_FUN",
+          "visibility": "private",
+          "public": false,
+          "owner_type": "",
+          "params": [],
+          "return_type": "i32",
+          "signature": "TK_FUN: i32"
+        },
+        {
+          "path": "src/c4.rs",
+          "kind": "constant",
+          "name": "TK_SYS",
+          "visibility": "private",
+          "public": false,
+          "owner_type": "",
+          "params": [],
+          "return_type": "i32",
+          "signature": "TK_SYS: i32"
+        },
+        {
+          "path": "src/c4.rs",
+          "kind": "constant",
+          "name": "TK_GLO",
+          "visibility": "private",
+          "public": false,
+          "owner_type": "",
+          "params": [],
+          "return_type": "i32",
+          "signature": "TK_GLO: i32"
+        },
+        {
+          "path": "src/c4.rs",
+          "kind": "constant",
+          "name": "TK_LOC",
+          "visibility": "private",
+          "public": false,
+          "owner_type": "",
+          "params": [],
+          "return_type": "i32",
+          "signature": "TK_LOC: i32"
+        },
+        {
+          "path": "src/c4.rs",
+          "kind": "constant",
+          "name": "TK_ID",
+          "visibility": "private",
+          "public": false,
+          "owner_type": "",
+          "params": [],
+          "return_type": "i32",
+          "signature": "TK_ID: i32"
+        },
+        {
+          "path": "src/c4.rs",
+          "kind": "constant",
+          "name": "TK_CHAR",
+          "visibility": "private",
+          "public": false,
+          "owner_type": "",
+          "params": [],
+          "return_type": "i32",
+          "signature": "TK_CHAR: i32"
+        },
+        {
+          "path": "src/c4.rs",
+          "kind": "constant",
+          "name": "TK_ELSE",
+          "visibility": "private",
+          "public": false,
+          "owner_type": "",
+          "params": [],
+          "return_type": "i32",
+          "signature": "TK_ELSE: i32"
+        },
+        {
+          "path": "src/c4.rs",
+          "kind": "constant",
+          "name": "TK_ENUM",
+          "visibility": "private",
+          "public": false,
+          "owner_type": "",
+          "params": [],
+          "return_type": "i32",
+          "signature": "TK_ENUM: i32"
+        },
+        {
+          "path": "src/c4.rs",
+          "kind": "constant",
+          "name": "TK_IF",
+          "visibility": "private",
+          "public": false,
+          "owner_type": "",
+          "params": [],
+          "return_type": "i32",
+          "signature": "TK_IF: i32"
+        },
+        {
+          "path": "src/c4.rs",
+          "kind": "constant",
+          "name": "TK_INT",
+          "visibility": "private",
+          "public": false,
+          "owner_type": "",
+          "params": [],
+          "return_type": "i32",
+          "signature": "TK_INT: i32"
+        },
+        {
+          "path": "src/c4.rs",
+          "kind": "constant",
+          "name": "TK_RETURN",
+          "visibility": "private",
+          "public": false,
+          "owner_type": "",
+          "params": [],
+          "return_type": "i32",
+          "signature": "TK_RETURN: i32"
+        },
+        {
+          "path": "src/c4.rs",
+          "kind": "constant",
+          "name": "TK_SIZEOF",
+          "visibility": "private",
+          "public": false,
+          "owner_type": "",
+          "params": [],
+          "return_type": "i32",
+          "signature": "TK_SIZEOF: i32"
+        },
+        {
+          "path": "src/c4.rs",
+          "kind": "constant",
+          "name": "TK_WHILE",
+          "visibility": "private",
+          "public": false,
+          "owner_type": "",
+          "params": [],
+          "return_type": "i32",
+          "signature": "TK_WHILE: i32"
+        },
+        {
+          "path": "src/c4.rs",
+          "kind": "constant",
+          "name": "TK_ASSIGN",
+          "visibility": "private",
+          "public": false,
+          "owner_type": "",
+          "params": [],
+          "return_type": "i32",
+          "signature": "TK_ASSIGN: i32"
+        },
+        {
+          "path": "src/c4.rs",
+          "kind": "constant",
+          "name": "TK_COND",
+          "visibility": "private",
+          "public": false,
+          "owner_type": "",
+          "params": [],
+          "return_type": "i32",
+          "signature": "TK_COND: i32"
+        },
+        {
+          "path": "src/c4.rs",
+          "kind": "constant",
+          "name": "TK_LOR",
+          "visibility": "private",
+          "public": false,
+          "owner_type": "",
+          "params": [],
+          "return_type": "i32",
+          "signature": "TK_LOR: i32"
+        },
+        {
+          "path": "src/c4.rs",
+          "kind": "constant",
+          "name": "TK_LAN",
+          "visibility": "private",
+          "public": false,
+          "owner_type": "",
+          "params": [],
+          "return_type": "i32",
+          "signature": "TK_LAN: i32"
+        },
+        {
+          "path": "src/c4.rs",
+          "kind": "constant",
+          "name": "TK_OR",
+          "visibility": "private",
+          "public": false,
+          "owner_type": "",
+          "params": [],
+          "return_type": "i32",
+          "signature": "TK_OR: i32"
+        },
+        {
+          "path": "src/c4.rs",
+          "kind": "constant",
+          "name": "TK_XOR",
+          "visibility": "private",
+          "public": false,
+          "owner_type": "",
+          "params": [],
+          "return_type": "i32",
+          "signature": "TK_XOR: i32"
+        },
+        {
+          "path": "src/c4.rs",
+          "kind": "constant",
+          "name": "TK_AND",
+          "visibility": "private",
+          "public": false,
+          "owner_type": "",
+          "params": [],
+          "return_type": "i32",
+          "signature": "TK_AND: i32"
+        },
+        {
+          "path": "src/c4.rs",
+          "kind": "constant",
+          "name": "TK_EQ",
+          "visibility": "private",
+          "public": false,
+          "owner_type": "",
+          "params": [],
+          "return_type": "i32",
+          "signature": "TK_EQ: i32"
+        },
+        {
+          "path": "src/c4.rs",
+          "kind": "constant",
+          "name": "TK_NE",
+          "visibility": "private",
+          "public": false,
+          "owner_type": "",
+          "params": [],
+          "return_type": "i32",
+          "signature": "TK_NE: i32"
+        },
+        {
+          "path": "src/c4.rs",
+          "kind": "constant",
+          "name": "TK_LT",
+          "visibility": "private",
+          "public": false,
+          "owner_type": "",
+          "params": [],
+          "return_type": "i32",
+          "signature": "TK_LT: i32"
+        },
+        {
+          "path": "src/c4.rs",
+          "kind": "constant",
+          "name": "TK_GT",
+          "visibility": "private",
+          "public": false,
+          "owner_type": "",
+          "params": [],
+          "return_type": "i32",
+          "signature": "TK_GT: i32"
+        },
+        {
+          "path": "src/c4.rs",
+          "kind": "constant",
+          "name": "TK_LE",
+          "visibility": "private",
+          "public": false,
+          "owner_type": "",
+          "params": [],
+          "return_type": "i32",
+          "signature": "TK_LE: i32"
+        },
+        {
+          "path": "src/c4.rs",
+          "kind": "constant",
+          "name": "TK_GE",
+          "visibility": "private",
+          "public": false,
+          "owner_type": "",
+          "params": [],
+          "return_type": "i32",
+          "signature": "TK_GE: i32"
+        },
+        {
+          "path": "src/c4.rs",
+          "kind": "constant",
+          "name": "TK_SHL",
+          "visibility": "private",
+          "public": false,
+          "owner_type": "",
+          "params": [],
+          "return_type": "i32",
+          "signature": "TK_SHL: i32"
+        },
+        {
+          "path": "src/c4.rs",
+          "kind": "constant",
+          "name": "TK_SHR",
+          "visibility": "private",
+          "public": false,
+          "owner_type": "",
+          "params": [],
+          "return_type": "i32",
+          "signature": "TK_SHR: i32"
+        },
+        {
+          "path": "src/c4.rs",
+          "kind": "constant",
+          "name": "TK_ADD",
+          "visibility": "private",
+          "public": false,
+          "owner_type": "",
+          "params": [],
+          "return_type": "i32",
+          "signature": "TK_ADD: i32"
+        },
+        {
+          "path": "src/c4.rs",
+          "kind": "constant",
+          "name": "TK_SUB",
+          "visibility": "private",
+          "public": false,
+          "owner_type": "",
+          "params": [],
+          "return_type": "i32",
+          "signature": "TK_SUB: i32"
+        },
+        {
+          "path": "src/c4.rs",
+          "kind": "constant",
+          "name": "TK_MUL",
+          "visibility": "private",
+          "public": false,
+          "owner_type": "",
+          "params": [],
+          "return_type": "i32",
+          "signature": "TK_MUL: i32"
+        },
+        {
+          "path": "src/c4.rs",
+          "kind": "constant",
+          "name": "TK_DIV",
+          "visibility": "private",
+          "public": false,
+          "owner_type": "",
+          "params": [],
+          "return_type": "i32",
+          "signature": "TK_DIV: i32"
+        },
+        {
+          "path": "src/c4.rs",
+          "kind": "constant",
+          "name": "TK_MOD",
+          "visibility": "private",
+          "public": false,
+          "owner_type": "",
+          "params": [],
+          "return_type": "i32",
+          "signature": "TK_MOD: i32"
+        },
+        {
+          "path": "src/c4.rs",
+          "kind": "constant",
+          "name": "TK_INC",
+          "visibility": "private",
+          "public": false,
+          "owner_type": "",
+          "params": [],
+          "return_type": "i32",
+          "signature": "TK_INC: i32"
+        },
+        {
+          "path": "src/c4.rs",
+          "kind": "constant",
+          "name": "TK_DEC",
+          "visibility": "private",
+          "public": false,
+          "owner_type": "",
+          "params": [],
+          "return_type": "i32",
+          "signature": "TK_DEC: i32"
+        },
+        {
+          "path": "src/c4.rs",
+          "kind": "constant",
+          "name": "TK_BRAK",
+          "visibility": "private",
+          "public": false,
+          "owner_type": "",
+          "params": [],
+          "return_type": "i32",
+          "signature": "TK_BRAK: i32"
+        },
+        {
+          "path": "src/c4.rs",
+          "kind": "constant",
+          "name": "CLASS_NUM",
+          "visibility": "private",
+          "public": false,
+          "owner_type": "",
+          "params": [],
+          "return_type": "i32",
+          "signature": "CLASS_NUM: i32"
+        },
+        {
+          "path": "src/c4.rs",
+          "kind": "constant",
+          "name": "CLASS_FUN",
+          "visibility": "private",
+          "public": false,
+          "owner_type": "",
+          "params": [],
+          "return_type": "i32",
+          "signature": "CLASS_FUN: i32"
+        },
+        {
+          "path": "src/c4.rs",
+          "kind": "constant",
+          "name": "CLASS_SYS",
+          "visibility": "private",
+          "public": false,
+          "owner_type": "",
+          "params": [],
+          "return_type": "i32",
+          "signature": "CLASS_SYS: i32"
+        },
+        {
+          "path": "src/c4.rs",
+          "kind": "constant",
+          "name": "CLASS_GLO",
+          "visibility": "private",
+          "public": false,
+          "owner_type": "",
+          "params": [],
+          "return_type": "i32",
+          "signature": "CLASS_GLO: i32"
+        },
+        {
+          "path": "src/c4.rs",
+          "kind": "constant",
+          "name": "CLASS_LOC",
+          "visibility": "private",
+          "public": false,
+          "owner_type": "",
+          "params": [],
+          "return_type": "i32",
+          "signature": "CLASS_LOC: i32"
+        },
+        {
+          "path": "src/c4.rs",
+          "kind": "constant",
+          "name": "TYPE_CHAR",
+          "visibility": "private",
+          "public": false,
+          "owner_type": "",
+          "params": [],
+          "return_type": "i32",
+          "signature": "TYPE_CHAR: i32"
+        },
+        {
+          "path": "src/c4.rs",
+          "kind": "constant",
+          "name": "TYPE_INT",
+          "visibility": "private",
+          "public": false,
+          "owner_type": "",
+          "params": [],
+          "return_type": "i32",
+          "signature": "TYPE_INT: i32"
+        },
+        {
+          "path": "src/c4.rs",
+          "kind": "constant",
+          "name": "TYPE_PTR",
+          "visibility": "private",
+          "public": false,
+          "owner_type": "",
+          "params": [],
+          "return_type": "i32",
+          "signature": "TYPE_PTR: i32"
+        },
+        {
+          "path": "src/c4.rs",
+          "kind": "constant",
+          "name": "OP_LEA",
+          "visibility": "private",
+          "public": false,
+          "owner_type": "",
+          "params": [],
+          "return_type": "i32",
+          "signature": "OP_LEA: i32"
+        },
+        {
+          "path": "src/c4.rs",
+          "kind": "constant",
+          "name": "OP_IMM",
+          "visibility": "private",
+          "public": false,
+          "owner_type": "",
+          "params": [],
+          "return_type": "i32",
+          "signature": "OP_IMM: i32"
+        },
+        {
+          "path": "src/c4.rs",
+          "kind": "constant",
+          "name": "OP_JMP",
+          "visibility": "private",
+          "public": false,
+          "owner_type": "",
+          "params": [],
+          "return_type": "i32",
+          "signature": "OP_JMP: i32"
+        },
+        {
+          "path": "src/c4.rs",
+          "kind": "constant",
+          "name": "OP_JSR",
+          "visibility": "private",
+          "public": false,
+          "owner_type": "",
+          "params": [],
+          "return_type": "i32",
+          "signature": "OP_JSR: i32"
+        },
+        {
+          "path": "src/c4.rs",
+          "kind": "constant",
+          "name": "OP_BZ",
+          "visibility": "private",
+          "public": false,
+          "owner_type": "",
+          "params": [],
+          "return_type": "i32",
+          "signature": "OP_BZ: i32"
+        },
+        {
+          "path": "src/c4.rs",
+          "kind": "constant",
+          "name": "OP_BNZ",
+          "visibility": "private",
+          "public": false,
+          "owner_type": "",
+          "params": [],
+          "return_type": "i32",
+          "signature": "OP_BNZ: i32"
+        },
+        {
+          "path": "src/c4.rs",
+          "kind": "constant",
+          "name": "OP_ENT",
+          "visibility": "private",
+          "public": false,
+          "owner_type": "",
+          "params": [],
+          "return_type": "i32",
+          "signature": "OP_ENT: i32"
+        },
+        {
+          "path": "src/c4.rs",
+          "kind": "constant",
+          "name": "OP_ADJ",
+          "visibility": "private",
+          "public": false,
+          "owner_type": "",
+          "params": [],
+          "return_type": "i32",
+          "signature": "OP_ADJ: i32"
+        },
+        {
+          "path": "src/c4.rs",
+          "kind": "constant",
+          "name": "OP_LEV",
+          "visibility": "private",
+          "public": false,
+          "owner_type": "",
+          "params": [],
+          "return_type": "i32",
+          "signature": "OP_LEV: i32"
+        },
+        {
+          "path": "src/c4.rs",
+          "kind": "constant",
+          "name": "OP_LI",
+          "visibility": "private",
+          "public": false,
+          "owner_type": "",
+          "params": [],
+          "return_type": "i32",
+          "signature": "OP_LI: i32"
+        },
+        {
+          "path": "src/c4.rs",
+          "kind": "constant",
+          "name": "OP_LC",
+          "visibility": "private",
+          "public": false,
+          "owner_type": "",
+          "params": [],
+          "return_type": "i32",
+          "signature": "OP_LC: i32"
+        },
+        {
+          "path": "src/c4.rs",
+          "kind": "constant",
+          "name": "OP_SI",
+          "visibility": "private",
+          "public": false,
+          "owner_type": "",
+          "params": [],
+          "return_type": "i32",
+          "signature": "OP_SI: i32"
+        },
+        {
+          "path": "src/c4.rs",
+          "kind": "constant",
+          "name": "OP_SC",
+          "visibility": "private",
+          "public": false,
+          "owner_type": "",
+          "params": [],
+          "return_type": "i32",
+          "signature": "OP_SC: i32"
+        },
+        {
+          "path": "src/c4.rs",
+          "kind": "constant",
+          "name": "OP_PSH",
+          "visibility": "private",
+          "public": false,
+          "owner_type": "",
+          "params": [],
+          "return_type": "i32",
+          "signature": "OP_PSH: i32"
+        },
+        {
+          "path": "src/c4.rs",
+          "kind": "constant",
+          "name": "OP_OR",
+          "visibility": "private",
+          "public": false,
+          "owner_type": "",
+          "params": [],
+          "return_type": "i32",
+          "signature": "OP_OR: i32"
+        },
+        {
+          "path": "src/c4.rs",
+          "kind": "constant",
+          "name": "OP_XOR",
+          "visibility": "private",
+          "public": false,
+          "owner_type": "",
+          "params": [],
+          "return_type": "i32",
+          "signature": "OP_XOR: i32"
+        },
+        {
+          "path": "src/c4.rs",
+          "kind": "constant",
+          "name": "OP_AND",
+          "visibility": "private",
+          "public": false,
+          "owner_type": "",
+          "params": [],
+          "return_type": "i32",
+          "signature": "OP_AND: i32"
+        },
+        {
+          "path": "src/c4.rs",
+          "kind": "constant",
+          "name": "OP_EQ",
+          "visibility": "private",
+          "public": false,
+          "owner_type": "",
+          "params": [],
+          "return_type": "i32",
+          "signature": "OP_EQ: i32"
+        },
+        {
+          "path": "src/c4.rs",
+          "kind": "constant",
+          "name": "OP_NE",
+          "visibility": "private",
+          "public": false,
+          "owner_type": "",
+          "params": [],
+          "return_type": "i32",
+          "signature": "OP_NE: i32"
+        },
+        {
+          "path": "src/c4.rs",
+          "kind": "constant",
+          "name": "OP_LT",
+          "visibility": "private",
+          "public": false,
+          "owner_type": "",
+          "params": [],
+          "return_type": "i32",
+          "signature": "OP_LT: i32"
+        },
+        {
+          "path": "src/c4.rs",
+          "kind": "constant",
+          "name": "OP_GT",
+          "visibility": "private",
+          "public": false,
+          "owner_type": "",
+          "params": [],
+          "return_type": "i32",
+          "signature": "OP_GT: i32"
+        },
+        {
+          "path": "src/c4.rs",
+          "kind": "constant",
+          "name": "OP_LE",
+          "visibility": "private",
+          "public": false,
+          "owner_type": "",
+          "params": [],
+          "return_type": "i32",
+          "signature": "OP_LE: i32"
+        },
+        {
+          "path": "src/c4.rs",
+          "kind": "constant",
+          "name": "OP_GE",
+          "visibility": "private",
+          "public": false,
+          "owner_type": "",
+          "params": [],
+          "return_type": "i32",
+          "signature": "OP_GE: i32"
+        },
+        {
+          "path": "src/c4.rs",
+          "kind": "constant",
+          "name": "OP_SHL",
+          "visibility": "private",
+          "public": false,
+          "owner_type": "",
+          "params": [],
+          "return_type": "i32",
+          "signature": "OP_SHL: i32"
+        },
+        {
+          "path": "src/c4.rs",
+          "kind": "constant",
+          "name": "OP_SHR",
+          "visibility": "private",
+          "public": false,
+          "owner_type": "",
+          "params": [],
+          "return_type": "i32",
+          "signature": "OP_SHR: i32"
+        },
+        {
+          "path": "src/c4.rs",
+          "kind": "constant",
+          "name": "OP_ADD",
+          "visibility": "private",
+          "public": false,
+          "owner_type": "",
+          "params": [],
+          "return_type": "i32",
+          "signature": "OP_ADD: i32"
+        },
+        {
+          "path": "src/c4.rs",
+          "kind": "constant",
+          "name": "OP_SUB",
+          "visibility": "private",
+          "public": false,
+          "owner_type": "",
+          "params": [],
+          "return_type": "i32",
+          "signature": "OP_SUB: i32"
+        },
+        {
+          "path": "src/c4.rs",
+          "kind": "constant",
+          "name": "OP_MUL",
+          "visibility": "private",
+          "public": false,
+          "owner_type": "",
+          "params": [],
+          "return_type": "i32",
+          "signature": "OP_MUL: i32"
+        },
+        {
+          "path": "src/c4.rs",
+          "kind": "constant",
+          "name": "OP_DIV",
+          "visibility": "private",
+          "public": false,
+          "owner_type": "",
+          "params": [],
+          "return_type": "i32",
+          "signature": "OP_DIV: i32"
+        },
+        {
+          "path": "src/c4.rs",
+          "kind": "constant",
+          "name": "OP_MOD",
+          "visibility": "private",
+          "public": false,
+          "owner_type": "",
+          "params": [],
+          "return_type": "i32",
+          "signature": "OP_MOD: i32"
+        },
+        {
+          "path": "src/c4.rs",
+          "kind": "method",
+          "name": "new",
+          "visibility": "private",
+          "public": false,
+          "owner_type": "C4Error",
+          "params": [
+            "line: usize",
+            "message: impl Into<String>"
+          ],
+          "return_type": "Self",
+          "signature": "new(line: usize, message: impl Into<String>) -> Self"
+        },
+        {
+          "path": "src/c4.rs",
+          "kind": "method",
+          "name": "fmt",
+          "visibility": "private",
+          "public": false,
+          "owner_type": "C4Error",
+          "params": [
+            "&self",
+            "f: &mut fmt::Formatter<'_>"
+          ],
+          "return_type": "fmt::Result",
+          "signature": "fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result"
+        },
+        {
+          "path": "src/c4.rs",
+          "kind": "method",
+          "name": "default",
+          "visibility": "private",
+          "public": false,
+          "owner_type": "C4",
+          "params": [],
+          "return_type": "Self",
+          "signature": "default() -> Self"
+        },
+        {
+          "path": "src/c4.rs",
+          "kind": "method",
+          "name": "install_keywords",
+          "visibility": "private",
+          "public": false,
+          "owner_type": "C4",
+          "params": [
+            "&mut self"
+          ],
+          "return_type": "",
+          "signature": "install_keywords(&mut self)"
+        },
+        {
+          "path": "src/c4.rs",
+          "kind": "method",
+          "name": "add_symbol",
+          "visibility": "private",
+          "public": false,
+          "owner_type": "C4",
+          "params": [
+            "&mut self",
+            "name: &str",
+            "token: i32",
+            "class: i32",
+            "ty: i32",
+            "val: i32"
+          ],
+          "return_type": "",
+          "signature": "add_symbol(&mut self, name: &str, token: i32, class: i32, ty: i32, val: i32)"
+        },
+        {
+          "path": "src/c4.rs",
+          "kind": "method",
+          "name": "hash_ident",
+          "visibility": "private",
+          "public": false,
+          "owner_type": "C4",
+          "params": [
+            "bytes: &[u8]"
+          ],
+          "return_type": "i32",
+          "signature": "hash_ident(bytes: &[u8]) -> i32"
+        },
+        {
+          "path": "src/c4.rs",
+          "kind": "method",
+          "name": "current_byte",
+          "visibility": "private",
+          "public": false,
+          "owner_type": "C4",
+          "params": [
+            "&self"
+          ],
+          "return_type": "u8",
+          "signature": "current_byte(&self) -> u8"
+        },
+        {
+          "path": "src/c4.rs",
+          "kind": "method",
+          "name": "push_op",
+          "visibility": "private",
+          "public": false,
+          "owner_type": "C4",
+          "params": [
+            "&mut self",
+            "op: i32"
+          ],
+          "return_type": "",
+          "signature": "push_op(&mut self, op: i32)"
+        },
+        {
+          "path": "src/c4.rs",
+          "kind": "method",
+          "name": "emit_placeholder",
+          "visibility": "private",
+          "public": false,
+          "owner_type": "C4",
+          "params": [
+            "&mut self"
+          ],
+          "return_type": "usize",
+          "signature": "emit_placeholder(&mut self) -> usize"
+        },
+        {
+          "path": "src/c4.rs",
+          "kind": "method",
+          "name": "require_token",
+          "visibility": "private",
+          "public": false,
+          "owner_type": "C4",
+          "params": [
+            "&mut self",
+            "token: i32",
+            "message: &str"
+          ],
+          "return_type": "Result<(), C4Error>",
+          "signature": "require_token(&mut self, token: i32, message: &str) -> Result<(), C4Error>"
+        },
+        {
+          "path": "src/c4.rs",
+          "kind": "method",
+          "name": "patch_to_current",
+          "visibility": "private",
+          "public": false,
+          "owner_type": "C4",
+          "params": [
+            "&mut self",
+            "at: usize",
+            "offset: usize"
+          ],
+          "return_type": "",
+          "signature": "patch_to_current(&mut self, at: usize, offset: usize)"
+        },
+        {
+          "path": "src/c4.rs",
+          "kind": "method",
+          "name": "lookup_or_insert_id",
+          "visibility": "private",
+          "public": false,
+          "owner_type": "C4",
+          "params": [
+            "&mut self",
+            "name: &[u8]",
+            "hash: i32"
+          ],
+          "return_type": "usize",
+          "signature": "lookup_or_insert_id(&mut self, name: &[u8], hash: i32) -> usize"
+        },
+        {
+          "path": "src/c4.rs",
+          "kind": "method",
+          "name": "next",
+          "visibility": "public",
+          "public": true,
+          "owner_type": "C4",
+          "params": [
+            "&mut self"
+          ],
+          "return_type": "Result<(), C4Error>",
+          "signature": "next(&mut self) -> Result<(), C4Error>"
+        },
+        {
+          "path": "src/c4.rs",
+          "kind": "method",
+          "name": "expr",
+          "visibility": "public",
+          "public": true,
+          "owner_type": "C4",
+          "params": [
+            "&mut self",
+            "lev: i32"
+          ],
+          "return_type": "Result<(), C4Error>",
+          "signature": "expr(&mut self, lev: i32) -> Result<(), C4Error>"
+        },
+        {
+          "path": "src/c4.rs",
+          "kind": "method",
+          "name": "stmt",
+          "visibility": "public",
+          "public": true,
+          "owner_type": "C4",
+          "params": [
+            "&mut self"
+          ],
+          "return_type": "Result<(), C4Error>",
+          "signature": "stmt(&mut self) -> Result<(), C4Error>"
+        },
+        {
+          "path": "src/c4.rs",
+          "kind": "method",
+          "name": "main",
+          "visibility": "public",
+          "public": true,
+          "owner_type": "C4",
+          "params": [
+            "&mut self",
+            "args: &[String]"
+          ],
+          "return_type": "Result<i32, String>",
+          "signature": "main(&mut self, args: &[String]) -> Result<i32, String>"
+        },
+        {
+          "path": "src/c4.rs",
+          "kind": "method",
+          "name": "run_c_4",
+          "visibility": "public",
+          "public": true,
+          "owner_type": "C4",
+          "params": [
+            "args: &[String]"
+          ],
+          "return_type": "Result<i32, String>",
+          "signature": "run_c_4(args: &[String]) -> Result<i32, String>"
+        },
+        {
+          "path": "src/c4.rs",
+          "kind": "method",
+          "name": "run_hello",
+          "visibility": "public",
+          "public": true,
+          "owner_type": "C4",
+          "params": [],
+          "return_type": "Result<i32, String>",
+          "signature": "run_hello() -> Result<i32, String>"
+        }
+      ]
+    },
+    "src/hello.rs": {
+      "updated_at": "2026-06-07T12:05:07",
+      "contract": {
+        "public_structs": [],
+        "public_enums": [],
+        "public_traits": [],
+        "public_functions": [
+          "main",
+          "module_test"
+        ],
+        "constructors": [],
+        "accessors": [],
+        "impl_methods": {
+          "Hello": [
+            "main",
+            "module_test"
+          ]
+        },
+        "references": [
+          {
+            "path": "src/hello.rs",
+            "kind": "type",
+            "name": "Hello",
+            "visibility": "public",
+            "public": true,
+            "owner_type": "",
+            "params": [],
+            "return_type": "",
+            "signature": "struct Hello"
+          },
+          {
+            "path": "src/hello.rs",
+            "kind": "method",
+            "name": "main",
+            "visibility": "public",
+            "public": true,
+            "owner_type": "Hello",
+            "params": [],
+            "return_type": "Result<(), String>",
+            "signature": "main() -> Result<(), String>"
+          },
+          {
+            "path": "src/hello.rs",
+            "kind": "method",
+            "name": "module_test",
+            "visibility": "public",
+            "public": true,
+            "owner_type": "Hello",
+            "params": [],
+            "return_type": "",
+            "signature": "module_test()"
+          }
+        ]
+      },
+      "references": [
+        {
+          "path": "src/hello.rs",
+          "kind": "type",
+          "name": "Hello",
+          "visibility": "public",
+          "public": true,
+          "owner_type": "",
+          "params": [],
+          "return_type": "",
+          "signature": "struct Hello"
+        },
+        {
+          "path": "src/hello.rs",
+          "kind": "method",
+          "name": "main",
+          "visibility": "public",
+          "public": true,
+          "owner_type": "Hello",
+          "params": [],
+          "return_type": "Result<(), String>",
+          "signature": "main() -> Result<(), String>"
+        },
+        {
+          "path": "src/hello.rs",
+          "kind": "method",
+          "name": "module_test",
+          "visibility": "public",
+          "public": true,
+          "owner_type": "Hello",
+          "params": [],
+          "return_type": "",
+          "signature": "module_test()"
+        }
+      ]
+    },
+    "src/main.rs": {
+      "updated_at": "2026-06-07T12:05:16",
+      "contract": {
+        "public_structs": [],
+        "public_enums": [],
+        "public_traits": [],
+        "public_functions": [
+          "run"
+        ],
+        "constructors": [],
+        "accessors": [],
+        "impl_methods": {
+          "Main": [
+            "run"
+          ]
+        },
+        "references": [
+          {
+            "path": "src/main.rs",
+            "kind": "module",
+            "name": "c4",
+            "visibility": "private",
+            "public": false,
+            "owner_type": "",
+            "params": [],
+            "return_type": "",
+            "signature": "c4"
+          },
+          {
+            "path": "src/main.rs",
+            "kind": "module",
+            "name": "hello",
+            "visibility": "private",
+            "public": false,
+            "owner_type": "",
+            "params": [],
+            "return_type": "",
+            "signature": "hello"
+          },
+          {
+            "path": "src/main.rs",
+            "kind": "type",
+            "name": "Main",
+            "visibility": "public",
+            "public": true,
+            "owner_type": "",
+            "params": [],
+            "return_type": "",
+            "signature": "struct Main"
+          },
+          {
+            "path": "src/main.rs",
+            "kind": "function",
+            "name": "main",
+            "visibility": "private",
+            "public": false,
+            "owner_type": "",
+            "params": [],
+            "return_type": "",
+            "signature": "main()"
+          },
+          {
+            "path": "src/main.rs",
+            "kind": "method",
+            "name": "run",
+            "visibility": "public",
+            "public": true,
+            "owner_type": "Main",
+            "params": [],
+            "return_type": "i32",
+            "signature": "run() -> i32"
+          }
+        ]
+      },
+      "references": [
+        {
+          "path": "src/main.rs",
+          "kind": "module",
+          "name": "c4",
+          "visibility": "private",
+          "public": false,
+          "owner_type": "",
+          "params": [],
+          "return_type": "",
+          "signature": "c4"
+        },
+        {
+          "path": "src/main.rs",
+          "kind": "module",
+          "name": "hello",
+          "visibility": "private",
+          "public": false,
+          "owner_type": "",
+          "params": [],
+          "return_type": "",
+          "signature": "hello"
+        },
+        {
+          "path": "src/main.rs",
+          "kind": "type",
+          "name": "Main",
+          "visibility": "public",
+          "public": true,
+          "owner_type": "",
+          "params": [],
+          "return_type": "",
+          "signature": "struct Main"
+        },
+        {
+          "path": "src/main.rs",
+          "kind": "function",
+          "name": "main",
+          "visibility": "private",
+          "public": false,
+          "owner_type": "",
+          "params": [],
+          "return_type": "",
+          "signature": "main()"
+        },
+        {
+          "path": "src/main.rs",
+          "kind": "method",
+          "name": "run",
+          "visibility": "public",
+          "public": true,
+          "owner_type": "Main",
+          "params": [],
+          "return_type": "i32",
+          "signature": "run() -> i32"
+        }
+      ]
+    }
+  },
+  "updated_at": "2026-06-07T12:05:16"
+}

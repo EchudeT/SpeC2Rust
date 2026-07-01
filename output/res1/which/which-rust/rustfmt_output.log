@@ -1,0 +1,157 @@
+warning: `/home/jfeng/.cargo/config` is deprecated in favor of `config.toml`
+  |
+  = help: if you need to support cargo 1.38 or earlier, you can symlink `config` to `config.toml`
+Diff in /data1/jfeng/tcode_win/output/res1/which/which-rust/src/bash.rs:81:
+         self.current_user.euid = euid;
+         self.current_user.egid = egid;
+ 
+[31m-        self.current_user.uid != self.current_user.euid || self.current_user.gid != self.current_user.egid
+(B[m[32m+        self.current_user.uid != self.current_user.euid
+(B[m[32m+            || self.current_user.gid != self.current_user.egid
+(B[m     }
+ 
+     pub fn getmaxgroups(&mut self) -> usize {
+Diff in /data1/jfeng/tcode_win/output/res1/which/which-rust/src/bash.rs:240:
+         }
+     }
+ 
+[31m-    pub fn get_next_path_element(&self, path_list: Option<&str>, path_index_pointer: &mut usize) -> Option<String> {
+(B[m[32m+    pub fn get_next_path_element(
+(B[m[32m+        &self,
+(B[m[32m+        path_list: Option<&str>,
+(B[m[32m+        path_index_pointer: &mut usize,
+(B[m[32m+    ) -> Option<String> {
+(B[m         let path = self.extract_colon_unit(path_list, path_index_pointer)?;
+         if path.is_empty() {
+             Some(".".to_string())
+Diff in /data1/jfeng/tcode_win/output/res1/which/which-rust/src/bash.rs:263:
+         }
+ 
+         let home = env::var("HOME").ok().or_else(|| Some("/".to_string()));
+[31m-        let shell = env::var("SHELL").ok().filter(|s| !s.is_empty()).or_else(|| Some("/bin/sh".to_string()));
+(B[m[32m+        let shell = env::var("SHELL")
+(B[m[32m+            .ok()
+(B[m[32m+            .filter(|s| !s.is_empty())
+(B[m[32m+            .or_else(|| Some("/bin/sh".to_string()));
+(B[m         let user_name = env::var("USER")
+             .ok()
+             .or_else(|| env::var("LOGNAME").ok())
+Diff in /data1/jfeng/tcode_win/output/res1/which/which-rust/src/which.rs:85:
+             "Usage: {} [options] [--] COMMAND [...]",
+             self.program_name
+         );
+[31m-        let _ = writeln!(out, "Write the full path of COMMAND(s) to standard output.\n");
+(B[m[31m-        let _ = writeln!(out, "  --version, -[vV] Print version and exit successfully.");
+(B[m[31m-        let _ = writeln!(out, "  --help,          Print this help and exit successfully.");
+(B[m[31m-        let _ = writeln!(out, "  --skip-dot       Skip directories in PATH that start with a dot.");
+(B[m         let _ = writeln!(
+             out,
+[32m+            "Write the full path of COMMAND(s) to standard output.\n"
+(B[m[32m+        );
+(B[m[32m+        let _ = writeln!(
+(B[m[32m+            out,
+(B[m[32m+            "  --version, -[vV] Print version and exit successfully."
+(B[m[32m+        );
+(B[m[32m+        let _ = writeln!(
+(B[m[32m+            out,
+(B[m[32m+            "  --help,          Print this help and exit successfully."
+(B[m[32m+        );
+(B[m[32m+        let _ = writeln!(
+(B[m[32m+            out,
+(B[m[32m+            "  --skip-dot       Skip directories in PATH that start with a dot."
+(B[m[32m+        );
+(B[m[32m+        let _ = writeln!(
+(B[m[32m+            out,
+(B[m             "  --skip-tilde     Skip directories in PATH that start with a tilde."
+         );
+         let _ = writeln!(
+Diff in /data1/jfeng/tcode_win/output/res1/which/which-rust/src/which.rs:243:
+         } else {
+             self.absolute_path_given = true;
+ 
+[31m-            let abs_path = if !name.starts_with('.') && !name.starts_with('/') && !name.starts_with('~')
+(B[m[31m-            {
+(B[m[31m-                format!("./{name}")
+(B[m[31m-            } else {
+(B[m[31m-                name.to_string()
+(B[m[31m-            };
+(B[m[32m+            let abs_path =
+(B[m[32m+                if !name.starts_with('.') && !name.starts_with('/') && !name.starts_with('~') {
+(B[m[32m+                    format!("./{name}")
+(B[m[32m+                } else {
+(B[m[32m+                    name.to_string()
+(B[m[32m+                };
+(B[m 
+             if let Some(pos) = abs_path.rfind('/') {
+                 search_path_list = abs_path[..pos].to_string();
+Diff in /data1/jfeng/tcode_win/output/res1/which/which-rust/src/which.rs:261:
+             }
+         }
+ 
+[31m-        while *path_index < search_path_list.len() && search_path_list.as_bytes()[*path_index] != 0 {
+(B[m[32m+        while *path_index < search_path_list.len() && search_path_list.as_bytes()[*path_index] != 0
+(B[m[32m+        {
+(B[m             let mut path = if self.absolute_path_given {
+                 *path_index = search_path_list.len();
+                 search_path_list.clone()
+Diff in /data1/jfeng/tcode_win/output/res1/which/which-rust/src/which.rs:280:
+             }
+ 
+             if path.starts_with('~') {
+[31m-                path = self
+(B[m[31m-                    .shell
+(B[m[31m-                    .module_tilde(&path)
+(B[m[31m-                    .unwrap_or(path);
+(B[m[32m+                path = self.shell.module_tilde(&path).unwrap_or(path);
+(B[m 
+                 if self.skip_tilde {
+                     continue;
+Diff in /data1/jfeng/tcode_win/output/res1/which/which-rust/src/which.rs:296:
+ 
+             self.found_path_starts_with_dot = path.starts_with('.');
+ 
+[31m-            let full_path =
+(B[m[31m-                self.bash
+(B[m[31m-                    .make_full_pathname(&path, &command_name, command_name.len());
+(B[m[32m+            let full_path = self
+(B[m[32m+                .bash
+(B[m[32m+                .make_full_pathname(&path, &command_name, command_name.len());
+(B[m             let status = self.bash.file_status(&full_path);
+ 
+             if status.exists && status.executable {
+Diff in /data1/jfeng/tcode_win/output/res1/which/which-rust/src/which.rs:451:
+                 let len = rhs
+                     .chars()
+                     .take_while(|c| {
+[31m-                        !c.is_whitespace()
+(B[m[31m-                            && Some(*c) != quote
+(B[m[31m-                            && *c != '|'
+(B[m[31m-                            && *c != '&'
+(B[m[32m+                        !c.is_whitespace() && Some(*c) != quote && *c != '|' && *c != '&'
+(B[m                     })
+                     .count();
+ 
+Diff in /data1/jfeng/tcode_win/output/res1/which/which-rust/src/which.rs:573:
+         }
+ 
+         if self.show_tilde && self.home.is_none() {
+[31m-            self.home = self.shell.get_home_dir().or_else(|| self.bash.sh_get_home_dir());
+(B[m[32m+            self.home = self
+(B[m[32m+                .shell
+(B[m[32m+                .get_home_dir()
+(B[m[32m+                .or_else(|| self.bash.sh_get_home_dir());
+(B[m         }
+ 
+         if operands.is_empty() {
+Diff in /data1/jfeng/tcode_win/output/res1/which/which-rust/src/which.rs:581:
+             return 1;
+         }
+ 
+[31m-        let path_list = self
+(B[m[31m-            .bash
+(B[m[31m-            .sh_get_env_value("PATH")
+(B[m[31m-            .unwrap_or_default();
+(B[m[32m+        let path_list = self.bash.sh_get_env_value("PATH").unwrap_or_default();
+(B[m 
+         let mut found_any = false;
+         let mut missing_any = false;

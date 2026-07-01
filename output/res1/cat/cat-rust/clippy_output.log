@@ -1,0 +1,12 @@
+warning: `/home/jfeng/.cargo/config` is deprecated in favor of `config.toml`
+  |
+  = help: if you need to support cargo 1.38 or earlier, you can symlink `config` to `config.toml`
+warning: `/home/jfeng/.cargo/config` is deprecated in favor of `config.toml`
+  |
+  = help: if you need to support cargo 1.38 or earlier, you can symlink `config` to `config.toml`
+    Checking cat-rust v0.1.0 (/data1/jfeng/tcode_win/output/res1/cat/cat-rust)
+src/cat.rs:4:5: warning: unused import: `std::os::unix::io::AsRawFd`
+src/cat.rs:77:12: warning: associated functions `show_nonprinting`, `show_tabs`, `number_nonblank`, `show_ends`, and `squeeze_blank` are never used
+warning: `cat-rust` (bin "cat-rust") generated 2 warnings (run `cargo clippy --fix --bin "cat-rust" -p cat-rust -- ` to apply 1 suggestion)
+warning: `cat-rust` (bin "cat-rust" test) generated 2 warnings (2 duplicates)
+    Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.12s

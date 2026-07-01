@@ -1,0 +1,30 @@
+{
+  "project": "which-rust",
+  "path": "/data1/jfeng/tcode_win/output/res2/which/which-rust",
+  "timestamp": "2026-06-19T21:21:31+08:00",
+  "summary": {
+    "total_issues": 1,
+    "clippy_warnings": 0,
+    "clippy_errors": 0,
+    "rustfmt_files_needing_format": 1,
+    "tool_errors": 0
+  },
+  "commands": {
+    "clippy": "cargo clippy --workspace --all-targets --message-format short",
+    "rustfmt": "cargo fmt --all -- --check"
+  },
+  "status": {
+    "clippy_exit_code": 0,
+    "rustfmt_exit_code": 1,
+    "clippy_failed": 0,
+    "rustfmt_failed": 0
+  },
+  "artifacts": {
+    "clippy_log": "/data1/jfeng/tcode_win/output/res2/which/which-rust/clippy_output.log",
+    "rustfmt_log": "/data1/jfeng/tcode_win/output/res2/which/which-rust/rustfmt_output.log"
+  },
+  "clippy_by_category": {},
+  "clippy_details": [],
+  "clippy_error_details": [],
+  "rustfmt_details": [{"file":"src/main_root.rs","line":7}]
+}

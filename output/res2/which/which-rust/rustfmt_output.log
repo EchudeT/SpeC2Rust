@@ -1,0 +1,15 @@
+warning: `/home/jfeng/.cargo/config` is deprecated in favor of `config.toml`
+  |
+  = help: if you need to support cargo 1.38 or earlier, you can symlink `config` to `config.toml`
+Diff in /data1/jfeng/tcode_win/output/res2/which/which-rust/src/main_root.rs:7:
+ 
+ fn print_usage(program: &str, to_stderr: bool) {
+     let mut out = String::new();
+[31m-    out.push_str(&format!("Usage: {} [options] [--] COMMAND [...]\n", program));
+(B[m[32m+    out.push_str(&format!(
+(B[m[32m+        "Usage: {} [options] [--] COMMAND [...]\n",
+(B[m[32m+        program
+(B[m[32m+    ));
+(B[m     out.push_str("Write the full path of COMMAND(s) to standard output.\n\n");
+     out.push_str("  --version, -[vV] Print version and exit successfully.\n");
+     out.push_str("  --help,          Print this help and exit successfully.\n");

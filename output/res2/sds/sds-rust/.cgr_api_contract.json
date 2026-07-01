@@ -1,0 +1,1801 @@
+{
+  "project_name": "sds-rust",
+  "files": {
+    "src/sds.rs": {
+      "updated_at": "2026-06-07T12:51:34",
+      "contract": {
+        "public_structs": [
+          {
+            "name": "Sds",
+            "fields": [
+              {
+                "name": "buf",
+                "public": false,
+                "type": "Vec<u8>"
+              }
+            ]
+          }
+        ],
+        "public_enums": [
+          {
+            "name": "CatFmtArg",
+            "variants": [
+              "Str",
+              "Sds",
+              "Int",
+              "LongLong",
+              "UInt",
+              "ULongLong"
+            ]
+          }
+        ],
+        "public_traits": [],
+        "public_functions": [
+          "alloc_ptr",
+          "alloc_size",
+          "cat",
+          "catfmt",
+          "catlen",
+          "catprintf",
+          "catrepr",
+          "catsds",
+          "catvprintf",
+          "clear",
+          "cmp",
+          "cpy",
+          "cpylen",
+          "dup",
+          "empty",
+          "freesplitres",
+          "fromlonglong",
+          "growzero",
+          "hdr_size",
+          "hex_digit_to_int",
+          "incr_len",
+          "is_hex_digit",
+          "join",
+          "joinsds",
+          "ll_2_str",
+          "main",
+          "main_root",
+          "make_room_for",
+          "malloc",
+          "mapchars",
+          "new",
+          "newlen",
+          "range",
+          "realloc",
+          "remove_free_space",
+          "req_type",
+          "s_malloc",
+          "s_realloc",
+          "splitargs",
+          "splitlen",
+          "test",
+          "test_cond",
+          "test_report",
+          "tolower",
+          "toupper",
+          "trim",
+          "ull_2_str",
+          "updatelen"
+        ],
+        "constructors": [
+          "Sds::new"
+        ],
+        "accessors": [],
+        "impl_methods": {
+          "Sds": [
+            "alloc_ptr",
+            "alloc_size",
+            "cat",
+            "catfmt",
+            "catlen",
+            "catprintf",
+            "catrepr",
+            "catsds",
+            "catvprintf",
+            "clear",
+            "cmp",
+            "cpy",
+            "cpylen",
+            "dup",
+            "empty",
+            "freesplitres",
+            "fromlonglong",
+            "growzero",
+            "hdr_size",
+            "hex_digit_to_int",
+            "incr_len",
+            "is_hex_digit",
+            "join",
+            "joinsds",
+            "ll_2_str",
+            "main",
+            "main_root",
+            "make_room_for",
+            "malloc",
+            "mapchars",
+            "new",
+            "newlen",
+            "range",
+            "realloc",
+            "remove_free_space",
+            "req_type",
+            "s_malloc",
+            "s_realloc",
+            "splitargs",
+            "splitlen",
+            "test",
+            "test_cond",
+            "test_report",
+            "tolower",
+            "toupper",
+            "trim",
+            "ull_2_str",
+            "updatelen"
+          ]
+        },
+        "references": [
+          {
+            "path": "src/sds.rs",
+            "kind": "type",
+            "name": "Sds",
+            "visibility": "public",
+            "public": true,
+            "owner_type": "",
+            "params": [],
+            "return_type": "",
+            "signature": "struct Sds"
+          },
+          {
+            "path": "src/sds.rs",
+            "kind": "type",
+            "name": "CatFmtArg",
+            "visibility": "public",
+            "public": true,
+            "owner_type": "",
+            "params": [],
+            "return_type": "",
+            "signature": "enum CatFmtArg"
+          },
+          {
+            "path": "src/sds.rs",
+            "kind": "field",
+            "name": "buf",
+            "visibility": "private",
+            "public": false,
+            "owner_type": "Sds",
+            "params": [],
+            "return_type": "Vec<u8>",
+            "signature": "Sds::buf: Vec<u8>"
+          },
+          {
+            "path": "src/sds.rs",
+            "kind": "constant",
+            "name": "SDS_MAX_PREALLOC",
+            "visibility": "private",
+            "public": false,
+            "owner_type": "",
+            "params": [],
+            "return_type": "usize",
+            "signature": "SDS_MAX_PREALLOC: usize"
+          },
+          {
+            "path": "src/sds.rs",
+            "kind": "constant",
+            "name": "SDS_TYPE_5",
+            "visibility": "private",
+            "public": false,
+            "owner_type": "",
+            "params": [],
+            "return_type": "u8",
+            "signature": "SDS_TYPE_5: u8"
+          },
+          {
+            "path": "src/sds.rs",
+            "kind": "constant",
+            "name": "SDS_TYPE_8",
+            "visibility": "private",
+            "public": false,
+            "owner_type": "",
+            "params": [],
+            "return_type": "u8",
+            "signature": "SDS_TYPE_8: u8"
+          },
+          {
+            "path": "src/sds.rs",
+            "kind": "constant",
+            "name": "SDS_TYPE_16",
+            "visibility": "private",
+            "public": false,
+            "owner_type": "",
+            "params": [],
+            "return_type": "u8",
+            "signature": "SDS_TYPE_16: u8"
+          },
+          {
+            "path": "src/sds.rs",
+            "kind": "constant",
+            "name": "SDS_TYPE_32",
+            "visibility": "private",
+            "public": false,
+            "owner_type": "",
+            "params": [],
+            "return_type": "u8",
+            "signature": "SDS_TYPE_32: u8"
+          },
+          {
+            "path": "src/sds.rs",
+            "kind": "constant",
+            "name": "SDS_TYPE_64",
+            "visibility": "private",
+            "public": false,
+            "owner_type": "",
+            "params": [],
+            "return_type": "u8",
+            "signature": "SDS_TYPE_64: u8"
+          },
+          {
+            "path": "src/sds.rs",
+            "kind": "method",
+            "name": "hdr_size",
+            "visibility": "public",
+            "public": true,
+            "owner_type": "Sds",
+            "params": [
+              "type_code: u8"
+            ],
+            "return_type": "usize",
+            "signature": "hdr_size(type_code: u8) -> usize"
+          },
+          {
+            "path": "src/sds.rs",
+            "kind": "method",
+            "name": "req_type",
+            "visibility": "public",
+            "public": true,
+            "owner_type": "Sds",
+            "params": [
+              "string_size: usize"
+            ],
+            "return_type": "u8",
+            "signature": "req_type(string_size: usize) -> u8"
+          },
+          {
+            "path": "src/sds.rs",
+            "kind": "method",
+            "name": "newlen",
+            "visibility": "public",
+            "public": true,
+            "owner_type": "Sds",
+            "params": [
+              "init: impl AsRef<[u8]>",
+              "initlen: usize"
+            ],
+            "return_type": "Self",
+            "signature": "newlen(init: impl AsRef<[u8]>, initlen: usize) -> Self"
+          },
+          {
+            "path": "src/sds.rs",
+            "kind": "method",
+            "name": "empty",
+            "visibility": "public",
+            "public": true,
+            "owner_type": "Sds",
+            "params": [],
+            "return_type": "Self",
+            "signature": "empty() -> Self"
+          },
+          {
+            "path": "src/sds.rs",
+            "kind": "method",
+            "name": "new",
+            "visibility": "public",
+            "public": true,
+            "owner_type": "Sds",
+            "params": [
+              "init: impl AsRef<[u8]>"
+            ],
+            "return_type": "Self",
+            "signature": "new(init: impl AsRef<[u8]>) -> Self"
+          },
+          {
+            "path": "src/sds.rs",
+            "kind": "method",
+            "name": "dup",
+            "visibility": "public",
+            "public": true,
+            "owner_type": "Sds",
+            "params": [
+              "&self"
+            ],
+            "return_type": "Self",
+            "signature": "dup(&self) -> Self"
+          },
+          {
+            "path": "src/sds.rs",
+            "kind": "method",
+            "name": "updatelen",
+            "visibility": "public",
+            "public": true,
+            "owner_type": "Sds",
+            "params": [
+              "&mut self"
+            ],
+            "return_type": "",
+            "signature": "updatelen(&mut self)"
+          },
+          {
+            "path": "src/sds.rs",
+            "kind": "method",
+            "name": "clear",
+            "visibility": "public",
+            "public": true,
+            "owner_type": "Sds",
+            "params": [
+              "&mut self"
+            ],
+            "return_type": "",
+            "signature": "clear(&mut self)"
+          },
+          {
+            "path": "src/sds.rs",
+            "kind": "method",
+            "name": "make_room_for",
+            "visibility": "public",
+            "public": true,
+            "owner_type": "Sds",
+            "params": [
+              "&mut self",
+              "addlen: usize"
+            ],
+            "return_type": "&mut Self",
+            "signature": "make_room_for(&mut self, addlen: usize) -> &mut Self"
+          },
+          {
+            "path": "src/sds.rs",
+            "kind": "method",
+            "name": "remove_free_space",
+            "visibility": "public",
+            "public": true,
+            "owner_type": "Sds",
+            "params": [
+              "&mut self"
+            ],
+            "return_type": "&mut Self",
+            "signature": "remove_free_space(&mut self) -> &mut Self"
+          },
+          {
+            "path": "src/sds.rs",
+            "kind": "method",
+            "name": "alloc_size",
+            "visibility": "public",
+            "public": true,
+            "owner_type": "Sds",
+            "params": [
+              "&self"
+            ],
+            "return_type": "usize",
+            "signature": "alloc_size(&self) -> usize"
+          },
+          {
+            "path": "src/sds.rs",
+            "kind": "method",
+            "name": "alloc_ptr",
+            "visibility": "public",
+            "public": true,
+            "owner_type": "Sds",
+            "params": [
+              "&self"
+            ],
+            "return_type": "usize",
+            "signature": "alloc_ptr(&self) -> usize"
+          },
+          {
+            "path": "src/sds.rs",
+            "kind": "method",
+            "name": "incr_len",
+            "visibility": "public",
+            "public": true,
+            "owner_type": "Sds",
+            "params": [
+              "&mut self",
+              "incr: isize"
+            ],
+            "return_type": "",
+            "signature": "incr_len(&mut self, incr: isize)"
+          },
+          {
+            "path": "src/sds.rs",
+            "kind": "method",
+            "name": "growzero",
+            "visibility": "public",
+            "public": true,
+            "owner_type": "Sds",
+            "params": [
+              "&mut self",
+              "len: usize"
+            ],
+            "return_type": "&mut Self",
+            "signature": "growzero(&mut self, len: usize) -> &mut Self"
+          },
+          {
+            "path": "src/sds.rs",
+            "kind": "method",
+            "name": "catlen",
+            "visibility": "public",
+            "public": true,
+            "owner_type": "Sds",
+            "params": [
+              "&mut self",
+              "t: impl AsRef<[u8]>",
+              "len: usize"
+            ],
+            "return_type": "&mut Self",
+            "signature": "catlen(&mut self, t: impl AsRef<[u8]>, len: usize) -> &mut Self"
+          },
+          {
+            "path": "src/sds.rs",
+            "kind": "method",
+            "name": "cat",
+            "visibility": "public",
+            "public": true,
+            "owner_type": "Sds",
+            "params": [
+              "&mut self",
+              "t: impl AsRef<[u8]>"
+            ],
+            "return_type": "&mut Self",
+            "signature": "cat(&mut self, t: impl AsRef<[u8]>) -> &mut Self"
+          },
+          {
+            "path": "src/sds.rs",
+            "kind": "method",
+            "name": "catsds",
+            "visibility": "public",
+            "public": true,
+            "owner_type": "Sds",
+            "params": [
+              "&mut self",
+              "t: &Sds"
+            ],
+            "return_type": "&mut Self",
+            "signature": "catsds(&mut self, t: &Sds) -> &mut Self"
+          },
+          {
+            "path": "src/sds.rs",
+            "kind": "method",
+            "name": "cpylen",
+            "visibility": "public",
+            "public": true,
+            "owner_type": "Sds",
+            "params": [
+              "&mut self",
+              "t: impl AsRef<[u8]>",
+              "len: usize"
+            ],
+            "return_type": "&mut Self",
+            "signature": "cpylen(&mut self, t: impl AsRef<[u8]>, len: usize) -> &mut Self"
+          },
+          {
+            "path": "src/sds.rs",
+            "kind": "method",
+            "name": "cpy",
+            "visibility": "public",
+            "public": true,
+            "owner_type": "Sds",
+            "params": [
+              "&mut self",
+              "t: impl AsRef<[u8]>"
+            ],
+            "return_type": "&mut Self",
+            "signature": "cpy(&mut self, t: impl AsRef<[u8]>) -> &mut Self"
+          },
+          {
+            "path": "src/sds.rs",
+            "kind": "method",
+            "name": "ll_2_str",
+            "visibility": "public",
+            "public": true,
+            "owner_type": "Sds",
+            "params": [
+              "value: i64"
+            ],
+            "return_type": "String",
+            "signature": "ll_2_str(value: i64) -> String"
+          },
+          {
+            "path": "src/sds.rs",
+            "kind": "method",
+            "name": "ull_2_str",
+            "visibility": "public",
+            "public": true,
+            "owner_type": "Sds",
+            "params": [
+              "value: u64"
+            ],
+            "return_type": "String",
+            "signature": "ull_2_str(value: u64) -> String"
+          },
+          {
+            "path": "src/sds.rs",
+            "kind": "method",
+            "name": "fromlonglong",
+            "visibility": "public",
+            "public": true,
+            "owner_type": "Sds",
+            "params": [
+              "value: i64"
+            ],
+            "return_type": "Self",
+            "signature": "fromlonglong(value: i64) -> Self"
+          },
+          {
+            "path": "src/sds.rs",
+            "kind": "method",
+            "name": "catvprintf",
+            "visibility": "public",
+            "public": true,
+            "owner_type": "Sds",
+            "params": [
+              "&mut self",
+              "args: fmt::Arguments<'_>"
+            ],
+            "return_type": "&mut Self",
+            "signature": "catvprintf(&mut self, args: fmt::Arguments<'_>) -> &mut Self"
+          },
+          {
+            "path": "src/sds.rs",
+            "kind": "method",
+            "name": "catprintf",
+            "visibility": "public",
+            "public": true,
+            "owner_type": "Sds",
+            "params": [
+              "&mut self",
+              "args: fmt::Arguments<'_>"
+            ],
+            "return_type": "&mut Self",
+            "signature": "catprintf(&mut self, args: fmt::Arguments<'_>) -> &mut Self"
+          },
+          {
+            "path": "src/sds.rs",
+            "kind": "method",
+            "name": "catfmt",
+            "visibility": "public",
+            "public": true,
+            "owner_type": "Sds",
+            "params": [
+              "&mut self",
+              "fmt_str: &str",
+              "argv: &[CatFmtArg<'_>]"
+            ],
+            "return_type": "&mut Self",
+            "signature": "catfmt(&mut self, fmt_str: &str, argv: &[CatFmtArg<'_>]) -> &mut Self"
+          },
+          {
+            "path": "src/sds.rs",
+            "kind": "method",
+            "name": "trim",
+            "visibility": "public",
+            "public": true,
+            "owner_type": "Sds",
+            "params": [
+              "&mut self",
+              "cset: impl AsRef<[u8]>"
+            ],
+            "return_type": "&mut Self",
+            "signature": "trim(&mut self, cset: impl AsRef<[u8]>) -> &mut Self"
+          },
+          {
+            "path": "src/sds.rs",
+            "kind": "method",
+            "name": "range",
+            "visibility": "public",
+            "public": true,
+            "owner_type": "Sds",
+            "params": [
+              "&mut self",
+              "mut start: isize",
+              "mut end: isize"
+            ],
+            "return_type": "",
+            "signature": "range(&mut self, mut start: isize, mut end: isize)"
+          },
+          {
+            "path": "src/sds.rs",
+            "kind": "method",
+            "name": "tolower",
+            "visibility": "public",
+            "public": true,
+            "owner_type": "Sds",
+            "params": [
+              "&mut self"
+            ],
+            "return_type": "",
+            "signature": "tolower(&mut self)"
+          },
+          {
+            "path": "src/sds.rs",
+            "kind": "method",
+            "name": "toupper",
+            "visibility": "public",
+            "public": true,
+            "owner_type": "Sds",
+            "params": [
+              "&mut self"
+            ],
+            "return_type": "",
+            "signature": "toupper(&mut self)"
+          },
+          {
+            "path": "src/sds.rs",
+            "kind": "method",
+            "name": "cmp",
+            "visibility": "public",
+            "public": true,
+            "owner_type": "Sds",
+            "params": [
+              "&self",
+              "other: &Sds"
+            ],
+            "return_type": "i32",
+            "signature": "cmp(&self, other: &Sds) -> i32"
+          },
+          {
+            "path": "src/sds.rs",
+            "kind": "method",
+            "name": "splitlen",
+            "visibility": "public",
+            "public": true,
+            "owner_type": "Sds",
+            "params": [
+              "s: impl AsRef<[u8]>",
+              "len: isize",
+              "sep: impl AsRef<[u8]>",
+              "seplen: usize"
+            ],
+            "return_type": "Vec<Sds>",
+            "signature": "splitlen(s: impl AsRef<[u8]>, len: isize, sep: impl AsRef<[u8]>, seplen: usize) -> Vec<Sds>"
+          },
+          {
+            "path": "src/sds.rs",
+            "kind": "method",
+            "name": "freesplitres",
+            "visibility": "public",
+            "public": true,
+            "owner_type": "Sds",
+            "params": [
+              "tokens: Vec<Sds>"
+            ],
+            "return_type": "",
+            "signature": "freesplitres(tokens: Vec<Sds>)"
+          },
+          {
+            "path": "src/sds.rs",
+            "kind": "method",
+            "name": "catrepr",
+            "visibility": "public",
+            "public": true,
+            "owner_type": "Sds",
+            "params": [
+              "&mut self",
+              "p: impl AsRef<[u8]>",
+              "len: usize"
+            ],
+            "return_type": "&mut Self",
+            "signature": "catrepr(&mut self, p: impl AsRef<[u8]>, len: usize) -> &mut Self"
+          },
+          {
+            "path": "src/sds.rs",
+            "kind": "method",
+            "name": "is_hex_digit",
+            "visibility": "public",
+            "public": true,
+            "owner_type": "Sds",
+            "params": [
+              "c: char"
+            ],
+            "return_type": "bool",
+            "signature": "is_hex_digit(c: char) -> bool"
+          },
+          {
+            "path": "src/sds.rs",
+            "kind": "method",
+            "name": "hex_digit_to_int",
+            "visibility": "public",
+            "public": true,
+            "owner_type": "Sds",
+            "params": [
+              "c: char"
+            ],
+            "return_type": "i32",
+            "signature": "hex_digit_to_int(c: char) -> i32"
+          },
+          {
+            "path": "src/sds.rs",
+            "kind": "method",
+            "name": "splitargs",
+            "visibility": "public",
+            "public": true,
+            "owner_type": "Sds",
+            "params": [
+              "line: &str"
+            ],
+            "return_type": "Option<Vec<Sds>>",
+            "signature": "splitargs(line: &str) -> Option<Vec<Sds>>"
+          },
+          {
+            "path": "src/sds.rs",
+            "kind": "method",
+            "name": "mapchars",
+            "visibility": "public",
+            "public": true,
+            "owner_type": "Sds",
+            "params": [
+              "&mut self",
+              "from: &str",
+              "to: &str",
+              "setlen: usize"
+            ],
+            "return_type": "&mut Self",
+            "signature": "mapchars(&mut self, from: &str, to: &str, setlen: usize) -> &mut Self"
+          },
+          {
+            "path": "src/sds.rs",
+            "kind": "method",
+            "name": "join",
+            "visibility": "public",
+            "public": true,
+            "owner_type": "Sds",
+            "params": [
+              "argv: &[&str]",
+              "sep: &str"
+            ],
+            "return_type": "Self",
+            "signature": "join(argv: &[&str], sep: &str) -> Self"
+          },
+          {
+            "path": "src/sds.rs",
+            "kind": "method",
+            "name": "joinsds",
+            "visibility": "public",
+            "public": true,
+            "owner_type": "Sds",
+            "params": [
+              "argv: &[Sds]",
+              "sep: &str",
+              "seplen: usize"
+            ],
+            "return_type": "Self",
+            "signature": "joinsds(argv: &[Sds], sep: &str, seplen: usize) -> Self"
+          },
+          {
+            "path": "src/sds.rs",
+            "kind": "method",
+            "name": "malloc",
+            "visibility": "public",
+            "public": true,
+            "owner_type": "Sds",
+            "params": [
+              "size: usize"
+            ],
+            "return_type": "Vec<u8>",
+            "signature": "malloc(size: usize) -> Vec<u8>"
+          },
+          {
+            "path": "src/sds.rs",
+            "kind": "method",
+            "name": "realloc",
+            "visibility": "public",
+            "public": true,
+            "owner_type": "Sds",
+            "params": [
+              "mut buf: Vec<u8>",
+              "size: usize"
+            ],
+            "return_type": "Vec<u8>",
+            "signature": "realloc(mut buf: Vec<u8>, size: usize) -> Vec<u8>"
+          },
+          {
+            "path": "src/sds.rs",
+            "kind": "method",
+            "name": "s_malloc",
+            "visibility": "public",
+            "public": true,
+            "owner_type": "Sds",
+            "params": [
+              "size: usize"
+            ],
+            "return_type": "Vec<u8>",
+            "signature": "s_malloc(size: usize) -> Vec<u8>"
+          },
+          {
+            "path": "src/sds.rs",
+            "kind": "method",
+            "name": "s_realloc",
+            "visibility": "public",
+            "public": true,
+            "owner_type": "Sds",
+            "params": [
+              "buf: Vec<u8>",
+              "size: usize"
+            ],
+            "return_type": "Vec<u8>",
+            "signature": "s_realloc(buf: Vec<u8>, size: usize) -> Vec<u8>"
+          },
+          {
+            "path": "src/sds.rs",
+            "kind": "method",
+            "name": "s_free",
+            "visibility": "public",
+            "public": true,
+            "owner_type": "Sds",
+            "params": [
+              "_value: T"
+            ],
+            "return_type": "",
+            "signature": "s_free(_value: T)"
+          },
+          {
+            "path": "src/sds.rs",
+            "kind": "method",
+            "name": "test",
+            "visibility": "public",
+            "public": true,
+            "owner_type": "Sds",
+            "params": [],
+            "return_type": "bool",
+            "signature": "test() -> bool"
+          },
+          {
+            "path": "src/sds.rs",
+            "kind": "method",
+            "name": "test_cond",
+            "visibility": "public",
+            "public": true,
+            "owner_type": "Sds",
+            "params": [
+              "_name: &str",
+              "cond: bool"
+            ],
+            "return_type": "bool",
+            "signature": "test_cond(_name: &str, cond: bool) -> bool"
+          },
+          {
+            "path": "src/sds.rs",
+            "kind": "method",
+            "name": "test_report",
+            "visibility": "public",
+            "public": true,
+            "owner_type": "Sds",
+            "params": [],
+            "return_type": "",
+            "signature": "test_report()"
+          },
+          {
+            "path": "src/sds.rs",
+            "kind": "method",
+            "name": "main",
+            "visibility": "public",
+            "public": true,
+            "owner_type": "Sds",
+            "params": [],
+            "return_type": "i32",
+            "signature": "main() -> i32"
+          },
+          {
+            "path": "src/sds.rs",
+            "kind": "method",
+            "name": "main_root",
+            "visibility": "public",
+            "public": true,
+            "owner_type": "Sds",
+            "params": [],
+            "return_type": "i32",
+            "signature": "main_root() -> i32"
+          },
+          {
+            "path": "src/sds.rs",
+            "kind": "method",
+            "name": "drop",
+            "visibility": "private",
+            "public": false,
+            "owner_type": "Sds",
+            "params": [
+              "&mut self"
+            ],
+            "return_type": "",
+            "signature": "drop(&mut self)"
+          }
+        ]
+      },
+      "references": [
+        {
+          "path": "src/sds.rs",
+          "kind": "type",
+          "name": "Sds",
+          "visibility": "public",
+          "public": true,
+          "owner_type": "",
+          "params": [],
+          "return_type": "",
+          "signature": "struct Sds"
+        },
+        {
+          "path": "src/sds.rs",
+          "kind": "type",
+          "name": "CatFmtArg",
+          "visibility": "public",
+          "public": true,
+          "owner_type": "",
+          "params": [],
+          "return_type": "",
+          "signature": "enum CatFmtArg"
+        },
+        {
+          "path": "src/sds.rs",
+          "kind": "field",
+          "name": "buf",
+          "visibility": "private",
+          "public": false,
+          "owner_type": "Sds",
+          "params": [],
+          "return_type": "Vec<u8>",
+          "signature": "Sds::buf: Vec<u8>"
+        },
+        {
+          "path": "src/sds.rs",
+          "kind": "constant",
+          "name": "SDS_MAX_PREALLOC",
+          "visibility": "private",
+          "public": false,
+          "owner_type": "",
+          "params": [],
+          "return_type": "usize",
+          "signature": "SDS_MAX_PREALLOC: usize"
+        },
+        {
+          "path": "src/sds.rs",
+          "kind": "constant",
+          "name": "SDS_TYPE_5",
+          "visibility": "private",
+          "public": false,
+          "owner_type": "",
+          "params": [],
+          "return_type": "u8",
+          "signature": "SDS_TYPE_5: u8"
+        },
+        {
+          "path": "src/sds.rs",
+          "kind": "constant",
+          "name": "SDS_TYPE_8",
+          "visibility": "private",
+          "public": false,
+          "owner_type": "",
+          "params": [],
+          "return_type": "u8",
+          "signature": "SDS_TYPE_8: u8"
+        },
+        {
+          "path": "src/sds.rs",
+          "kind": "constant",
+          "name": "SDS_TYPE_16",
+          "visibility": "private",
+          "public": false,
+          "owner_type": "",
+          "params": [],
+          "return_type": "u8",
+          "signature": "SDS_TYPE_16: u8"
+        },
+        {
+          "path": "src/sds.rs",
+          "kind": "constant",
+          "name": "SDS_TYPE_32",
+          "visibility": "private",
+          "public": false,
+          "owner_type": "",
+          "params": [],
+          "return_type": "u8",
+          "signature": "SDS_TYPE_32: u8"
+        },
+        {
+          "path": "src/sds.rs",
+          "kind": "constant",
+          "name": "SDS_TYPE_64",
+          "visibility": "private",
+          "public": false,
+          "owner_type": "",
+          "params": [],
+          "return_type": "u8",
+          "signature": "SDS_TYPE_64: u8"
+        },
+        {
+          "path": "src/sds.rs",
+          "kind": "method",
+          "name": "hdr_size",
+          "visibility": "public",
+          "public": true,
+          "owner_type": "Sds",
+          "params": [
+            "type_code: u8"
+          ],
+          "return_type": "usize",
+          "signature": "hdr_size(type_code: u8) -> usize"
+        },
+        {
+          "path": "src/sds.rs",
+          "kind": "method",
+          "name": "req_type",
+          "visibility": "public",
+          "public": true,
+          "owner_type": "Sds",
+          "params": [
+            "string_size: usize"
+          ],
+          "return_type": "u8",
+          "signature": "req_type(string_size: usize) -> u8"
+        },
+        {
+          "path": "src/sds.rs",
+          "kind": "method",
+          "name": "newlen",
+          "visibility": "public",
+          "public": true,
+          "owner_type": "Sds",
+          "params": [
+            "init: impl AsRef<[u8]>",
+            "initlen: usize"
+          ],
+          "return_type": "Self",
+          "signature": "newlen(init: impl AsRef<[u8]>, initlen: usize) -> Self"
+        },
+        {
+          "path": "src/sds.rs",
+          "kind": "method",
+          "name": "empty",
+          "visibility": "public",
+          "public": true,
+          "owner_type": "Sds",
+          "params": [],
+          "return_type": "Self",
+          "signature": "empty() -> Self"
+        },
+        {
+          "path": "src/sds.rs",
+          "kind": "method",
+          "name": "new",
+          "visibility": "public",
+          "public": true,
+          "owner_type": "Sds",
+          "params": [
+            "init: impl AsRef<[u8]>"
+          ],
+          "return_type": "Self",
+          "signature": "new(init: impl AsRef<[u8]>) -> Self"
+        },
+        {
+          "path": "src/sds.rs",
+          "kind": "method",
+          "name": "dup",
+          "visibility": "public",
+          "public": true,
+          "owner_type": "Sds",
+          "params": [
+            "&self"
+          ],
+          "return_type": "Self",
+          "signature": "dup(&self) -> Self"
+        },
+        {
+          "path": "src/sds.rs",
+          "kind": "method",
+          "name": "updatelen",
+          "visibility": "public",
+          "public": true,
+          "owner_type": "Sds",
+          "params": [
+            "&mut self"
+          ],
+          "return_type": "",
+          "signature": "updatelen(&mut self)"
+        },
+        {
+          "path": "src/sds.rs",
+          "kind": "method",
+          "name": "clear",
+          "visibility": "public",
+          "public": true,
+          "owner_type": "Sds",
+          "params": [
+            "&mut self"
+          ],
+          "return_type": "",
+          "signature": "clear(&mut self)"
+        },
+        {
+          "path": "src/sds.rs",
+          "kind": "method",
+          "name": "make_room_for",
+          "visibility": "public",
+          "public": true,
+          "owner_type": "Sds",
+          "params": [
+            "&mut self",
+            "addlen: usize"
+          ],
+          "return_type": "&mut Self",
+          "signature": "make_room_for(&mut self, addlen: usize) -> &mut Self"
+        },
+        {
+          "path": "src/sds.rs",
+          "kind": "method",
+          "name": "remove_free_space",
+          "visibility": "public",
+          "public": true,
+          "owner_type": "Sds",
+          "params": [
+            "&mut self"
+          ],
+          "return_type": "&mut Self",
+          "signature": "remove_free_space(&mut self) -> &mut Self"
+        },
+        {
+          "path": "src/sds.rs",
+          "kind": "method",
+          "name": "alloc_size",
+          "visibility": "public",
+          "public": true,
+          "owner_type": "Sds",
+          "params": [
+            "&self"
+          ],
+          "return_type": "usize",
+          "signature": "alloc_size(&self) -> usize"
+        },
+        {
+          "path": "src/sds.rs",
+          "kind": "method",
+          "name": "alloc_ptr",
+          "visibility": "public",
+          "public": true,
+          "owner_type": "Sds",
+          "params": [
+            "&self"
+          ],
+          "return_type": "usize",
+          "signature": "alloc_ptr(&self) -> usize"
+        },
+        {
+          "path": "src/sds.rs",
+          "kind": "method",
+          "name": "incr_len",
+          "visibility": "public",
+          "public": true,
+          "owner_type": "Sds",
+          "params": [
+            "&mut self",
+            "incr: isize"
+          ],
+          "return_type": "",
+          "signature": "incr_len(&mut self, incr: isize)"
+        },
+        {
+          "path": "src/sds.rs",
+          "kind": "method",
+          "name": "growzero",
+          "visibility": "public",
+          "public": true,
+          "owner_type": "Sds",
+          "params": [
+            "&mut self",
+            "len: usize"
+          ],
+          "return_type": "&mut Self",
+          "signature": "growzero(&mut self, len: usize) -> &mut Self"
+        },
+        {
+          "path": "src/sds.rs",
+          "kind": "method",
+          "name": "catlen",
+          "visibility": "public",
+          "public": true,
+          "owner_type": "Sds",
+          "params": [
+            "&mut self",
+            "t: impl AsRef<[u8]>",
+            "len: usize"
+          ],
+          "return_type": "&mut Self",
+          "signature": "catlen(&mut self, t: impl AsRef<[u8]>, len: usize) -> &mut Self"
+        },
+        {
+          "path": "src/sds.rs",
+          "kind": "method",
+          "name": "cat",
+          "visibility": "public",
+          "public": true,
+          "owner_type": "Sds",
+          "params": [
+            "&mut self",
+            "t: impl AsRef<[u8]>"
+          ],
+          "return_type": "&mut Self",
+          "signature": "cat(&mut self, t: impl AsRef<[u8]>) -> &mut Self"
+        },
+        {
+          "path": "src/sds.rs",
+          "kind": "method",
+          "name": "catsds",
+          "visibility": "public",
+          "public": true,
+          "owner_type": "Sds",
+          "params": [
+            "&mut self",
+            "t: &Sds"
+          ],
+          "return_type": "&mut Self",
+          "signature": "catsds(&mut self, t: &Sds) -> &mut Self"
+        },
+        {
+          "path": "src/sds.rs",
+          "kind": "method",
+          "name": "cpylen",
+          "visibility": "public",
+          "public": true,
+          "owner_type": "Sds",
+          "params": [
+            "&mut self",
+            "t: impl AsRef<[u8]>",
+            "len: usize"
+          ],
+          "return_type": "&mut Self",
+          "signature": "cpylen(&mut self, t: impl AsRef<[u8]>, len: usize) -> &mut Self"
+        },
+        {
+          "path": "src/sds.rs",
+          "kind": "method",
+          "name": "cpy",
+          "visibility": "public",
+          "public": true,
+          "owner_type": "Sds",
+          "params": [
+            "&mut self",
+            "t: impl AsRef<[u8]>"
+          ],
+          "return_type": "&mut Self",
+          "signature": "cpy(&mut self, t: impl AsRef<[u8]>) -> &mut Self"
+        },
+        {
+          "path": "src/sds.rs",
+          "kind": "method",
+          "name": "ll_2_str",
+          "visibility": "public",
+          "public": true,
+          "owner_type": "Sds",
+          "params": [
+            "value: i64"
+          ],
+          "return_type": "String",
+          "signature": "ll_2_str(value: i64) -> String"
+        },
+        {
+          "path": "src/sds.rs",
+          "kind": "method",
+          "name": "ull_2_str",
+          "visibility": "public",
+          "public": true,
+          "owner_type": "Sds",
+          "params": [
+            "value: u64"
+          ],
+          "return_type": "String",
+          "signature": "ull_2_str(value: u64) -> String"
+        },
+        {
+          "path": "src/sds.rs",
+          "kind": "method",
+          "name": "fromlonglong",
+          "visibility": "public",
+          "public": true,
+          "owner_type": "Sds",
+          "params": [
+            "value: i64"
+          ],
+          "return_type": "Self",
+          "signature": "fromlonglong(value: i64) -> Self"
+        },
+        {
+          "path": "src/sds.rs",
+          "kind": "method",
+          "name": "catvprintf",
+          "visibility": "public",
+          "public": true,
+          "owner_type": "Sds",
+          "params": [
+            "&mut self",
+            "args: fmt::Arguments<'_>"
+          ],
+          "return_type": "&mut Self",
+          "signature": "catvprintf(&mut self, args: fmt::Arguments<'_>) -> &mut Self"
+        },
+        {
+          "path": "src/sds.rs",
+          "kind": "method",
+          "name": "catprintf",
+          "visibility": "public",
+          "public": true,
+          "owner_type": "Sds",
+          "params": [
+            "&mut self",
+            "args: fmt::Arguments<'_>"
+          ],
+          "return_type": "&mut Self",
+          "signature": "catprintf(&mut self, args: fmt::Arguments<'_>) -> &mut Self"
+        },
+        {
+          "path": "src/sds.rs",
+          "kind": "method",
+          "name": "catfmt",
+          "visibility": "public",
+          "public": true,
+          "owner_type": "Sds",
+          "params": [
+            "&mut self",
+            "fmt_str: &str",
+            "argv: &[CatFmtArg<'_>]"
+          ],
+          "return_type": "&mut Self",
+          "signature": "catfmt(&mut self, fmt_str: &str, argv: &[CatFmtArg<'_>]) -> &mut Self"
+        },
+        {
+          "path": "src/sds.rs",
+          "kind": "method",
+          "name": "trim",
+          "visibility": "public",
+          "public": true,
+          "owner_type": "Sds",
+          "params": [
+            "&mut self",
+            "cset: impl AsRef<[u8]>"
+          ],
+          "return_type": "&mut Self",
+          "signature": "trim(&mut self, cset: impl AsRef<[u8]>) -> &mut Self"
+        },
+        {
+          "path": "src/sds.rs",
+          "kind": "method",
+          "name": "range",
+          "visibility": "public",
+          "public": true,
+          "owner_type": "Sds",
+          "params": [
+            "&mut self",
+            "mut start: isize",
+            "mut end: isize"
+          ],
+          "return_type": "",
+          "signature": "range(&mut self, mut start: isize, mut end: isize)"
+        },
+        {
+          "path": "src/sds.rs",
+          "kind": "method",
+          "name": "tolower",
+          "visibility": "public",
+          "public": true,
+          "owner_type": "Sds",
+          "params": [
+            "&mut self"
+          ],
+          "return_type": "",
+          "signature": "tolower(&mut self)"
+        },
+        {
+          "path": "src/sds.rs",
+          "kind": "method",
+          "name": "toupper",
+          "visibility": "public",
+          "public": true,
+          "owner_type": "Sds",
+          "params": [
+            "&mut self"
+          ],
+          "return_type": "",
+          "signature": "toupper(&mut self)"
+        },
+        {
+          "path": "src/sds.rs",
+          "kind": "method",
+          "name": "cmp",
+          "visibility": "public",
+          "public": true,
+          "owner_type": "Sds",
+          "params": [
+            "&self",
+            "other: &Sds"
+          ],
+          "return_type": "i32",
+          "signature": "cmp(&self, other: &Sds) -> i32"
+        },
+        {
+          "path": "src/sds.rs",
+          "kind": "method",
+          "name": "splitlen",
+          "visibility": "public",
+          "public": true,
+          "owner_type": "Sds",
+          "params": [
+            "s: impl AsRef<[u8]>",
+            "len: isize",
+            "sep: impl AsRef<[u8]>",
+            "seplen: usize"
+          ],
+          "return_type": "Vec<Sds>",
+          "signature": "splitlen(s: impl AsRef<[u8]>, len: isize, sep: impl AsRef<[u8]>, seplen: usize) -> Vec<Sds>"
+        },
+        {
+          "path": "src/sds.rs",
+          "kind": "method",
+          "name": "freesplitres",
+          "visibility": "public",
+          "public": true,
+          "owner_type": "Sds",
+          "params": [
+            "tokens: Vec<Sds>"
+          ],
+          "return_type": "",
+          "signature": "freesplitres(tokens: Vec<Sds>)"
+        },
+        {
+          "path": "src/sds.rs",
+          "kind": "method",
+          "name": "catrepr",
+          "visibility": "public",
+          "public": true,
+          "owner_type": "Sds",
+          "params": [
+            "&mut self",
+            "p: impl AsRef<[u8]>",
+            "len: usize"
+          ],
+          "return_type": "&mut Self",
+          "signature": "catrepr(&mut self, p: impl AsRef<[u8]>, len: usize) -> &mut Self"
+        },
+        {
+          "path": "src/sds.rs",
+          "kind": "method",
+          "name": "is_hex_digit",
+          "visibility": "public",
+          "public": true,
+          "owner_type": "Sds",
+          "params": [
+            "c: char"
+          ],
+          "return_type": "bool",
+          "signature": "is_hex_digit(c: char) -> bool"
+        },
+        {
+          "path": "src/sds.rs",
+          "kind": "method",
+          "name": "hex_digit_to_int",
+          "visibility": "public",
+          "public": true,
+          "owner_type": "Sds",
+          "params": [
+            "c: char"
+          ],
+          "return_type": "i32",
+          "signature": "hex_digit_to_int(c: char) -> i32"
+        },
+        {
+          "path": "src/sds.rs",
+          "kind": "method",
+          "name": "splitargs",
+          "visibility": "public",
+          "public": true,
+          "owner_type": "Sds",
+          "params": [
+            "line: &str"
+          ],
+          "return_type": "Option<Vec<Sds>>",
+          "signature": "splitargs(line: &str) -> Option<Vec<Sds>>"
+        },
+        {
+          "path": "src/sds.rs",
+          "kind": "method",
+          "name": "mapchars",
+          "visibility": "public",
+          "public": true,
+          "owner_type": "Sds",
+          "params": [
+            "&mut self",
+            "from: &str",
+            "to: &str",
+            "setlen: usize"
+          ],
+          "return_type": "&mut Self",
+          "signature": "mapchars(&mut self, from: &str, to: &str, setlen: usize) -> &mut Self"
+        },
+        {
+          "path": "src/sds.rs",
+          "kind": "method",
+          "name": "join",
+          "visibility": "public",
+          "public": true,
+          "owner_type": "Sds",
+          "params": [
+            "argv: &[&str]",
+            "sep: &str"
+          ],
+          "return_type": "Self",
+          "signature": "join(argv: &[&str], sep: &str) -> Self"
+        },
+        {
+          "path": "src/sds.rs",
+          "kind": "method",
+          "name": "joinsds",
+          "visibility": "public",
+          "public": true,
+          "owner_type": "Sds",
+          "params": [
+            "argv: &[Sds]",
+            "sep: &str",
+            "seplen: usize"
+          ],
+          "return_type": "Self",
+          "signature": "joinsds(argv: &[Sds], sep: &str, seplen: usize) -> Self"
+        },
+        {
+          "path": "src/sds.rs",
+          "kind": "method",
+          "name": "malloc",
+          "visibility": "public",
+          "public": true,
+          "owner_type": "Sds",
+          "params": [
+            "size: usize"
+          ],
+          "return_type": "Vec<u8>",
+          "signature": "malloc(size: usize) -> Vec<u8>"
+        },
+        {
+          "path": "src/sds.rs",
+          "kind": "method",
+          "name": "realloc",
+          "visibility": "public",
+          "public": true,
+          "owner_type": "Sds",
+          "params": [
+            "mut buf: Vec<u8>",
+            "size: usize"
+          ],
+          "return_type": "Vec<u8>",
+          "signature": "realloc(mut buf: Vec<u8>, size: usize) -> Vec<u8>"
+        },
+        {
+          "path": "src/sds.rs",
+          "kind": "method",
+          "name": "s_malloc",
+          "visibility": "public",
+          "public": true,
+          "owner_type": "Sds",
+          "params": [
+            "size: usize"
+          ],
+          "return_type": "Vec<u8>",
+          "signature": "s_malloc(size: usize) -> Vec<u8>"
+        },
+        {
+          "path": "src/sds.rs",
+          "kind": "method",
+          "name": "s_realloc",
+          "visibility": "public",
+          "public": true,
+          "owner_type": "Sds",
+          "params": [
+            "buf: Vec<u8>",
+            "size: usize"
+          ],
+          "return_type": "Vec<u8>",
+          "signature": "s_realloc(buf: Vec<u8>, size: usize) -> Vec<u8>"
+        },
+        {
+          "path": "src/sds.rs",
+          "kind": "method",
+          "name": "s_free",
+          "visibility": "public",
+          "public": true,
+          "owner_type": "Sds",
+          "params": [
+            "_value: T"
+          ],
+          "return_type": "",
+          "signature": "s_free(_value: T)"
+        },
+        {
+          "path": "src/sds.rs",
+          "kind": "method",
+          "name": "test",
+          "visibility": "public",
+          "public": true,
+          "owner_type": "Sds",
+          "params": [],
+          "return_type": "bool",
+          "signature": "test() -> bool"
+        },
+        {
+          "path": "src/sds.rs",
+          "kind": "method",
+          "name": "test_cond",
+          "visibility": "public",
+          "public": true,
+          "owner_type": "Sds",
+          "params": [
+            "_name: &str",
+            "cond: bool"
+          ],
+          "return_type": "bool",
+          "signature": "test_cond(_name: &str, cond: bool) -> bool"
+        },
+        {
+          "path": "src/sds.rs",
+          "kind": "method",
+          "name": "test_report",
+          "visibility": "public",
+          "public": true,
+          "owner_type": "Sds",
+          "params": [],
+          "return_type": "",
+          "signature": "test_report()"
+        },
+        {
+          "path": "src/sds.rs",
+          "kind": "method",
+          "name": "main",
+          "visibility": "public",
+          "public": true,
+          "owner_type": "Sds",
+          "params": [],
+          "return_type": "i32",
+          "signature": "main() -> i32"
+        },
+        {
+          "path": "src/sds.rs",
+          "kind": "method",
+          "name": "main_root",
+          "visibility": "public",
+          "public": true,
+          "owner_type": "Sds",
+          "params": [],
+          "return_type": "i32",
+          "signature": "main_root() -> i32"
+        },
+        {
+          "path": "src/sds.rs",
+          "kind": "method",
+          "name": "drop",
+          "visibility": "private",
+          "public": false,
+          "owner_type": "Sds",
+          "params": [
+            "&mut self"
+          ],
+          "return_type": "",
+          "signature": "drop(&mut self)"
+        }
+      ]
+    },
+    "src/main.rs": {
+      "updated_at": "2026-06-07T12:51:37",
+      "contract": {
+        "public_structs": [],
+        "public_enums": [],
+        "public_traits": [],
+        "public_functions": [
+          "run"
+        ],
+        "constructors": [],
+        "accessors": [],
+        "impl_methods": {
+          "Main": [
+            "run"
+          ]
+        },
+        "references": [
+          {
+            "path": "src/main.rs",
+            "kind": "module",
+            "name": "sds",
+            "visibility": "private",
+            "public": false,
+            "owner_type": "",
+            "params": [],
+            "return_type": "",
+            "signature": "sds"
+          },
+          {
+            "path": "src/main.rs",
+            "kind": "type",
+            "name": "Main",
+            "visibility": "public",
+            "public": true,
+            "owner_type": "",
+            "params": [],
+            "return_type": "",
+            "signature": "struct Main"
+          },
+          {
+            "path": "src/main.rs",
+            "kind": "function",
+            "name": "main",
+            "visibility": "private",
+            "public": false,
+            "owner_type": "",
+            "params": [],
+            "return_type": "",
+            "signature": "main()"
+          },
+          {
+            "path": "src/main.rs",
+            "kind": "method",
+            "name": "run",
+            "visibility": "public",
+            "public": true,
+            "owner_type": "Main",
+            "params": [],
+            "return_type": "i32",
+            "signature": "run() -> i32"
+          }
+        ]
+      },
+      "references": [
+        {
+          "path": "src/main.rs",
+          "kind": "module",
+          "name": "sds",
+          "visibility": "private",
+          "public": false,
+          "owner_type": "",
+          "params": [],
+          "return_type": "",
+          "signature": "sds"
+        },
+        {
+          "path": "src/main.rs",
+          "kind": "type",
+          "name": "Main",
+          "visibility": "public",
+          "public": true,
+          "owner_type": "",
+          "params": [],
+          "return_type": "",
+          "signature": "struct Main"
+        },
+        {
+          "path": "src/main.rs",
+          "kind": "function",
+          "name": "main",
+          "visibility": "private",
+          "public": false,
+          "owner_type": "",
+          "params": [],
+          "return_type": "",
+          "signature": "main()"
+        },
+        {
+          "path": "src/main.rs",
+          "kind": "method",
+          "name": "run",
+          "visibility": "public",
+          "public": true,
+          "owner_type": "Main",
+          "params": [],
+          "return_type": "i32",
+          "signature": "run() -> i32"
+        }
+      ]
+    }
+  },
+  "updated_at": "2026-06-07T12:51:37"
+}

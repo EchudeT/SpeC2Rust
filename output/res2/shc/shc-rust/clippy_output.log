@@ -1,0 +1,15 @@
+warning: `/home/jfeng/.cargo/config` is deprecated in favor of `config.toml`
+  |
+  = help: if you need to support cargo 1.38 or earlier, you can symlink `config` to `config.toml`
+warning: `/home/jfeng/.cargo/config` is deprecated in favor of `config.toml`
+  |
+  = help: if you need to support cargo 1.38 or earlier, you can symlink `config` to `config.toml`
+    Checking shc-rust v0.1.0 (/data1/jfeng/tcode_win/output/res2/shc/shc-rust)
+src/shc.rs:5:5: warning: unused import: `std::os::unix::fs::PermissionsExt`
+src/shc.rs:564:13: warning: variable does not need to be mutable
+src/shc.rs:67:6: warning: enum `ParseFlow` is never used
+src/shc.rs:551:12: warning: associated items `dump_array`, `ensure_generated_runtime`, and `module_src` are never used
+src/shc.rs:338:60: warning: clamp-like pattern without using clamp function: help: replace with clamp: `len.clamp(1, 256)`
+warning: `shc-rust` (bin "shc-rust") generated 5 warnings (1 duplicate) (run `cargo clippy --fix --bin "shc-rust" -p shc-rust -- ` to apply 1 suggestion)
+warning: `shc-rust` (bin "shc-rust" test) generated 5 warnings (4 duplicates)
+    Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.33s

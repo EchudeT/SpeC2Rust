@@ -1,0 +1,19 @@
+warning: `/home/jfeng/.cargo/config` is deprecated in favor of `config.toml`
+  |
+  = help: if you need to support cargo 1.38 or earlier, you can symlink `config` to `config.toml`
+warning: `/home/jfeng/.cargo/config` is deprecated in favor of `config.toml`
+  |
+  = help: if you need to support cargo 1.38 or earlier, you can symlink `config` to `config.toml`
+    Checking c4-rust v0.1.0 (/data1/jfeng/tcode_win/output/res2/c4/c4-rust)
+src/c4.rs:228:5: warning: type `c4::C4Error` is more private than the item `c4::C4::next`: method `c4::C4::next` is reachable at visibility `pub(crate)`
+src/c4.rs:446:5: warning: type `c4::C4Error` is more private than the item `c4::C4::expr`: method `c4::C4::expr` is reachable at visibility `pub(crate)`
+src/c4.rs:851:5: warning: type `c4::C4Error` is more private than the item `c4::C4::stmt`: method `c4::C4::stmt` is reachable at visibility `pub(crate)`
+src/c4.rs:4:7: warning: constant `TK_FUN` is never used
+src/c4.rs:5:7: warning: constant `TK_SYS` is never used
+src/c4.rs:6:7: warning: constant `TK_GLO` is never used
+src/c4.rs:7:7: warning: constant `TK_LOC` is never used
+src/c4.rs:58:7: warning: constant `OP_ENT` is never used
+src/c4.rs:204:8: warning: associated items `patch_to_current` and `run_hello` are never used
+warning: `c4-rust` (bin "c4-rust" test) generated 9 warnings (9 duplicates)
+warning: `c4-rust` (bin "c4-rust") generated 9 warnings
+    Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.28s

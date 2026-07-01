@@ -1,0 +1,973 @@
+{
+  "project_name": "c4-rust",
+  "files": {
+    "src/c4.rs": {
+      "updated_at": "2026-06-06T11:39:44",
+      "contract": {
+        "public_structs": [
+          {
+            "name": "C4",
+            "fields": [
+              {
+                "name": "source",
+                "public": false,
+                "type": "String"
+              },
+              {
+                "name": "chars",
+                "public": false,
+                "type": "Vec<char>"
+              },
+              {
+                "name": "position",
+                "public": false,
+                "type": "usize"
+              },
+              {
+                "name": "line",
+                "public": false,
+                "type": "usize"
+              },
+              {
+                "name": "token",
+                "public": false,
+                "type": "Token"
+              },
+              {
+                "name": "token_text",
+                "public": false,
+                "type": "String"
+              },
+              {
+                "name": "token_value",
+                "public": false,
+                "type": "i64"
+              },
+              {
+                "name": "emitted",
+                "public": false,
+                "type": "Vec<Instruction>"
+              }
+            ]
+          },
+          {
+            "name": "C4Error",
+            "fields": [
+              {
+                "name": "line",
+                "public": false,
+                "type": "usize"
+              },
+              {
+                "name": "message",
+                "public": false,
+                "type": "String"
+              }
+            ]
+          }
+        ],
+        "public_enums": [],
+        "public_traits": [],
+        "public_functions": [
+          "expr",
+          "main",
+          "next",
+          "run_c_4",
+          "run_hello",
+          "stmt"
+        ],
+        "constructors": [],
+        "accessors": [],
+        "impl_methods": {
+          "std": [
+            "expr",
+            "main",
+            "next",
+            "run_c_4",
+            "run_hello",
+            "stmt"
+          ]
+        },
+        "references": [
+          {
+            "path": "src/c4.rs",
+            "kind": "type",
+            "name": "C4",
+            "visibility": "public",
+            "public": true,
+            "owner_type": "",
+            "params": [],
+            "return_type": "",
+            "signature": "struct C4"
+          },
+          {
+            "path": "src/c4.rs",
+            "kind": "type",
+            "name": "Token",
+            "visibility": "private",
+            "public": false,
+            "owner_type": "",
+            "params": [],
+            "return_type": "",
+            "signature": "enum Token"
+          },
+          {
+            "path": "src/c4.rs",
+            "kind": "type",
+            "name": "Instruction",
+            "visibility": "private",
+            "public": false,
+            "owner_type": "",
+            "params": [],
+            "return_type": "",
+            "signature": "enum Instruction"
+          },
+          {
+            "path": "src/c4.rs",
+            "kind": "type",
+            "name": "C4Error",
+            "visibility": "public",
+            "public": true,
+            "owner_type": "",
+            "params": [],
+            "return_type": "",
+            "signature": "struct C4Error"
+          },
+          {
+            "path": "src/c4.rs",
+            "kind": "field",
+            "name": "source",
+            "visibility": "private",
+            "public": false,
+            "owner_type": "C4",
+            "params": [],
+            "return_type": "String",
+            "signature": "C4::source: String"
+          },
+          {
+            "path": "src/c4.rs",
+            "kind": "field",
+            "name": "chars",
+            "visibility": "private",
+            "public": false,
+            "owner_type": "C4",
+            "params": [],
+            "return_type": "Vec<char>",
+            "signature": "C4::chars: Vec<char>"
+          },
+          {
+            "path": "src/c4.rs",
+            "kind": "field",
+            "name": "position",
+            "visibility": "private",
+            "public": false,
+            "owner_type": "C4",
+            "params": [],
+            "return_type": "usize",
+            "signature": "C4::position: usize"
+          },
+          {
+            "path": "src/c4.rs",
+            "kind": "field",
+            "name": "line",
+            "visibility": "private",
+            "public": false,
+            "owner_type": "C4",
+            "params": [],
+            "return_type": "usize",
+            "signature": "C4::line: usize"
+          },
+          {
+            "path": "src/c4.rs",
+            "kind": "field",
+            "name": "token",
+            "visibility": "private",
+            "public": false,
+            "owner_type": "C4",
+            "params": [],
+            "return_type": "Token",
+            "signature": "C4::token: Token"
+          },
+          {
+            "path": "src/c4.rs",
+            "kind": "field",
+            "name": "token_text",
+            "visibility": "private",
+            "public": false,
+            "owner_type": "C4",
+            "params": [],
+            "return_type": "String",
+            "signature": "C4::token_text: String"
+          },
+          {
+            "path": "src/c4.rs",
+            "kind": "field",
+            "name": "token_value",
+            "visibility": "private",
+            "public": false,
+            "owner_type": "C4",
+            "params": [],
+            "return_type": "i64",
+            "signature": "C4::token_value: i64"
+          },
+          {
+            "path": "src/c4.rs",
+            "kind": "field",
+            "name": "emitted",
+            "visibility": "private",
+            "public": false,
+            "owner_type": "C4",
+            "params": [],
+            "return_type": "Vec<Instruction>",
+            "signature": "C4::emitted: Vec<Instruction>"
+          },
+          {
+            "path": "src/c4.rs",
+            "kind": "field",
+            "name": "line",
+            "visibility": "private",
+            "public": false,
+            "owner_type": "C4Error",
+            "params": [],
+            "return_type": "usize",
+            "signature": "C4Error::line: usize"
+          },
+          {
+            "path": "src/c4.rs",
+            "kind": "field",
+            "name": "message",
+            "visibility": "private",
+            "public": false,
+            "owner_type": "C4Error",
+            "params": [],
+            "return_type": "String",
+            "signature": "C4Error::message: String"
+          },
+          {
+            "path": "src/c4.rs",
+            "kind": "method",
+            "name": "new",
+            "visibility": "private",
+            "public": false,
+            "owner_type": "C4Error",
+            "params": [
+              "line: usize",
+              "message: impl Into<String>"
+            ],
+            "return_type": "Self",
+            "signature": "new(line: usize, message: impl Into<String>) -> Self"
+          },
+          {
+            "path": "src/c4.rs",
+            "kind": "method",
+            "name": "fmt",
+            "visibility": "private",
+            "public": false,
+            "owner_type": "C4Error",
+            "params": [
+              "&self",
+              "f: &mut fmt::Formatter<'_>"
+            ],
+            "return_type": "fmt::Result",
+            "signature": "fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result"
+          },
+          {
+            "path": "src/c4.rs",
+            "kind": "method",
+            "name": "main",
+            "visibility": "public",
+            "public": true,
+            "owner_type": "C4",
+            "params": [
+              "args: &[String]"
+            ],
+            "return_type": "Result<Self, String>",
+            "signature": "main(args: &[String]) -> Result<Self, String>"
+          },
+          {
+            "path": "src/c4.rs",
+            "kind": "method",
+            "name": "run_c_4",
+            "visibility": "public",
+            "public": true,
+            "owner_type": "C4",
+            "params": [
+              "args: &[String]"
+            ],
+            "return_type": "Result<Self, String>",
+            "signature": "run_c_4(args: &[String]) -> Result<Self, String>"
+          },
+          {
+            "path": "src/c4.rs",
+            "kind": "method",
+            "name": "run_hello",
+            "visibility": "public",
+            "public": true,
+            "owner_type": "C4",
+            "params": [],
+            "return_type": "String",
+            "signature": "run_hello() -> String"
+          },
+          {
+            "path": "src/c4.rs",
+            "kind": "method",
+            "name": "new",
+            "visibility": "private",
+            "public": false,
+            "owner_type": "C4",
+            "params": [
+              "source: String"
+            ],
+            "return_type": "Self",
+            "signature": "new(source: String) -> Self"
+          },
+          {
+            "path": "src/c4.rs",
+            "kind": "method",
+            "name": "next",
+            "visibility": "public",
+            "public": true,
+            "owner_type": "C4",
+            "params": [
+              "&mut self"
+            ],
+            "return_type": "Result<(), C4Error>",
+            "signature": "next(&mut self) -> Result<(), C4Error>"
+          },
+          {
+            "path": "src/c4.rs",
+            "kind": "method",
+            "name": "expr",
+            "visibility": "public",
+            "public": true,
+            "owner_type": "C4",
+            "params": [
+              "&mut self",
+              "lev: i32"
+            ],
+            "return_type": "Result<(), C4Error>",
+            "signature": "expr(&mut self, lev: i32) -> Result<(), C4Error>"
+          },
+          {
+            "path": "src/c4.rs",
+            "kind": "method",
+            "name": "stmt",
+            "visibility": "public",
+            "public": true,
+            "owner_type": "C4",
+            "params": [
+              "&mut self"
+            ],
+            "return_type": "Result<(), C4Error>",
+            "signature": "stmt(&mut self) -> Result<(), C4Error>"
+          },
+          {
+            "path": "src/c4.rs",
+            "kind": "method",
+            "name": "precedence",
+            "visibility": "private",
+            "public": false,
+            "owner_type": "C4",
+            "params": [
+              "token: Token"
+            ],
+            "return_type": "i32",
+            "signature": "precedence(token: Token) -> i32"
+          },
+          {
+            "path": "src/c4.rs",
+            "kind": "method",
+            "name": "peek_char",
+            "visibility": "private",
+            "public": false,
+            "owner_type": "C4",
+            "params": [
+              "&self"
+            ],
+            "return_type": "Option<char>",
+            "signature": "peek_char(&self) -> Option<char>"
+          },
+          {
+            "path": "src/c4.rs",
+            "kind": "method",
+            "name": "peek_next_char",
+            "visibility": "private",
+            "public": false,
+            "owner_type": "C4",
+            "params": [
+              "&self"
+            ],
+            "return_type": "Option<char>",
+            "signature": "peek_next_char(&self) -> Option<char>"
+          },
+          {
+            "path": "src/c4.rs",
+            "kind": "method",
+            "name": "scan_number",
+            "visibility": "private",
+            "public": false,
+            "owner_type": "C4",
+            "params": [
+              "&mut self"
+            ],
+            "return_type": "Result<(), C4Error>",
+            "signature": "scan_number(&mut self) -> Result<(), C4Error>"
+          },
+          {
+            "path": "src/c4.rs",
+            "kind": "method",
+            "name": "scan_string_or_char",
+            "visibility": "private",
+            "public": false,
+            "owner_type": "C4",
+            "params": [
+              "&mut self",
+              "quote: char"
+            ],
+            "return_type": "Result<(), C4Error>",
+            "signature": "scan_string_or_char(&mut self, quote: char) -> Result<(), C4Error>"
+          }
+        ]
+      },
+      "references": [
+        {
+          "path": "src/c4.rs",
+          "kind": "type",
+          "name": "C4",
+          "visibility": "public",
+          "public": true,
+          "owner_type": "",
+          "params": [],
+          "return_type": "",
+          "signature": "struct C4"
+        },
+        {
+          "path": "src/c4.rs",
+          "kind": "type",
+          "name": "Token",
+          "visibility": "private",
+          "public": false,
+          "owner_type": "",
+          "params": [],
+          "return_type": "",
+          "signature": "enum Token"
+        },
+        {
+          "path": "src/c4.rs",
+          "kind": "type",
+          "name": "Instruction",
+          "visibility": "private",
+          "public": false,
+          "owner_type": "",
+          "params": [],
+          "return_type": "",
+          "signature": "enum Instruction"
+        },
+        {
+          "path": "src/c4.rs",
+          "kind": "type",
+          "name": "C4Error",
+          "visibility": "public",
+          "public": true,
+          "owner_type": "",
+          "params": [],
+          "return_type": "",
+          "signature": "struct C4Error"
+        },
+        {
+          "path": "src/c4.rs",
+          "kind": "field",
+          "name": "source",
+          "visibility": "private",
+          "public": false,
+          "owner_type": "C4",
+          "params": [],
+          "return_type": "String",
+          "signature": "C4::source: String"
+        },
+        {
+          "path": "src/c4.rs",
+          "kind": "field",
+          "name": "chars",
+          "visibility": "private",
+          "public": false,
+          "owner_type": "C4",
+          "params": [],
+          "return_type": "Vec<char>",
+          "signature": "C4::chars: Vec<char>"
+        },
+        {
+          "path": "src/c4.rs",
+          "kind": "field",
+          "name": "position",
+          "visibility": "private",
+          "public": false,
+          "owner_type": "C4",
+          "params": [],
+          "return_type": "usize",
+          "signature": "C4::position: usize"
+        },
+        {
+          "path": "src/c4.rs",
+          "kind": "field",
+          "name": "line",
+          "visibility": "private",
+          "public": false,
+          "owner_type": "C4",
+          "params": [],
+          "return_type": "usize",
+          "signature": "C4::line: usize"
+        },
+        {
+          "path": "src/c4.rs",
+          "kind": "field",
+          "name": "token",
+          "visibility": "private",
+          "public": false,
+          "owner_type": "C4",
+          "params": [],
+          "return_type": "Token",
+          "signature": "C4::token: Token"
+        },
+        {
+          "path": "src/c4.rs",
+          "kind": "field",
+          "name": "token_text",
+          "visibility": "private",
+          "public": false,
+          "owner_type": "C4",
+          "params": [],
+          "return_type": "String",
+          "signature": "C4::token_text: String"
+        },
+        {
+          "path": "src/c4.rs",
+          "kind": "field",
+          "name": "token_value",
+          "visibility": "private",
+          "public": false,
+          "owner_type": "C4",
+          "params": [],
+          "return_type": "i64",
+          "signature": "C4::token_value: i64"
+        },
+        {
+          "path": "src/c4.rs",
+          "kind": "field",
+          "name": "emitted",
+          "visibility": "private",
+          "public": false,
+          "owner_type": "C4",
+          "params": [],
+          "return_type": "Vec<Instruction>",
+          "signature": "C4::emitted: Vec<Instruction>"
+        },
+        {
+          "path": "src/c4.rs",
+          "kind": "field",
+          "name": "line",
+          "visibility": "private",
+          "public": false,
+          "owner_type": "C4Error",
+          "params": [],
+          "return_type": "usize",
+          "signature": "C4Error::line: usize"
+        },
+        {
+          "path": "src/c4.rs",
+          "kind": "field",
+          "name": "message",
+          "visibility": "private",
+          "public": false,
+          "owner_type": "C4Error",
+          "params": [],
+          "return_type": "String",
+          "signature": "C4Error::message: String"
+        },
+        {
+          "path": "src/c4.rs",
+          "kind": "method",
+          "name": "new",
+          "visibility": "private",
+          "public": false,
+          "owner_type": "C4Error",
+          "params": [
+            "line: usize",
+            "message: impl Into<String>"
+          ],
+          "return_type": "Self",
+          "signature": "new(line: usize, message: impl Into<String>) -> Self"
+        },
+        {
+          "path": "src/c4.rs",
+          "kind": "method",
+          "name": "fmt",
+          "visibility": "private",
+          "public": false,
+          "owner_type": "C4Error",
+          "params": [
+            "&self",
+            "f: &mut fmt::Formatter<'_>"
+          ],
+          "return_type": "fmt::Result",
+          "signature": "fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result"
+        },
+        {
+          "path": "src/c4.rs",
+          "kind": "method",
+          "name": "main",
+          "visibility": "public",
+          "public": true,
+          "owner_type": "C4",
+          "params": [
+            "args: &[String]"
+          ],
+          "return_type": "Result<Self, String>",
+          "signature": "main(args: &[String]) -> Result<Self, String>"
+        },
+        {
+          "path": "src/c4.rs",
+          "kind": "method",
+          "name": "run_c_4",
+          "visibility": "public",
+          "public": true,
+          "owner_type": "C4",
+          "params": [
+            "args: &[String]"
+          ],
+          "return_type": "Result<Self, String>",
+          "signature": "run_c_4(args: &[String]) -> Result<Self, String>"
+        },
+        {
+          "path": "src/c4.rs",
+          "kind": "method",
+          "name": "run_hello",
+          "visibility": "public",
+          "public": true,
+          "owner_type": "C4",
+          "params": [],
+          "return_type": "String",
+          "signature": "run_hello() -> String"
+        },
+        {
+          "path": "src/c4.rs",
+          "kind": "method",
+          "name": "new",
+          "visibility": "private",
+          "public": false,
+          "owner_type": "C4",
+          "params": [
+            "source: String"
+          ],
+          "return_type": "Self",
+          "signature": "new(source: String) -> Self"
+        },
+        {
+          "path": "src/c4.rs",
+          "kind": "method",
+          "name": "next",
+          "visibility": "public",
+          "public": true,
+          "owner_type": "C4",
+          "params": [
+            "&mut self"
+          ],
+          "return_type": "Result<(), C4Error>",
+          "signature": "next(&mut self) -> Result<(), C4Error>"
+        },
+        {
+          "path": "src/c4.rs",
+          "kind": "method",
+          "name": "expr",
+          "visibility": "public",
+          "public": true,
+          "owner_type": "C4",
+          "params": [
+            "&mut self",
+            "lev: i32"
+          ],
+          "return_type": "Result<(), C4Error>",
+          "signature": "expr(&mut self, lev: i32) -> Result<(), C4Error>"
+        },
+        {
+          "path": "src/c4.rs",
+          "kind": "method",
+          "name": "stmt",
+          "visibility": "public",
+          "public": true,
+          "owner_type": "C4",
+          "params": [
+            "&mut self"
+          ],
+          "return_type": "Result<(), C4Error>",
+          "signature": "stmt(&mut self) -> Result<(), C4Error>"
+        },
+        {
+          "path": "src/c4.rs",
+          "kind": "method",
+          "name": "precedence",
+          "visibility": "private",
+          "public": false,
+          "owner_type": "C4",
+          "params": [
+            "token: Token"
+          ],
+          "return_type": "i32",
+          "signature": "precedence(token: Token) -> i32"
+        },
+        {
+          "path": "src/c4.rs",
+          "kind": "method",
+          "name": "peek_char",
+          "visibility": "private",
+          "public": false,
+          "owner_type": "C4",
+          "params": [
+            "&self"
+          ],
+          "return_type": "Option<char>",
+          "signature": "peek_char(&self) -> Option<char>"
+        },
+        {
+          "path": "src/c4.rs",
+          "kind": "method",
+          "name": "peek_next_char",
+          "visibility": "private",
+          "public": false,
+          "owner_type": "C4",
+          "params": [
+            "&self"
+          ],
+          "return_type": "Option<char>",
+          "signature": "peek_next_char(&self) -> Option<char>"
+        },
+        {
+          "path": "src/c4.rs",
+          "kind": "method",
+          "name": "scan_number",
+          "visibility": "private",
+          "public": false,
+          "owner_type": "C4",
+          "params": [
+            "&mut self"
+          ],
+          "return_type": "Result<(), C4Error>",
+          "signature": "scan_number(&mut self) -> Result<(), C4Error>"
+        },
+        {
+          "path": "src/c4.rs",
+          "kind": "method",
+          "name": "scan_string_or_char",
+          "visibility": "private",
+          "public": false,
+          "owner_type": "C4",
+          "params": [
+            "&mut self",
+            "quote: char"
+          ],
+          "return_type": "Result<(), C4Error>",
+          "signature": "scan_string_or_char(&mut self, quote: char) -> Result<(), C4Error>"
+        }
+      ]
+    },
+    "src/hello.rs": {
+      "updated_at": "2026-06-06T11:39:53",
+      "contract": {
+        "public_structs": [],
+        "public_enums": [],
+        "public_traits": [],
+        "public_functions": [
+          "main"
+        ],
+        "constructors": [],
+        "accessors": [],
+        "impl_methods": {
+          "Hello": [
+            "main"
+          ]
+        },
+        "references": [
+          {
+            "path": "src/hello.rs",
+            "kind": "type",
+            "name": "Hello",
+            "visibility": "public",
+            "public": true,
+            "owner_type": "",
+            "params": [],
+            "return_type": "",
+            "signature": "struct Hello"
+          },
+          {
+            "path": "src/hello.rs",
+            "kind": "method",
+            "name": "main",
+            "visibility": "public",
+            "public": true,
+            "owner_type": "Hello",
+            "params": [],
+            "return_type": "String",
+            "signature": "main() -> String"
+          }
+        ]
+      },
+      "references": [
+        {
+          "path": "src/hello.rs",
+          "kind": "type",
+          "name": "Hello",
+          "visibility": "public",
+          "public": true,
+          "owner_type": "",
+          "params": [],
+          "return_type": "",
+          "signature": "struct Hello"
+        },
+        {
+          "path": "src/hello.rs",
+          "kind": "method",
+          "name": "main",
+          "visibility": "public",
+          "public": true,
+          "owner_type": "Hello",
+          "params": [],
+          "return_type": "String",
+          "signature": "main() -> String"
+        }
+      ]
+    },
+    "src/main.rs": {
+      "updated_at": "2026-06-06T11:40:01",
+      "contract": {
+        "public_structs": [],
+        "public_enums": [],
+        "public_traits": [],
+        "public_functions": [
+          "run"
+        ],
+        "constructors": [],
+        "accessors": [],
+        "impl_methods": {
+          "Main": [
+            "run"
+          ]
+        },
+        "references": [
+          {
+            "path": "src/main.rs",
+            "kind": "module",
+            "name": "c4",
+            "visibility": "private",
+            "public": false,
+            "owner_type": "",
+            "params": [],
+            "return_type": "",
+            "signature": "c4"
+          },
+          {
+            "path": "src/main.rs",
+            "kind": "module",
+            "name": "hello",
+            "visibility": "private",
+            "public": false,
+            "owner_type": "",
+            "params": [],
+            "return_type": "",
+            "signature": "hello"
+          },
+          {
+            "path": "src/main.rs",
+            "kind": "type",
+            "name": "Main",
+            "visibility": "public",
+            "public": true,
+            "owner_type": "",
+            "params": [],
+            "return_type": "",
+            "signature": "struct Main"
+          },
+          {
+            "path": "src/main.rs",
+            "kind": "function",
+            "name": "main",
+            "visibility": "private",
+            "public": false,
+            "owner_type": "",
+            "params": [],
+            "return_type": "",
+            "signature": "main()"
+          },
+          {
+            "path": "src/main.rs",
+            "kind": "method",
+            "name": "run",
+            "visibility": "public",
+            "public": true,
+            "owner_type": "Main",
+            "params": [],
+            "return_type": "Result<(), String>",
+            "signature": "run() -> Result<(), String>"
+          }
+        ]
+      },
+      "references": [
+        {
+          "path": "src/main.rs",
+          "kind": "module",
+          "name": "c4",
+          "visibility": "private",
+          "public": false,
+          "owner_type": "",
+          "params": [],
+          "return_type": "",
+          "signature": "c4"
+        },
+        {
+          "path": "src/main.rs",
+          "kind": "module",
+          "name": "hello",
+          "visibility": "private",
+          "public": false,
+          "owner_type": "",
+          "params": [],
+          "return_type": "",
+          "signature": "hello"
+        },
+        {
+          "path": "src/main.rs",
+          "kind": "type",
+          "name": "Main",
+          "visibility": "public",
+          "public": true,
+          "owner_type": "",
+          "params": [],
+          "return_type": "",
+          "signature": "struct Main"
+        },
+        {
+          "path": "src/main.rs",
+          "kind": "function",
+          "name": "main",
+          "visibility": "private",
+          "public": false,
+          "owner_type": "",
+          "params": [],
+          "return_type": "",
+          "signature": "main()"
+        },
+        {
+          "path": "src/main.rs",
+          "kind": "method",
+          "name": "run",
+          "visibility": "public",
+          "public": true,
+          "owner_type": "Main",
+          "params": [],
+          "return_type": "Result<(), String>",
+          "signature": "run() -> Result<(), String>"
+        }
+      ]
+    }
+  },
+  "updated_at": "2026-06-06T11:40:01"
+}

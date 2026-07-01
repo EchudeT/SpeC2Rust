@@ -1,0 +1,30 @@
+{
+  "project": "sds-rust",
+  "path": "/data1/jfeng/tcode_win/output/res1/sds/sds-rust",
+  "timestamp": "2026-06-19T21:11:54+08:00",
+  "summary": {
+    "total_issues": 11,
+    "clippy_warnings": 10,
+    "clippy_errors": 0,
+    "rustfmt_files_needing_format": 1,
+    "tool_errors": 0
+  },
+  "commands": {
+    "clippy": "cargo clippy --workspace --all-targets --message-format short",
+    "rustfmt": "cargo fmt --all -- --check"
+  },
+  "status": {
+    "clippy_exit_code": 0,
+    "rustfmt_exit_code": 1,
+    "clippy_failed": 0,
+    "rustfmt_failed": 0
+  },
+  "artifacts": {
+    "clippy_log": "/data1/jfeng/tcode_win/output/res1/sds/sds-rust/clippy_output.log",
+    "rustfmt_log": "/data1/jfeng/tcode_win/output/res1/sds/sds-rust/rustfmt_output.log"
+  },
+  "clippy_by_category": {"unused":8,"other":2},
+  "clippy_details": [{"file":"src/sds.rs","line":417,"lint":"","message":"value assigned to `in_double` is never read"},{"file":"src/sds.rs","line":452,"lint":"","message":"value assigned to `in_single` is never read"},{"file":"src/sds.rs","line":4,"lint":"","message":"constant `SDS_TYPE_5` is never used"},{"file":"src/sds.rs","line":5,"lint":"","message":"constant `SDS_TYPE_8` is never used"},{"file":"src/sds.rs","line":6,"lint":"","message":"constant `SDS_TYPE_16` is never used"},{"file":"src/sds.rs","line":7,"lint":"","message":"constant `SDS_TYPE_32` is never used"},{"file":"src/sds.rs","line":8,"lint":"","message":"constant `SDS_TYPE_64` is never used"},{"file":"src/sds.rs","line":43,"lint":"","message":"multiple associated items are never used"},{"file":"","line":0,"lint":"","message":"`sds-rust` (bin \"sds-rust\") generated 8 warnings (8 duplicates)"},{"file":"","line":0,"lint":"","message":"`sds-rust` (bin \"sds-rust\" test) generated 8 warnings"}],
+  "clippy_error_details": [],
+  "rustfmt_details": [{"file":"src/sds.rs","line":76},{"file":"src/sds.rs","line":555},{"file":"src/sds.rs","line":676},{"file":"src/sds.rs","line":683},{"file":"src/sds.rs","line":687},{"file":"src/sds.rs","line":692},{"file":"src/sds.rs","line":699},{"file":"src/sds.rs","line":716},{"file":"src/sds.rs","line":743}]
+}

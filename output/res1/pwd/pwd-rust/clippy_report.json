@@ -1,0 +1,30 @@
+{
+  "project": "pwd-rust",
+  "path": "/data1/jfeng/tcode_win/output/res1/pwd/pwd-rust",
+  "timestamp": "2026-06-19T21:11:53+08:00",
+  "summary": {
+    "total_issues": 8,
+    "clippy_warnings": 5,
+    "clippy_errors": 0,
+    "rustfmt_files_needing_format": 3,
+    "tool_errors": 0
+  },
+  "commands": {
+    "clippy": "cargo clippy --workspace --all-targets --message-format short",
+    "rustfmt": "cargo fmt --all -- --check"
+  },
+  "status": {
+    "clippy_exit_code": 0,
+    "rustfmt_exit_code": 1,
+    "clippy_failed": 0,
+    "rustfmt_failed": 0
+  },
+  "artifacts": {
+    "clippy_log": "/data1/jfeng/tcode_win/output/res1/pwd/pwd-rust/clippy_output.log",
+    "rustfmt_log": "/data1/jfeng/tcode_win/output/res1/pwd/pwd-rust/rustfmt_output.log"
+  },
+  "clippy_by_category": {"unused":2,"other":3},
+  "clippy_details": [{"file":"src/pwd.rs","line":22,"lint":"","message":"struct `DevIno` is never constructed"},{"file":"src/pwd.rs","line":260,"lint":"","message":"associated functions `file_name`, `dev_ino`, and `main_root_file_name_03` are never used"},{"file":"src/pwd.rs","line":128,"lint":"","message":"this `if` has identical blocks"},{"file":"","line":0,"lint":"","message":"`pwd-rust` (bin \"pwd-rust\" test) generated 3 warnings"},{"file":"","line":0,"lint":"","message":"`pwd-rust` (bin \"pwd-rust\") generated 3 warnings (3 duplicates)"}],
+  "clippy_error_details": [],
+  "rustfmt_details": [{"file":"src/main.rs","line":1},{"file":"src/progname.rs","line":28},{"file":"src/pwd.rs","line":38}]
+}

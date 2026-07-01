@@ -1,0 +1,48 @@
+warning: `/home/jfeng/.cargo/config` is deprecated in favor of `config.toml`
+  |
+  = help: if you need to support cargo 1.38 or earlier, you can symlink `config` to `config.toml`
+Diff in /data1/jfeng/tcode_win/output/res2/c4/c4-rust/src/c4.rs:273:
+                             c.is_ascii_hexdigit()
+                         } {
+                             let c = self.current_byte();
+[31m-                            self.ival = self.ival.saturating_mul(16).saturating_add(
+(B[m[31m-                                match c {
+(B[m[31m-                                    b'0'..=b'9' => (c - b'0') as i32,
+(B[m[31m-                                    b'a'..=b'f' => (c - b'a' + 10) as i32,
+(B[m[31m-                                    b'A'..=b'F' => (c - b'A' + 10) as i32,
+(B[m[31m-                                    _ => 0,
+(B[m[31m-                                },
+(B[m[31m-                            );
+(B[m[32m+                            self.ival = self.ival.saturating_mul(16).saturating_add(match c {
+(B[m[32m+                                b'0'..=b'9' => (c - b'0') as i32,
+(B[m[32m+                                b'a'..=b'f' => (c - b'a' + 10) as i32,
+(B[m[32m+                                b'A'..=b'F' => (c - b'A' + 10) as i32,
+(B[m[32m+                                _ => 0,
+(B[m[32m+                            });
+(B[m                             self.p += 1;
+                         }
+                     } else {
+Diff in /data1/jfeng/tcode_win/output/res2/c4/c4-rust/src/c4.rs:540:
+         } else if self.tk == b'(' as i32 {
+             self.next()?;
+             if self.tk == TK_INT || self.tk == TK_CHAR {
+[31m-                let mut cast_ty = if self.tk == TK_INT { TYPE_INT } else { TYPE_CHAR };
+(B[m[32m+                let mut cast_ty = if self.tk == TK_INT {
+(B[m[32m+                    TYPE_INT
+(B[m[32m+                } else {
+(B[m[32m+                    TYPE_CHAR
+(B[m[32m+                };
+(B[m                 self.next()?;
+                 while self.tk == TK_MUL {
+                     self.next()?;
+Diff in /data1/jfeng/tcode_win/output/res2/c4/c4-rust/src/c4.rs:965:
+             }
+         }
+ 
+[31m-        let input = std::fs::read_to_string(program)
+(B[m[31m-            .map_err(|_| format!("could not open({})", program))?;
+(B[m[32m+        let input =
+(B[m[32m+            std::fs::read_to_string(program).map_err(|_| format!("could not open({})", program))?;
+(B[m 
+         self.source = input.into_bytes();
+         self.source.push(0);

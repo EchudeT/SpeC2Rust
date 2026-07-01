@@ -1,0 +1,149 @@
+warning: `/home/jfeng/.cargo/config` is deprecated in favor of `config.toml`
+  |
+  = help: if you need to support cargo 1.38 or earlier, you can symlink `config` to `config.toml`
+warning: `/home/jfeng/.cargo/config` is deprecated in favor of `config.toml`
+  |
+  = help: if you need to support cargo 1.38 or earlier, you can symlink `config` to `config.toml`
+    Checking cat-rust v0.1.0 (/data1/jfeng/tcode_win/output/res2/cat/cat-rust)
+src/cat.rs:2:27: warning: unused import: `OpenOptions`
+src/quotearg.rs:178:9: warning: value assigned to `flags` is never read
+src/quotearg.rs:461:9: warning: unreachable pattern: no value can reach this
+src/quotearg.rs:368:5: warning: variable does not need to be mutable
+src/quotearg.rs:369:5: warning: variable does not need to be mutable
+src/quotearg.rs:740:21: warning: variable does not need to be mutable
+src/quotearg.rs:467:23: warning: value assigned to `esc` is never read
+src/cat.rs:238:5: warning: type `cat::CopyOptions` is more private than the item `cat::Cat::cat`: associated function `cat::Cat::cat` is reachable at visibility `pub(crate)`
+src/cat.rs:371:5: warning: type `cat::CopyOptions` is more private than the item `cat::Cat::copy_cat`: associated function `cat::Cat::copy_cat` is reachable at visibility `pub(crate)`
+src/fflush.rs:19:5: warning: type `fflush::SeekOptimizationState` is more private than the item `fflush::FlushStream::seek_optimization_state`: method `fflush::FlushStream::seek_optimization_state` is reachable at visibility `pub(crate)`
+src/fflush.rs:20:5: warning: type `fflush::SeekOptimizationState` is more private than the item `fflush::FlushStream::set_seek_optimization_state`: method `fflush::FlushStream::set_seek_optimization_state` is reachable at visibility `pub(crate)`
+src/fflush.rs:56:5: warning: type `fflush::SeekOptimizationState` is more private than the item `<std::io::BufReader<T> as fflush::FlushStream>::seek_optimization_state`: method `<std::io::BufReader<T> as fflush::FlushStream>::seek_optimization_state` is reachable at visibility `pub(crate)`
+src/fflush.rs:60:5: warning: type `fflush::SeekOptimizationState` is more private than the item `<std::io::BufReader<T> as fflush::FlushStream>::set_seek_optimization_state`: method `<std::io::BufReader<T> as fflush::FlushStream>::set_seek_optimization_state` is reachable at visibility `pub(crate)`
+src/fflush.rs:94:5: warning: type `fflush::SeekOptimizationState` is more private than the item `<std::fs::File as fflush::FlushStream>::seek_optimization_state`: method `<std::fs::File as fflush::FlushStream>::seek_optimization_state` is reachable at visibility `pub(crate)`
+src/fflush.rs:98:5: warning: type `fflush::SeekOptimizationState` is more private than the item `<std::fs::File as fflush::FlushStream>::set_seek_optimization_state`: method `<std::fs::File as fflush::FlushStream>::set_seek_optimization_state` is reachable at visibility `pub(crate)`
+src/fflush.rs:117:5: warning: type `fflush::SeekOptimizationState` is more private than the item `fflush::Fflush::disable_seek_optimization`: associated function `fflush::Fflush::disable_seek_optimization` is reachable at visibility `pub(crate)`
+src/fflush.rs:127:5: warning: type `fflush::SeekOptimizationState` is more private than the item `fflush::Fflush::restore_seek_optimization`: associated function `fflush::Fflush::restore_seek_optimization` is reachable at visibility `pub(crate)`
+src/c_ctype.rs:7:12: warning: struct `CCtype` is never constructed
+src/c_ctype.rs:12:12: warning: multiple associated functions are never used
+src/alignalloc.rs:1:12: warning: struct `Alignalloc` is never constructed
+src/alignalloc.rs:4:12: warning: struct `Allocation` is never constructed
+src/alignalloc.rs:12:12: warning: methods `as_slice`, `as_mut_slice`, `aligned_offset`, `size`, and `alignment` are never used
+src/alignalloc.rs:35:12: warning: associated functions `align_down`, `address_of_pointer_to_malloced`, `allocate_aligned`, and `free_aligned` are never used
+src/binary_io.rs:14:12: warning: struct `BinaryIo` is never constructed
+src/binary_io.rs:18:15: warning: multiple associated items are never used
+src/c32isprint.rs:1:12: warning: struct `C32Isprint` is never constructed
+src/c32isprint.rs:4:12: warning: associated functions `is_print` and `is_print_char` are never used
+src/c_strcasecmp.rs:5:12: warning: struct `CStrcasecmp` is never constructed
+src/c_strcasecmp.rs:13:12: warning: associated functions `compare` and `eq_ignore_case` are never used
+src/cat.rs:134:12: warning: associated functions `next_line_num`, `write_pending`, and `proper_name` are never used
+src/close_stream.rs:3:12: warning: struct `CloseStream` is never constructed
+src/close_stream.rs:6:12: warning: associated function `close` is never used
+src/closeout.rs:8:12: warning: struct `Closeout` is never constructed
+src/closeout.rs:11:8: warning: struct `CloseoutState` is never constructed
+src/closeout.rs:17:8: warning: multiple associated functions are never used
+src/copy_file_range.rs:3:12: warning: struct `CopyFileRange` is never constructed
+src/copy_file_range.rs:6:12: warning: associated function `copy` is never used
+src/exitfail.rs:1:12: warning: struct `Exitfail` is never constructed
+src/exitfail.rs:4:15: warning: associated constant `EXIT_FAILURE` is never used
+src/fadvise.rs:5:12: warning: struct `Fadvise` is never constructed
+src/fadvise.rs:8:12: warning: associated functions `advise_fd` and `advise` are never used
+src/fclose.rs:3:12: warning: struct `Fclose` is never constructed
+src/fclose.rs:6:12: warning: associated functions `nothrow` and `rpl_fclose` are never used
+src/fcntl.rs:5:12: warning: struct `Fcntl` is never constructed
+src/fcntl.rs:8:12: warning: associated functions `duplicate_fd_from`, `dupfd_cloexec`, `klibc_fcntl`, `duplicate_from_min`, and `file_from_fd` are never used
+src/fflush.rs:3:12: warning: struct `Fflush` is never constructed
+src/fflush.rs:6:6: warning: enum `SeekOptimizationState` is never used
+src/fflush.rs:11:11: warning: trait `FlushStream` is never used
+src/fflush.rs:103:11: warning: trait `ReadWriteSeek` is never used
+src/fflush.rs:107:12: warning: multiple associated functions are never used
+src/fpurge.rs:3:12: warning: struct `Fpurge` is never constructed
+src/fpurge.rs:6:12: warning: associated function `fpurge` is never used
+src/fpurge.rs:14:11: warning: trait `PurgeableStream` is never used
+src/fseeko.rs:3:12: warning: struct `Fseeko` is never constructed
+src/fseeko.rs:6:12: warning: associated functions `seek`, `seek_to`, `rewind`, and `position` are never used
+src/full_write.rs:3:12: warning: struct `FullWrite` is never constructed
+src/full_write.rs:6:12: warning: associated function `write_all` is never used
+src/hard_locale.rs:3:12: warning: struct `HardLocale` is never constructed
+src/hard_locale.rs:6:12: warning: associated function `is_hard` is never used
+src/ialloc.rs:1:12: warning: struct `Ialloc` is never constructed
+src/ialloc.rs:4:12: warning: multiple associated functions are never used
+src/localcharset.rs:4:12: warning: struct `Localcharset` is never constructed
+src/localcharset.rs:7:12: warning: struct `TableEntry` is never constructed
+src/localcharset.rs:13:12: warning: multiple associated functions are never used
+src/localcharset.rs:112:7: warning: constant `ALIAS_TABLE` is never used
+src/localcharset.rs:163:7: warning: constant `LOCALE_TABLE` is never used
+src/mbrtoc32.rs:2:8: warning: struct `DecodeState` is never constructed
+src/mbrtoc32.rs:8:10: warning: enum `Mbrtoc32Result` is never used
+src/mbrtoc32.rs:15:12: warning: struct `Mbrtoc32` is never constructed
+src/mbrtoc32.rs:21:12: warning: associated items `mbrtoc_32`, `run_09`, `decode_one`, and `reset` are never used
+src/mbrtoc32.rs:146:4: warning: function `utf8_expected_len` is never used
+src/mbrtoc32.rs:157:4: warning: function `decode_utf8_exact` is never used
+src/mbrtoc32.rs:214:4: warning: function `state_consumed_prefix_len` is never used
+src/mbszero.rs:2:12: warning: struct `Mbszero` is never constructed
+src/mbszero.rs:7:12: warning: multiple associated items are never used
+src/progname.rs:3:9: warning: field `program_name` is never read
+src/propername_lite.rs:4:12: warning: struct `PropernameLite` is never constructed
+src/propername_lite.rs:7:12: warning: associated functions `choose` and `gettext` are never used
+src/quotearg.rs:6:7: warning: constant `INT_BITS` is never used
+src/quotearg.rs:7:7: warning: constant `QUOTE_BITMAP_WORDS` is never used
+src/quotearg.rs:9:7: warning: constant `QA_ELIDE_NULL_BYTES` is never used
+src/quotearg.rs:10:7: warning: constant `QA_ELIDE_OUTER_QUOTES` is never used
+src/quotearg.rs:11:7: warning: constant `QA_SPLIT_TRIGRAPHS` is never used
+src/quotearg.rs:14:10: warning: enum `QuotingStyle` is never used
+src/quotearg.rs:29:12: warning: struct `QuotingOptions` is never constructed
+src/quotearg.rs:50:12: warning: struct `Quotearg` is never constructed
+src/quotearg.rs:56:12: warning: multiple associated items are never used
+src/quotearg.rs:338:4: warning: function `set_char_quoting_on` is never used
+src/quotearg.rs:351:4: warning: function `is_unibyte_locale` is never used
+src/quotearg.rs:355:4: warning: function `default_quotes_for_style` is never used
+src/quotearg.rs:362:4: warning: function `render` is never used
+src/safe_read.rs:3:12: warning: struct `SafeRead` is never constructed
+src/safe_read.rs:6:12: warning: associated functions `read_some` and `system_buffer_size_max` are never used
+src/safe_write.rs:3:12: warning: struct `SafeWrite` is never constructed
+src/safe_write.rs:6:12: warning: associated functions `write_some` and `system_buffer_size_max` are never used
+src/setlocale_null.rs:1:12: warning: struct `SetlocaleNull` is never constructed
+src/setlocale_null.rs:4:12: warning: associated functions `r_with_lock`, `r`, `setlocale_null`, `write_locale_to_buffer`, and `category_env_var` are never used
+src/setlocale_null.rs:101:10: warning: function `libc_lc_all` is never used
+src/setlocale_null.rs:105:10: warning: function `libc_lc_collate` is never used
+src/setlocale_null.rs:109:10: warning: function `libc_lc_ctype` is never used
+src/setlocale_null.rs:113:10: warning: function `libc_lc_monetary` is never used
+src/setlocale_null.rs:117:10: warning: function `libc_lc_numeric` is never used
+src/setlocale_null.rs:121:10: warning: function `libc_lc_time` is never used
+src/setlocale_null.rs:125:10: warning: function `libc_lc_messages` is never used
+src/setlocale_null_unlocked.rs:1:12: warning: struct `SetlocaleNullUnlocked` is never constructed
+src/setlocale_null_unlocked.rs:4:12: warning: associated function `get` is never used
+src/setlocale_null_unlocked.rs:20:4: warning: function `category_env_var` is never used
+src/stdbit.rs:1:12: warning: struct `Stdbit` is never constructed
+src/stdbit.rs:5:12: warning: multiple associated functions are never used
+src/stdc_leading_zeros.rs:1:12: warning: struct `StdcLeadingZeros` is never constructed
+src/stdc_leading_zeros.rs:4:12: warning: associated functions `u8`, `u16`, `u32`, `u64`, `u128`, and `usize` are never used
+src/version.rs:1:11: warning: constant `Version` is never used
+src/version_etc.rs:5:12: warning: struct `VersionEtc` is never constructed
+src/version_etc.rs:8:12: warning: associated functions `write`, `write_from_array`, `emit_bug_reporting_address`, and `copyright_line` are never used
+src/version_etc_fsf.rs:9:12: warning: struct `VersionEtcFsf` is never constructed
+src/version_etc_fsf.rs:16:12: warning: associated functions `write`, `write_from_array`, and `emit_bug_reporting_address` are never used
+src/xalignalloc.rs:4:12: warning: struct `Xalignalloc` is never constructed
+src/xalignalloc.rs:7:12: warning: associated function `allocate` is never used
+src/xalloc_die.rs:1:12: warning: struct `XallocDie` is never constructed
+src/xalloc_die.rs:4:12: warning: associated functions `fail` and `xalloc_die` are never used
+src/xbinary_io.rs:5:12: warning: struct `XbinaryIo` is never constructed
+src/xbinary_io.rs:15:12: warning: associated function `require_mode` is never used
+src/xmalloc.rs:3:12: warning: struct `Xmalloc` is never constructed
+src/xmalloc.rs:6:12: warning: multiple associated functions are never used
+src/binary_io.rs:62:9: warning: this can be `std::io::Error::other(_)`
+src/cat.rs:422:62: warning: using `SeekFrom::Current` to start from current position: help: replace with: `f.stream_position()`
+src/cat.rs:553:9: warning: this `if` statement can be collapsed
+src/fflush.rs:49:9: warning: using `SeekFrom::Current` to start from current position: help: replace with: `self.stream_position()`
+src/fflush.rs:53:9: warning: using `SeekFrom::Current` to start from current position: help: replace with: `self.stream_position()`
+src/fflush.rs:87:9: warning: using `SeekFrom::Current` to start from current position: help: replace with: `self.stream_position()`
+src/fflush.rs:91:9: warning: using `SeekFrom::Current` to start from current position: help: replace with: `self.stream_position()`
+src/mbrtoc32.rs:136:1: warning: this `impl` can be derived
+src/quotearg.rs:88:17: error: this boolean expression contains a logic bug: help: it would look like the following: `true`
+src/quotearg.rs:178:9: error: self-assignment of `flags` to `flags`
+src/quotearg.rs:313:9: warning: field assignment outside of initializer for an instance created with Default::default()
+src/version_etc.rs:143:34: warning: this `if` has identical blocks
+src/version.rs:1:11: warning: constant `Version` should have an upper case name
+warning: `cat-rust` (bin "cat-rust" test) generated 135 warnings
+error: could not compile `cat-rust` (bin "cat-rust" test) due to 2 previous errors; 135 warnings emitted
+warning: build failed, waiting for other jobs to finish...
+warning: `cat-rust` (bin "cat-rust") generated 135 warnings (135 duplicates)
+error: could not compile `cat-rust` (bin "cat-rust") due to 2 previous errors; 135 warnings emitted

@@ -1,0 +1,227 @@
+warning: `/home/jfeng/.cargo/config` is deprecated in favor of `config.toml`
+  |
+  = help: if you need to support cargo 1.38 or earlier, you can symlink `config` to `config.toml`
+Diff in /data1/jfeng/tcode_win/output/res2/shc/shc-rust/src/shc.rs:135:
+         match arg.as_str() {
+             "-e" => {
+                 *index += 1;
+[31m-                let value = args.get(*index).ok_or_else(|| {
+(B[m[31m-                    format!("{} parse: Missing parameter", self.config.my_name)
+(B[m[31m-                })?;
+(B[m[32m+                let value = args
+(B[m[32m+                    .get(*index)
+(B[m[32m+                    .ok_or_else(|| format!("{} parse: Missing parameter", self.config.my_name))?;
+(B[m                 let ts = Self::parse_date(value).ok_or_else(|| {
+                     format!(
+                         "{} parse(-e {}): Not a valid value",
+Diff in /data1/jfeng/tcode_win/output/res2/shc/shc-rust/src/shc.rs:173:
+                 *index += 1;
+                 self.config.inlo = Some(
+                     args.get(*index)
+[31m-                        .ok_or_else(|| {
+(B[m[31m-                            format!("{} parse: Missing parameter", self.config.my_name)
+(B[m[31m-                        })?
+(B[m[32m+                        .ok_or_else(|| format!("{} parse: Missing parameter", self.config.my_name))?
+(B[m                         .clone(),
+                 );
+             }
+Diff in /data1/jfeng/tcode_win/output/res2/shc/shc-rust/src/shc.rs:183:
+                 *index += 1;
+                 self.config.xecc = Some(
+                     args.get(*index)
+[31m-                        .ok_or_else(|| {
+(B[m[31m-                            format!("{} parse: Missing parameter", self.config.my_name)
+(B[m[31m-                        })?
+(B[m[32m+                        .ok_or_else(|| format!("{} parse: Missing parameter", self.config.my_name))?
+(B[m                         .clone(),
+                 );
+             }
+Diff in /data1/jfeng/tcode_win/output/res2/shc/shc-rust/src/shc.rs:193:
+                 *index += 1;
+                 self.config.lsto = Some(
+                     args.get(*index)
+[31m-                        .ok_or_else(|| {
+(B[m[31m-                            format!("{} parse: Missing parameter", self.config.my_name)
+(B[m[31m-                        })?
+(B[m[32m+                        .ok_or_else(|| format!("{} parse: Missing parameter", self.config.my_name))?
+(B[m                         .clone(),
+                 );
+             }
+Diff in /data1/jfeng/tcode_win/output/res2/shc/shc-rust/src/shc.rs:203:
+                 *index += 1;
+                 self.config.file2 = Some(PathBuf::from(
+                     args.get(*index)
+[31m-                        .ok_or_else(|| {
+(B[m[31m-                            format!("{} parse: Missing parameter", self.config.my_name)
+(B[m[31m-                        })?
+(B[m[32m+                        .ok_or_else(|| format!("{} parse: Missing parameter", self.config.my_name))?
+(B[m                         .clone(),
+                 ));
+             }
+Diff in /data1/jfeng/tcode_win/output/res2/shc/shc-rust/src/shc.rs:288:
+         writeln!(o, "#include <fcntl.h>")?;
+         writeln!(o, "#include <sys/stat.h>")?;
+         writeln!(o)?;
+[31m-        writeln!(o, "static const char script_text[] = \"{}\";", script_escaped)?;
+(B[m[31m-        writeln!(o, "static const char shell_path[] = \"{}\";", Self::c_escape_bytes(shell.as_bytes()))?;
+(B[m[32m+        writeln!(
+(B[m[32m+            o,
+(B[m[32m+            "static const char script_text[] = \"{}\";",
+(B[m[32m+            script_escaped
+(B[m[32m+        )?;
+(B[m[32m+        writeln!(
+(B[m[32m+            o,
+(B[m[32m+            "static const char shell_path[] = \"{}\";",
+(B[m[32m+            Self::c_escape_bytes(shell.as_bytes())
+(B[m[32m+        )?;
+(B[m         writeln!(o, "int main(int argc, char **argv) {{")?;
+         writeln!(o, "    char tmpl[] = \"/tmp/shcXXXXXX\";")?;
+         writeln!(o, "    int fd = mkstemp(tmpl);")?;
+Diff in /data1/jfeng/tcode_win/output/res2/shc/shc-rust/src/shc.rs:296:
+         writeln!(o, "    if (fd < 0) {{ perror(\"mkstemp\"); return 1; }}")?;
+         writeln!(o, "    if (write(fd, script_text, sizeof(script_text) - 1) != (ssize_t)(sizeof(script_text) - 1)) {{ perror(\"write\"); close(fd); unlink(tmpl); return 1; }}")?;
+[31m-        writeln!(o, "    if (close(fd) != 0) {{ perror(\"close\"); unlink(tmpl); return 1; }}")?;
+(B[m[31m-        writeln!(o, "    if (chmod(tmpl, 0700) != 0) {{ perror(\"chmod\"); unlink(tmpl); return 1; }}")?;
+(B[m[31m-        writeln!(o, "    char **nargv = (char **)calloc((size_t)argc + 2, sizeof(char*));")?;
+(B[m[32m+        writeln!(
+(B[m[32m+            o,
+(B[m[32m+            "    if (close(fd) != 0) {{ perror(\"close\"); unlink(tmpl); return 1; }}"
+(B[m[32m+        )?;
+(B[m[32m+        writeln!(
+(B[m[32m+            o,
+(B[m[32m+            "    if (chmod(tmpl, 0700) != 0) {{ perror(\"chmod\"); unlink(tmpl); return 1; }}"
+(B[m[32m+        )?;
+(B[m[32m+        writeln!(
+(B[m[32m+            o,
+(B[m[32m+            "    char **nargv = (char **)calloc((size_t)argc + 2, sizeof(char*));"
+(B[m[32m+        )?;
+(B[m         writeln!(o, "    int i;")?;
+[31m-        writeln!(o, "    if (!nargv) {{ perror(\"calloc\"); unlink(tmpl); return 1; }}")?;
+(B[m[32m+        writeln!(
+(B[m[32m+            o,
+(B[m[32m+            "    if (!nargv) {{ perror(\"calloc\"); unlink(tmpl); return 1; }}"
+(B[m[32m+        )?;
+(B[m         writeln!(o, "    nargv[0] = (char*)shell_path;")?;
+         writeln!(o, "    nargv[1] = tmpl;")?;
+         writeln!(o, "    for (i = 1; i < argc; i++) nargv[i + 1] = argv[i];")?;
+Diff in /data1/jfeng/tcode_win/output/res2/shc/shc-rust/src/shc.rs:364:
+     }
+ 
+     pub fn key_with_file(&mut self, path: &Path) -> Result<(), String> {
+[31m-        let meta = fs::metadata(path)
+(B[m[31m-            .map_err(|e| format!("{}: invalid file name: {} {e}", self.config.my_name, path.display()))?;
+(B[m[32m+        let meta = fs::metadata(path).map_err(|e| {
+(B[m[32m+            format!(
+(B[m[32m+                "{}: invalid file name: {} {e}",
+(B[m[32m+                self.config.my_name,
+(B[m[32m+                path.display()
+(B[m[32m+            )
+(B[m[32m+        })?;
+(B[m 
+         let mut control = Vec::new();
+         #[cfg(unix)]
+Diff in /data1/jfeng/tcode_win/output/res2/shc/shc-rust/src/shc.rs:520:
+         out
+     }
+ 
+[31m-    pub fn prnt_array(
+(B[m[31m-        &mut self,
+(B[m[31m-        ptr: &[u8],
+(B[m[31m-        name: &str,
+(B[m[31m-        l: usize,
+(B[m[31m-        cast: Option<&str>,
+(B[m[31m-    ) -> String {
+(B[m[32m+    pub fn prnt_array(&mut self, ptr: &[u8], name: &str, l: usize, cast: Option<&str>) -> String {
+(B[m         let mut m = self.rand_mod(1 + l / 4);
+         let n = self.rand_mod(1 + l / 4);
+         let a = if l == 0 { 0 } else { (self.offset + m) % l };
+Diff in /data1/jfeng/tcode_win/output/res2/shc/shc-rust/src/shc.rs:548:
+         out
+     }
+ 
+[31m-    pub fn dump_array(
+(B[m[31m-        &mut self,
+(B[m[31m-        ptr: &[u8],
+(B[m[31m-        name: &str,
+(B[m[31m-        l: usize,
+(B[m[31m-        cast: Option<&str>,
+(B[m[31m-    ) -> String {
+(B[m[32m+    pub fn dump_array(&mut self, ptr: &[u8], name: &str, l: usize, cast: Option<&str>) -> String {
+(B[m         let mut buf = ptr[..l.min(ptr.len())].to_vec();
+         self.arc_4(&mut buf);
+         self.prnt_array(&buf, name, buf.len(), cast)
+Diff in /data1/jfeng/tcode_win/output/res2/shc/shc-rust/src/shc.rs:667:
+         out.push_str("/* End of data[] */;\n");
+         out.push_str("#define      hide_z\t4096\n");
+         let _ = writeln!(out, "#define SETUID {}", i32::from(self.config.setuid_flag));
+[31m-        let _ = writeln!(out, "#define DEBUGEXEC {}", i32::from(self.config.debugexec_flag));
+(B[m[31m-        let _ = writeln!(out, "#define TRACEABLE {}", i32::from(self.config.traceable_flag));
+(B[m[31m-        let _ = writeln!(out, "#define HARDENING {}", i32::from(self.config.hardening_flag));
+(B[m[31m-        let _ = writeln!(out, "#define BUSYBOXON {}", i32::from(self.config.busyboxon_flag));
+(B[m[32m+        let _ = writeln!(
+(B[m[32m+            out,
+(B[m[32m+            "#define DEBUGEXEC {}",
+(B[m[32m+            i32::from(self.config.debugexec_flag)
+(B[m[32m+        );
+(B[m[32m+        let _ = writeln!(
+(B[m[32m+            out,
+(B[m[32m+            "#define TRACEABLE {}",
+(B[m[32m+            i32::from(self.config.traceable_flag)
+(B[m[32m+        );
+(B[m[32m+        let _ = writeln!(
+(B[m[32m+            out,
+(B[m[32m+            "#define HARDENING {}",
+(B[m[32m+            i32::from(self.config.hardening_flag)
+(B[m[32m+        );
+(B[m[32m+        let _ = writeln!(
+(B[m[32m+            out,
+(B[m[32m+            "#define BUSYBOXON {}",
+(B[m[32m+            i32::from(self.config.busyboxon_flag)
+(B[m[32m+        );
+(B[m         let _ = writeln!(out, "#define MMAP2 {}", i32::from(self.config.mmap2_flag));
+ 
+         fs::write(&output_path, out).map_err(|e| {
+Diff in /data1/jfeng/tcode_win/output/res2/shc/shc-rust/src/shc.rs:680:
+                 output_path.display()
+             )
+         })?;
+[31m-        self.patch_generated_c_with_runtime(&output_path, &self.config.text.clone().unwrap_or_default())
+(B[m[31m-            .map_err(|e| e.to_string())?;
+(B[m[32m+        self.patch_generated_c_with_runtime(
+(B[m[32m+            &output_path,
+(B[m[32m+            &self.config.text.clone().unwrap_or_default(),
+(B[m[32m+        )
+(B[m[32m+        .map_err(|e| e.to_string())?;
+(B[m         Ok(output_path)
+     }
+ 
+Diff in /data1/jfeng/tcode_win/output/res2/shc/shc-rust/src/shc.rs:771:
+ 
+     pub fn do_all(&mut self, args: &[String]) -> Result<(), String> {
+         self.parse_args(args)?;
+[31m-        let file = self
+(B[m[31m-            .config
+(B[m[31m-            .file
+(B[m[31m-            .clone()
+(B[m[31m-            .ok_or_else(|| format!("{} parse(-f): No source file specified", self.config.my_name))?;
+(B[m[32m+        let file = self.config.file.clone().ok_or_else(|| {
+(B[m[32m+            format!(
+(B[m[32m+                "{} parse(-f): No source file specified",
+(B[m[32m+                self.config.my_name
+(B[m[32m+            )
+(B[m[32m+        })?;
+(B[m         let text = self.read_script(&file)?;
+         self.eval_shell(&text)?;
+         self.config.text = Some(text);
+Diff in /data1/jfeng/tcode_win/output/res2/shc/shc-rust/src/shc.rs:811:
+         if !(1..=31).contains(&day) || !(1..=12).contains(&month) || year < 1970 {
+             return None;
+         }
+[31m-        Some(
+(B[m[31m-            ((year - 1970) * 365 + ((month - 1) * 31) + (day - 1))
+(B[m[31m-                .saturating_mul(24 * 60 * 60),
+(B[m[31m-        )
+(B[m[32m+        Some(((year - 1970) * 365 + ((month - 1) * 31) + (day - 1)).saturating_mul(24 * 60 * 60))
+(B[m     }
+ 
+     fn usage_line(&self) -> &'static str {

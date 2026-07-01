@@ -1,0 +1,552 @@
+warning: `/home/jfeng/.cargo/config` is deprecated in favor of `config.toml`
+  |
+  = help: if you need to support cargo 1.38 or earlier, you can symlink `config` to `config.toml`
+Diff in /data1/jfeng/tcode_win/output/res2/cat/cat-rust/src/alignalloc.rs:56:
+         let bytes = vec![0u8; reserve.max(1)];
+ 
+         let base = bytes.as_ptr() as usize;
+[31m-        let aligned = base.checked_add(alignment - 1).map(|n| n & !(alignment - 1))?;
+(B[m[32m+        let aligned = base
+(B[m[32m+            .checked_add(alignment - 1)
+(B[m[32m+            .map(|n| n & !(alignment - 1))?;
+(B[m         let start = aligned.checked_sub(base)?;
+ 
+         if start.checked_add(size)? > bytes.len() {
+Diff in /data1/jfeng/tcode_win/output/res2/cat/cat-rust/src/cat.rs:5:
+ 
+ use crate::c_strcasecmp::CStrcasecmp;
+ use crate::localcharset::Localcharset;
+[31m-use crate::propername_lite::PropernameLite;
+(B[m use crate::progname::Progname;
+[32m+use crate::propername_lite::PropernameLite;
+(B[m 
+ #[derive(Clone, Debug)]
+ struct LineNumberState {
+Diff in /data1/jfeng/tcode_win/output/res2/cat/cat-rust/src/cat.rs:88:
+             let _ = writeln!(out, "Usage: {} [OPTION]... [FILE]...", program);
+             let _ = writeln!(out, "Concatenate FILE(s) to standard output.");
+             let _ = writeln!(out);
+[32m+            let _ = writeln!(out, "  -A, --show-all           equivalent to -vET");
+(B[m             let _ = writeln!(
+                 out,
+[31m-                "  -A, --show-all           equivalent to -vET"
+(B[m[31m-            );
+(B[m[31m-            let _ = writeln!(
+(B[m[31m-                out,
+(B[m                 "  -b, --number-nonblank    number nonempty output lines, overrides -n"
+             );
+             let _ = writeln!(out, "  -e                       equivalent to -vE");
+Diff in /data1/jfeng/tcode_win/output/res2/cat/cat-rust/src/cat.rs:125:
+                 "  {} f - g  Output f's contents, then standard input, then g's contents.",
+                 program
+             );
+[31m-            let _ = writeln!(out, "  {}        Copy standard input to standard output.", program);
+(B[m[32m+            let _ = writeln!(
+(B[m[32m+                out,
+(B[m[32m+                "  {}        Copy standard input to standard output.",
+(B[m[32m+                program
+(B[m[32m+            );
+(B[m         }
+ 
+         std::process::exit(status);
+Diff in /data1/jfeng/tcode_win/output/res2/cat/cat-rust/src/cat.rs:241:
+         writer: &mut W,
+         options: CopyOptions,
+     ) -> io::Result<bool> {
+[31m-        Self::cat_with_state(&mut state.transform, &mut state.output, reader, writer, options)
+(B[m[32m+        Self::cat_with_state(
+(B[m[32m+            &mut state.transform,
+(B[m[32m+            &mut state.output,
+(B[m[32m+            reader,
+(B[m[32m+            writer,
+(B[m[32m+            options,
+(B[m[32m+        )
+(B[m     }
+ 
+     fn cat_with_state<R: Read, W: Write>(
+Diff in /data1/jfeng/tcode_win/output/res2/cat/cat-rust/src/cat.rs:419:
+             return true;
+         }
+ 
+[31m-        let in_pos = match file.try_clone().and_then(|mut f| f.seek(SeekFrom::Current(0))) {
+(B[m[32m+        let in_pos = match file
+(B[m[32m+            .try_clone()
+(B[m[32m+            .and_then(|mut f| f.seek(SeekFrom::Current(0)))
+(B[m[32m+        {
+(B[m             Ok(pos) => pos,
+             Err(_) => return false,
+         };
+Diff in /data1/jfeng/tcode_win/output/res2/cat/cat-rust/src/cat.rs:560:
+             ok = false;
+         }
+ 
+[31m-        if ok { 0 } else { 1 }
+(B[m[32m+        if ok {
+(B[m[32m+            0
+(B[m[32m+        } else {
+(B[m[32m+            1
+(B[m[32m+        }
+(B[m     }
+ 
+     pub fn proper_name(name_ascii: &str, name_utf8: &str) -> String {
+Diff in /data1/jfeng/tcode_win/output/res2/cat/cat-rust/src/cat.rs:577:
+     pub fn args_os() -> Vec<std::ffi::OsString> {
+         env::args_os().collect()
+     }
+[31m-
+(B[m }
+ 
+Diff in /data1/jfeng/tcode_win/output/res2/cat/cat-rust/src/closeout.rs:1:
+ thread_local! {
+     static STATE: RefCell<CloseoutState> = RefCell::new(CloseoutState::default());
+ }
+[32m+use std::cell::RefCell;
+(B[m use std::io::{self, Write};
+ use std::process;
+[31m-use std::cell::RefCell;
+(B[m 
+ pub struct Closeout;
+ 
+Diff in /data1/jfeng/tcode_win/output/res2/cat/cat-rust/src/main.rs:1:
+[31m-mod c_ctype;
+(B[m mod alignalloc;
+ mod binary_io;
+ mod c32isprint;
+Diff in /data1/jfeng/tcode_win/output/res2/cat/cat-rust/src/main.rs:5:
+[32m+mod c_ctype;
+(B[m mod c_strcasecmp;
+ mod cat;
+ mod close_stream;
+Diff in /data1/jfeng/tcode_win/output/res2/cat/cat-rust/src/mbrtoc32.rs:118:
+         if ch == 0 {
+             Mbrtoc32Result::Null { bytes: 0 }
+         } else {
+[31m-            let consumed_from_input = expected.saturating_sub(state_consumed_prefix_len(expected, n, seq, input));
+(B[m[32m+            let consumed_from_input =
+(B[m[32m+                expected.saturating_sub(state_consumed_prefix_len(expected, n, seq, input));
+(B[m             Mbrtoc32Result::Complete {
+                 ch,
+                 bytes: consumed_from_input,
+Diff in /data1/jfeng/tcode_win/output/res2/cat/cat-rust/src/mbrtoc32.rs:130:
+         self.partial = [0; 4];
+         self.len = 0;
+     }
+[31m-
+(B[m }
+ 
+ impl Default for Mbrtoc32 {
+Diff in /data1/jfeng/tcode_win/output/res2/cat/cat-rust/src/mbrtoc32.rs:142:
+     }
+ }
+ 
+[31m-
+(B[m fn utf8_expected_len(first: u8) -> Option<usize> {
+     match first {
+         0x00 => Some(0),
+Diff in /data1/jfeng/tcode_win/output/res2/cat/cat-rust/src/mbrtoc32.rs:179:
+                 _ if !(0xe0..=0xef).contains(&b0) => return None,
+                 _ => {}
+             }
+[31m-            Some(
+(B[m[31m-                (((b0 & 0x0f) as u32) << 12)
+(B[m[31m-                    | (((b1 & 0x3f) as u32) << 6)
+(B[m[31m-                    | ((b2 & 0x3f) as u32),
+(B[m[31m-            )
+(B[m[32m+            Some((((b0 & 0x0f) as u32) << 12) | (((b1 & 0x3f) as u32) << 6) | ((b2 & 0x3f) as u32))
+(B[m         }
+         4 => {
+             let b0 = bytes[0];
+Diff in /data1/jfeng/tcode_win/output/res2/cat/cat-rust/src/progname.rs:3:
+     pub program_name: String,
+ }
+ 
+[31m-
+(B[m impl Progname {
+     pub fn set_program_name(argv0: Option<&str>) -> Self {
+         let original = match argv0 {
+Diff in /data1/jfeng/tcode_win/output/res2/cat/cat-rust/src/progname.rs:23:
+                 };
+             }
+         }
+[31m-
+(B[m 
+         Self {
+             program_name: stored.to_owned(),
+Diff in /data1/jfeng/tcode_win/output/res2/cat/cat-rust/src/quotearg.rs:129:
+         left_quote: Option<&[u8]>,
+         right_quote: Option<&[u8]>,
+     ) -> usize {
+[31m-        let rendered = render(src, src.len(), style, flags, quote_these_too, left_quote, right_quote);
+(B[m[32m+        let rendered = render(
+(B[m[32m+            src,
+(B[m[32m+            src.len(),
+(B[m[32m+            style,
+(B[m[32m+            flags,
+(B[m[32m+            quote_these_too,
+(B[m[32m+            left_quote,
+(B[m[32m+            right_quote,
+(B[m[32m+        );
+(B[m         *dst = String::from_utf8_lossy(&rendered).into_owned();
+         rendered.len()
+     }
+Diff in /data1/jfeng/tcode_win/output/res2/cat/cat-rust/src/quotearg.rs:156:
+     pub fn alloc_mem(&self, src: &[u8]) -> String {
+         let mut flags = self.options.flags;
+         flags &= !QA_ELIDE_NULL_BYTES;
+[31m-        String::from_utf8_lossy(&render(src, src.len(), self.options.style, flags, Some(&self.options.quote_these_too), self.options.left_quote.as_deref(), self.options.right_quote.as_deref())).into_owned()
+(B[m[32m+        String::from_utf8_lossy(&render(
+(B[m[32m+            src,
+(B[m[32m+            src.len(),
+(B[m[32m+            self.options.style,
+(B[m[32m+            flags,
+(B[m[32m+            Some(&self.options.quote_these_too),
+(B[m[32m+            self.options.left_quote.as_deref(),
+(B[m[32m+            self.options.right_quote.as_deref(),
+(B[m[32m+        ))
+(B[m[32m+        .into_owned()
+(B[m     }
+ 
+     pub fn n_options(&mut self, n: usize, src: &[u8], options: &QuotingOptions) -> String {
+Diff in /data1/jfeng/tcode_win/output/res2/cat/cat-rust/src/quotearg.rs:553:
+                     && (flags & QA_SPLIT_TRIGRAPHS) != 0
+                     && i + 2 < argsize
+                     && arg[i + 1] == b'?'
+[31m-                    && matches!(arg[i + 2], b'!' | b'\'' | b'(' | b')' | b'-' | b'/' | b'<' | b'=' | b'>')
+(B[m[32m+                    && matches!(
+(B[m[32m+                        arg[i + 2],
+(B[m[32m+                        b'!' | b'\'' | b'(' | b')' | b'-' | b'/' | b'<' | b'=' | b'>'
+(B[m[32m+                    )
+(B[m                 {
+                     if elide_outer_quotes {
+                         return render(
+Diff in /data1/jfeng/tcode_win/output/res2/cat/cat-rust/src/quotearg.rs:607:
+                 if backslash_escapes {
+                     c = esc;
+                     if elide_outer_quotes {
+[31m-                        return render(arg, argsize, quoting_style, flags & !QA_ELIDE_OUTER_QUOTES, None, left_quote, right_quote);
+(B[m[32m+                        return render(
+(B[m[32m+                            arg,
+(B[m[32m+                            argsize,
+(B[m[32m+                            quoting_style,
+(B[m[32m+                            flags & !QA_ELIDE_OUTER_QUOTES,
+(B[m[32m+                            None,
+(B[m[32m+                            left_quote,
+(B[m[32m+                            right_quote,
+(B[m[32m+                        );
+(B[m                     }
+                     escaping = true;
+                     if quoting_style == QuotingStyle::ShellAlways && !pending_shell_escape_end {
+Diff in /data1/jfeng/tcode_win/output/res2/cat/cat-rust/src/quotearg.rs:622:
+                 if backslash_escapes {
+                     c = esc;
+                     if elide_outer_quotes {
+[31m-                        return render(arg, argsize, quoting_style, flags & !QA_ELIDE_OUTER_QUOTES, None, left_quote, right_quote);
+(B[m[32m+                        return render(
+(B[m[32m+                            arg,
+(B[m[32m+                            argsize,
+(B[m[32m+                            quoting_style,
+(B[m[32m+                            flags & !QA_ELIDE_OUTER_QUOTES,
+(B[m[32m+                            None,
+(B[m[32m+                            left_quote,
+(B[m[32m+                            right_quote,
+(B[m[32m+                        );
+(B[m                     }
+                     escaping = true;
+                     if quoting_style == QuotingStyle::ShellAlways && !pending_shell_escape_end {
+Diff in /data1/jfeng/tcode_win/output/res2/cat/cat-rust/src/quotearg.rs:635:
+             b'\n' => {
+                 esc = b'n';
+                 if quoting_style == QuotingStyle::ShellAlways && elide_outer_quotes {
+[31m-                    return render(arg, argsize, quoting_style, flags & !QA_ELIDE_OUTER_QUOTES, None, left_quote, right_quote);
+(B[m[32m+                    return render(
+(B[m[32m+                        arg,
+(B[m[32m+                        argsize,
+(B[m[32m+                        quoting_style,
+(B[m[32m+                        flags & !QA_ELIDE_OUTER_QUOTES,
+(B[m[32m+                        None,
+(B[m[32m+                        left_quote,
+(B[m[32m+                        right_quote,
+(B[m[32m+                    );
+(B[m                 }
+                 if backslash_escapes {
+                     c = esc;
+Diff in /data1/jfeng/tcode_win/output/res2/cat/cat-rust/src/quotearg.rs:650:
+             b'\r' => {
+                 esc = b'r';
+                 if quoting_style == QuotingStyle::ShellAlways && elide_outer_quotes {
+[31m-                    return render(arg, argsize, quoting_style, flags & !QA_ELIDE_OUTER_QUOTES, None, left_quote, right_quote);
+(B[m[32m+                    return render(
+(B[m[32m+                        arg,
+(B[m[32m+                        argsize,
+(B[m[32m+                        quoting_style,
+(B[m[32m+                        flags & !QA_ELIDE_OUTER_QUOTES,
+(B[m[32m+                        None,
+(B[m[32m+                        left_quote,
+(B[m[32m+                        right_quote,
+(B[m[32m+                    );
+(B[m                 }
+                 if backslash_escapes {
+                     c = esc;
+Diff in /data1/jfeng/tcode_win/output/res2/cat/cat-rust/src/quotearg.rs:665:
+             b'\t' => {
+                 esc = b't';
+                 if quoting_style == QuotingStyle::ShellAlways && elide_outer_quotes {
+[31m-                    return render(arg, argsize, quoting_style, flags & !QA_ELIDE_OUTER_QUOTES, None, left_quote, right_quote);
+(B[m[32m+                    return render(
+(B[m[32m+                        arg,
+(B[m[32m+                        argsize,
+(B[m[32m+                        quoting_style,
+(B[m[32m+                        flags & !QA_ELIDE_OUTER_QUOTES,
+(B[m[32m+                        None,
+(B[m[32m+                        left_quote,
+(B[m[32m+                        right_quote,
+(B[m[32m+                    );
+(B[m                 }
+                 if backslash_escapes {
+                     c = esc;
+Diff in /data1/jfeng/tcode_win/output/res2/cat/cat-rust/src/quotearg.rs:682:
+                 if backslash_escapes {
+                     c = esc;
+                     if elide_outer_quotes {
+[31m-                        return render(arg, argsize, quoting_style, flags & !QA_ELIDE_OUTER_QUOTES, None, left_quote, right_quote);
+(B[m[32m+                        return render(
+(B[m[32m+                            arg,
+(B[m[32m+                            argsize,
+(B[m[32m+                            quoting_style,
+(B[m[32m+                            flags & !QA_ELIDE_OUTER_QUOTES,
+(B[m[32m+                            None,
+(B[m[32m+                            left_quote,
+(B[m[32m+                            right_quote,
+(B[m[32m+                        );
+(B[m                     }
+                     escaping = true;
+                     if quoting_style == QuotingStyle::ShellAlways && !pending_shell_escape_end {
+Diff in /data1/jfeng/tcode_win/output/res2/cat/cat-rust/src/quotearg.rs:696:
+                 esc = b'\\';
+                 if quoting_style == QuotingStyle::ShellAlways {
+                     if elide_outer_quotes {
+[31m-                        return render(arg, argsize, quoting_style, flags & !QA_ELIDE_OUTER_QUOTES, None, left_quote, right_quote);
+(B[m[32m+                        return render(
+(B[m[32m+                            arg,
+(B[m[32m+                            argsize,
+(B[m[32m+                            quoting_style,
+(B[m[32m+                            flags & !QA_ELIDE_OUTER_QUOTES,
+(B[m[32m+                            None,
+(B[m[32m+                            left_quote,
+(B[m[32m+                            right_quote,
+(B[m[32m+                        );
+(B[m                     }
+                 } else if backslash_escapes && elide_outer_quotes && quote_string_len > 0 {
+                 } else if backslash_escapes {
+Diff in /data1/jfeng/tcode_win/output/res2/cat/cat-rust/src/quotearg.rs:705:
+                     out.push(b'\\');
+                 }
+             }
+[31m-            b'{' | b'}' => {
+(B[m[31m-                if argsize == 1 {}
+(B[m[31m-            }
+(B[m[31m-            b'#' | b'~' | b' ' | b'!' | b'"' | b'$' | b'&' | b'(' | b')' | b'*' | b';' | b'<' | b'='
+(B[m[31m-            | b'>' | b'[' | b'^' | b'`' | b'|' => {
+(B[m[32m+            b'{' | b'}' => if argsize == 1 {},
+(B[m[32m+            b'#' | b'~' | b' ' | b'!' | b'"' | b'$' | b'&' | b'(' | b')' | b'*' | b';' | b'<'
+(B[m[32m+            | b'=' | b'>' | b'[' | b'^' | b'`' | b'|' => {
+(B[m                 if c == b' ' {
+                     c_and_shell_quote_compat = true;
+                 }
+Diff in /data1/jfeng/tcode_win/output/res2/cat/cat-rust/src/quotearg.rs:716:
+                 if quoting_style == QuotingStyle::ShellAlways && elide_outer_quotes {
+[31m-                    return render(arg, argsize, quoting_style, flags & !QA_ELIDE_OUTER_QUOTES, None, left_quote, right_quote);
+(B[m[32m+                    return render(
+(B[m[32m+                        arg,
+(B[m[32m+                        argsize,
+(B[m[32m+                        quoting_style,
+(B[m[32m+                        flags & !QA_ELIDE_OUTER_QUOTES,
+(B[m[32m+                        None,
+(B[m[32m+                        left_quote,
+(B[m[32m+                        right_quote,
+(B[m[32m+                    );
+(B[m                 }
+             }
+             b'\'' => {
+Diff in /data1/jfeng/tcode_win/output/res2/cat/cat-rust/src/quotearg.rs:722:
+                 c_and_shell_quote_compat = true;
+                 if quoting_style == QuotingStyle::ShellAlways {
+                     if elide_outer_quotes {
+[31m-                        return render(arg, argsize, quoting_style, flags & !QA_ELIDE_OUTER_QUOTES, None, left_quote, right_quote);
+(B[m[32m+                        return render(
+(B[m[32m+                            arg,
+(B[m[32m+                            argsize,
+(B[m[32m+                            quoting_style,
+(B[m[32m+                            flags & !QA_ELIDE_OUTER_QUOTES,
+(B[m[32m+                            None,
+(B[m[32m+                            left_quote,
+(B[m[32m+                            right_quote,
+(B[m[32m+                        );
+(B[m                     }
+                     orig_probe = true;
+                     out.extend_from_slice(b"'\\''");
+Diff in /data1/jfeng/tcode_win/output/res2/cat/cat-rust/src/quotearg.rs:731:
+                     continue;
+                 }
+             }
+[31m-            b'%' | b'+' | b',' | b'-' | b'.' | b'/' | b'0'..=b'9' | b':' | b'A'..=b'Z' | b']' | b'_'
+(B[m[32m+            b'%'
+(B[m[32m+            | b'+'
+(B[m[32m+            | b','
+(B[m[32m+            | b'-'
+(B[m[32m+            | b'.'
+(B[m[32m+            | b'/'
+(B[m[32m+            | b'0'..=b'9'
+(B[m[32m+            | b':'
+(B[m[32m+            | b'A'..=b'Z'
+(B[m[32m+            | b']'
+(B[m[32m+            | b'_'
+(B[m             | b'a'..=b'z' => {
+                 c_and_shell_quote_compat = true;
+             }
+Diff in /data1/jfeng/tcode_win/output/res2/cat/cat-rust/src/quotearg.rs:779:
+                     loop {
+                         if backslash_escapes && !printable {
+                             if elide_outer_quotes {
+[31m-                                return render(arg, argsize, quoting_style, flags & !QA_ELIDE_OUTER_QUOTES, None, left_quote, right_quote);
+(B[m[32m+                                return render(
+(B[m[32m+                                    arg,
+(B[m[32m+                                    argsize,
+(B[m[32m+                                    quoting_style,
+(B[m[32m+                                    flags & !QA_ELIDE_OUTER_QUOTES,
+(B[m[32m+                                    None,
+(B[m[32m+                                    left_quote,
+(B[m[32m+                                    right_quote,
+(B[m[32m+                                );
+(B[m                             }
+                             escaping = true;
+[31m-                            if quoting_style == QuotingStyle::ShellAlways && !pending_shell_escape_end {
+(B[m[32m+                            if quoting_style == QuotingStyle::ShellAlways
+(B[m[32m+                                && !pending_shell_escape_end
+(B[m[32m+                            {
+(B[m                                 out.extend_from_slice(b"'$'");
+                                 pending_shell_escape_end = true;
+                             }
+Diff in /data1/jfeng/tcode_win/output/res2/cat/cat-rust/src/quotearg.rs:813:
+             .map(|bitmap| ((bitmap[(c as usize) / INT_BITS] >> ((c as usize) % INT_BITS)) & 1) != 0)
+             .unwrap_or(false);
+ 
+[31m-        if (((backslash_escapes && quoting_style != QuotingStyle::ShellAlways) || elide_outer_quotes)
+(B[m[32m+        if (((backslash_escapes && quoting_style != QuotingStyle::ShellAlways)
+(B[m[32m+            || elide_outer_quotes)
+(B[m             && quote_forced)
+             || is_right_quote
+         {
+Diff in /data1/jfeng/tcode_win/output/res2/cat/cat-rust/src/quotearg.rs:820:
+             if elide_outer_quotes {
+[31m-                return render(arg, argsize, quoting_style, flags & !QA_ELIDE_OUTER_QUOTES, None, left_quote, right_quote);
+(B[m[32m+                return render(
+(B[m[32m+                    arg,
+(B[m[32m+                    argsize,
+(B[m[32m+                    quoting_style,
+(B[m[32m+                    flags & !QA_ELIDE_OUTER_QUOTES,
+(B[m[32m+                    None,
+(B[m[32m+                    left_quote,
+(B[m[32m+                    right_quote,
+(B[m[32m+                );
+(B[m             }
+             escaping = true;
+             if quoting_style == QuotingStyle::ShellAlways && !pending_shell_escape_end {
+Diff in /data1/jfeng/tcode_win/output/res2/cat/cat-rust/src/quotearg.rs:843:
+     }
+ 
+     if out.is_empty() && quoting_style == QuotingStyle::ShellAlways && elide_outer_quotes {
+[31m-        return render(arg, argsize, quoting_style, flags & !QA_ELIDE_OUTER_QUOTES, None, left_quote, right_quote);
+(B[m[32m+        return render(
+(B[m[32m+            arg,
+(B[m[32m+            argsize,
+(B[m[32m+            quoting_style,
+(B[m[32m+            flags & !QA_ELIDE_OUTER_QUOTES,
+(B[m[32m+            None,
+(B[m[32m+            left_quote,
+(B[m[32m+            right_quote,
+(B[m[32m+        );
+(B[m     }
+ 
+[31m-    if quoting_style == QuotingStyle::ShellAlways && !elide_outer_quotes && encountered_single_quote {
+(B[m[32m+    if quoting_style == QuotingStyle::ShellAlways && !elide_outer_quotes && encountered_single_quote
+(B[m[32m+    {
+(B[m         if all_c_and_shell_quote_compat {
+[31m-            return render(arg, argsize, QuotingStyle::C, flags, quote_these_too, left_quote, right_quote);
+(B[m[32m+            return render(
+(B[m[32m+                arg,
+(B[m[32m+                argsize,
+(B[m[32m+                QuotingStyle::C,
+(B[m[32m+                flags,
+(B[m[32m+                quote_these_too,
+(B[m[32m+                left_quote,
+(B[m[32m+                right_quote,
+(B[m[32m+            );
+(B[m         } else if orig_probe {
+             out.clear();
+[31m-            return render(arg, argsize, quoting_style, flags, quote_these_too, left_quote, right_quote);
+(B[m[32m+            return render(
+(B[m[32m+                arg,
+(B[m[32m+                argsize,
+(B[m[32m+                quoting_style,
+(B[m[32m+                flags,
+(B[m[32m+                quote_these_too,
+(B[m[32m+                left_quote,
+(B[m[32m+                right_quote,
+(B[m[32m+            );
+(B[m         }
+     }
+ 
+Diff in /data1/jfeng/tcode_win/output/res2/cat/cat-rust/src/version_etc.rs:63:
+             7 => writeln!(
+                 stream,
+                 "Written by {}, {}, {},\n{}, {}, {}, and {}.",
+[31m-                authors[0],
+(B[m[31m-                authors[1],
+(B[m[31m-                authors[2],
+(B[m[31m-                authors[3],
+(B[m[31m-                authors[4],
+(B[m[31m-                authors[5],
+(B[m[31m-                authors[6]
+(B[m[32m+                authors[0], authors[1], authors[2], authors[3], authors[4], authors[5], authors[6]
+(B[m             )?,
+             8 => writeln!(
+                 stream,
+Diff in /data1/jfeng/tcode_win/output/res2/cat/cat-rust/src/version_etc.rs:136:
+         writeln!(stream, "Report bugs to: {}", package_bugreport)?;
+ 
+         if let (Some(packager), Some(packager_bug_reports)) = (packager, packager_bug_reports) {
+[31m-            writeln!(stream, "Report {} bugs to: {}", packager, packager_bug_reports)?;
+(B[m[32m+            writeln!(
+(B[m[32m+                stream,
+(B[m[32m+                "Report {} bugs to: {}",
+(B[m[32m+                packager, packager_bug_reports
+(B[m[32m+            )?;
+(B[m         }
+ 
+         let home_page = package_url.unwrap_or("https://www.gnu.org/software/");
+Diff in /data1/jfeng/tcode_win/output/res2/cat/cat-rust/src/xmalloc.rs:58:
+         Self::x_2_nrealloc(buffer, current_size, 1)
+     }
+ 
+[31m-    pub fn x_2_nrealloc(buffer: Option<Vec<u8>>, current_count: &mut usize, element_size: usize) -> Vec<u8> {
+(B[m[32m+    pub fn x_2_nrealloc(
+(B[m[32m+        buffer: Option<Vec<u8>>,
+(B[m[32m+        current_count: &mut usize,
+(B[m[32m+        element_size: usize,
+(B[m[32m+    ) -> Vec<u8> {
+(B[m         if element_size == 0 {
+             XallocDie::fail();
+         }
+Diff in /data1/jfeng/tcode_win/output/res2/cat/cat-rust/src/xmalloc.rs:183:
+             XallocDie::fail();
+         }
+         let total = Self::checked_add(len, 1);
+[31m-        let mut result = Self::imalloc(
+(B[m[31m-            isize::try_from(total).unwrap_or_else(|_| XallocDie::fail()),
+(B[m[31m-        );
+(B[m[32m+        let mut result =
+(B[m[32m+            Self::imalloc(isize::try_from(total).unwrap_or_else(|_| XallocDie::fail()));
+(B[m         result.resize(total, 0);
+         result[..len].copy_from_slice(&data[..len]);
+         result

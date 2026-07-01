@@ -1,0 +1,20 @@
+warning: `/home/jfeng/.cargo/config` is deprecated in favor of `config.toml`
+  |
+  = help: if you need to support cargo 1.38 or earlier, you can symlink `config` to `config.toml`
+warning: `/home/jfeng/.cargo/config` is deprecated in favor of `config.toml`
+  |
+  = help: if you need to support cargo 1.38 or earlier, you can symlink `config` to `config.toml`
+    Checking sds-rust v0.1.0 (/data1/jfeng/tcode_win/output/res2/sds/sds-rust)
+src/sds.rs:5:7: warning: constant `SDS_TYPE_5` is never used
+src/sds.rs:6:7: warning: constant `SDS_TYPE_8` is never used
+src/sds.rs:7:7: warning: constant `SDS_TYPE_16` is never used
+src/sds.rs:8:7: warning: constant `SDS_TYPE_32` is never used
+src/sds.rs:9:7: warning: constant `SDS_TYPE_64` is never used
+src/sds.rs:17:12: warning: multiple associated items are never used
+src/sds.rs:791:5: warning: variants `Sds` and `Int` are never constructed
+src/sds.rs:247:33: warning: the borrowed expression implements the required traits: help: change this to: `[bytes[i + 1]]`
+src/sds.rs:383:33: warning: the borrowed expression implements the required traits: help: change this to: `[ch]`
+src/sds.rs:401:33: warning: the borrowed expression implements the required traits: help: change this to: `[c]`
+warning: `sds-rust` (bin "sds-rust") generated 10 warnings (5 duplicates) (run `cargo clippy --fix --bin "sds-rust" -p sds-rust -- ` to apply 3 suggestions)
+warning: `sds-rust` (bin "sds-rust" test) generated 10 warnings (5 duplicates)
+    Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.26s

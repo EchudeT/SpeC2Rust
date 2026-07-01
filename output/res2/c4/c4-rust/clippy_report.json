@@ -1,0 +1,30 @@
+{
+  "project": "c4-rust",
+  "path": "/data1/jfeng/tcode_win/output/res2/c4/c4-rust",
+  "timestamp": "2026-06-19T21:21:22+08:00",
+  "summary": {
+    "total_issues": 12,
+    "clippy_warnings": 11,
+    "clippy_errors": 0,
+    "rustfmt_files_needing_format": 1,
+    "tool_errors": 0
+  },
+  "commands": {
+    "clippy": "cargo clippy --workspace --all-targets --message-format short",
+    "rustfmt": "cargo fmt --all -- --check"
+  },
+  "status": {
+    "clippy_exit_code": 0,
+    "rustfmt_exit_code": 1,
+    "clippy_failed": 0,
+    "rustfmt_failed": 0
+  },
+  "artifacts": {
+    "clippy_log": "/data1/jfeng/tcode_win/output/res2/c4/c4-rust/clippy_output.log",
+    "rustfmt_log": "/data1/jfeng/tcode_win/output/res2/c4/c4-rust/rustfmt_output.log"
+  },
+  "clippy_by_category": {"other":5,"unused":6},
+  "clippy_details": [{"file":"src/c4.rs","line":228,"lint":"","message":"type `c4::C4Error` is more private than the item `c4::C4::next`: method `c4::C4::next` is reachable at visibility `pub(crate)`"},{"file":"src/c4.rs","line":446,"lint":"","message":"type `c4::C4Error` is more private than the item `c4::C4::expr`: method `c4::C4::expr` is reachable at visibility `pub(crate)`"},{"file":"src/c4.rs","line":851,"lint":"","message":"type `c4::C4Error` is more private than the item `c4::C4::stmt`: method `c4::C4::stmt` is reachable at visibility `pub(crate)`"},{"file":"src/c4.rs","line":4,"lint":"","message":"constant `TK_FUN` is never used"},{"file":"src/c4.rs","line":5,"lint":"","message":"constant `TK_SYS` is never used"},{"file":"src/c4.rs","line":6,"lint":"","message":"constant `TK_GLO` is never used"},{"file":"src/c4.rs","line":7,"lint":"","message":"constant `TK_LOC` is never used"},{"file":"src/c4.rs","line":58,"lint":"","message":"constant `OP_ENT` is never used"},{"file":"src/c4.rs","line":204,"lint":"","message":"associated items `patch_to_current` and `run_hello` are never used"},{"file":"","line":0,"lint":"","message":"`c4-rust` (bin \"c4-rust\" test) generated 9 warnings (9 duplicates)"},{"file":"","line":0,"lint":"","message":"`c4-rust` (bin \"c4-rust\") generated 9 warnings"}],
+  "clippy_error_details": [],
+  "rustfmt_details": [{"file":"src/c4.rs","line":273},{"file":"src/c4.rs","line":540},{"file":"src/c4.rs","line":965}]
+}

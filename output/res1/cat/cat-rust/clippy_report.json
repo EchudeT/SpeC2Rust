@@ -1,0 +1,30 @@
+{
+  "project": "cat-rust",
+  "path": "/data1/jfeng/tcode_win/output/res1/cat/cat-rust",
+  "timestamp": "2026-06-19T21:36:04+08:00",
+  "summary": {
+    "total_issues": 4,
+    "clippy_warnings": 4,
+    "clippy_errors": 0,
+    "rustfmt_files_needing_format": 0,
+    "tool_errors": 0
+  },
+  "commands": {
+    "clippy": "cargo clippy --workspace --all-targets --message-format short",
+    "rustfmt": "cargo fmt --all -- --check"
+  },
+  "status": {
+    "clippy_exit_code": 0,
+    "rustfmt_exit_code": 0,
+    "clippy_failed": 0,
+    "rustfmt_failed": 0
+  },
+  "artifacts": {
+    "clippy_log": "/data1/jfeng/tcode_win/output/res1/cat/cat-rust/clippy_output.log",
+    "rustfmt_log": "/data1/jfeng/tcode_win/output/res1/cat/cat-rust/rustfmt_output.log"
+  },
+  "clippy_by_category": {"unused":2,"other":2},
+  "clippy_details": [{"file":"src/cat.rs","line":4,"lint":"","message":"unused import: `std::os::unix::io::AsRawFd`"},{"file":"src/cat.rs","line":77,"lint":"","message":"associated functions `show_nonprinting`, `show_tabs`, `number_nonblank`, `show_ends`, and `squeeze_blank` are never used"},{"file":"","line":0,"lint":"","message":"`cat-rust` (bin \"cat-rust\") generated 2 warnings (run `cargo clippy --fix --bin \"cat-rust\" -p cat-rust -- ` to apply 1 suggestion)"},{"file":"","line":0,"lint":"","message":"`cat-rust` (bin \"cat-rust\" test) generated 2 warnings (2 duplicates)"}],
+  "clippy_error_details": [],
+  "rustfmt_details": []
+}

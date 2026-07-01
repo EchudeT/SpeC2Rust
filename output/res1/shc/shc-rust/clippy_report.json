@@ -1,0 +1,30 @@
+{
+  "project": "shc-rust",
+  "path": "/data1/jfeng/tcode_win/output/res1/shc/shc-rust",
+  "timestamp": "2026-06-19T21:11:54+08:00",
+  "summary": {
+    "total_issues": 8,
+    "clippy_warnings": 7,
+    "clippy_errors": 0,
+    "rustfmt_files_needing_format": 1,
+    "tool_errors": 0
+  },
+  "commands": {
+    "clippy": "cargo clippy --workspace --all-targets --message-format short",
+    "rustfmt": "cargo fmt --all -- --check"
+  },
+  "status": {
+    "clippy_exit_code": 0,
+    "rustfmt_exit_code": 1,
+    "clippy_failed": 0,
+    "rustfmt_failed": 0
+  },
+  "artifacts": {
+    "clippy_log": "/data1/jfeng/tcode_win/output/res1/shc/shc-rust/clippy_output.log",
+    "rustfmt_log": "/data1/jfeng/tcode_win/output/res1/shc/shc-rust/rustfmt_output.log"
+  },
+  "clippy_by_category": {"other":6,"unused":1},
+  "clippy_details": [{"file":"src/shc.rs","line":636,"lint":"","message":"type `shc::ShcError` is more private than the item `shc::Shc::write_c`: method `shc::Shc::write_c` is reachable at visibility `pub(crate)`"},{"file":"src/shc.rs","line":767,"lint":"","message":"type `shc::ShcError` is more private than the item `shc::Shc::make`: method `shc::Shc::make` is reachable at visibility `pub(crate)`"},{"file":"src/shc.rs","line":804,"lint":"","message":"type `shc::ShcError` is more private than the item `shc::Shc::do_all`: method `shc::Shc::do_all` is reachable at visibility `pub(crate)`"},{"file":"src/shc.rs","line":430,"lint":"","message":"methods `arc_4` and `dump_array` are never used"},{"file":"src/shc.rs","line":530,"lint":"","message":"this `if` has identical blocks"},{"file":"","line":0,"lint":"","message":"`shc-rust` (bin \"shc-rust\") generated 5 warnings (1 duplicate)"},{"file":"","line":0,"lint":"","message":"`shc-rust` (bin \"shc-rust\" test) generated 5 warnings (4 duplicates)"}],
+  "clippy_error_details": [],
+  "rustfmt_details": [{"file":"src/shc.rs","line":249},{"file":"src/shc.rs","line":628},{"file":"src/shc.rs","line":709},{"file":"src/shc.rs","line":753},{"file":"src/shc.rs","line":795},{"file":"src/shc.rs","line":802}]
+}

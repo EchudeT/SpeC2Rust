@@ -1,0 +1,583 @@
+{
+  "project": "/data1/jfeng/tcode_win/output/res3/cflow-new/cflow-new-rust",
+  "counter_version": "rust_lexer_v3_locations",
+  "metric_notes": {
+    "raw_ptr_type_occurrences": "Occurrences of *const/*mut raw pointer type syntax.",
+    "raw_ptr_declarations": "Backward-compatible alias of raw_ptr_type_occurrences.",
+    "raw_ptr_dereferences": "Unary * dereference expressions whose operand can be conservatively inferred as a raw pointer.",
+    "raw_ptr_*_lines": "1-based source line numbers for each detected occurrence.",
+    "raw_ptr_*_details": "1-based line/column and stripped source snippet for each detected occurrence."
+  },
+  "total_raw_ptr_type_occurrences": 0,
+  "total_raw_ptr_declarations": 0,
+  "total_raw_ptr_dereferences": 0,
+  "files": {
+    "src/ack.rs": {
+      "raw_ptr_type_occurrences": 0,
+      "raw_ptr_declarations": 0,
+      "raw_ptr_dereferences": 0,
+      "raw_ptr_type_occurrence_lines": [],
+      "raw_ptr_dereference_lines": [],
+      "raw_ptr_type_occurrence_details": [],
+      "raw_ptr_dereference_details": []
+    },
+    "src/asnprintf.rs": {
+      "raw_ptr_type_occurrences": 0,
+      "raw_ptr_declarations": 0,
+      "raw_ptr_dereferences": 0,
+      "raw_ptr_type_occurrence_lines": [],
+      "raw_ptr_dereference_lines": [],
+      "raw_ptr_type_occurrence_details": [],
+      "raw_ptr_dereference_details": []
+    },
+    "src/basename_lgpl.rs": {
+      "raw_ptr_type_occurrences": 0,
+      "raw_ptr_declarations": 0,
+      "raw_ptr_dereferences": 0,
+      "raw_ptr_type_occurrence_lines": [],
+      "raw_ptr_dereference_lines": [],
+      "raw_ptr_type_occurrence_details": [],
+      "raw_ptr_dereference_details": []
+    },
+    "src/bitrotate.rs": {
+      "raw_ptr_type_occurrences": 0,
+      "raw_ptr_declarations": 0,
+      "raw_ptr_dereferences": 0,
+      "raw_ptr_type_occurrence_lines": [],
+      "raw_ptr_dereference_lines": [],
+      "raw_ptr_type_occurrence_details": [],
+      "raw_ptr_dereference_details": []
+    },
+    "src/c.rs": {
+      "raw_ptr_type_occurrences": 0,
+      "raw_ptr_declarations": 0,
+      "raw_ptr_dereferences": 0,
+      "raw_ptr_type_occurrence_lines": [],
+      "raw_ptr_dereference_lines": [],
+      "raw_ptr_type_occurrence_details": [],
+      "raw_ptr_dereference_details": []
+    },
+    "src/calloc.rs": {
+      "raw_ptr_type_occurrences": 0,
+      "raw_ptr_declarations": 0,
+      "raw_ptr_dereferences": 0,
+      "raw_ptr_type_occurrence_lines": [],
+      "raw_ptr_dereference_lines": [],
+      "raw_ptr_type_occurrence_details": [],
+      "raw_ptr_dereference_details": []
+    },
+    "src/cloexec.rs": {
+      "raw_ptr_type_occurrences": 0,
+      "raw_ptr_declarations": 0,
+      "raw_ptr_dereferences": 0,
+      "raw_ptr_type_occurrence_lines": [],
+      "raw_ptr_dereference_lines": [],
+      "raw_ptr_type_occurrence_details": [],
+      "raw_ptr_dereference_details": []
+    },
+    "src/close.rs": {
+      "raw_ptr_type_occurrences": 0,
+      "raw_ptr_declarations": 0,
+      "raw_ptr_dereferences": 0,
+      "raw_ptr_type_occurrence_lines": [],
+      "raw_ptr_dereference_lines": [],
+      "raw_ptr_type_occurrence_details": [],
+      "raw_ptr_dereference_details": []
+    },
+    "src/d.rs": {
+      "raw_ptr_type_occurrences": 0,
+      "raw_ptr_declarations": 0,
+      "raw_ptr_dereferences": 0,
+      "raw_ptr_type_occurrence_lines": [],
+      "raw_ptr_dereference_lines": [],
+      "raw_ptr_type_occurrence_details": [],
+      "raw_ptr_dereference_details": []
+    },
+    "src/depmap.rs": {
+      "raw_ptr_type_occurrences": 0,
+      "raw_ptr_declarations": 0,
+      "raw_ptr_dereferences": 0,
+      "raw_ptr_type_occurrence_lines": [],
+      "raw_ptr_dereference_lines": [],
+      "raw_ptr_type_occurrence_details": [],
+      "raw_ptr_dereference_details": []
+    },
+    "src/dot.rs": {
+      "raw_ptr_type_occurrences": 0,
+      "raw_ptr_declarations": 0,
+      "raw_ptr_dereferences": 0,
+      "raw_ptr_type_occurrence_lines": [],
+      "raw_ptr_dereference_lines": [],
+      "raw_ptr_type_occurrence_details": [],
+      "raw_ptr_dereference_details": []
+    },
+    "src/dup2.rs": {
+      "raw_ptr_type_occurrences": 0,
+      "raw_ptr_declarations": 0,
+      "raw_ptr_dereferences": 0,
+      "raw_ptr_type_occurrence_lines": [],
+      "raw_ptr_dereference_lines": [],
+      "raw_ptr_type_occurrence_details": [],
+      "raw_ptr_dereference_details": []
+    },
+    "src/error.rs": {
+      "raw_ptr_type_occurrences": 0,
+      "raw_ptr_declarations": 0,
+      "raw_ptr_dereferences": 0,
+      "raw_ptr_type_occurrence_lines": [],
+      "raw_ptr_dereference_lines": [],
+      "raw_ptr_type_occurrence_details": [],
+      "raw_ptr_dereference_details": []
+    },
+    "src/fcntl.rs": {
+      "raw_ptr_type_occurrences": 0,
+      "raw_ptr_declarations": 0,
+      "raw_ptr_dereferences": 0,
+      "raw_ptr_type_occurrence_lines": [],
+      "raw_ptr_dereference_lines": [],
+      "raw_ptr_type_occurrence_details": [],
+      "raw_ptr_dereference_details": []
+    },
+    "src/fd_hook.rs": {
+      "raw_ptr_type_occurrences": 0,
+      "raw_ptr_declarations": 0,
+      "raw_ptr_dereferences": 0,
+      "raw_ptr_type_occurrence_lines": [],
+      "raw_ptr_dereference_lines": [],
+      "raw_ptr_type_occurrence_details": [],
+      "raw_ptr_dereference_details": []
+    },
+    "src/float.rs": {
+      "raw_ptr_type_occurrences": 0,
+      "raw_ptr_declarations": 0,
+      "raw_ptr_dereferences": 0,
+      "raw_ptr_type_occurrence_lines": [],
+      "raw_ptr_dereference_lines": [],
+      "raw_ptr_type_occurrence_details": [],
+      "raw_ptr_dereference_details": []
+    },
+    "src/foo.rs": {
+      "raw_ptr_type_occurrences": 0,
+      "raw_ptr_declarations": 0,
+      "raw_ptr_dereferences": 0,
+      "raw_ptr_type_occurrence_lines": [],
+      "raw_ptr_dereference_lines": [],
+      "raw_ptr_type_occurrence_details": [],
+      "raw_ptr_dereference_details": []
+    },
+    "src/free.rs": {
+      "raw_ptr_type_occurrences": 0,
+      "raw_ptr_declarations": 0,
+      "raw_ptr_dereferences": 0,
+      "raw_ptr_type_occurrence_lines": [],
+      "raw_ptr_dereference_lines": [],
+      "raw_ptr_type_occurrence_details": [],
+      "raw_ptr_dereference_details": []
+    },
+    "src/fstat.rs": {
+      "raw_ptr_type_occurrences": 0,
+      "raw_ptr_declarations": 0,
+      "raw_ptr_dereferences": 0,
+      "raw_ptr_type_occurrence_lines": [],
+      "raw_ptr_dereference_lines": [],
+      "raw_ptr_type_occurrence_details": [],
+      "raw_ptr_dereference_details": []
+    },
+    "src/getdtablesize.rs": {
+      "raw_ptr_type_occurrences": 0,
+      "raw_ptr_declarations": 0,
+      "raw_ptr_dereferences": 0,
+      "raw_ptr_type_occurrence_lines": [],
+      "raw_ptr_dereference_lines": [],
+      "raw_ptr_type_occurrence_details": [],
+      "raw_ptr_dereference_details": []
+    },
+    "src/getprogname.rs": {
+      "raw_ptr_type_occurrences": 0,
+      "raw_ptr_declarations": 0,
+      "raw_ptr_dereferences": 0,
+      "raw_ptr_type_occurrence_lines": [],
+      "raw_ptr_dereference_lines": [],
+      "raw_ptr_type_occurrence_details": [],
+      "raw_ptr_dereference_details": []
+    },
+    "src/gnu.rs": {
+      "raw_ptr_type_occurrences": 0,
+      "raw_ptr_declarations": 0,
+      "raw_ptr_dereferences": 0,
+      "raw_ptr_type_occurrence_lines": [],
+      "raw_ptr_dereference_lines": [],
+      "raw_ptr_type_occurrence_details": [],
+      "raw_ptr_dereference_details": []
+    },
+    "src/hash.rs": {
+      "raw_ptr_type_occurrences": 0,
+      "raw_ptr_declarations": 0,
+      "raw_ptr_dereferences": 0,
+      "raw_ptr_type_occurrence_lines": [],
+      "raw_ptr_dereference_lines": [],
+      "raw_ptr_type_occurrence_details": [],
+      "raw_ptr_dereference_details": []
+    },
+    "src/help.rs": {
+      "raw_ptr_type_occurrences": 0,
+      "raw_ptr_declarations": 0,
+      "raw_ptr_dereferences": 0,
+      "raw_ptr_type_occurrence_lines": [],
+      "raw_ptr_dereference_lines": [],
+      "raw_ptr_type_occurrence_details": [],
+      "raw_ptr_dereference_details": []
+    },
+    "src/ialloc.rs": {
+      "raw_ptr_type_occurrences": 0,
+      "raw_ptr_declarations": 0,
+      "raw_ptr_dereferences": 0,
+      "raw_ptr_type_occurrence_lines": [],
+      "raw_ptr_dereference_lines": [],
+      "raw_ptr_type_occurrence_details": [],
+      "raw_ptr_dereference_details": []
+    },
+    "src/itold.rs": {
+      "raw_ptr_type_occurrences": 0,
+      "raw_ptr_declarations": 0,
+      "raw_ptr_dereferences": 0,
+      "raw_ptr_type_occurrence_lines": [],
+      "raw_ptr_dereference_lines": [],
+      "raw_ptr_type_occurrence_details": [],
+      "raw_ptr_dereference_details": []
+    },
+    "src/linked_list.rs": {
+      "raw_ptr_type_occurrences": 0,
+      "raw_ptr_declarations": 0,
+      "raw_ptr_dereferences": 0,
+      "raw_ptr_type_occurrence_lines": [],
+      "raw_ptr_dereference_lines": [],
+      "raw_ptr_type_occurrence_details": [],
+      "raw_ptr_dereference_details": []
+    },
+    "src/main.rs": {
+      "raw_ptr_type_occurrences": 0,
+      "raw_ptr_declarations": 0,
+      "raw_ptr_dereferences": 0,
+      "raw_ptr_type_occurrence_lines": [],
+      "raw_ptr_dereference_lines": [],
+      "raw_ptr_type_occurrence_details": [],
+      "raw_ptr_dereference_details": []
+    },
+    "src/malloc.rs": {
+      "raw_ptr_type_occurrences": 0,
+      "raw_ptr_declarations": 0,
+      "raw_ptr_dereferences": 0,
+      "raw_ptr_type_occurrence_lines": [],
+      "raw_ptr_dereference_lines": [],
+      "raw_ptr_type_occurrence_details": [],
+      "raw_ptr_dereference_details": []
+    },
+    "src/malloca.rs": {
+      "raw_ptr_type_occurrences": 0,
+      "raw_ptr_declarations": 0,
+      "raw_ptr_dereferences": 0,
+      "raw_ptr_type_occurrence_lines": [],
+      "raw_ptr_dereference_lines": [],
+      "raw_ptr_type_occurrence_details": [],
+      "raw_ptr_dereference_details": []
+    },
+    "src/mbszero.rs": {
+      "raw_ptr_type_occurrences": 0,
+      "raw_ptr_declarations": 0,
+      "raw_ptr_dereferences": 0,
+      "raw_ptr_type_occurrence_lines": [],
+      "raw_ptr_dereference_lines": [],
+      "raw_ptr_type_occurrence_details": [],
+      "raw_ptr_dereference_details": []
+    },
+    "src/memchr.rs": {
+      "raw_ptr_type_occurrences": 0,
+      "raw_ptr_declarations": 0,
+      "raw_ptr_dereferences": 0,
+      "raw_ptr_type_occurrence_lines": [],
+      "raw_ptr_dereference_lines": [],
+      "raw_ptr_type_occurrence_details": [],
+      "raw_ptr_dereference_details": []
+    },
+    "src/msvc_inval.rs": {
+      "raw_ptr_type_occurrences": 0,
+      "raw_ptr_declarations": 0,
+      "raw_ptr_dereferences": 0,
+      "raw_ptr_type_occurrence_lines": [],
+      "raw_ptr_dereference_lines": [],
+      "raw_ptr_type_occurrence_details": [],
+      "raw_ptr_dereference_details": []
+    },
+    "src/msvc_nothrow.rs": {
+      "raw_ptr_type_occurrences": 0,
+      "raw_ptr_declarations": 0,
+      "raw_ptr_dereferences": 0,
+      "raw_ptr_type_occurrence_lines": [],
+      "raw_ptr_dereference_lines": [],
+      "raw_ptr_type_occurrence_details": [],
+      "raw_ptr_dereference_details": []
+    },
+    "src/obstack.rs": {
+      "raw_ptr_type_occurrences": 0,
+      "raw_ptr_declarations": 0,
+      "raw_ptr_dereferences": 0,
+      "raw_ptr_type_occurrence_lines": [],
+      "raw_ptr_dereference_lines": [],
+      "raw_ptr_type_occurrence_details": [],
+      "raw_ptr_dereference_details": []
+    },
+    "src/open.rs": {
+      "raw_ptr_type_occurrences": 0,
+      "raw_ptr_declarations": 0,
+      "raw_ptr_dereferences": 0,
+      "raw_ptr_type_occurrence_lines": [],
+      "raw_ptr_dereference_lines": [],
+      "raw_ptr_type_occurrence_details": [],
+      "raw_ptr_dereference_details": []
+    },
+    "src/optset.rs": {
+      "raw_ptr_type_occurrences": 0,
+      "raw_ptr_declarations": 0,
+      "raw_ptr_dereferences": 0,
+      "raw_ptr_type_occurrence_lines": [],
+      "raw_ptr_dereference_lines": [],
+      "raw_ptr_type_occurrence_details": [],
+      "raw_ptr_dereference_details": []
+    },
+    "src/output.rs": {
+      "raw_ptr_type_occurrences": 0,
+      "raw_ptr_declarations": 0,
+      "raw_ptr_dereferences": 0,
+      "raw_ptr_type_occurrence_lines": [],
+      "raw_ptr_dereference_lines": [],
+      "raw_ptr_type_occurrence_details": [],
+      "raw_ptr_dereference_details": []
+    },
+    "src/parseopt.rs": {
+      "raw_ptr_type_occurrences": 0,
+      "raw_ptr_declarations": 0,
+      "raw_ptr_dereferences": 0,
+      "raw_ptr_type_occurrence_lines": [],
+      "raw_ptr_dereference_lines": [],
+      "raw_ptr_type_occurrence_details": [],
+      "raw_ptr_dereference_details": []
+    },
+    "src/parser.rs": {
+      "raw_ptr_type_occurrences": 0,
+      "raw_ptr_declarations": 0,
+      "raw_ptr_dereferences": 0,
+      "raw_ptr_type_occurrence_lines": [],
+      "raw_ptr_dereference_lines": [],
+      "raw_ptr_type_occurrence_details": [],
+      "raw_ptr_dereference_details": []
+    },
+    "src/posix.rs": {
+      "raw_ptr_type_occurrences": 0,
+      "raw_ptr_declarations": 0,
+      "raw_ptr_dereferences": 0,
+      "raw_ptr_type_occurrence_lines": [],
+      "raw_ptr_dereference_lines": [],
+      "raw_ptr_type_occurrence_details": [],
+      "raw_ptr_dereference_details": []
+    },
+    "src/printf_args.rs": {
+      "raw_ptr_type_occurrences": 0,
+      "raw_ptr_declarations": 0,
+      "raw_ptr_dereferences": 0,
+      "raw_ptr_type_occurrence_lines": [],
+      "raw_ptr_dereference_lines": [],
+      "raw_ptr_type_occurrence_details": [],
+      "raw_ptr_dereference_details": []
+    },
+    "src/printf_parse.rs": {
+      "raw_ptr_type_occurrences": 0,
+      "raw_ptr_declarations": 0,
+      "raw_ptr_dereferences": 0,
+      "raw_ptr_type_occurrence_lines": [],
+      "raw_ptr_dereference_lines": [],
+      "raw_ptr_type_occurrence_details": [],
+      "raw_ptr_dereference_details": []
+    },
+    "src/progname.rs": {
+      "raw_ptr_type_occurrences": 0,
+      "raw_ptr_declarations": 0,
+      "raw_ptr_dereferences": 0,
+      "raw_ptr_type_occurrence_lines": [],
+      "raw_ptr_dereference_lines": [],
+      "raw_ptr_type_occurrence_details": [],
+      "raw_ptr_dereference_details": []
+    },
+    "src/realloc.rs": {
+      "raw_ptr_type_occurrences": 0,
+      "raw_ptr_declarations": 0,
+      "raw_ptr_dereferences": 0,
+      "raw_ptr_type_occurrence_lines": [],
+      "raw_ptr_dereference_lines": [],
+      "raw_ptr_type_occurrence_details": [],
+      "raw_ptr_dereference_details": []
+    },
+    "src/reallocarray.rs": {
+      "raw_ptr_type_occurrences": 0,
+      "raw_ptr_declarations": 0,
+      "raw_ptr_dereferences": 0,
+      "raw_ptr_type_occurrence_lines": [],
+      "raw_ptr_dereference_lines": [],
+      "raw_ptr_type_occurrence_details": [],
+      "raw_ptr_dereference_details": []
+    },
+    "src/snprintf.rs": {
+      "raw_ptr_type_occurrences": 0,
+      "raw_ptr_declarations": 0,
+      "raw_ptr_dereferences": 0,
+      "raw_ptr_type_occurrence_lines": [],
+      "raw_ptr_dereference_lines": [],
+      "raw_ptr_type_occurrence_details": [],
+      "raw_ptr_dereference_details": []
+    },
+    "src/stat.rs": {
+      "raw_ptr_type_occurrences": 0,
+      "raw_ptr_declarations": 0,
+      "raw_ptr_dereferences": 0,
+      "raw_ptr_type_occurrence_lines": [],
+      "raw_ptr_dereference_lines": [],
+      "raw_ptr_type_occurrence_details": [],
+      "raw_ptr_dereference_details": []
+    },
+    "src/stat_time.rs": {
+      "raw_ptr_type_occurrences": 0,
+      "raw_ptr_declarations": 0,
+      "raw_ptr_dereferences": 0,
+      "raw_ptr_type_occurrence_lines": [],
+      "raw_ptr_dereference_lines": [],
+      "raw_ptr_type_occurrence_details": [],
+      "raw_ptr_dereference_details": []
+    },
+    "src/stat_w32.rs": {
+      "raw_ptr_type_occurrences": 0,
+      "raw_ptr_declarations": 0,
+      "raw_ptr_dereferences": 0,
+      "raw_ptr_type_occurrence_lines": [],
+      "raw_ptr_dereference_lines": [],
+      "raw_ptr_type_occurrence_details": [],
+      "raw_ptr_dereference_details": []
+    },
+    "src/stdio_read.rs": {
+      "raw_ptr_type_occurrences": 0,
+      "raw_ptr_declarations": 0,
+      "raw_ptr_dereferences": 0,
+      "raw_ptr_type_occurrence_lines": [],
+      "raw_ptr_dereference_lines": [],
+      "raw_ptr_type_occurrence_details": [],
+      "raw_ptr_dereference_details": []
+    },
+    "src/stdio_write.rs": {
+      "raw_ptr_type_occurrences": 0,
+      "raw_ptr_declarations": 0,
+      "raw_ptr_dereferences": 0,
+      "raw_ptr_type_occurrence_lines": [],
+      "raw_ptr_dereference_lines": [],
+      "raw_ptr_type_occurrence_details": [],
+      "raw_ptr_dereference_details": []
+    },
+    "src/strerror.rs": {
+      "raw_ptr_type_occurrences": 0,
+      "raw_ptr_declarations": 0,
+      "raw_ptr_dereferences": 0,
+      "raw_ptr_type_occurrence_lines": [],
+      "raw_ptr_dereference_lines": [],
+      "raw_ptr_type_occurrence_details": [],
+      "raw_ptr_dereference_details": []
+    },
+    "src/strerror_override.rs": {
+      "raw_ptr_type_occurrences": 0,
+      "raw_ptr_declarations": 0,
+      "raw_ptr_dereferences": 0,
+      "raw_ptr_type_occurrence_lines": [],
+      "raw_ptr_dereference_lines": [],
+      "raw_ptr_type_occurrence_details": [],
+      "raw_ptr_dereference_details": []
+    },
+    "src/symbol.rs": {
+      "raw_ptr_type_occurrences": 0,
+      "raw_ptr_declarations": 0,
+      "raw_ptr_dereferences": 0,
+      "raw_ptr_type_occurrence_lines": [],
+      "raw_ptr_dereference_lines": [],
+      "raw_ptr_type_occurrence_details": [],
+      "raw_ptr_dereference_details": []
+    },
+    "src/unistd.rs": {
+      "raw_ptr_type_occurrences": 0,
+      "raw_ptr_declarations": 0,
+      "raw_ptr_dereferences": 0,
+      "raw_ptr_type_occurrence_lines": [],
+      "raw_ptr_dereference_lines": [],
+      "raw_ptr_type_occurrence_details": [],
+      "raw_ptr_dereference_details": []
+    },
+    "src/vasnprintf.rs": {
+      "raw_ptr_type_occurrences": 0,
+      "raw_ptr_declarations": 0,
+      "raw_ptr_dereferences": 0,
+      "raw_ptr_type_occurrence_lines": [],
+      "raw_ptr_dereference_lines": [],
+      "raw_ptr_type_occurrence_details": [],
+      "raw_ptr_dereference_details": []
+    },
+    "src/whoami.rs": {
+      "raw_ptr_type_occurrences": 0,
+      "raw_ptr_declarations": 0,
+      "raw_ptr_dereferences": 0,
+      "raw_ptr_type_occurrence_lines": [],
+      "raw_ptr_dereference_lines": [],
+      "raw_ptr_type_occurrence_details": [],
+      "raw_ptr_dereference_details": []
+    },
+    "src/wordsplit.rs": {
+      "raw_ptr_type_occurrences": 0,
+      "raw_ptr_declarations": 0,
+      "raw_ptr_dereferences": 0,
+      "raw_ptr_type_occurrence_lines": [],
+      "raw_ptr_dereference_lines": [],
+      "raw_ptr_type_occurrence_details": [],
+      "raw_ptr_dereference_details": []
+    },
+    "src/wordwrap.rs": {
+      "raw_ptr_type_occurrences": 0,
+      "raw_ptr_declarations": 0,
+      "raw_ptr_dereferences": 0,
+      "raw_ptr_type_occurrence_lines": [],
+      "raw_ptr_dereference_lines": [],
+      "raw_ptr_type_occurrence_details": [],
+      "raw_ptr_dereference_details": []
+    },
+    "src/xalloc_die.rs": {
+      "raw_ptr_type_occurrences": 0,
+      "raw_ptr_declarations": 0,
+      "raw_ptr_dereferences": 0,
+      "raw_ptr_type_occurrence_lines": [],
+      "raw_ptr_dereference_lines": [],
+      "raw_ptr_type_occurrence_details": [],
+      "raw_ptr_dereference_details": []
+    },
+    "src/xmalloc.rs": {
+      "raw_ptr_type_occurrences": 0,
+      "raw_ptr_declarations": 0,
+      "raw_ptr_dereferences": 0,
+      "raw_ptr_type_occurrence_lines": [],
+      "raw_ptr_dereference_lines": [],
+      "raw_ptr_type_occurrence_details": [],
+      "raw_ptr_dereference_details": []
+    },
+    "src/xsize.rs": {
+      "raw_ptr_type_occurrences": 0,
+      "raw_ptr_declarations": 0,
+      "raw_ptr_dereferences": 0,
+      "raw_ptr_type_occurrence_lines": [],
+      "raw_ptr_dereference_lines": [],
+      "raw_ptr_type_occurrence_details": [],
+      "raw_ptr_dereference_details": []
+    }
+  }
+}

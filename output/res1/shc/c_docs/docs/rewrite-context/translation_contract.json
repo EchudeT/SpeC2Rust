@@ -1,0 +1,452 @@
+{
+  "schema_version": 1,
+  "project": {
+    "name": "shc",
+    "kind": "library",
+    "build_system": "Makefile.in"
+  },
+  "files": [
+    {
+      "path": ".gitattributes",
+      "role": "support"
+    },
+    {
+      "path": ".gitignore",
+      "role": "support"
+    },
+    {
+      "path": ".travis.yml",
+      "role": "support"
+    },
+    {
+      "path": "AUTHORS",
+      "role": "support"
+    },
+    {
+      "path": "COPYING",
+      "role": "support"
+    },
+    {
+      "path": "ChangeLog",
+      "role": "support"
+    },
+    {
+      "path": "INSTALL",
+      "role": "support"
+    },
+    {
+      "path": "Makefile",
+      "role": "support"
+    },
+    {
+      "path": "Makefile.am",
+      "role": "support"
+    },
+    {
+      "path": "Makefile.in",
+      "role": "support"
+    },
+    {
+      "path": "NEWS",
+      "role": "support"
+    },
+    {
+      "path": "README.md",
+      "role": "support"
+    },
+    {
+      "path": "aclocal.m4",
+      "role": "support"
+    },
+    {
+      "path": "autogen.sh",
+      "role": "support"
+    },
+    {
+      "path": "autom4te.cache/output.0",
+      "role": "support"
+    },
+    {
+      "path": "autom4te.cache/output.1",
+      "role": "support"
+    },
+    {
+      "path": "autom4te.cache/requests",
+      "role": "support"
+    },
+    {
+      "path": "autom4te.cache/traces.0",
+      "role": "support"
+    },
+    {
+      "path": "autom4te.cache/traces.1",
+      "role": "support"
+    },
+    {
+      "path": "config.log",
+      "role": "support"
+    },
+    {
+      "path": "config.status",
+      "role": "support"
+    },
+    {
+      "path": "config/compile",
+      "role": "support"
+    },
+    {
+      "path": "config/depcomp",
+      "role": "support"
+    },
+    {
+      "path": "config/install-sh",
+      "role": "support"
+    },
+    {
+      "path": "config/missing",
+      "role": "support"
+    },
+    {
+      "path": "configure",
+      "role": "support"
+    },
+    {
+      "path": "configure.ac",
+      "role": "support"
+    },
+    {
+      "path": "man.html",
+      "role": "support"
+    },
+    {
+      "path": "man.md",
+      "role": "support"
+    },
+    {
+      "path": "shc",
+      "role": "support"
+    },
+    {
+      "path": "shc.1",
+      "role": "support"
+    },
+    {
+      "path": "src/Makefile",
+      "role": "support"
+    },
+    {
+      "path": "src/Makefile.am",
+      "role": "support"
+    },
+    {
+      "path": "src/Makefile.in",
+      "role": "support"
+    },
+    {
+      "path": "src/shc.c",
+      "role": "source"
+    },
+    {
+      "path": "src/shc.o",
+      "role": "support"
+    },
+    {
+      "path": "test/match",
+      "role": "test"
+    },
+    {
+      "path": "test/pru.sh",
+      "role": "test"
+    },
+    {
+      "path": "test/pru.sh.kk",
+      "role": "test"
+    },
+    {
+      "path": "test/test.bash",
+      "role": "test"
+    },
+    {
+      "path": "test/test.csh",
+      "role": "test"
+    },
+    {
+      "path": "test/test.ksh",
+      "role": "test"
+    },
+    {
+      "path": "test/testc.txt",
+      "role": "test"
+    },
+    {
+      "path": "test/ttest-ash.sh",
+      "role": "test"
+    },
+    {
+      "path": "test/ttest-bash.sh",
+      "role": "test"
+    },
+    {
+      "path": "test/ttest-csh.sh",
+      "role": "test"
+    },
+    {
+      "path": "test/ttest-dash.sh",
+      "role": "test"
+    },
+    {
+      "path": "test/ttest-ksh.sh",
+      "role": "test"
+    },
+    {
+      "path": "test/ttest-rc.sh",
+      "role": "test"
+    },
+    {
+      "path": "test/ttest-tcsh.sh",
+      "role": "test"
+    },
+    {
+      "path": "test/ttest-zsh.sh",
+      "role": "test"
+    },
+    {
+      "path": "test/ttest.sh",
+      "role": "test"
+    },
+    {
+      "path": "test/ttest.sh.bak",
+      "role": "test"
+    },
+    {
+      "path": "test/ttest_case.inc",
+      "role": "test"
+    }
+  ],
+  "module_units": [
+    {
+      "name": "module_src",
+      "category": "module",
+      "files": [
+        "src/shc.c"
+      ]
+    }
+  ],
+  "generation_boundary": {
+    "allowed_rust_files": [
+      "Cargo.toml",
+      "src/lib.rs",
+      "src/shc.rs",
+      "README.md"
+    ],
+    "allow_tests": false,
+    "allow_examples": false,
+    "allow_benches": false,
+    "allow_ffi": false,
+    "dependency_policy": "std_only_by_default",
+    "allowed_dependencies": []
+  },
+  "forbidden_without_evidence": [
+    "serde",
+    "criterion",
+    "proptest",
+    "thread_safe_api",
+    "recovery_mechanism",
+    "crates_io_release",
+    "ffi",
+    "range_query",
+    "batch_operation"
+  ],
+  "types": [],
+  "functions": [
+    {
+      "id": "FN-parse_an_arg",
+      "name": "parse_an_arg",
+      "role": "internal_helper",
+      "file": "",
+      "source": "[unknown]",
+      "signature": "static int parse_an_arg(int argc, char * argv[]);",
+      "declared_in": "",
+      "line_count": 120
+    },
+    {
+      "id": "FN-parse_args",
+      "name": "parse_args",
+      "role": "internal_helper",
+      "file": "",
+      "source": "[unknown]",
+      "signature": "static void parse_args(int argc, char * argv[]);",
+      "declared_in": "",
+      "line_count": 24
+    },
+    {
+      "id": "FN-stte_0",
+      "name": "stte_0",
+      "role": "internal_helper",
+      "file": "",
+      "source": "[unknown]",
+      "signature": "void stte_0(void);",
+      "declared_in": "",
+      "line_count": 7
+    },
+    {
+      "id": "FN-key",
+      "name": "key",
+      "role": "internal_helper",
+      "file": "",
+      "source": "[unknown]",
+      "signature": "void key(void * str, int len);",
+      "declared_in": "",
+      "line_count": 15
+    },
+    {
+      "id": "FN-arc4",
+      "name": "arc4",
+      "role": "internal_helper",
+      "file": "",
+      "source": "[unknown]",
+      "signature": "void arc4(void * str, int len);",
+      "declared_in": "",
+      "line_count": 15
+    },
+    {
+      "id": "FN-key_with_file",
+      "name": "key_with_file",
+      "role": "internal_helper",
+      "file": "",
+      "source": "[unknown]",
+      "signature": "int key_with_file(char * file);",
+      "declared_in": "",
+      "line_count": 21
+    },
+    {
+      "id": "FN-eval_shell",
+      "name": "eval_shell",
+      "role": "internal_helper",
+      "file": "",
+      "source": "[unknown]",
+      "signature": "int eval_shell(char * text);",
+      "declared_in": "",
+      "line_count": 65
+    },
+    {
+      "id": "FN-read_script",
+      "name": "read_script",
+      "role": "internal_helper",
+      "file": "",
+      "source": "[unknown]",
+      "signature": "char * read_script(char * file);",
+      "declared_in": "",
+      "line_count": 38
+    },
+    {
+      "id": "FN-rand_mod",
+      "name": "rand_mod",
+      "role": "internal_helper",
+      "file": "",
+      "source": "[unknown]",
+      "signature": "unsigned rand_mod(unsigned mod);",
+      "declared_in": "",
+      "line_count": 11
+    },
+    {
+      "id": "FN-rand_chr",
+      "name": "rand_chr",
+      "role": "internal_helper",
+      "file": "",
+      "source": "[unknown]",
+      "signature": "char rand_chr(void);",
+      "declared_in": "",
+      "line_count": 4
+    },
+    {
+      "id": "FN-noise",
+      "name": "noise",
+      "role": "internal_helper",
+      "file": "",
+      "source": "[unknown]",
+      "signature": "int noise(char * ptr, unsigned min, unsigned xtra, int str);",
+      "declared_in": "",
+      "line_count": 11
+    },
+    {
+      "id": "FN-prnt_bytes",
+      "name": "prnt_bytes",
+      "role": "internal_helper",
+      "file": "",
+      "source": "[unknown]",
+      "signature": "void prnt_bytes(FILE * o, char * ptr, int m, int l, int n);",
+      "declared_in": "",
+      "line_count": 17
+    },
+    {
+      "id": "FN-prnt_array",
+      "name": "prnt_array",
+      "role": "internal_helper",
+      "file": "",
+      "source": "[unknown]",
+      "signature": "void prnt_array(FILE * o, void * ptr, char * name, int l, char * cast);",
+      "declared_in": "",
+      "line_count": 12
+    },
+    {
+      "id": "FN-dump_array",
+      "name": "dump_array",
+      "role": "internal_helper",
+      "file": "",
+      "source": "[unknown]",
+      "signature": "void dump_array(FILE * o, void * ptr, char * name, int l, char * cast);",
+      "declared_in": "",
+      "line_count": 5
+    },
+    {
+      "id": "FN-write_C",
+      "name": "write_C",
+      "role": "internal_helper",
+      "file": "",
+      "source": "[unknown]",
+      "signature": "int write_C(char * file, char * argv[]);",
+      "declared_in": "",
+      "line_count": 115
+    },
+    {
+      "id": "FN-make",
+      "name": "make",
+      "role": "internal_helper",
+      "file": "",
+      "source": "[unknown]",
+      "signature": "int make(void);",
+      "declared_in": "",
+      "line_count": 39
+    },
+    {
+      "id": "FN-do_all",
+      "name": "do_all",
+      "role": "internal_helper",
+      "file": "",
+      "source": "[unknown]",
+      "signature": "void do_all(int argc, char * argv[]);",
+      "declared_in": "",
+      "line_count": 14
+    },
+    {
+      "id": "FN-main",
+      "name": "main",
+      "role": "internal_helper",
+      "file": "",
+      "source": "[unknown]",
+      "signature": "int main(int argc, char * argv[]);",
+      "declared_in": "",
+      "line_count": 9
+    }
+  ],
+  "macros": [
+    {
+      "id": "MACRO-SIZE",
+      "name": "SIZE",
+      "file": "src/shc.c",
+      "source": "[src/shc.c:120]",
+      "definition": "#define SIZE 4096"
+    }
+  ]
+}

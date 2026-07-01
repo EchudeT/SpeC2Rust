@@ -1,0 +1,98 @@
+warning: `/home/jfeng/.cargo/config` is deprecated in favor of `config.toml`
+  |
+  = help: if you need to support cargo 1.38 or earlier, you can symlink `config` to `config.toml`
+Diff in /data1/jfeng/tcode_win/output/res1/shc/shc-rust/src/shc.rs:249:
+             "-e" => {
+                 let value = need_value(*index, args, "-e", &self.config.my_name)?;
+                 let ts = Self::parse_date_to_unix(&value).ok_or_else(|| {
+[31m-                    format!("{} parse(-e {}): Not a valid value", self.config.my_name, value)
+(B[m[32m+                    format!(
+(B[m[32m+                        "{} parse(-e {}): Not a valid value",
+(B[m[32m+                        self.config.my_name, value
+(B[m[32m+                    )
+(B[m                 })?;
+                 self.config.date = ts.to_string();
+                 *index += 2;
+Diff in /data1/jfeng/tcode_win/output/res1/shc/shc-rust/src/shc.rs:628:
+         out
+     }
+ 
+[31m-    pub fn dump_array(&mut self, ptr: &mut [u8], name: &str, l: usize, cast: Option<&str>) -> String {
+(B[m[32m+    pub fn dump_array(
+(B[m[32m+        &mut self,
+(B[m[32m+        ptr: &mut [u8],
+(B[m[32m+        name: &str,
+(B[m[32m+        l: usize,
+(B[m[32m+        cast: Option<&str>,
+(B[m[32m+    ) -> String {
+(B[m         self.arc_4(&mut ptr[..l]);
+         self.prnt_array(&ptr[..l], name, l, cast)
+     }
+Diff in /data1/jfeng/tcode_win/output/res1/shc/shc-rust/src/shc.rs:709:
+                 .map_err(ShcError::Io)?;
+         }
+ 
+[31m-        let _ = (&mut msg1, &mut date, &mut shll, &mut inlo, &mut xecc, &mut lsto);
+(B[m[31m-        let _ = (&mut tst1, &mut chk1, &mut msg2, &mut rlax, &mut opts, &mut tst2, &mut chk2);
+(B[m[32m+        let _ = (
+(B[m[32m+            &mut msg1, &mut date, &mut shll, &mut inlo, &mut xecc, &mut lsto,
+(B[m[32m+        );
+(B[m[32m+        let _ = (
+(B[m[32m+            &mut tst1, &mut chk1, &mut msg2, &mut rlax, &mut opts, &mut tst2, &mut chk2,
+(B[m[32m+        );
+(B[m         // text already includes the original script bytes; add the C-style trailing NUL
+         // but do not encrypt, because the emitted runtime writes text directly.
+ 
+Diff in /data1/jfeng/tcode_win/output/res1/shc/shc-rust/src/shc.rs:753:
+         writeln!(o, "/* End of data[] */;")?;
+         writeln!(o, "#define      hide_z\t{}", 1 << 12)?;
+         writeln!(o, "#define SETUID {}", i32::from(self.config.setuid_flag))?;
+[31m-        writeln!(o, "#define DEBUGEXEC {}", i32::from(self.config.debugexec_flag))?;
+(B[m[31m-        writeln!(o, "#define TRACEABLE {}", i32::from(self.config.traceable_flag))?;
+(B[m[31m-        writeln!(o, "#define HARDENING {}", i32::from(self.config.hardening_flag))?;
+(B[m[31m-        writeln!(o, "#define BUSYBOXON {}", i32::from(self.config.busyboxon_flag))?;
+(B[m[32m+        writeln!(
+(B[m[32m+            o,
+(B[m[32m+            "#define DEBUGEXEC {}",
+(B[m[32m+            i32::from(self.config.debugexec_flag)
+(B[m[32m+        )?;
+(B[m[32m+        writeln!(
+(B[m[32m+            o,
+(B[m[32m+            "#define TRACEABLE {}",
+(B[m[32m+            i32::from(self.config.traceable_flag)
+(B[m[32m+        )?;
+(B[m[32m+        writeln!(
+(B[m[32m+            o,
+(B[m[32m+            "#define HARDENING {}",
+(B[m[32m+            i32::from(self.config.hardening_flag)
+(B[m[32m+        )?;
+(B[m[32m+        writeln!(
+(B[m[32m+            o,
+(B[m[32m+            "#define BUSYBOXON {}",
+(B[m[32m+            i32::from(self.config.busyboxon_flag)
+(B[m[32m+        )?;
+(B[m         writeln!(o, "#define MMAP2 {}", i32::from(self.config.mmap2_flag))?;
+         writeln!(o, "{}", self.module_src())?;
+         o.flush()?;
+Diff in /data1/jfeng/tcode_win/output/res1/shc/shc-rust/src/shc.rs:795:
+ 
+         let strip = env::var("STRIP").unwrap_or_else(|_| "strip".to_string());
+         let _ = Command::new(strip).arg(&file2).status();
+[31m-        let _ = Command::new("chmod").arg("ug=rwx,o=rx").arg(&file2).status();
+(B[m[32m+        let _ = Command::new("chmod")
+(B[m[32m+            .arg("ug=rwx,o=rx")
+(B[m[32m+            .arg(&file2)
+(B[m[32m+            .status();
+(B[m 
+         self.config.file2 = Some(file2);
+         Ok(())
+Diff in /data1/jfeng/tcode_win/output/res1/shc/shc-rust/src/shc.rs:802:
+     }
+ 
+     pub fn do_all(&mut self, args: &[String]) -> Result<(), ShcError> {
+[31m-        self.parse_args(args.to_vec()).map_err(ShcError::InvalidArgs)?;
+(B[m[32m+        self.parse_args(args.to_vec())
+(B[m[32m+            .map_err(ShcError::InvalidArgs)?;
+(B[m 
+         let file = self
+             .config

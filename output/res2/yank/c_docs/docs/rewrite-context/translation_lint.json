@@ -1,0 +1,124 @@
+{
+  "findings": [
+    {
+      "path": "specs/001-main_root-rust-port/tasks.md",
+      "kind": "out_of_scope_file",
+      "message": "发现 contract 外文件路径: src/main.rs"
+    },
+    {
+      "path": "specs/001-main_root-rust-port/tasks.md",
+      "kind": "out_of_scope_file",
+      "message": "发现 contract 外文件路径: src/main.rs"
+    },
+    {
+      "path": "specs/001-main_root-rust-port/tasks.md",
+      "kind": "out_of_scope_file",
+      "message": "发现 contract 外文件路径: src/main.rs"
+    },
+    {
+      "path": "specs/001-main_root-rust-port/tasks.md",
+      "kind": "out_of_scope_file",
+      "message": "发现 contract 外文件路径: src/main.rs"
+    },
+    {
+      "path": "specs/001-main_root-rust-port/tasks.md",
+      "kind": "out_of_scope_file",
+      "message": "发现 contract 外文件路径: src/main.rs"
+    },
+    {
+      "path": "specs/001-main_root-rust-port/tasks.md",
+      "kind": "out_of_scope_file",
+      "message": "发现 contract 外文件路径: src/main.rs"
+    },
+    {
+      "path": "specs/001-main_root-rust-port/tasks.md",
+      "kind": "out_of_scope_file",
+      "message": "发现 contract 外文件路径: src/main.rs"
+    },
+    {
+      "path": "specs/001-main_root-rust-port/tasks.md",
+      "kind": "out_of_scope_file",
+      "message": "发现 contract 外文件路径: src/main.rs"
+    },
+    {
+      "path": "specs/001-main_root-rust-port/tasks.md",
+      "kind": "out_of_scope_file",
+      "message": "发现 contract 外文件路径: src/main.rs"
+    },
+    {
+      "path": "specs/001-main_root-rust-port/tasks.md",
+      "kind": "out_of_scope_file",
+      "message": "发现 contract 外文件路径: src/main.rs"
+    },
+    {
+      "path": "specs/001-main_root-rust-port/tasks.md",
+      "kind": "out_of_scope_file",
+      "message": "发现 contract 外文件路径: src/main.rs"
+    },
+    {
+      "path": "specs/001-main_root-rust-port/tasks.md",
+      "kind": "out_of_scope_file",
+      "message": "发现 contract 外文件路径: src/main.rs"
+    },
+    {
+      "path": "specs/001-main_root-rust-port/tasks.md",
+      "kind": "out_of_scope_file",
+      "message": "发现 contract 外文件路径: src/main.rs"
+    },
+    {
+      "path": "specs/001-main_root-rust-port/tasks.md",
+      "kind": "out_of_scope_file",
+      "message": "发现 contract 外文件路径: src/main.rs"
+    },
+    {
+      "path": "specs/001-main_root-rust-port/tasks.md",
+      "kind": "out_of_scope_file",
+      "message": "发现 contract 外文件路径: src/main.rs"
+    },
+    {
+      "path": "specs/001-main_root-rust-port/plan.md",
+      "kind": "out_of_scope_file",
+      "message": "发现 contract 外文件路径: src/main.rs"
+    },
+    {
+      "path": "specs/001-main_root-rust-port/plan.md",
+      "kind": "out_of_scope_file",
+      "message": "发现 contract 外文件路径: src/main.rs"
+    },
+    {
+      "path": "specs/001-main_root-rust-port/plan.md",
+      "kind": "out_of_scope_file",
+      "message": "发现 contract 外文件路径: src/main.rs"
+    },
+    {
+      "path": "specs/001-main_root-rust-port/plan.md",
+      "kind": "out_of_scope_file",
+      "message": "发现 contract 外文件路径: src/main.rs"
+    },
+    {
+      "path": "specs/001-main_root-rust-port/plan.md",
+      "kind": "out_of_scope_file",
+      "message": "发现 contract 外文件路径: src/main.rs"
+    },
+    {
+      "path": "specs/001-main_root-rust-port/plan.md",
+      "kind": "out_of_scope_file",
+      "message": "发现 contract 外文件路径: src/main.rs"
+    },
+    {
+      "path": "specs/001-main_root-rust-port/plan.md",
+      "kind": "out_of_scope_file",
+      "message": "发现 contract 外文件路径: src/main.rs"
+    },
+    {
+      "path": "specs/001-main_root-rust-port/plan.md",
+      "kind": "out_of_scope_file",
+      "message": "发现 contract 外文件路径: src/main.rs"
+    },
+    {
+      "path": "docs/rewrite-context/00_repo_manifest.md",
+      "kind": "scope_expansion",
+      "message": "发现发布相关内容: CHANGELOG"
+    }
+  ]
+}

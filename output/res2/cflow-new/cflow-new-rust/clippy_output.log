@@ -1,0 +1,115 @@
+warning: `/home/jfeng/.cargo/config` is deprecated in favor of `config.toml`
+  |
+  = help: if you need to support cargo 1.38 or earlier, you can symlink `config` to `config.toml`
+warning: `/home/jfeng/.cargo/config` is deprecated in favor of `config.toml`
+  |
+  = help: if you need to support cargo 1.38 or earlier, you can symlink `config` to `config.toml`
+    Checking cflow-new-rust v0.1.0 (/data1/jfeng/tcode_win/output/res2/cflow-new/cflow-new-rust)
+src/c.rs:592:9: warning: unused import: `ModuleSrcYyBufferState11 as module_src_yy_buffer_state_11`
+src/c.rs:593:9: warning: unused import: `ModuleSrcYyFlex16 as module_src_yy_flex_16`
+src/c.rs:594:9: warning: unused import: `ModuleSrcYyInit18 as module_src_yy_init_18`
+src/c.rs:595:9: warning: unused import: `YyBufferState as yy_buffer_state`
+src/c.rs:596:9: warning: unused import: `YyTransInfo as yy_trans_info`
+src/main.rs:29:23: warning: unused import: `PathBuf`
+src/help.rs:357:13: warning: variable does not need to be mutable
+src/parseopt.rs:725:24: warning: value assigned to `last` is never read
+src/wordsplit.rs:651:24: warning: value assigned to `stop` is never read
+src/main.rs:76:5: warning: field `token_type` is never read
+src/main.rs:106:5: warning: field `module_src_parseopt_04_state` is never read
+src/c.rs:5:12: warning: struct `YyTransInfo` is never constructed
+src/c.rs:11:12: warning: struct `ModuleSrcYyFlex16` is never constructed
+src/c.rs:16:12: warning: struct `ModuleSrcYyInit18` is never constructed
+src/c.rs:21:12: warning: struct `ModuleSrcYyBufferState11` is never constructed
+src/c.rs:29:5: warning: variants `New`, `Normal`, and `EofPending` are never constructed
+src/c.rs:47:8: warning: associated items `new_named` and `remaining` are never used
+src/c.rs:67:5: warning: variants `Path` and `Inline` are never constructed
+src/c.rs:73:5: warning: variant `Sink` is never constructed
+src/c.rs:77:10: warning: enum `Token` is never used
+src/c.rs:87:5: warning: multiple fields are never read
+src/c.rs:125:12: warning: multiple associated items are never used
+src/c.rs:588:10: warning: type alias `YyBufferStateAlias` is never used
+src/c.rs:589:10: warning: type alias `ModuleSrcYyScan19` is never used
+src/c.rs:590:10: warning: type alias `YyBufferStateCompat` is never used
+src/dot.rs:20:12: warning: struct `OutputSymbol` is never constructed
+src/dot.rs:33:10: warning: enum `OutputCommand` is never used
+src/dot.rs:120:8: warning: function `output_symbol` is never used
+src/dot.rs:127:8: warning: function `linked_list` is never used
+src/dot.rs:131:8: warning: function `linked_list_entry` is never used
+src/dot.rs:164:12: warning: multiple methods are never used
+src/error.rs:11:5: warning: fields `one_per_line` and `last_line` are never read
+src/error.rs:49:12: warning: associated functions `gl_attribute_format_printf_standard`, `at_line`, and `tail` are never used
+src/exitfail.rs:12:12: warning: associated functions `set_status`, `reset`, `exit`, and `exit_with` are never used
+src/gnu.rs:9:12: warning: struct `HandlerData` is never constructed
+src/gnu.rs:17:12: warning: associated items `new`, `with_emacs_mode`, `with_package_string`, `with_brief_listing`, and `with_tree_mode` are never used
+src/gnu.rs:43:12: warning: associated functions `handler_data`, `print_function_name`, `print_symbol`, and `output_handler` are never used
+src/help.rs:61:12: warning: struct `OptSort` is never constructed
+src/help.rs:67:12: warning: multiple associated functions are never used
+src/output.rs:60:5: warning: variant `Token` is never constructed
+src/output.rs:66:5: warning: variants `External`, `Static`, and `Other` are never constructed
+src/output.rs:98:9: warning: fields `level` and `last` are never read
+src/output.rs:209:12: warning: method `print_text` is never used
+src/parseopt.rs:6:5: warning: variant `None` is never constructed
+src/parseopt.rs:13:6: warning: enum `ArgDisposition` is never used
+src/parseopt.rs:20:6: warning: enum `NegMatch` is never used
+src/parseopt.rs:28:6: warning: enum `StepCode` is never used
+src/parseopt.rs:54:8: warning: method `takes_argument` is never used
+src/parseopt.rs:131:12: warning: multiple associated items are never used
+src/parseopt.rs:785:8: warning: method `to_i32` is never used
+src/parser.rs:7:12: warning: struct `ModuleSrcSaveStack14` is never constructed
+src/parser.rs:13:12: warning: struct `SaveStack14` is never constructed
+src/parser.rs:20:12: warning: struct `ModuleSrcBalanceState08` is never constructed
+src/parser.rs:26:12: warning: struct `BalanceState` is never constructed
+src/parser.rs:39:5: warning: variants `Any`, `Extern`, `ExplicitExtern`, `Static`, and `Auto` are never constructed
+src/parser.rs:62:12: warning: struct `Ident` is never constructed
+src/parser.rs:100:5: warning: multiple fields are never read
+src/parser.rs:156:12: warning: multiple associated items are never used
+src/wordsplit.rs:23:7: warning: constant `WRDSF_ALLOC_DIE` is never used
+src/wordsplit.rs:24:7: warning: constant `WRDSF_ERROR` is never used
+src/wordsplit.rs:27:7: warning: constant `WRDSF_ENV` is never used
+src/wordsplit.rs:28:7: warning: constant `WRDSF_ENV_KV` is never used
+src/wordsplit.rs:29:7: warning: constant `WRDSF_GETVAR` is never used
+src/wordsplit.rs:30:7: warning: constant `WRDSF_CLOSURE` is never used
+src/wordsplit.rs:31:7: warning: constant `WRDSF_DEBUG` is never used
+src/wordsplit.rs:33:7: warning: constant `WRDSF_OPTIONS` is never used
+src/wordsplit.rs:34:7: warning: constant `WRDSF_DELIM` is never used
+src/wordsplit.rs:39:7: warning: constant `WRDSF_QUOTE` is never used
+src/wordsplit.rs:40:7: warning: constant `WRDSF_SQUOTE` is never used
+src/wordsplit.rs:41:7: warning: constant `WRDSF_DQUOTE` is never used
+src/wordsplit.rs:46:7: warning: constant `WRDSF_WS` is never used
+src/wordsplit.rs:49:7: warning: constant `WRDSF_WARNUNDEF` is never used
+src/wordsplit.rs:53:7: warning: constant `WRDSO_PARAMV` is never used
+src/wordsplit.rs:54:7: warning: constant `WRDSO_PARAM_NEGIDX` is never used
+src/wordsplit.rs:58:7: warning: constant `WRDSO_DOTGLOB` is never used
+src/wordsplit.rs:61:7: warning: constant `WRDSO_NOVARSPLIT` is never used
+src/wordsplit.rs:62:7: warning: constant `WRDSO_NOCMDSPLIT` is never used
+src/wordsplit.rs:63:7: warning: constant `WRDSO_OESC_QUOTE` is never used
+src/wordsplit.rs:64:7: warning: constant `WRDSO_OESC_WORD` is never used
+src/wordsplit.rs:65:7: warning: constant `WRDSO_XESC_QUOTE` is never used
+src/wordsplit.rs:66:7: warning: constant `WRDSO_XESC_WORD` is never used
+src/wordsplit.rs:87:7: warning: constant `WORDSPLIT_ENV_INIT` is never used
+src/wordsplit.rs:100:12: warning: struct `WordsplitNode` is never constructed
+src/wordsplit.rs:108:12: warning: struct `Wordsplit05` is never constructed
+src/wordsplit.rs:113:12: warning: struct `Wordsplit04` is never constructed
+src/wordsplit.rs:118:12: warning: struct `WordsplitC07` is never constructed
+src/wordsplit.rs:123:12: warning: struct `Wordsplit03` is never constructed
+src/wordsplit.rs:128:12: warning: struct `Wordsplit01` is never constructed
+src/wordsplit.rs:142:5: warning: fields `ws_sep`, `ws_paramc`, and `ws_closure` are never read
+src/wordsplit.rs:186:12: warning: multiple associated items are never used
+src/xalloc_die.rs:17:12: warning: associated functions `oom`, `die_with_message`, and `handle_alloc_error` are never used
+src/help.rs:152:25: warning: stripping a prefix manually
+src/help.rs:198:24: warning: the following explicit lifetimes could be elided: 'a
+src/parser.rs:178:13: warning: this OR pattern can be rewritten using a range: help: try: `256..=263`
+src/parser.rs:453:21: warning: this `if` can be collapsed into the outer `match`
+src/parser.rs:462:21: warning: this `if` can be collapsed into the outer `match`
+src/parser.rs:467:21: warning: this `if` can be collapsed into the outer `match`
+src/parser.rs:654:21: warning: this `if` can be collapsed into the outer `match`
+src/parser.rs:660:21: warning: this `if` can be collapsed into the outer `match`
+src/parser.rs:827:9: warning: this `if` statement can be collapsed
+src/parser.rs:1124:21: warning: field assignment outside of initializer for an instance created with Default::default()
+src/symbol.rs:834:13: warning: this `let...else` may be rewritten with the `?` operator: help: replace it with: `let mut pos = (*itr)?;`
+src/wordsplit.rs:968:21: warning: this `if` can be collapsed into the outer `match`
+src/main.rs:110:5: warning: you should consider adding a `Default` implementation for `Main`
+src/main.rs:854:9: warning: this `if` statement can be collapsed
+warning: `cflow-new-rust` (bin "cflow-new-rust") generated 105 warnings (run `cargo clippy --fix --bin "cflow-new-rust" -p cflow-new-rust -- ` to apply 18 suggestions)
+warning: `cflow-new-rust` (bin "cflow-new-rust" test) generated 105 warnings (105 duplicates)
+    Finished `dev` profile [unoptimized + debuginfo] target(s) in 1.11s

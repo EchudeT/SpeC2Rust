@@ -1,0 +1,109 @@
+warning: `/home/jfeng/.cargo/config` is deprecated in favor of `config.toml`
+  |
+  = help: if you need to support cargo 1.38 or earlier, you can symlink `config` to `config.toml`
+Diff in /data1/jfeng/tcode_win/output/res1/yank/yank-rust/src/yank.rs:112:
+ 
+     fn set_rawish_mode(fd: &File) {
+         let _ = Command::new("stty")
+[31m-            .args(["-echo", "-icanon", "-isig", "icrnl", "min", "1", "time", "0"])
+(B[m[31m-            .stdin(Stdio::from(fd.try_clone().unwrap_or_else(|_| fd.try_clone().expect("tty clone"))))
+(B[m[32m+            .args([
+(B[m[32m+                "-echo", "-icanon", "-isig", "icrnl", "min", "1", "time", "0",
+(B[m[32m+            ])
+(B[m[32m+            .stdin(Stdio::from(
+(B[m[32m+                fd.try_clone()
+(B[m[32m+                    .unwrap_or_else(|_| fd.try_clone().expect("tty clone")),
+(B[m[32m+            ))
+(B[m             .status();
+     }
+ 
+Diff in /data1/jfeng/tcode_win/output/res1/yank/yank-rust/src/yank.rs:120:
+     fn restore_stty_state(fd: &File, state: &str) {
+         let _ = Command::new("stty")
+             .arg(state)
+[31m-            .stdin(Stdio::from(fd.try_clone().unwrap_or_else(|_| fd.try_clone().expect("tty clone"))))
+(B[m[32m+            .stdin(Stdio::from(
+(B[m[32m+                fd.try_clone()
+(B[m[32m+                    .unwrap_or_else(|_| fd.try_clone().expect("tty clone")),
+(B[m[32m+            ))
+(B[m             .status();
+     }
+[31m-
+(B[m }
+ impl Yank {
+     pub fn input(&mut self) -> io::Result<()> {
+Diff in /data1/jfeng/tcode_win/output/res1/yank/yank-rust/src/yank.rs:134:
+         Ok(())
+     }
+ 
+[31m-
+(B[m     fn byte_matches_pattern_class(b: u8, pattern: &str) -> bool {
+         if !pattern.starts_with("[^") || !pattern.ends_with("]+") {
+             return b != 0 && b != b'\n' && b != b'\r';
+Diff in /data1/jfeng/tcode_win/output/res1/yank/yank-rust/src/yank.rs:269:
+ 
+             let start = i;
+             i += 1;
+[31m-            while i < visible_len && Self::byte_matches_pattern_class(self.input_buffer[i], pattern) {
+(B[m[32m+            while i < visible_len && Self::byte_matches_pattern_class(self.input_buffer[i], pattern)
+(B[m[32m+            {
+(B[m                 i += 1;
+             }
+             let rm_eo = i - start;
+Diff in /data1/jfeng/tcode_win/output/res1/yank/yank-rust/src/yank.rs:278:
+             }
+ 
+             let eo = start + max(min(rm_eo, m), 1) - 1;
+[31m-            self.fields.push(Field { lo: 0, so: start, eo });
+(B[m[32m+            self.fields.push(Field {
+(B[m[32m+                lo: 0,
+(B[m[32m+                so: start,
+(B[m[32m+                eo,
+(B[m[32m+            });
+(B[m             m = m.saturating_sub(min(rm_eo, m));
+         }
+ 
+Diff in /data1/jfeng/tcode_win/output/res1/yank/yank-rust/src/yank.rs:343:
+                 self.tputs(T_EXIT_CA_MODE)?;
+             }
+         }
+[31m-        if let (Some(reader), Some(state)) = (self.tty.reader.as_ref(), self.tty.orig_stty.as_deref()) {
+(B[m[32m+        if let (Some(reader), Some(state)) =
+(B[m[32m+            (self.tty.reader.as_ref(), self.tty.orig_stty.as_deref())
+(B[m[32m+        {
+(B[m             Self::restore_stty_state(reader, state);
+         }
+         self.tty.orig_stty = None;
+Diff in /data1/jfeng/tcode_win/output/res1/yank/yank-rust/src/yank.rs:410:
+                 let selected = self.input_buffer[current.so..=current.eo].to_vec();
+                 let after_len = n.saturating_sub(current.eo);
+                 let after = if after_len > 0 && current.eo + 1 <= self.input_buffer.len() {
+[31m-                    Some(self.input_buffer[current.eo + 1..min(current.eo + 1 + after_len, self.input_buffer.len())].to_vec())
+(B[m[32m+                    Some(
+(B[m[32m+                        self.input_buffer[current.eo + 1
+(B[m[32m+                            ..min(current.eo + 1 + after_len, self.input_buffer.len())]
+(B[m[32m+                            .to_vec(),
+(B[m[32m+                    )
+(B[m                 } else {
+                     None
+                 };
+Diff in /data1/jfeng/tcode_win/output/res1/yank/yank-rust/src/yank.rs:469:
+ 
+                     while j >= 0
+                         && (j as usize) + 1 < self.fields.len()
+[31m-                        && Self::compare_fields(&self.fields[i as usize], &self.fields[j as usize]) < 0
+(B[m[32m+                        && Self::compare_fields(&self.fields[i as usize], &self.fields[j as usize])
+(B[m[32m+                            < 0
+(B[m                         && self.fields[j as usize].lo == self.fields[(j + 1) as usize].lo
+                     {
+                         j += 1;
+Diff in /data1/jfeng/tcode_win/output/res1/yank/yank-rust/src/yank.rs:554:
+         }
+ 
+         app.input().map_err(|e| e.to_string())?;
+[31m-        app.tsetup(&pattern, ignore_case).map_err(|e| e.to_string())?;
+(B[m[32m+        app.tsetup(&pattern, ignore_case)
+(B[m[32m+            .map_err(|e| e.to_string())?;
+(B[m 
+         let selected = if one && app.fields.len() == 1 {
+             Some(0)

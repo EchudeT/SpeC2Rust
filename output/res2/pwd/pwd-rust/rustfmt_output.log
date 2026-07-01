@@ -1,0 +1,57 @@
+warning: `/home/jfeng/.cargo/config` is deprecated in favor of `config.toml`
+  |
+  = help: if you need to support cargo 1.38 or earlier, you can symlink `config` to `config.toml`
+Diff in /data1/jfeng/tcode_win/output/res2/pwd/pwd-rust/src/main.rs:1:
+ mod progname;
+ mod pwd;
+[31m-mod xgetcwd;
+(B[m mod root_dev_ino;
+ mod same_inode;
+ mod xalloc_die;
+Diff in /data1/jfeng/tcode_win/output/res2/pwd/pwd-rust/src/main.rs:7:
+[32m+mod xgetcwd;
+(B[m use std::env;
+ use std::process::ExitCode;
+ 
+Diff in /data1/jfeng/tcode_win/output/res2/pwd/pwd-rust/src/progname.rs:28:
+ 
+         let has_libs_prefix = argv0
+             .rfind(base)
+[31m-            .map(|base_start| {
+(B[m[31m-                base_start >= 7 && &argv0[base_start - 7..base_start] == "/.libs/"
+(B[m[31m-            })
+(B[m[32m+            .map(|base_start| base_start >= 7 && &argv0[base_start - 7..base_start] == "/.libs/")
+(B[m             .unwrap_or(false);
+ 
+         if has_libs_prefix {
+Diff in /data1/jfeng/tcode_win/output/res2/pwd/pwd-rust/src/pwd.rs:85:
+         } else {
+             let mut out = io::stdout();
+             let _ = writeln!(out, "Usage: {} [OPTION]...", program);
+[31m-            let _ = writeln!(out, "Print the full filename of the current working directory.");
+(B[m[32m+            let _ = writeln!(
+(B[m[32m+                out,
+(B[m[32m+                "Print the full filename of the current working directory."
+(B[m[32m+            );
+(B[m             let _ = writeln!(out);
+             let _ = writeln!(
+                 out,
+Diff in /data1/jfeng/tcode_win/output/res2/pwd/pwd-rust/src/pwd.rs:100:
+         std::process::exit(status);
+     }
+ 
+[31m-
+(B[m     pub fn file_name_prepend(file_name: &mut FileName, segment: &Path) {
+         file_name.prepend_component(segment);
+     }
+Diff in /data1/jfeng/tcode_win/output/res2/pwd/pwd-rust/src/pwd.rs:218:
+                     Err(_) => continue,
+                 };
+ 
+[31m-                if candidate_canonical == child_dir || SameInode::check(&entry_metadata, &current_metadata) {
+(B[m[32m+                if candidate_canonical == child_dir
+(B[m[32m+                    || SameInode::check(&entry_metadata, &current_metadata)
+(B[m[32m+                {
+(B[m                     found_name = Some(name);
+                     break;
+                 }

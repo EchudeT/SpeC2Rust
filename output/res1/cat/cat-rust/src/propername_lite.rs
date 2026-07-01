@@ -1,0 +1,21 @@
+use crate::c_strcasecmp::CStrcasecmp;
+use crate::localcharset::Localcharset;
+
+pub struct PropernameLite;
+
+impl PropernameLite {
+    pub fn translate(name_ascii: &str, name_utf8: &str) -> String {
+        let translation = Self::gettext(name_ascii);
+        if translation != name_ascii {
+            translation
+        } else if CStrcasecmp::compare(&Localcharset::locale_charset(), "UTF-8") == 0 {
+            name_utf8.to_owned()
+        } else {
+            name_ascii.to_owned()
+        }
+    }
+
+    fn gettext(message: &str) -> String {
+        message.to_owned()
+    }
+}

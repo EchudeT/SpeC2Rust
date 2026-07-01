@@ -1,0 +1,30 @@
+{
+  "project": "yank-rust",
+  "path": "/data1/jfeng/tcode_win/output/res1/yank/yank-rust",
+  "timestamp": "2026-06-19T21:11:56+08:00",
+  "summary": {
+    "total_issues": 7,
+    "clippy_warnings": 6,
+    "clippy_errors": 0,
+    "rustfmt_files_needing_format": 1,
+    "tool_errors": 0
+  },
+  "commands": {
+    "clippy": "cargo clippy --workspace --all-targets --message-format short",
+    "rustfmt": "cargo fmt --all -- --check"
+  },
+  "status": {
+    "clippy_exit_code": 0,
+    "rustfmt_exit_code": 1,
+    "clippy_failed": 0,
+    "rustfmt_failed": 0
+  },
+  "artifacts": {
+    "clippy_log": "/data1/jfeng/tcode_win/output/res1/yank/yank-rust/clippy_output.log",
+    "rustfmt_log": "/data1/jfeng/tcode_win/output/res1/yank/yank-rust/rustfmt_output.log"
+  },
+  "clippy_by_category": {"unused":2,"other":4},
+  "clippy_details": [{"file":"src/yank.rs","line":5,"lint":"","message":"unused import: `std::os::fd::AsRawFd`"},{"file":"src/yank.rs","line":412,"lint":"","message":"unnecessary `>= y + 1` or `x - 1 >=`: help: change it to: `current.eo < self.input_buffer.len()`"},{"file":"src/yank.rs","line":180,"lint":"","message":"type `yank::Field` is more private than the item `yank::Yank::compare_fields`: associated function `yank::Yank::compare_fields` is reachable at visibility `pub(crate)`"},{"file":"src/yank.rs","line":433,"lint":"","message":"this `if` can be collapsed into the outer `match`"},{"file":"","line":0,"lint":"","message":"`yank-rust` (bin \"yank-rust\") generated 4 warnings (run `cargo clippy --fix --bin \"yank-rust\" -p yank-rust -- ` to apply 3 suggestions)"},{"file":"","line":0,"lint":"","message":"`yank-rust` (bin \"yank-rust\" test) generated 4 warnings (4 duplicates)"}],
+  "clippy_error_details": [],
+  "rustfmt_details": [{"file":"src/yank.rs","line":112},{"file":"src/yank.rs","line":120},{"file":"src/yank.rs","line":134},{"file":"src/yank.rs","line":269},{"file":"src/yank.rs","line":278},{"file":"src/yank.rs","line":343},{"file":"src/yank.rs","line":410},{"file":"src/yank.rs","line":469},{"file":"src/yank.rs","line":554}]
+}

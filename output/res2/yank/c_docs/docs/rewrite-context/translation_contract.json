@@ -1,0 +1,360 @@
+{
+  "schema_version": 1,
+  "project": {
+    "name": "yank",
+    "kind": "library",
+    "build_system": "Makefile"
+  },
+  "files": [
+    {
+      "path": ".clang-format",
+      "role": "support"
+    },
+    {
+      "path": ".gitignore",
+      "role": "support"
+    },
+    {
+      "path": ".valgrindrc",
+      "role": "support"
+    },
+    {
+      "path": "CHANGELOG.md",
+      "role": "support"
+    },
+    {
+      "path": "LICENSE",
+      "role": "support"
+    },
+    {
+      "path": "Makefile",
+      "role": "support"
+    },
+    {
+      "path": "README.md",
+      "role": "support"
+    },
+    {
+      "path": "base_test.sh",
+      "role": "test"
+    },
+    {
+      "path": "c_build.sh",
+      "role": "support"
+    },
+    {
+      "path": "compile_commands.json",
+      "role": "support"
+    },
+    {
+      "path": "cppcheck-suppressions.xml",
+      "role": "support"
+    },
+    {
+      "path": "run_test.sh",
+      "role": "test"
+    },
+    {
+      "path": "targets.txt",
+      "role": "support"
+    },
+    {
+      "path": "test/_lib.bash",
+      "role": "test"
+    },
+    {
+      "path": "test/yank-basic.sh",
+      "role": "test"
+    },
+    {
+      "path": "test/yank-ctrl-c.sh",
+      "role": "test"
+    },
+    {
+      "path": "test/yank-delim.sh",
+      "role": "test"
+    },
+    {
+      "path": "test/yank-help-rc.sh",
+      "role": "test"
+    },
+    {
+      "path": "test/yank-line-mode.sh",
+      "role": "test"
+    },
+    {
+      "path": "test/yank-nav-end.sh",
+      "role": "test"
+    },
+    {
+      "path": "test/yank-nav-right.sh",
+      "role": "test"
+    },
+    {
+      "path": "test/yank-version.sh",
+      "role": "test"
+    },
+    {
+      "path": "yank",
+      "role": "support"
+    },
+    {
+      "path": "yank.1",
+      "role": "support"
+    },
+    {
+      "path": "yank.c",
+      "role": "source"
+    },
+    {
+      "path": "yank.o",
+      "role": "support"
+    }
+  ],
+  "module_units": [
+    {
+      "name": "main_root",
+      "category": "main",
+      "files": [
+        "yank.c"
+      ]
+    }
+  ],
+  "generation_boundary": {
+    "allowed_rust_files": [
+      "Cargo.toml",
+      "src/lib.rs",
+      "src/yank.rs",
+      "README.md"
+    ],
+    "allow_tests": false,
+    "allow_examples": false,
+    "allow_benches": false,
+    "allow_ffi": false,
+    "dependency_policy": "std_only_by_default",
+    "allowed_dependencies": []
+  },
+  "forbidden_without_evidence": [
+    "serde",
+    "criterion",
+    "proptest",
+    "thread_safe_api",
+    "recovery_mechanism",
+    "crates_io_release",
+    "ffi",
+    "range_query",
+    "batch_operation"
+  ],
+  "types": [],
+  "functions": [
+    {
+      "id": "FN-input",
+      "name": "input",
+      "role": "internal_helper",
+      "file": "",
+      "source": "[unknown]",
+      "signature": "static void input(void);",
+      "declared_in": "",
+      "line_count": 22
+    },
+    {
+      "id": "FN-strtopat",
+      "name": "strtopat",
+      "role": "internal_helper",
+      "file": "",
+      "source": "[unknown]",
+      "signature": "static char * strtopat(const char *s);",
+      "declared_in": "",
+      "line_count": 17
+    },
+    {
+      "id": "FN-fcmp",
+      "name": "fcmp",
+      "role": "internal_helper",
+      "file": "",
+      "source": "[unknown]",
+      "signature": "static int fcmp(const struct field *f1, const struct field *f2);",
+      "declared_in": "",
+      "line_count": 10
+    },
+    {
+      "id": "FN-xwrite",
+      "name": "xwrite",
+      "role": "internal_helper",
+      "file": "",
+      "source": "[unknown]",
+      "signature": "static ssize_t xwrite(int fd, const char *s, size_t nmemb);",
+      "declared_in": "",
+      "line_count": 18
+    },
+    {
+      "id": "FN-yank",
+      "name": "yank",
+      "role": "internal_helper",
+      "file": "",
+      "source": "[unknown]",
+      "signature": "static void yank(const char *s, size_t nmemb);",
+      "declared_in": "",
+      "line_count": 41
+    },
+    {
+      "id": "FN-twrite",
+      "name": "twrite",
+      "role": "internal_helper",
+      "file": "",
+      "source": "[unknown]",
+      "signature": "static void twrite(const char *s, size_t nmemb);",
+      "declared_in": "",
+      "line_count": 6
+    },
+    {
+      "id": "FN-tputs",
+      "name": "tputs",
+      "role": "internal_helper",
+      "file": "",
+      "source": "[unknown]",
+      "signature": "static void tputs(const char *s);",
+      "declared_in": "",
+      "line_count": 8
+    },
+    {
+      "id": "FN-tsetup",
+      "name": "tsetup",
+      "role": "internal_helper",
+      "file": "",
+      "source": "[unknown]",
+      "signature": "static void tsetup(void);",
+      "declared_in": "",
+      "line_count": 75
+    },
+    {
+      "id": "FN-tend",
+      "name": "tend",
+      "role": "internal_helper",
+      "file": "",
+      "source": "[unknown]",
+      "signature": "static void tend(void);",
+      "declared_in": "",
+      "line_count": 12
+    },
+    {
+      "id": "FN-tgetc",
+      "name": "tgetc",
+      "role": "internal_helper",
+      "file": "",
+      "source": "[unknown]",
+      "signature": "static int tgetc(void);",
+      "declared_in": "",
+      "line_count": 44
+    },
+    {
+      "id": "FN-tmain",
+      "name": "tmain",
+      "role": "internal_helper",
+      "file": "",
+      "source": "[unknown]",
+      "signature": "static const struct field * tmain(void);",
+      "declared_in": "",
+      "line_count": 68
+    },
+    {
+      "id": "FN-usage",
+      "name": "usage",
+      "role": "internal_helper",
+      "file": "",
+      "source": "[unknown]",
+      "signature": "static void usage(void);",
+      "declared_in": "",
+      "line_count": 7
+    },
+    {
+      "id": "FN-main",
+      "name": "main",
+      "role": "internal_helper",
+      "file": "",
+      "source": "[unknown]",
+      "signature": "int main(int argc, char *argv[]);",
+      "declared_in": "",
+      "line_count": 75
+    }
+  ],
+  "macros": [
+    {
+      "id": "MACRO-T_CLR_EOS",
+      "name": "T_CLR_EOS",
+      "file": "yank.c",
+      "source": "[yank.c:16]",
+      "definition": "#define T_CLR_EOS \"\\033[J\""
+    },
+    {
+      "id": "MACRO-T_CURSOR_INVISIBLE",
+      "name": "T_CURSOR_INVISIBLE",
+      "file": "yank.c",
+      "source": "[yank.c:17]",
+      "definition": "#define T_CURSOR_INVISIBLE \"\\033[?25l\""
+    },
+    {
+      "id": "MACRO-T_CURSOR_VISIBLE",
+      "name": "T_CURSOR_VISIBLE",
+      "file": "yank.c",
+      "source": "[yank.c:18]",
+      "definition": "#define T_CURSOR_VISIBLE \"\\033[?25h\""
+    },
+    {
+      "id": "MACRO-T_ENTER_CA_MODE",
+      "name": "T_ENTER_CA_MODE",
+      "file": "yank.c",
+      "source": "[yank.c:19]",
+      "definition": "#define T_ENTER_CA_MODE \"\\033[?1049h\""
+    },
+    {
+      "id": "MACRO-T_ENTER_STANDOUT_MODE",
+      "name": "T_ENTER_STANDOUT_MODE",
+      "file": "yank.c",
+      "source": "[yank.c:20]",
+      "definition": "#define T_ENTER_STANDOUT_MODE \"\\033[7m\""
+    },
+    {
+      "id": "MACRO-T_EXIT_CA_MODE",
+      "name": "T_EXIT_CA_MODE",
+      "file": "yank.c",
+      "source": "[yank.c:21]",
+      "definition": "#define T_EXIT_CA_MODE \"\\033[?1049l\""
+    },
+    {
+      "id": "MACRO-T_EXIT_STANDOUT_MODE",
+      "name": "T_EXIT_STANDOUT_MODE",
+      "file": "yank.c",
+      "source": "[yank.c:22]",
+      "definition": "#define T_EXIT_STANDOUT_MODE \"\\033[0m\""
+    },
+    {
+      "id": "MACRO-T_RESTORE_CURSOR",
+      "name": "T_RESTORE_CURSOR",
+      "file": "yank.c",
+      "source": "[yank.c:23]",
+      "definition": "#define T_RESTORE_CURSOR \"\\0338\""
+    },
+    {
+      "id": "MACRO-T_SAVE_CURSOR",
+      "name": "T_SAVE_CURSOR",
+      "file": "yank.c",
+      "source": "[yank.c:24]",
+      "definition": "#define T_SAVE_CURSOR \"\\0337\""
+    },
+    {
+      "id": "MACRO-MAX",
+      "name": "MAX",
+      "file": "yank.c",
+      "source": "[yank.c:26]",
+      "definition": "#define MAX(x, y) ((x) > (y) ? (x) : (y))"
+    },
+    {
+      "id": "MACRO-MIN",
+      "name": "MIN",
+      "file": "yank.c",
+      "source": "[yank.c:27]",
+      "definition": "#define MIN(x, y) ((x) < (y) ? (x) : (y))"
+    }
+  ]
+}

@@ -1,0 +1,911 @@
+warning: `/home/jfeng/.cargo/config` is deprecated in favor of `config.toml`
+  |
+  = help: if you need to support cargo 1.38 or earlier, you can symlink `config` to `config.toml`
+Diff in /data1/jfeng/tcode_win/output/res2/cflow-new/cflow-new-rust/src/c.rs:143:
+     }
+ 
+     pub fn yy_get_previous_state(&self) -> usize {
+[31m-        self.current_buffer.as_ref().map(|b| b.position).unwrap_or(0)
+(B[m[32m+        self.current_buffer
+(B[m[32m+            .as_ref()
+(B[m[32m+            .map(|b| b.position)
+(B[m[32m+            .unwrap_or(0)
+(B[m     }
+ 
+     pub fn yy_try_nul_trans(&self, current_state: usize) -> usize {
+Diff in /data1/jfeng/tcode_win/output/res2/cflow-new/cflow-new-rust/src/c.rs:194:
+             self.source_name = buf.name.clone();
+             self.source_content = buf.content.clone();
+             self.source_pos = buf.position;
+[31m-            self.input = buf.name.clone().map(|n| InputHandle::Path(PathBuf::from(n)));
+(B[m[32m+            self.input = buf
+(B[m[32m+                .name
+(B[m[32m+                .clone()
+(B[m[32m+                .map(|n| InputHandle::Path(PathBuf::from(n)));
+(B[m             if buf.status == BufferStatus::New {
+                 buf.status = BufferStatus::Normal;
+             }
+Diff in /data1/jfeng/tcode_win/output/res2/cflow-new/cflow-new-rust/src/c.rs:492:
+                 break;
+             };
+             self.consume_char();
+[31m-            value = value.saturating_mul(base as i32).saturating_add(digit as i32);
+(B[m[32m+            value = value
+(B[m[32m+                .saturating_mul(base as i32)
+(B[m[32m+                .saturating_add(digit as i32);
+(B[m             used += 1;
+         }
+ 
+Diff in /data1/jfeng/tcode_win/output/res2/cflow-new/cflow-new-rust/src/dot.rs:51:
+         writer.write_all(b"    node [shape=\"box\"]\n")
+     }
+ 
+[31m-    pub fn declare_node<W: Write + ?Sized>(writer: &mut W, symbol: &RenderedSymbol<'_>) -> io::Result<()> {
+(B[m[32m+    pub fn declare_node<W: Write + ?Sized>(
+(B[m[32m+        writer: &mut W,
+(B[m[32m+        symbol: &RenderedSymbol<'_>,
+(B[m[32m+    ) -> io::Result<()> {
+(B[m         write!(writer, "    {} [label=\"", symbol.symbol.name)?;
+         if let Some(decl) = &symbol.symbol.decl {
+             let source = symbol.symbol.source.as_deref().unwrap_or("");
+Diff in /data1/jfeng/tcode_win/output/res2/cflow-new/cflow-new-rust/src/error.rs:72:
+ 
+         Self::flush_stdout();
+ 
+[31m-        let prefix = state
+(B[m[31m-            .program_name
+(B[m[31m-            .clone()
+(B[m[31m-            .unwrap_or_else(env_program_name);
+(B[m[32m+        let prefix = state.program_name.clone().unwrap_or_else(env_program_name);
+(B[m 
+         let mut stderr = io::stderr().lock();
+         let _ = write!(stderr, "{}:", prefix);
+Diff in /data1/jfeng/tcode_win/output/res2/cflow-new/cflow-new-rust/src/exitfail.rs:9:
+         Self::DEFAULT
+     }
+ 
+[31m-    pub fn set_status(_status: i32) {
+(B[m[31m-    }
+(B[m[32m+    pub fn set_status(_status: i32) {}
+(B[m 
+     pub fn reset() {
+         Self::set_status(Self::DEFAULT);
+Diff in /data1/jfeng/tcode_win/output/res2/cflow-new/cflow-new-rust/src/gnu.rs:66:
+ 
+         if symbol.active {
+             if let Some(expand_line) = symbol.expand_line {
+[31m-                write!(writer, " (recursive: see {})", expand_line.saturating_sub(1))?;
+(B[m[32m+                write!(
+(B[m[32m+                    writer,
+(B[m[32m+                    " (recursive: see {})",
+(B[m[32m+                    expand_line.saturating_sub(1)
+(B[m[32m+                )?;
+(B[m             } else {
+                 write!(writer, " (recursive)")?;
+             }
+Diff in /data1/jfeng/tcode_win/output/res2/cflow-new/cflow-new-rust/src/gnu.rs:73:
+             return Ok(());
+         }
+ 
+[31m-
+(B[m         if !handler_data.print_as_tree && has_subtree {
+             write!(writer, ":")?;
+         }
+Diff in /data1/jfeng/tcode_win/output/res2/cflow-new/cflow-new-rust/src/gnu.rs:192:
+             symbol.symbol.decl.as_deref(),
+             symbol.symbol.source.as_deref(),
+         ) {
+[31m-            write!(writer, " <{} at {}:{}>", decl, source, symbol.symbol.def_line)?;
+(B[m[32m+            write!(
+(B[m[32m+                writer,
+(B[m[32m+                " <{} at {}:{}>",
+(B[m[32m+                decl, source, symbol.symbol.def_line
+(B[m[32m+            )?;
+(B[m         }
+ 
+         if symbol.symbol.active != 0 {
+Diff in /data1/jfeng/tcode_win/output/res2/cflow-new/cflow-new-rust/src/help.rs:64:
+ }
+ 
+ impl Help {
+[31m-    pub fn usage_var_def(name: impl Into<String>, is_bool: bool, value: Option<String>) -> UsageVarDef {
+(B[m[32m+    pub fn usage_var_def(
+(B[m[32m+        name: impl Into<String>,
+(B[m[32m+        is_bool: bool,
+(B[m[32m+        value: Option<String>,
+(B[m[32m+    ) -> UsageVarDef {
+(B[m         UsageVarDef {
+             name: name.into(),
+             is_bool,
+Diff in /data1/jfeng/tcode_win/output/res2/cflow-new/cflow-new-rust/src/help.rs:209:
+         let short_noarg: Vec<&OptionDef> = context
+             .options
+             .iter()
+[31m-            .filter(|opt| {
+(B[m[31m-                opt.name.chars().count() == 1 && opt.argdoc.is_none() && !opt.is_hidden
+(B[m[31m-            })
+(B[m[32m+            .filter(|opt| opt.name.chars().count() == 1 && opt.argdoc.is_none() && !opt.is_hidden)
+(B[m             .collect();
+ 
+         if !short_noarg.is_empty() {
+Diff in /data1/jfeng/tcode_win/output/res2/cflow-new/cflow-new-rust/src/help.rs:425:
+         }
+     }
+ 
+[31m-    pub fn set_head_group(options: &mut [OptionDef], indices: &[usize], offset: usize, i: usize, n: usize) {
+(B[m[32m+    pub fn set_head_group(
+(B[m[32m+        options: &mut [OptionDef],
+(B[m[32m+        indices: &[usize],
+(B[m[32m+        offset: usize,
+(B[m[32m+        i: usize,
+(B[m[32m+        n: usize,
+(B[m[32m+    ) {
+(B[m         if offset + i >= indices.len() {
+             return;
+         }
+Diff in /data1/jfeng/tcode_win/output/res2/cflow-new/cflow-new-rust/src/help.rs:432:
+         let head_idx = indices[offset + i];
+         let head_group = options.get(head_idx).map(|o| o.group).unwrap_or_default();
+         for pos in i..n {
+[31m-            if let Some(opt) = indices.get(offset + pos).and_then(|idx| options.get_mut(*idx)) {
+(B[m[32m+            if let Some(opt) = indices
+(B[m[32m+                .get(offset + pos)
+(B[m[32m+                .and_then(|idx| options.get_mut(*idx))
+(B[m[32m+            {
+(B[m                 opt.group = head_group;
+             }
+         }
+Diff in /data1/jfeng/tcode_win/output/res2/cflow-new/cflow-new-rust/src/help.rs:471:
+ 
+         let mut by_group: BTreeMap<i32, Vec<usize>> = BTreeMap::new();
+         for idx in indices.drain(..) {
+[31m-            by_group.entry(context.options[idx].group).or_default().push(idx);
+(B[m[32m+            by_group
+(B[m[32m+                .entry(context.options[idx].group)
+(B[m[32m+                .or_default()
+(B[m[32m+                .push(idx);
+(B[m         }
+ 
+         let mut ops = OptSort::default();
+Diff in /data1/jfeng/tcode_win/output/res2/cflow-new/cflow-new-rust/src/help.rs:621:
+         let mut next = i + 1;
+         while next < context.sorted_indices.len() {
+             let other = &context.options[context.sorted_indices[next]];
+[31m-            if other.group != current.group || other.argdoc != current.argdoc || other.doc != current.doc {
+(B[m[32m+            if other.group != current.group
+(B[m[32m+                || other.argdoc != current.argdoc
+(B[m[32m+                || other.doc != current.doc
+(B[m[32m+            {
+(B[m                 break;
+             }
+             next += 1;
+Diff in /data1/jfeng/tcode_win/output/res2/cflow-new/cflow-new-rust/src/help.rs:646:
+             let mut next = i + 1;
+             while next < context.sorted_indices.len() {
+                 let other = &context.options[context.sorted_indices[next]];
+[31m-                if other.group != current.group || other.argdoc != current.argdoc || other.doc != current.doc {
+(B[m[32m+                if other.group != current.group
+(B[m[32m+                    || other.argdoc != current.argdoc
+(B[m[32m+                    || other.doc != current.doc
+(B[m[32m+                {
+(B[m                     break;
+                 }
+                 next += 1;
+Diff in /data1/jfeng/tcode_win/output/res2/cflow-new/cflow-new-rust/src/main.rs:216:
+         for item in options {
+             if effective_len >= item.min_match
+                 && effective_len <= item.str_value.len()
+[31m-                && item.str_value
+(B[m[31m-                    .as_bytes()
+(B[m[31m-                    .get(..effective_len)
+(B[m[32m+                && item.str_value.as_bytes().get(..effective_len)
+(B[m                     == text.as_bytes().get(..effective_len)
+             {
+                 return item.type_code;
+Diff in /data1/jfeng/tcode_win/output/res2/cflow-new/cflow-new-rust/src/main.rs:384:
+     pub fn set_level_indent(&mut self, spec: &str) {
+         if let Ok(n) = spec.parse::<usize>() {
+             if n > 0 {
+[31m-            let s = " ".repeat(n.saturating_sub(1));
+(B[m[31m-            self.level_indent[0] = Some(s.clone());
+(B[m[31m-            self.level_indent[1] = Some(s);
+(B[m[31m-            return;
+(B[m[32m+                let s = " ".repeat(n.saturating_sub(1));
+(B[m[32m+                self.level_indent[0] = Some(s.clone());
+(B[m[32m+                self.level_indent[1] = Some(s);
+(B[m[32m+                return;
+(B[m             }
+         }
+ 
+Diff in /data1/jfeng/tcode_win/output/res2/cflow-new/cflow-new-rust/src/output.rs:147:
+     pub fn set_level_mark(&mut self, lev: usize, mark: bool) {
+         if lev >= self.level_mark.len() {
+             let grow_by = self.level_mark_incr.max(lev + 1 - self.level_mark.len());
+[31m-            self.level_mark.resize(self.level_mark.len() + grow_by, false);
+(B[m[32m+            self.level_mark
+(B[m[32m+                .resize(self.level_mark.len() + grow_by, false);
+(B[m             if lev >= self.level_mark.len() {
+                 self.level_mark.resize(lev + 1, false);
+             }
+Diff in /data1/jfeng/tcode_win/output/res2/cflow-new/cflow-new-rust/src/output.rs:240:
+             symbol: &sym,
+         };
+         let idx = self.driver_index.min(self.drivers.len() - 1);
+[31m-        self.drivers[idx].driver.symbol(writer, self.out_line, &rendered)
+(B[m[32m+        self.drivers[idx]
+(B[m[32m+            .driver
+(B[m[32m+            .symbol(writer, self.out_line, &rendered)
+(B[m     }
+ 
+     pub fn compare(&self, a: &str, b: &str) -> Ordering {
+Diff in /data1/jfeng/tcode_win/output/res2/cflow-new/cflow-new-rust/src/parseopt.rs:173:
+     }
+ 
+     pub fn negmatch(&self, opt_index: usize, optstr: &str, optlen: usize) -> bool {
+[31m-        !matches!(self.negmatch_state(opt_index, optstr, optlen), NegMatch::NoMatch)
+(B[m[32m+        !matches!(
+(B[m[32m+            self.negmatch_state(opt_index, optstr, optlen),
+(B[m[32m+            NegMatch::NoMatch
+(B[m[32m+        )
+(B[m     }
+ 
+     fn negmatch_state(&self, opt_index: usize, optstr: &str, optlen: usize) -> NegMatch {
+Diff in /data1/jfeng/tcode_win/output/res2/cflow-new/cflow-new-rust/src/parseopt.rs:185:
+             let len = opt.name.len();
+             if optlen <= neglen + len
+                 && optstr.get(..neglen) == Some(self.negation.as_str())
+[31m-                && optstr
+(B[m[31m-                    .get(neglen..neglen + optlen.saturating_sub(neglen))
+(B[m[32m+                && optstr.get(neglen..neglen + optlen.saturating_sub(neglen))
+(B[m                     == opt.name.get(..optlen.saturating_sub(neglen))
+             {
+                 if optlen == neglen + len {
+Diff in /data1/jfeng/tcode_win/output/res2/cflow-new/cflow-new-rust/src/parseopt.rs:360:
+     pub fn lookahead(&self) -> Option<&str> {
+         if !self.single_dash
+             && self.dash_count == 1
+[31m-            && self.optname.as_ref().is_some_and(|s| s.chars().nth(1).is_some())
+(B[m[32m+            && self
+(B[m[32m+                .optname
+(B[m[32m+                .as_ref()
+(B[m[32m+                .is_some_and(|s| s.chars().nth(1).is_some())
+(B[m         {
+             self.optname.as_deref()
+         } else {
+Diff in /data1/jfeng/tcode_win/output/res2/cflow-new/cflow-new-rust/src/parseopt.rs:381:
+ 
+         if !self.single_dash
+             && self.dash_count == 1
+[31m-            && self.optname.as_ref().is_some_and(|s| s.chars().nth(1).is_some())
+(B[m[32m+            && self
+(B[m[32m+                .optname
+(B[m[32m+                .as_ref()
+(B[m[32m+                .is_some_and(|s| s.chars().nth(1).is_some())
+(B[m         {
+             if let Some(name) = self.optname.clone() {
+                 self.optname = Some(name.chars().skip(1).collect());
+Diff in /data1/jfeng/tcode_win/output/res2/cflow-new/cflow-new-rust/src/parser.rs:1:
+[31m-use std::collections::{HashMap, HashSet};
+(B[m use crate::symbol::SymbolType;
+[32m+use std::collections::{HashMap, HashSet};
+(B[m use std::fmt::Write as _;
+ use std::io::{self, Write};
+ 
+Diff in /data1/jfeng/tcode_win/output/res2/cflow-new/cflow-new-rust/src/parser.rs:300:
+     }
+ 
+     pub fn tokpush(&mut self, token_type: i32, line: i32, token: Option<String>) {
+[31m-        self.token_stack.push(TokenRecord::new(token_type, line, token));
+(B[m[32m+        self.token_stack
+(B[m[32m+            .push(TokenRecord::new(token_type, line, token));
+(B[m         self.tos = self.token_stack.len();
+     }
+ 
+Diff in /data1/jfeng/tcode_win/output/res2/cflow-new/cflow-new-rust/src/parser.rs:338:
+     }
+ 
+     pub fn putback(&mut self) -> i32 {
+[31m-        assert!(self.curs != 0, "INTERNAL ERROR: cannot return token to stream");
+(B[m[32m+        assert!(
+(B[m[32m+            self.curs != 0,
+(B[m[32m+            "INTERNAL ERROR: cannot return token to stream"
+(B[m[32m+        );
+(B[m         self.curs -= 1;
+         if self.curs > 0 {
+             self.tok = self.token_stack[self.curs - 1].clone();
+Diff in /data1/jfeng/tcode_win/output/res2/cflow-new/cflow-new-rust/src/parser.rs:542:
+                     }
+                     self.pop_balance_state(&mut tos, &mut idx, &mut level);
+                 }
+[31m-            } else if let Some(new_idx) = oparen
+(B[m[31m-                .iter()
+(B[m[31m-                .position(|c| *c as i32 == self.tok.token_type)
+(B[m[32m+            } else if let Some(new_idx) =
+(B[m[32m+                oparen.iter().position(|c| *c as i32 == self.tok.token_type)
+(B[m             {
+                 self.push_balance_state(&mut tos, idx, level);
+                 idx = new_idx;
+Diff in /data1/jfeng/tcode_win/output/res2/cflow-new/cflow-new-rust/src/parser.rs:1211:
+     }
+ 
+     fn ensure_symbol_entry(&mut self, name: &str) -> &mut SymbolEntry {
+[31m-        self.symbols.entry(name.to_string()).or_insert_with(|| SymbolEntry {
+(B[m[31m-            name: name.to_string(),
+(B[m[31m-            storage: SymbolStorage::Extern,
+(B[m[31m-            line: -1,
+(B[m[31m-            declaration: None,
+(B[m[31m-            arity: -1,
+(B[m[31m-            references: Vec::new(),
+(B[m[31m-            callers: Vec::new(),
+(B[m[31m-            callees: Vec::new(),
+(B[m[31m-            is_type: false,
+(B[m[31m-            is_target: false,
+(B[m[31m-            is_local: false,
+(B[m[31m-        })
+(B[m[32m+        self.symbols
+(B[m[32m+            .entry(name.to_string())
+(B[m[32m+            .or_insert_with(|| SymbolEntry {
+(B[m[32m+                name: name.to_string(),
+(B[m[32m+                storage: SymbolStorage::Extern,
+(B[m[32m+                line: -1,
+(B[m[32m+                declaration: None,
+(B[m[32m+                arity: -1,
+(B[m[32m+                references: Vec::new(),
+(B[m[32m+                callers: Vec::new(),
+(B[m[32m+                callees: Vec::new(),
+(B[m[32m+                is_type: false,
+(B[m[32m+                is_target: false,
+(B[m[32m+                is_local: false,
+(B[m[32m+            })
+(B[m     }
+ 
+     pub fn reference(&mut self, name: &str, line: i32) {
+Diff in /data1/jfeng/tcode_win/output/res2/cflow-new/cflow-new-rust/src/parser.rs:1234:
+         let caller = self.caller.clone();
+         let source = self.filename.clone();
+         let entry = self.ensure_symbol_entry(name);
+[31m-        entry.references.push(ReferenceEntry {
+(B[m[31m-            source,
+(B[m[31m-            line,
+(B[m[31m-        });
+(B[m[32m+        entry.references.push(ReferenceEntry { source, line });
+(B[m 
+         if let Some(caller_name) = caller {
+             if !entry.callers.iter().any(|s| s == &caller_name) {
+Diff in /data1/jfeng/tcode_win/output/res2/cflow-new/cflow-new-rust/src/parser.rs:1304:
+         entry.arity = arity;
+         entry.is_type = matches!(symbol_type, SymbolType::Token);
+         entry.is_local = matches!(storage, SymbolStorage::Auto)
+[31m-            || (parm_level > 0 && matches!(storage, SymbolStorage::Extern | SymbolStorage::ExplicitExtern));
+(B[m[32m+            || (parm_level > 0
+(B[m[32m+                && matches!(
+(B[m[32m+                    storage,
+(B[m[32m+                    SymbolStorage::Extern | SymbolStorage::ExplicitExtern
+(B[m[32m+                ));
+(B[m         if !entry.is_local {
+             entry.line = line;
+         }
+Diff in /data1/jfeng/tcode_win/output/res2/cflow-new/cflow-new-rust/src/posix.rs:9:
+         Posix
+     }
+ 
+[31m-    pub fn print_symbol_type<W: Write + ?Sized>(writer: &mut W, symbol: &RenderedSymbol<'_>) -> io::Result<()> {
+(B[m[32m+    pub fn print_symbol_type<W: Write + ?Sized>(
+(B[m[32m+        writer: &mut W,
+(B[m[32m+        symbol: &RenderedSymbol<'_>,
+(B[m[32m+    ) -> io::Result<()> {
+(B[m         if let (Some(declaration), Some(source)) = (
+             symbol.symbol.decl.as_deref(),
+             symbol.symbol.source.as_deref(),
+Diff in /data1/jfeng/tcode_win/output/res2/cflow-new/cflow-new-rust/src/posix.rs:16:
+         ) {
+[31m-            write!(writer, "{declaration}, <{source} {}>", symbol.symbol.def_line)
+(B[m[32m+            write!(
+(B[m[32m+                writer,
+(B[m[32m+                "{declaration}, <{source} {}>",
+(B[m[32m+                symbol.symbol.def_line
+(B[m[32m+            )
+(B[m         } else {
+             write!(writer, "<>")
+         }
+Diff in /data1/jfeng/tcode_win/output/res2/cflow-new/cflow-new-rust/src/symbol.rs:191:
+                     .symbols
+                     .get(id)
+                     .map(|s| {
+[31m-                        s.name
+(B[m[31m-                            .bytes()
+(B[m[31m-                            .fold(0usize, |acc, b| acc.wrapping_mul(33).wrapping_add(b as usize))
+(B[m[31m-                            % n_buckets
+(B[m[32m+                        s.name.bytes().fold(0usize, |acc, b| {
+(B[m[32m+                            acc.wrapping_mul(33).wrapping_add(b as usize)
+(B[m[32m+                        }) % n_buckets
+(B[m                     })
+                     .unwrap_or(id % n_buckets)
+             }),
+Diff in /data1/jfeng/tcode_win/output/res2/cflow-new/cflow-new-rust/src/symbol.rs:403:
+                 return;
+             }
+ 
+[31m-            let keep_for_reverse = state.reverse_tree && !state.symbols[symbol_id].callee.is_empty();
+(B[m[32m+            let keep_for_reverse =
+(B[m[32m+                state.reverse_tree && !state.symbols[symbol_id].callee.is_empty();
+(B[m 
+             let name = state.symbols[symbol_id].name.clone();
+             let next_symbol = state.symbols[symbol_id].next;
+Diff in /data1/jfeng/tcode_win/output/res2/cflow-new/cflow-new-rust/src/symbol.rs:610:
+         }
+     }
+ 
+[31m-    pub fn collect_processor(entry: &TableEntry, data: &mut CollectData, sel: impl Fn(&Symbol) -> bool) -> bool {
+(B[m[32m+    pub fn collect_processor(
+(B[m[32m+        entry: &TableEntry,
+(B[m[32m+        data: &mut CollectData,
+(B[m[32m+        sel: impl Fn(&Symbol) -> bool,
+(B[m[32m+    ) -> bool {
+(B[m         if let Some(id) = entry.sym {
+             Self::with_state(|state| {
+                 let mut current = Some(id);
+Diff in /data1/jfeng/tcode_win/output/res2/cflow-new/cflow-new-rust/src/symbol.rs:634:
+         true
+     }
+ 
+[31m-    pub fn collect_list_entry(symbol_id: usize, data: &mut CollectData, sel: impl Fn(&Symbol) -> bool) -> bool {
+(B[m[32m+    pub fn collect_list_entry(
+(B[m[32m+        symbol_id: usize,
+(B[m[32m+        data: &mut CollectData,
+(B[m[32m+        sel: impl Fn(&Symbol) -> bool,
+(B[m[32m+    ) -> bool {
+(B[m         Self::with_state(|state| {
+             if let Some(sym) = state.symbols.get(symbol_id) {
+                 if sym.alive && sel(sym) {
+Diff in /data1/jfeng/tcode_win/output/res2/cflow-new/cflow-new-rust/src/symbol.rs:740:
+ 
+     pub fn delete_parms_itr(symbol_id: usize, level: i32) -> bool {
+         let should_delete = Self::with_state(|state| {
+[31m-            state.symbols.get(symbol_id).map(|s| {
+(B[m[31m-                s.alive
+(B[m[31m-                    && s.owner.is_some()
+(B[m[31m-                    && s.symbol_type == SymbolType::Identifier
+(B[m[31m-                    && s.storage == Storage::Auto
+(B[m[31m-                    && s.flag == SymbolFlag::Parm
+(B[m[31m-                    && s.level > level
+(B[m[31m-            }).unwrap_or(false)
+(B[m[32m+            state
+(B[m[32m+                .symbols
+(B[m[32m+                .get(symbol_id)
+(B[m[32m+                .map(|s| {
+(B[m[32m+                    s.alive
+(B[m[32m+                        && s.owner.is_some()
+(B[m[32m+                        && s.symbol_type == SymbolType::Identifier
+(B[m[32m+                        && s.storage == Storage::Auto
+(B[m[32m+                        && s.flag == SymbolFlag::Parm
+(B[m[32m+                        && s.level > level
+(B[m[32m+                })
+(B[m[32m+                .unwrap_or(false)
+(B[m         });
+         if should_delete {
+             Self::delete_symbol(symbol_id);
+Diff in /data1/jfeng/tcode_win/output/res2/cflow-new/cflow-new-rust/src/symbol.rs:941:
+     }
+ 
+     pub fn symbol_name(symbol_id: usize) -> Option<String> {
+[31m-        Self::with_state(|state| state.symbols.get(symbol_id).filter(|s| s.alive).map(|s| s.name.clone()))
+(B[m[32m+        Self::with_state(|state| {
+(B[m[32m+            state
+(B[m[32m+                .symbols
+(B[m[32m+                .get(symbol_id)
+(B[m[32m+                .filter(|s| s.alive)
+(B[m[32m+                .map(|s| s.name.clone())
+(B[m[32m+        })
+(B[m     }
+ 
+     pub fn compare_names(left: &str, right: &str) -> Ordering {
+Diff in /data1/jfeng/tcode_win/output/res2/cflow-new/cflow-new-rust/src/wordsplit.rs:223:
+             ws_delim: " \t\n".to_string(),
+             ws_sep: " ".to_string(),
+             ws_comment: None,
+[31m-            ws_escape: [
+(B[m[31m-                String::new(),
+(B[m[31m-                String::new(),
+(B[m[31m-            ],
+(B[m[32m+            ws_escape: [String::new(), String::new()],
+(B[m             ws_input: String::new(),
+             ws_len: 0,
+             ws_endp: 0,
+Diff in /data1/jfeng/tcode_win/output/res2/cflow-new/cflow-new-rust/src/wordsplit.rs:415:
+             '-'
+         });
+         s.push(if flags & _WSNF_QUOTE != 0 { 'q' } else { '-' });
+[31m-        s.push(if flags & _WSNF_NOEXPAND != 0 { 'E' } else { '-' });
+(B[m[32m+        s.push(if flags & _WSNF_NOEXPAND != 0 {
+(B[m[32m+            'E'
+(B[m[32m+        } else {
+(B[m[32m+            '-'
+(B[m[32m+        });
+(B[m         s.push(if flags & _WSNF_JOIN != 0 { 'j' } else { '-' });
+         s.push(if flags & _WSNF_SEXP != 0 { 's' } else { '-' });
+         s.push(if flags & _WSNF_DELIM != 0 { 'd' } else { '-' });
+Diff in /data1/jfeng/tcode_win/output/res2/cflow-new/cflow-new-rust/src/wordsplit.rs:431:
+         } else if node.flags & _WSNF_WORD != 0 {
+             node.word.clone().unwrap_or_default()
+         } else {
+[31m-            self.ws_input[node.segm_beg.min(self.ws_input.len())..node.segm_end.min(self.ws_input.len())]
+(B[m[32m+            self.ws_input
+(B[m[32m+                [node.segm_beg.min(self.ws_input.len())..node.segm_end.min(self.ws_input.len())]
+(B[m                 .to_string()
+         }
+     }
+Diff in /data1/jfeng/tcode_win/output/res2/cflow-new/cflow-new-rust/src/wordsplit.rs:530:
+             self.ws_tail = self.wsnode_tail(Some(idx));
+         } else if before {
+             if let Some(a) = anchor {
+[31m-                let prev = self.nodes.get(a).and_then(|n| n.as_ref()).and_then(|n| n.prev);
+(B[m[32m+                let prev = self
+(B[m[32m+                    .nodes
+(B[m[32m+                    .get(a)
+(B[m[32m+                    .and_then(|n| n.as_ref())
+(B[m[32m+                    .and_then(|n| n.prev);
+(B[m                 if let Some(p) = prev {
+                     self.wsnode_insert(idx, Some(p), false);
+                 } else {
+Diff in /data1/jfeng/tcode_win/output/res2/cflow-new/cflow-new-rust/src/wordsplit.rs:550:
+                 }
+             }
+         } else if let Some(a) = anchor {
+[31m-            let p = self.nodes.get(a).and_then(|n| n.as_ref()).and_then(|n| n.next);
+(B[m[32m+            let p = self
+(B[m[32m+                .nodes
+(B[m[32m+                .get(a)
+(B[m[32m+                .and_then(|n| n.as_ref())
+(B[m[32m+                .and_then(|n| n.next);
+(B[m             let tail = self.wsnode_tail(Some(idx));
+             if let Some(pi) = p {
+                 if let Some(pn) = self.nodes.get_mut(pi).and_then(|n| n.as_mut()) {
+Diff in /data1/jfeng/tcode_win/output/res2/cflow-new/cflow-new-rust/src/wordsplit.rs:642:
+             if !join {
+                 break;
+             }
+[31m-            p = self.nodes.get(i).and_then(|n| n.as_ref()).and_then(|n| n.next);
+(B[m[32m+            p = self
+(B[m[32m+                .nodes
+(B[m[32m+                .get(i)
+(B[m[32m+                .and_then(|n| n.as_ref())
+(B[m[32m+                .and_then(|n| n.next);
+(B[m         }
+         let end = p;
+ 
+Diff in /data1/jfeng/tcode_win/output/res2/cflow-new/cflow-new-rust/src/wordsplit.rs:650:
+         let mut p = Some(node_idx);
+         let mut stop = false;
+         while let Some(i) = p {
+[31m-            let next = self.nodes.get(i).and_then(|n| n.as_ref()).and_then(|n| n.next);
+(B[m[32m+            let next = self
+(B[m[32m+                .nodes
+(B[m[32m+                .get(i)
+(B[m[32m+                .and_then(|n| n.as_ref())
+(B[m[32m+                .and_then(|n| n.next);
+(B[m             let part = self.wsnode_ptr(i);
+             buf.push_str(&part);
+             if i != node_idx {
+Diff in /data1/jfeng/tcode_win/output/res2/cflow-new/cflow-new-rust/src/wordsplit.rs:685:
+     pub fn wsnode_quoteremoval(&mut self) -> i32 {
+         let mut p = self.ws_head;
+         while let Some(idx) = p {
+[31m-            let next = self.nodes.get(idx).and_then(|n| n.as_ref()).and_then(|n| n.next);
+(B[m[32m+            let next = self
+(B[m[32m+                .nodes
+(B[m[32m+                .get(idx)
+(B[m[32m+                .and_then(|n| n.as_ref())
+(B[m[32m+                .and_then(|n| n.next);
+(B[m             let noexpand = self
+                 .nodes
+                 .get(idx)
+Diff in /data1/jfeng/tcode_win/output/res2/cflow-new/cflow-new-rust/src/wordsplit.rs:715:
+     pub fn wsnode_coalesce(&mut self) -> i32 {
+         let mut p = self.ws_head;
+         while let Some(idx) = p {
+[31m-            let next = self.nodes.get(idx).and_then(|n| n.as_ref()).and_then(|n| n.next);
+(B[m[32m+            let next = self
+(B[m[32m+                .nodes
+(B[m[32m+                .get(idx)
+(B[m[32m+                .and_then(|n| n.as_ref())
+(B[m[32m+                .and_then(|n| n.next);
+(B[m             let join = self
+                 .nodes
+                 .get(idx)
+Diff in /data1/jfeng/tcode_win/output/res2/cflow-new/cflow-new-rust/src/wordsplit.rs:740:
+         if has_next {
+             let mut np = Some(p);
+             while let Some(i) = np {
+[31m-                let next = self.nodes.get(i).and_then(|n| n.as_ref()).and_then(|n| n.next);
+(B[m[32m+                let next = self
+(B[m[32m+                    .nodes
+(B[m[32m+                    .get(i)
+(B[m[32m+                    .and_then(|n| n.as_ref())
+(B[m[32m+                    .and_then(|n| n.next);
+(B[m                 if next.is_none() {
+                     break;
+                 }
+Diff in /data1/jfeng/tcode_win/output/res2/cflow-new/cflow-new-rust/src/wordsplit.rs:761:
+         let mut p = self.ws_head;
+ 
+         while let Some(idx) = p {
+[31m-            let next = self.nodes.get(idx).and_then(|n| n.as_ref()).and_then(|n| n.next);
+(B[m[31m-            let flags = self.nodes.get(idx).and_then(|n| n.as_ref()).map(|n| n.flags).unwrap_or(0);
+(B[m[32m+            let next = self
+(B[m[32m+                .nodes
+(B[m[32m+                .get(idx)
+(B[m[32m+                .and_then(|n| n.as_ref())
+(B[m[32m+                .and_then(|n| n.next);
+(B[m[32m+            let flags = self
+(B[m[32m+                .nodes
+(B[m[32m+                .get(idx)
+(B[m[32m+                .and_then(|n| n.as_ref())
+(B[m[32m+                .map(|n| n.flags)
+(B[m[32m+                .unwrap_or(0);
+(B[m             if flags & _WSNF_DELIM != 0 {
+                 if self.ws_flags & WRDSF_SQUEEZE_DELIMS != 0 {
+                     if let Some(nx) = next {
+Diff in /data1/jfeng/tcode_win/output/res2/cflow-new/cflow-new-rust/src/wordsplit.rs:769:
+[31m-                        let nf = self.nodes.get(nx).and_then(|n| n.as_ref()).map(|n| n.flags).unwrap_or(0);
+(B[m[32m+                        let nf = self
+(B[m[32m+                            .nodes
+(B[m[32m+                            .get(nx)
+(B[m[32m+                            .and_then(|n| n.as_ref())
+(B[m[32m+                            .map(|n| n.flags)
+(B[m[32m+                            .unwrap_or(0);
+(B[m                         if nf & _WSNF_DELIM != 0 {
+                             let a = self.wsnode_ptr(idx);
+                             let b = self.wsnode_ptr(nx);
+Diff in /data1/jfeng/tcode_win/output/res2/cflow-new/cflow-new-rust/src/wordsplit.rs:778:
+                         }
+                     }
+                 } else if let Some(nx) = next {
+[31m-                    let nf = self.nodes.get(nx).and_then(|n| n.as_ref()).map(|n| n.flags).unwrap_or(0);
+(B[m[32m+                    let nf = self
+(B[m[32m+                        .nodes
+(B[m[32m+                        .get(nx)
+(B[m[32m+                        .and_then(|n| n.as_ref())
+(B[m[32m+                        .map(|n| n.flags)
+(B[m[32m+                        .unwrap_or(0);
+(B[m                     if nf & _WSNF_DELIM != 0 && self.ws_options & WRDSO_RETDELNOTEMPTY == 0 {
+                         let Ok(nulnode) = self.new_node() else {
+                             return self.wsplt_nomem();
+Diff in /data1/jfeng/tcode_win/output/res2/cflow-new/cflow-new-rust/src/wordsplit.rs:790:
+                     }
+                 }
+ 
+[31m-                if self.ws_options & WRDSO_MAXWORDS != 0 && self.ws_flags & WRDSF_RETURN_DELIMS == 0 {
+(B[m[32m+                if self.ws_options & WRDSO_MAXWORDS != 0 && self.ws_flags & WRDSF_RETURN_DELIMS == 0
+(B[m[32m+                {
+(B[m                     self.wsnode_remove(idx);
+                     p = next;
+                     continue;
+Diff in /data1/jfeng/tcode_win/output/res2/cflow-new/cflow-new-rust/src/wordsplit.rs:935:
+         0
+     }
+ 
+[31m-    pub fn find_closing_paren(
+(B[m[31m-        &self,
+(B[m[31m-        s: &str,
+(B[m[31m-        i: usize,
+(B[m[31m-        len: usize,
+(B[m[31m-        paren: &str,
+(B[m[31m-    ) -> Option<usize> {
+(B[m[32m+    pub fn find_closing_paren(&self, s: &str, i: usize, len: usize, paren: &str) -> Option<usize> {
+(B[m         let bytes = s.as_bytes();
+         let pb = paren.as_bytes();
+         if pb.len() != 2 {
+Diff in /data1/jfeng/tcode_win/output/res2/cflow-new/cflow-new-rust/src/wordsplit.rs:983:
+         None
+     }
+ 
+[31m-    pub fn wsplt_env_find(&self, name: &str, len: usize
+(B[m[31m-) -> Option<String> {
+(B[m[32m+    pub fn wsplt_env_find(&self, name: &str, len: usize) -> Option<String> {
+(B[m         let key = &name[..len.min(name.len())];
+         if self.ws_env_kv {
+             for item in &self.ws_env {
+Diff in /data1/jfeng/tcode_win/output/res2/cflow-new/cflow-new-rust/src/wordsplit.rs:1021:
+         }
+     }
+ 
+[31m-    pub fn wsplt_assign_var(
+(B[m[31m-        &mut self,
+(B[m[31m-        name: &str,
+(B[m[31m-        namelen: usize,
+(B[m[31m-        value: &str,
+(B[m[31m-    ) -> Result<(), i32> {
+(B[m[32m+    pub fn wsplt_assign_var(&mut self, name: &str, namelen: usize, value: &str) -> Result<(), i32> {
+(B[m         let key = &name[..namelen.min(name.len())];
+         let item = format!("{key}={value}");
+         if self.ws_env_kv {
+Diff in /data1/jfeng/tcode_win/output/res2/cflow-new/cflow-new-rust/src/wordsplit.rs:1087:
+         0
+     }
+ 
+[31m-    pub fn expand_paramv(
+(B[m[31m-        &mut self,
+(B[m[31m-        ptail: &mut usize,
+(B[m[31m-        flg: u32,
+(B[m[31m-        _q: bool,
+(B[m[31m-    ) -> i32 {
+(B[m[32m+    pub fn expand_paramv(&mut self, ptail: &mut usize, flg: u32, _q: bool) -> i32 {
+(B[m         let values = self.ws_paramv.clone();
+         for value in values {
+             let Ok(idx) = self.new_node() else {
+Diff in /data1/jfeng/tcode_win/output/res2/cflow-new/cflow-new-rust/src/wordsplit.rs:1172:
+         } else if bytes[i].is_ascii_digit() {
+             let mut num = 0usize;
+             while i < len && i < bytes.len() && bytes[i].is_ascii_digit() {
+[31m-                num = num.saturating_mul(10).saturating_add((bytes[i] - b'0') as usize);
+(B[m[32m+                num = num
+(B[m[32m+                    .saturating_mul(10)
+(B[m[32m+                    .saturating_add((bytes[i] - b'0') as usize);
+(B[m                 i += 1;
+             }
+             *pend = i;
+Diff in /data1/jfeng/tcode_win/output/res2/cflow-new/cflow-new-rust/src/wordsplit.rs:1229:
+     }
+ 
+     pub fn begin_var_p(&self, c: char) -> bool {
+[31m-        matches!(c, '{' | '#' | '@' | '*') || c.is_ascii_alphabetic() || c == '_' || c.is_ascii_digit()
+(B[m[32m+        matches!(c, '{' | '#' | '@' | '*')
+(B[m[32m+            || c.is_ascii_alphabetic()
+(B[m[32m+            || c == '_'
+(B[m[32m+            || c.is_ascii_digit()
+(B[m     }
+ 
+     pub fn node_expand(
+Diff in /data1/jfeng/tcode_win/output/res2/cflow-new/cflow-new-rust/src/wordsplit.rs:1275:
+     pub fn wsnode_nullelim(&mut self) {
+         let mut p = self.ws_head;
+         while let Some(idx) = p {
+[31m-            let next = self.nodes.get(idx).and_then(|n| n.as_ref()).and_then(|n| n.next);
+(B[m[32m+            let next = self
+(B[m[32m+                .nodes
+(B[m[32m+                .get(idx)
+(B[m[32m+                .and_then(|n| n.as_ref())
+(B[m[32m+                .and_then(|n| n.next);
+(B[m             let is_null = self
+                 .nodes
+                 .get(idx)
+Diff in /data1/jfeng/tcode_win/output/res2/cflow-new/cflow-new-rust/src/wordsplit.rs:1292:
+     pub fn varexp(&mut self) -> i32 {
+         let mut p = self.ws_head;
+         while let Some(idx) = p {
+[31m-            let next = self.nodes.get(idx).and_then(|n| n.as_ref()).and_then(|n| n.next);
+(B[m[32m+            let next = self
+(B[m[32m+                .nodes
+(B[m[32m+                .get(idx)
+(B[m[32m+                .and_then(|n| n.as_ref())
+(B[m[32m+                .and_then(|n| n.next);
+(B[m             let rc = self.node_expand(idx, Self::begin_var_char, Self::expvar_shim);
+             if rc != 0 {
+                 return rc;
+Diff in /data1/jfeng/tcode_win/output/res2/cflow-new/cflow-new-rust/src/wordsplit.rs:1304:
+     }
+ 
+     fn begin_var_char(c: char) -> bool {
+[31m-        matches!(c, '{' | '#' | '@' | '*') || c.is_ascii_alphabetic() || c == '_' || c.is_ascii_digit()
+(B[m[32m+        matches!(c, '{' | '#' | '@' | '*')
+(B[m[32m+            || c.is_ascii_alphabetic()
+(B[m[32m+            || c == '_'
+(B[m[32m+            || c.is_ascii_digit()
+(B[m     }
+ 
+     fn expvar_shim(
+Diff in /data1/jfeng/tcode_win/output/res2/cflow-new/cflow-new-rust/src/wordsplit.rs:1331:
+         flg: u32,
+     ) -> i32 {
+         let bytes = str_.as_bytes();
+[31m-        if *pend + 1 >= len || bytes.get(*pend) != Some(&b'$') || bytes.get(*pend + 1) != Some(&b'(') {
+(B[m[32m+        if *pend + 1 >= len
+(B[m[32m+            || bytes.get(*pend) != Some(&b'$')
+(B[m[32m+            || bytes.get(*pend + 1) != Some(&b'(')
+(B[m[32m+        {
+(B[m             return self.wsplt_setctxerr(WRDSE_PAREN, str_, len);
+         }
+         let start = *pend + 2;
+Diff in /data1/jfeng/tcode_win/output/res2/cflow-new/cflow-new-rust/src/wordsplit.rs:1366:
+     pub fn cmdexp(&mut self) -> i32 {
+         let mut p = self.ws_head;
+         while let Some(idx) = p {
+[31m-            let next = self.nodes.get(idx).and_then(|n| n.as_ref()).and_then(|n| n.next);
+(B[m[32m+            let next = self
+(B[m[32m+                .nodes
+(B[m[32m+                .get(idx)
+(B[m[32m+                .and_then(|n| n.as_ref())
+(B[m[32m+                .and_then(|n| n.next);
+(B[m             let text = self.wsnode_ptr(idx);
+             if text.contains("$(") {
+                 let mut tail = idx;
+Diff in /data1/jfeng/tcode_win/output/res2/cflow-new/cflow-new-rust/src/wordsplit.rs:1409:
+         let mut changed = false;
+         let mut p = self.ws_head;
+         while let Some(idx) = p {
+[31m-            let next = self.nodes.get(idx).and_then(|n| n.as_ref()).and_then(|n| n.next);
+(B[m[32m+            let next = self
+(B[m[32m+                .nodes
+(B[m[32m+                .get(idx)
+(B[m[32m+                .and_then(|n| n.as_ref())
+(B[m[32m+                .and_then(|n| n.next);
+(B[m             let text = self.wsnode_ptr(idx);
+             let trimmed = text.trim().to_string();
+             if trimmed != text {
+Diff in /data1/jfeng/tcode_win/output/res2/cflow-new/cflow-new-rust/src/wordsplit.rs:1436:
+         let home = env::var("HOME").unwrap_or_else(|_| String::from("~"));
+         let mut p = self.ws_head;
+         while let Some(idx) = p {
+[31m-            let next = self.nodes.get(idx).and_then(|n| n.as_ref()).and_then(|n| n.next);
+(B[m[32m+            let next = self
+(B[m[32m+                .nodes
+(B[m[32m+                .get(idx)
+(B[m[32m+                .and_then(|n| n.as_ref())
+(B[m[32m+                .and_then(|n| n.next);
+(B[m             let text = self.wsnode_ptr(idx);
+             if let Some(rest) = text.strip_prefix('~') {
+                 let expanded = if rest.is_empty() || rest.starts_with('/') {
+Diff in /data1/jfeng/tcode_win/output/res2/cflow-new/cflow-new-rust/src/wordsplit.rs:1471:
+     pub fn pathexpand(&mut self) -> i32 {
+         let mut p = self.ws_head;
+         while let Some(idx) = p {
+[31m-            let next = self.nodes.get(idx).and_then(|n| n.as_ref()).and_then(|n| n.next);
+(B[m[32m+            let next = self
+(B[m[32m+                .nodes
+(B[m[32m+                .get(idx)
+(B[m[32m+                .and_then(|n| n.as_ref())
+(B[m[32m+                .and_then(|n| n.next);
+(B[m             let text = self.wsnode_ptr(idx);
+             if self.is_glob(&text, text.len()) {
+                 if self.ws_options & WRDSO_FAILGLOB != 0 {
+Diff in /data1/jfeng/tcode_win/output/res2/cflow-new/cflow-new-rust/src/wordsplit.rs:1568:
+         while i < self.ws_len && i < bytes.len() {
+             let c = bytes[i];
+             if (self.ws_flags & WRDSF_COMMENT != 0)
+[31m-                && self.ws_comment.as_deref().unwrap_or("#").as_bytes().contains(&c)
+(B[m[32m+                && self
+(B[m[32m+                    .ws_comment
+(B[m[32m+                    .as_deref()
+(B[m[32m+                    .unwrap_or("#")
+(B[m[32m+                    .as_bytes()
+(B[m[32m+                    .contains(&c)
+(B[m             {
+                 break;
+             }
+Diff in /data1/jfeng/tcode_win/output/res2/cflow-new/cflow-new-rust/src/wordsplit.rs:1760:
+         if self.ws_flags & WRDSF_RETURN_DELIMS != 0
+             && i < self.ws_len
+             && i < input_len
+[31m-            && self.ws_delim.as_bytes().contains(&self.ws_input.as_bytes()[i])
+(B[m[32m+            && self
+(B[m[32m+                .ws_delim
+(B[m[32m+                .as_bytes()
+(B[m[32m+                .contains(&self.ws_input.as_bytes()[i])
+(B[m         {
+             let rc = self.add_segm(i, i + 1, _WSNF_DELIM | _WSNF_CONST);
+             if rc != 0 {
+Diff in /data1/jfeng/tcode_win/output/res2/cflow-new/cflow-new-rust/src/wordsplit.rs:1773:
+         while i < self.ws_len && i < input_len {
+             while i < self.ws_len
+                 && i < input_len
+[31m-                && self.ws_delim.as_bytes().contains(&self.ws_input.as_bytes()[i])
+(B[m[32m+                && self
+(B[m[32m+                    .ws_delim
+(B[m[32m+                    .as_bytes()
+(B[m[32m+                    .contains(&self.ws_input.as_bytes()[i])
+(B[m             {
+                 if self.ws_flags & WRDSF_RETURN_DELIMS != 0 {
+                     let rc = self.add_segm(i, i + 1, _WSNF_DELIM | _WSNF_CONST);
+Diff in /data1/jfeng/tcode_win/output/res2/cflow-new/cflow-new-rust/src/wordsplit.rs:1798:
+             i = self.ws_endp;
+             if i < self.ws_len
+                 && i < input_len
+[31m-                && !self.ws_delim.as_bytes().contains(&self.ws_input.as_bytes()[i])
+(B[m[32m+                && !self
+(B[m[32m+                    .ws_delim
+(B[m[32m+                    .as_bytes()
+(B[m[32m+                    .contains(&self.ws_input.as_bytes()[i])
+(B[m             {
+                 i += 1;
+             }

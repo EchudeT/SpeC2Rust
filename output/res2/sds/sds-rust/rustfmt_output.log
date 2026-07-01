@@ -1,0 +1,81 @@
+warning: `/home/jfeng/.cargo/config` is deprecated in favor of `config.toml`
+  |
+  = help: if you need to support cargo 1.38 or earlier, you can symlink `config` to `config.toml`
+Diff in /data1/jfeng/tcode_win/output/res2/sds/sds-rust/src/sds.rs:334:
+         }
+     }
+ 
+[31m-    pub fn splitlen(s: impl AsRef<[u8]>, len: isize, sep: impl AsRef<[u8]>, seplen: usize) -> Vec<Sds> {
+(B[m[32m+    pub fn splitlen(
+(B[m[32m+        s: impl AsRef<[u8]>,
+(B[m[32m+        len: isize,
+(B[m[32m+        sep: impl AsRef<[u8]>,
+(B[m[32m+        seplen: usize,
+(B[m[32m+    ) -> Vec<Sds> {
+(B[m         let s = s.as_ref();
+         let sep = sep.as_ref();
+ 
+Diff in /data1/jfeng/tcode_win/output/res2/sds/sds-rust/src/sds.rs:605:
+         );
+ 
+         x.cat("bar");
+[31m-        state.cond("Strings concatenation", x.buf.len() == 5 && x.buf == b"fobar");
+(B[m[32m+        state.cond(
+(B[m[32m+            "Strings concatenation",
+(B[m[32m+            x.buf.len() == 5 && x.buf == b"fobar",
+(B[m[32m+        );
+(B[m 
+         x.cpy("a");
+         state.cond(
+Diff in /data1/jfeng/tcode_win/output/res2/sds/sds-rust/src/sds.rs:656:
+         state.cond(
+             "sdscatfmt() seems working in the base case",
+             q.buf.len() == 60
+[31m-                && q.buf
+(B[m[31m-                    == b"--Hello Hi! World -9223372036854775808,9223372036854775807--",
+(B[m[32m+                && q.buf == b"--Hello Hi! World -9223372036854775808,9223372036854775807--",
+(B[m         );
+         println!("[{}]", String::from_utf8_lossy(&q.buf));
+ 
+Diff in /data1/jfeng/tcode_win/output/res2/sds/sds-rust/src/sds.rs:664:
+         let mut q = Sds::new("--");
+         q.catfmt(
+             "%u,%U--",
+[31m-            &[
+(B[m[31m-                CatFmtArg::UInt(u32::MAX),
+(B[m[31m-                CatFmtArg::ULongLong(u64::MAX),
+(B[m[31m-            ],
+(B[m[32m+            &[CatFmtArg::UInt(u32::MAX), CatFmtArg::ULongLong(u64::MAX)],
+(B[m         );
+         state.cond(
+             "sdscatfmt() seems working with unsigned numbers",
+Diff in /data1/jfeng/tcode_win/output/res2/sds/sds-rust/src/sds.rs:752:
+                 x.buf.len() == oldlen + 1 && free >= 1,
+             );
+         }
+[31m-        state.cond(
+(B[m[31m-            "sdsMakeRoomFor() content",
+(B[m[31m-            x.buf == b"0aaaaaaaaaa",
+(B[m[31m-        );
+(B[m[31m-        state.cond(
+(B[m[31m-            "sdsMakeRoomFor() final length",
+(B[m[31m-            x.buf.len() == 11,
+(B[m[31m-        );
+(B[m[32m+        state.cond("sdsMakeRoomFor() content", x.buf == b"0aaaaaaaaaa");
+(B[m[32m+        state.cond("sdsMakeRoomFor() final length", x.buf.len() == 11);
+(B[m 
+         state.report();
+         state.failed == 0
+Diff in /data1/jfeng/tcode_win/output/res2/sds/sds-rust/src/sds.rs:774:
+     pub fn test_report() {}
+ 
+     pub fn main() -> i32 {
+[31m-        if Self::test() { 0 } else { 1 }
+(B[m[32m+        if Self::test() {
+(B[m[32m+            0
+(B[m[32m+        } else {
+(B[m[32m+            1
+(B[m[32m+        }
+(B[m     }
+ 
+     pub fn main_root() -> i32 {

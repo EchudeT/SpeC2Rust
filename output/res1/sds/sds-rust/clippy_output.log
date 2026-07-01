@@ -1,0 +1,18 @@
+warning: `/home/jfeng/.cargo/config` is deprecated in favor of `config.toml`
+  |
+  = help: if you need to support cargo 1.38 or earlier, you can symlink `config` to `config.toml`
+warning: `/home/jfeng/.cargo/config` is deprecated in favor of `config.toml`
+  |
+  = help: if you need to support cargo 1.38 or earlier, you can symlink `config` to `config.toml`
+    Checking sds-rust v0.1.0 (/data1/jfeng/tcode_win/output/res1/sds/sds-rust)
+src/sds.rs:417:29: warning: value assigned to `in_double` is never read
+src/sds.rs:452:25: warning: value assigned to `in_single` is never read
+src/sds.rs:4:7: warning: constant `SDS_TYPE_5` is never used
+src/sds.rs:5:7: warning: constant `SDS_TYPE_8` is never used
+src/sds.rs:6:7: warning: constant `SDS_TYPE_16` is never used
+src/sds.rs:7:7: warning: constant `SDS_TYPE_32` is never used
+src/sds.rs:8:7: warning: constant `SDS_TYPE_64` is never used
+src/sds.rs:43:12: warning: multiple associated items are never used
+warning: `sds-rust` (bin "sds-rust") generated 8 warnings (8 duplicates)
+warning: `sds-rust` (bin "sds-rust" test) generated 8 warnings
+    Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.13s

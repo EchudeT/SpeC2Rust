@@ -1,0 +1,1949 @@
+{
+  "schema_version": 1,
+  "project": {
+    "name": "which",
+    "kind": "library",
+    "build_system": "Makefile.in"
+  },
+  "files": [
+    {
+      "path": "AUTHORS",
+      "role": "support"
+    },
+    {
+      "path": "COPYING",
+      "role": "support"
+    },
+    {
+      "path": "EXAMPLES",
+      "role": "example"
+    },
+    {
+      "path": "INSTALL",
+      "role": "support"
+    },
+    {
+      "path": "Makefile",
+      "role": "support"
+    },
+    {
+      "path": "Makefile.am",
+      "role": "support"
+    },
+    {
+      "path": "Makefile.in",
+      "role": "support"
+    },
+    {
+      "path": "NEWS",
+      "role": "support"
+    },
+    {
+      "path": "README",
+      "role": "support"
+    },
+    {
+      "path": "README.alias",
+      "role": "support"
+    },
+    {
+      "path": "acinclude.m4",
+      "role": "support"
+    },
+    {
+      "path": "aclocal.m4",
+      "role": "support"
+    },
+    {
+      "path": "base_test.sh",
+      "role": "test"
+    },
+    {
+      "path": "bash.c",
+      "role": "source"
+    },
+    {
+      "path": "bash.h",
+      "role": "header"
+    },
+    {
+      "path": "bash.o",
+      "role": "support"
+    },
+    {
+      "path": "c_build.sh",
+      "role": "support"
+    },
+    {
+      "path": "compare_results/test1.log",
+      "role": "support"
+    },
+    {
+      "path": "compare_results/test10.log",
+      "role": "support"
+    },
+    {
+      "path": "compare_results/test10_c.norm",
+      "role": "support"
+    },
+    {
+      "path": "compare_results/test10_c.raw",
+      "role": "support"
+    },
+    {
+      "path": "compare_results/test10_rust.norm",
+      "role": "support"
+    },
+    {
+      "path": "compare_results/test10_rust.raw",
+      "role": "support"
+    },
+    {
+      "path": "compare_results/test11.log",
+      "role": "support"
+    },
+    {
+      "path": "compare_results/test11_c.norm",
+      "role": "support"
+    },
+    {
+      "path": "compare_results/test11_c.raw",
+      "role": "support"
+    },
+    {
+      "path": "compare_results/test11_rust.norm",
+      "role": "support"
+    },
+    {
+      "path": "compare_results/test11_rust.raw",
+      "role": "support"
+    },
+    {
+      "path": "compare_results/test12.log",
+      "role": "support"
+    },
+    {
+      "path": "compare_results/test12_c.norm",
+      "role": "support"
+    },
+    {
+      "path": "compare_results/test12_c.raw",
+      "role": "support"
+    },
+    {
+      "path": "compare_results/test12_rust.norm",
+      "role": "support"
+    },
+    {
+      "path": "compare_results/test12_rust.raw",
+      "role": "support"
+    },
+    {
+      "path": "compare_results/test13.log",
+      "role": "support"
+    },
+    {
+      "path": "compare_results/test13_c.norm",
+      "role": "support"
+    },
+    {
+      "path": "compare_results/test13_c.raw",
+      "role": "support"
+    },
+    {
+      "path": "compare_results/test13_rust.norm",
+      "role": "support"
+    },
+    {
+      "path": "compare_results/test13_rust.raw",
+      "role": "support"
+    },
+    {
+      "path": "compare_results/test14.log",
+      "role": "support"
+    },
+    {
+      "path": "compare_results/test14_c.norm",
+      "role": "support"
+    },
+    {
+      "path": "compare_results/test14_c.raw",
+      "role": "support"
+    },
+    {
+      "path": "compare_results/test14_rust.norm",
+      "role": "support"
+    },
+    {
+      "path": "compare_results/test14_rust.raw",
+      "role": "support"
+    },
+    {
+      "path": "compare_results/test15.log",
+      "role": "support"
+    },
+    {
+      "path": "compare_results/test15_c.norm",
+      "role": "support"
+    },
+    {
+      "path": "compare_results/test15_c.raw",
+      "role": "support"
+    },
+    {
+      "path": "compare_results/test15_rust.norm",
+      "role": "support"
+    },
+    {
+      "path": "compare_results/test15_rust.raw",
+      "role": "support"
+    },
+    {
+      "path": "compare_results/test16.log",
+      "role": "support"
+    },
+    {
+      "path": "compare_results/test16_c.norm",
+      "role": "support"
+    },
+    {
+      "path": "compare_results/test16_c.raw",
+      "role": "support"
+    },
+    {
+      "path": "compare_results/test16_rust.norm",
+      "role": "support"
+    },
+    {
+      "path": "compare_results/test16_rust.raw",
+      "role": "support"
+    },
+    {
+      "path": "compare_results/test17.log",
+      "role": "support"
+    },
+    {
+      "path": "compare_results/test17_c.norm",
+      "role": "support"
+    },
+    {
+      "path": "compare_results/test17_c.raw",
+      "role": "support"
+    },
+    {
+      "path": "compare_results/test17_rust.norm",
+      "role": "support"
+    },
+    {
+      "path": "compare_results/test17_rust.raw",
+      "role": "support"
+    },
+    {
+      "path": "compare_results/test18.log",
+      "role": "support"
+    },
+    {
+      "path": "compare_results/test18_c.norm",
+      "role": "support"
+    },
+    {
+      "path": "compare_results/test18_c.raw",
+      "role": "support"
+    },
+    {
+      "path": "compare_results/test18_rust.norm",
+      "role": "support"
+    },
+    {
+      "path": "compare_results/test18_rust.raw",
+      "role": "support"
+    },
+    {
+      "path": "compare_results/test19.log",
+      "role": "support"
+    },
+    {
+      "path": "compare_results/test19_c.norm",
+      "role": "support"
+    },
+    {
+      "path": "compare_results/test19_c.raw",
+      "role": "support"
+    },
+    {
+      "path": "compare_results/test19_rust.norm",
+      "role": "support"
+    },
+    {
+      "path": "compare_results/test19_rust.raw",
+      "role": "support"
+    },
+    {
+      "path": "compare_results/test1_c.norm",
+      "role": "support"
+    },
+    {
+      "path": "compare_results/test1_c.raw",
+      "role": "support"
+    },
+    {
+      "path": "compare_results/test1_rust.norm",
+      "role": "support"
+    },
+    {
+      "path": "compare_results/test1_rust.raw",
+      "role": "support"
+    },
+    {
+      "path": "compare_results/test2.log",
+      "role": "support"
+    },
+    {
+      "path": "compare_results/test20.log",
+      "role": "support"
+    },
+    {
+      "path": "compare_results/test20_c.norm",
+      "role": "support"
+    },
+    {
+      "path": "compare_results/test20_c.raw",
+      "role": "support"
+    },
+    {
+      "path": "compare_results/test20_rust.norm",
+      "role": "support"
+    },
+    {
+      "path": "compare_results/test20_rust.raw",
+      "role": "support"
+    },
+    {
+      "path": "compare_results/test2_c.norm",
+      "role": "support"
+    },
+    {
+      "path": "compare_results/test2_c.raw",
+      "role": "support"
+    },
+    {
+      "path": "compare_results/test2_rust.norm",
+      "role": "support"
+    },
+    {
+      "path": "compare_results/test2_rust.raw",
+      "role": "support"
+    },
+    {
+      "path": "compare_results/test3.log",
+      "role": "support"
+    },
+    {
+      "path": "compare_results/test3_c.norm",
+      "role": "support"
+    },
+    {
+      "path": "compare_results/test3_c.raw",
+      "role": "support"
+    },
+    {
+      "path": "compare_results/test3_rust.norm",
+      "role": "support"
+    },
+    {
+      "path": "compare_results/test3_rust.raw",
+      "role": "support"
+    },
+    {
+      "path": "compare_results/test4.log",
+      "role": "support"
+    },
+    {
+      "path": "compare_results/test4_c.norm",
+      "role": "support"
+    },
+    {
+      "path": "compare_results/test4_c.raw",
+      "role": "support"
+    },
+    {
+      "path": "compare_results/test4_rust.norm",
+      "role": "support"
+    },
+    {
+      "path": "compare_results/test4_rust.raw",
+      "role": "support"
+    },
+    {
+      "path": "compare_results/test5.log",
+      "role": "support"
+    },
+    {
+      "path": "compare_results/test5_c.norm",
+      "role": "support"
+    },
+    {
+      "path": "compare_results/test5_c.raw",
+      "role": "support"
+    },
+    {
+      "path": "compare_results/test5_rust.norm",
+      "role": "support"
+    },
+    {
+      "path": "compare_results/test5_rust.raw",
+      "role": "support"
+    },
+    {
+      "path": "compare_results/test6.log",
+      "role": "support"
+    },
+    {
+      "path": "compare_results/test6_c.norm",
+      "role": "support"
+    },
+    {
+      "path": "compare_results/test6_c.raw",
+      "role": "support"
+    },
+    {
+      "path": "compare_results/test6_rust.norm",
+      "role": "support"
+    },
+    {
+      "path": "compare_results/test6_rust.raw",
+      "role": "support"
+    },
+    {
+      "path": "compare_results/test7.log",
+      "role": "support"
+    },
+    {
+      "path": "compare_results/test7_c.norm",
+      "role": "support"
+    },
+    {
+      "path": "compare_results/test7_c.raw",
+      "role": "support"
+    },
+    {
+      "path": "compare_results/test7_rust.norm",
+      "role": "support"
+    },
+    {
+      "path": "compare_results/test7_rust.raw",
+      "role": "support"
+    },
+    {
+      "path": "compare_results/test8.log",
+      "role": "support"
+    },
+    {
+      "path": "compare_results/test8_c.norm",
+      "role": "support"
+    },
+    {
+      "path": "compare_results/test8_c.raw",
+      "role": "support"
+    },
+    {
+      "path": "compare_results/test8_rust.norm",
+      "role": "support"
+    },
+    {
+      "path": "compare_results/test8_rust.raw",
+      "role": "support"
+    },
+    {
+      "path": "compare_results/test9.log",
+      "role": "support"
+    },
+    {
+      "path": "compare_results/test9_c.norm",
+      "role": "support"
+    },
+    {
+      "path": "compare_results/test9_c.raw",
+      "role": "support"
+    },
+    {
+      "path": "compare_results/test9_rust.norm",
+      "role": "support"
+    },
+    {
+      "path": "compare_results/test9_rust.raw",
+      "role": "support"
+    },
+    {
+      "path": "compile",
+      "role": "support"
+    },
+    {
+      "path": "compile_commands.json",
+      "role": "support"
+    },
+    {
+      "path": "config.h",
+      "role": "header"
+    },
+    {
+      "path": "config.h.in",
+      "role": "support"
+    },
+    {
+      "path": "config.log",
+      "role": "support"
+    },
+    {
+      "path": "config.status",
+      "role": "support"
+    },
+    {
+      "path": "configure",
+      "role": "support"
+    },
+    {
+      "path": "configure.ac",
+      "role": "support"
+    },
+    {
+      "path": "depcomp",
+      "role": "support"
+    },
+    {
+      "path": "flow_results/test10_fail.log",
+      "role": "support"
+    },
+    {
+      "path": "flow_results/test10_success.log",
+      "role": "support"
+    },
+    {
+      "path": "flow_results/test11_fail.log",
+      "role": "support"
+    },
+    {
+      "path": "flow_results/test11_success.log",
+      "role": "support"
+    },
+    {
+      "path": "flow_results/test12_fail.log",
+      "role": "support"
+    },
+    {
+      "path": "flow_results/test12_success.log",
+      "role": "support"
+    },
+    {
+      "path": "flow_results/test13_fail.log",
+      "role": "support"
+    },
+    {
+      "path": "flow_results/test13_success.log",
+      "role": "support"
+    },
+    {
+      "path": "flow_results/test14_fail.log",
+      "role": "support"
+    },
+    {
+      "path": "flow_results/test14_success.log",
+      "role": "support"
+    },
+    {
+      "path": "flow_results/test15_fail.log",
+      "role": "support"
+    },
+    {
+      "path": "flow_results/test15_success.log",
+      "role": "support"
+    },
+    {
+      "path": "flow_results/test16_fail.log",
+      "role": "support"
+    },
+    {
+      "path": "flow_results/test16_success.log",
+      "role": "support"
+    },
+    {
+      "path": "flow_results/test17_fail.log",
+      "role": "support"
+    },
+    {
+      "path": "flow_results/test17_success.log",
+      "role": "support"
+    },
+    {
+      "path": "flow_results/test18_fail.log",
+      "role": "support"
+    },
+    {
+      "path": "flow_results/test18_success.log",
+      "role": "support"
+    },
+    {
+      "path": "flow_results/test19_success.log",
+      "role": "support"
+    },
+    {
+      "path": "flow_results/test1_fail.log",
+      "role": "support"
+    },
+    {
+      "path": "flow_results/test1_success.log",
+      "role": "support"
+    },
+    {
+      "path": "flow_results/test20_fail.log",
+      "role": "support"
+    },
+    {
+      "path": "flow_results/test20_success.log",
+      "role": "support"
+    },
+    {
+      "path": "flow_results/test2_fail.log",
+      "role": "support"
+    },
+    {
+      "path": "flow_results/test2_success.log",
+      "role": "support"
+    },
+    {
+      "path": "flow_results/test3_fail.log",
+      "role": "support"
+    },
+    {
+      "path": "flow_results/test3_success.log",
+      "role": "support"
+    },
+    {
+      "path": "flow_results/test4_fail.log",
+      "role": "support"
+    },
+    {
+      "path": "flow_results/test4_success.log",
+      "role": "support"
+    },
+    {
+      "path": "flow_results/test5_fail.log",
+      "role": "support"
+    },
+    {
+      "path": "flow_results/test5_success.log",
+      "role": "support"
+    },
+    {
+      "path": "flow_results/test6_fail.log",
+      "role": "support"
+    },
+    {
+      "path": "flow_results/test6_success.log",
+      "role": "support"
+    },
+    {
+      "path": "flow_results/test7_fail.log",
+      "role": "support"
+    },
+    {
+      "path": "flow_results/test7_success.log",
+      "role": "support"
+    },
+    {
+      "path": "flow_results/test8_fail.log",
+      "role": "support"
+    },
+    {
+      "path": "flow_results/test8_success.log",
+      "role": "support"
+    },
+    {
+      "path": "flow_results/test9_fail.log",
+      "role": "support"
+    },
+    {
+      "path": "flow_results/test9_success.log",
+      "role": "support"
+    },
+    {
+      "path": "getopt.c",
+      "role": "source"
+    },
+    {
+      "path": "getopt.h",
+      "role": "header"
+    },
+    {
+      "path": "getopt.o",
+      "role": "support"
+    },
+    {
+      "path": "getopt1.c",
+      "role": "source"
+    },
+    {
+      "path": "getopt1.o",
+      "role": "support"
+    },
+    {
+      "path": "install-sh",
+      "role": "support"
+    },
+    {
+      "path": "maintMakefile",
+      "role": "support"
+    },
+    {
+      "path": "maintMakefile.in",
+      "role": "support"
+    },
+    {
+      "path": "mdate-sh",
+      "role": "support"
+    },
+    {
+      "path": "missing",
+      "role": "support"
+    },
+    {
+      "path": "posixstat.h",
+      "role": "header"
+    },
+    {
+      "path": "results/test10_success.log",
+      "role": "support"
+    },
+    {
+      "path": "results/test11_success.log",
+      "role": "support"
+    },
+    {
+      "path": "results/test12_success.log",
+      "role": "support"
+    },
+    {
+      "path": "results/test13_success.log",
+      "role": "support"
+    },
+    {
+      "path": "results/test14_success.log",
+      "role": "support"
+    },
+    {
+      "path": "results/test15_success.log",
+      "role": "support"
+    },
+    {
+      "path": "results/test16_success.log",
+      "role": "support"
+    },
+    {
+      "path": "results/test17_success.log",
+      "role": "support"
+    },
+    {
+      "path": "results/test18_success.log",
+      "role": "support"
+    },
+    {
+      "path": "results/test19_success.log",
+      "role": "support"
+    },
+    {
+      "path": "results/test1_success.log",
+      "role": "support"
+    },
+    {
+      "path": "results/test20_success.log",
+      "role": "support"
+    },
+    {
+      "path": "results/test2_success.log",
+      "role": "support"
+    },
+    {
+      "path": "results/test3_success.log",
+      "role": "support"
+    },
+    {
+      "path": "results/test4_success.log",
+      "role": "support"
+    },
+    {
+      "path": "results/test5_success.log",
+      "role": "support"
+    },
+    {
+      "path": "results/test6_success.log",
+      "role": "support"
+    },
+    {
+      "path": "results/test7_success.log",
+      "role": "support"
+    },
+    {
+      "path": "results/test8_success.log",
+      "role": "support"
+    },
+    {
+      "path": "results/test9_success.log",
+      "role": "support"
+    },
+    {
+      "path": "run_compare_test.sh",
+      "role": "test"
+    },
+    {
+      "path": "run_test.sh",
+      "role": "test"
+    },
+    {
+      "path": "stamp-h1",
+      "role": "support"
+    },
+    {
+      "path": "stamp-vti",
+      "role": "support"
+    },
+    {
+      "path": "sys.h",
+      "role": "header"
+    },
+    {
+      "path": "targets.txt",
+      "role": "support"
+    },
+    {
+      "path": "test/base_test.sh",
+      "role": "test"
+    },
+    {
+      "path": "test/run_test.sh",
+      "role": "test"
+    },
+    {
+      "path": "tilde/Makefile",
+      "role": "support"
+    },
+    {
+      "path": "tilde/Makefile.am",
+      "role": "support"
+    },
+    {
+      "path": "tilde/Makefile.in",
+      "role": "support"
+    },
+    {
+      "path": "tilde/README",
+      "role": "support"
+    },
+    {
+      "path": "tilde/ansi_stdlib.h",
+      "role": "header"
+    },
+    {
+      "path": "tilde/bashansi.h",
+      "role": "header"
+    },
+    {
+      "path": "tilde/libtilde.a",
+      "role": "support"
+    },
+    {
+      "path": "tilde/shell.c",
+      "role": "source"
+    },
+    {
+      "path": "tilde/shell.o",
+      "role": "support"
+    },
+    {
+      "path": "tilde/tilde.c",
+      "role": "source"
+    },
+    {
+      "path": "tilde/tilde.h",
+      "role": "header"
+    },
+    {
+      "path": "tilde/tilde.o",
+      "role": "support"
+    },
+    {
+      "path": "tilde/xmalloc.h",
+      "role": "header"
+    },
+    {
+      "path": "version.texi",
+      "role": "support"
+    },
+    {
+      "path": "which",
+      "role": "support"
+    },
+    {
+      "path": "which.1",
+      "role": "support"
+    },
+    {
+      "path": "which.c",
+      "role": "source"
+    },
+    {
+      "path": "which.info",
+      "role": "support"
+    },
+    {
+      "path": "which.o",
+      "role": "support"
+    },
+    {
+      "path": "which.texi",
+      "role": "support"
+    }
+  ],
+  "module_units": [
+    {
+      "name": "main_root",
+      "category": "main",
+      "files": [
+        "bash.c",
+        "getopt.c",
+        "getopt1.c",
+        "which.c"
+      ]
+    },
+    {
+      "name": "module_tilde",
+      "category": "module",
+      "files": [
+        "tilde/shell.c",
+        "tilde/tilde.c"
+      ]
+    }
+  ],
+  "generation_boundary": {
+    "allowed_rust_files": [
+      "Cargo.toml",
+      "src/lib.rs",
+      "src/bash.rs",
+      "src/getopt.rs",
+      "src/getopt1.rs",
+      "src/shell.rs",
+      "src/tilde.rs",
+      "src/which.rs",
+      "README.md"
+    ],
+    "allow_tests": false,
+    "allow_examples": false,
+    "allow_benches": false,
+    "allow_ffi": false,
+    "dependency_policy": "std_only_by_default",
+    "allowed_dependencies": []
+  },
+  "forbidden_without_evidence": [
+    "serde",
+    "criterion",
+    "proptest",
+    "thread_safe_api",
+    "recovery_mechanism",
+    "crates_io_release",
+    "ffi",
+    "range_query",
+    "batch_operation"
+  ],
+  "types": [
+    {
+      "id": "TYPE-option",
+      "name": "option",
+      "source": "[getopt.h:79-91]",
+      "file": "getopt.h",
+      "start_line": 79,
+      "end_line": 91,
+      "fields": [
+        {
+          "name": "name",
+          "c_type": "const char *",
+          "raw": "const char *name"
+        },
+        {
+          "name": "name",
+          "c_type": "char *",
+          "raw": "char *name"
+        },
+        {
+          "name": "has_arg",
+          "c_type": "int",
+          "raw": "int has_arg"
+        },
+        {
+          "name": "flag",
+          "c_type": "int *",
+          "raw": "int *flag"
+        },
+        {
+          "name": "val",
+          "c_type": "int",
+          "raw": "int val"
+        }
+      ],
+      "declaration": "struct option { #if defined (__STDC__) && __STDC__ const char *name; #else char *name; #endif /* has_arg can't be an enum because some compilers complain about type mismatches in all the code that assumes it is an int. */ int has_arg; int *flag; int val; };"
+    }
+  ],
+  "functions": [
+    {
+      "id": "FN-store_args_and_env",
+      "name": "store_args_and_env",
+      "role": "internal_helper",
+      "file": "",
+      "source": "[unknown]",
+      "signature": "static void __attribute__ ((unused)) store_args_and_env (int argc, char *const *argv);",
+      "declared_in": "",
+      "line_count": 9
+    },
+    {
+      "id": "FN-exchange",
+      "name": "exchange",
+      "role": "internal_helper",
+      "file": "",
+      "source": "[unknown]",
+      "signature": "static void exchange (argv) char **argv;",
+      "declared_in": "",
+      "line_count": 79
+    },
+    {
+      "id": "FN-_getopt_internal",
+      "name": "_getopt_internal",
+      "role": "internal_helper",
+      "file": "",
+      "source": "[unknown]",
+      "signature": "extern int _getopt_internal (int argc, char *const *argv, const char *shortopts, const struct option *longopts, int *longind, int long_only);",
+      "declared_in": "getopt.h",
+      "line_count": 453
+    },
+    {
+      "id": "FN-getopt",
+      "name": "getopt",
+      "role": "internal_helper",
+      "file": "",
+      "source": "[unknown]",
+      "signature": "extern int getopt (int argc, char *const *argv, const char *shortopts);",
+      "declared_in": "getopt.h",
+      "line_count": 11
+    },
+    {
+      "id": "FN-main",
+      "name": "main",
+      "role": "internal_helper",
+      "file": "",
+      "source": "[unknown]",
+      "signature": "int main (argc, argv) int argc; char **argv;",
+      "declared_in": "",
+      "line_count": 64
+    },
+    {
+      "id": "FN-getopt_long",
+      "name": "getopt_long",
+      "role": "internal_helper",
+      "file": "",
+      "source": "[unknown]",
+      "signature": "extern int getopt_long (int argc, char *const *argv, const char *shortopts, const struct option *longopts, int *longind);",
+      "declared_in": "getopt.h",
+      "line_count": 10
+    },
+    {
+      "id": "FN-getopt_long_only",
+      "name": "getopt_long_only",
+      "role": "internal_helper",
+      "file": "",
+      "source": "[unknown]",
+      "signature": "extern int getopt_long_only (int argc, char *const *argv, const char *shortopts, const struct option *longopts, int *longind);",
+      "declared_in": "getopt.h",
+      "line_count": 10
+    },
+    {
+      "id": "FN-main",
+      "name": "main",
+      "role": "internal_helper",
+      "file": "",
+      "source": "[unknown]",
+      "signature": "int main (argc, argv) int argc; char **argv;",
+      "declared_in": "",
+      "line_count": 87
+    },
+    {
+      "id": "FN-print_usage",
+      "name": "print_usage",
+      "role": "internal_helper",
+      "file": "",
+      "source": "[unknown]",
+      "signature": "static void print_usage(FILE *out);",
+      "declared_in": "",
+      "line_count": 24
+    },
+    {
+      "id": "FN-print_version",
+      "name": "print_version",
+      "role": "internal_helper",
+      "file": "",
+      "source": "[unknown]",
+      "signature": "static void print_version(void);",
+      "declared_in": "",
+      "line_count": 7
+    },
+    {
+      "id": "FN-print_fail",
+      "name": "print_fail",
+      "role": "internal_helper",
+      "file": "",
+      "source": "[unknown]",
+      "signature": "static void print_fail(const char *name, const char *path_list);",
+      "declared_in": "",
+      "line_count": 4
+    },
+    {
+      "id": "FN-find_command_in_path",
+      "name": "find_command_in_path",
+      "role": "internal_helper",
+      "file": "",
+      "source": "[unknown]",
+      "signature": "static char *find_command_in_path(const char *name, const char *path_list, int *path_index);",
+      "declared_in": "",
+      "line_count": 87
+    },
+    {
+      "id": "FN-get_current_working_directory",
+      "name": "get_current_working_directory",
+      "role": "internal_helper",
+      "file": "",
+      "source": "[unknown]",
+      "signature": "static void get_current_working_directory(void);",
+      "declared_in": "",
+      "line_count": 26
+    },
+    {
+      "id": "FN-path_clean_up",
+      "name": "path_clean_up",
+      "role": "internal_helper",
+      "file": "",
+      "source": "[unknown]",
+      "signature": "static char *path_clean_up(const char *path);",
+      "declared_in": "",
+      "line_count": 51
+    },
+    {
+      "id": "FN-func_search",
+      "name": "func_search",
+      "role": "internal_helper",
+      "file": "",
+      "source": "[unknown]",
+      "signature": "int func_search(int indent, const char *cmd, struct function_st *func_list, int function_start_type);",
+      "declared_in": "",
+      "line_count": 25
+    },
+    {
+      "id": "FN-path_search",
+      "name": "path_search",
+      "role": "internal_helper",
+      "file": "",
+      "source": "[unknown]",
+      "signature": "int path_search(int indent, const char *cmd, const char *path_list);",
+      "declared_in": "",
+      "line_count": 50
+    },
+    {
+      "id": "FN-process_alias",
+      "name": "process_alias",
+      "role": "internal_helper",
+      "file": "",
+      "source": "[unknown]",
+      "signature": "void process_alias(const char *str, int argc, char *argv[], const char *path_list, int function_start_type);",
+      "declared_in": "",
+      "line_count": 69
+    },
+    {
+      "id": "FN-main",
+      "name": "main",
+      "role": "internal_helper",
+      "file": "",
+      "source": "[unknown]",
+      "signature": "int main(int argc, char *argv[]);",
+      "declared_in": "",
+      "line_count": 247
+    },
+    {
+      "id": "FN-xmalloc",
+      "name": "xmalloc",
+      "role": "internal_helper",
+      "file": "",
+      "source": "[unknown]",
+      "signature": "void *xmalloc(size_t size);",
+      "declared_in": "",
+      "line_count": 10
+    },
+    {
+      "id": "FN-xrealloc",
+      "name": "xrealloc",
+      "role": "internal_helper",
+      "file": "",
+      "source": "[unknown]",
+      "signature": "void *xrealloc(void *ptr, size_t size);",
+      "declared_in": "",
+      "line_count": 12
+    },
+    {
+      "id": "FN-uidget",
+      "name": "uidget",
+      "role": "internal_helper",
+      "file": "",
+      "source": "[unknown]",
+      "signature": "extern int uidget();",
+      "declared_in": "bash.h",
+      "line_count": 22
+    },
+    {
+      "id": "FN-getmaxgroups",
+      "name": "getmaxgroups",
+      "role": "internal_helper",
+      "file": "",
+      "source": "[unknown]",
+      "signature": "int getmaxgroups ();",
+      "declared_in": "",
+      "line_count": 27
+    },
+    {
+      "id": "FN-initialize_group_array",
+      "name": "initialize_group_array",
+      "role": "internal_helper",
+      "file": "",
+      "source": "[unknown]",
+      "signature": "static void initialize_group_array ();",
+      "declared_in": "",
+      "line_count": 51
+    },
+    {
+      "id": "FN-group_member",
+      "name": "group_member",
+      "role": "internal_helper",
+      "file": "",
+      "source": "[unknown]",
+      "signature": "group_member (GID_T gid) #else group_member (gid) GID_T gid; #endif /* !__STDC__ && !_MINIX */;",
+      "declared_in": "",
+      "line_count": 30
+    },
+    {
+      "id": "FN-file_status",
+      "name": "file_status",
+      "role": "internal_helper",
+      "file": "",
+      "source": "[unknown]",
+      "signature": "extern int file_status(const char *name);",
+      "declared_in": "bash.h",
+      "line_count": 84
+    },
+    {
+      "id": "FN-absolute_program",
+      "name": "absolute_program",
+      "role": "internal_helper",
+      "file": "",
+      "source": "[unknown]",
+      "signature": "extern int absolute_program(const char *string);",
+      "declared_in": "bash.h",
+      "line_count": 5
+    },
+    {
+      "id": "FN-substring",
+      "name": "substring",
+      "role": "internal_helper",
+      "file": "",
+      "source": "[unknown]",
+      "signature": "char * substring (char const* string, int start, int end);",
+      "declared_in": "",
+      "line_count": 12
+    },
+    {
+      "id": "FN-extract_colon_unit",
+      "name": "extract_colon_unit",
+      "role": "internal_helper",
+      "file": "",
+      "source": "[unknown]",
+      "signature": "char* extract_colon_unit (char const* string, int* p_index);",
+      "declared_in": "",
+      "line_count": 41
+    },
+    {
+      "id": "FN-get_next_path_element",
+      "name": "get_next_path_element",
+      "role": "internal_helper",
+      "file": "",
+      "source": "[unknown]",
+      "signature": "char* get_next_path_element (char const* path_list, int* path_index_pointer);",
+      "declared_in": "",
+      "line_count": 18
+    },
+    {
+      "id": "FN-make_full_pathname",
+      "name": "make_full_pathname",
+      "role": "internal_helper",
+      "file": "",
+      "source": "[unknown]",
+      "signature": "char * make_full_pathname (const char *path, const char *name, int name_len);",
+      "declared_in": "",
+      "line_count": 13
+    },
+    {
+      "id": "FN-get_current_user_info",
+      "name": "get_current_user_info",
+      "role": "internal_helper",
+      "file": "",
+      "source": "[unknown]",
+      "signature": "void get_current_user_info ();",
+      "declared_in": "",
+      "line_count": 31
+    },
+    {
+      "id": "FN-sh_get_env_value",
+      "name": "sh_get_env_value",
+      "role": "internal_helper",
+      "file": "",
+      "source": "[unknown]",
+      "signature": "char* sh_get_env_value (const char* v);",
+      "declared_in": "",
+      "line_count": 4
+    },
+    {
+      "id": "FN-sh_get_home_dir",
+      "name": "sh_get_home_dir",
+      "role": "internal_helper",
+      "file": "",
+      "source": "[unknown]",
+      "signature": "extern char* sh_get_home_dir(void);",
+      "declared_in": "bash.h",
+      "line_count": 6
+    },
+    {
+      "id": "FN-tilde_find_prefix",
+      "name": "tilde_find_prefix",
+      "role": "internal_helper",
+      "file": "",
+      "source": "[unknown]",
+      "signature": "static int tilde_find_prefix (string, len) const char *string; int *len;",
+      "declared_in": "",
+      "line_count": 32
+    },
+    {
+      "id": "FN-tilde_find_suffix",
+      "name": "tilde_find_suffix",
+      "role": "internal_helper",
+      "file": "",
+      "source": "[unknown]",
+      "signature": "static int tilde_find_suffix (string) const char *string;",
+      "declared_in": "",
+      "line_count": 27
+    },
+    {
+      "id": "FN-memory_error_and_abort",
+      "name": "memory_error_and_abort",
+      "role": "internal_helper",
+      "file": "",
+      "source": "[unknown]",
+      "signature": "static void memory_error_and_abort ();",
+      "declared_in": "",
+      "line_count": 6
+    },
+    {
+      "id": "FN-get_home_dir",
+      "name": "get_home_dir",
+      "role": "internal_helper",
+      "file": "",
+      "source": "[unknown]",
+      "signature": "char * get_home_dir ();",
+      "declared_in": "",
+      "line_count": 12
+    }
+  ],
+  "macros": [
+    {
+      "id": "MACRO-_NO_PROTO",
+      "name": "_NO_PROTO",
+      "file": "getopt.c",
+      "source": "[getopt.c:27]",
+      "definition": "#define _NO_PROTO"
+    },
+    {
+      "id": "MACRO-const",
+      "name": "const",
+      "file": "getopt.c",
+      "source": "[getopt.c:40]",
+      "definition": "#define const"
+    },
+    {
+      "id": "MACRO-GETOPT_INTERFACE_VERSION",
+      "name": "GETOPT_INTERFACE_VERSION",
+      "file": "getopt.c",
+      "source": "[getopt.c:54]",
+      "definition": "#define GETOPT_INTERFACE_VERSION 2"
+    },
+    {
+      "id": "MACRO-ELIDE_CODE",
+      "name": "ELIDE_CODE",
+      "file": "getopt.c",
+      "source": "[getopt.c:58]",
+      "definition": "#define ELIDE_CODE"
+    },
+    {
+      "id": "MACRO-getpid",
+      "name": "getpid",
+      "file": "getopt.c",
+      "source": "[getopt.c:84]",
+      "definition": "#define getpid() GetCurrentProcessId()"
+    },
+    {
+      "id": "MACRO-my_index",
+      "name": "my_index",
+      "file": "getopt.c",
+      "source": "[getopt.c:206]",
+      "definition": "#define my_index strchr"
+    },
+    {
+      "id": "MACRO-NONOPTION_P",
+      "name": "NONOPTION_P",
+      "file": "getopt.c",
+      "source": "[getopt.c:542-544]",
+      "definition": "#define NONOPTION_P (argv[optind][0] != '-' || argv[optind][1] == '\\0' \\ || (optind < nonoption_flags_len \\ && __getopt_nonoption_flags[optind] == '1'))"
+    },
+    {
+      "id": "MACRO-NONOPTION_P",
+      "name": "NONOPTION_P",
+      "file": "getopt.c",
+      "source": "[getopt.c:546]",
+      "definition": "#define NONOPTION_P (argv[optind][0] != '-' || argv[optind][1] == '\\0')"
+    },
+    {
+      "id": "MACRO-const",
+      "name": "const",
+      "file": "getopt1.c",
+      "source": "[getopt1.c:32]",
+      "definition": "#define const"
+    },
+    {
+      "id": "MACRO-GETOPT_INTERFACE_VERSION",
+      "name": "GETOPT_INTERFACE_VERSION",
+      "file": "getopt1.c",
+      "source": "[getopt1.c:46]",
+      "definition": "#define GETOPT_INTERFACE_VERSION 2"
+    },
+    {
+      "id": "MACRO-ELIDE_CODE",
+      "name": "ELIDE_CODE",
+      "file": "getopt1.c",
+      "source": "[getopt1.c:50]",
+      "definition": "#define ELIDE_CODE"
+    },
+    {
+      "id": "MACRO-NULL",
+      "name": "NULL",
+      "file": "getopt1.c",
+      "source": "[getopt1.c:64]",
+      "definition": "#define NULL 0"
+    },
+    {
+      "id": "MACRO-GID_T",
+      "name": "GID_T",
+      "file": "bash.c",
+      "source": "[bash.c:29]",
+      "definition": "#define GID_T GETGROUPS_T"
+    },
+    {
+      "id": "MACRO-FREE",
+      "name": "FREE",
+      "file": "bash.c",
+      "source": "[bash.c:76]",
+      "definition": "#define FREE(s) do { if (s) free (s); } while (0)"
+    },
+    {
+      "id": "MACRO-DEFAULT_MAXGROUPS",
+      "name": "DEFAULT_MAXGROUPS",
+      "file": "bash.c",
+      "source": "[bash.c:117]",
+      "definition": "#define DEFAULT_MAXGROUPS 64"
+    },
+    {
+      "id": "MACRO-savestring",
+      "name": "savestring",
+      "file": "tilde/tilde.c",
+      "source": "[tilde/tilde.c:68]",
+      "definition": "#define savestring(x) strcpy ((char *)xmalloc (1 + strlen (x)), (x))"
+    },
+    {
+      "id": "MACRO-FS_EXISTS",
+      "name": "FS_EXISTS",
+      "file": "bash.h",
+      "source": "[bash.h:3]",
+      "definition": "#define FS_EXISTS 0x1"
+    },
+    {
+      "id": "MACRO-FS_EXECABLE",
+      "name": "FS_EXECABLE",
+      "file": "bash.h",
+      "source": "[bash.h:4]",
+      "definition": "#define FS_EXECABLE 0x2"
+    },
+    {
+      "id": "MACRO-FS_EXEC_PREFERRED",
+      "name": "FS_EXEC_PREFERRED",
+      "file": "bash.h",
+      "source": "[bash.h:5]",
+      "definition": "#define FS_EXEC_PREFERRED 0x4"
+    },
+    {
+      "id": "MACRO-FS_EXEC_ONLY",
+      "name": "FS_EXEC_ONLY",
+      "file": "bash.h",
+      "source": "[bash.h:6]",
+      "definition": "#define FS_EXEC_ONLY 0x8"
+    },
+    {
+      "id": "MACRO-FS_DIRECTORY",
+      "name": "FS_DIRECTORY",
+      "file": "bash.h",
+      "source": "[bash.h:7]",
+      "definition": "#define FS_DIRECTORY 0x10"
+    },
+    {
+      "id": "MACRO-FS_NODIRS",
+      "name": "FS_NODIRS",
+      "file": "bash.h",
+      "source": "[bash.h:8]",
+      "definition": "#define FS_NODIRS 0x20"
+    },
+    {
+      "id": "MACRO-FS_READABLE",
+      "name": "FS_READABLE",
+      "file": "bash.h",
+      "source": "[bash.h:9]",
+      "definition": "#define FS_READABLE 0x40"
+    },
+    {
+      "id": "MACRO-savestring",
+      "name": "savestring",
+      "file": "bash.h",
+      "source": "[bash.h:12]",
+      "definition": "#define savestring(x) (char *)strcpy(xmalloc(1 + strlen (x)), (x))"
+    },
+    {
+      "id": "MACRO-_POSIXSTAT_H",
+      "name": "_POSIXSTAT_H",
+      "file": "posixstat.h",
+      "source": "[posixstat.h:25]",
+      "definition": "#define _POSIXSTAT_H"
+    },
+    {
+      "id": "MACRO-S_ISBLK",
+      "name": "S_ISBLK",
+      "file": "posixstat.h",
+      "source": "[posixstat.h:42]",
+      "definition": "#define S_ISBLK(s) ((s.st_mode & S_IFMT) == S_IFBLK)"
+    },
+    {
+      "id": "MACRO-S_IFMT",
+      "name": "S_IFMT",
+      "file": "posixstat.h",
+      "source": "[posixstat.h:59]",
+      "definition": "#define S_IFMT _S_IFMT"
+    },
+    {
+      "id": "MACRO-S_IFIFO",
+      "name": "S_IFIFO",
+      "file": "posixstat.h",
+      "source": "[posixstat.h:62]",
+      "definition": "#define S_IFIFO _S_IFIFO"
+    },
+    {
+      "id": "MACRO-S_IFCHR",
+      "name": "S_IFCHR",
+      "file": "posixstat.h",
+      "source": "[posixstat.h:65]",
+      "definition": "#define S_IFCHR _S_IFCHR"
+    },
+    {
+      "id": "MACRO-S_IFDIR",
+      "name": "S_IFDIR",
+      "file": "posixstat.h",
+      "source": "[posixstat.h:68]",
+      "definition": "#define S_IFDIR _S_IFDIR"
+    },
+    {
+      "id": "MACRO-S_IFBLK",
+      "name": "S_IFBLK",
+      "file": "posixstat.h",
+      "source": "[posixstat.h:71]",
+      "definition": "#define S_IFBLK _S_IFBLK"
+    },
+    {
+      "id": "MACRO-S_IFREG",
+      "name": "S_IFREG",
+      "file": "posixstat.h",
+      "source": "[posixstat.h:74]",
+      "definition": "#define S_IFREG _S_IFREG"
+    },
+    {
+      "id": "MACRO-S_IFLNK",
+      "name": "S_IFLNK",
+      "file": "posixstat.h",
+      "source": "[posixstat.h:77]",
+      "definition": "#define S_IFLNK _S_IFLNK"
+    },
+    {
+      "id": "MACRO-S_IFSOCK",
+      "name": "S_IFSOCK",
+      "file": "posixstat.h",
+      "source": "[posixstat.h:80]",
+      "definition": "#define S_IFSOCK _S_IFSOCK"
+    },
+    {
+      "id": "MACRO-S_ISBLK",
+      "name": "S_ISBLK",
+      "file": "posixstat.h",
+      "source": "[posixstat.h:87]",
+      "definition": "#define S_ISBLK(m) (((m)&S_IFMT) == S_IFBLK) /* block device */"
+    },
+    {
+      "id": "MACRO-S_ISCHR",
+      "name": "S_ISCHR",
+      "file": "posixstat.h",
+      "source": "[posixstat.h:91]",
+      "definition": "#define S_ISCHR(m) (((m)&S_IFMT) == S_IFCHR) /* character device */"
+    },
+    {
+      "id": "MACRO-S_ISDIR",
+      "name": "S_ISDIR",
+      "file": "posixstat.h",
+      "source": "[posixstat.h:95]",
+      "definition": "#define S_ISDIR(m) (((m)&S_IFMT) == S_IFDIR) /* directory */"
+    },
+    {
+      "id": "MACRO-S_ISREG",
+      "name": "S_ISREG",
+      "file": "posixstat.h",
+      "source": "[posixstat.h:99]",
+      "definition": "#define S_ISREG(m) (((m)&S_IFMT) == S_IFREG) /* file */"
+    },
+    {
+      "id": "MACRO-S_ISFIFO",
+      "name": "S_ISFIFO",
+      "file": "posixstat.h",
+      "source": "[posixstat.h:103]",
+      "definition": "#define S_ISFIFO(m) (((m)&S_IFMT) == S_IFIFO) /* fifo - named pipe */"
+    },
+    {
+      "id": "MACRO-S_ISLNK",
+      "name": "S_ISLNK",
+      "file": "posixstat.h",
+      "source": "[posixstat.h:107]",
+      "definition": "#define S_ISLNK(m) (((m)&S_IFMT) == S_IFLNK) /* symbolic link */"
+    },
+    {
+      "id": "MACRO-S_ISSOCK",
+      "name": "S_ISSOCK",
+      "file": "posixstat.h",
+      "source": "[posixstat.h:111]",
+      "definition": "#define S_ISSOCK(m) (((m)&S_IFMT) == S_IFSOCK) /* socket */"
+    },
+    {
+      "id": "MACRO-S_IRUGO",
+      "name": "S_IRUGO",
+      "file": "posixstat.h",
+      "source": "[posixstat.h:145]",
+      "definition": "#define S_IRUGO (S_IRUSR | S_IRGRP | S_IROTH)"
+    },
+    {
+      "id": "MACRO-S_IWUGO",
+      "name": "S_IWUGO",
+      "file": "posixstat.h",
+      "source": "[posixstat.h:146]",
+      "definition": "#define S_IWUGO (S_IWUSR | S_IWGRP | S_IWOTH)"
+    },
+    {
+      "id": "MACRO-S_IXUGO",
+      "name": "S_IXUGO",
+      "file": "posixstat.h",
+      "source": "[posixstat.h:147]",
+      "definition": "#define S_IXUGO (S_IXUSR | S_IXGRP | S_IXOTH)"
+    },
+    {
+      "id": "MACRO-_GETOPT_H",
+      "name": "_GETOPT_H",
+      "file": "getopt.h",
+      "source": "[getopt.h:21]",
+      "definition": "#define _GETOPT_H 1"
+    },
+    {
+      "id": "MACRO-no_argument",
+      "name": "no_argument",
+      "file": "getopt.h",
+      "source": "[getopt.h:95]",
+      "definition": "#define no_argument 0"
+    },
+    {
+      "id": "MACRO-required_argument",
+      "name": "required_argument",
+      "file": "getopt.h",
+      "source": "[getopt.h:96]",
+      "definition": "#define required_argument 1"
+    },
+    {
+      "id": "MACRO-optional_argument",
+      "name": "optional_argument",
+      "file": "getopt.h",
+      "source": "[getopt.h:97]",
+      "definition": "#define optional_argument 2"
+    },
+    {
+      "id": "MACRO-GETGROUPS_T",
+      "name": "GETGROUPS_T",
+      "file": "config.h",
+      "source": "[config.h:6]",
+      "definition": "#define GETGROUPS_T gid_t"
+    },
+    {
+      "id": "MACRO-HAVE_EACCESS",
+      "name": "HAVE_EACCESS",
+      "file": "config.h",
+      "source": "[config.h:9]",
+      "definition": "#define HAVE_EACCESS 1"
+    },
+    {
+      "id": "MACRO-HAVE_GETCWD",
+      "name": "HAVE_GETCWD",
+      "file": "config.h",
+      "source": "[config.h:12]",
+      "definition": "#define HAVE_GETCWD 1"
+    },
+    {
+      "id": "MACRO-HAVE_GETGROUPS",
+      "name": "HAVE_GETGROUPS",
+      "file": "config.h",
+      "source": "[config.h:15]",
+      "definition": "#define HAVE_GETGROUPS 1"
+    },
+    {
+      "id": "MACRO-HAVE_GETOPT_LONG",
+      "name": "HAVE_GETOPT_LONG",
+      "file": "config.h",
+      "source": "[config.h:18]",
+      "definition": "#define HAVE_GETOPT_LONG 1"
+    },
+    {
+      "id": "MACRO-HAVE_GETPWENT",
+      "name": "HAVE_GETPWENT",
+      "file": "config.h",
+      "source": "[config.h:21]",
+      "definition": "#define HAVE_GETPWENT 1"
+    },
+    {
+      "id": "MACRO-HAVE_GETPWNAM",
+      "name": "HAVE_GETPWNAM",
+      "file": "config.h",
+      "source": "[config.h:24]",
+      "definition": "#define HAVE_GETPWNAM 1"
+    },
+    {
+      "id": "MACRO-HAVE_GETPWUID",
+      "name": "HAVE_GETPWUID",
+      "file": "config.h",
+      "source": "[config.h:27]",
+      "definition": "#define HAVE_GETPWUID 1"
+    },
+    {
+      "id": "MACRO-HAVE_GETWD",
+      "name": "HAVE_GETWD",
+      "file": "config.h",
+      "source": "[config.h:33]",
+      "definition": "#define HAVE_GETWD 1"
+    },
+    {
+      "id": "MACRO-HAVE_INTTYPES_H",
+      "name": "HAVE_INTTYPES_H",
+      "file": "config.h",
+      "source": "[config.h:36]",
+      "definition": "#define HAVE_INTTYPES_H 1"
+    },
+    {
+      "id": "MACRO-HAVE_MEMCPY",
+      "name": "HAVE_MEMCPY",
+      "file": "config.h",
+      "source": "[config.h:42]",
+      "definition": "#define HAVE_MEMCPY 1"
+    },
+    {
+      "id": "MACRO-HAVE_MEMORY_H",
+      "name": "HAVE_MEMORY_H",
+      "file": "config.h",
+      "source": "[config.h:45]",
+      "definition": "#define HAVE_MEMORY_H 1"
+    },
+    {
+      "id": "MACRO-HAVE_PWD_H",
+      "name": "HAVE_PWD_H",
+      "file": "config.h",
+      "source": "[config.h:48]",
+      "definition": "#define HAVE_PWD_H 1"
+    },
+    {
+      "id": "MACRO-HAVE_STDINT_H",
+      "name": "HAVE_STDINT_H",
+      "file": "config.h",
+      "source": "[config.h:51]",
+      "definition": "#define HAVE_STDINT_H 1"
+    },
+    {
+      "id": "MACRO-HAVE_STDLIB_H",
+      "name": "HAVE_STDLIB_H",
+      "file": "config.h",
+      "source": "[config.h:54]",
+      "definition": "#define HAVE_STDLIB_H 1"
+    },
+    {
+      "id": "MACRO-HAVE_STRCHR",
+      "name": "HAVE_STRCHR",
+      "file": "config.h",
+      "source": "[config.h:57]",
+      "definition": "#define HAVE_STRCHR 1"
+    },
+    {
+      "id": "MACRO-HAVE_STRINGS_H",
+      "name": "HAVE_STRINGS_H",
+      "file": "config.h",
+      "source": "[config.h:60]",
+      "definition": "#define HAVE_STRINGS_H 1"
+    },
+    {
+      "id": "MACRO-HAVE_STRING_H",
+      "name": "HAVE_STRING_H",
+      "file": "config.h",
+      "source": "[config.h:63]",
+      "definition": "#define HAVE_STRING_H 1"
+    },
+    {
+      "id": "MACRO-HAVE_SYSCONF",
+      "name": "HAVE_SYSCONF",
+      "file": "config.h",
+      "source": "[config.h:66]",
+      "definition": "#define HAVE_SYSCONF 1"
+    },
+    {
+      "id": "MACRO-HAVE_SYS_STAT_H",
+      "name": "HAVE_SYS_STAT_H",
+      "file": "config.h",
+      "source": "[config.h:69]",
+      "definition": "#define HAVE_SYS_STAT_H 1"
+    },
+    {
+      "id": "MACRO-HAVE_SYS_TYPES_H",
+      "name": "HAVE_SYS_TYPES_H",
+      "file": "config.h",
+      "source": "[config.h:72]",
+      "definition": "#define HAVE_SYS_TYPES_H 1"
+    },
+    {
+      "id": "MACRO-HAVE_UNISTD_H",
+      "name": "HAVE_UNISTD_H",
+      "file": "config.h",
+      "source": "[config.h:75]",
+      "definition": "#define HAVE_UNISTD_H 1"
+    },
+    {
+      "id": "MACRO-NEED_XMALLOC",
+      "name": "NEED_XMALLOC",
+      "file": "config.h",
+      "source": "[config.h:78]",
+      "definition": "#define NEED_XMALLOC 1"
+    },
+    {
+      "id": "MACRO-PACKAGE",
+      "name": "PACKAGE",
+      "file": "config.h",
+      "source": "[config.h:81]",
+      "definition": "#define PACKAGE \"which\""
+    },
+    {
+      "id": "MACRO-PACKAGE_BUGREPORT",
+      "name": "PACKAGE_BUGREPORT",
+      "file": "config.h",
+      "source": "[config.h:84]",
+      "definition": "#define PACKAGE_BUGREPORT \"\""
+    },
+    {
+      "id": "MACRO-PACKAGE_NAME",
+      "name": "PACKAGE_NAME",
+      "file": "config.h",
+      "source": "[config.h:87]",
+      "definition": "#define PACKAGE_NAME \"which\""
+    },
+    {
+      "id": "MACRO-PACKAGE_STRING",
+      "name": "PACKAGE_STRING",
+      "file": "config.h",
+      "source": "[config.h:90]",
+      "definition": "#define PACKAGE_STRING \"which 2.21\""
+    },
+    {
+      "id": "MACRO-PACKAGE_TARNAME",
+      "name": "PACKAGE_TARNAME",
+      "file": "config.h",
+      "source": "[config.h:93]",
+      "definition": "#define PACKAGE_TARNAME \"which\""
+    },
+    {
+      "id": "MACRO-PACKAGE_URL",
+      "name": "PACKAGE_URL",
+      "file": "config.h",
+      "source": "[config.h:96]",
+      "definition": "#define PACKAGE_URL \"\""
+    },
+    {
+      "id": "MACRO-PACKAGE_VERSION",
+      "name": "PACKAGE_VERSION",
+      "file": "config.h",
+      "source": "[config.h:99]",
+      "definition": "#define PACKAGE_VERSION \"2.21\""
+    },
+    {
+      "id": "MACRO-STDC_HEADERS",
+      "name": "STDC_HEADERS",
+      "file": "config.h",
+      "source": "[config.h:105]",
+      "definition": "#define STDC_HEADERS 1"
+    },
+    {
+      "id": "MACRO-VERSION",
+      "name": "VERSION",
+      "file": "config.h",
+      "source": "[config.h:130]",
+      "definition": "#define VERSION \"2.21\""
+    },
+    {
+      "id": "MACRO-_XMALLOC_H_",
+      "name": "_XMALLOC_H_",
+      "file": "tilde/xmalloc.h",
+      "source": "[tilde/xmalloc.h:24]",
+      "definition": "#define _XMALLOC_H_"
+    },
+    {
+      "id": "MACRO-_BASHANSI_H_",
+      "name": "_BASHANSI_H_",
+      "file": "tilde/bashansi.h",
+      "source": "[tilde/bashansi.h:22]",
+      "definition": "#define _BASHANSI_H_"
+    },
+    {
+      "id": "MACRO-_STDLIB_H_",
+      "name": "_STDLIB_H_",
+      "file": "tilde/ansi_stdlib.h",
+      "source": "[tilde/ansi_stdlib.h:24]",
+      "definition": "#define _STDLIB_H_ 1"
+    }
+  ]
+}

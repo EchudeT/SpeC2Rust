@@ -1,0 +1,817 @@
+warning: `/home/jfeng/.cargo/config` is deprecated in favor of `config.toml`
+  |
+  = help: if you need to support cargo 1.38 or earlier, you can symlink `config` to `config.toml`
+Diff in /data1/jfeng/tcode_win/output/res1/cflow-new/cflow-new-rust/src/c.rs:179:
+             return EOB_ACT_LAST_MATCH;
+         }
+ 
+[31m-        let number_to_move = self.yy_c_buf_p.saturating_sub(self.yytext_ptr).saturating_sub(1);
+(B[m[32m+        let number_to_move = self
+(B[m[32m+            .yy_c_buf_p
+(B[m[32m+            .saturating_sub(self.yytext_ptr)
+(B[m[32m+            .saturating_sub(1);
+(B[m 
+         if buffer.yy_buffer_status == BufferStatus::EofPending {
+             buffer.yy_n_chars = 0;
+Diff in /data1/jfeng/tcode_win/output/res1/cflow-new/cflow-new-rust/src/c.rs:189:
+                 .source_content
+                 .chars()
+                 .skip(self.source_pos)
+[31m-                .take(buffer.yy_buf_size.saturating_sub(number_to_move).saturating_sub(1))
+(B[m[32m+                .take(
+(B[m[32m+                    buffer
+(B[m[32m+                        .yy_buf_size
+(B[m[32m+                        .saturating_sub(number_to_move)
+(B[m[32m+                        .saturating_sub(1),
+(B[m[32m+                )
+(B[m                 .collect::<Vec<_>>();
+ 
+             if number_to_move > 0 && self.yytext_ptr < buffer.yy_ch_buf.len() {
+Diff in /data1/jfeng/tcode_win/output/res1/cflow-new/cflow-new-rust/src/c.rs:403:
+             return;
+         };
+ 
+[31m-        let clear_current = self
+(B[m[31m-            .active_buffer
+(B[m[31m-            .as_ref()
+(B[m[31m-            .is_some_and(|cur| cur.yy_ch_buf == buffer.yy_ch_buf && cur.yy_buf_pos == buffer.yy_buf_pos);
+(B[m[32m+        let clear_current = self.active_buffer.as_ref().is_some_and(|cur| {
+(B[m[32m+            cur.yy_ch_buf == buffer.yy_ch_buf && cur.yy_buf_pos == buffer.yy_buf_pos
+(B[m[32m+        });
+(B[m 
+         if clear_current {
+             self.active_buffer = None;
+Diff in /data1/jfeng/tcode_win/output/res1/cflow-new/cflow-new-rust/src/c.rs:413:
+         }
+ 
+[31m-        self.buffer_stack
+(B[m[31m-            .retain(|item| !(item.yy_ch_buf == buffer.yy_ch_buf && item.yy_buf_pos == buffer.yy_buf_pos));
+(B[m[32m+        self.buffer_stack.retain(|item| {
+(B[m[32m+            !(item.yy_ch_buf == buffer.yy_ch_buf && item.yy_buf_pos == buffer.yy_buf_pos)
+(B[m[32m+        });
+(B[m     }
+ 
+     pub fn yy_init_buffer(&mut self, b: &mut YyBufferState, file: Option<PathBuf>) {
+Diff in /data1/jfeng/tcode_win/output/res1/cflow-new/cflow-new-rust/src/dot.rs:31:
+         writer.write_all(b"    node [shape=\"box\"]\n")
+     }
+ 
+[31m-    pub fn declare_node<W: Write + ?Sized>(writer: &mut W, symbol: &OutputSymbol) -> io::Result<()> {
+(B[m[32m+    pub fn declare_node<W: Write + ?Sized>(
+(B[m[32m+        writer: &mut W,
+(B[m[32m+        symbol: &OutputSymbol,
+(B[m[32m+    ) -> io::Result<()> {
+(B[m         write!(writer, "    {} [label=\"", symbol.name)?;
+         if let Some(decl) = &symbol.declaration {
+             let source = symbol.source.as_deref().unwrap_or("");
+Diff in /data1/jfeng/tcode_win/output/res1/cflow-new/cflow-new-rust/src/dot.rs:43:
+         writer.write_all(b"\"]\n")
+     }
+ 
+[31m-    pub fn print_symbol<W: Write + ?Sized>(writer: &mut W, line: i32, symbol: &mut OutputSymbol) -> io::Result<()> {
+(B[m[32m+    pub fn print_symbol<W: Write + ?Sized>(
+(B[m[32m+        writer: &mut W,
+(B[m[32m+        line: i32,
+(B[m[32m+        symbol: &mut OutputSymbol,
+(B[m[32m+    ) -> io::Result<()> {
+(B[m         if symbol.active {
+             return Ok(());
+         }
+Diff in /data1/jfeng/tcode_win/output/res1/cflow-new/cflow-new-rust/src/error.rs:55:
+         line_number: u32,
+         args: fmt::Arguments<'_>,
+     ) {
+[31m-
+(B[m         Self::flush_stdout();
+ 
+         let program = std::env::args()
+Diff in /data1/jfeng/tcode_win/output/res1/cflow-new/cflow-new-rust/src/help.rs:165:
+             body = rest;
+         }
+ 
+[31m-        let split = body
+(B[m[31m-            .find(|c| c == ',' || c == '=')
+(B[m[31m-            .unwrap_or(body.len());
+(B[m[32m+        let split = body.find(|c| c == ',' || c == '=').unwrap_or(body.len());
+(B[m         let name = &body[..split];
+         let mut end = split;
+ 
+Diff in /data1/jfeng/tcode_win/output/res1/cflow-new/cflow-new-rust/src/help.rs:208:
+             return Err(format!("{}: unknown ARGP_HELP_FMT parameter", name));
+         }
+ 
+[31m-        Ok(if text.starts_with("no-") { end + 3 } else { end })
+(B[m[32m+        Ok(if text.starts_with("no-") {
+(B[m[32m+            end + 3
+(B[m[32m+        } else {
+(B[m[32m+            end
+(B[m[32m+        })
+(B[m     }
+ 
+[31m-    pub fn init_usage_vars(
+(B[m[31m-        vars: &mut BTreeMap<String, UsageVarDef>,
+(B[m[31m-    ) -> Result<(), String> {
+(B[m[32m+    pub fn init_usage_vars(vars: &mut BTreeMap<String, UsageVarDef>) -> Result<(), String> {
+(B[m         let Some(fmt) = env::var_os("ARGP_HELP_FMT") else {
+             return Ok(());
+         };
+Diff in /data1/jfeng/tcode_win/output/res1/cflow-new/cflow-new-rust/src/help.rs:253:
+     }
+ 
+     pub fn opt_unalias<'a>(options: &'a [HelpOption], opt: &'a HelpOption) -> &'a HelpOption {
+[31m-        options
+(B[m[31m-            .get(opt.canonical_index)
+(B[m[31m-            .unwrap_or(opt)
+(B[m[32m+        options.get(opt.canonical_index).unwrap_or(opt)
+(B[m     }
+ 
+     pub fn parseopt_usage_std(out: &mut dyn Write, ctx: &Context) {
+Diff in /data1/jfeng/tcode_win/output/res1/cflow-new/cflow-new-rust/src/help.rs:262:
+[31m-        let all = ctx.groups.iter().flat_map(|g| g.options.iter()).collect::<Vec<_>>();
+(B[m[32m+        let all = ctx
+(B[m[32m+            .groups
+(B[m[32m+            .iter()
+(B[m[32m+            .flat_map(|g| g.options.iter())
+(B[m[32m+            .collect::<Vec<_>>();
+(B[m         let all_options = all.iter().cloned().cloned().collect::<Vec<_>>();
+ 
+         let shorts_without_args = all
+Diff in /data1/jfeng/tcode_win/output/res1/cflow-new/cflow-new-rust/src/help.rs:309:
+     }
+ 
+     pub fn parseopt_usage_sdash(out: &mut dyn Write, ctx: &Context) {
+[31m-        let all = ctx.groups.iter().flat_map(|g| g.options.iter()).collect::<Vec<_>>();
+(B[m[31m-        let all_options = all.iter().cloned().cloned().collect::<Vec<_>>();
+(B[m[31m-        let filtered = all
+(B[m[32m+        let all = ctx
+(B[m[32m+            .groups
+(B[m             .iter()
+[31m-            .filter(|opt| !opt.hidden)
+(B[m[32m+            .flat_map(|g| g.options.iter())
+(B[m             .collect::<Vec<_>>();
+[32m+        let all_options = all.iter().cloned().cloned().collect::<Vec<_>>();
+(B[m[32m+        let filtered = all.iter().filter(|opt| !opt.hidden).collect::<Vec<_>>();
+(B[m 
+         for (i, opt) in filtered.iter().enumerate() {
+             if i > 0 {
+Diff in /data1/jfeng/tcode_win/output/res1/cflow-new/cflow-new-rust/src/help.rs:427:
+ 
+         while pos < next {
+             let idx = ctx.idx[pos];
+[31m-            let opt = &ctx.groups.iter().flat_map(|g| g.options.iter()).collect::<Vec<_>>()[idx];
+(B[m[32m+            let opt = &ctx
+(B[m[32m+                .groups
+(B[m[32m+                .iter()
+(B[m[32m+                .flat_map(|g| g.options.iter())
+(B[m[32m+                .collect::<Vec<_>>()[idx];
+(B[m             if opt.hidden {
+                 pos += 1;
+                 continue;
+Diff in /data1/jfeng/tcode_win/output/res1/cflow-new/cflow-new-rust/src/help.rs:449:
+ 
+         while pos < next {
+             let idx = ctx.idx[pos];
+[31m-            let opt = &ctx.groups.iter().flat_map(|g| g.options.iter()).collect::<Vec<_>>()[idx];
+(B[m[32m+            let opt = &ctx
+(B[m[32m+                .groups
+(B[m[32m+                .iter()
+(B[m[32m+                .flat_map(|g| g.options.iter())
+(B[m[32m+                .collect::<Vec<_>>()[idx];
+(B[m             if !opt.hidden {
+                 if wrote {
+                     let _ = write!(out, ", ");
+Diff in /data1/jfeng/tcode_win/output/res1/cflow-new/cflow-new-rust/src/help.rs:462:
+         let mut long_wrote = false;
+         while pos < next {
+             let idx = ctx.idx[pos];
+[31m-            let opt = &ctx.groups.iter().flat_map(|g| g.options.iter()).collect::<Vec<_>>()[idx];
+(B[m[32m+            let opt = &ctx
+(B[m[32m+                .groups
+(B[m[32m+                .iter()
+(B[m[32m+                .flat_map(|g| g.options.iter())
+(B[m[32m+                .collect::<Vec<_>>()[idx];
+(B[m             if !opt.hidden {
+                 if long_wrote {
+                     let _ = write!(out, ", ");
+Diff in /data1/jfeng/tcode_win/output/res1/cflow-new/cflow-new-rust/src/help.rs:500:
+ 
+         for pos in i..next {
+             let idx = ctx.idx[pos];
+[31m-            let opt = &ctx.groups.iter().flat_map(|g| g.options.iter()).collect::<Vec<_>>()[idx];
+(B[m[32m+            let opt = &ctx
+(B[m[32m+                .groups
+(B[m[32m+                .iter()
+(B[m[32m+                .flat_map(|g| g.options.iter())
+(B[m[32m+                .collect::<Vec<_>>()[idx];
+(B[m             if !opt.hidden {
+                 if wrote {
+                     let _ = write!(out, ", ");
+Diff in /data1/jfeng/tcode_win/output/res1/cflow-new/cflow-new-rust/src/main.rs:1:
+ mod c;
+[31m-mod dot;
+(B[m mod depmap;
+[32m+mod dot;
+(B[m mod error;
+ mod gnu;
+ mod help;
+Diff in /data1/jfeng/tcode_win/output/res1/cflow-new/cflow-new-rust/src/main.rs:7:
+[32m+mod linked_list;
+(B[m mod output;
+ mod parseopt;
+ mod parser;
+Diff in /data1/jfeng/tcode_win/output/res1/cflow-new/cflow-new-rust/src/main.rs:10:
+ mod posix;
+[31m-mod linked_list;
+(B[m mod progname;
+ mod symbol;
+ mod wordsplit;
+Diff in /data1/jfeng/tcode_win/output/res1/cflow-new/cflow-new-rust/src/main.rs:166:
+             });
+             Posix::output_handler(writer, command, line, text, os.as_mut(), false)
+         });
+[31m-        output.register_output("dot", |command, writer, line, _text, symbol| match command {
+(B[m[31m-            OutputCommand::Begin => {
+(B[m[31m-                Dot::begin(writer)?;
+(B[m[31m-                Ok(false)
+(B[m[31m-            }
+(B[m[31m-            OutputCommand::End => {
+(B[m[31m-                writeln!(writer, "}}")?;
+(B[m[31m-                Ok(false)
+(B[m[31m-            }
+(B[m[31m-            OutputCommand::Symbol => {
+(B[m[31m-                if let Some(s) = symbol {
+(B[m[31m-                    let mut os = OutputSymbol {
+(B[m[31m-                        name: s.symbol_name.clone(),
+(B[m[31m-                        declaration: s.declaration.clone(),
+(B[m[31m-                        source: None,
+(B[m[31m-                        definition_line: s.expand_line,
+(B[m[31m-                        active: false,
+(B[m[31m-                        expand_line: s.expand_line,
+(B[m[31m-                        direct: s.direct,
+(B[m[31m-                        related_symbols: Vec::new(),
+(B[m[31m-                    };
+(B[m[31m-                    Dot::print_symbol(writer, line, &mut os)?;
+(B[m[32m+        output.register_output(
+(B[m[32m+            "dot",
+(B[m[32m+            |command, writer, line, _text, symbol| match command {
+(B[m[32m+                OutputCommand::Begin => {
+(B[m[32m+                    Dot::begin(writer)?;
+(B[m[32m+                    Ok(false)
+(B[m                 }
+[31m-                Ok(false)
+(B[m[31m-            }
+(B[m[31m-            _ => Ok(false),
+(B[m[31m-        });
+(B[m[32m+                OutputCommand::End => {
+(B[m[32m+                    writeln!(writer, "}}")?;
+(B[m[32m+                    Ok(false)
+(B[m[32m+                }
+(B[m[32m+                OutputCommand::Symbol => {
+(B[m[32m+                    if let Some(s) = symbol {
+(B[m[32m+                        let mut os = OutputSymbol {
+(B[m[32m+                            name: s.symbol_name.clone(),
+(B[m[32m+                            declaration: s.declaration.clone(),
+(B[m[32m+                            source: None,
+(B[m[32m+                            definition_line: s.expand_line,
+(B[m[32m+                            active: false,
+(B[m[32m+                            expand_line: s.expand_line,
+(B[m[32m+                            direct: s.direct,
+(B[m[32m+                            related_symbols: Vec::new(),
+(B[m[32m+                        };
+(B[m[32m+                        Dot::print_symbol(writer, line, &mut os)?;
+(B[m[32m+                    }
+(B[m[32m+                    Ok(false)
+(B[m[32m+                }
+(B[m[32m+                _ => Ok(false),
+(B[m[32m+            },
+(B[m[32m+        );
+(B[m 
+         Self {
+             parser: Parser::default(),
+Diff in /data1/jfeng/tcode_win/output/res1/cflow-new/cflow-new-rust/src/main.rs:304:
+ 
+     pub fn symbol_override(&mut self, text: &str) {
+         let Some(pos) = text.find(':') else {
+[31m-            Error::report(Some(64), Some(0), format_args!("{text}: no symbol type supplied"));
+(B[m[32m+            Error::report(
+(B[m[32m+                Some(64),
+(B[m[32m+                Some(0),
+(B[m[32m+                format_args!("{text}: no symbol type supplied"),
+(B[m[32m+            );
+(B[m             return;
+         };
+ 
+Diff in /data1/jfeng/tcode_win/output/res1/cflow-new/cflow-new-rust/src/main.rs:650:
+ 
+     pub fn help_hook(&self, writer: &mut Wordwrap) -> io::Result<()> {
+         writer.printf(format_args!("References:\n"))?;
+[31m-        writer.puts(" [1]   https://www.gnu.org/software/cflow/manual/html_section/ASCII-Tree.html\n")?;
+(B[m[32m+        writer.puts(
+(B[m[32m+            " [1]   https://www.gnu.org/software/cflow/manual/html_section/ASCII-Tree.html\n",
+(B[m[32m+        )?;
+(B[m         writer.para()?;
+         writer.printf(format_args!("Profile search path: {}\n", DEFAULT_OPTPATH))?;
+         Ok(())
+Diff in /data1/jfeng/tcode_win/output/res1/cflow-new/cflow-new-rust/src/main.rs:721:
+         let canonical = fs::canonicalize(path).unwrap_or_else(|_| path.to_path_buf());
+         !self.seen_optfiles.insert(canonical)
+     }
+[31m-
+(B[m 
+     pub fn optfile_lookup(&mut self, name: &str) -> Result<Option<ParseoptFile>, String> {
+         let direct = PathBuf::from(name);
+Diff in /data1/jfeng/tcode_win/output/res1/cflow-new/cflow-new-rust/src/output.rs:1:
+ use crate::depmap::Depmap;
+[31m-use crate::linked_list::LinkedList;
+(B[m use crate::dot::{OutputCommand, OutputSymbol};
+[32m+use crate::linked_list::LinkedList;
+(B[m use std::cmp::Ordering;
+ use std::collections::{BTreeSet, HashMap};
+ use std::io::{self, Write};
+Diff in /data1/jfeng/tcode_win/output/res1/cflow-new/cflow-new-rust/src/output.rs:7:
+ 
+[31m-
+(B[m #[derive(Clone, Debug, PartialEq, Eq)]
+ pub struct Reference {
+     pub source: String,
+Diff in /data1/jfeng/tcode_win/output/res1/cflow-new/cflow-new-rust/src/output.rs:48:
+     pub declaration: Option<String>,
+ }
+ 
+[31m-
+(B[m type DriverCallback = dyn FnMut(
+     OutputCommand,
+     &mut dyn Write,
+Diff in /data1/jfeng/tcode_win/output/res1/cflow-new/cflow-new-rust/src/output.rs:147:
+ 
+     pub fn set_level_mark(&mut self, lev: usize, mark: bool) {
+         if lev >= self.level_mark.len() {
+[31m-            let new_len = self.level_mark.len() + self.level_mark_incr.max(lev + 1 - self.level_mark.len());
+(B[m[32m+            let new_len =
+(B[m[32m+                self.level_mark.len() + self.level_mark_incr.max(lev + 1 - self.level_mark.len());
+(B[m             self.level_mark.resize(new_len, false);
+         }
+         self.level_mark[lev] = mark;
+Diff in /data1/jfeng/tcode_win/output/res1/cflow-new/cflow-new-rust/src/output.rs:250:
+         Ok(())
+     }
+ 
+[31m-    pub fn print_function<W: Write>(&self, writer: &mut W, symbol: &OutputSymbol) -> io::Result<()> {
+(B[m[32m+    pub fn print_function<W: Write>(
+(B[m[32m+        &self,
+(B[m[32m+        writer: &mut W,
+(B[m[32m+        symbol: &OutputSymbol,
+(B[m[32m+    ) -> io::Result<()> {
+(B[m         if let Some(source) = &symbol.source {
+             writeln!(
+                 writer,
+Diff in /data1/jfeng/tcode_win/output/res1/cflow-new/cflow-new-rust/src/output.rs:266:
+ 
+     pub fn print_type<W: Write>(&self, writer: &mut W, symbol: &OutputSymbol) -> io::Result<()> {
+         if let Some(source) = &symbol.source {
+[31m-            writeln!(writer, "{} t {}:{}", symbol.name, source, symbol.definition_line.unwrap_or_default())?;
+(B[m[32m+            writeln!(
+(B[m[32m+                writer,
+(B[m[32m+                "{} t {}:{}",
+(B[m[32m+                symbol.name,
+(B[m[32m+                source,
+(B[m[32m+                symbol.definition_line.unwrap_or_default()
+(B[m[32m+            )?;
+(B[m         }
+         Ok(())
+     }
+Diff in /data1/jfeng/tcode_win/output/res1/cflow-new/cflow-new-rust/src/output.rs:273:
+ 
+     pub fn xref_output<W: Write>(&self, writer: &mut W) -> io::Result<()> {
+[31m-        let mut symbols: Vec<&OutputSymbol> = self.symbols.values().filter(|s| Self::is_var(s)).collect();
+(B[m[32m+        let mut symbols: Vec<&OutputSymbol> =
+(B[m[32m+            self.symbols.values().filter(|s| Self::is_var(s)).collect();
+(B[m         symbols.sort_by(|a, b| Self::compare_symbols(a, b));
+ 
+         for symbol in symbols {
+Diff in /data1/jfeng/tcode_win/output/res1/cflow-new/cflow-new-rust/src/output.rs:535:
+             }
+         }
+ 
+[31m-        for (name, _symbol) in &mut self.symbols {
+(B[m[31m-        }
+(B[m[32m+        for (name, _symbol) in &mut self.symbols {}
+(B[m     }
+ }
+ 
+Diff in /data1/jfeng/tcode_win/output/res1/cflow-new/cflow-new-rust/src/parseopt.rs:169:
+         None
+     }
+ 
+[31m-    pub fn negmatch(
+(B[m[31m-        &self,
+(B[m[31m-        opt: &ParseoptOption,
+(B[m[31m-        optstr: &str,
+(B[m[31m-        optlen: usize,
+(B[m[31m-    ) -> NegMatch {
+(B[m[32m+    pub fn negmatch(&self, opt: &ParseoptOption, optstr: &str, optlen: usize) -> NegMatch {
+(B[m         if (opt.flags & FLAG_BOOL) != 0 {
+             let neg = self.negation.as_deref().unwrap_or("");
+             let neglen = neg.len();
+Diff in /data1/jfeng/tcode_win/output/res1/cflow-new/cflow-new-rust/src/parseopt.rs:532:
+ 
+     pub fn argv(&self) -> (&[String], usize) {
+         let start = self.arg_start.min(self.argv.len());
+[31m-        (&self.argv[start..], self.argc.saturating_sub(self.arg_start))
+(B[m[32m+        (
+(B[m[32m+            &self.argv[start..],
+(B[m[32m+            self.argc.saturating_sub(self.arg_start),
+(B[m[32m+        )
+(B[m     }
+ 
+     pub fn error(&mut self, pri: ParseMessagePriority, args: fmt::Arguments<'_>) {
+Diff in /data1/jfeng/tcode_win/output/res1/cflow-new/cflow-new-rust/src/parseopt.rs:767:
+         if (self.flags & FLAG_ARGV0) == 0 {
+             self.argi += 1;
+             if self.program_name.is_none() && !self.argv.is_empty() {
+[31m-                let mut p = self.argv[0].rsplit('/').next().unwrap_or(&self.argv[0]).to_string();
+(B[m[32m+                let mut p = self.argv[0]
+(B[m[32m+                    .rsplit('/')
+(B[m[32m+                    .next()
+(B[m[32m+                    .unwrap_or(&self.argv[0])
+(B[m[32m+                    .to_string();
+(B[m                 if p.len() > 3 && p.starts_with("lt-") {
+                     p = p[3..].to_string();
+                 }
+Diff in /data1/jfeng/tcode_win/output/res1/cflow-new/cflow-new-rust/src/parseopt.rs:784:
+     }
+ 
+     fn init_internal(&mut self) -> Result<(), ()> {
+[31m-        let mut sf = if (self.flags & FLAG_SINGLE_DASH) != 0 { 1 } else { 0 };
+(B[m[32m+        let mut sf = if (self.flags & FLAG_SINGLE_DASH) != 0 {
+(B[m[32m+            1
+(B[m[32m+        } else {
+(B[m[32m+            0
+(B[m[32m+        };
+(B[m 
+         if self.ex_usage == 0 {
+             self.ex_usage = DEFAULT_EX_USAGE;
+Diff in /data1/jfeng/tcode_win/output/res1/cflow-new/cflow-new-rust/src/parser.rs:50:
+     ExplicitExtern,
+ }
+ 
+[31m-
+(B[m #[derive(Clone, Debug, Default, PartialEq, Eq)]
+ enum SymbolType {
+     #[default]
+Diff in /data1/jfeng/tcode_win/output/res1/cflow-new/cflow-new-rust/src/parser.rs:251:
+                 let _ = write!(stderr, "{}: {{", self.curs);
+             }
+             for i in self.curs..self.tos {
+[31m-                self.dbgtok(&self.token_stack[i], if i == self.curs { 0 } else { ',' as i32 });
+(B[m[32m+                self.dbgtok(
+(B[m[32m+                    &self.token_stack[i],
+(B[m[32m+                    if i == self.curs { 0 } else { ',' as i32 },
+(B[m[32m+                );
+(B[m             }
+             let mut stderr = io::stderr().lock();
+             let _ = writeln!(stderr, "}}");
+Diff in /data1/jfeng/tcode_win/output/res1/cflow-new/cflow-new-rust/src/parser.rs:277:
+         }
+     }
+ 
+[31m-
+(B[m     pub fn tokdel(&mut self, beg: usize, end: usize) {
+         if end >= beg && beg < self.tos {
+             let end_clamped = end.min(self.tos.saturating_sub(1));
+Diff in /data1/jfeng/tcode_win/output/res1/cflow-new/cflow-new-rust/src/parser.rs:295:
+ 
+     pub fn tokins(&mut self, pos: usize, token_type: i32, line: i32, token: impl Into<String>) {
+         if self.tos + 1 >= self.token_stack.len() {
+[31m-            self.token_stack
+(B[m[31m-                .resize(self.token_stack.len() + self.token_stack_increase, TokenEntry::default());
+(B[m[32m+            self.token_stack.resize(
+(B[m[32m+                self.token_stack.len() + self.token_stack_increase,
+(B[m[32m+                TokenEntry::default(),
+(B[m[32m+            );
+(B[m         }
+         self.token_stack.insert(
+             pos,
+Diff in /data1/jfeng/tcode_win/output/res1/cflow-new/cflow-new-rust/src/parser.rs:307:
+             },
+         );
+         self.tos += 1;
+[31m-        self.debugtoken(
+(B[m[31m-            self.token_stack.get(pos),
+(B[m[31m-            format_args!("insert at {}", pos),
+(B[m[31m-        );
+(B[m[32m+        self.debugtoken(self.token_stack.get(pos), format_args!("insert at {}", pos));
+(B[m     }
+ 
+     pub fn tokpush(&mut self, token_type: i32, line: i32, token: Option<String>) {
+Diff in /data1/jfeng/tcode_win/output/res1/cflow-new/cflow-new-rust/src/parser.rs:317:
+         if self.tos >= self.token_stack.len() {
+[31m-            self.token_stack
+(B[m[31m-                .resize(self.token_stack.len() + self.token_stack_increase, TokenEntry::default());
+(B[m[32m+            self.token_stack.resize(
+(B[m[32m+                self.token_stack.len() + self.token_stack_increase,
+(B[m[32m+                TokenEntry::default(),
+(B[m[32m+            );
+(B[m         }
+         if self.tos < self.token_stack.len() {
+             self.token_stack[self.tos] = TokenEntry {
+Diff in /data1/jfeng/tcode_win/output/res1/cflow-new/cflow-new-rust/src/parser.rs:333:
+         }
+         self.tos += 1;
+         if self.tos == self.token_stack.len() {
+[31m-            self.token_stack
+(B[m[31m-                .resize(self.token_stack.len() + self.token_stack_increase, TokenEntry::default());
+(B[m[32m+            self.token_stack.resize(
+(B[m[32m+                self.token_stack.len() + self.token_stack_increase,
+(B[m[32m+                TokenEntry::default(),
+(B[m[32m+            );
+(B[m         }
+     }
+ 
+Diff in /data1/jfeng/tcode_win/output/res1/cflow-new/cflow-new-rust/src/parser.rs:373:
+     }
+ 
+     pub fn putback(&mut self) -> i32 {
+[31m-        assert!(self.curs != 0, "INTERNAL ERROR: cannot return token to stream");
+(B[m[32m+        assert!(
+(B[m[32m+            self.curs != 0,
+(B[m[32m+            "INTERNAL ERROR: cannot return token to stream"
+(B[m[32m+        );
+(B[m         self.curs -= 1;
+         if self.curs > 0 {
+             self.tok = self.token_stack[self.curs - 1].clone();
+Diff in /data1/jfeng/tcode_win/output/res1/cflow-new/cflow-new-rust/src/parser.rs:571:
+                         return 0;
+                     }
+                 }
+[31m-            } else if let Some(new_idx) = opens
+(B[m[31m-                .iter()
+(B[m[31m-                .position(|&c| c as i32 == self.tok.token_type)
+(B[m[32m+            } else if let Some(new_idx) =
+(B[m[32m+                opens.iter().position(|&c| c as i32 == self.tok.token_type)
+(B[m             {
+                 self.push_balance_state(&mut stack, idx, level);
+                 idx = new_idx as i32;
+Diff in /data1/jfeng/tcode_win/output/res1/cflow-new/cflow-new-rust/src/parser.rs:1160:
+ 
+     pub fn maybe_parm_list(&mut self, parm_cnt_return: Option<&mut i32>) {
+         let mut parmcnt = 0;
+[31m-        let mut
+(B[m[31m-first = true;
+(B[m[32m+        let mut first = true;
+(B[m 
+         if self.nexttoken() == ')' as i32 {
+             if let Some(out) = parm_cnt_return {
+Diff in /data1/jfeng/tcode_win/output/res1/cflow-new/cflow-new-rust/src/parser.rs:1226:
+                     }
+                 }
+                 TYPEDEF => self.parse_typedef(),
+[31m-                EXTERN | STATIC | TYPE | STRUCT | UNION | ENUM | IDENTIFIER | MODIFIER | QUALIFIER => {
+(B[m[32m+                EXTERN | STATIC | TYPE | STRUCT | UNION | ENUM | IDENTIFIER | MODIFIER
+(B[m[32m+                | QUALIFIER => {
+(B[m                     let mut ident = Ident {
+                         name: None,
+                         type_end: -1,
+Diff in /data1/jfeng/tcode_win/output/res1/cflow-new/cflow-new-rust/src/parser.rs:1272:
+             Some(self.finish_save_stack(&name))
+         };
+ 
+[31m-        let knr_args = if maybe_knr { self.get_knr_args(ident) } else { 0 };
+(B[m[32m+        let knr_args = if maybe_knr {
+(B[m[32m+            self.get_knr_args(ident)
+(B[m[32m+        } else {
+(B[m[32m+            0
+(B[m[32m+        };
+(B[m         let source = self.filename.clone();
+         let level = self.level;
+         let symbol = self.get_symbol(&name);
+Diff in /data1/jfeng/tcode_win/output/res1/cflow-new/cflow-new-rust/src/posix.rs:6:
+ pub struct Posix;
+ 
+ impl Posix {
+[31m-    pub fn print_symbol_type<W: Write + ?Sized>(writer: &mut W, symbol: &OutputSymbol) -> io::Result<()> {
+(B[m[32m+    pub fn print_symbol_type<W: Write + ?Sized>(
+(B[m[32m+        writer: &mut W,
+(B[m[32m+        symbol: &OutputSymbol,
+(B[m[32m+    ) -> io::Result<()> {
+(B[m         if let Some(declaration) = &symbol.declaration {
+             let source = symbol.source.as_deref().unwrap_or("");
+             let def_line = symbol.definition_line.unwrap_or(0);
+Diff in /data1/jfeng/tcode_win/output/res1/cflow-new/cflow-new-rust/src/symbol.rs:156:
+ 
+     pub fn unlink_from_list(symbol_index: usize) {
+         Self::with_store(|store| {
+[31m-            let membership = Self::get_symbol_ref(store, symbol_index)
+(B[m[31m-                .and_then(|s| s.list_membership);
+(B[m[32m+            let membership =
+(B[m[32m+                Self::get_symbol_ref(store, symbol_index).and_then(|s| s.list_membership);
+(B[m             if let Some(kind) = membership {
+                 let list = Self::list_mut(store, kind);
+                 list.retain(|&idx| idx != symbol_index);
+Diff in /data1/jfeng/tcode_win/output/res1/cflow-new/cflow-new-rust/src/symbol.rs:170:
+ 
+     pub fn append_symbol(list: SymbolListKind, symbol_index: usize) {
+         Self::with_store(|store| {
+[31m-            let current = Self::get_symbol_ref(store, symbol_index)
+(B[m[31m-                .and_then(|s| s.list_membership);
+(B[m[32m+            let current = Self::get_symbol_ref(store, symbol_index).and_then(|s| s.list_membership);
+(B[m             if let Some(kind) = current {
+                 let old = Self::list_mut(store, kind);
+                 old.retain(|&idx| idx != symbol_index);
+Diff in /data1/jfeng/tcode_win/output/res1/cflow-new/cflow-new-rust/src/symbol.rs:389:
+     pub fn delete_symbol(symbol_index: usize) {
+         Self::with_store(|store| {
+             let can_delete = match Self::get_symbol_ref(store, symbol_index) {
+[31m-                Some(sym) => sym.ref_line.is_empty() && !(store.reverse_tree && !sym.callees.is_empty()),
+(B[m[32m+                Some(sym) => {
+(B[m[32m+                    sym.ref_line.is_empty() && !(store.reverse_tree && !sym.callees.is_empty())
+(B[m[32m+                }
+(B[m                 None => false,
+             };
+             if !can_delete {
+Diff in /data1/jfeng/tcode_win/output/res1/cflow-new/cflow-new-rust/src/symbol.rs:396:
+                 return;
+             }
+ 
+[31m-            let membership = Self::get_symbol_ref(store, symbol_index)
+(B[m[31m-                .and_then(|s| s.list_membership);
+(B[m[32m+            let membership =
+(B[m[32m+                Self::get_symbol_ref(store, symbol_index).and_then(|s| s.list_membership);
+(B[m             if let Some(kind) = membership {
+                 Self::list_mut(store, kind).retain(|&idx| idx != symbol_index);
+             }
+Diff in /data1/jfeng/tcode_win/output/res1/cflow-new/cflow-new-rust/src/symbol.rs:407:
+ 
+             if let Some(sym) = store.symbols.get_mut(symbol_index).and_then(|s| s.take()) {
+                 if let Some(owner_index) = sym.owner {
+[31m-                    if store.table_entries.get(owner_index).and_then(|e| e.sym).is_none() {
+(B[m[32m+                    if store
+(B[m[32m+                        .table_entries
+(B[m[32m+                        .get(owner_index)
+(B[m[32m+                        .and_then(|e| e.sym)
+(B[m[32m+                        .is_none()
+(B[m[32m+                    {
+(B[m                         if let Some(name) = name {
+                             store.buckets.remove(&name);
+                         }
+Diff in /data1/jfeng/tcode_win/output/res1/cflow-new/cflow-new-rust/src/symbol.rs:757:
+         TableEntry { sym }
+     }
+ 
+[31m-    pub fn module_src_delete_level_12(
+(B[m[31m-        symbol_index: usize,
+(B[m[31m-        level: i32,
+(B[m[31m-        is_static: bool,
+(B[m[31m-    ) -> bool {
+(B[m[32m+    pub fn module_src_delete_level_12(symbol_index: usize, level: i32, is_static: bool) -> bool {
+(B[m         if is_static {
+             Self::delete_level_statics(symbol_index, level)
+         } else {
+Diff in /data1/jfeng/tcode_win/output/res1/cflow-new/cflow-new-rust/src/symbol.rs:781:
+         ModuleSrcLinkedListEntry02 { data, next, prev }
+     }
+ 
+[31m-    pub fn module_src_collect_data_10(
+(B[m[31m-        reserved_slots: usize,
+(B[m[31m-    ) -> ModuleSrcCollectData10 {
+(B[m[32m+    pub fn module_src_collect_data_10(reserved_slots: usize) -> ModuleSrcCollectData10 {
+(B[m         ModuleSrcCollectData10 {
+             indices: Vec::with_capacity(reserved_slots),
+             count: 0,
+Diff in /data1/jfeng/tcode_win/output/res1/cflow-new/cflow-new-rust/src/wordsplit.rs:534:
+             if node.flags & WSNF_NULL != 0 {
+                 continue;
+             }
+[31m-            node.text = Self::string_unquote_copy_static(&self.ws_escape, quoted[idx], &texts[idx], texts[idx].len());
+(B[m[32m+            node.text = Self::string_unquote_copy_static(
+(B[m[32m+                &self.ws_escape,
+(B[m[32m+                quoted[idx],
+(B[m[32m+                &texts[idx],
+(B[m[32m+                texts[idx].len(),
+(B[m[32m+            );
+(B[m             node.flags |= WSNF_WORD;
+             node.range = None;
+         }
+Diff in /data1/jfeng/tcode_win/output/res1/cflow-new/cflow-new-rust/src/wordsplit.rs:602:
+             .get(beg..beg.saturating_add(len))
+             .unwrap_or("")
+             .to_string();
+[31m-        let suffix = text.get(beg.saturating_add(len)..).unwrap_or("").to_string();
+(B[m[32m+        let suffix = text
+(B[m[32m+            .get(beg.saturating_add(len)..)
+(B[m[32m+            .unwrap_or("")
+(B[m[32m+            .to_string();
+(B[m         self.ws_head[node].text = suffix;
+         self.ws_head[node].flags = original.flags;
+         self.ws_head.insert(
+Diff in /data1/jfeng/tcode_win/output/res1/cflow-new/cflow-new-rust/src/wordsplit.rs:617:
+         0
+     }
+ 
+[31m-    pub fn find_matching_paren(
+(B[m[31m-        &self,
+(B[m[31m-        s: &str,
+(B[m[31m-        i: usize,
+(B[m[31m-        len: usize,
+(B[m[31m-        paren: &str,
+(B[m[31m-    ) -> Option<usize> {
+(B[m[32m+    pub fn find_matching_paren(&self, s: &str, i: usize, len: usize, paren: &str) -> Option<usize> {
+(B[m         let pair: Vec<char> = paren.chars().collect();
+         if pair.len() < 2 {
+             return None;
+Diff in /data1/jfeng/tcode_win/output/res1/cflow-new/cflow-new-rust/src/wordsplit.rs:761:
+             if beg_p(ch) {
+                 let mut tail = None;
+                 let mut end = 0;
+[31m-                return exp_fn(self, &text, text.len(), &mut tail, &mut end, self.ws_head[node].flags);
+(B[m[32m+                return exp_fn(
+(B[m[32m+                    self,
+(B[m[32m+                    &text,
+(B[m[32m+                    text.len(),
+(B[m[32m+                    &mut tail,
+(B[m[32m+                    &mut end,
+(B[m[32m+                    self.ws_head[node].flags,
+(B[m[32m+                );
+(B[m             }
+         }
+         0
+Diff in /data1/jfeng/tcode_win/output/res1/cflow-new/cflow-new-rust/src/wordsplit.rs:917:
+         self.wsplt_error(&msg);
+     }
+ 
+[31m-    fn string_unquote_copy_static(ws_escape: &[String; 2], quoted: bool, s: &str, len: usize) -> String {
+(B[m[32m+    fn string_unquote_copy_static(
+(B[m[32m+        ws_escape: &[String; 2],
+(B[m[32m+        quoted: bool,
+(B[m[32m+        s: &str,
+(B[m[32m+        len: usize,
+(B[m[32m+    ) -> String {
+(B[m         let chars: Vec<char> = s.chars().take(len).collect();
+         if chars.is_empty() {
+             return String::new();
+Diff in /data1/jfeng/tcode_win/output/res1/cflow-new/cflow-new-rust/src/wordsplit.rs:964:
+         let mut pos = start;
+         let input_len = self.ws_input.len();
+         while pos < input_len {
+[31m-            while pos < input_len && self.ws_delim.contains(self.ws_input.as_bytes()[pos] as char) {
+(B[m[32m+            while pos < input_len
+(B[m[32m+                && self
+(B[m[32m+                    .ws_delim
+(B[m[32m+                    .contains(self.ws_input.as_bytes()[pos] as char)
+(B[m[32m+            {
+(B[m                 pos += 1;
+             }
+             if pos >= input_len {
+Diff in /data1/jfeng/tcode_win/output/res1/cflow-new/cflow-new-rust/src/wordsplit.rs:987:
+         let _ = self.tildexpand();
+         self.pathexpand()
+     }
+[31m-
+(B[m 
+     pub fn skip_sed_expr(command: &str, i: usize, len: usize) -> Option<usize> {
+         let chars: Vec<char> = command.chars().collect();
+Diff in /data1/jfeng/tcode_win/output/res1/cflow-new/cflow-new-rust/src/wordwrap.rs:117:
+             match self.writer.write(&self.buffer[total..size]) {
+                 Ok(0) => {
+                     self.err = Some(io::ErrorKind::WriteZero);
+[31m-                    return Err(io::Error::new(io::ErrorKind::WriteZero, "write returned zero"));
+(B[m[32m+                    return Err(io::Error::new(
+(B[m[32m+                        io::ErrorKind::WriteZero,
+(B[m[32m+                        "write returned zero",
+(B[m[32m+                    ));
+(B[m                 }
+                 Ok(n) => total += n,
+                 Err(e) => {
+Diff in /data1/jfeng/tcode_win/output/res1/cflow-new/cflow-new-rust/src/wordwrap.rs:181:
+         }
+     }
+ 
+[31m-    pub fn last_ws(
+(B[m[31m-        &mut self,
+(B[m[31m-        size: usize,
+(B[m[31m-        last_ws: &mut WordwrapPosition,
+(B[m[31m-    ) -> WordwrapPosition {
+(B[m[32m+    pub fn last_ws(&mut self, size: usize, last_ws: &mut WordwrapPosition) -> WordwrapPosition {
+(B[m         let mut cur = WordwrapPosition::default();
+         let mut ws_run = WordwrapPosition::default();
+         *last_ws = Self::new_position(usize::MAX);
+Diff in /data1/jfeng/tcode_win/output/res1/cflow-new/cflow-new-rust/src/wordwrap.rs:224:
+                 (p, lw)
+             };
+ 
+[31m-        if (pos.col >= self.left_margin && self.cur.col > self.left_margin) || size == self.cur.off {
+(B[m[32m+        if (pos.col >= self.left_margin && self.cur.col > self.left_margin) || size == self.cur.off
+(B[m[32m+        {
+(B[m             if last_ws.off != unset {
+                 pos = last_ws;
+             }
+Diff in /data1/jfeng/tcode_win/output/res1/cflow-new/cflow-new-rust/src/wordwrap.rs:253:
+                 if self.buffer.len() < new_len {
+                     self.buffer.resize(new_len, b' ');
+                 }
+[31m-                self.buffer
+(B[m[31m-                    .copy_within(start..start + n, self.left_margin);
+(B[m[32m+                self.buffer.copy_within(start..start + n, self.left_margin);
+(B[m                 self.cur.off = self.left_margin + n;
+                 self.ws_run = Self::new_position(0);
+             } else {

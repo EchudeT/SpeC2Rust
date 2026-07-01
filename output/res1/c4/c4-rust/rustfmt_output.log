@@ -1,0 +1,54 @@
+warning: `/home/jfeng/.cargo/config` is deprecated in favor of `config.toml`
+  |
+  = help: if you need to support cargo 1.38 or earlier, you can symlink `config` to `config.toml`
+Diff in /data1/jfeng/tcode_win/output/res1/c4/c4-rust/src/c4.rs:134:
+             if status.success() {
+                 return Ok(Self::new(String::new()));
+             }
+[31m-            return Err(format!("c4 exited with status {}", status.code().unwrap_or(1)));
+(B[m[32m+            return Err(format!(
+(B[m[32m+                "c4 exited with status {}",
+(B[m[32m+                status.code().unwrap_or(1)
+(B[m[32m+            ));
+(B[m         }
+ 
+         let source = String::new();
+Diff in /data1/jfeng/tcode_win/output/res1/c4/c4-rust/src/c4.rs:522:
+             self.expr(Self::precedence(Token::Inc))?;
+             self.emitted.push(Instruction::Push);
+             self.emitted.push(Instruction::Imm(1));
+[31m-            self.emitted
+(B[m[31m-                .push(if is_inc { Instruction::Add } else { Instruction::Sub });
+(B[m[32m+            self.emitted.push(if is_inc {
+(B[m[32m+                Instruction::Add
+(B[m[32m+            } else {
+(B[m[32m+                Instruction::Sub
+(B[m[32m+            });
+(B[m             self.emitted.push(Instruction::StoreInt);
+         } else {
+             return Err(C4Error::new(self.line, "bad expression"));
+Diff in /data1/jfeng/tcode_win/output/res1/c4/c4-rust/src/c4.rs:657:
+                 let is_inc = self.token == Token::Inc;
+                 self.emitted.push(Instruction::Push);
+                 self.emitted.push(Instruction::Imm(1));
+[31m-                self.emitted
+(B[m[31m-                    .push(if is_inc { Instruction::Add } else { Instruction::Sub });
+(B[m[32m+                self.emitted.push(if is_inc {
+(B[m[32m+                    Instruction::Add
+(B[m[32m+                } else {
+(B[m[32m+                    Instruction::Sub
+(B[m[32m+                });
+(B[m                 self.emitted.push(Instruction::StoreInt);
+                 self.emitted.push(Instruction::Push);
+                 self.emitted.push(Instruction::Imm(1));
+Diff in /data1/jfeng/tcode_win/output/res1/c4/c4-rust/src/c4.rs:665:
+[31m-                self.emitted
+(B[m[31m-                    .push(if is_inc { Instruction::Sub } else { Instruction::Add });
+(B[m[32m+                self.emitted.push(if is_inc {
+(B[m[32m+                    Instruction::Sub
+(B[m[32m+                } else {
+(B[m[32m+                    Instruction::Add
+(B[m[32m+                });
+(B[m                 self.next()?;
+             } else if self.token == Token::Brak {
+                 self.next()?;
